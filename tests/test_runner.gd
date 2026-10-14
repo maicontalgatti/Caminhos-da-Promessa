@@ -77,6 +77,17 @@ func _run_all() -> void:
 	wt.test_main_quest_flow()
 	await wt.test_travel()
 	await wt.test_pickups_and_screens()
+	print("\n[cenas dirigidas, luz por estado e experiências]")
+	var st_script: GDScript = load("res://tests/scene_tests.gd")
+	check(st_script != null and st_script.can_instantiate(), "tests/scene_tests.gd compila")
+	if st_script != null and st_script.can_instantiate():
+		var st = st_script.new(self)
+		st.test_data()
+		st.test_world_schema()
+		st.test_experiences()
+		await st.test_play_and_skip()
+		await st.test_lighting()
+		await st.test_scripture_map_and_passage()
 	print("\n[áudio]")
 	var at_script: GDScript = load("res://tests/audio_tests.gd")
 	check(at_script != null and at_script.can_instantiate(), "tests/audio_tests.gd compila")
@@ -379,6 +390,7 @@ func _test_quest_targets_in_map() -> void:
 				match String(t.type):
 					"ui": ok = t.id in QuestDatabase.UI_TARGETS
 					"region": ok = GameData.regions.has(t.id)
+					"scene": ok = SceneDatabase.ids_in().has(t.id)
 					_: ok = found.has(rid) and found[rid].get(t.type, {}).has(t.id)
 				check(ok, "%s/%s: alvo %s '%s' existe na região %s" % [id, o.id, t.type, t.id, rid])
 

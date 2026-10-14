@@ -1,0 +1,38 @@
+{
+	"_comment": "PROPOSTA (ep_009, dialogue-writer, IA, pending_review). Formato de data/bible/presentations.json (acrescentar lá). Cada quadro: 'scripture' = referência cujo texto vem de data/bible/texts/bpm.json (Gen 37:25-28, 37:36 e 39:1-6 já importados); 'text' = nota própria do jogo, separada da citação (sem a tradução carregada, vira o resumo do quadro). Nenhum versículo digitado. Falas de Judá só na citação oficial; fora dela, discurso indireto. story_id gen_039_joseph_potiphar ainda não existe em data/bible/stories (criar na integração ou trocar por um existente). Substitui os textos 'pending_writer' de scenes.proposal.json (lá atualizados com o mesmo conteúdo).",
+	"presentations": [
+		{
+			"id": "gen_037_caravan",
+			"title": "José é levado para o Egito",
+			"reference": "Gen 37:25-28",
+			"classification": "recorded_event",
+			"story_id": "gen_037_joseph_sold",
+			"unlock": ["caravan_to_egypt"],
+			"steps": [
+				{"heading": "Uma caravana de Gileade", "reference": "Gen 37:25", "scripture": "Gen 37:25", "text": "Gileade fica a leste do rio Jordão. Resinas perfumadas como estas eram levadas ao Egito; as plantas exatas são debatidas. O texto não diz quantas pessoas nem quantos animais havia na caravana."},
+				{"heading": "A proposta de Judá", "reference": "Gen 37:26-27", "scripture": "Gen 37:26-27", "text": "Judá é um dos irmãos de José. O texto registra a proposta dele e o acordo dos irmãos, sem comentário do narrador."},
+				{"heading": "Vinte peças de prata", "reference": "Gen 37:28", "scripture": "Gen 37:28", "text": "A prata era pesada, não contada em moedas: moedas cunhadas só surgem muitos séculos depois. O versículo fala de midianitas e de ismaelitas e não deixa claro quem tirou José da cisterna. O jogo não decide."},
+				{"heading": "No Egito", "reference": "Gen 37:36", "scripture": "Gen 37:36", "text": "Potifar volta a aparecer em Gênesis 39. O texto não diz o nome do Faraó nem em que cidade José foi vendido."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "Esta apresentação mostra Gênesis 37:25-28 e 37:36. Resumo do jogo, sem citação: antes, os irmãos planejam matar José, e Rúben os convence a pô-lo numa cisterna (Gn 37:18-24); entre os versículos 28 e 36, Rúben volta e não o encontra, e Jacó, ao reconhecer a túnica de José que os filhos levam a seu pai, chora o filho como morto (Gn 37:29-35). Leia o capítulo inteiro numa Bíblia. As notas são do jogo. O viajante, Malik, Rafi, Talia e Oren são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Notas próprias do agente roteirista (IA), conferidas com Gn 37:18-36 no arquivo oficial da BPM. Inclui Gen 37:26-27 além do escopo mínimo (37:25-28 cobre). Paráfrase de 37:18-24 e 37:29-35 só no quadro final, sem citação. Aguarda verificador bíblico e revisão humana."}
+		},
+		{
+			"id": "gen_039_potiphar",
+			"title": "José na casa de Potifar",
+			"reference": "Gen 39:1-6",
+			"classification": "recorded_event",
+			"story_id": "gen_039_joseph_potiphar",
+			"unlock": ["joseph_steward"],
+			"steps": [
+				{"heading": "Comprado por um oficial", "reference": "Gen 39:1", "scripture": "Gen 39:1", "text": "O texto não diz em que cidade ficava a casa de Potifar nem quem era o Faraó. Em Gênesis 37:36 os vendedores são chamados de midianitas; aqui, de ismaelitas. 'Oficial do Faraó' e 'capitão da guarda' são as palavras desta tradução."},
+				{"heading": "O SENHOR estava com José", "reference": "Gen 39:2-3", "scripture": "Gen 39:2-3", "text": "O narrador repete que o SENHOR estava com José. O texto não diz como Potifar percebeu isso nem quanto tempo levou."},
+				{"heading": "Administrador da casa", "reference": "Gen 39:4", "scripture": "Gen 39:4", "text": "Grandes casas egípcias tinham um administrador que cuidava dos bens, dos servos e dos depósitos. O texto não descreve as tarefas de José."},
+				{"heading": "Na casa e no campo", "reference": "Gen 39:5", "scripture": "Gen 39:5", "text": "O texto atribui a bênção ao SENHOR, por causa de José. Ela alcança tudo o que Potifar tinha, na casa e no campo."},
+				{"heading": "Tudo nas mãos de José", "reference": "Gen 39:6", "scripture": "Gen 39:6", "text": "O texto não explica por que a comida de Potifar ficava fora dos cuidados de José. Há leituras diferentes, e o jogo não escolhe."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "Gênesis 39 continua nos versículos 7 a 23, contados em outro capítulo desta jornada. Leia o capítulo inteiro numa Bíblia. As notas são do jogo. A casa que você visitou é fictícia: uma casa de um oficial egípcio, como aquela onde José serviu, e não a casa de Potifar. Ipi, Meryt e Senbi são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Notas próprias do agente roteirista (IA), conferidas com Gn 39:1-6 e Gn 37:36 no arquivo oficial da BPM. Sem comentário sobre a aparência de José (39:6b) e sem resumo de 39:7-23. Aguarda verificador bíblico e revisão humana."}
+		}
+	]
+}

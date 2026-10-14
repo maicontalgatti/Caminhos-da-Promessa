@@ -1,0 +1,171 @@
+{
+	"_comment": "Proposta do roteirista (IA) para acrescentar a data/bible/discoveries.json. Resumos e seções são texto próprio (paráfrase), conferidos com a BPM no arquivo oficial; nenhum versículo está transcrito. Pré-requisitos: verse_counts de Exod 12 (51), Exod 13 (22), Exod 15 (27) e Gen 50 (26); place exodus_sea e people moses/miriam (bible_entries.proposal.json). Todas em pending_review.",
+	"discoveries": [
+		{
+			"id": "exodus_departure",
+			"title": "Quem saiu do Egito",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "exodus",
+			"summary": "Êxodo 12:37-38 conta que os israelitas partiram de Ramessés para Sucote, com as crianças, e que uma multidão mista subiu com eles, levando ovelhas, bois e muitos animais.",
+			"bible_note": "Êxodo 12:37-38.",
+			"references": ["Exod 12:37-38", "Exod 13:20"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que o texto diz", "text": "Os filhos de Israel viajam de Ramessés a Sucote; o texto fala em cerca de seiscentos mil homens a pé, além das crianças (Êx 12:37). Uma multidão mista sobe com eles, com ovelhas, bois e muitíssimos animais (Êx 12:38). Depois partem de Sucote e acampam em Etã, na beira do deserto (Êx 13:20)."},
+				{"kind": "interpretation", "title": "Quantos eram?", "text": "O número é discutido. Alguns leem a palavra hebraica traduzida por \"mil\" ('elef) no sentido comum; outros a entendem como \"clã\" ou \"unidade\", o que daria um grupo bem menor. O jogo mostra um povo numeroso, sem contar ninguém."},
+				{"kind": "historical", "title": "Multidão mista", "text": "O texto não diz quem formava a multidão mista. Há quem pense em egípcios e em outros estrangeiros que viviam no Delta do Nilo; é hipótese. As paradas Sucote e Etã não têm localização segura."},
+				{"kind": "chronology", "title": "Sem data", "text": "A Bíblia não dá um ano para a saída do Egito, e as propostas dos estudiosos divergem. Por isso o jogo não mostra data."},
+				{"kind": "fiction", "title": "No acampamento do jogo", "text": "Tzvi, Meret e as famílias do acampamento são personagens criados para o jogo. Meret, com roupa de estilo egípcio, ilustra a multidão mista sem que o jogo afirme quem ela era."}
+			],
+			"related": {"people": ["moses"], "places": ["egypt", "exodus_sea"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM (arquivo oficial). Leitura de 'elef e composição da multidão mista são hipóteses (research_biblical.md §6). Aguarda revisão humana."}
+		},
+		{
+			"id": "pillar_cloud_fire",
+			"title": "A coluna de nuvem e de fogo",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "exodus",
+			"summary": "Êxodo 13:21-22 conta que o SENHOR ia adiante do povo numa coluna de nuvem de dia e numa coluna de fogo de noite. Junto ao mar, a coluna passou para trás do povo, entre os dois acampamentos (Êx 14:19-20).",
+			"bible_note": "Êxodo 13:21-22; 14:19-20.",
+			"references": ["Exod 13:21-22", "Exod 14:19-20"],
+			"sections": [
+				{"kind": "biblical_text", "title": "Adiante do povo", "text": "O SENHOR ia adiante do povo: de dia numa coluna de nuvem, para guiar o caminho, e de noite numa coluna de fogo, para iluminar, de modo que podiam caminhar de dia e de noite. A coluna não se afastava de diante do povo (Êx 13:21-22)."},
+				{"kind": "biblical_text", "title": "Entre os acampamentos", "text": "Na noite junto ao mar, o anjo de Deus, que ia à frente do acampamento de Israel, passou para trás, e a coluna de nuvem também. Ela ficou entre o acampamento do Egito e o de Israel, e um não se aproximou do outro a noite toda (Êx 14:19-20)."},
+				{"kind": "interpretation", "title": "O que o texto não descreve", "text": "Êxodo 14:20 fala de nuvem e escuridão e de uma luz que iluminava a noite; para quem era a escuridão e para quem era a luz, as traduções e os intérpretes divergem. Explicações naturais para a coluna também são interpretações, não o que o texto afirma."},
+				{"kind": "fiction", "title": "No jogo", "text": "A coluna aparece de forma sóbria, sem rosto nem figura. O anjo não é desenhado, porque o texto não o descreve. O jogador não interage com a coluna nem a usa como guia."}
+			],
+			"related": {"people": ["moses"], "places": ["exodus_sea"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM. Exige Exod 13 em verse_counts.json. Aguarda revisão humana."}
+		},
+		{
+			"id": "joseph_bones",
+			"title": "Os ossos de José",
+			"classification": "recorded_event",
+			"presentation": "toast",
+			"era_id": "exodus",
+			"summary": "Na saída do Egito, Moisés levou consigo os ossos de José, cumprindo o juramento que José tinha pedido aos filhos de Israel antes de morrer (Êx 13:19; Gn 50:24-25).",
+			"bible_note": "Êxodo 13:19; Gênesis 50:24-25.",
+			"references": ["Exod 13:19", "Gen 50:24-25", "Exod 1:6-8"],
+			"sections": [
+				{"kind": "biblical_text", "title": "Um juramento antigo", "text": "No fim de Gênesis, José diz aos irmãos que Deus certamente os visitaria e os faria subir para a terra que jurou a Abraão, a Isaque e a Jacó, e faz os filhos de Israel jurarem que levariam seus ossos (Gn 50:24-25). Êxodo 13:19 conta que Moisés levou os ossos de José na saída do Egito."},
+				{"kind": "chronology", "title": "Gerações depois", "text": "Gerações separam a morte de José e a saída do Egito: Êxodo 1:6-8 diz que José e toda aquela geração morreram e que surgiu no Egito um novo rei que não conhecia José. Quanto tempo exatamente é debatido."},
+				{"kind": "fiction", "title": "No jogo", "text": "Tzvi conta isso como algo que se sabe entre as famílias. O jogo não mostra os ossos nem como eram levados."}
+			],
+			"related": {"people": ["joseph", "moses"], "places": ["egypt"], "events": [], "stories": ["gen_037_joseph_sold", "exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM. Exige Exod 13 e Gen 50 em verse_counts.json. Aguarda revisão humana."}
+		},
+		{
+			"id": "unleavened_bread_road",
+			"title": "Pão sem fermento na estrada",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "exodus",
+			"summary": "O povo saiu do Egito com a massa ainda sem fermento e as amassadeiras amarradas nas roupas, sobre os ombros. No caminho, assaram bolos sem fermento (Êx 12:34, 39).",
+			"bible_note": "Êxodo 12:34, 39.",
+			"references": ["Exod 12:34", "Exod 12:39"],
+			"sections": [
+				{"kind": "biblical_text", "title": "No texto", "text": "O povo levou a massa antes que fermentasse, com as amassadeiras amarradas nas roupas, sobre os ombros (Êx 12:34). Com essa massa assaram bolos sem fermento, porque tinham sido expulsos do Egito, não puderam esperar e não haviam preparado provisões (Êx 12:39)."},
+				{"kind": "historical", "title": "Pão de viagem", "text": "Pão achatado podia ser assado sobre pedras quentes, nas brasas ou numa chapa de barro. A amassadeira era uma tigela rasa, de barro ou de madeira. Numa costa desértica a lenha é escassa: galhos de arbusto e esterco seco alimentavam fogueiras pequenas."},
+				{"kind": "fiction", "title": "No jogo", "text": "Shira, a pedra de assar e a busca por galhos secos são criações do jogo."}
+			],
+			"related": {"people": [], "places": ["egypt"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM; contexto de research_historical.md (Comida e preparo). Exige Exod 12 em verse_counts.json. Aguarda revisão humana."}
+		},
+		{
+			"id": "sea_pursuit",
+			"title": "Os carros do Egito",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "exodus",
+			"summary": "Êxodo 14 conta que o rei do Egito e seus servos mudaram de ideia e que ele saiu atrás do povo com carros e exército, alcançando-o acampado junto ao mar. Os israelitas ficaram com muito medo (Êx 14:5-10).",
+			"bible_note": "Êxodo 14:5-10.",
+			"references": ["Exod 14:5-10"],
+			"sections": [
+				{"kind": "biblical_text", "title": "A perseguição", "text": "Ao saber que o povo tinha fugido, o rei e seus servos se perguntam por que deixaram Israel ir (Êx 14:5). Ele prepara o seu carro e leva o exército: seiscentos carros escolhidos e todos os carros do Egito, com capitães (v. 6-7). Os egípcios alcançam o povo acampado junto ao mar, perto de Pi-Hairote (v. 9). Ao vê-los, os israelitas têm muito medo e clamam ao SENHOR (v. 10)."},
+				{"kind": "biblical_text", "title": "O coração do faraó", "text": "O texto diz que o SENHOR endureceu o coração do faraó, e que ele perseguiu os filhos de Israel (Êx 14:4, 8)."},
+				{"kind": "interpretation", "title": "Como entender o endurecimento", "text": "Como entender esse endurecimento (soberania de Deus, responsabilidade humana ou as duas coisas) é discutido pelos intérpretes. O jogo registra o que o texto diz, sem escolher uma leitura."},
+				{"kind": "historical", "title": "Carros de guerra", "text": "No Novo Império egípcio (uma das épocas propostas para o Êxodo; datação debatida), o carro de guerra era leve, com caixa aberta para duas pessoas e puxado por dois cavalos. Hipótese: \"cavaleiros\" (Êx 14:9) pode indicar as tripulações dos carros, já que cavalaria montada em formação não é típica do exército egípcio desse período."},
+				{"kind": "chronology", "title": "Um faraó sem nome", "text": "O texto não dá o nome do faraó, e a data do Êxodo é debatida. Por isso o jogo não identifica nenhum rei egípcio."},
+				{"kind": "fiction", "title": "No jogo", "text": "Os carros aparecem só como poeira e pontos distantes no horizonte. Nenhum soldado aparece de perto."}
+			],
+			"related": {"people": ["moses"], "places": ["egypt", "exodus_sea"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM. Contexto dos carros segundo research_historical.md (confiança alta para o carro leve; 'cavaleiros' é hipótese). Aguarda revisão humana."}
+		},
+		{
+			"id": "yam_suf_debate",
+			"title": "Que mar era esse?",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "exodus",
+			"summary": "Em Êxodo 14, o texto diz apenas \"o mar\". Em outras passagens, o mar é chamado em hebraico de yam suf, que a tradução carregada verte como \"Mar Vermelho\". Onde ele ficava é debatido.",
+			"bible_note": "Êxodo 13:18; 14:2; 15:4.",
+			"references": ["Exod 13:18", "Exod 14:2", "Exod 15:4"],
+			"sections": [
+				{"kind": "biblical_text", "title": "Os nomes no texto", "text": "Êxodo 13:18 diz que Deus fez o povo dar a volta pelo caminho do deserto, perto do yam suf; Êxodo 15:4 usa o mesmo nome ao falar dos carros do faraó. Em Êxodo 14, o acampamento é situado diante de Pi-Hairote, entre Migdol e o mar, diante de Baal-Zefom (Êx 14:2)."},
+				{"kind": "interpretation", "title": "Juncos ou Mar Vermelho?", "text": "Muitos entendem yam suf como \"mar de juncos\" ou \"de caniços\"; outros defendem que o nome indica o Mar Vermelho, no golfo de Suez ou no de Ácaba. Há também propostas de lagos entre o Egito e o Sinai e de uma laguna na costa do Mediterrâneo. Nenhuma é consenso."},
+				{"kind": "historical", "title": "Os lugares de Êxodo 14:2", "text": "Pi-Hairote, Migdol e Baal-Zefom não têm identificação segura. Migdol parece significar \"torre\" ou \"fortaleza\", e havia mais de um lugar com esse nome na fronteira do Egito."},
+				{"kind": "fiction", "title": "O mar do jogo", "text": "O mapa mostra uma costa desértica genérica, com juncos na água rasa e tamareiras, sem marcos que apontem um lugar real. No jogo, o lugar se chama só \"o mar\"."}
+			],
+			"related": {"people": [], "places": ["exodus_sea", "egypt"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Propostas de localização segundo research_historical.md (Hoffmeier, Batto, Eissfeldt; não verificadas). Exige Exod 13 e Exod 15 em verse_counts.json. Aguarda revisão humana."}
+		},
+		{
+			"id": "sea_crossing",
+			"title": "A travessia do mar",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "exodus",
+			"summary": "Êxodo 14:21-22 relata que Moisés estendeu a mão sobre o mar e que o SENHOR fez o mar recuar com um forte vento oriental durante toda a noite. Os israelitas entraram pelo meio do mar em terra seca, com as águas como muro à direita e à esquerda.",
+			"bible_note": "Êxodo 14:19-22, 29.",
+			"references": ["Exod 14:19-22", "Exod 14:23-31", "Heb 11:29"],
+			"sections": [
+				{"kind": "biblical_text", "title": "A noite", "text": "A coluna passa para trás do povo e fica entre os dois acampamentos a noite toda (Êx 14:19-20). Moisés estende a mão sobre o mar, e o SENHOR faz o mar recuar com um forte vento oriental durante toda a noite; o mar vira terra seca, e as águas se dividem (v. 21). Os israelitas entram pelo meio do mar em terra seca, com as águas como muro à direita e à esquerda (v. 22)."},
+				{"kind": "biblical_text", "title": "Ao amanhecer", "text": "Os egípcios entram atrás, e na vigília da manhã o exército é lançado em confusão (Êx 14:23-25). Ao amanhecer, as águas voltam e cobrem os carros, os cavaleiros e todo o exército que tinha entrado no mar (v. 27-28). O texto conclui que assim o SENHOR salvou Israel naquele dia, e que o povo temeu ao SENHOR e creu nele e em Moisés, seu servo (v. 30-31)."},
+				{"kind": "interpretation", "title": "O muro e o vento", "text": "Há quem leia o \"muro\" das águas ao pé da letra e quem o entenda como imagem; há também explicações que buscam no vento um fenômeno natural. São interpretações. O texto atribui o acontecimento ao SENHOR, que age por meio do vento."},
+				{"kind": "interpretation", "title": "E o faraó?", "text": "Êxodo 14 diz que o exército e os carros do faraó foram cobertos pelas águas, mas não diz que o próprio rei morreu. O jogo não afirma isso."},
+				{"kind": "chronology", "title": "Uma noite", "text": "O texto marca o tempo por partes do dia: a noite inteira de vento (v. 21), a vigília da manhã (v. 24) e o amanhecer (v. 27). Não informa a data nem quantas horas levou a travessia. Muitos séculos depois, a carta aos Hebreus lembra a travessia como um ato de fé (Hb 11:29)."},
+				{"kind": "fiction", "title": "A cena do jogo", "text": "A cena é uma representação artística. A altura das águas, a largura do caminho e o número de pessoas foram escolhidos pelo jogo. O viajante apenas acompanha: não abre nada, não guia ninguém e não aparece no relato bíblico. A volta das águas não é mostrada."}
+			],
+			"related": {"people": ["moses"], "places": ["exodus_sea", "egypt"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM. Desfecho (14:27-28, 30) só narrado, sem imagem, conforme four_experiences_decisions.md. Aguarda revisão humana."}
+		},
+		{
+			"id": "fear_and_trust",
+			"title": "Medo e confiança",
+			"classification": "devotional_educational",
+			"presentation": "card",
+			"era_id": "exodus",
+			"summary": "Junto ao mar, o povo passou do medo (Êx 14:10-12) à confiança (Êx 14:31). No meio do medo, Moisés disse ao povo que não temesse e ficasse firme (Êx 14:13-14).",
+			"bible_note": "Êxodo 14:10-14, 31.",
+			"references": ["Exod 14:10-14", "Exod 14:31"],
+			"sections": [
+				{"kind": "biblical_text", "title": "Medo", "text": "Quando veem os egípcios se aproximando, os israelitas têm muito medo e clamam ao SENHOR. Depois perguntam a Moisés por que os tirou do Egito para morrer no deserto e dizem que teria sido melhor continuar servindo aos egípcios (Êx 14:10-12)."},
+				{"kind": "biblical_text", "title": "Uma palavra no meio do medo", "text": "Moisés diz ao povo que não tenha medo, que fique firme e veja a salvação que o SENHOR faria naquele dia, e que o SENHOR lutaria por eles enquanto eles ficariam quietos (Êx 14:13-14)."},
+				{"kind": "biblical_text", "title": "Depois", "text": "Diante do que o SENHOR fez, o povo temeu ao SENHOR e creu no SENHOR e em Moisés, seu servo (Êx 14:31)."},
+				{"kind": "interpretation", "title": "Uma leitura", "text": "Muitos leitores veem neste capítulo um retrato de como a confiança pode nascer no meio do medo, e não só depois dele. É uma leitura devocional: o texto narra o que aconteceu, sem transformar o episódio numa regra."},
+				{"kind": "fiction", "title": "No jogo", "text": "Tzvi, Nava e as famílias são personagens do jogo. O que dizem é ficção e não substitui o relato. O resumo das palavras de Moisés na voz de Tzvi vem sempre seguido da referência."}
+			],
+			"related": {"people": ["moses"], "places": ["exodus_sea"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM; leitura devocional identificada como interpretação. Aguarda revisão humana."}
+		},
+		{
+			"id": "miriam_song",
+			"title": "O cântico e os tamborins",
+			"classification": "recorded_event",
+			"presentation": "toast",
+			"era_id": "exodus",
+			"summary": "Depois da travessia, Moisés e os israelitas cantaram um cântico ao SENHOR (Êx 15:1). Miriã, a profetisa, irmã de Arão, pegou um tamborim, e as mulheres saíram atrás dela com tamborins e danças (Êx 15:20-21).",
+			"bible_note": "Êxodo 15:1, 20-21.",
+			"references": ["Exod 15:1", "Exod 15:20-21"],
+			"sections": [
+				{"kind": "biblical_text", "title": "No texto", "text": "Êxodo 15 começa com o cântico de Moisés e dos filhos de Israel ao SENHOR (Êx 15:1-18). Depois, Miriã, a profetisa, irmã de Arão, pega um tamborim; todas as mulheres saem atrás dela com tamborins e danças, e ela lhes responde com um refrão (Êx 15:20-21)."},
+				{"kind": "interpretation", "title": "Poesia e narrativa", "text": "O capítulo 15 celebra o mesmo acontecimento em linguagem poética, com imagens próprias. Por isso essas imagens não devem ser lidas como detalhes a mais da cena narrada no capítulo 14."},
+				{"kind": "historical", "title": "Tamborins", "text": "Tamborins de mão, com pele esticada num aro, aparecem em representações antigas do Egito e do Levante, muitas vezes nas mãos de mulheres, em festas e celebrações."},
+				{"kind": "fiction", "title": "No jogo", "text": "No acampamento, os tamborins são só ouvidos ao longe. Nenhuma letra é cantada, e Miriã não aparece em cena."}
+			],
+			"related": {"people": ["miriam", "moses"], "places": ["exodus_sea"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM. Contexto dos tamborins é afirmação geral a confirmar pelo revisor histórico. Exige Exod 15 em verse_counts.json. Aguarda revisão humana."}
+		}
+	]
+}

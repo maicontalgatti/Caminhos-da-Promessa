@@ -54,6 +54,7 @@ Nenhuma foi validada por sessão de jogo humana ainda.
 | Exe Windows único com autoteste (`-- --self-test`), que confere também regiões, mapas, itens, colecionáveis, missões da v0.4 e todos os arquivos de som | `tools/build_windows.ps1` | build da v0.5.0 em 2026-10-14 (ver HANDOFF) |
 
 ## Implementado, mas sem verificação completa
+- Infraestrutura de cenas dirigidas, luz por estado, passagens de saída e destino de experiências (ADR-028; branch `content/four-experiences`, ainda sem commit): suíte 775/775 em 2026-10-14 com dados de teste; sem cena real, sem captura, efeitos não vistos por uma pessoa (KI-20).
 - Painel de debug F3 (só build de debug): na v0.2.0 foi conferido que ele carrega via "Testar missão" e que fica **fora** do exe (autoteste); não há teste automatizado das ações dele, e o uso manual não foi verificado.
 - Plugin "Editor de missões" (`addons/quest_editor/`): modelo de dados testado; **interface gráfica no editor não testada** com mouse.
 - Ajuste de sensação de jogo (velocidade, legibilidade, ritmo): critérios da fase 3 do roadmap ainda **não validados jogando**.
@@ -73,7 +74,7 @@ Fonte: [docs/roadmap.md](../roadmap.md) e [docs/game_design.md](../game_design.m
 ## Problemas conhecidos (resumo)
 Nenhum teste de jogo humano (KI-02); conteúdo bíblico sem revisão humana (KI-03);
 `build_all.ps1` sobrescreve o mapa (KI-04); tradução bíblica provisória, NVI sem permissão (KI-06); partes da expansão pendentes (KI-13);
-afirmações históricas da estrada e de Dotã aguardam revisão humana (KI-14); efeitos sonoros procedurais sem escuta humana (KI-16); falha intermitente da suíte em observação (KI-17). Lista completa em [KNOWN_ISSUES.md](KNOWN_ISSUES.md).
+afirmações históricas da estrada e de Dotã aguardam revisão humana (KI-14); efeitos sonoros procedurais sem escuta humana (KI-16); falha intermitente da suíte em observação (KI-17); cenas dirigidas sem cena real nem avaliação visual (KI-20). Lista completa em [KNOWN_ISSUES.md](KNOWN_ISSUES.md).
 
 ## Próximos passos
 1. Repositório público e pronto para colaboração ([CONTRIBUTING.md](../../CONTRIBUTING.md), [START_WITH_AI.md](../../START_WITH_AI.md)). Mudanças entram por pull request revisado.

@@ -396,3 +396,20 @@ no ciclo fica explicitamente pendente.
 
 ### Não verificado / pendente
 - Build do exe não refeito (nada do exe mudou). Resultado do workflow e da publicação no HANDOFF.
+
+## 2026-10-14 — Infraestrutura: cenas dirigidas, luz por estado, experiências com destino (ADR-028)
+
+### Entregue
+- `scripts/world/scene_database.gd`, `scene_director.gd`, `scene_actor.gd`, `scene_fx.gd`, `world_schema.gd` (novos); integração em `game.gd`, `game_map.gd` (luz), `world_manager.gd` (destino, etapas, passagens), `map_exit.gd`, `scripture_map.gd` (botão e cartão de passagem), `quest_database.gd`, `dialogue_database.gd`, fábrica, `validate_content.gd`, `export_self_test.gd`.
+- `data/world/experiences.json`: `travel` em `isaac_wells` e `joseph_dothan` (e `regions` em `joseph_dothan`). Nenhum conteúdo de episódio, nenhum campo novo no save.
+- `tests/scene_tests.gd` + `tests/data/scenes/test_scenes.json` (fora da exportação).
+
+### Problemas corrigidos durante a tarefa
+- A chave proibida `points` (recompensa) colidia com `params.points` do `light_glow`: virou `score`.
+- Erro de referência repetido pelo catálogo (início e fim do intervalo) agora aparece uma vez só nas cenas.
+
+### Verificado
+- Suíte 775/775, fluxo 17/17, validação sem erros, fábrica 0 erros em 78 episódios; autoteste (`-- --self-test`) rodado pelo editor: checagens de cenas aprovadas (as 4 falhas são as esperadas fora de um exe release).
+
+### Não verificado / pendente
+- Exe não gerado; efeitos sem avaliação visual nem captura; propostas de `production/` divergem do formato (KI-20).

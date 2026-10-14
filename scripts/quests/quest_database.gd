@@ -9,13 +9,14 @@ const QUEST_DIR := "res://data/quests"
 const EVENT_TYPES := ["dialogue_finished", "custom", "presentation_finished", "discovery",
 	"interact", "region_entered", "prologue_finished", "quest_completed", "flag",
 	"item_collected", "item_received", "item_delivered", "choice_made", "experience_started",
-	"location_reached", "collectible_found", "collection_completed", "region_unlocked",
+	"location_reached", "collectible_found", "collection_completed", "region_unlocked", "scene_finished",
 	# gatilhos de estado (reavaliados sempre): quantidade na bolsa, progresso de coleção, condição composta
 	"inventory", "collection", "condition"]
 const STATE_EVENTS := ["inventory", "collection", "condition", "flag"]
 ## alvo "region" aponta para outra região; os demais podem trazer "region" quando estão fora do mapa da missão.
-## "ui" é uma tela do jogo (ex.: scripture_map), sem posição no mapa.
-const TARGET_TYPES := ["npc", "dialogue", "region", "area", "pickup", "examinable", "exit", "ui"]
+## "ui" é uma tela do jogo (ex.: scripture_map), sem posição no mapa; "scene" é uma
+## cena dirigida de data/scenes (também sem posição: aponte junto o que a dispara).
+const TARGET_TYPES := ["npc", "dialogue", "region", "area", "pickup", "examinable", "exit", "ui", "scene"]
 const UI_TARGETS := ["scripture_map", "inventory", "journal"]
 const QUEST_TYPES := ["context_exploration", "story_witness", "assist", "investigation", "journey"]
 const CATEGORIES := ["main", "side", "exploration"]
@@ -39,6 +40,7 @@ const OBJECTIVE_TYPES := {
 	"interact_with_object": ["interact", "custom"],
 	"unlock_region": ["region_unlocked"],
 	"read_scripture": ["presentation_finished"],
+	"observe_scene": ["scene_finished", "presentation_finished"],
 }
 const REQUIRED_FIELDS := ["id", "title", "description", "type", "classification", "region", "place_id",
 	"era_id", "references", "intro", "start", "prerequisites", "objectives", "discoveries", "completion", "verification"]
@@ -164,8 +166,9 @@ static func _validate_trigger(owner: String, t: Variant) -> PackedStringArray:
 
 
 ## Confere vínculos com outros dados: referências, épocas, lugares, descobertas,
-## apresentações, personagens e diálogos citados em alvos e gatilhos.
-func validate_links(q: Dictionary, catalog: BibleCatalog, dialogues: Dictionary, characters: Dictionary, regions: Dictionary) -> PackedStringArray:
+## apresentações, personagens e diálogos citados em alvos e gatilhos; com
+## `scenes` (id -> cena), também as cenas dirigidas.
+func validate_links(q: Dictionary, catalog: BibleCatalog, dialogues: Dictionary, characters: Dictionary, regions: Dictionary, scenes: Variant = null) -> PackedStringArray:
 	var id := "missão " + String(q.get("id", "?"))
 	var out := PackedStringArray()
 	out.append_array(catalog.validate_references(id, q.get("references", [])))
@@ -195,8 +198,13 @@ func validate_links(q: Dictionary, catalog: BibleCatalog, dialogues: Dictionary,
 				out.append("%s: alvo NPC inexistente \"%s\"" % [oid, t.id])
 			elif t.type == "dialogue" and not dialogues.has(t.id):
 				out.append("%s: alvo de diálogo inexistente \"%s\"" % [oid, t.id])
+			elif t.type == "scene" and scenes is Dictionary and not scenes.has(t.id):
+				out.append("%s: alvo de cena inexistente \"%s\"" % [oid, t.id])
 		var trig: Dictionary = o.get("complete_on", {})
 		match String(trig.get("event", "")):
+			"scene_finished":
+				if scenes is Dictionary and not scenes.has(trig.id):
+					out.append("%s: gatilho cita cena inexistente \"%s\"" % [oid, trig.id])
 			"dialogue_finished", "interact":
 				if not dialogues.has(trig.id):
 					out.append("%s: gatilho cita diálogo inexistente \"%s\"" % [oid, trig.id])

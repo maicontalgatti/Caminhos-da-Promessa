@@ -724,13 +724,43 @@
 				"new_map_needed": true,
 				"difficulty": "high"
 			},
-			"status": "idea",
+			"status": "approved_for_implementation",
 			"status_history": [
 				{
 					"status": "idea",
 					"date": "2026-10-14",
 					"by": "factory import-seed",
 					"note": "Importado do catálogo-semente; não implementado nem validado."
+				},
+				{
+					"status": "researched",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "designed",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "awaiting_biblical_review",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "awaiting_historical_review",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "approved_for_implementation",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
 				}
 			],
 			"game": {},
@@ -1246,13 +1276,43 @@
 				"new_map_needed": true,
 				"difficulty": "high"
 			},
-			"status": "idea",
+			"status": "approved_for_implementation",
 			"status_history": [
 				{
 					"status": "idea",
 					"date": "2026-10-14",
 					"by": "factory import-seed",
 					"note": "Importado do catálogo-semente; não implementado nem validado."
+				},
+				{
+					"status": "researched",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "designed",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "awaiting_biblical_review",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "awaiting_historical_review",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "approved_for_implementation",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
 				}
 			],
 			"game": {},
@@ -1931,13 +1991,43 @@
 				"new_map_needed": true,
 				"difficulty": "high"
 			},
-			"status": "idea",
+			"status": "approved_for_implementation",
 			"status_history": [
 				{
 					"status": "idea",
 					"date": "2026-10-14",
 					"by": "factory import-seed",
 					"note": "Importado do catálogo-semente; não implementado nem validado."
+				},
+				{
+					"status": "researched",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "designed",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "awaiting_biblical_review",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "awaiting_historical_review",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "approved_for_implementation",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
 				}
 			],
 			"game": {},
@@ -3674,13 +3764,43 @@
 				"new_map_needed": true,
 				"difficulty": "high"
 			},
-			"status": "idea",
+			"status": "approved_for_implementation",
 			"status_history": [
 				{
 					"status": "idea",
 					"date": "2026-10-14",
 					"by": "factory import-seed",
 					"note": "Importado do catálogo-semente; não implementado nem validado."
+				},
+				{
+					"status": "researched",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "designed",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "awaiting_biblical_review",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "awaiting_historical_review",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "approved_for_implementation",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
 				}
 			],
 			"game": {},

@@ -1,0 +1,55 @@
+{
+	"_comment": "DADOS DE TESTE (tests/scene_tests.gd). Não é conteúdo do jogo: fica fora de data/ e da exportação (tests/* em exclude_filter). Cobre todos os tipos de passo e de efeito da cena dirigida.",
+	"scenes": [
+		{
+			"id": "test_scene_full",
+			"region": "dothan",
+			"title": "Cena de teste",
+			"classification": "plausible_fiction",
+			"references": ["Gen 26:20"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Dados de teste automatizado."},
+			"skippable": true,
+			"steps": [
+				{"type": "camera", "to": [400, 300], "time": 0.2, "zoom": 0.8, "wait": true},
+				{"type": "actor", "id": "a1", "sprite": "adina", "at": [380, 300], "facing": "right"},
+				{"type": "actor", "id": "camel", "sprite": "silhouette_camel", "at": [500, 300], "facing": "left"},
+				{"type": "actor", "id": "fam", "sprite": "silhouette_family_a", "at": [520, 320], "facing": "up", "pose": "stand"},
+				{"type": "move", "actor": "camel", "path": [[460, 300], [440, 300]], "speed": 300},
+				{"type": "effect", "effect": "light_glow", "on": true, "at": [400, 280], "params": {"id": "glow", "radius_from": 4, "radius": 40, "time": 0.2, "intensity": 0.7}},
+				{"type": "effect", "effect": "light_glow", "on": true, "at": [400, 200], "params": {"id": "host", "points": 6, "spread": [120, 40], "radius": 5}},
+				{"type": "effect", "effect": "pillar", "on": true, "at": [600, 300], "params": {"form": "cloud_fire", "height": 60, "light_radius": 40}},
+				{"type": "effect", "effect": "wind", "on": true, "at": [400, 300], "params": {"from": "east", "strength": 0.5}},
+				{"type": "effect", "effect": "dust", "on": true, "at": [700, 320], "params": {"density": "low"}},
+				{"type": "effect", "effect": "water_walls", "on": true, "at": [520, 400], "params": {"to": [520, 250], "open_time": 0.2}, "wait": true},
+				{"type": "tint", "color": "#303050", "time": 0.2, "wait": true},
+				{"type": "caption", "scripture": "Gen 26:20", "time": 0.3, "wait": true},
+				{"type": "caption", "text": "Legenda de teste do narrador.", "kind": "narration", "time": 0.2},
+				{"type": "sfx", "id": "page_turn"},
+				{"type": "pose", "actor": "a1", "pose": "sit"},
+				{"type": "pose", "actor": "fam", "pose": "hand_out", "facing": "left"},
+				{"type": "effect", "effect": "pillar", "on": true, "at": [620, 300], "params": {"time": 0.1}},
+				{"type": "wait", "time": 0.2},
+				{"type": "effect", "effect": "light_glow", "on": false, "params": {"id": "host", "rise": 20, "time": 0.1}},
+				{"type": "remove", "actor": "camel"},
+				{"type": "player_to", "at": [300, 304], "facing": "down"},
+				{"type": "camera", "follow": "player", "time": 0.1, "wait": true}
+			],
+			"on_end": {"set_flags": ["test_scene_flag"], "player_to": {"at": [300, 304], "facing": "down"}}
+		},
+		{
+			"id": "test_scene_long",
+			"region": "dothan",
+			"title": "Cena longa de teste (para pular)",
+			"classification": "plausible_fiction",
+			"references": ["Gen 26:20"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Dados de teste automatizado."},
+			"steps": [
+				{"type": "actor", "id": "p1", "sprite": "silhouette_merchant", "at": [400, 300], "facing": "left"},
+				{"type": "effect", "effect": "water_walls", "on": true, "at": [520, 400], "params": {"to": [520, 250], "open_time": 30}},
+				{"type": "tint", "color": "#000000", "time": 30, "wait": true},
+				{"type": "caption", "text": "Esta legenda nunca deveria aparecer em teste.", "kind": "fiction", "wait": true}
+			],
+			"on_end": {"set_flags": ["test_long_flag"], "player_to": {"at": [320, 304], "facing": "left"}}
+		}
+	]
+}

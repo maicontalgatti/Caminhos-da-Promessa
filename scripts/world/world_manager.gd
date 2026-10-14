@@ -2,13 +2,16 @@ extends Node
 ## Mundo com múltiplas regiões. Cada região (data/regions) declara seu mapa,
 ## pontos de entrada, saídas (com condições), áreas, NPCs, objetos examináveis
 ## e itens no chão. Este nó resolve viagens, rotas e o "Mapa das Escrituras"
-## (experiências por época, em data/world/experiences.json).
+## (experiências por época, em data/world/experiences.json, com destino
+## "travel"/"entry_if", etapas "stages" e cartões "passage").
 ##
 ## A troca visual do mapa é feita pela cena de jogo (sinal travel_requested);
 ## o estado (região, entrada) é atualizado aqui, então funciona também sem tela.
 
 signal travel_requested(region_id: String, entry_id: String)
 signal experience_started(experience_id: String)
+## Saída com "passage": a cena de jogo mostra o cartão e então chama travel().
+signal passage_requested(passage: Dictionary, region_id: String, entry_id: String)
 
 const EXPERIENCES_DIR := "res://data/world"
 const FACINGS := {"down": Vector2.DOWN, "up": Vector2.UP, "left": Vector2.LEFT, "right": Vector2.RIGHT}
@@ -126,6 +129,14 @@ func travel(region_id: String, entry_id: String) -> String:
 	return ""
 
 
+## Viagem precedida de um cartão de passagem ({title, lines}); sem tela de jogo, viaja direto.
+func travel_with_passage(region_id: String, entry_id: String, passage: Dictionary) -> String:
+	if passage.is_empty() or passage_requested.get_connections().is_empty():
+		return travel(region_id, entry_id)
+	passage_requested.emit(passage, region_id, entry_id)
+	return ""
+
+
 # --- Estado persistente de objetos -------------------------------------------
 
 func world_key(region_id: String, object_id: String) -> String:
@@ -161,21 +172,100 @@ func experience_state(id: String) -> String:
 	return "available" if Conditions.check(e.get("requires")) else "locked"
 
 
-## Inicia uma experiência disponível: registra o evento e, se ela define um
-## destino, leva o jogador até lá. Retorna "" ou o motivo da recusa.
+## {region, entry} de um "travel": a primeira entrada de "entry_if" cuja
+## condição vale, senão "entry" (padrão "default"). {} sem região.
+func resolve_travel(t: Variant) -> Dictionary:
+	if not (t is Dictionary) or String(t.get("region", "")) == "":
+		return {}
+	var entry := String(t.get("entry", "default"))
+	for alt in t.get("entry_if", []):
+		if alt is Dictionary and Conditions.check(alt.get("if")):
+			entry = String(alt.get("entry", entry))
+			break
+	return {"region": String(t.region), "entry": entry}
+
+
+## Etapa atual de uma experiência com "stages": a última cuja condição "if"
+## vale (etapa sem "if" sempre vale). {} sem etapas.
+func experience_stage(id: String) -> Dictionary:
+	var cur := {}
+	for st in experience(id).get("stages", []):
+		if st is Dictionary and Conditions.check(st.get("if")):
+			cur = st
+	return cur
+
+
+static func stage_flag(xid: String, stage_id: String) -> String:
+	return "experience_stage:%s:%s" % [xid, stage_id]
+
+
+## Destino ao iniciar, continuar ou revisitar: travel da etapa atual ou da experiência.
+func experience_destination(id: String) -> Dictionary:
+	var st := experience_stage(id)
+	if not st.is_empty():
+		return resolve_travel(st.get("travel"))
+	return resolve_travel(experience(id).get("travel"))
+
+
+## Regiões que fazem parte da experiência ("regions"; padrão: as de travel e das etapas).
+func experience_regions(id: String) -> Array:
+	var x := experience(id)
+	if x.get("regions") is Array:
+		return x.regions
+	var travels: Array = [x.get("travel")]
+	for st in x.get("stages", []):
+		if st is Dictionary:
+			travels.append(st.get("travel"))
+	var out: Array = []
+	for t in travels:
+		if t is Dictionary and not out.has(String(t.get("region", ""))):
+			out.append(String(t.get("region", "")))
+	return out
+
+
+## Se iniciar a experiência agora leva a outra região (destino diferente da atual).
+func _needs_travel(id: String, dest: Dictionary) -> bool:
+	if dest.is_empty():
+		return false
+	if not experience_stage(id).is_empty():
+		return String(dest.region) != current_region_id()
+	return not (current_region_id() in experience_regions(id))
+
+
+## Cartão a mostrar antes de iniciar/continuar: a "passage" da experiência na
+## primeira vez, ou a da etapa atual ainda não vista quando a viagem acontece.
+func pending_passage(id: String) -> Dictionary:
+	var x := experience(id)
+	var state := experience_state(id)
+	if state == "available" and x.get("passage") is Dictionary and GameState.get_flag("experience:" + id) != true:
+		return x.passage
+	if state in ["planned", "locked"]:
+		return {}
+	var st := experience_stage(id)
+	if st.get("passage") is Dictionary and GameState.get_flag(stage_flag(id, String(st.get("id", "")))) != true \
+			and _needs_travel(id, experience_destination(id)):
+		return st.passage
+	return {}
+
+
+## Inicia (ou continua, ou revisita) uma experiência: registra o evento e, se
+## ela define um destino fora das suas regiões, leva o jogador até lá.
+## Retorna "" ou o motivo da recusa.
 func start_experience(id: String) -> String:
 	var state := experience_state(id)
 	if state == "planned":
 		return "Esta experiência ainda está em planejamento."
 	if state == "locked":
 		return String(experience(id).get("locked_text", "Ainda não disponível."))
-	var e := experience(id)
 	if GameState.get_flag("experience:" + id) != true:
 		GameState.set_flag("experience:" + id, true)
 		GameState.add_log("experience", id)
 		QuestManager.record_event("experience_started", id)
 		experience_started.emit(id)
-	var dest: Variant = e.get("travel")
-	if dest is Dictionary and String(dest.get("region", "")) != current_region_id():
-		return travel(String(dest.region), String(dest.get("entry", "default")))
-	return ""
+	var dest := experience_destination(id)
+	if not _needs_travel(id, dest):
+		return ""
+	var st := experience_stage(id)
+	if not st.is_empty():
+		GameState.set_flag(stage_flag(id, String(st.get("id", ""))), true)
+	return travel(String(dest.region), String(dest.entry))

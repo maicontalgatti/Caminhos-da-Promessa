@@ -3,6 +3,11 @@
 Resumo por versão/entrega. Detalhes, problemas corrigidos e o que não foi verificado estão em
 [docs/implementation_log.md](../implementation_log.md).
 
+## 2026-10-14 — Infraestrutura de cenas dirigidas, luz por estado e experiências com destino (branch `content/four-experiences`)
+- Cenas dirigidas por dados (`data/scenes/*.json`): `SceneDatabase`, `SceneDirector`, `SceneActor`, `SceneFx` (brilho, coluna de nuvem/fogo, vento, paredes de água, poeira); ação de diálogo `{"scene": id}`; Esc pula para o estado final; evento `scene_finished`, objetivo `observe_scene`, alvo `scene`; ADR-028.
+- Região: `lighting [{if, tint}]` e `exits[].passage`. Experiência: `travel`, `entry_if`, `regions`, `stages`; botão Iniciar/Continuar/Revisitar no Mapa das Escrituras; `isaac_wells` e `joseph_dothan` ganharam destino na aldeia.
+- Validador, fábrica e autoteste do exe conhecem cenas; `tests/scene_tests.gd` (suíte 665 → 775). Sem conteúdo de episódio e sem mudança no save.
+
 ## 2026-10-14 — Publicação pública e colaboração com IA (documentação e repositório; jogo sem mudanças)
 - Auditoria de segurança do histórico completo e auditoria de direitos autorais; inventário em `docs/legal/ASSET_LICENSES.md`.
 - Licenças: `LICENSE` (MIT, código) e `LICENSE-ASSETS.md` (CC BY 4.0, arte, sons e textos próprios); ADR-027.

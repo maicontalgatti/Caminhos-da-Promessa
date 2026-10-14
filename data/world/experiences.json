@@ -1,5 +1,5 @@
 {
-	"_comment": "Mapa das Escrituras: experiências jogáveis agrupadas por época. O jogador não caminha entre épocas; a passagem é narrativa e identificada. status 'planned' = em planejamento (aparece, mas não é jogável). Sem datas exatas para cronologias debatidas.",
+	"_comment": "Mapa das Escrituras: experiências jogáveis agrupadas por época. O jogador não caminha entre épocas; a passagem é narrativa e identificada. status 'planned' = em planejamento (aparece, mas não é jogável). Sem datas exatas para cronologias debatidas. Campos de destino (docs/quests.md): travel {region, entry, entry_if}, regions (onde 'Continuar' não viaja), stages [{id, if, travel, passage}], passage {title, lines}.",
 	"eras": [
 		{"id": "patriarchs", "label": "Patriarcas", "chronology_era": "patriarchs"},
 		{"id": "exodus", "label": "Êxodo", "chronology_era": "exodus"},
@@ -16,6 +16,7 @@
 			"status": "available",
 			"completed_by": "canaan_wells",
 			"active_with_quest": true,
+			"travel": {"region": "canaan_village", "entry": "default"},
 			"summary": "Na aldeia, a vida gira em torno do poço. O diário do viajante traz o relato de Isaque reabrindo os poços de seu pai."
 		},
 		{
@@ -28,6 +29,8 @@
 			"requires": {"quest_completed": "canaan_wells"},
 			"locked_text": "Explore primeiro \"Os poços de Isaque\" para abrir esta experiência.",
 			"completed_by": "joseph_dothan_road",
+			"travel": {"region": "canaan_village", "entry": "default"},
+			"regions": ["canaan_village", "caravan_road", "dothan"],
 			"summary": "Os irmãos de José levaram o rebanho para pastos distantes. Siga o caminho que leva até Dotã.",
 			"passage": {
 				"title": "OUTRO MOMENTO DA HISTÓRIA",

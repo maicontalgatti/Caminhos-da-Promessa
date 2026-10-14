@@ -65,6 +65,13 @@ func _run() -> void:
 	check(catalog.discoveries.size() >= 10 and catalog.presentations.has("gen_026_wells"), "descobertas e apresentação de Gn 26 carregadas")
 	check(catalog.verses_of("Gen 26:18-22").size() == 5, "texto bíblico de Gn 26:18-22 carregado (%s)" % catalog.translation.get("abbrev", "?"))
 	check(QuestManager.db.errors.is_empty() and QuestManager.db.order.has("canaan_wells"), "missão dos poços carregada %s" % [QuestManager.db.errors])
+	var scenes := SceneDatabase.new()
+	scenes.load_dir()
+	check(scenes.errors.is_empty() and scenes.order.size() == JsonUtil.read_collection(SceneDatabase.SCENES_DIR, "scenes", PackedStringArray()).size(),
+		"cenas dirigidas de data/scenes carregadas (%d) %s" % [scenes.order.size(), scenes.errors])
+	var director := SceneDirector.new()
+	check(director != null, "diretor de cenas dirigidas compilado")
+	director.free()
 	check(GameData.prologues.has("new_game"), "prólogo carregado")
 	check(not ResourceLoader.exists("res://scripts/ui/debug_panel.gd"), "painel de debug fora da build pública")
 	check(not OS.is_debug_build(), "controles de debug desativados (build release)")

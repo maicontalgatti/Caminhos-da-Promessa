@@ -1,8 +1,9 @@
 class_name MapExit
 extends Area2D
 ## Saída de mapa criada a partir de "exits" da região:
-## {id, rect: [x, y, w, h], to, entry, label, requires?, locked_text?}.
+## {id, rect: [x, y, w, h], to, entry, label, requires?, locked_text?, passage?}.
 ## Ao entrar com a saída aberta, viaja; fechada, avisa e empurra o jogador de volta.
+## Com "passage" ({title, lines}), mostra antes o cartão "OUTRO MOMENTO DA HISTÓRIA".
 
 const ARM_DELAY := 0.5
 
@@ -80,5 +81,10 @@ func _on_player_inside(body: Player) -> void:
 			_cooldown = 2.0
 		body.global_position += _inward() * 10.0
 		body.velocity = Vector2.ZERO
+		return
+	if data.get("passage") is Dictionary:
+		body.global_position += _inward() * 10.0
+		body.velocity = Vector2.ZERO
+		WorldManager.travel_with_passage(String(data.to), String(data.get("entry", "default")), data.passage)
 		return
 	WorldManager.travel(String(data.to), String(data.get("entry", "default")))

@@ -1,0 +1,47 @@
+{
+	"episode": "ep_048_o_nascimento_de_jesus",
+	"_comment": "Veredito de agente nunca é 'verified'. Só uma pessoa preenche human.approved_by. Escopo: experiência 'Os pastores de Belém' (Lc 2:8-20; contexto 2:1-7).",
+	"biblical": {
+		"verdict": "ok_for_human_review",
+		"reviewer_agent": "biblical-verifier (subagente 9a258f05-e63f-4bc5-a968-18b76ecaf0b1)",
+		"date": "2026-10-14",
+		"scope": "dialogues, discoveries, presentations, scenes, experience, bible_entries, characters, collectibles e textos de quest.proposal.json do pacote",
+		"limits": "Lc 2:1-20 e 1Sm 16-17 conferidos contra o VPL oficial. Exibição no jogo não executada na revisão.",
+		"first_pass": "changes_required (V09..V17)",
+		"recheck": {"date": "2026-10-14", "verdict": "ok_for_human_review", "result": "V09..V16 resolvidos; V17 informativo (origem do bpm.json a confirmar por pessoa)."}
+	},
+	"historical": {
+		"verdict": "ok_for_human_review",
+		"reviewer_agent": "historical-reviewer (subagente 35e5b3cb-e00e-431d-bb5b-2c1f25678a32)",
+		"date": "2026-10-14",
+		"scope": "textos, descrições visuais, props e cenas propostos, contra research_historical.md",
+		"limits": "Fontes citadas de memória ('a confirmar' na ficha).",
+		"first_pass": "changes_required (H01)",
+		"recheck": {"date": "2026-10-14", "verdict": "ok_for_human_review", "result": "H01..H04 resolvidos."}
+	},
+	"findings": [
+		{"id": "H01", "source": "historical", "severity": "major", "status": "resolved", "where": "region subtitle; discoveries bethlehem_first_century", "problem": "'Século I' sugere d.C.; o relato é nos dias de Herodes.", "fix": "'Nos dias do rei Herodes (data debatida)'."},
+		{"id": "H02", "source": "historical", "severity": "minor", "status": "resolved", "where": "subtitle, descoberta", "problem": "'Sob domínio romano' impreciso.", "fix": "'Judeia governada por Herodes, rei aliado de Roma'."},
+		{"id": "H03", "source": "historical", "severity": "minor", "status": "resolved", "where": "falas de Tamir e Shai", "problem": "Pontos cardeais contraditórios com o mapa.", "fix": "Referências do mapa ('encosta abaixo', 'nas rochas')."},
+		{"id": "H04", "source": "historical", "severity": "low", "status": "resolved", "where": "night_shepherding", "problem": "Costume posterior como fato.", "fix": "'segundo relatos de pastores da região (costume posterior)'."},
+		{"id": "V09", "source": "biblical", "severity": "major", "status": "resolved", "where": "follow_shepherds.log", "problem": "Composição do jogo sob a referência de Lc 2:16.", "fix": "Casa como representação; Lc 2:16 citado separado."},
+		{"id": "V10", "source": "biblical", "severity": "minor", "status": "resolved", "where": "return_to_fire.log", "problem": "Tamir ouvindo o relato parecia registrado em Lucas.", "fix": "'Tamir é fictício; Lucas 2:17-18 não diz quem ouviu'."},
+		{"id": "V11", "source": "biblical", "severity": "minor", "status": "resolved", "where": "night_watch.log", "problem": "Elementos do jogo sob a referência.", "fix": "'três pastores (representação)'."},
+		{"id": "V12", "source": "biblical", "severity": "minor", "status": "resolved", "where": "stories era.certainty", "problem": "Valor fora da regra 7.", "fix": "'debated', sem ano."},
+		{"id": "V13", "source": "biblical", "severity": "low", "status": "resolved", "where": "scene shepherds_at_the_house", "problem": "Luzes de 'vizinhos' sugeriam quem ouviu.", "fix": "Removidas."},
+		{"id": "V14", "source": "biblical", "severity": "low", "status": "resolved", "where": "passage, bethlehem_first_century", "problem": "Lc 1:5 data o anúncio a Zacarias.", "fix": "'Lucas situa estes relatos nos dias de Herodes (Lc 1:5; cf. Mt 2:1)'."},
+		{"id": "V15", "source": "biblical", "severity": "low", "status": "resolved", "where": "manger_katalyma", "problem": "Afirmação sem referência nos dados.", "fix": "Marcada 'referência a importar' (Lc 22:11)."},
+		{"id": "V16", "source": "biblical", "severity": "info", "status": "resolved", "where": "bn_fold_round targets", "problem": "Alvo inexistente.", "fix": "bn_shai."},
+		{"id": "V17", "source": "biblical", "severity": "info", "status": "resolved", "where": "comentários BPM", "problem": "Confirmar origem do bpm.json.", "fix": "Licença registrada; origem a confirmar por pessoa."}
+	],
+	"open_for_human": [
+		"Decisões provisórias: anjo só como luz; 3 pastores representados; casa vista de fora; só texto.",
+		"chronology.json (shepherds_bethlehem): certeza mudou de approximate para debated pelo coordenador; faixa −6 a −4 mantida só na linha do tempo; a experiência não mostra ano.",
+		"Rótulo da época 'Século I' no Mapa das Escrituras (first_century) a ajustar."
+	],
+	"human": {
+		"approved_by": "",
+		"date": "",
+		"notes": ""
+	}
+}

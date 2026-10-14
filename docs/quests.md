@@ -183,6 +183,89 @@ saídas de mapa, nos NPCs, nas experiências e nos gatilhos `condition`:
 Efeitos de nó ou de escolha: `set_flags`/`flags`, `unlock` (descoberta), `event` (evento `custom`),
 `action: {"presentation": id}`, `give` / `take` (`[{"item", "qty"}]`; `take` é tudo ou nada, `give` acontece
 uma vez por nó/escolha, salvo `"repeatable": true`), `decision: {"id", "option"}`, `grant_collectible`.
+`action` aceita exatamente uma chave: `{"presentation": id}` ou `{"scene": id}` (cena dirigida, abaixo).
+
+## Cenas dirigidas (`data/scenes/*.json`, chave `scenes`) — ADR-028
+
+O jogador **assiste** a uma sequência no mapa da região (câmera, figurantes, luz, efeitos, legendas) e o
+controle volta no fim. Código: `SceneDatabase` (leitura e validação), `SceneDirector` (execução),
+`SceneActor` e `SceneFx` (figurantes e efeitos desenhados por código, sem assets externos).
+
+```json
+{
+  "id": "red_sea_crossing", "region": "<região onde toca>", "title": "Texto do rodapé",
+  "classification": "plausible_fiction", "references": ["Exo 14:21-22"],
+  "verification": {"status": "pending_review", "reviewer": "", "notes": ""},
+  "skippable": true, "repeatable": false,
+  "steps": [ { "type": "...", "...": "..." } ],
+  "on_end": {"set_flags": ["..."], "unlock": ["<descoberta>"], "player_to": {"at": [x, y], "facing": "down"}}
+}
+```
+
+Coordenadas em pixels do mapa (`[x, y]`); `time` em segundos. Todo passo aceita `"wait": true` (espera a
+duração do passo antes do próximo; sem isso os passos seguintes começam juntos).
+
+| `type` | Campos |
+|---|---|
+| `camera` | `to: [x,y]` **ou** `follow: "player"`; `time` (padrão 1); `zoom` (relativo ao zoom do jogador; 1 = normal) |
+| `actor` | `id`, `sprite` (id de `data/characters` ou `silhouette_*`), `at`, `facing` (`up/down/left/right`), `pose` |
+| `move` | `actor`, `path: [[x,y], ...]`, `speed` (px/s, padrão 30) |
+| `remove` | `actor` (ou `"*"` para todos) |
+| `pose` | `actor`, `pose` (`stand`, `sit`, `kneel`, `bow`, `fear`, `hand_out`), `facing` opcional |
+| `tint` | `color: "#rrggbb"`, `time` — luz temporária; no fim volta a regra `lighting` da região |
+| `effect` | `effect`, `on` (padrão true; false desliga), `at`, `id` opcional, `params` (abaixo) |
+| `caption` | `scripture: "Gen 26:20"` (texto via `Bible.quote`, com citação) **ou** `text` + `kind` (`narration`, `context`, `fiction`); `time` opcional (senão proporcional ao texto); com `wait`, E avança |
+| `sfx` | `id` do manifesto `data/audio/sfx.json`; sons em laço param no fim da cena |
+| `wait` | `time` |
+| `player_to` | `at`, `facing` — o último vale também ao pular |
+
+Silhuetas (`sprite` começando com `silhouette`): a forma vem de palavras no id — `family`, `camel`,
+`donkey`, `flock`/`sheep`/`goat`, `child`, `youth`, `elder`, `staff`, `merchant`; senão, uma pessoa.
+
+Efeitos (`params`; todos aceitam `time` de entrada/saída e `color: "#rrggbb"`). Ligar de novo o mesmo efeito
+(mesmo `id`, ou o nome do efeito quando não há `id`) **atualiza** posição e parâmetros:
+
+| `effect` | `params` |
+|---|---|
+| `light_glow` | `radius`, `radius_from` (começa nesse raio e cresce), `intensity` (0–1); `at` pode ser um ponto, uma lista de pontos ou um ponto + `points` (quantidade) + `spread: [l, a]`; ao desligar, `rise` (sobe N px) e `radius` |
+| `pillar` | `form` (`cloud`, `fire`, `cloud_fire`), `height`, `width`, `light_radius`, `opacity` |
+| `wind` | `from` (`east`, `west`, `north`, `south`), `strength` (0–1), `size: [l, a]` |
+| `water_walls` | `to: [x,y]` (fim do corredor; obrigatório), `width`, `wall`, `open_time` (abre aos poucos; padrão 6) |
+| `dust` | `radius`, `density` (`low`, `medium`, `high`) |
+
+Regras de execução:
+- Disparo: ação de diálogo `{"scene": id}` (ou `Game.play_scene(id)`). Só toca na `region` da cena, fora de
+  rascunho, sem outra cena ou viagem em andamento e, salvo `"repeatable": true`, uma única vez.
+- Durante a cena: UI bloqueada (sem diário, pausa, inventário, save), HUD escondido, jogador parado.
+  **Esc** pula para o estado final (se `skippable`, padrão true).
+- No fim (ou ao pular): remove figurantes e efeitos, aplica o `player_to` final, devolve a câmera, aplica
+  `on_end` (`set_flags`, `unlock`), registra o evento `scene_finished` e emite `scene_finished(id, skipped)`.
+- Cena **nunca** dá item, ponto ou poder: `give`, `items`, `rewards`, `reward`, `grant_collectible`, `score`,
+  `xp`, `power` são recusados em qualquer nível.
+- Save: nada novo. O estado é a flag `ev:scene_finished:<id>` e as flags do `on_end`.
+
+Missões: evento `scene_finished`, objetivo `type: "observe_scene"` (aceita `scene_finished` ou
+`presentation_finished`) e alvo `{"type": "scene", "id": ...}` conferido contra `data/scenes`.
+
+## Luz por estado, passagens e experiências com destino — ADR-028
+
+**Região** (`data/regions/*.json`):
+- `lighting: [{"if": condição, "tint": "#rrggbb"}, ..., {"tint": "#ffffff"}]` — vale a **primeira** regra cuja
+  condição é verdadeira (sem `if` = sempre). Reavaliada ao entrar na região e quando uma flag muda (transição
+  curta). Sem regra válida, sem tinta.
+- `exits[].passage: {"title": "OUTRO MOMENTO DA HISTÓRIA", "lines": ["..."]}` — antes de atravessar a saída,
+  mostra o cartão; confirmar viaja, fechar fica.
+
+**Experiência** (`data/world/experiences.json`):
+- `travel: {"region", "entry", "entry_if": [{"if": condição, "entry": id}]}` — destino de "Iniciar /
+  Continuar / Revisitar" no Mapa das Escrituras (M). A primeira `entry_if` verdadeira escolhe a entrada.
+- `regions: [...]` (opcional) — regiões que já fazem parte da experiência; estando numa delas, "Continuar"
+  não teleporta. Padrão: a região do `travel` e as das etapas.
+- `passage: {title, lines}` — cartão mostrado ao iniciar pela primeira vez.
+- `stages: [{"id", "if"?, "travel", "passage"?}]` — vale a **última** etapa cuja condição é verdadeira; o
+  botão leva à região dela. A `passage` da etapa aparece uma vez (flag `experience_stage:<exp>:<etapa>`).
+- O botão aparece para experiências disponíveis, em andamento ou concluídas (revisitar) que tenham destino;
+  experiências `planned` continuam sem botão.
 
 ## Cronologia (`data/bible/chronology.json`)
 

@@ -39,6 +39,7 @@ Fontes: [docs/implementation_log.md](../implementation_log.md), [docs/art_bible.
 | ADR-025 | Save v3 com migração da v2 | Adotada (agente) |
 | ADR-026 | Áudio central por manifesto, com efeitos procedurais provisórios | Adotada (criador pediu sons; formato do agente) |
 | ADR-027 | Repositório público com licença dupla (MIT + CC BY 4.0), PRs revisados e CI sem segredos | Adotada (criador) |
+| ADR-028 | Cenas dirigidas por dados, luz por estado e experiências com destino | Adotada (criador pediu; formato do agente) |
 
 ---
 
@@ -207,3 +208,15 @@ Fontes: [docs/implementation_log.md](../implementation_log.md), [docs/art_bible.
   - workflow `.github/workflows/tests.yml` com `contents: read`, gatilho `pull_request` (nunca `pull_request_target`), ação fixada por SHA, Godot oficial conferido por SHA-512, sem segredos, sem deploy e sem release automática; Dependabot só para as ações;
   - [START_WITH_AI.md](../../START_WITH_AI.md) como prompt de inicialização independente de ferramenta; [CONTRIBUTING.md](../../CONTRIBUTING.md) exige identificar conteúdo feito com IA e revisão humana do conteúdo bíblico.
 - **Consequências:** tudo que for versionado é público, inclusive o histórico; recursos externos só entram com licença registrada; a CI roda no Linux e não cobre o build do exe nem a verificação da wiki (PowerShell).
+
+### ADR-028 — Cenas dirigidas por dados, luz por estado e experiências com destino
+- **Data:** 2026-10-14 · **Status:** Adotada (o criador pediu a infraestrutura e a lista de recursos; formato e implementação são do agente)
+- **Problema:** os próximos episódios (ex.: travessia do mar, coluna de nuvem e fogo) precisam de momentos **assistidos** no mapa, com luz, figurantes e efeitos, e de experiências em vários momentos e regiões, sem reescrever a cinemática, as viagens ou o save e sem criar conteúdo dos episódios antes da revisão.
+- **Decisão:**
+  - `data/scenes/*.json` com passos declarativos (`camera`, `actor`, `move`, `remove`, `pose`, `tint`, `effect`, `caption`, `sfx`, `wait`, `player_to`) e `on_end` (`set_flags`, `unlock`, `player_to`). `SceneDatabase` valida sem autoloads (testes, validador, fábrica, autoteste do exe); `SceneDirector` toca no mapa atual, ao lado da `Cinematic` (ADR-013: sistema novo ao lado do antigo).
+  - Efeitos desenhados por código (`SceneFx`), sem assets externos; figurantes são personagens de `data/characters` ou silhuetas genéricas.
+  - Esc pula para o **estado final** (o mesmo `on_end` e `player_to`); cena não repete (salvo `repeatable`) e **nunca** concede item, ponto ou poder (chaves recusadas pelo validador).
+  - Missões: evento `scene_finished`, objetivo `observe_scene`, alvo `scene`. Diálogo: ação `{"scene": id}`.
+  - Região: `lighting [{if, tint}]` (primeira verdadeira) e `exits[].passage`. Experiência: `travel {region, entry, entry_if}`, `regions`, `stages [{id, if, travel, passage}]` (última verdadeira) e botão Iniciar/Continuar/Revisitar no Mapa das Escrituras.
+  - Save sem campos novos (`SAVE_VERSION` continua 3): tudo é flag (`ev:scene_finished:<id>`, `experience_stage:<exp>:<etapa>`, flags do `on_end`).
+- **Consequências:** cenas e luzes são revisáveis como dados (classificação, referências e `verification` obrigatórios; texto bíblico só via `scripture`). A tinta de cena é temporária; no fim vale a regra `lighting` da região. Nenhuma cena real existe ainda; a aparência dos efeitos não foi avaliada por uma pessoa (KI-20).

@@ -80,6 +80,14 @@ Sem áudio gravado: efeitos e ambiente existem desde a v0.5, mas são procedurai
 - **Situação:** o `HANDOFF.md` dos commits `218cb73` e `7243bcd` menciona o nome de uma segunda conta do `gh` configurada na máquina do criador. Não é credencial nem segredo (nomes de conta do GitHub são públicos); foi removido da versão atual antes da publicação.
 - **Ação:** apagar do histórico exigiria reescrevê-lo e fazer force push, o que só pode ser feito com autorização explícita do criador. Até lá, nada a fazer.
 
+### KI-20 — Cenas dirigidas sem cena real, sem captura e sem avaliação visual (média, esperado)
+- **Situação:** a infraestrutura de cenas dirigidas, luz por estado, passagens e destinos de experiência (ADR-028) está testada só com dados de teste (`tests/data/scenes/`); `data/scenes/` não existe ainda. Os efeitos (`light_glow`, `pillar`, `wind`, `water_walls`, `dust`) e as silhuetas são desenhados por código e **ninguém os viu** rodando (headless não renderiza); não há captura. As propostas em `production/` divergem do formato final: `"type": "player"` (ep_016, ep_048) deve virar `player_to`; o `on_end` de `shepherds_announcement` (ep_048) usa `player`, `tint`, `effects_off`, `actors_removed`, `camera` e `event`, que não existem (limpeza, câmera e luz já voltam sozinhas; o evento `scene_finished` é automático); chaves desconhecidas dentro de passos ou `params` (ex.: `pose_proposed`, `height_px`, `replaces_ambient`) são **ignoradas** sem aviso. Não há efeitos de ambiente contínuos por região (`ambient_effects`), só dentro de cenas.
+- **Ação:** ao integrar um episódio, ajustar a proposta ao formato de [docs/quests.md](../quests.md#cenas-dirigidas-datascenesjson-chave-scenes--adr-028), rodar `tools/validate_content.gd`, abrir o jogo e conferir cada efeito com os olhos (e registrar capturas com GPU).
+
+### KI-21 — Decisões provisórias das quatro experiências aguardam o criador (média)
+- **Situação:** José no Egito (ep_009), A travessia do mar (ep_016), Rute em Belém (ep_025) e Os pastores de Belém (ep_048) seguem decisões do coordenador registradas em [`production/reports/four_experiences_decisions.md`](../../production/reports/four_experiences_decisions.md) (escopo de cada relato, casa egípcia genérica, morte dos egípcios só narrada, anjo só como luz etc.). Os vereditos dos agentes são `ok_for_human_review`, não aprovação. `production/pilot.json` previa escolta na travessia; o jogo seguiu a decisão do criador (só observar). Os objetivos de aprendizagem do catálogo (ex.: ep_009 "Integridade diante da injustiça", Gn 39:1-23) não batem com o escopo implementado.
+- **Ação:** o criador confere as decisões e os itens `open_for_human` de cada `review.json`; ajustar catálogo e `pilot.json` conforme a decisão.
+
 ## Divergências documentação × código encontradas na auditoria de 2026-10-14
 | Onde | Divergência | Situação |
 |---|---|---|

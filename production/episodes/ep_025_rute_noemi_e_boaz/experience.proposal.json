@@ -1,0 +1,28 @@
+{
+	"_comment": "PROPOSTA (quest-designer, 2026-10-14): substitui a entrada ruth_bethlehem (status planned) em data/world/experiences.json, mantendo o id. 'requires' e o 'start' da missão ruth_gleaning apontam para exodus_sea_crossing, a principal da experiência anterior na ordem cronológica do lote (revisão V08). 'travel' leva o jogador a Belém, porque não há caminho a pé entre épocas. Linhas de 'passage' escritas pelo roteirista (IA, 2026-10-14); a primeira supõe a ordem cronológica do lote (exodus_sea antes desta) e deve ser ajustada se a ordem mudar.",
+	"experience": {
+		"id": "ruth_bethlehem",
+		"era": "judges",
+		"title": "Rute em Belém",
+		"references": ["Ruth 1:19-22", "Ruth 2:1-23"],
+		"place": "Belém · Campos de Boaz",
+		"status": "available",
+		"requires": {"quest_completed": "exodus_sea_crossing"},
+		"locked_text": "Explore primeiro as experiências anteriores para abrir esta.",
+		"completed_by": "ruth_gleaning",
+		"travel": {"region": "bethlehem_fields", "entry": "from_scripture_map"},
+		"summary": "É o começo da colheita da cevada em Belém. Ajude num campo da aldeia e veja de longe a respiga de Rute na parte do campo que era de Boaz.",
+		"passage": {
+			"title": "OUTRO MOMENTO DA HISTÓRIA",
+			"lines": [
+				"Da travessia do mar, no Êxodo, para o tempo dos juízes (Rute 1:1), bem depois da entrada na terra de Canaã. O texto não dá ano para a história de Rute, e as datas do período dos juízes são aproximadas.",
+				"Rute 1 conta que Noemi voltou de Moabe a Belém com a nora Rute, no começo da colheita da cevada (Rute 1:19-22). Você chega aos campos de Belém nesses dias, como viajante de passagem, e ajuda numa colheita sem mudar o que o relato conta.",
+				"O viajante, Ilan, Tova e os ceifeiros do campo de Ilan são fictícios. Rute, Noemi e Boaz não conversam com você: o que eles dizem e fazem está no texto bíblico, que você vê de longe e lê no diário."
+			]
+		}
+	},
+	"also_needed": [
+		"Mapa das Escrituras: permitir 'Revisitar' experiências concluídas que tenham 'travel' (hoje o botão só aparece em available/active).",
+		"Acrescentar 'travel' a isaac_wells e joseph_dothan (região canaan_village) para que o jogador possa voltar de Belém às experiências dos patriarcas."
+	]
+}

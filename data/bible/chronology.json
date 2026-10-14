@@ -217,12 +217,12 @@
 			"title": "Pastores nos campos de Belém",
 			"era_id": "roman_judea",
 			"sequence": 1,
-			"date": {"from": -6, "to": -4, "precision": "year", "certainty": "approximate"},
+			"date": {"from": -6, "to": -4, "precision": "year", "certainty": "debated"},
 			"references": ["Luke 2:8-20"],
 			"classification": "recorded_event",
 			"places": ["bethlehem"],
 			"people": [],
-			"summary": "Lucas narra que pastores que vigiavam o rebanho à noite receberam o anúncio do nascimento de Jesus. A data do nascimento é aproximada.",
+			"summary": "Lucas narra que pastores que vigiavam o rebanho à noite receberam o anúncio do nascimento de Jesus. Lucas situa o nascimento nos dias do rei Herodes; o ano exato é debatido.",
 			"verification": {"status": "pending_review", "reviewer": "", "notes": "Datação do nascimento (c. 6–4 a.C.) é aproximada e discutida."}
 		},
 		{

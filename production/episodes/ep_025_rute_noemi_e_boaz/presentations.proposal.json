@@ -1,0 +1,28 @@
+{
+	"_comment": "Proposta do roteirista (IA, 2026-10-14) para data/bible/presentations.json. Cada quadro mostra o texto da tradução carregada por 'scripture' (nada digitado aqui); 'text' é nota própria do jogo, separada da citação, e vira o resumo se o versículo não estiver importado. Antes de integrar: importar Ruth 1:19-22 e Ruth 2:1-23 para data/bible/texts/bpm.json (tools/import_scripture.gd). Sem 'story_id': ainda não existe história de Rute em data/bible/stories.",
+	"presentations": [
+		{
+			"id": "ruth_002_gleaning",
+			"title": "Rute nos campos de Belém",
+			"reference": "Ruth 1:19-2:23",
+			"classification": "recorded_event",
+			"unlock": ["ruth_gleaning"],
+			"steps": [
+				{"heading": "A volta a Belém", "reference": "Ruth 1:19", "scripture": "Ruth 1:19", "text": "Noemi tinha saído de Belém com o marido e os dois filhos por causa de uma fome; em Moabe ficou viúva e perdeu os filhos (Rute 1:1-5). Agora volta com Rute, a nora moabita."},
+				{"heading": "Mara", "reference": "Ruth 1:20-21", "scripture": "Ruth 1:20-21", "text": "O próprio texto liga o nome Mara à amargura. Que Noemi signifique algo como \"agradável\" é nota lexical, não parte do versículo."},
+				{"heading": "O começo da colheita", "reference": "Ruth 1:22", "scripture": "Ruth 1:22", "text": "A cevada amadurece antes do trigo, na primavera. O mês exato no tempo de Rute é aproximado."},
+				{"heading": "Boaz", "reference": "Ruth 2:1", "scripture": "Ruth 2:1", "text": "O narrador apresenta Boaz antes de Rute chegar ao campo dele. A expressão traduzida por \"muito rico\" também pode ter o sentido de valor ou força (nuance discutida)."},
+				{"heading": "Ir respigar", "reference": "Ruth 2:2-3", "scripture": "Ruth 2:2-3", "text": "Respigar era recolher o que ficava no chão depois dos ceifeiros. Ver uma providência discreta no \"por acaso\" do versículo 3 é uma leitura comum, mas é interpretação."},
+				{"heading": "A saudação", "reference": "Ruth 2:4-7", "scripture": "Ruth 2:4-7", "text": "Boaz e os ceifeiros se saúdam em nome do SENHOR. O versículo 7 tem um trecho difícil no hebraico, e as traduções variam."},
+				{"heading": "No campo de Boaz", "reference": "Ruth 2:8-13", "scripture": "Ruth 2:8-13", "text": "Rute, estrangeira, pergunta por que recebe esse favor; Boaz fala do que ela fez pela sogra. As \"asas\" do versículo 12 são uma imagem de refúgio."},
+				{"heading": "A refeição dos ceifeiros", "reference": "Ruth 2:14", "scripture": "Ruth 2:14", "text": "Pão, grão tostado e um líquido azedo para molhar o pão eram comida comum de colheita. O texto não diz onde nem a que hora foi a refeição dos ceifeiros."},
+				{"heading": "Espigas deixadas de propósito", "reference": "Ruth 2:15-16", "scripture": "Ruth 2:15-16", "text": "A lei pedia que se deixassem o canto do campo e o que caía para o pobre e o estrangeiro (Levítico 19:9-10; 23:22). Aqui Boaz manda deixar cair espigas de propósito. O livro de Rute não cita a lei; a comparação é do leitor."},
+				{"heading": "Até a tarde", "reference": "Ruth 2:17-18", "scripture": "Ruth 2:17-18", "text": "O efa era uma medida de grãos secos. Os estudiosos estimam o volume de formas diferentes, e o jogo não dá número."},
+				{"heading": "Um resgatador", "reference": "Ruth 2:19-20", "scripture": "Ruth 2:19-20", "text": "Noemi diz que Boaz é parente próximo, um dos que podiam \"resgatar\" a família. O que isso significa aparece nos capítulos 3 e 4, fora desta experiência."},
+				{"heading": "Até o fim das colheitas", "reference": "Ruth 2:21-23", "scripture": "Ruth 2:21-23", "text": "A colheita do trigo vinha algumas semanas depois da cevada. Rute continua morando com a sogra."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "Os trechos foram tirados de Rute 1 e 2; leia o livro inteiro numa Bíblia para conhecer o relato completo. As notas são do jogo. O viajante, Ilan, Tova, o campo de Ilan e os moradores do mapa são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Quadros conforme design.md §5. Trechos citados da tradução carregada (BPM, a importar do arquivo oficial); notas próprias do jogo escritas pelo roteirista (IA) com base nas fichas do ep_025 (nuances lexicais de 2:1, 2:7 e efa a conferir). Aguarda revisão humana."}
+		}
+	]
+}

@@ -1,0 +1,103 @@
+{
+	"_comment": "PROPOSTA (ep_009, quest-designer, pending_review). 'scenes' segue a especificação de cena dirigida de production/reports/four_experiences_decisions.md (destino: data/scenes/<id>.json). 'presentations' segue data/bible/presentations.json (destino: acrescentar lá). Legendas 'scripture' mostram o texto oficial (bpm.json tem Gen 37:2-36 e Gen 39:1-6). Legendas próprias e notas das apresentações finalizadas pelo roteirista (IA, pending_review); a versão de referência das apresentações está em presentations.proposal.json.",
+	"scenes": [
+		{
+			"id": "joseph_caravan_departs",
+			"region": "dothan",
+			"title": "A caravana desce para o Egito",
+			"classification": "recorded_event",
+			"classification_note": "Representação de Gênesis 37:25-28 vista de longe. Número de animais e de mercadores, roupas e trajeto são escolhas do jogo; o texto não diz quantos eram.",
+			"references": ["Gen 37:25-28", "Gen 37:36"],
+			"skippable": true,
+			"trigger": {"dialogue": "dothan_ridge_view", "action": {"scene": "joseph_caravan_departs"}},
+			"on_finish": {"event": "scene_finished:joseph_caravan_departs", "unlock": ["caravan_to_egypt"]},
+			"final_state": "Nenhum figurante fica no mapa; câmera no jogador; poeira desligada.",
+			"steps": [
+				{"type": "caption", "text": "Lá embaixo, na borda sul do vale, uma caravana se aproxima pela estrada.", "kind": "narration"},
+				{"type": "camera", "to": [560, 560], "time": 3.0, "zoom": 0.7, "wait": true},
+				{"type": "effect", "effect": "dust", "on": true, "at": [990, 578], "params": {"radius": 40, "density": "low"}},
+				{"type": "sfx", "id": "amb_cargo_creak"},
+				{"type": "sfx", "id": "footstep_dirt", "_note": "passos abafados e distantes (volume baixo), no lugar de amb_hooves"},
+				{"type": "actor", "id": "camel_1", "sprite": "silhouette_camel", "at": [1060, 584], "facing": "left"},
+				{"type": "actor", "id": "merchant_1", "sprite": "silhouette_merchant", "at": [1086, 590], "facing": "left"},
+				{"type": "actor", "id": "camel_2", "sprite": "silhouette_camel", "at": [1110, 582], "facing": "left"},
+				{"type": "actor", "id": "camel_3", "sprite": "silhouette_camel", "at": [1150, 586], "facing": "left"},
+				{"type": "actor", "id": "merchant_2", "sprite": "silhouette_merchant", "at": [1176, 592], "facing": "left"},
+				{"type": "actor", "id": "camel_4", "sprite": "silhouette_camel", "at": [1216, 584], "facing": "left"},
+				{"type": "actor", "id": "camel_5", "sprite": "silhouette_camel", "at": [1256, 582], "facing": "left"},
+				{"type": "actor", "id": "merchant_3", "sprite": "silhouette_merchant", "at": [1282, 590], "facing": "left"},
+				{"type": "move", "actor": "camel_1", "path": [[700, 584], [360, 582], [-60, 580]], "speed": 34},
+				{"type": "move", "actor": "merchant_1", "path": [[726, 590], [386, 588], [-34, 586]], "speed": 34},
+				{"type": "move", "actor": "camel_2", "path": [[750, 582], [410, 580], [-10, 578]], "speed": 34},
+				{"type": "move", "actor": "camel_3", "path": [[790, 586], [450, 584], [30, 582]], "speed": 34},
+				{"type": "move", "actor": "merchant_2", "path": [[816, 592], [476, 590], [56, 588]], "speed": 34},
+				{"type": "move", "actor": "camel_4", "path": [[856, 584], [516, 582], [96, 580]], "speed": 34},
+				{"type": "move", "actor": "camel_5", "path": [[896, 582], [556, 580], [136, 578]], "speed": 34},
+				{"type": "move", "actor": "merchant_3", "path": [[922, 590], [582, 588], [162, 586]], "speed": 34},
+				{"type": "caption", "scripture": "Gen 37:25"},
+				{"type": "caption", "scripture": "Gen 37:28"},
+				{"type": "actor", "id": "youth", "sprite": "silhouette_youth", "at": [520, 590], "facing": "left", "_note": "E9-01: José NÃO vem com a caravana desde Gileade; a silhueta só aparece depois da legenda de Gn 37:28, já entre os mercadores e seguindo para o oeste. Posicionar logo atrás de merchant_2 no momento real da legenda (ajustar 'at' à posição dele) e entrar com fade curto. Silhueta pequena; sem amarras, sem destaque, sem rótulo, sem close."},
+				{"type": "move", "actor": "youth", "path": [[72, 586], [-40, 586]], "speed": 34},
+				{"type": "caption", "text": "O relato chama os mercadores de ismaelitas e de midianitas (Gênesis 37:25, 28, 36). O jogo não escolhe entre as leituras.", "kind": "context"},
+				{"type": "effect", "effect": "dust", "on": false, "at": [990, 578]},
+				{"type": "camera", "to": [300, 560], "time": 6.0, "wait": false},
+				{"type": "caption", "scripture": "Gen 37:36"},
+				{"type": "move", "actor": "merchant_3", "path": [[-160, 586]], "speed": 34, "wait": true},
+				{"type": "remove", "actor": "camel_1"},
+				{"type": "remove", "actor": "merchant_1"},
+				{"type": "remove", "actor": "camel_2"},
+				{"type": "remove", "actor": "camel_3"},
+				{"type": "remove", "actor": "merchant_2"},
+				{"type": "remove", "actor": "youth"},
+				{"type": "remove", "actor": "camel_4"},
+				{"type": "remove", "actor": "camel_5"},
+				{"type": "remove", "actor": "merchant_3"},
+				{"type": "wait", "time": 1.0},
+				{"type": "caption", "text": "A caravana sumiu a oeste, rumo ao Egito. Você ficou na encosta, longe da estrada: o viajante é um personagem do jogo e não muda o que o relato conta.", "kind": "fiction"},
+				{"type": "camera", "follow": "player", "time": 2.0, "zoom": 1.0, "wait": true}
+			],
+			"_pending": {
+				"engine": "Cena dirigida inteira (action {\"scene\": id}, scene_finished, figurantes, câmera com zoom, dust, legendas, pular com Esc, save bloqueado).",
+				"paths": "Os primeiros caminhos (move sem wait) levam os figurantes até perto da borda oeste; o último move com wait garante que todos saiam da tela antes do 'remove'. Ajustar 'speed' para duração-alvo de 45-60 s. Conferir sobreposição visual com as árvores (750,484), (760,560), (29,573).",
+				"assets": "silhouette_camel (dromedário com fardos sobre manta, sem sela de armação), silhouette_merchant (túnica longa, cajado, a pé), silhouette_youth (pequeno, sem amarras); efeito dust.",
+				"forbidden": "Sem roda dos irmãos, cisterna do relato, retirada de José, prata, cordas, correntes, chicote, choro, close em José, Rúben ou Judá."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta do agente de design (IA). Aguarda verificador bíblico, revisor histórico (camelos, roupas) e revisão humana."}
+		}
+	],
+	"presentations": [
+		{
+			"id": "gen_037_caravan",
+			"title": "José é levado para o Egito",
+			"reference": "Gen 37:25-28",
+			"classification": "recorded_event",
+			"story_id": "gen_037_joseph_sold",
+			"unlock": ["caravan_to_egypt"],
+			"steps": [
+				{"heading": "Uma caravana de Gileade", "reference": "Gen 37:25", "scripture": "Gen 37:25", "text": "Gileade fica a leste do rio Jordão. Resinas perfumadas como estas eram levadas ao Egito; as plantas exatas são debatidas. O texto não diz quantas pessoas nem quantos animais havia na caravana."},
+				{"heading": "A proposta de Judá", "reference": "Gen 37:26-27", "scripture": "Gen 37:26-27", "text": "Judá é um dos irmãos de José. O texto registra a proposta dele e o acordo dos irmãos, sem comentário do narrador."},
+				{"heading": "Vinte peças de prata", "reference": "Gen 37:28", "scripture": "Gen 37:28", "text": "A prata era pesada, não contada em moedas: moedas cunhadas só surgem muitos séculos depois. O versículo fala de midianitas e de ismaelitas e não deixa claro quem tirou José da cisterna. O jogo não decide."},
+				{"heading": "No Egito", "reference": "Gen 37:36", "scripture": "Gen 37:36", "text": "Potifar volta a aparecer em Gênesis 39. O texto não diz o nome do Faraó nem em que cidade José foi vendido."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "Esta apresentação mostra Gênesis 37:25-28 e 37:36. Resumo do jogo, sem citação: antes, os irmãos planejam matar José, e Rúben os convence a pô-lo numa cisterna (Gn 37:18-24); entre os versículos 28 e 36, Rúben volta e não o encontra, e Jacó, ao reconhecer a túnica de José que os filhos levam a seu pai, chora o filho como morto (Gn 37:29-35). Leia o capítulo inteiro numa Bíblia. As notas são do jogo. O viajante, Malik, Rafi, Talia e Oren são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta do agente de design (IA). Inclui Gen 37:26-27 além do escopo mínimo decidido (37:25-28 cobre). Aguarda verificador bíblico e revisão humana."}
+		},
+		{
+			"id": "gen_039_potiphar",
+			"title": "José na casa de Potifar",
+			"reference": "Gen 39:1-6",
+			"classification": "recorded_event",
+			"story_id": "gen_039_joseph_potiphar",
+			"unlock": ["joseph_steward"],
+			"steps": [
+				{"heading": "Comprado por um oficial", "reference": "Gen 39:1", "scripture": "Gen 39:1", "text": "O texto não diz em que cidade ficava a casa de Potifar nem quem era o Faraó. Em Gênesis 37:36 os vendedores são chamados de midianitas; aqui, de ismaelitas. 'Oficial do Faraó' e 'capitão da guarda' são as palavras desta tradução."},
+				{"heading": "O SENHOR estava com José", "reference": "Gen 39:2-3", "scripture": "Gen 39:2-3", "text": "O narrador repete que o SENHOR estava com José. O texto não diz como Potifar percebeu isso nem quanto tempo levou."},
+				{"heading": "Administrador da casa", "reference": "Gen 39:4", "scripture": "Gen 39:4", "text": "Grandes casas egípcias tinham um administrador que cuidava dos bens, dos servos e dos depósitos. O texto não descreve as tarefas de José."},
+				{"heading": "Na casa e no campo", "reference": "Gen 39:5", "scripture": "Gen 39:5", "text": "O texto atribui a bênção ao SENHOR, por causa de José. Ela alcança tudo o que Potifar tinha, na casa e no campo."},
+				{"heading": "Tudo nas mãos de José", "reference": "Gen 39:6", "scripture": "Gen 39:6", "text": "O texto não explica por que a comida de Potifar ficava fora dos cuidados de José. Há leituras diferentes, e o jogo não escolhe."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "Gênesis 39 continua nos versículos 7 a 23, contados em outro capítulo desta jornada. Leia o capítulo inteiro numa Bíblia. As notas são do jogo. A casa que você visitou é fictícia: uma casa de um oficial egípcio, como aquela onde José serviu, e não a casa de Potifar. Ipi, Meryt e Senbi são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta do agente de design (IA). story_id gen_039_joseph_potiphar não existe em data/bible/stories: criar ou usar um existente. Aguarda verificador bíblico e revisão humana."}
+		}
+	]
+}

@@ -1,0 +1,202 @@
+{
+	"_comment": "Proposta do roteirista (IA, 2026-10-14) para data/dialogues/bethlehem_fields.json. Ids com prefixo bf_ (four_experiences_decisions.md). Falas de Ilan, Tova e dos ceifeiros são ficção do jogo; ninguém testemunha o que só o texto conta (a conversa de Boaz com o encarregado, com Rute, a ordem aos jovens, a conversa de Rute com Noemi). Rute, Noemi e Boaz não falam aqui: aparecem só como notícia da aldeia (Rt 1:19-22, contada como o próprio texto registra) e, na cena dirigida, por legenda com referência. Nenhum versículo foi digitado: 'scripture' traz só a referência e 'text' é a nota própria mostrada se o versículo ainda não estiver importado. Tova é viúva da aldeia, sem nora, sem viagem e sem perdas recentes: nenhuma fala a aproxima de Noemi. Pendências para o implementador: (1) o validador de diálogos ainda só aceita action {presentation}; a cena usa action {scene} (decisões do lote); (2) som grain_beat ligado ao diálogo bf_beating_stone pelo mapa de interações de data/audio/sfx.json; (3) bring_sheaves tira 4 feixes; se o jogador juntar 5 ou 6, os extras ficam na bolsa (decidir se Ilan recebe todos).",
+	"dialogues": [
+		{
+			"id": "bf_ilan_talk",
+			"start": "welcome",
+			"start_if": [
+				{"if": {"all": [{"objective": "ruth_gleaning/bring_sheaves"}, {"has_item": "barley_sheaf", "count": 4}, {"has_item": "corner_sheaf", "count": 2}]}, "node": "delivery_corner"},
+				{"if": {"all": [{"objective": "ruth_gleaning/bring_sheaves"}, {"has_item": "barley_sheaf", "count": 4}, {"has_item": "corner_sheaf"}]}, "node": "delivery_corner_one"},
+				{"if": {"all": [{"objective": "ruth_gleaning/bring_sheaves"}, {"has_item": "barley_sheaf", "count": 4}]}, "node": "delivery_left"},
+				{"if": {"all": [{"objective": "tova_gleaning/forgotten_sheaf"}, {"flag": "bf_ask_ilan_sheaf"}]}, "node": "asked_ilan"},
+				{"if": {"any": [{"objective": "ruth_gleaning/harvest"}, {"objective": "ruth_gleaning/bring_sheaves"}]}, "node": "waiting"},
+				{"objective": "ruth_gleaning/watch_field", "node": "point_field"},
+				{"if": {"event": "scene_finished", "id": "ruth_gleaning_meal"}, "node": "after_scene"},
+				{"flag": "met_bf_ilan", "node": "idle"}
+			],
+			"nodes": {
+				"welcome": {"speaker": "bf_ilan", "text": "Paz, viajante! Chegou em boa hora: a cevada amadureceu, e começamos a ceifar hoje cedo.", "next": "welcome2", "set_flags": ["met_bf_ilan"]},
+				"welcome2": {"speaker": "bf_ilan", "text": "Primeiro vem a cevada; o trigo ainda precisa de umas semanas de sol. Até lá, todo braço ajuda.", "next": "news", "event": "ruth_ilan_harvest", "unlock": ["barley_harvest"]},
+				"news": {"speaker": "bf_ilan", "text": "E a cidade anda agitada. Noemi voltou de Moabe depois de anos fora, e trouxe a nora, uma moabita. Não se fala de outra coisa no poço.", "next": "news_ref"},
+				"news_ref": {"speaker": "narrator", "scripture": "Ruth 1:19-22", "text": "(Rute 1:19-22 conta a chegada de Noemi e Rute a Belém, no começo da colheita da cevada. O texto está no diário.)", "next": "request"},
+				"request": {"speaker": "bf_ilan", "text": "Se quiser ajudar, junte os feixes amarrados nas fileiras já ceifadas e traga para mim. Quatro já fazem diferença.", "next": "request2"},
+				"request2": {"speaker": "bf_ilan", "text": "Lá embaixo, no canto do campo, a cevada ainda está de pé. Os feixes prontos estão nas fileiras. Pressione E perto de um feixe para pegá-lo.", "next": "end"},
+				"waiting": {"speaker": "bf_ilan", "text": "Os feixes amarrados estão nas fileiras ceifadas. Quatro já ajudam; o jumento leva o resto para a eira.", "next": "end"},
+				"delivery_corner": {"speaker": "bf_ilan", "text": "Quatro feixes, que bom! E estes dois... vieram do canto lá de baixo, não foi?", "next": "corner2", "take": [{"item": "barley_sheaf", "qty": 4}, {"item": "corner_sheaf", "qty": 2}]},
+				"delivery_corner_one": {"speaker": "bf_ilan", "text": "Quatro feixes, que bom! E este outro... veio do canto lá de baixo, não foi?", "next": "corner2", "take": [{"item": "barley_sheaf", "qty": 4}, {"item": "corner_sheaf", "qty": 1}]},
+				"corner2": {"speaker": "bf_ilan", "text": "Não se preocupe, você não tinha como saber. Aqui a gente não ceifa o canto do campo.", "next": "corner3"},
+				"corner3": {"speaker": "bf_ilan", "text": "O canto e as espigas que caem ficam para quem não tem campo: o pobre, o estrangeiro. Vou pôr esses feixes de volta lá, para quem vier respigar.", "next": "law_ref", "decision": {"id": "ruth_field_corner", "option": "returned"}, "set_flags": ["corner_returned"], "unlock": ["gleaning_law"]},
+				"delivery_left": {"speaker": "bf_ilan", "text": "Quatro feixes, que bom! O canto lá embaixo continua de pé, do jeito que fica todo ano.", "next": "left2", "take": [{"item": "barley_sheaf", "qty": 4}]},
+				"left2": {"speaker": "bf_ilan", "text": "A gente não ceifa o canto do campo, nem volta para catar o que cai. Isso fica para quem não tem campo: o pobre, o estrangeiro.", "next": "law_ref", "decision": {"id": "ruth_field_corner", "option": "left"}, "unlock": ["gleaning_law"]},
+				"law_ref": {"speaker": "narrator", "scripture": "Lev 23:22", "text": "(Levítico 23:22, como 19:9-10, manda não ceifar até o canto do campo nem recolher as espigas caídas: ficam para o pobre e o estrangeiro.)", "next": "point_field"},
+				"point_field": {"speaker": "bf_ilan", "text": "Depois dos marcos de pedra, o campo é de Boaz. Hoje tem uma moça respigando lá, atrás dos ceifeiros. Do terebinto dá para ver tudo.", "next": "end"},
+				"after_scene": {"speaker": "bf_ilan", "text": "A lei pede o canto e o que cai. Tem dono de campo que deixa mais do que isso, e tem quem deixe só o mínimo. Cada um responde pelo seu campo.", "next": "end"},
+				"asked_ilan": {"speaker": "bf_ilan", "text": "Um feixe inteiro ficou no meio do campo? Então ele já não é meu.", "next": "asked2"},
+				"asked2": {"speaker": "bf_ilan", "text": "Quem esquece um feixe na colheita não volta para buscá-lo. Fica para o estrangeiro, o órfão e a viúva. Deixe lá; Tova passa por ali.", "next": "asked_ref", "decision": {"id": "ruth_forgotten_sheaf", "option": "asked_ilan"}, "unlock": ["gleaning_law"]},
+				"asked_ref": {"speaker": "narrator", "scripture": "Deut 24:19", "text": "(Deuteronômio 24:19 manda não voltar para buscar o feixe esquecido no campo: ele fica para o estrangeiro, o órfão e a viúva.)", "next": "end"},
+				"idle": {"speaker": "bf_ilan", "text": "A cevada não espera. Amanhã cedo começamos o outro lado do campo.", "next": "end"}
+			}
+		},
+		{
+			"id": "bf_tova_talk",
+			"start": "hello",
+			"start_if": [
+				{"if": {"all": [{"objective": "tova_gleaning/beat_ears"}, {"choice": "ruth_forgotten_sheaf", "option": "told_tova"}]}, "node": "beat_told"},
+				{"if": {"all": [{"objective": "tova_gleaning/beat_ears"}, {"choice": "ruth_forgotten_sheaf", "option": "left"}]}, "node": "beat_left"},
+				{"if": {"all": [{"objective": "tova_gleaning/beat_ears"}, {"choice": "ruth_forgotten_sheaf", "option": "asked_ilan"}]}, "node": "beat_asked"},
+				{"objective": "tova_gleaning/beat_ears", "node": "beat_hint"},
+				{"objective": "tova_gleaning/forgotten_sheaf", "node": "waiting"},
+				{"flag": "met_bf_tova", "node": "again"}
+			],
+			"nodes": {
+				"hello": {"speaker": "bf_tova", "text": "Paz, viajante. Não repare na demora: estas costas já não dobram como antes.", "next": "hello2", "set_flags": ["met_bf_tova"]},
+				"hello2": {"speaker": "bf_tova", "text": "Sou viúva e moro em Belém desde menina. Na colheita, ando atrás dos ceifeiros e junto o que cai no chão.", "next": "hello3"},
+				"hello3": {"speaker": "bf_tova", "text": "Espiga por espiga, o cesto enche. É assim que a gente guarda grão para os meses sem colheita.", "next": "hello4"},
+				"hello4": {"speaker": "bf_tova", "text": "Hoje cedo vi um feixe inteiro caído no meio do campo, perto do canto. Meus olhos já não acham nada de longe.", "next": "end", "event": "ruth_tova_hello"},
+				"waiting": {"speaker": "bf_tova", "text": "O feixe estava entre as fileiras ceifadas, perto do canto. Ou será que já foi embora?", "next": "end"},
+				"beat_told": {"speaker": "bf_tova", "text": "Obrigada por me mostrar o feixe. Com ele, o cesto já pesa.", "next": "beat_hint"},
+				"beat_left": {"speaker": "bf_tova", "text": "Achei um feixe inteiro no caminho! Ninguém voltou para buscar. Hoje o cesto pesa.", "next": "beat_hint"},
+				"beat_asked": {"speaker": "bf_tova", "text": "Ilan disse para deixar o feixe no campo? Já passei por lá e peguei. Obrigada por perguntar.", "next": "beat_hint"},
+				"beat_hint": {"speaker": "bf_tova", "text": "Espiga ainda não é grão. Deixei a vara e o pano junto à pedra lisa, ao sul. Você me ajuda a bater?", "next": "end"},
+				"again": {"speaker": "bf_tova", "text": "O sol está alto. Ainda dá para encher mais um pouco o cesto antes da tarde.", "next": "end"}
+			}
+		},
+		{
+			"id": "bf_tova_home_talk",
+			"start": "idle",
+			"start_if": [
+				{"if": {"all": [{"objective": "tova_gleaning/carry_home"}, {"has_item": "tova_grain"}]}, "node": "delivery"}
+			],
+			"nodes": {
+				"delivery": {"speaker": "bf_tova", "text": "Você trouxe tudo! Ponha aqui, junto ao jarro, na sombra.", "next": "delivery2", "take": [{"item": "tova_grain", "qty": 1}]},
+				"delivery2": {"speaker": "bf_tova", "text": "Com isto e com o que eu juntar até o fim da colheita, esta casa tem pão por um bom tempo.", "next": "delivery3"},
+				"delivery3": {"speaker": "bf_tova", "text": "Tome um punhado de grão tostado, ainda morno. Na colheita, é o que se come no campo.", "next": "delivery4", "unlock": ["harvest_meal"]},
+				"delivery4": {"speaker": "narrator", "text": "Você come o grão tostado ali mesmo, sentado no banco de pedra, enquanto o sol desce sobre os campos.", "next": "end"},
+				"idle": {"speaker": "bf_tova", "text": "Volte quando quiser. Em tempo de colheita, sempre tem grão tostado nesta casa.", "next": "end"}
+			}
+		},
+		{
+			"id": "bf_forgotten_sheaf",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um feixe amarrado, caído entre as fileiras já ceifadas. Os ceifeiros passaram por ele e seguiram em frente.", "next": "choice"},
+				"choice": {"speaker": "narrator", "text": "O que você faz com o feixe?", "choices": [
+					{"text": "Deixar o feixe onde está.", "next": "left", "decision": {"id": "ruth_forgotten_sheaf", "option": "left"}},
+					{"text": "Chamar Tova e mostrar onde ele está.", "next": "told", "decision": {"id": "ruth_forgotten_sheaf", "option": "told_tova"}},
+					{"text": "Perguntar a Ilan o que fazer com ele.", "next": "ask", "set_flags": ["bf_ask_ilan_sheaf"]}
+				]},
+				"left": {"speaker": "narrator", "text": "Você deixa o feixe no chão. Quem vier respigando por aqui vai encontrá-lo.", "next": "law"},
+				"told": {"speaker": "narrator", "text": "Você acena para Tova e aponta o feixe. Ela vem devagar, sorri e o põe no cesto.", "next": "law"},
+				"ask": {"speaker": "narrator", "text": "Você deixa o feixe onde está e vai procurar Ilan, na beira norte do campo.", "next": "end"},
+				"law": {"speaker": "narrator", "text": "(Deuteronômio 24:19 manda não voltar para buscar o feixe esquecido no campo: ele fica para o estrangeiro, o órfão e a viúva.)", "next": "end"}
+			}
+		},
+		{
+			"id": "bf_beating_stone",
+			"start": "n1",
+			"start_if": [
+				{"objective": "tova_gleaning/beat_ears", "node": "beat"},
+				{"if": {"any": [{"objective": "tova_gleaning/carry_home"}, {"quest_completed": "tova_gleaning"}]}, "node": "done"}
+			],
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Uma pedra lisa e larga, gasta no meio. Ao lado, encostada, uma vara de madeira.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Quem respigava batia as espigas com uma vara ali mesmo no campo, para soltar o grão da palha.", "next": "end"},
+				"beat": {"speaker": "narrator", "text": "Sobre a pedra está o pano com as espigas que Tova juntou. Você pega a vara e bate devagar, como ela mostrou.", "next": "beat2"},
+				"beat2": {"speaker": "narrator", "text": "Os grãos se soltam e caem no pano. Você sacode a palha, junta o grão e enche um saco de pano.", "next": "beat3", "give": [{"item": "tova_grain", "qty": 1}], "event": "ruth_tova_beaten"},
+				"beat3": {"speaker": "bf_tova", "text": "Que mão boa! Leva para mim até em casa? Moro junto ao muro, perto da porta da aldeia.", "next": "beat_ref"},
+				"beat_ref": {"speaker": "narrator", "text": "(Rute 2:17 conta que, no fim do dia, Rute bateu o que tinha respigado. Tova e este campo são criações do jogo.)", "next": "end"},
+				"done": {"speaker": "narrator", "text": "Restos de palha em volta da pedra. A vara ficou encostada no mesmo lugar.", "next": "end"}
+			}
+		},
+		{
+			"id": "bf_boundary_view",
+			"start": "before",
+			"start_if": [
+				{"objective": "ruth_gleaning/watch_field", "node": "first"},
+				{"objective": "ruth_gleaning/read_story", "node": "read"},
+				{"quest_completed": "ruth_gleaning", "node": "again"}
+			],
+			"nodes": {
+				"before": {"speaker": "narrator", "text": "Sob o terebinto, uma pedra larga serve de banco. Daqui se vê o campo vizinho, do outro lado dos marcos.", "next": "before2"},
+				"before2": {"speaker": "narrator", "text": "Os ceifeiros de lá trabalham em fila. Por ora, o seu trabalho é no campo de Ilan.", "next": "end"},
+				"first": {"speaker": "narrator", "text": "Você se senta na pedra, à sombra do terebinto. Do outro lado dos marcos, os ceifeiros avançam pelas fileiras.", "next": "first2"},
+				"first2": {"speaker": "narrator", "text": "Você só vai olhar, de longe. O que acontece ali está contado em Rute 2. (Esc pula a cena.)", "next": "end", "action": {"scene": "ruth_gleaning_meal"}},
+				"read": {"speaker": "narrator", "text": "Você abre o diário de viagem no livro de Rute, do capítulo 1, versículo 19, até o fim do capítulo 2.", "next": "end", "action": {"presentation": "ruth_002_gleaning"}},
+				"again": {"speaker": "narrator", "text": "O campo vizinho está quieto. Quer reler no diário o relato de Rute 1:19 a 2:23?", "choices": [
+					{"text": "Ler o relato no diário.", "next": "read"},
+					{"text": "Agora não.", "next": "end"}
+				]}
+			}
+		},
+		{
+			"id": "bf_corner_returned",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Os feixes estão de volta ao canto do campo, ao lado da cevada ainda de pé. Ficaram para quem vier respigar.", "next": "end"}
+			}
+		},
+		{
+			"id": "bf_reaper_work",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "O ceifeiro segura um punhado de colmos e corta rente, num movimento só. Nem levanta os olhos do trabalho.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "A foice tem cabo curvo de madeira e pequenas lâminas de sílex encaixadas. (Ceifeiro criado para o jogo.)", "next": "end"}
+			}
+		},
+		{
+			"id": "bf_sickle",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Uma foice deixada na beira do campo: um arco de madeira com uma fileira de pequenas pedras afiadas encaixadas.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "No tempo dos juízes, ainda se usavam muito lâminas de sílex; ferramentas de ferro eram raras nas aldeias das colinas.", "next": "end", "grant_collectible": "bf_sickle"}
+			}
+		},
+		{
+			"id": "bf_pithos",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um jarro de barro alto como uma criança, com uma borda grossa em volta do gargalo, como um colarinho.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Jarros assim guardavam grão, azeite e água. São tão comuns nas aldeias das colinas dessa época que ajudam arqueólogos a datar as escavações.", "next": "end", "grant_collectible": "bf_pithos"}
+			}
+		},
+		{
+			"id": "bf_parcel_marker",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Uma pedra fincada na terra, entre dois campos. Não há cerca: só estes marcos, um depois do outro.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "(Rute 2:3 fala da \"parte do campo\" que era de Boaz: campos vizinhos de donos diferentes. Deuteronômio 19:14 proíbe mudar o marco do vizinho.)", "next": "end", "unlock": ["boundary_markers"], "grant_collectible": "bf_parcel_marker"}
+			}
+		},
+		{
+			"id": "bf_threshing_floor",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um círculo de chão batido no alto, onde o vento bate. Um monte de grão, palha espalhada e uma prancha de madeira com lascas de pedra por baixo.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Na eira, os feixes eram debulhados com a prancha puxada por bois. Depois, jogava-se tudo para o alto com o forcado, e o vento levava a palha.", "next": "end", "grant_collectible": "bf_threshing_floor"}
+			}
+		},
+		{
+			"id": "bf_shelter",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um abrigo de galhos e ramos na beira do campo vizinho. Embaixo, sombra e dois jarros de água.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "(Abrigos assim são uma hipótese para o descanso dos trabalhadores; Rute 2:7 tem um trecho difícil no hebraico. Este abrigo é criado para o jogo.)", "next": "end", "grant_collectible": "bf_shelter"}
+			}
+		},
+		{
+			"id": "bf_gate",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Uma porta modesta no muro de pedra da aldeia, com bancos de pedra dos dois lados e uma praça de terra batida.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Na porta da cidade, os moradores se encontravam, conversavam e resolviam negócios diante de testemunhas. Hoje, quase todos estão nos campos.", "next": "end", "grant_collectible": "bf_gate"}
+			}
+		},
+		{
+			"id": "bf_road_west",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "A estrada desce para o oeste, entre as colinas. Para ir a outro momento da história, abra o Mapa das Escrituras (M).", "next": "end"}
+			}
+		}
+	]
+}

@@ -6,7 +6,7 @@ signal dialogue_started(dialogue_id: String)
 ## line = {speaker_id, speaker_name, text, portrait, choices: [String], voice: caminho ou ""}
 signal line_shown(line: Dictionary)
 signal dialogue_ended(dialogue_id: String)
-## Ação pedida por um nó (ex.: {"presentation": "gen_026_wells"}), executada
+## Ação pedida por um nó (ex.: {"presentation": "gen_026_wells"} ou {"scene": id}), executada
 ## pela cena de jogo depois que o diálogo termina.
 signal action_requested(action: Dictionary)
 

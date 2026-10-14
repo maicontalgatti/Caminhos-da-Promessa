@@ -1,0 +1,111 @@
+{
+	"_comment": "PROPOSTA (ep_009, dialogue-writer, IA, pending_review). 'discoveries' segue data/bible/discoveries.json (acrescentar lá). 'collectibles' segue data/collectibles/*.json (destino: data/collectibles/egypt_house.json). Resumos e seções são texto próprio do jogo; nenhum versículo copiado. 'related.people' usa ids propostos em bible_entries.proposal.json (judah, reuben, potiphar); 'related.places' usa gilead e egypt_house, também propostos lá.",
+	"discoveries": [
+		{
+			"id": "caravan_to_egypt",
+			"title": "A caravana para o Egito",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "Uma caravana vinda de Gileade descia para o Egito com especiarias, bálsamo e mirra. José foi vendido por vinte peças de prata e levado para o Egito, onde foi vendido a Potifar.",
+			"bible_note": "Gênesis 37:25-28 e 37:36.",
+			"references": ["Gen 37:25-28", "Gen 37:36"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que o texto diz", "text": "Enquanto os irmãos comem, aparece uma caravana de ismaelitas vinda de Gileade, com camelos carregados de especiarias, bálsamo e mirra, a caminho do Egito (Gn 37:25). Judá propõe vender José em vez de matá-lo, e os irmãos concordam (v. 26-27). José é tirado da cisterna e vendido por vinte peças de prata, e os mercadores o levam para o Egito (v. 28). Lá, ele é vendido a Potifar, oficial do Faraó e capitão da guarda (v. 36)."},
+				{"kind": "interpretation", "title": "Ismaelitas e midianitas", "text": "O relato chama os mercadores de ismaelitas (v. 25, 27-28) e de midianitas (v. 28, 36), e o versículo 28 não deixa claro quem tirou José da cisterna. Há explicações diferentes: nomes usados para o mesmo tipo de mercadores, dois grupos envolvidos, ou tradições reunidas no texto. O jogo não escolhe entre elas."},
+				{"kind": "historical", "title": "Prata pesada, não moedas", "text": "Na época dos patriarcas não havia moedas cunhadas: a prata era pesada na balança. As vinte peças de prata eram, portanto, uma quantidade de metal, não moedas."},
+				{"kind": "historical", "title": "Camelos e resinas", "text": "O texto cita camelos na caravana. Quando o camelo passou a ser comum nas caravanas da região é debatido: muitos estudiosos datam o uso amplo de séculos depois, outros apontam indícios mais antigos. As plantas exatas do bálsamo e da mirra citados também são discutidas. O Egito importava resinas para perfumes, remédios e embalsamamento."},
+				{"kind": "fiction", "title": "Da encosta", "text": "O viajante viu a caravana de longe, do alto de uma encosta criada para o jogo, e não se aproximou. Ele é um personagem fictício e não muda o que o relato conta. O número de animais e de pessoas na cena é uma escolha do jogo."}
+			],
+			"related": {"people": ["joseph", "judah", "potiphar"], "places": ["dothan", "gilead", "egypt"], "events": ["joseph_sold"], "stories": ["gen_037_joseph_sold"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumo próprio conferido com Gn 37:25-28, 36 no arquivo oficial da BPM pelo agente roteirista (IA). Camelos: debate registrado em research_historical.md §8 (revisor histórico). Aguarda verificador bíblico e revisão humana."}
+		},
+		{
+			"id": "egyptian_household",
+			"title": "Uma grande casa egípcia",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "Grandes casas egípcias eram também lugares de trabalho, com depósitos, celeiros, oficinas, gado e campos. Um administrador cuidava dos bens, e escribas anotavam o que entrava e o que saía.",
+			"bible_note": "Gênesis 39:4 conta que Potifar pôs José como administrador da casa e entregou tudo o que tinha aos seus cuidados.",
+			"references": ["Gen 39:4"],
+			"sections": [
+				{"kind": "historical", "title": "Quem trabalhava na casa", "text": "Documentos egípcios citam o administrador ou superintendente da casa, escribas, porteiros, padeiros, cervejeiros, tecelãs, lavradores e vaqueiros. Os registros anotavam grão recebido, rações distribuídas, gado contado e listas de servos."},
+				{"kind": "historical", "title": "Papiro, paleta e selos", "text": "O escriba usava rolos de papiro, pranchetas de madeira, uma paleta com tinta preta e vermelha e pincéis de junco. Jarros, sacos e portas de depósito eram fechados com selos de argila. Na administração se usava uma escrita cursiva, mais rápida que os hieróglifos dos monumentos."},
+				{"kind": "historical", "title": "Servos estrangeiros", "text": "Um papiro egípcio do fim do Reino Médio (o Papiro Brooklyn) lista dezenas de servos com nomes semitas numa mesma casa. Isso mostra que estrangeiros serviam em casas egípcias; não diz nada sobre José."},
+				{"kind": "chronology", "title": "Que época?", "text": "O texto não diz em que época, sob qual Faraó nem em que cidade ficava a casa de Potifar. As propostas de datação variam muito, e o jogo não escolhe uma: a casa fictícia do mapa mistura traços comuns às grandes casas do II milênio a.C."},
+				{"kind": "fiction", "title": "A casa do jogo", "text": "A propriedade é uma casa de um oficial egípcio criada para o jogo, como aquela onde José serviu, e não a casa de Potifar. A mesa do escriba e os registros também são recriações. Nenhum registro do mapa é de José: o texto não diz que ele escrevia ou fazia contas. Ipi, Meryt e Senbi são personagens fictícios."}
+			],
+			"related": {"people": ["joseph", "potiphar"], "places": ["egypt", "egypt_house"], "events": [], "stories": ["gen_039_joseph_potiphar"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Contexto a partir de research_historical.md §3 e §7 (Papiro Brooklyn 35.1446; cargo imy-r pr). Aguarda revisor histórico e revisão humana."}
+		},
+		{
+			"id": "nile_agriculture",
+			"title": "O campo junto ao Nilo",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "No Egito quase não chove: a vida dependia da faixa de terra escura e fértil ao longo do Nilo. Além dela começava o deserto. Cevada, trigo e linho cresciam em campos irrigados por canais e diques.",
+			"bible_note": "Gênesis 39:5 diz que a bênção do SENHOR estava sobre tudo o que Potifar tinha, na casa e no campo.",
+			"references": ["Gen 39:5"],
+			"sections": [
+				{"kind": "historical", "title": "Terra negra, terra vermelha", "text": "Os egípcios chamavam o próprio país de 'terra negra', pela cor do solo fértil deixado pela cheia do rio, e o deserto ao redor de 'terra vermelha'. A passagem de uma para a outra é nítida: do campo verde à areia."},
+				{"kind": "historical", "title": "Três estações", "text": "O ano agrícola tinha três estações: a cheia, quando o rio cobria os campos; a semeadura e o crescimento; e a colheita. Os nomes egípcios eram akhet, peret e shemu."},
+				{"kind": "historical", "title": "Cevada, trigo e linho", "text": "Cevada e trigo emmer davam o pão e a cerveja do dia a dia. O linho era cultivado para tecido. Depois da colheita, o grão era debulhado na eira, medido, ensacado e anotado antes de ir para os silos."},
+				{"kind": "historical", "title": "Canais e balancim", "text": "Diques de terra separavam os campos, e canais levavam a água. O balancim (shaduf), uma vara com balde e contrapeso, aparece em pinturas egípcias de época mais tardia; se já era usado nos dias de José, não se sabe."},
+				{"kind": "fiction", "title": "O campo do jogo", "text": "O campo, o canal e a colheita de Senbi são criações do jogo, numa casa fictícia, e não mostram a bênção de Gênesis 39:5. A ajuda do viajante na colheita não tem relação com José nem com a bênção descrita em Gênesis 39:5."}
+			],
+			"related": {"people": ["joseph", "potiphar"], "places": ["egypt", "egypt_house"], "events": [], "stories": ["gen_039_joseph_potiphar"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Contexto a partir de research_historical.md §2.2 e §4 (shaduf como hipótese). Aguarda revisor histórico e revisão humana."}
+		},
+		{
+			"id": "joseph_steward",
+			"title": "José na casa de Potifar",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "No Egito, José é comprado por Potifar, oficial do Faraó. O SENHOR estava com José, e Potifar o põe como administrador de tudo o que tinha. O texto diz que o SENHOR abençoou a casa do egípcio por causa de José.",
+			"bible_note": "Gênesis 39:1-6.",
+			"references": ["Gen 39:1-6"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que o texto diz", "text": "Potifar, oficial do Faraó e capitão da guarda, compra José dos ismaelitas (Gn 39:1). O SENHOR estava com José, e ele prospera na casa do seu senhor egípcio (v. 2). Potifar percebe que o SENHOR estava com José; José ganha o seu favor, passa a servi-lo e é posto como administrador da casa (v. 3-4). Desde então, o SENHOR abençoa a casa do egípcio por causa de José, na casa e no campo, e Potifar deixa tudo nas mãos dele, menos a própria comida (v. 5-6)."},
+				{"kind": "chronology", "title": "Quanto tempo?", "text": "No início de Gênesis 37, José tem dezessete anos (Gn 37:2). O texto não diz quanto durou a viagem ao Egito nem quanto tempo José estava na casa quando foi posto como administrador."},
+				{"kind": "interpretation", "title": "O que o texto não diz", "text": "O relato não diz como Potifar percebeu que o SENHOR estava com José, em que cidade ficava a casa nem quem era o Faraó. Também não explica por que a comida ficava fora dos cuidados de José; há leituras diferentes, e o jogo não escolhe."},
+				{"kind": "interpretation", "title": "Uma leitura devocional", "text": "Muitos leitores notam que o narrador repete que o SENHOR estava com José, longe da família e servindo a um senhor estrangeiro. Essa leitura não torna boa a venda de José; o texto não a chama assim. Também não ensina que sofrer traz riqueza. (Reflexão do jogo, não parte do texto.)"},
+				{"kind": "fiction", "title": "A casa do jogo", "text": "José e Potifar não aparecem no mapa. A casa que o viajante visita é fictícia: uma casa de um oficial egípcio, como aquela onde José serviu, e não a casa de Potifar. Ipi, Meryt e Senbi são personagens fictícios, e o viajante não encontra José."}
+			],
+			"related": {"people": ["joseph", "potiphar"], "places": ["egypt", "egypt_house"], "events": [], "stories": ["gen_039_joseph_potiphar"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumo próprio conferido com Gn 39:1-6 e Gn 37:2 no arquivo oficial da BPM pelo agente roteirista (IA). Seção devocional identificada como leitura. story_id gen_039_joseph_potiphar ainda não existe (ver presentations.proposal.json). Aguarda verificador bíblico e revisão humana."}
+		},
+		{
+			"id": "egypt_black_land",
+			"title": "O Egito de José",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "patriarchs",
+			"summary": "O Egito era uma faixa verde ao longo do Nilo, cercada de deserto. O texto não diz em que cidade José viveu nem quem era o Faraó. A casa deste mapa é fictícia, como aquela onde José serviu (Gn 39:1-6), e não a casa de Potifar.",
+			"bible_note": "Gênesis 39:1 conta que José foi levado para o Egito e comprado por Potifar.",
+			"references": ["Gen 37:36", "Gen 39:1"],
+			"sections": [
+				{"kind": "historical", "title": "Uma faixa fértil", "text": "Quase toda a vida do Egito se concentrava junto ao Nilo e ao delta, onde a água chegava. Fora dali, o deserto."},
+				{"kind": "chronology", "title": "Sem data e sem lugar", "text": "Gênesis não nomeia o Faraó nem a cidade da casa de Potifar. A época de José é debatida, e o jogo não mostra data, dinastia nem pirâmides."},
+				{"kind": "fiction", "title": "Outro momento da história", "text": "O viajante chegou aqui pelo Mapa das Escrituras, não com a caravana. A propriedade, uma casa de um oficial egípcio como a de Potifar, e os seus servos são criações do jogo."}
+			],
+			"related": {"people": ["joseph", "potiphar"], "places": ["egypt", "egypt_house"], "events": [], "stories": ["gen_039_joseph_potiphar"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumo próprio pelo agente roteirista (IA). Aguarda revisor histórico e revisão humana."}
+		}
+	],
+	"collectibles": {
+		"_comment": "Destino: data/collectibles/egypt_house.json. Os objetos do mapa são recriações do jogo.",
+		"sets": [
+			{"id": "egypt_house_life", "title": "A vida na casa egípcia", "region": "egypt_house"}
+		],
+		"collectibles": [
+			{"id": "eh_pool", "set": "egypt_house_life", "title": "Tanque com lótus", "category": "cultural", "region": "egypt_house", "classification": "historical_context", "summary": "Jardins com tanque, lótus e árvores de sombra aparecem em modelos e pinturas de casas egípcias ricas. O tanque do mapa é uma recriação do jogo.", "references": []},
+			{"id": "eh_oven", "set": "egypt_house_life", "title": "Forno e moldes de pão", "category": "object", "region": "egypt_house", "classification": "historical_context", "summary": "Pão e cerveja eram a base da comida no Egito. O grão era moído à mão e o pão, assado em moldes de barro. O forno do mapa é uma recriação do jogo.", "references": []},
+			{"id": "eh_loom", "set": "egypt_house_life", "title": "Tear de chão", "category": "object", "region": "egypt_house", "classification": "historical_context", "summary": "Os egípcios vestiam sobretudo linho, tecido em teares horizontais rentes ao chão; o tear vertical aparece mais tarde. O tear do mapa é uma recriação do jogo.", "references": []},
+			{"id": "eh_jars", "set": "egypt_house_life", "title": "Jarros selados", "category": "object", "region": "egypt_house", "classification": "historical_context", "summary": "Jarros de barro com tampa selada guardavam grão, óleo e cerveja; um selo partido mostrava que o jarro tinha sido aberto. Recriação do jogo.", "references": []},
+			{"id": "eh_shaduf", "set": "egypt_house_life", "title": "Balancim do canal", "category": "cultural", "region": "egypt_house", "classification": "historical_context", "summary": "O balancim (shaduf) erguia água do canal com um balde e um contrapeso. Aparece em pinturas egípcias de época mais tardia; se já era usado nos dias de José, não se sabe.", "references": []}
+		]
+	}
+}

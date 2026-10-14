@@ -1,0 +1,118 @@
+{
+	"_comment": "PROPOSTA (ep_009, quest-designer, pending_review). 'regions' segue o formato de data/regions/*.json (destino: data/regions/egypt_house.json). 'dothan_delta' lista só o que se acrescenta a data/regions/dothan.json; dothan.tscn não muda. Coordenadas em pixels (tile = 16 px). Campos '_pending' e 'passage' em saídas dependem de código novo (design.md §4 e §11).",
+	"regions": [
+		{
+			"id": "egypt_house",
+			"display_name": "Casa de um oficial egípcio",
+			"area_label": "Egito de José",
+			"subtitle": "Época dos patriarcas (datação aproximada e debatida)",
+			"biome": "egito",
+			"map_scene": "res://scenes/maps/egypt_house.tscn",
+			"classification": "plausible_fiction",
+			"notes": "Propriedade fictícia inspirada nas grandes casas egípcias do II milênio a.C. (casas de Amarna e Kahun, modelos de Meketre): muro de tijolo de barro, casa com pórtico de colunas de madeira, jardim com tanque, depósito, celeiros, eira, curral, campos irrigados e canal. A casa é genérica: uma casa de um oficial egípcio, como aquela onde José serviu (Gn 39:1-6), e não a casa de Potifar. Gênesis 39:1 não diz em que cidade ficava a casa de Potifar, sob qual Faraó nem em qual dinastia; o mapa não identifica nenhum deles. Servos e objetos são criados para o jogo.",
+			"related_stories": [],
+			"context": {
+				"place_id": "egypt",
+				"era_id": "patriarchs",
+				"references": ["Gen 39:1-6"],
+				"theme": "José servindo numa casa estrangeira; o SENHOR estava com José",
+				"discoveries_on_enter": ["egypt_black_land"]
+			},
+			"entries": {
+				"default": {"x": 40, "y": 496, "facing": "right"},
+				"from_passage": {"x": 40, "y": 496, "facing": "right"}
+			},
+			"exits": [
+				{
+					"id": "west_road",
+					"rect": [0, 476, 12, 40],
+					"to": "dothan",
+					"entry": "default",
+					"label": "Mapa das Escrituras: voltar a Canaã",
+					"passage": {
+						"title": "OUTRO MOMENTO DA HISTÓRIA",
+						"lines": [
+							"Pelo Mapa das Escrituras, você volta ao vale de Dotã, em Canaã. O viajante não refaz a viagem da caravana: a passagem é narrativa, como quem volta algumas páginas.",
+							"A casa egípcia continua no Mapa das Escrituras, em \"José no Egito\", para quando quiser revisitá-la."
+						]
+					},
+					"_pending": "pending_target: o campo 'passage' em saídas não existe (map_exit.gd). Sem ele, a saída não pode ir para o jogo."
+				}
+			],
+			"areas": [
+				{"id": "eh_courtyard", "rect": [320, 272, 272, 144], "label": "Pátio da casa"},
+				{"id": "eh_gate", "rect": [352, 432, 64, 48], "label": "Portão da propriedade"}
+			],
+			"npcs": [
+				{"id": "egypt_ipi", "character": "egypt_ipi", "x": 436, "y": 470},
+				{"id": "egypt_meryt", "character": "egypt_meryt", "x": 600, "y": 280},
+				{"id": "egypt_senbi", "character": "egypt_senbi", "x": 780, "y": 392},
+				{"id": "cattle_1", "character": "egypt_cattle", "x": 930, "y": 340},
+				{"id": "cattle_2", "character": "egypt_cattle", "x": 968, "y": 392},
+				{"id": "donkey_1", "character": "egypt_donkey", "x": 920, "y": 410},
+				{"id": "goose_1", "character": "egypt_goose", "x": 200, "y": 236},
+				{"id": "goose_2", "character": "egypt_goose", "x": 240, "y": 228},
+				{"id": "goose_3", "character": "egypt_goose", "x": 420, "y": 360},
+				{"id": "cat_1", "character": "egypt_cat", "x": 760, "y": 240}
+			],
+			"examinables": [
+				{"id": "eh_records", "x": 640, "y": 232, "prop": "scribe_table", "dialogue": "eh_records", "prompt": "Examinar a mesa do escriba", "prompt_y": -22},
+				{"id": "eh_granary", "x": 800, "y": 210, "prop": "granary_silos", "dialogue": "eh_granary", "prompt": "Examinar os silos", "radius": 18, "center_y": -6, "prompt_y": -34},
+				{"id": "eh_field", "x": 640, "y": 470, "prop": "flax_bundles", "dialogue": "eh_field", "prompt": "Observar o campo", "prompt_y": -20},
+				{"id": "eh_journal", "x": 264, "y": 232, "prop": "journal", "kind": "read", "dialogue": "eh_journal", "prompt": "Ler o diário de viagem", "prompt_y": -16},
+				{"id": "eh_pool", "x": 216, "y": 200, "prop": "garden_pool", "dialogue": "eh_pool", "prompt": "Examinar o tanque", "radius": 20, "prompt_y": -18},
+				{"id": "eh_oven", "x": 176, "y": 352, "prop": "egypt_oven", "dialogue": "eh_oven", "prompt": "Examinar o forno", "prompt_y": -22},
+				{"id": "eh_loom", "x": 360, "y": 392, "prop": "floor_loom", "dialogue": "eh_loom", "prompt": "Examinar o tear", "prompt_y": -16},
+				{"id": "eh_jars", "x": 608, "y": 160, "prop": "storage_jars", "dialogue": "eh_jars", "prompt": "Examinar os jarros", "prompt_y": -22},
+				{"id": "eh_shaduf", "x": 720, "y": 600, "prop": "shaduf", "dialogue": "eh_shaduf", "prompt": "Examinar o balancim", "center_y": -6, "prompt_y": -30}
+			],
+			"pickups": [
+				{"id": "eh_sack_1", "item": "barley_sack", "x": 764, "y": 372, "visible_if": {"objective": "egypt_granary_sacks/gather_sacks"}},
+				{"id": "eh_sack_2", "item": "barley_sack", "x": 804, "y": 404, "visible_if": {"objective": "egypt_granary_sacks/gather_sacks"}},
+				{"id": "eh_sack_3", "item": "barley_sack", "x": 840, "y": 366, "visible_if": {"objective": "egypt_granary_sacks/gather_sacks"}}
+			],
+			"_layout": {
+				"_comment": "Para LAYOUTS.egypt_house em tools/art_gen/build_regions.gd. Retângulos em tiles [x0, y0, x1, y1] inclusivos. Posições de props em pixels.",
+				"size": [64, 40],
+				"tileset": "egypt_tileset (novo)",
+				"zones": {
+					"desert_edge": [0, 0, 63, 3],
+					"enclosure_wall": [4, 4, 41, 27],
+					"gate_south": [22, 27, 25, 27],
+					"garden": [6, 6, 18, 16],
+					"main_house_portico": [21, 6, 34, 15],
+					"storeroom_scribe": [36, 6, 40, 16],
+					"kitchen": [6, 19, 16, 26],
+					"courtyard": [20, 17, 36, 25],
+					"granary_yard": [44, 6, 58, 15],
+					"threshing_floor": [46, 21, 53, 26],
+					"cattle_pen": [56, 18, 62, 26],
+					"road": [[0, 30, 24, 31], [22, 28, 25, 29]],
+					"fields": [28, 29, 63, 36],
+					"canal": [0, 37, 63, 39]
+				},
+				"props": [
+					["house_portico", 448, 240], ["garden_pool", 216, 200], ["tree_sycamore", 136, 120], ["tree_sycamore", 296, 120],
+					["tree_date_palm", 136, 256], ["tree_date_palm", 296, 264], ["storage_jars", 608, 160], ["storage_jars", 632, 128],
+					["scribe_table", 640, 232], ["egypt_oven", 176, 352], ["saddle_quern", 216, 384], ["floor_loom", 360, 392],
+					["grain_sacks", 520, 392], ["basket", 548, 372], ["granary_silos", 800, 210], ["threshing_floor", 800, 384],
+					["reed_fence", 896, 288], ["flax_bundles", 640, 470], ["shaduf", 720, 600], ["papyrus_reeds", 120, 604],
+					["papyrus_reeds", 460, 608], ["papyrus_reeds", 940, 606], ["tree_acacia", 760, 24], ["tree_acacia", 980, 40]
+				],
+				"reserved_free": "entradas, saídas, áreas, NPCs, examináveis e pickups acima (o gerador já reserva os dados da região)",
+				"tint": "Color(1.0, 0.97, 0.88)"
+			}
+		}
+	],
+	"dothan_delta": {
+		"_comment": "Acrescentar a data/regions/dothan.json (não remover nem mover nada). Sem mudança em scenes/maps/dothan.tscn: área e examinável são montados em tempo de jogo pelo GameMap. Área livre de árvores conferida nas posições do .tscn (mais próximas: (24,140), (39,106), (123,203)).",
+		"areas_add": [
+			{"id": "dothan_ridge", "rect": [64, 112, 96, 80], "label": "Encosta alta a oeste"}
+		],
+		"examinables_add": [
+			{"id": "dothan_ridge_view", "x": 112, "y": 150, "prop": "rock_big", "dialogue": "dothan_ridge_view", "prompt": "Observar a estrada do vale", "center_y": -6, "prompt_y": -24, "visible_if": {"flag": "experience:joseph_egypt"}}
+		],
+		"related_stories_add": [],
+		"notes_append": "A encosta a oeste e a caravana vista de longe (experiência José no Egito) são representação do jogo; a caravana passa pela borda sul do vale, longe da cisterna do mapa."
+	}
+}

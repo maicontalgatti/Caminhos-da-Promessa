@@ -1,0 +1,60 @@
+{
+	"_comment": "Proposta do roteirista (IA, 2026-10-14) para data/characters/bethlehem_fields.json. Ids com prefixo bf_ (four_experiences_decisions.md): ilan -> bf_ilan, tova -> bf_tova, tova_home -> bf_tova_home. Todos são fictícios (plausible_fiction) e não testemunham o relato. bf_tova_home é a mesma Tova, em casa: precisa ser personagem próprio porque o NPC usa o dialogue_id do personagem e o guia de objetivos procura o alvo 'npc' pelo id do personagem; usa o mesmo sprite e não entra em 'fictional_characters' das missões (para não aparecer duas vezes no diário). bf_reaper serve aos ceifeiros dos dois campos. 'visual_description' é briefing para o visual-asset-producer (paleta e anacronismos em research_historical.md) e sai na integração. 'scene_figures' lista os figurantes da cena dirigida ruth_gleaning_meal: são sprites silhouette_*, não personagens de data/characters, e nunca viram NPC.",
+	"characters": [
+		{
+			"id": "bf_ilan",
+			"display_name": "Ilan",
+			"role": "Pequeno agricultor de Belém",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Agricultor fictício que colhe a cevada num campo pequeno ao lado da parte do campo que era de Boaz. Explica o costume do canto do campo e da respiga. Não conversa com Rute, Noemi ou Boaz e não conta o que só o texto registra.",
+			"dialogue_id": "bf_ilan_talk",
+			"sprite": {"sheet": "res://assets/characters/bf_ilan.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1},
+			"visual_description": "Homem de uns 40 anos, forte, barba castanha curta, pele queimada de sol. Túnica de lã natural (#E6D9BC) até a canela, com a barra presa no cinto para trabalhar; cinto de pano marrom; pano de cabeça cru amarrado contra o sol. Foice de cabo curvo de madeira com dentes claros de sílex na mão ou presa ao cinto. Sandálias de couro. Pó de palha nas mangas. Evitar foice de metal brilhante, cores vivas e bordados."
+		},
+		{
+			"id": "bf_tova",
+			"display_name": "Tova",
+			"role": "Viúva que respiga",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Viúva fictícia que mora em Belém desde menina e respiga atrás dos ceifeiros de Ilan na colheita. Não tem relação com Noemi nem com Rute.",
+			"dialogue_id": "bf_tova_talk",
+			"sprite": {"sheet": "res://assets/characters/bf_tova.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "wander", "speed": 10, "wander_radius": 16},
+			"visual_description": "Mulher idosa, uns 65 anos, magra, um pouco curvada, passo lento. Túnica de lã cinza-acastanhada (#8A6A4A) até o tornozelo, gasta; manto cru sobre os ombros; pano de cabeça cru caindo nas costas. Cesto de fibra trançada apoiado no quadril, com espigas. Pés em sandálias simples. Nada de roupa de luto exagerada, joias ou cores fortes; diferente de Nava (ep_016) na silhueta: mais baixa, cesto em vez de manto escuro."
+		},
+		{
+			"id": "bf_tova_home",
+			"display_name": "Tova",
+			"role": "Viúva que respiga",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Tova diante da casa dela, junto ao muro da aldeia, depois da colheita do dia.",
+			"dialogue_id": "bf_tova_home_talk",
+			"sprite": {"sheet": "res://assets/characters/bf_tova.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1},
+			"visual_description": "Mesmo sprite de bf_tova."
+		},
+		{
+			"id": "bf_reaper",
+			"display_name": "Ceifeiro",
+			"role": "Ceifeiro",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Ceifeiro fictício, concentrado no trabalho. Não comenta o relato nem as pessoas do campo vizinho.",
+			"dialogue_id": "bf_reaper_work",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/bf_reaper.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 1, "facing_y": 0},
+			"visual_description": "Homem jovem, uns 20 anos, magro. Túnica curta de linho cru até o joelho, cinto de corda, mangas arregaçadas, pano de cabeça amarrado. Curvado, segurando um punhado de colmos numa mão e a foice de sílex na outra (pose de ceifar). Pés descalços ou sandálias de fibra."
+		}
+	],
+	"scene_figures": [
+		{"sprite": "silhouette_bf_ruth", "classification": "recorded_event", "note": "Rute, só de longe, na cena dirigida; sem fala, sem rosto detalhado.", "visual_description": "Figura pequena (~24 px) de mulher jovem, túnica de lã natural até o tornozelo, pano de cabeça cru, cesto de fibra na mão ou no quadril. Pose de respigar (curvada) e de andar. Nada que a marque como 'estrangeira exótica': mesma roupa simples das mulheres da aldeia."},
+		{"sprite": "silhouette_bf_boaz", "classification": "recorded_event", "note": "Boaz, só de longe; sem fala.", "visual_description": "Figura pequena de homem adulto, barba, túnica longa de lã natural com uma faixa colorida discreta (vermelho-terroso) no manto, sinal de posses. Anda ereto, sem ferramenta. Sem joias, sem cajado de rei."},
+		{"sprite": "silhouette_bf_overseer", "classification": "recorded_event", "note": "Encarregado dos ceifeiros (Rt 2:5-7), anônimo.", "visual_description": "Homem adulto, túnica curta cru, cinto de couro, manto marrom jogado no ombro; fica em pé, de frente para os ceifeiros."},
+		{"sprite": "silhouette_bf_servant", "classification": "recorded_event", "note": "Serva de Boaz (Rt 2:8), anônima.", "visual_description": "Mulher jovem, túnica cru, pano de cabeça marrom-claro, feixe ou cântaro de água no ombro."}
+	]
+}

@@ -1,0 +1,145 @@
+{
+	"_comment": "PROPOSTA (quest-designer, 2026-10-14) no formato da cena dirigida de production/reports/four_experiences_decisions.md. Destino sugerido: data/scenes/shepherds_announcement.json e data/scenes/shepherds_at_the_house.json. Cada passo usa a chave \"type\" (mesma convenção do ep_016/ep_025). Coordenadas em px no mapa bethlehem_night (1024x768). Todas as legendas 'scripture' (Luke 2:8 a 2:20) já existem em bpm.json. Legendas 'narration'/'context' escritas pelo roteirista (IA, 2026-10-14), com a referência no próprio texto; 2:15 e 2:17-18 em paráfrase identificada. Gatilhos no formato do lote: \"action\": {\"scene\": id}, nos nós watch_go (bn_watch_stone) e follow_go (bn_house_view). Extensões do lote usadas: passo 'player' (reposicionar), 'pose' em actor, 'on_end' (set_flags/unlock aplicados ao terminar ou pular). Extensão nova pedida: light_glow com raio animado (radius_from/radius/time) e vários pontos (points) com subida (rise). Anjo SEM figura: só luz. Nada vira item, ponto ou poder (regra 12). Só texto, sem voz.",
+	"scenes": [
+		{
+			"id": "shepherds_announcement",
+			"region": "bethlehem_night",
+			"title": "A glória ao redor dos pastores",
+			"classification": "recorded_event",
+			"classification_note": "Representação do relato de Lucas 2:8-15. A forma da luz, o número de pastores (3) e as poses são do jogo: o texto não descreve o anjo nem diz quantos eram. O viajante fica à margem, no posto de vigia, fora da luz.",
+			"references": ["Luke 2:8-15"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA). Legendas próprias escritas pelo roteirista (IA); paráfrase de 2:15 a conferir pelo verificador bíblico."},
+			"skippable": true,
+			"trigger": {"dialogue": "bn_watch_stone", "node": "watch_go", "choice": "Ficar de vigia.", "set_flags": ["bn_watch_begun"], "action": {"scene": "shepherds_announcement"}},
+			"steps": [
+				{"type": "player", "at": [344, 472], "facing": "right"},
+				{"type": "actor", "id": "rep_a", "sprite": "shepherd_rep_figure_a", "at": [488, 536], "facing": "right", "pose": "sit"},
+				{"type": "actor", "id": "rep_b", "sprite": "shepherd_rep_figure_b", "at": [552, 536], "facing": "left", "pose": "sit"},
+				{"type": "actor", "id": "rep_c", "sprite": "shepherd_rep_figure_c", "at": [520, 504], "facing": "down", "pose": "sit"},
+				{"type": "camera", "to": [448, 512], "time": 2.5, "zoom": 0.9, "wait": true},
+				{"type": "caption", "text": "Representação: o texto não diz quantos pastores eram nem seus nomes. O viajante, à margem, é criação do jogo.", "kind": "context"},
+				{"type": "caption", "scripture": "Luke 2:8", "wait": true},
+				{"type": "wait", "time": 1.5},
+
+				{"type": "effect", "effect": "light_glow", "on": true, "at": [520, 528], "params": {"id": "glory", "color": "#FFF8E0", "radius_from": 8, "radius": 120, "time": 3.0, "soft": true, "particles": false}},
+				{"type": "tint", "color": "#B8B4C8", "time": 3.0, "wait": true},
+				{"type": "actor", "id": "rep_a", "sprite": "shepherd_rep_figure_a", "at": [480, 540], "facing": "right", "pose": "fear"},
+				{"type": "actor", "id": "rep_b", "sprite": "shepherd_rep_figure_b", "at": [560, 540], "facing": "left", "pose": "fear"},
+				{"type": "actor", "id": "rep_c", "sprite": "shepherd_rep_figure_c", "at": [520, 500], "facing": "down", "pose": "fear"},
+				{"type": "caption", "scripture": "Luke 2:9", "wait": true},
+				{"type": "caption", "text": "O jogo mostra só a luz: o texto não descreve a aparência do anjo.", "kind": "context"},
+
+				{"type": "caption", "scripture": "Luke 2:10", "wait": true},
+				{"type": "caption", "scripture": "Luke 2:11", "wait": true},
+				{"type": "caption", "scripture": "Luke 2:12", "wait": true},
+
+				{"type": "camera", "to": [480, 400], "time": 2.0, "zoom": 0.85, "wait": true},
+				{"type": "effect", "effect": "light_glow", "on": true, "at": [520, 300], "params": {"id": "host", "color": "#FFF8E0", "points": 28, "spread": [360, 180], "radius": 6, "radius_from": 0, "time": 2.0, "soft": true, "particles": false, "_note": "muitas luzes pequenas e sóbrias no céu acima do campo; sem forma, asas ou rosto"}},
+				{"type": "caption", "scripture": "Luke 2:13", "wait": true},
+				{"type": "caption", "scripture": "Luke 2:14", "wait": true},
+				{"type": "wait", "time": 1.5},
+
+				{"type": "effect", "effect": "light_glow", "on": false, "at": [520, 300], "params": {"id": "host", "rise": 160, "time": 4.0}},
+				{"type": "effect", "effect": "light_glow", "on": false, "at": [520, 528], "params": {"id": "glory", "radius": 0, "time": 4.0}},
+				{"type": "tint", "color": "#5A6496", "time": 4.0, "wait": true},
+				{"type": "camera", "to": [480, 480], "time": 1.5, "zoom": 0.9, "wait": true},
+
+				{"type": "actor", "id": "rep_a", "sprite": "shepherd_rep_figure_a", "at": [480, 540], "facing": "up", "pose": "stand"},
+				{"type": "actor", "id": "rep_b", "sprite": "shepherd_rep_figure_b", "at": [560, 540], "facing": "up", "pose": "stand"},
+				{"type": "actor", "id": "rep_c", "sprite": "shepherd_rep_figure_c", "at": [520, 500], "facing": "up", "pose": "stand"},
+				{"type": "caption", "text": "Quando os anjos se afastaram rumo ao céu, os pastores combinaram entre si ir até Belém para ver o que tinha acontecido e que o Senhor lhes fizera saber. (Paráfrase de Lucas 2:15.)", "kind": "narration", "wait": true},
+				{"type": "move", "actor": "rep_c", "path": [[520, 500], [488, 424], [584, 328], [632, 248]], "speed": 40},
+				{"type": "move", "actor": "rep_a", "path": [[480, 540], [488, 424], [584, 328], [632, 248]], "speed": 40},
+				{"type": "move", "actor": "rep_b", "path": [[560, 540], [488, 424], [584, 328], [632, 248]], "speed": 40},
+				{"type": "camera", "to": [520, 380], "time": 3.0, "wait": true},
+				{"type": "wait", "time": 1.0},
+				{"type": "remove", "actor": "rep_a"},
+				{"type": "remove", "actor": "rep_b"},
+				{"type": "remove", "actor": "rep_c"},
+				{"type": "camera", "follow": "player", "time": 1.5, "zoom": 1.0, "wait": true}
+			],
+			"on_end": {
+				"_comment": "Aplicado ao terminar ou ao pular (Esc): mesmo estado final.",
+				"player": {"at": [344, 472], "facing": "right"},
+				"tint": "#5A6496",
+				"effects_off": ["glory", "host"],
+				"actors_removed": true,
+				"camera": {"follow": "player", "zoom": 1.0},
+				"set_flags": ["bn_watch_begun"],
+				"unlock": ["glory_around_shepherds"],
+				"event": {"type": "scene_finished", "id": "shepherds_announcement"}
+			},
+			"rules": [
+				"Nenhuma figura de anjo: só luz no chão ao redor dos três pastores e luzes pequenas no céu; sem asas, auréola, rosto, harpa, estrela.",
+				"O viajante e Tamir ficam fora do círculo de luz; Tamir dorme; o viajante não reage na tela nem fala.",
+				"Nada de 'canto': sem coro com letra; trilha instrumental baixa permitida; fogo e vento leve.",
+				"Os pastores do relato não falam além da paráfrase identificada de 2:15 (coletiva, sem orador).",
+				"Sem item, ponto, poder ou colecionável (regra 12). UI e salvamento bloqueados durante a cena; ao carregar com a cena concluída, ela não repete."
+			],
+			"assets_needed": ["shepherd_rep_figure_a/b/c (túnica e manto de lã em cores naturais, cajado; poses sit, fear, stand; sem traço de idade marcada)", "efeito light_glow com raio animado e pontos múltiplos (cor #FFF8E0, sem partículas)", "sfx amb_night_field, amb_campfire"]
+		},
+		{
+			"id": "shepherds_at_the_house",
+			"region": "bethlehem_night",
+			"title": "Em Belém, vistos de fora",
+			"classification": "recorded_event",
+			"classification_note": "Representação de Lucas 2:16-20 vista de fora. A casa de pedra encostada na rocha, com área de animais, é composição do jogo; onde exatamente estava a manjedoura e o sentido de 'hospedaria' são debatidos. Maria, José e o bebê não aparecem; o interior não é mostrado.",
+			"references": ["Luke 2:16-20"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA). Narração de 2:17-18 e legenda de contexto escritas pelo roteirista (IA); a conferir pelo verificador bíblico."},
+			"skippable": true,
+			"trigger": {"dialogue": "bn_house_view", "node": "follow_go", "choice": "Observar daqui.", "action": {"scene": "shepherds_at_the_house"}},
+			"steps": [
+				{"type": "player", "at": [632, 248], "facing": "up"},
+				{"type": "camera", "to": [688, 176], "time": 2.0, "zoom": 1.0, "wait": true},
+				{"type": "caption", "text": "Representação: casa de pedra com área de animais, vista só de fora. Onde o bebê estava e o sentido de \"hospedaria\" (Lucas 2:7) são debatidos.", "kind": "context"},
+				{"type": "actor", "id": "rep_a", "sprite": "shepherd_rep_figure_a", "at": [744, 216], "facing": "up", "pose": "stand"},
+				{"type": "actor", "id": "rep_b", "sprite": "shepherd_rep_figure_b", "at": [752, 232], "facing": "up", "pose": "stand"},
+				{"type": "actor", "id": "rep_c", "sprite": "shepherd_rep_figure_c", "at": [736, 240], "facing": "up", "pose": "stand"},
+				{"type": "move", "actor": "rep_a", "path": [[744, 216], [744, 168], [712, 152]], "speed": 30},
+				{"type": "move", "actor": "rep_b", "path": [[752, 232], [744, 168], [712, 152]], "speed": 30},
+				{"type": "move", "actor": "rep_c", "path": [[736, 240], [744, 168], [712, 152]], "speed": 30, "wait": true},
+				{"type": "effect", "effect": "light_glow", "on": true, "at": [712, 152], "params": {"id": "door_lamp", "color": "#E9A955", "radius": 14}},
+				{"type": "remove", "actor": "rep_a"},
+				{"type": "remove", "actor": "rep_b"},
+				{"type": "remove", "actor": "rep_c"},
+				{"type": "caption", "scripture": "Luke 2:16", "wait": true},
+				{"type": "wait", "time": 2.5},
+
+				{"type": "caption", "text": "Depois de ver o menino, os pastores contaram o que lhes fora dito a respeito dele, e todos os que ouviram ficaram admirados. (Paráfrase de Lucas 2:17-18.)", "kind": "narration", "wait": true},
+				{"type": "wait", "time": 2.0},
+
+				{"type": "actor", "id": "rep_a", "sprite": "shepherd_rep_figure_a", "at": [712, 160], "facing": "down", "pose": "stand"},
+				{"type": "actor", "id": "rep_b", "sprite": "shepherd_rep_figure_b", "at": [720, 164], "facing": "down", "pose": "stand"},
+				{"type": "actor", "id": "rep_c", "sprite": "shepherd_rep_figure_c", "at": [704, 166], "facing": "down", "pose": "stand"},
+				{"type": "move", "actor": "rep_a", "path": [[712, 160], [744, 168], [744, 200], [664, 256], [584, 328], [488, 424], [520, 520]], "speed": 26},
+				{"type": "move", "actor": "rep_b", "path": [[720, 164], [744, 168], [744, 200], [664, 256], [584, 328], [488, 424], [520, 520]], "speed": 26},
+				{"type": "move", "actor": "rep_c", "path": [[704, 166], [744, 168], [744, 200], [664, 256], [584, 328], [488, 424], [520, 520]], "speed": 26},
+				{"type": "camera", "to": [632, 260], "time": 3.0, "wait": true},
+				{"type": "caption", "scripture": "Luke 2:20", "wait": true},
+				{"type": "wait", "time": 2.0},
+				{"type": "remove", "actor": "rep_a"},
+				{"type": "remove", "actor": "rep_b"},
+				{"type": "remove", "actor": "rep_c"},
+				{"type": "camera", "follow": "player", "time": 1.5, "wait": true}
+			],
+			"on_end": {
+				"_comment": "Aplicado ao terminar ou ao pular (Esc). A luz da porta (door_lamp) pode ficar acesa como parte do estado da noite; os pastores reaparecem como NPCs no fogo do portão (visible_if do evento).",
+				"player": {"at": [632, 248], "facing": "down"},
+				"tint": "#5A6496",
+				"effects_off": [],
+				"actors_removed": true,
+				"camera": {"follow": "player", "zoom": 1.0},
+				"unlock": ["manger_katalyma"],
+				"event": {"type": "scene_finished", "id": "shepherds_at_the_house"}
+			},
+			"rules": [
+				"A câmera não se aproxima da porta além do zoom 1,0; nenhum interior; Maria, José e o bebê nunca em tela; sem falas, balões ou pensamentos deles.",
+				"Lucas 2:19 (Maria) não aparece na cena: fica só na apresentação do diário.",
+				"Os pastores passam pelo viajante sem interagir; o viajante não entra, não guia, não leva notícia.",
+				"Sem estrela, magos, estábulo de madeira, boi e jumento, estalajadeiro ou placa.",
+				"Sem item, ponto, poder ou colecionável (regra 12)."
+			],
+			"assets_needed": ["mesmos figurantes shepherd_rep_figure_a/b/c", "prop house_courtyard_rock (casa na rocha com pátio, porta baixa e abertura lateral de animais)", "luz de lamparina #E9A955"]
+		}
+	]
+}

@@ -113,6 +113,22 @@ Validação automática: nó inicial, `next` e escolhas apontando para nós exis
 
 `id`, `display_name`, `subtitle`, `biome`, `map_scene`, `classification`, `notes`, `related_stories`,
 `context {place_id, era_id, references[], theme, discoveries_on_enter[]}` (painel de contexto e descobertas ao entrar; v0.2).
+Opcionais (ADR-028): `lighting [{if, tint}]` (luz por estado; `GameMap.refresh_lighting`, CanvasModulate
+`Lighting` criado só quando há tinta) e `exits[].passage {title, lines}` (cartão antes de atravessar).
+Validação: `WorldSchema` (sem autoloads).
+
+### Cena dirigida (`data/scenes/*.json`, chave `scenes`) — ADR-028
+
+Sequência assistida no mapa: `steps` de `camera`, `actor`, `move`, `remove`, `pose`, `tint`, `effect`,
+`caption`, `sfx`, `wait`, `player_to`, mais `on_end {set_flags, unlock, player_to}`. Formato completo em
+[`quests.md`](quests.md#cenas-dirigidas-datascenesjson-chave-scenes--adr-028).
+- `SceneDatabase` (`scripts/world/scene_database.gd`): leitura e validação estática (estrutura, vínculos,
+  chaves proibidas de recompensa); usada por testes, `tools/validate_content.gd`, fábrica e autoteste do exe.
+- `SceneDirector` (`scripts/world/scene_director.gd`, filho de `Game`): toca a cena; bloqueia a UI
+  (`GameState.block_ui("scene")`), cria uma `SceneCamera` própria, figurantes (`SceneActor`) no nó `World`
+  do mapa, efeitos (`SceneFx`) em `SceneFx` (mundo) e brilhos aditivos na CanvasLayer `SceneGlow` (camada 1,
+  acima da tinta do mapa), legendas na CanvasLayer 39. Esc pula para o estado final.
+- Disparo pela ação de diálogo `{"scene": id}`; fim registra `scene_finished` no `QuestManager`.
 
 ### Catálogo bíblico
 

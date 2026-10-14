@@ -1,0 +1,48 @@
+{
+	"_comment": "PROPOSTA (ep_009, quest-designer, pending_review). Substitui a entrada 'joseph_egypt' (hoje 'planned') em data/world/experiences.json. Campos existentes: id, era, title, references, place, status, requires, locked_text, completed_by, summary, passage, travel. Campo NOVO 'stages' (código: world_manager.start_experience + scripture_map): vale o último estágio cuja condição 'if' é verdadeira; cada estágio tem 'travel' e, opcionalmente, 'passage' (mostrada uma vez por estágio, flag experience_stage:<xid>:<stage>). Sem 'stages', vale 'travel' (retrocompatível). Linhas das passagens finalizadas pelo roteirista (IA, pending_review). requires = joseph_dothan_road (conferido na revisão).",
+	"experience": {
+		"id": "joseph_egypt",
+		"era": "patriarchs",
+		"title": "José no Egito",
+		"references": ["Gen 37:25-28", "Gen 37:36", "Gen 39:1-6"],
+		"place": "Dotã · Egito de José",
+		"status": "available",
+		"requires": {"quest_completed": "joseph_dothan_road"},
+		"locked_text": "Explore primeiro \"José em Dotã\" para abrir esta experiência.",
+		"completed_by": "joseph_potiphar_house",
+		"summary": "Do alto de uma encosta em Dotã, veja de longe a caravana que desce para o Egito. Depois, em outro momento da história, visite uma casa de um oficial egípcio, como aquela onde José serviu.",
+		"travel": {"region": "dothan", "entry": "default"},
+		"passage": {
+			"title": "OUTRO MOMENTO DA HISTÓRIA",
+			"lines": [
+				"Gênesis 37 continua em Dotã. Depois que José encontra os irmãos (Gênesis 37:17), o relato segue até a passagem de uma caravana que desce para o Egito (37:25). Você volta ao vale por conta própria e vai observar de longe, do alto de uma encosta.",
+				"O viajante não fala com José nem com os irmãos, não se aproxima e não muda o que o relato conta. A cena é vista de longe, sem mostrar violência, e pode ser pulada.",
+				"O viajante é um personagem fictício. Os pastores de Dotã também são criações do jogo."
+			]
+		},
+		"stages": [
+			{
+				"id": "dothan",
+				"travel": {"region": "dothan", "entry": "default"}
+			},
+			{
+				"id": "egypt_house",
+				"if": {"quest_completed": "joseph_caravan_watch"},
+				"travel": {"region": "egypt_house", "entry": "from_passage"},
+				"passage": {
+					"title": "OUTRO MOMENTO DA HISTÓRIA",
+					"lines": [
+						"A caravana levou José para o Egito (Gênesis 37:28, 36). O viajante não a seguiu: o Mapa das Escrituras o leva a outro momento da história, como quem vira a página.",
+						"O texto não diz quanto durou a viagem nem quanto tempo José estava na casa de Potifar quando foi posto como administrador (Gênesis 39:1-4). O diário traz Gênesis 39:1-6; a história de José continua nos capítulos seguintes.",
+						"A casa que você vai visitar é fictícia: uma casa de um oficial egípcio, como aquela onde José serviu, e não a casa de Potifar. Gênesis 39 não diz em que cidade ficava a casa de Potifar, e o Faraó não é nomeado. José e Potifar não aparecem; os servos são criações do jogo."
+					]
+				}
+			}
+		],
+		"_pending": {
+			"code": "'stages' não existe hoje: start_experience aceita um único 'travel' e o botão 'Continuar' de experiência ativa leva só a ele. Sem 'stages', o objetivo joseph_potiphar_house/arrive_egypt não é alcançável.",
+			"catalog": "production/catalog/episodes.json (ep_009) ainda traz 'Gen 39:1-23' e obj_03 joseph_imprisoned; atualizar após decisão humana (Gen 39:7-23 fora).",
+			"previous_next": "joseph_dothan_road.completion.next diz que Gn 37:18-36 'está em planejamento'; atualizar para apontar esta experiência quando ela for publicada."
+		}
+	}
+}
