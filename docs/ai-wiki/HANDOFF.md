@@ -90,7 +90,7 @@ Todas estão `pending_review`, sem revisão humana.
 | `tools/audio/audit_audio.gd` | **Realizado e aprovado**: 131 arquivos, 0 problemas |
 | JSON (`data/`, `production/`, catálogo) | **Realizado e aprovado**: 50 arquivos, todos válidos |
 | `tools/check_wiki.ps1` | **Realizado e aprovado**: 29 documentos, 0 erros, 0 avisos |
-| Clone limpo do GitHub e testes na cópia | ver registro complementar abaixo |
+| Clone limpo do GitHub e testes na cópia | **Realizado e aprovado**: 665/665, fluxo 17/17, validação e auditoria (detalhes no registro complementar) |
 | Escuta humana dos sons, sessão de jogo humana | **Não executado** (KI-16, KI-02) |
 
 ## Problemas conhecidos (principais)
@@ -112,7 +112,7 @@ Num chat novo: "Leia `AGENTS.md` e `docs/ai-wiki/HANDOFF.md` e continue a partir
 
 ## Cuidados
 - O repositório no GitHub é **privado**: não mude a visibilidade nem faça force push.
-- O `gh` desta máquina tem duas contas: a ativa é `maicontalgatti`, a outra é `ampla-dev` (`gh auth switch` troca entre elas). Neste repositório, o Git usa o `gh` como gerenciador de credenciais (configuração local), para não enviar com a conta errada.
+- O `gh` desta máquina tem duas contas: a ativa é `maicontalgatti`, a outra é `ampla-dev` (`gh auth switch` troca entre elas). Neste repositório, o Git usa o `gh` como gerenciador de credenciais (configuração local), para não enviar com a conta errada. Fora dele, o gerenciador global está com `ampla-dev`: para clonar este repositório privado, use `gh repo clone maicontalgatti/Caminhos-da-Promessa`.
 - Não rode `tools/audio/generate_sfx.gd` sobre sons já trocados por gravação.
 - Ferramentas que encerram o jogo chamam `AudioManager.shutdown()` e esperam um instante.
 - Em headless, testes com animação, fade ou cooldown medem por tempo; tecla simulada exige `Input.flush_buffered_events()`.
@@ -121,3 +121,17 @@ Num chat novo: "Leia `AGENTS.md` e `docs/ai-wiki/HANDOFF.md` e continue a partir
 
 ## Registro complementar (depois do commit)
 Preenchido num segundo commit, porque o hash do commit não pode constar nele mesmo.
+- **Repositório:** https://github.com/maicontalgatti/Caminhos-da-Promessa
+  - conta `maicontalgatti` (nome no GitHub: Maicon Talgatti);
+  - visibilidade **PRIVATE**, conferida pela API antes e depois do envio.
+- **Commit do checkpoint:** `218cb73` ("chore: project checkpoint and AI knowledge preservation"), autor Maicon Talgatti com e-mail noreply do GitHub, 748 arquivos, branch `main`.
+- **Envio:** push normal (`main -> main`, sem force).
+- **Conferência pela API:**
+  - commit remoto igual ao local, 748 arquivos na árvore remota;
+  - 37 `.tscn`, 70 `.gd`, 131 `.wav`, 9 agentes, 3 regras, 14 documentos da wiki;
+  - local e remoto sincronizados.
+- **Clone limpo** (`gh repo clone` numa pasta temporária, usando o Godot portátil desta máquina):
+  - **Realizado e aprovado:** suíte 665/665, fluxo 17/17, validação sem erros de dados, auditoria de áudio 0 problemas.
+  - Primeiro `--import`: 16 erros "Failed loading resource" (tema carregado antes de fontes e textura estarem importadas); o segundo `--import` deu 0.
+  - O Godot acrescentou um `uid` ao cabeçalho de `default_bus_layout.tres` (KI-18).
+  - O exe não foi gerado a partir do clone: depende dos templates instalados nesta máquina, os mesmos do build aprovado.

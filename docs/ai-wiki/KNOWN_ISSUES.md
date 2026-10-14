@@ -5,11 +5,6 @@ Severidade: **alta** (risco de perda ou de conteúdo errado), **média** (afeta 
 
 ## Abertos
 
-### KI-01 — Repositório Git sem commits (alta)
-- **Situação:** `git status` mostra o branch `master` sem nenhum commit e sem remoto; todos os arquivos estão não rastreados (verificado em 2026-10-14).
-- **Risco:** não há como desfazer alterações, comparar versões ou recuperar arquivos apagados. O campo "Commit de referência" do `CURRENT_STATE.md` fica vazio.
-- **Ação recomendada:** o criador faz o primeiro commit (o `.gitignore` já exclui `.godot/`, builds, o exe e o Godot portátil) e, se quiser, configura um remoto. Agentes não devem fazer isso sem pedido explícito.
-
 ### KI-02 — Nenhum teste jogando por uma pessoa (alta)
 - **Situação:** v0.1 e v0.2 foram verificadas por testes automatizados, simulação de entrada e capturas, mas ninguém jogou com teclado. Critérios de saída da fase 3 em [docs/roadmap.md](../roadmap.md) continuam desmarcados.
 - **Ação:** seguir o roteiro manual de [docs/quests.md](../quests.md) e registrar os ajustes.
@@ -77,6 +72,10 @@ Sem áudio gravado: efeitos e ambiente existem desde a v0.5, mas são procedurai
 - **Situação atual:** em observação, **não declarado resolvido**: duas hipóteses tratadas, sem prova de que eram as únicas causas.
 - **Ação:** se voltar a acontecer, ver qual teste anterior deixou `get_tree().paused` ligado (mensagem "teste de áudio não deixa o jogo pausado"), se alguma tecla simulada ainda depende da fila, e o log completo em `dist/logs/`.
 
+### KI-18 — Godot reescreve o cabeçalho de `default_bus_layout.tres` num clone novo (baixa)
+- **Situação:** no clone limpo do checkpoint, o primeiro `--import` trocou `load_steps=2 format=3` por `format=3 uid="uid://..."` no cabeçalho do arquivo. É cosmético e o jogo funciona igual, mas o arquivo aparece modificado no `git status` do clone.
+- **Ação:** se incomodar, versionar o cabeçalho com `uid` gerado por um clone (o mesmo `uid` passa a valer em todas as máquinas). Não commitar sem conferir que só o cabeçalho mudou.
+
 ## Divergências documentação × código encontradas na auditoria de 2026-10-14
 | Onde | Divergência | Situação |
 |---|---|---|
@@ -86,6 +85,10 @@ Sem áudio gravado: efeitos e ambiente existem desde a v0.5, mas são procedurai
 | `docs/implementation_log.md` (entrada v0.1) | Cita status antigos de verificação (anteriores aos 4 status atuais) | Mantido: é histórico; status atuais em bible_catalog.md |
 
 ## Resolvidos
+
+### KI-01 — Repositório Git sem commits (resolvido em 2026-10-14)
+- **Situação:** o branch `master` não tinha nenhum commit nem remoto; não havia como desfazer alterações ou recuperar arquivos.
+- **Solução:** a pedido do criador, foi feito o commit de checkpoint `218cb73` na branch `main` e o envio ao repositório privado `maicontalgatti/Caminhos-da-Promessa`, conferido pela API e por clone limpo (HANDOFF). Commits futuros continuam só com pedido do criador.
 
 ### KI-R1 — Suíte aprovada com script de testes que não compilava (resolvido em 2026-10-14)
 - **Situação:** durante a v0.4, erros de parse em `tests/world_tests.gd` faziam o runner pular esses testes e ainda assim terminar em "0 falharam".

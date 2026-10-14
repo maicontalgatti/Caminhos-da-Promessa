@@ -67,7 +67,7 @@ Use ao trocar de modelo, abrir um chat novo, retomar depois de pausa ou quando o
 4. Leia `HANDOFF.md`.
 5. Identifique os sistemas envolvidos na nova tarefa.
 6. Leia somente os documentos desses sistemas (tabela "Qual documento ler").
-7. Verifique o estado do Git (`git status`; ver ressalva em KNOWN_ISSUES sobre o repositório sem commits).
+7. Verifique o estado do Git (`git status`, `git log --oneline -5`; o remoto é o repositório privado `origin` no GitHub).
 8. Compare a documentação com os arquivos atuais (abra os arquivos citados; confirme nomes e assinaturas).
 9. Registre divergências em `KNOWN_ISSUES.md` antes de alterar algo.
 10. Só então proponha ou execute alterações.

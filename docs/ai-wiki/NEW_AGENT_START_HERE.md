@@ -24,9 +24,13 @@ conforme a tarefa. Ordem de leitura obrigatória: [AGENTS.md](../../AGENTS.md) �
 | 16. Qual será a próxima tarefa? | "Próxima ação" e "Pendências" em [HANDOFF.md](HANDOFF.md) |
 
 ## Primeiros comandos depois de clonar
+O repositório é privado (`maicontalgatti/Caminhos-da-Promessa`): clone com `gh repo clone maicontalgatti/Caminhos-da-Promessa`
+logado na conta dona. O primeiro `--import` mostra cerca de 16 erros "Failed loading resource" (o tema carrega antes
+das fontes estarem importadas); rode `--import` de novo e eles somem.
 ```powershell
 $g = ".\tools\godot\Godot_v4.7.2-stable_win64_console.exe"
 & $g --headless --path . --import                              # cria .godot/ (cache, fora do Git)
+& $g --headless --path . --import                              # segunda vez: 0 erros
 & $g --headless --path . res://tests/test_runner.tscn          # deve terminar em "0 falharam"
 powershell -ExecutionPolicy Bypass -File tools\check_wiki.ps1   # wiki consistente
 ```

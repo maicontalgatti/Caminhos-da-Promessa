@@ -13,7 +13,7 @@ Valem para pessoas e agentes de IA. As regras de segurança abaixo foram definid
 ## Git
 - Antes de alterações importantes, verificar o estado do Git.
 - Não executar comandos destrutivos como hard reset, clean forçado ou descarte de alterações sem autorização explícita.
-- Não criar commits automaticamente caso isso contrarie o fluxo de trabalho existente. **Fluxo atual:** ainda não definido (o repositório não tem commits nem remoto); até o criador definir, agentes não fazem commit nem push sem pedido explícito.
+- Não criar commits automaticamente caso isso contrarie o fluxo de trabalho existente. **Fluxo atual:** branch `main` com remoto `origin` no repositório **privado** `maicontalgatti/Caminhos-da-Promessa` (checkpoint `218cb73`, 2026-10-14). Agentes não fazem commit nem push sem pedido explícito; nunca force push nem mudança de visibilidade. Neste repositório, o Git usa o `gh` como gerenciador de credenciais (configuração local), para enviar com a conta do criador.
 - Registrar quais arquivos foram alterados (em [HANDOFF.md](HANDOFF.md) e na resposta ao usuário).
 - Arquivos gerados ficam fora do Git (`.gitignore`): `.godot/`, `/build/`, `/dist/`, `/CaminhosDaPromessa.exe`, `tools/godot/`.
 

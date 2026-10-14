@@ -6,7 +6,7 @@ Resumo do **presente**. Histórico em [CHANGELOG.md](CHANGELOG.md) e [docs/imple
 - **Projeto:** Caminhos da Promessa
 - **Versão:** 0.5.0 (`project.godot` → `config/version`)
 - **Última atualização:** 2026-10-14
-- **Commit de referência:** checkpoint inicial de 2026-10-14 no GitHub (repositório privado `maicontalgatti/Caminhos-da-Promessa`, branch `main`); o hash fica registrado em [HANDOFF.md](HANDOFF.md), num commit complementar
+- **Commit de referência:** `218cb73` (checkpoint de 2026-10-14), no repositório privado `maicontalgatti/Caminhos-da-Promessa`, branch `main`; registro no [HANDOFF.md](HANDOFF.md)
 - **Fase:** protótipo jogável com três regiões; roadmap fase 5 (catálogo) em andamento e fase 6 (primeiras experiências) com duas experiências jogáveis; parte da fase 4 (inventário, transição entre mapas) entregue na v0.4 — ver [docs/roadmap.md](../roadmap.md)
 - **Canal de conteúdo:** `prototype` (`caminhos/content/channel`)
 - **Tradução bíblica:** `bpm` — Bíblia Portuguesa Mundial, domínio público, provisória (`caminhos/content/bible_translation`; NVI pedida, depende de permissão — KI-06)
@@ -68,12 +68,12 @@ mapas da rota para o Egito, do Egito de José, de Belém/Rute e dos pastores de 
 Fonte: [docs/roadmap.md](../roadmap.md) e [docs/game_design.md](../game_design.md).
 
 ## Problemas conhecidos (resumo)
-Repositório sem commits (KI-01); nenhum teste de jogo humano (KI-02); conteúdo bíblico sem revisão humana (KI-03);
+Nenhum teste de jogo humano (KI-02); conteúdo bíblico sem revisão humana (KI-03);
 `build_all.ps1` sobrescreve o mapa (KI-04); tradução bíblica provisória, NVI sem permissão (KI-06); partes da expansão pendentes (KI-13);
-afirmações históricas da estrada e de Dotã aguardam revisão humana (KI-14); efeitos sonoros procedurais sem escuta humana (KI-16). Lista completa em [KNOWN_ISSUES.md](KNOWN_ISSUES.md).
+afirmações históricas da estrada e de Dotã aguardam revisão humana (KI-14); efeitos sonoros procedurais sem escuta humana (KI-16); falha intermitente da suíte em observação (KI-17). Lista completa em [KNOWN_ISSUES.md](KNOWN_ISSUES.md).
 
 ## Próximos passos
-1. Criador: fazer o primeiro commit do repositório (KI-01).
+1. Repositório: checkpoint no GitHub feito (privado; commit `218cb73`). Próximos commits e push só com pedido do criador.
 2. Criador: jogar a v0.5.0 seguindo o roteiro "Manual da v0.4" de [docs/quests.md](../quests.md) (estrada, Dotã, bolsa, Mapa M, escolha das famílias, salvar e carregar) e **ouvir os sons** na ordem de [docs/audio.md](../audio.md#escuta-humana-necessária).
 3. Criador: revisar o conteúdo novo e decidir os pontos abertos do `review.json` do ep_008 (Gn 13 na missão das famílias, fibras, hospitalidade, prata pesada).
 4. Criador: decidir a tradução (NVI com permissão da Biblica, ou manter uma livre; KI-06).
