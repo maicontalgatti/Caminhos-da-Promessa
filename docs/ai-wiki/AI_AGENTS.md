@@ -16,6 +16,9 @@ cada agente** e em que estado está. Conferido contra os arquivos em 2026-10-14.
   obedecer ao arquivo do papel; nesse modo `readonly` é só instrução.
 - **Invocar outros agentes:** nenhum subagente delega. Só o coordenador chama agentes.
 - **Regras sempre ativas ou por arquivo:** `.cursor/rules/*.mdc` (tabela no fim).
+- **Outras ferramentas de IA** (Claude Code, Codex, Copilot, Gemini, Aider etc.): o ponto de entrada é o mesmo
+  [`AGENTS.md`](../../AGENTS.md), e o prompt de partida é [START_WITH_AI.md](../../START_WITH_AI.md). Sem suporte a
+  subagentes, use os arquivos de `.cursor/agents/` como checklist do papel e faça as etapas em sequência.
 
 ## Subagentes
 Status: **usado** = já entregou trabalho real registrado em `production/reports/factory_log.md` ou em `review.json`;

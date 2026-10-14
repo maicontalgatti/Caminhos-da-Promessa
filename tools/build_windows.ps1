@@ -225,7 +225,9 @@ $translationId = (Select-String -Path (Join-Path $root "project.godot") -Pattern
 $scriptureCredit = (Get-Content (Join-Path $root "data\bible\texts\$translationId.json") -Raw -Encoding UTF8 | ConvertFrom-Json).translation.credit
 $licenses = @"
 Caminhos da Promessa $gameVersion
+https://github.com/maicontalgatti/Caminhos-da-Promessa
 
+Código: licença MIT. Arte, sons e textos próprios: CC BY 4.0 (LICENSE e LICENSE-ASSETS.md no repositório).
 Fontes Pixelify Sans e Lora - SIL Open Font License 1.1 (textos completos abaixo).
 Godot Engine - licença MIT, https://godotengine.org/license
 $scriptureCredit

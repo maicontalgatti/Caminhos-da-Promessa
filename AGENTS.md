@@ -2,7 +2,8 @@
 
 Ponto de entrada para qualquer agente de IA (ou pessoa) que vá trabalhar neste repositório.
 É curto de propósito: a memória do projeto está na **AI Wiki** em [`docs/ai-wiki/`](docs/ai-wiki/README.md).
-Primeiro contato? Leia [`NEW_AGENT_START_HERE.md`](docs/ai-wiki/NEW_AGENT_START_HERE.md).
+Primeiro contato? Leia [`NEW_AGENT_START_HERE.md`](docs/ai-wiki/NEW_AGENT_START_HERE.md). Prompt de inicialização para
+qualquer ferramenta de IA: [`START_WITH_AI.md`](START_WITH_AI.md).
 
 > Antes de realizar alterações no projeto, consulte o índice da AI Wiki e o estado atual do
 > desenvolvimento. Leia a documentação específica dos sistemas envolvidos na tarefa. Não presuma
@@ -28,7 +29,8 @@ Chat novo, troca de modelo ou contexto resumido: siga "RECUPERAÇÃO DE CONTEXTO
 - Código e repositório: siga [`DEVELOPMENT_RULES.md`](docs/ai-wiki/DEVELOPMENT_RULES.md). Não reescreva sistemas que funcionam, não apague nada importante, nada de comandos Git destrutivos (reset forçado, clean, force push), nada de segredos na doc ou no Git.
 - Testes: nunca declare um teste como aprovado sem tê-lo executado. Diga "não executado" quando for o caso.
 - Decisões registradas em [`DECISIONS.md`](docs/ai-wiki/DECISIONS.md) só mudam com justificativa e análise de impacto.
-- Commits e push só quando o criador pedir. O repositório no GitHub é **privado**; não mude a visibilidade.
+- Repositório **público** (`maicontalgatti/Caminhos-da-Promessa`): mudanças entram por branch/fork e pull request revisado ([`CONTRIBUTING.md`](CONTRIBUTING.md)); nada direto na `main`. Commits e push só quando a pessoa que você atende pedir. Nunca grave segredos ou dados pessoais: tudo aqui é visível para qualquer um.
+- Recursos de terceiros só com licença compatível registrada em [`docs/legal/ASSET_LICENSES.md`](docs/legal/ASSET_LICENSES.md). Licenças do projeto: código MIT ([`LICENSE`](LICENSE)); arte, sons e textos próprios CC BY 4.0 ([`LICENSE-ASSETS.md`](LICENSE-ASSETS.md)).
 
 ## Convenções
 - Dados de jogo em JSON (`data/`), carregados automaticamente; sons por id no manifesto `data/audio/sfx.json`.

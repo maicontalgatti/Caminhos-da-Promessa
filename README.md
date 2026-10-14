@@ -1,84 +1,124 @@
 # Caminhos da Promessa
 
-RPG de exploração em pixel art 2D (Godot 4) que leva o jogador aos cenários da
-Bíblia. Versão atual: **v0.5.0**, um protótipo jogável com três regiões (Aldeia em Canaã,
-Caminho das Caravanas e Pastos de Dotã), cinco missões (Gênesis 26 e 37), diário, bolsa,
-Mapa das Escrituras e efeitos sonoros provisórios. Estado detalhado em
-[docs/ai-wiki/CURRENT_STATE.md](docs/ai-wiki/CURRENT_STATE.md).
+RPG 2D em pixel art (vista 3/4) para **conhecer e contextualizar a Bíblia**. Você é um viajante
+fictício que caminha pelos cenários dos relatos bíblicos, conversa com moradores, explora, ajuda e
+aprende, **sem alterar o que a Bíblia narra**. Feito com Godot 4.7 e GDScript, em português do Brasil.
 
-![Aldeia em Canaã](docs/images/hud_context_objective.png)
+[![Testes](https://github.com/maicontalgatti/Caminhos-da-Promessa/actions/workflows/tests.yml/badge.svg)](https://github.com/maicontalgatti/Caminhos-da-Promessa/actions/workflows/tests.yml)
 
-## Como jogar
+![Aldeia em Canaã, com o painel de contexto e o objetivo](docs/images/hud_context_objective.png)
 
-1. Abra o executável do Godot 4.7: `tools/godot/Godot_v4.7.2-stable_win64.exe`.
-   Se a pasta não existir, baixe o **Godot 4.7.2 (Standard, Windows 64-bit)** em
-   [godotengine.org](https://godotengine.org/download) e extraia em `tools/godot/`.
-   A build do exe exige templates exatamente desta versão.
-2. Importe/abra a pasta do projeto e pressione **F5**. Pelo terminal:
-   `.\tools\godot\Godot_v4.7.2-stable_win64.exe --path .`
+| | |
+|---|---|
+| ![Pastos de Dotã](docs/images/v04_dothan.png) | ![Mapa das Escrituras](docs/images/v04_scripture_map.png) |
+| ![Diálogo com referência bíblica](docs/images/dialogue_scripture.png) | ![Bolsa do viajante](docs/images/v04_inventory.png) |
 
+*Capturas reais do jogo (v0.4–v0.5). Arte e sons ainda são provisórios.*
+
+## Estado do desenvolvimento
+**v0.5.0, protótipo jogável.** Prontos e cobertos por testes automatizados:
+- três regiões (Aldeia em Canaã, Caminho das Caravanas, Pastos de Dotã) e cinco missões ligadas a
+  Gênesis 26 e 37;
+- diálogos com escolhas e consequências, diário com seis abas, descobertas, bolsa, colecionáveis;
+- Mapa das Escrituras, save com migração, efeitos sonoros procedurais;
+- exe único para Windows com autoteste.
+
+O conteúdo bíblico e histórico **ainda não passou por revisão humana**: está marcado como pendente
+dentro do jogo. Estado detalhado: [docs/ai-wiki/CURRENT_STATE.md](docs/ai-wiki/CURRENT_STATE.md).
+Planos: [docs/roadmap.md](docs/roadmap.md).
+
+## Como executar localmente
+Requisitos: Windows 10/11 (o jogo e as ferramentas foram feitos nele; Linux roda os testes na CI) e o
+**Godot 4.7.2 Standard** (64 bits).
+
+1. Clone o repositório:
+   ```powershell
+   git clone https://github.com/maicontalgatti/Caminhos-da-Promessa.git
+   cd Caminhos-da-Promessa
+   ```
+2. Baixe o Godot 4.7.2 em [godotengine.org](https://godotengine.org/download/archive/4.7.2-stable/) e extraia
+   em `tools/godot/` (pasta fora do Git). Os comandos abaixo esperam
+   `tools/godot/Godot_v4.7.2-stable_win64.exe` e `..._win64_console.exe`.
+3. Importe o projeto (duas vezes na primeira vez: a primeira mostra avisos de fontes que somem na segunda):
+   ```powershell
+   $g = ".\tools\godot\Godot_v4.7.2-stable_win64_console.exe"
+   & $g --headless --path . --import
+   & $g --headless --path . --import
+   ```
+4. Jogue: `.\tools\godot\Godot_v4.7.2-stable_win64.exe --path .` (ou abra no editor e pressione **F5**).
+5. Rode os testes: `& $g --headless --path . res://tests/test_runner.tscn` (deve terminar em "0 falharam").
+
+Para gerar o executável: `.\criar_exe_atualizado.bat` (exige os templates de exportação 4.7.2; ver
+[docs/build_windows.md](docs/build_windows.md)).
+
+### Controles
 | Ação | Tecla |
 |---|---|
-| Andar | WASD ou setas |
-| Correr | Shift |
-| Interagir / avançar diálogo | E ou Espaço |
-| Pedir pista do objetivo | H |
-| Diário (jornada, Escrituras, personagens, lugares, linha do tempo, descobertas) | J |
-| Bolsa | I |
-| Mapa das Escrituras (experiências por época e atlas de lugares) | M |
-| Contexto bíblico | C |
-| Recolher painel de contexto / trocar aba do diário | Tab |
-| Pular cena / pausar / salvar / volumes | Esc |
-| Painel de debug (só rodando pelo editor) | F3 |
+| Andar / correr | WASD ou setas / Shift |
+| Interagir, avançar diálogo | E ou Espaço |
+| Pista do objetivo | H |
+| Diário / Bolsa / Mapa das Escrituras / Contexto bíblico | J / I / M / C |
+| Recolher painel, trocar aba | Tab |
+| Pausar, salvar, volumes | Esc |
 
-Missões: **A importância dos poços** (Gênesis 26:18-22), **O caminho para Dotã** (Gênesis 37:12-17) e três
-secundárias na estrada e em Dotã. Detalhes e roteiro de teste em [docs/quests.md](docs/quests.md).
+## Desenvolva este jogo com sua própria IA
+O projeto foi organizado para que **qualquer agente de IA** (Cursor, Claude Code, Codex, Copilot, Gemini,
+Windsurf, Aider ou outro) consiga entender o estado atual e continuar o trabalho sem conhecer conversas
+anteriores. A memória do projeto fica na [AI Wiki](docs/ai-wiki/README.md), e o ponto de entrada para
+agentes é o [AGENTS.md](AGENTS.md).
+
+Clone o repositório, abra a pasta na sua ferramenta e use o prompt de [START_WITH_AI.md](START_WITH_AI.md).
+Versão curta, para copiar:
+
+```text
+Você vai colaborar no jogo "Caminhos da Promessa". Leia START_WITH_AI.md e siga as instruções:
+leia AGENTS.md, a AI Wiki (docs/ai-wiki/README.md, CURRENT_STATE.md, HANDOFF.md), confira o estado
+do Git, rode só verificações seguras e me apresente um resumo com sugestões de tarefas.
+Não altere nada até eu escolher o que desenvolver.
+```
+
+O agente não substitui a revisão de pessoas: conteúdo bíblico produzido por IA é sempre marcado como
+pendente até uma revisão humana independente.
+
+## Como contribuir
+Contribuições são bem-vindas: correções, testes, ferramentas, arte, sons, missões bíblicas e revisão de
+conteúdo. Leia [CONTRIBUTING.md](CONTRIBUTING.md) antes. O fluxo é: fork ou branch → desenvolvimento →
+testes → documentação → pull request → revisão → merge. Ninguém altera a `main` sem revisão.
+
+- Bugs e ideias: [issues](https://github.com/maicontalgatti/Caminhos-da-Promessa/issues/new/choose).
+- Correções de conteúdo bíblico: modelo "Correção bíblica" nas issues.
+- Vulnerabilidades: siga o [SECURITY.md](SECURITY.md) (não abra issue pública).
+- Convivência: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+
+## Conteúdo bíblico
+- O jogo apresenta os relatos sem alterá-los. O viajante, os moradores fictícios e as tarefas que eles
+  pedem são **ficção identificada**; fatos do texto, contexto histórico e interpretações aparecem
+  separados.
+- Regras completas: [docs/ai-wiki/BIBLICAL_RULES.md](docs/ai-wiki/BIBLICAL_RULES.md).
+- Texto bíblico: **Bíblia Portuguesa Mundial** (domínio público, [eBible.org](https://ebible.org/)), uma
+  tradução ainda em rascunho. Traduções modernas protegidas (NVI, ARA etc.) não são usadas.
 
 ## Estrutura
-
 ```
-assets/      arte (provisória, gerada), sons (procedurais), fontes, paletas, shaders, tema
-addons/      editor de missões (plugin do Godot; fora da build)
-data/        personagens, regiões, diálogos, missões, itens, colecionáveis, áudio e catálogo bíblico (JSON)
-scenes/      core (jogo), player, npcs, environments, maps, ui
-scripts/     core, player, npc, interaction, dialogue, items, save, world, ui, bible, quests, build
-tests/       testes automatizados
-tools/       geradores de arte, mundo e sons, capturas, validador, fábrica de missões, build
-production/  fábrica de missões: catálogo de episódios, pacotes, relatórios
-docs/        art bible, game design, arquitetura, áudio, catálogo bíblico, roadmap, histórico
-docs/ai-wiki/ memória do projeto para agentes de IA (ver AGENTS.md)
-.cursor/     subagentes e regras do Cursor (ver docs/ai-wiki/AI_AGENTS.md)
+assets/      arte (gerada por código), sons (procedurais), fontes, paletas, shaders
+addons/      editor de missões (plugin do Godot)
+data/        personagens, regiões, diálogos, missões, itens, áudio e catálogo bíblico (JSON)
+scenes/      cenas do jogo        scripts/   código GDScript
+tests/       testes automatizados tools/     geradores, validador, fábrica de missões, build
+production/  fábrica de missões   docs/      design, arquitetura, áudio, AI Wiki, licenças
+.cursor/     subagentes e regras para quem usa o Cursor
 ```
 
-## Ferramentas
-
-```powershell
-.\tools\build_all.ps1              # regenera arte e mundo, roda os testes
-.\tools\build_all.ps1 -PropsOnly   # não sobrescreve o mapa da aldeia
-.\tools\build_all.ps1 -Screenshots # também atualiza docs/images (precisa de GPU)
-.\criar_exe_atualizado.bat         # gera/atualiza CaminhosDaPromessa.exe na raiz (dois cliques)
-```
-
-Detalhes do executável Windows: [docs/build_windows.md](docs/build_windows.md).
-
-## Documentação
-
-- **Agentes de IA e continuidade:** comece por [AGENTS.md](AGENTS.md) e pela [AI Wiki](docs/ai-wiki/README.md)
-  (estado atual, passagem de bastão, regras bíblicas e de desenvolvimento, decisões).
-- [Art Bible](docs/art_bible.md)
-- [Game Design](docs/game_design.md)
-- [Arquitetura](docs/architecture.md)
-- [Catálogo Bíblico](docs/bible_catalog.md)
-- [Missões, contexto histórico e aprendizado](docs/quests.md)
-- [Efeitos sonoros](docs/audio.md)
-- [Fábrica de missões](docs/mission_factory.md)
-- [Roadmap](docs/roadmap.md)
-- [Histórico de implementação](docs/implementation_log.md)
+Documentação: [arquitetura](docs/architecture.md) · [game design](docs/game_design.md) ·
+[art bible](docs/art_bible.md) · [missões](docs/quests.md) · [catálogo bíblico](docs/bible_catalog.md) ·
+[áudio](docs/audio.md) · [fábrica de missões](docs/mission_factory.md) ·
+[histórico](docs/implementation_log.md) · [mudanças](CHANGELOG.md).
 
 ## Licenças
+- **Código:** [MIT](LICENSE).
+- **Arte, sons e textos próprios do projeto:** [CC BY 4.0](LICENSE-ASSETS.md).
+- **Material de terceiros** mantém a licença original: fontes Pixelify Sans e Lora (SIL Open Font License
+  1.1, `assets/fonts/OFL*.txt`); texto da Bíblia Portuguesa Mundial (domínio público, eBible.org).
+- O Godot Engine (MIT) não faz parte do repositório.
 
-- Código, arte provisória e efeitos sonoros procedurais: criados para este projeto (sem licença de distribuição definida ainda).
-- Fonte Pixelify Sans: SIL Open Font License 1.1 (`assets/fonts/OFL.txt`).
-- Fonte Lora: SIL Open Font License 1.1 (`assets/fonts/OFL-Lora.txt`).
-- Texto bíblico: Bíblia Portuguesa Mundial (domínio público), eBible.org — ver `docs/bible_catalog.md`.
-- Godot Engine: licença MIT.
+Inventário completo de origem e licença: [docs/legal/ASSET_LICENSES.md](docs/legal/ASSET_LICENSES.md).

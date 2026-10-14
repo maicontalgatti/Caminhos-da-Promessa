@@ -3,6 +3,12 @@
 Resumo por versão/entrega. Detalhes, problemas corrigidos e o que não foi verificado estão em
 [docs/implementation_log.md](../implementation_log.md).
 
+## 2026-10-14 — Publicação pública e colaboração com IA (documentação e repositório; jogo sem mudanças)
+- Auditoria de segurança do histórico completo e auditoria de direitos autorais; inventário em `docs/legal/ASSET_LICENSES.md`.
+- Licenças: `LICENSE` (MIT, código) e `LICENSE-ASSETS.md` (CC BY 4.0, arte, sons e textos próprios); ADR-027.
+- Novos `START_WITH_AI.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `CHANGELOG.md` (raiz), modelos de issue e PR, `.github/workflows/tests.yml` e `.github/dependabot.yml`; `README.md` reescrito para o público.
+- Documentação dos agentes atualizada para repositório público; `LICENSES.txt` do build cita as licenças do projeto.
+
 ## 2026-10-14 — Checkpoint no GitHub (documentação e repositório; jogo sem mudanças)
 - Primeiro commit e envio para o repositório privado `maicontalgatti/Caminhos-da-Promessa` (branch `main`).
 - `AGENTS.md` revisto; novos `AI_AGENTS.md` (inventário dos 9 subagentes e 3 regras) e `NEW_AGENT_START_HERE.md`; `GAME_SYSTEMS.md` e `README.md` da raiz atualizados.

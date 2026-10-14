@@ -6,7 +6,7 @@ conforme a tarefa. Ordem de leitura obrigatória: [AGENTS.md](../../AGENTS.md) �
 
 | Pergunta | Resposta |
 |---|---|
-| 1. Como instalar o ambiente? | Windows; Godot **4.7.2** Standard 64-bit extraído em `tools/godot/` (fora do Git) e, para gerar o exe, os templates de exportação 4.7.2. Passo a passo no [README](../../README.md#como-jogar) e em [build_windows.md](../build_windows.md). Depois de clonar, rode `--import` uma vez (abaixo). |
+| 1. Como instalar o ambiente? | Windows (a CI também roda os testes no Linux); Godot **4.7.2** Standard 64-bit extraído em `tools/godot/` (fora do Git) e, para gerar o exe, os templates de exportação 4.7.2. Passo a passo no [README](../../README.md#como-jogar) e em [build_windows.md](../build_windows.md). Depois de clonar, rode `--import` uma vez (abaixo). |
 | 2. Como abrir o Godot? | `.\tools\godot\Godot_v4.7.2-stable_win64.exe --path . -e` (editor) |
 | 3. Como iniciar o jogo? | `.\tools\godot\Godot_v4.7.2-stable_win64.exe --path .` ou F5 no editor |
 | 4. Como executar testes? | [TESTING.md](TESTING.md): suíte, fluxo, validação, fábrica, auditoria de áudio, wiki |
@@ -21,12 +21,14 @@ conforme a tarefa. Ordem de leitura obrigatória: [AGENTS.md](../../AGENTS.md) �
 | 13. Quais regras bíblicas são obrigatórias? | [BIBLICAL_RULES.md](BIBLICAL_RULES.md) (sempre, para qualquer texto narrativo) |
 | 14. Quais sistemas estão prontos? | [CURRENT_STATE.md](CURRENT_STATE.md#funcionalidades-concluídas-e-verificadas) e [GAME_SYSTEMS.md](GAME_SYSTEMS.md) |
 | 15. Quais estão pendentes? | [CURRENT_STATE.md](CURRENT_STATE.md#planejado-não-implementado) e [KNOWN_ISSUES.md](KNOWN_ISSUES.md) |
-| 16. Qual será a próxima tarefa? | "Próxima ação" e "Pendências" em [HANDOFF.md](HANDOFF.md) |
+| 16. Qual será a próxima tarefa? | "Próxima ação" e "Pendências" em [HANDOFF.md](HANDOFF.md) e as [issues abertas](https://github.com/maicontalgatti/Caminhos-da-Promessa/issues) |
+| 17. Como contribuir e sob qual licença? | [CONTRIBUTING.md](../../CONTRIBUTING.md); código MIT, arte/sons/textos próprios CC BY 4.0; terceiros em [ASSET_LICENSES.md](../legal/ASSET_LICENSES.md) |
 
 ## Primeiros comandos depois de clonar
-O repositório é privado (`maicontalgatti/Caminhos-da-Promessa`): clone com `gh repo clone maicontalgatti/Caminhos-da-Promessa`
-logado na conta dona. O primeiro `--import` mostra cerca de 16 erros "Failed loading resource" (o tema carrega antes
-das fontes estarem importadas); rode `--import` de novo e eles somem.
+O repositório é público: `git clone https://github.com/maicontalgatti/Caminhos-da-Promessa.git`. Para contribuir,
+trabalhe num fork ou branch e abra um pull request ([CONTRIBUTING.md](../../CONTRIBUTING.md)). Prompt de inicialização
+para qualquer ferramenta de IA: [START_WITH_AI.md](../../START_WITH_AI.md). O primeiro `--import` mostra cerca de 16 erros
+"Failed loading resource" (o tema carrega antes das fontes estarem importadas); rode `--import` de novo e eles somem.
 ```powershell
 $g = ".\tools\godot\Godot_v4.7.2-stable_win64_console.exe"
 & $g --headless --path . --import                              # cria .godot/ (cache, fora do Git)

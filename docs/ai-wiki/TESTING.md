@@ -28,6 +28,13 @@ $g = ".\tools\godot\Godot_v4.7.2-stable_win64_console.exe"
 
 A saída da suíte termina em `==== N passaram, M falharam ====`; o código de saída é 0 só sem falhas.
 
+### GitHub Actions
+`.github/workflows/tests.yml` roda em todo pull request, em push na `main` e manualmente: baixa o Godot
+4.7.2 oficial para Linux (conferido por SHA-512), importa o projeto duas vezes e roda suíte, fluxo,
+validação, fábrica e auditoria de áudio, com permissão somente de leitura e sem segredos. Não roda o
+build do exe nem a verificação da wiki (PowerShell/Windows). Resultado: ver
+[Actions](https://github.com/maicontalgatti/Caminhos-da-Promessa/actions) e o [HANDOFF.md](HANDOFF.md).
+
 ## Teste manual (jogando)
 Roteiro de cerca de 10 minutos em [docs/quests.md](../quests.md#manual-roteiro-sugerido-cerca-de-10-minutos). **Ainda não foi executado por uma pessoa** (KNOWN_ISSUES KI-02).
 Para rodar o jogo: `.\tools\godot\Godot_v4.7.2-stable_win64.exe --path .` (ou F5 no editor), ou o `CaminhosDaPromessa.exe` da raiz.

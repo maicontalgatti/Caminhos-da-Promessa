@@ -37,6 +37,8 @@ Fontes: [docs/implementation_log.md](../implementation_log.md), [docs/art_bible.
 | ADR-023 | Inventário por troca, sem moedas; efeitos de diálogo atômicos e recompensas uma única vez | Adotada (criador pediu inventário e troca; formato do agente) |
 | ADR-024 | Mapa das Escrituras (M) por épocas; o atlas de lugares fica dentro dele | Adotada (criador pediu o mapa M; formato do agente) |
 | ADR-025 | Save v3 com migração da v2 | Adotada (agente) |
+| ADR-026 | Áudio central por manifesto, com efeitos procedurais provisórios | Adotada (criador pediu sons; formato do agente) |
+| ADR-027 | Repositório público com licença dupla (MIT + CC BY 4.0), PRs revisados e CI sem segredos | Adotada (criador) |
 
 ---
 
@@ -195,3 +197,13 @@ Fontes: [docs/implementation_log.md](../implementation_log.md), [docs/art_bible.
 - **Problema:** o jogo não tinha nenhum arquivo de áudio nem buses além do Master; só `Sfx` tocava tons sintetizados em poucos lugares. Não havia gravações, bibliotecas autorizadas nem orçamento para serviços pagos.
 - **Decisão:** autoload `AudioManager` com conjunto fixo de players, prioridade, cooldown, variações, substituição de cliques e fila de marcos por quadro; manifesto `data/audio/sfx.json` (sons, superfícies, materiais de interação, itens, ambiente por região); buses Master/Music/SFX/UI/Ambience/Voice com limitador no Master; botões ganham som automaticamente; volumes por bus em `Settings`. Os 131 arquivos são **gerados por código** (`tools/audio/generate_sfx.gd`, sementes fixas) e marcados `source: procedural`; trocá-los por gravações não exige mudar código. `Sfx` virou camada de compatibilidade.
 - **Consequências:** todo som precisa de escuta humana antes de ser considerado final; bibliotecas externas (ex.: CC0) só com autorização do criador. Detalhes e inventário em [docs/audio.md](../audio.md).
+
+### ADR-027 — Repositório público com licença dupla, PRs revisados e CI sem segredos
+- **Data:** 2026-10-14 (v0.5.0) · **Status:** Adotada (o criador pediu a publicação e escolheu as licenças e a CI)
+- **Problema:** abrir o projeto para colaboradores que usam os próprios agentes de IA, sem expor dados privados, sem relicenciar material de terceiros e sem permitir que código de pull requests desconhecidos rode com credenciais.
+- **Decisão:**
+  - código sob **MIT** ([LICENSE](../../LICENSE)); arte, sons e textos próprios sob **CC BY 4.0** ([LICENSE-ASSETS.md](../../LICENSE-ASSETS.md)); terceiros mantêm a licença original (fontes OFL 1.1, BPM em domínio público), com inventário em [docs/legal/ASSET_LICENSES.md](../legal/ASSET_LICENSES.md);
+  - `main` protegida (sem force push nem exclusão; mudanças por pull request);
+  - workflow `.github/workflows/tests.yml` com `contents: read`, gatilho `pull_request` (nunca `pull_request_target`), ação fixada por SHA, Godot oficial conferido por SHA-512, sem segredos, sem deploy e sem release automática; Dependabot só para as ações;
+  - [START_WITH_AI.md](../../START_WITH_AI.md) como prompt de inicialização independente de ferramenta; [CONTRIBUTING.md](../../CONTRIBUTING.md) exige identificar conteúdo feito com IA e revisão humana do conteúdo bíblico.
+- **Consequências:** tudo que for versionado é público, inclusive o histórico; recursos externos só entram com licença registrada; a CI roda no Linux e não cobre o build do exe nem a verificação da wiki (PowerShell).

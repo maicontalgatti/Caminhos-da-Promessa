@@ -9,7 +9,7 @@ comum, versionado junto com o código. Ponto de entrada: [`AGENTS.md`](../../AGE
 
 | Documento | Para que serve | Quando ler |
 |---|---|---|
-| [NEW_AGENT_START_HERE.md](NEW_AGENT_START_HERE.md) | 16 perguntas frequentes com o link certo; primeiros comandos após clonar | Primeiro contato com o repositório |
+| [NEW_AGENT_START_HERE.md](NEW_AGENT_START_HERE.md) | 17 perguntas frequentes com o link certo; primeiros comandos após clonar | Primeiro contato com o repositório |
 | [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md) | O que é o jogo, público, pilares, escopo | Primeira vez no projeto |
 | [CURRENT_STATE.md](CURRENT_STATE.md) | Versão, o que funciona (verificado), em andamento, planejado | **Sempre** |
 | [HANDOFF.md](HANDOFF.md) | Última tarefa, resultado, pendências, próxima ação | **Sempre** |
@@ -38,6 +38,9 @@ comum, versionado junto com o código. Ponto de entrada: [`AGENTS.md`](../../AGE
 | [docs/build_windows.md](../build_windows.md) | Exportação Windows e exe |
 | [docs/audio.md](../audio.md) | Efeitos sonoros: AudioManager, manifesto, como adicionar sons, inventário, escuta pendente |
 | [README.md](../../README.md) | Instalação, como rodar, controles |
+| [START_WITH_AI.md](../../START_WITH_AI.md) | Prompt de inicialização para qualquer agente de IA |
+| [CONTRIBUTING.md](../../CONTRIBUTING.md) | Fluxo de contribuição, testes, conteúdo bíblico, recursos externos |
+| [docs/legal/ASSET_LICENSES.md](../legal/ASSET_LICENSES.md) | Origem e licença de cada grupo de recursos |
 
 ## Qual documento ler para cada tarefa
 
@@ -67,7 +70,7 @@ Use ao trocar de modelo, abrir um chat novo, retomar depois de pausa ou quando o
 4. Leia `HANDOFF.md`.
 5. Identifique os sistemas envolvidos na nova tarefa.
 6. Leia somente os documentos desses sistemas (tabela "Qual documento ler").
-7. Verifique o estado do Git (`git status`, `git log --oneline -5`; o remoto é o repositório privado `origin` no GitHub).
+7. Verifique o estado do Git (`git status`, `git log --oneline -5`; o remoto `origin` é o repositório público no GitHub; contribuições entram por pull request, ver [CONTRIBUTING.md](../../CONTRIBUTING.md)).
 8. Compare a documentação com os arquivos atuais (abra os arquivos citados; confirme nomes e assinaturas).
 9. Registre divergências em `KNOWN_ISSUES.md` antes de alterar algo.
 10. Só então proponha ou execute alterações.

@@ -381,3 +381,18 @@ no ciclo fica explicitamente pendente.
 ### Não verificado / pendente
 - Build das 15:11 reprovado (4 falhas intermitentes, KI-17 em observação).
 - Escuta humana dos sons (KI-16) e sessão de jogo (KI-02).
+
+## 2026-10-14 — Publicação pública e colaboração com IA
+
+### Entregue
+- Auditoria de segurança dos 753 blobs do histórico (padrões de tokens, chaves, credenciais em URL, entropia, hexadecimais longos, metadados de PNG e WAV, dados pessoais): sem achados.
+- Auditoria de direitos autorais: arte e sons gerados por código do projeto; capturas do próprio jogo; fontes OFL 1.1; texto bíblico BPM em domínio público; nenhum recurso restritivo ou de origem desconhecida. Inventário em `docs/legal/ASSET_LICENSES.md`.
+- Licenças escolhidas pelo criador: `LICENSE` (MIT) e `LICENSE-ASSETS.md` (CC BY 4.0); ADR-027.
+- `README.md` público; `START_WITH_AI.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `CHANGELOG.md` na raiz; modelos de issue e PR; `.github/workflows/tests.yml` (Godot oficial conferido por SHA-512, `contents: read`, sem segredos) e `.github/dependabot.yml`.
+- Documentação dos agentes atualizada para repositório público.
+
+### Verificado
+- Suíte 665/665, fluxo 17/17, validação sem erros, fábrica 0 erros, auditoria de áudio 0 problemas, wiki OK, links dos novos documentos.
+
+### Não verificado / pendente
+- Build do exe não refeito (nada do exe mudou). Resultado do workflow e da publicação no HANDOFF.

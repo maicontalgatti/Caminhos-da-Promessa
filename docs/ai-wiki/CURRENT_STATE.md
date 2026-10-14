@@ -6,7 +6,10 @@ Resumo do **presente**. Histórico em [CHANGELOG.md](CHANGELOG.md) e [docs/imple
 - **Projeto:** Caminhos da Promessa
 - **Versão:** 0.5.0 (`project.godot` → `config/version`)
 - **Última atualização:** 2026-10-14
-- **Commit de referência:** `218cb73` (checkpoint de 2026-10-14), no repositório privado `maicontalgatti/Caminhos-da-Promessa`, branch `main`; registro no [HANDOFF.md](HANDOFF.md)
+- **Commit de referência:** o commit de publicação na branch protegida `main` (hash e verificação no [HANDOFF.md](HANDOFF.md)); anterior: checkpoint `218cb73`
+- **Repositório:** público, https://github.com/maicontalgatti/Caminhos-da-Promessa
+- **Licenças:** código MIT; arte, sons e textos próprios CC BY 4.0; fontes OFL; texto bíblico BPM em domínio público ([docs/legal/ASSET_LICENSES.md](../legal/ASSET_LICENSES.md))
+- **CI:** `.github/workflows/tests.yml` roda suíte, fluxo, validação, fábrica e auditoria de áudio com o Godot oficial no Linux, em todo pull request e push na `main`
 - **Fase:** protótipo jogável com três regiões; roadmap fase 5 (catálogo) em andamento e fase 6 (primeiras experiências) com duas experiências jogáveis; parte da fase 4 (inventário, transição entre mapas) entregue na v0.4 — ver [docs/roadmap.md](../roadmap.md)
 - **Canal de conteúdo:** `prototype` (`caminhos/content/channel`)
 - **Tradução bíblica:** `bpm` — Bíblia Portuguesa Mundial, domínio público, provisória (`caminhos/content/bible_translation`; NVI pedida, depende de permissão — KI-06)
@@ -73,7 +76,7 @@ Nenhum teste de jogo humano (KI-02); conteúdo bíblico sem revisão humana (KI-
 afirmações históricas da estrada e de Dotã aguardam revisão humana (KI-14); efeitos sonoros procedurais sem escuta humana (KI-16); falha intermitente da suíte em observação (KI-17). Lista completa em [KNOWN_ISSUES.md](KNOWN_ISSUES.md).
 
 ## Próximos passos
-1. Repositório: checkpoint no GitHub feito (privado; commit `218cb73`). Próximos commits e push só com pedido do criador.
+1. Repositório público e pronto para colaboração ([CONTRIBUTING.md](../../CONTRIBUTING.md), [START_WITH_AI.md](../../START_WITH_AI.md)). Mudanças entram por pull request revisado.
 2. Criador: jogar a v0.5.0 seguindo o roteiro "Manual da v0.4" de [docs/quests.md](../quests.md) (estrada, Dotã, bolsa, Mapa M, escolha das famílias, salvar e carregar) e **ouvir os sons** na ordem de [docs/audio.md](../audio.md#escuta-humana-necessária).
 3. Criador: revisar o conteúdo novo e decidir os pontos abertos do `review.json` do ep_008 (Gn 13 na missão das famílias, fibras, hospitalidade, prata pesada).
 4. Criador: decidir a tradução (NVI com permissão da Biblica, ou manter uma livre; KI-06).
