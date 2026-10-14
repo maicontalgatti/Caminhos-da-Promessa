@@ -1,0 +1,72 @@
+{
+	"_comment": "Coleção dos campos de Belém (ep_025). Os objetos do mapa são criados para o jogo.",
+	"sets": [
+		{
+			"id": "bethlehem_harvest",
+			"title": "Sinais da colheita",
+			"region": "bethlehem_fields"
+		}
+	],
+	"collectibles": [
+		{
+			"id": "bf_sickle",
+			"set": "bethlehem_harvest",
+			"title": "Foice de sílex",
+			"category": "object",
+			"region": "bethlehem_fields",
+			"classification": "historical_context",
+			"summary": "Foice de cabo curvo de madeira com pequenas lâminas de sílex encaixadas. No tempo dos juízes, lâminas de pedra ainda eram comuns; o ferro era raro nas aldeias das colinas. Esta foice é criada para o jogo.",
+			"references": []
+		},
+		{
+			"id": "bf_pithos",
+			"set": "bethlehem_harvest",
+			"title": "Jarro de borda em colarinho",
+			"category": "object",
+			"region": "bethlehem_fields",
+			"classification": "historical_context",
+			"summary": "Jarro alto com uma borda grossa em volta do gargalo, típico das aldeias das colinas nessa época. Guardava grão, azeite ou água. Este jarro é criado para o jogo.",
+			"references": []
+		},
+		{
+			"id": "bf_parcel_marker",
+			"set": "bethlehem_harvest",
+			"title": "Marco entre os campos",
+			"category": "geographic",
+			"region": "bethlehem_fields",
+			"classification": "historical_context",
+			"summary": "Os campos não tinham cerca; marcos de pedra separavam a parte de cada família. Rute 2:3 fala da \"parte do campo\" que era de Boaz, e Deuteronômio 19:14 proíbe mudar o marco do vizinho.",
+			"references": ["Ruth 2:3", "Deut 19:14"]
+		},
+		{
+			"id": "bf_threshing_floor",
+			"set": "bethlehem_harvest",
+			"title": "A eira",
+			"category": "cultural",
+			"region": "bethlehem_fields",
+			"classification": "historical_context",
+			"summary": "Chão batido num lugar com vento, onde os feixes eram debulhados e o grão era separado da palha. A eira do mapa é mostrada de dia, como lugar de trabalho, e é criada para o jogo.",
+			"references": []
+		},
+		{
+			"id": "bf_shelter",
+			"set": "bethlehem_harvest",
+			"title": "Abrigo de ramos",
+			"category": "cultural",
+			"region": "bethlehem_fields",
+			"classification": "plausible_fiction",
+			"summary": "Um abrigo de galhos para o descanso dos trabalhadores é uma hipótese: Rute 2:7 tem um trecho difícil no hebraico, e as traduções variam. Este abrigo é criado para o jogo.",
+			"references": ["Ruth 2:7"]
+		},
+		{
+			"id": "bf_gate",
+			"set": "bethlehem_harvest",
+			"title": "A porta da aldeia",
+			"category": "geographic",
+			"region": "bethlehem_fields",
+			"classification": "historical_context",
+			"summary": "Na porta da cidade, os moradores se encontravam e resolviam negócios diante de testemunhas. A forma desta porta, simples, com bancos de pedra, é uma reconstrução do jogo.",
+			"references": []
+		}
+	]
+}

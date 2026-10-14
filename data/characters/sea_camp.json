@@ -1,0 +1,95 @@
+{
+	"_comment": "Acampamento junto ao mar (ep_016). Famílias fictícias; goat e donkey são genéricos. Integrado de characters.proposal.json.",
+	"characters": [
+		{
+			"id": "sea_tzvi",
+			"display_name": "Tzvi",
+			"role": "Idoso do acampamento",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Idoso fictício de uma das famílias que saíram do Egito. Conta as etapas do caminho e o que se diz entre as tendas, sempre com a referência do texto. Não é personagem bíblico.",
+			"dialogue_id": "sea_tzvi_talk",
+			"sprite": {"sheet": "res://assets/characters/sea_tzvi.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1}
+		},
+		{
+			"id": "sea_shira",
+			"display_name": "Shira",
+			"role": "Mãe de família",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Mãe fictícia que assa pão sem fermento numa pedra quente, com a massa trazida do Egito. Mãe de Beni.",
+			"dialogue_id": "sea_shira_talk",
+			"sprite": {"sheet": "res://assets/characters/sea_shira.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 1, "facing_y": 0}
+		},
+		{
+			"id": "sea_beni",
+			"display_name": "Beni",
+			"role": "Menino, filho de Shira",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Menino fictício, curioso, que pergunta por que a nuvem vai à frente do povo. As respostas não explicam o relato além do texto.",
+			"dialogue_id": "sea_beni_talk",
+			"sprite": {"sheet": "res://assets/characters/sea_beni.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "wander", "speed": 16, "wander_radius": 18}
+		},
+		{
+			"id": "sea_dror",
+			"display_name": "Dror",
+			"role": "Pastor",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Pastor fictício que cuida de ovelhas, cabras e um jumento. Êxodo 12:38 registra que rebanhos saíram com o povo; o rebanho de Dror é criação do jogo.",
+			"dialogue_id": "sea_dror_talk",
+			"sprite": {"sheet": "res://assets/characters/sea_dror.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": -1, "facing_y": 0}
+		},
+		{
+			"id": "sea_nava",
+			"display_name": "Nava",
+			"role": "Avó de família",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Avó fictícia que já não consegue buscar água sozinha. Expressa o medo do povo diante da poeira dos carros, sem repetir falas do texto como se fossem dela.",
+			"dialogue_id": "sea_nava_talk",
+			"sprite": {"sheet": "res://assets/characters/sea_nava.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1}
+		},
+		{
+			"id": "sea_meret",
+			"display_name": "Meret",
+			"role": "Mulher da multidão mista",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Mulher fictícia de roupa de estilo egípcio que seguiu o povo. Ilustra a \"multidão mista\" de Êxodo 12:38 sem que o jogo afirme sua origem. Decisão humana pendente (design.md §13).",
+			"dialogue_id": "sea_meret_talk",
+			"sprite": {"sheet": "res://assets/characters/sea_meret.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1}
+		},
+		{
+			"id": "goat",
+			"display_name": "Cabra",
+			"role": "Animal",
+			"kind": "animal",
+			"classification": "historical_context",
+			"description": "Cabras e ovelhas formavam os rebanhos das famílias que viviam com os animais.",
+			"dialogue_id": "goat_examine",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/goat.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
+			"behavior": {"type": "wander", "speed": 12, "wander_radius": 28}
+		},
+		{
+			"id": "donkey",
+			"display_name": "Jumento",
+			"role": "Animal",
+			"kind": "animal",
+			"classification": "historical_context",
+			"description": "O jumento era o animal de carga mais comum da região.",
+			"dialogue_id": "donkey_examine",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/donkey.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
+			"behavior": {"type": "idle", "facing_x": -1, "facing_y": 0}
+		}
+	]
+}

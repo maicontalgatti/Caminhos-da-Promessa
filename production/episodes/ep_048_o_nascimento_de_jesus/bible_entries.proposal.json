@@ -1,0 +1,68 @@
+{
+	"_comment": "Proposta do roteirista (IA, 2026-10-14) para acrescentar a data/bible/people.json e data/bible/stories/ (história luke_002_shepherds, no formato de stories/pilot.json). Resumos próprios, conferidos com bpm.json e research_biblical.md. Ids novos: 'joseph' já é José, filho de Jacó; por isso joseph_of_nazareth. Nenhum ano exibido: a data do nascimento é debatida. Todas as referências estão em capítulos já presentes em verse_counts.json (Luke 1, 2, 4). O lugar 'bethlehem' já existe em places.json; nenhum lugar novo. '_certainty' é metadado de revisão.",
+	"people": [
+		{
+			"id": "jesus",
+			"name": "Jesus",
+			"era_id": "roman_judea",
+			"_certainty": "debated (sem ano). Judeia governada por Herodes, rei aliado de Roma; ano do nascimento não exibido no jogo.",
+			"places": ["bethlehem", "nazareth"],
+			"references": ["Luke 2:7", "Luke 2:11", "Luke 2:21", "Luke 4:16"],
+			"summary": "Segundo Lucas, nasce em Belém e é deitado numa manjedoura (Lc 2:7). O anjo o anuncia aos pastores como Salvador, Cristo, o Senhor (Lc 2:11). Recebe o nome Jesus no oitavo dia (Lc 2:21) e cresce em Nazaré (Lc 4:16).",
+			"relations": [{"person": "mary_mother_of_jesus", "label": "filho de"}],
+			"moments": ["Nascimento em Belém (Lc 2:6-7)", "Anunciado aos pastores (Lc 2:10-12)", "Recebe o nome no oitavo dia (Lc 2:21)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Ficha mínima, só com o que Lucas 2 e 4:16 dizem. Nesta experiência, Jesus não aparece em tela. Aguarda revisão humana."}
+		},
+		{
+			"id": "mary_mother_of_jesus",
+			"name": "Maria, mãe de Jesus",
+			"era_id": "roman_judea",
+			"_certainty": "Sem datas.",
+			"places": ["nazareth", "bethlehem"],
+			"references": ["Luke 1:26-27", "Luke 2:5-7", "Luke 2:19"],
+			"summary": "Jovem de Nazaré, prometida em casamento a José (Lc 1:26-27). Vai com ele a Belém, onde dá à luz o filho primogênito e o deita numa manjedoura (Lc 2:5-7). Lucas diz que ela guardava o que acontecia e meditava no coração (Lc 2:19).",
+			"relations": [{"person": "jesus", "label": "mãe de"}, {"person": "joseph_of_nazareth", "label": "prometida a"}],
+			"moments": ["Em Belém, dá à luz (Lc 2:6-7)", "Os pastores a encontram com José e o bebê (Lc 2:16)", "Guardava tudo no coração (Lc 2:19)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Nenhuma fala de Maria é registrada em Lucas 2:1-20; o jogo não a mostra nem lhe dá falas ou pensamentos. Aguarda revisão humana."}
+		},
+		{
+			"id": "joseph_of_nazareth",
+			"name": "José, de Nazaré",
+			"era_id": "roman_judea",
+			"_certainty": "Sem datas.",
+			"places": ["nazareth", "bethlehem"],
+			"references": ["Luke 1:27", "Luke 2:4-5", "Luke 2:16"],
+			"summary": "Da casa e família de Davi. Sobe de Nazaré a Belém para se registrar, com Maria (Lc 2:4-5). Está com ela quando os pastores chegam (Lc 2:16).",
+			"relations": [{"person": "mary_mother_of_jesus", "label": "noivo de"}],
+			"moments": ["Viagem de Nazaré a Belém (Lc 2:4-5)", "Os pastores o encontram com Maria e o bebê (Lc 2:16)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Não confundir com José, filho de Jacó (id joseph). Nenhuma fala dele em Lucas 2:1-20. Aguarda revisão humana."}
+		}
+	],
+	"stories": [
+		{
+			"id": "luke_002_shepherds",
+			"title": "Os pastores de Belém",
+			"summary": "Pastores que vigiam o rebanho à noite perto de Belém recebem de um anjo o anúncio do nascimento de um Salvador; vão depressa a Belém, encontram Maria, José e o bebê na manjedoura, contam o que ouviram e voltam louvando a Deus.",
+			"references": [{"book": "Luke", "chapter_start": 2, "verse_start": 8, "chapter_end": 2, "verse_end": 20}],
+			"characters": ["Pastores", "Anjo do Senhor", "Multidão do exército celestial", "Maria", "José", "O bebê"],
+			"region": "Campos perto de Belém (Judeia)",
+			"era": {"label": "Nos dias do rei Herodes (data debatida)", "certainty": "debated"},
+			"literary_category": "evangelho",
+			"content_classification": "recorded_event",
+			"possible_interactions": ["Ajudar pastores fictícios a recolher o rebanho e manter o fogo", "Observar de longe o anúncio e a ida a Belém"],
+			"possible_activities": ["Vigília noturna", "Cena dirigida de reverência (só luz)"],
+			"narrative_relevance": "core",
+			"design_constraints": [
+				"O anjo e a multidão celestial aparecem só como luz; sem figura, asas ou rosto.",
+				"Falas do anjo, da multidão e dos pastores só por citação da tradução carregada ou paráfrase identificada (Lc 2:10-12, 2:14, 2:15).",
+				"Maria, José e o bebê não aparecem em tela e não têm falas nem pensamentos.",
+				"O viajante não recebe o anúncio, não guia os pastores e não entra na casa.",
+				"Sem estrela, magos, neve, estábulo de madeira, estalajadeiro; nenhum ano exibido."
+			],
+			"depends_on": [],
+			"used_in": ["data/dialogues/bethlehem_night.json", "data/scenes/shepherds_announcement.json", "data/scenes/shepherds_at_the_house.json"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Variante textual em Lc 2:14 e sentido de katalyma (Lc 2:7) tratados no diário. Aguarda revisão humana."}
+		}
+	],
+	"chronology_note": "Não alterado aqui: data/bible/chronology.json, evento shepherds_bethlehem, traz date -6 a -4 com certainty 'approximate'; a ficha bíblica pede 'debated' e nenhum ano no texto do jogo. O resumo do evento também diz 'A data do nascimento é aproximada'. Sugestão para KNOWN_ISSUES: certainty 'debated' e resumo 'A data do nascimento é debatida'."
+}

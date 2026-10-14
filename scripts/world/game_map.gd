@@ -3,11 +3,14 @@ extends Node2D
 ## Base de todo mapa explorável. Posiciona o jogador (entrada nomeada, save
 ## ou spawn), limita a câmera ao tamanho do mapa e monta, a partir dos dados
 ## da região (data/regions), as saídas, áreas, NPCs, objetos examináveis e
-## itens no chão. Assim um mapa novo não exige script próprio.
+## itens no chão, além da luz por estado ("lighting"). Assim um mapa novo não
+## exige script próprio.
 
 const NPC_SCENE := "res://scenes/npcs/npc.tscn"
 const ENV_SCENE := "res://scenes/environments/%s.tscn"
 const SPAWN_CLEARANCE := Rect2(-5, -6, 10, 7)
+## Transição de luz quando uma flag muda a regra de "lighting" que vale.
+const LIGHT_FADE := 0.8
 
 @export var region_id: String = ""
 @export var map_size_tiles := Vector2i(60, 40)
@@ -19,6 +22,12 @@ var _world: Node2D
 var _surface_layers: Array = []
 ## id do objeto condicional -> nó instanciado (ou null quando a condição não vale)
 var _conditional: Dictionary = {}
+## Tinta do mapa ("lighting" da região ou passo "tint" de cena dirigida); criada sob demanda.
+var lighting: CanvasModulate
+## Enquanto uma cena dirigida controla a tinta, as regras da região esperam.
+var lighting_locked := false
+var _light_tween: Tween
+var _light_target := Color.WHITE
 
 
 func _ready() -> void:
@@ -137,6 +146,48 @@ func _build_runtime() -> void:
 		area.setup(region_id, a)
 		_runtime.add_child(area)
 	_refresh_conditional()
+	refresh_lighting(0.0)
+
+
+# --- Luz por estado --------------------------------------------------------------
+
+## Cor da primeira regra de "lighting" cuja condição vale; branco sem regras.
+func lighting_tint() -> Color:
+	for rule in get_region().get("lighting", []):
+		if rule is Dictionary and Color.html_is_valid(String(rule.get("tint", ""))) and Conditions.check(rule.get("if")):
+			return Color(String(rule.tint))
+	return Color.WHITE
+
+
+func ensure_lighting() -> CanvasModulate:
+	if lighting == null or not is_instance_valid(lighting):
+		lighting = CanvasModulate.new()
+		lighting.name = "Lighting"
+		add_child(lighting)
+	return lighting
+
+
+## Tinta para a cor indicada (tween de `time` s); usada pelas regras e pelas cenas.
+func set_tint(color: Color, time: float) -> void:
+	if _light_tween and _light_tween.is_valid():
+		_light_tween.kill()
+	var cm := ensure_lighting()
+	_light_target = color
+	if time <= 0.0:
+		cm.color = color
+		return
+	_light_tween = create_tween()
+	_light_tween.tween_property(cm, "color", color, time)
+
+
+func refresh_lighting(time: float = LIGHT_FADE) -> void:
+	if lighting_locked:
+		return
+	var c := lighting_tint()
+	var has_node := lighting != null and is_instance_valid(lighting)
+	if (not has_node and c == Color.WHITE) or (has_node and _light_target == c):
+		return
+	set_tint(c, time)
 
 
 func _spawn_defs() -> Array:
@@ -235,3 +286,4 @@ func find_object(type: String, id: String) -> Node2D:
 
 func _on_state_changed(_a: Variant = null, _b: Variant = null) -> void:
 	_refresh_conditional.call_deferred()
+	refresh_lighting.call_deferred(LIGHT_FADE)

@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/egypt_oven.png" id="1_1l0pd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncvxd"]
+size = Vector2(16, 5)
+
+[node name="EgyptOven" type="StaticBody2D" unique_id=1266878930]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=172974135]
+texture = ExtResource("1_1l0pd")
+centered = false
+offset = Vector2(-11, -22)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1077315063]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_ncvxd")

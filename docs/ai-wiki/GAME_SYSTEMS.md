@@ -12,7 +12,10 @@ Arquivos e interfaces em [ARCHITECTURE_MAP.md](ARCHITECTURE_MAP.md).
 | Prólogo | ao iniciar novo jogo; Esc pula; "Rever abertura" na pausa; não repete ao carregar | automático + capturas | quests |
 | HUD de contexto | lugar, época, referência ativa, "Você está em" e "Siga para"; Tab recolhe; C contexto | automático + capturas | quests |
 | Regiões e viagem | Aldeia em Canaã, Caminho das Caravanas, Pastos de Dotã; saídas com condição, escurecimento, título da região, salvamento automático ao chegar | automático + capturas | architecture, ADR-021 |
-| Mapa das Escrituras (M) | experiências por época; cartão "OUTRO MOMENTO DA HISTÓRIA"; planejadas visíveis e não jogáveis; atlas de lugares dentro dele | automático + capturas | ADR-024 |
+| Mapa das Escrituras (M) | experiências por época; cartão "OUTRO MOMENTO DA HISTÓRIA"; botão Iniciar / Continuar / Revisitar leva ao destino (`travel`, `entry_if`, `stages`); planejadas visíveis e não jogáveis; atlas de lugares dentro dele | automático (capturas anteriores ao botão) | ADR-024, ADR-028, quests |
+| Cenas dirigidas | o jogador assiste: câmera, figurantes (personagens ou silhuetas), luz, efeitos (brilho, coluna, vento, paredes de água, poeira), legendas bíblicas ou identificadas; Esc pula para o estado final; não repete; nunca dá item | automático (só dados de teste; sem cena real nem captura) | quests, ADR-028 |
+| Luz por estado | `lighting` da região: primeira regra verdadeira define a tinta; muda ao entrar e quando flags mudam | automático | quests, ADR-028 |
+| Passagem de saída | saída com `passage` mostra o cartão antes de atravessar | automático | quests, ADR-028 |
 | Bolsa (I) | 12 espaços + essenciais; coleta no mapa sem duplicar; entregar, receber e trocar em diálogo; descartar (exceto protegidos) | automático + capturas | ADR-023, quests |
 | Colecionáveis | conjuntos (ex.: registros da caravana); aba "Descobertas" do diário | automático + capturas | quests |
 | Escolhas | decisões persistentes (`choice:<id>`) com desfechos de missão por variante | automático | quests, ADR-022 |

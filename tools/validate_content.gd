@@ -21,6 +21,8 @@ func _initialize() -> void:
 		regions[r.id] = r
 	var quests := QuestDatabase.new()
 	quests.load_dir()
+	var scenes := SceneDatabase.new()
+	scenes.load_dir()
 
 	print("\n== Validação de conteúdo (canal configurado: %s) ==" % ContentPolicy.channel())
 	_section("Catálogo bíblico", catalog.errors)
@@ -28,12 +30,27 @@ func _initialize() -> void:
 	_section("Personagens e regiões", errs)
 	var qerrs := quests.errors.duplicate()
 	for id in quests.order:
-		qerrs.append_array(quests.validate_links(quests.get_quest(id), catalog, dialogues.dialogues, characters, regions))
+		qerrs.append_array(quests.validate_links(quests.get_quest(id), catalog, dialogues.dialogues, characters, regions, scenes.scenes))
 	_section("Missões", qerrs)
+	var serrs := scenes.errors.duplicate()
+	var sounds := SceneDatabase.manifest_sounds()
+	for id in scenes.order:
+		serrs.append_array(SceneDatabase.validate_links(scenes.get_scene(id), catalog, characters, regions, sounds))
+	for d in dialogues.dialogues.values():
+		for sid in DialogueDatabase.referenced_scenes(d):
+			if not scenes.has_scene(sid):
+				serrs.append("diálogo %s: ação pede cena inexistente \"%s\"" % [d.id, sid])
+	_section("Cenas dirigidas (%d)" % scenes.order.size(), serrs)
+	var werrs := PackedStringArray()
+	for rid in regions:
+		werrs.append_array(WorldSchema.validate_region(regions[rid]))
+	for x in JsonUtil.read_collection("res://data/world", "experiences", werrs):
+		werrs.append_array(WorldSchema.validate_experience(x, regions))
+	_section("Mundo: luz, passagens e experiências", werrs)
 
 	print("\n-- Situação de revisão --")
 	var groups := {
-		"Missões": quests.quests, "Descobertas": catalog.discoveries, "Apresentações": catalog.presentations,
+		"Missões": quests.quests, "Cenas": scenes.scenes, "Descobertas": catalog.discoveries, "Apresentações": catalog.presentations,
 		"Histórias": catalog.stories, "Épocas": catalog.eras, "Acontecimentos": catalog.events,
 		"Lugares": catalog.places, "Pessoas": catalog.people,
 	}

@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/flax_bundles.png" id="1_k3ibh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myaxc"]
+size = Vector2(24, 4)
+
+[node name="FlaxBundles" type="StaticBody2D" unique_id=675883914]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1639458962]
+texture = ExtResource("1_k3ibh")
+centered = false
+offset = Vector2(-14, -16)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1849999351]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_myaxc")

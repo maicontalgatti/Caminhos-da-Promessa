@@ -1,0 +1,53 @@
+{
+	"_comment": "PROPOSTA (quest-designer, 2026-10-14; legendas e ids pelo roteirista) no formato da cena dirigida de production/reports/four_experiences_decisions.md. Destino sugerido: data/scenes/ruth_gleaning_meal.json. Disparo: efeito \"action\": {\"scene\": \"ruth_gleaning_meal\"} no diálogo bf_boundary_view (objetivo ruth_gleaning/watch_field). Ao terminar ou pular, emite scene_finished ruth_gleaning_meal. Rute, Boaz, o encarregado e a serva são figuras pequenas vistas de longe (sprites silhouette_bf_*, ver characters.proposal.json); nenhum fala: as legendas 'scripture' mostram o texto oficial carregado por referência (versículos de Rute 2 ainda precisam entrar em bpm.json) e as 'narration' são resumos próprios, sempre começando por 'Resumo de Rute ...'. Duração estimada: 60-75 s. Sem item, ponto ou poder (regra 12).",
+	"scenes": [
+		{
+			"id": "ruth_gleaning_meal",
+			"region": "bethlehem_fields",
+			"title": "A respiga no campo de Boaz",
+			"classification": "recorded_event",
+			"references": ["Ruth 2:3-18"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA); legendas de resumo escritas pelo roteirista (IA), em discurso indireto e com referência, a conferir pelo verificador bíblico. Sem close; figuras sem rosto detalhado; Rute sem marca visual de 'estrangeira exótica'."},
+			"skippable": true,
+			"steps": [
+				{"type": "camera", "to": [672, 448], "time": 2.0, "zoom": 1.0, "wait": true},
+				{"type": "actor", "id": "ruth", "sprite": "silhouette_bf_ruth", "at": [544, 528], "facing": "right"},
+				{"type": "actor", "id": "servant_1", "sprite": "silhouette_bf_servant", "at": [624, 496], "facing": "right"},
+				{"type": "actor", "id": "overseer", "sprite": "silhouette_bf_overseer", "at": [656, 392], "facing": "down"},
+				{"type": "move", "actor": "ruth", "path": [[544, 528], [592, 520], [640, 516]], "speed": 14},
+				{"type": "caption", "scripture": "Ruth 2:3", "wait": true},
+				{"type": "actor", "id": "boaz", "sprite": "silhouette_bf_boaz", "at": [512, 344], "facing": "down"},
+				{"type": "move", "actor": "boaz", "path": [[512, 344], [560, 376], [624, 392]], "speed": 22, "wait": true},
+				{"type": "caption", "scripture": "Ruth 2:4", "wait": true},
+				{"type": "caption", "text": "Resumo de Rute 2:5-7: Boaz pergunta ao encarregado de quem é aquela jovem. O encarregado responde que é a moabita que voltou com Noemi e que pediu para respigar entre os feixes.", "kind": "narration", "wait": true},
+				{"type": "move", "actor": "boaz", "path": [[624, 392], [640, 472], [616, 500]], "speed": 18, "wait": true},
+				{"type": "caption", "text": "Resumo de Rute 2:8-13: Boaz diz a Rute que fique no campo dele, perto das servas, e beba da água dos jovens. Ela pergunta por que recebe esse favor, sendo estrangeira; ele responde que soube do que ela fez pela sogra.", "kind": "narration", "wait": true},
+				{"type": "tint", "color": "#FFF2D6", "time": 2.0},
+				{"type": "move", "actor": "servant_1", "path": [[624, 496], [776, 384]], "speed": 22},
+				{"type": "move", "actor": "overseer", "path": [[656, 392], [792, 376]], "speed": 22},
+				{"type": "move", "actor": "boaz", "path": [[616, 500], [808, 368]], "speed": 22},
+				{"type": "move", "actor": "ruth", "path": [[640, 516], [768, 392]], "speed": 20, "wait": true},
+				{"type": "camera", "to": [784, 400], "time": 1.5, "wait": true},
+				{"type": "caption", "scripture": "Ruth 2:14", "wait": true},
+				{"type": "wait", "time": 2.0},
+				{"type": "caption", "text": "Resumo de Rute 2:15-16: Boaz manda os jovens deixarem Rute respigar até entre os feixes e deixarem cair espigas para ela, sem repreendê-la.", "kind": "narration", "wait": true},
+				{"type": "remove", "actor": "boaz"},
+				{"type": "remove", "actor": "overseer"},
+				{"type": "move", "actor": "servant_1", "path": [[776, 384], [672, 456]], "speed": 22},
+				{"type": "move", "actor": "ruth", "path": [[768, 392], [704, 504]], "speed": 16, "wait": true},
+				{"type": "tint", "color": "#F2C890", "time": 3.0},
+				{"type": "sfx", "id": "grain_beat"},
+				{"type": "caption", "scripture": "Ruth 2:17", "wait": true},
+				{"type": "camera", "to": [560, 300], "time": 2.0},
+				{"type": "move", "actor": "ruth", "path": [[704, 504], [512, 344], [512, 120]], "speed": 26},
+				{"type": "caption", "text": "Resumo de Rute 2:18: ela leva a cevada à cidade, mostra à sogra o que respigou e lhe dá o que sobrou da refeição dos ceifeiros. A conversa das duas está no diário (Rute 2:19-23).", "kind": "narration", "wait": true},
+				{"type": "remove", "actor": "ruth"},
+				{"type": "remove", "actor": "servant_1"},
+				{"type": "tint", "color": "#FFF7E8", "time": 2.0},
+				{"type": "camera", "follow": "player", "time": 1.5, "wait": true}
+			],
+			"end_state": "Todos os figurantes removidos, luz padrão do mapa, câmera no jogador. Pular (Esc) aplica esse estado direto e emite scene_finished.",
+			"assets_needed": ["silhouette_bf_ruth (figura pequena, lã natural, cobertura de cabeça, sem traço 'exótico')", "silhouette_bf_boaz (homem adulto, lã natural com faixa colorida discreta)", "silhouette_bf_overseer", "silhouette_bf_servant (serva)", "sfx grain_beat (batidas de vara em espigas, pode derivar de sons existentes)"]
+		}
+	]
+}

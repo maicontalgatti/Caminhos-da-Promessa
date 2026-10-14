@@ -1,0 +1,51 @@
+{
+	"episode": "ep_016_a_travessia_do_mar",
+	"reuse": [
+		{"path": "res://assets/tilesets/lands_tiles.png", "use": "areia, rocha, água e verde (fonte 1 de lands_tileset.tres; criado em ep_009)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://assets/characters/sheep.png", "use": "personagem sheep (rebanho)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/firepit.tscn", "use": "fogueiras do acampamento (528,848) e (780,832)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/jar.tscn", "use": "jarro (640,944)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/pots.tscn", "use": "potes (300,790)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/sacks.tscn", "use": "sacos (860,900), (470,150)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/rock_big.tscn", "use": "rocha (100,1010); examinável sea_dust_view (etapa B)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/rock_small.tscn", "use": "pedras espalhadas", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/boundary_stone.tscn", "use": "examinável sea_far_view (etapa B)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/tree_date_palm.tscn", "use": "tamareiras junto à fonte (920,840), (960,880)", "license": "CC BY 4.0 (gerado por tools/art_gen; criado em ep_009)"}
+	],
+	"gaps": [
+		{"id": "sea_tzvi", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "margem_do_mar", "status": "produced", "notes": "ancião do acampamento, manto, cajado"},
+		{"id": "sea_shira", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "margem_do_mar", "status": "produced", "notes": "mãe, véu e manto"},
+		{"id": "sea_beni", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "margem_do_mar", "status": "produced", "notes": "criança (corpo menor)"},
+		{"id": "sea_dror", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "margem_do_mar", "status": "produced", "notes": "pastor com cajado"},
+		{"id": "sea_nava", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "margem_do_mar", "status": "produced", "notes": "mulher com cesto"},
+		{"id": "sea_meret", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "margem_do_mar", "status": "produced", "notes": "egípcia que saiu com o povo (Êx 12:38): linho branco"},
+		{"id": "goat", "kind": "animal", "size": "24x20", "frames": "6x2", "palette": "margem_do_mar", "status": "produced", "notes": "cabra genérica (também usada em ep_048)"},
+		{"id": "donkey", "kind": "animal", "size": "28x22", "frames": "6x2", "palette": "margem_do_mar", "status": "produced", "notes": "jumento de carga com cestos"},
+		{"id": "tent_worn", "kind": "prop", "size": "48x40", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "tenda de pelo de cabra gasta"},
+		{"id": "cloth_shelter", "kind": "prop", "size": "42x30", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "abrigo de pano em varas"},
+		{"id": "bread_stone_fire", "kind": "prop", "size": "22x12", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "pedra de assar sobre brasas"},
+		{"id": "skins_tripod", "kind": "prop", "size": "20x30", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "odres pendurados em tripé"},
+		{"id": "kneading_bundle", "kind": "prop", "size": "18x14", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "amassadeira embrulhada em manto (Êx 12:34; examinável sea_bundle)"},
+		{"id": "tamarisk", "kind": "prop", "size": "34x42", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "tamargueira (balança)"},
+		{"id": "reeds", "kind": "prop", "size": "22x22", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "juncos da margem (balançam)"},
+		{"id": "rock_crest", "kind": "prop", "size": "44x30", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "crista rochosa"},
+		{"id": "dune", "kind": "prop", "size": "60x20", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "duna baixa"},
+		{"id": "firepit_out", "kind": "prop", "size": "16x12", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "fogo apagado (margem norte, amanhecer)"},
+		{"id": "crowd_group_a", "kind": "prop", "size": "56x40", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "grupo de figurantes de pé (multidão sugerida, sem rosto)"},
+		{"id": "crowd_group_b", "kind": "prop", "size": "48x40", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "grupo de figurantes sentados"},
+		{"id": "thorn_bush", "kind": "prop", "size": "22x16", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "arbusto espinhoso espalhado (criado para ep_048, reaproveitado)"},
+		{"id": "brushwood", "kind": "item_icon", "size": "12x12", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "gravetos (pickups brushwood_*)"},
+		{"id": "silhuetas de cena (travessia, carros, coluna)", "kind": "scene_actor", "size": "-", "frames": "-", "palette": "-", "status": "placeholder", "notes": "SceneActor desenha silhuetas por código; coluna de nuvem/fogo, poeira de carros e corredor entre as águas dependem de efeitos (ambient_effects_proposed) e da cena dirigida, não desta etapa."}
+	],
+	"environment": [
+		{"region": "sea_camp", "exists": true, "scene": "res://scenes/maps/sea_camp.tscn", "tileset": "res://assets/tilesets/lands_tileset.tres", "notes": "64x72 tiles. Camadas: Ground (areia), Rock (cristas norte e sul), Green (fonte), Water (mar, linhas 18-41), Paths, Decor. Sem DaylightTint: a luz vem do campo 'lighting' da região (afternoon, dusk, night, dawn)."}
+	],
+	"generator": [
+		{"script": "res://tools/art_gen/art_lands.gd", "run": "godot --headless --path . --script res://tools/art_gen/generate_art.gd -- --v05-only", "origin": "gerado por tools/art_gen", "license": "CC BY 4.0"},
+		{"script": "res://tools/art_gen/build_regions.gd", "run": "godot --headless --path . --script res://tools/art_gen/build_regions.gd -- sea_camp", "origin": "LAYOUTS.sea_camp", "license": "CC BY 4.0"}
+	],
+	"map_inventory": [
+		{"region": "sea_camp", "entries": {"default": [904, 968], "arrival": [904, 968], "far_shore_dawn": [512, 236]}, "exits": {}, "areas": {"shore_encampment": [400, 800, 256, 128], "south_lookout": [288, 976, 96, 64], "shore_gathering": [672, 672, 224, 48], "far_shore": [384, 192, 256, 80]}, "solids_px": [[0, 0, 1024, 90], [0, 292, 1024, 376], [0, 1028, 1024, 124]], "reserved_px": [[480, 672, 80, 140], [384, 192, 256, 80]], "pending_stage_b": "npcs, examinables, pickups, ambient_effects_proposed e ambient_sfx_proposed no campo _stage_b de data/regions/sea_camp.json"}
+	],
+	"notes": "Etapa A (arte e mapa) por godot-implementer (IA), 2026-10-14. Arte vista em tela pelo render de tools/screenshot/map_overview.gd (sem a luz por estado, que o GameMap aplica em jogo). Restrições respeitadas: sem camelo, galinha, cavaleiro, poço, casa, forno fixo, cerca de madeira, oliveira, barco, pirâmide, estandarte, ferro ou moeda; Pi-Hairote, Migdol e Baal-Zefom não são marcados. O mar é colisão contínua; o corredor só existe na cena dirigida."
+}

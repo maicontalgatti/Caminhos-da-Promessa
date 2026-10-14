@@ -377,7 +377,10 @@ func test_quests_across_regions() -> void:
 	GameState.new_game()
 	check(WorldManager.experience_state("joseph_dothan") == "locked", "José em Dotã bloqueado antes dos poços")
 	check(WorldManager.start_experience("joseph_dothan") != "", "experiência bloqueada não inicia")
-	check(WorldManager.experience_state("ruth_bethlehem") == "planned" and WorldManager.start_experience("ruth_bethlehem") != "", "experiência em planejamento não é jogável")
+	WorldManager.experiences["test_planned"] = {"id": "test_planned", "era": "judges", "title": "Teste em planejamento", "status": "planned", "references": ["Ruth 2:1-3"]}
+	check(WorldManager.experience_state("test_planned") == "planned" and WorldManager.start_experience("test_planned") != "", "experiência em planejamento não é jogável")
+	WorldManager.experiences.erase("test_planned")
+	check(WorldManager.experience_state("ruth_bethlehem") == "locked" and WorldManager.start_experience("ruth_bethlehem") != "", "Rute em Belém bloqueada antes da travessia do mar")
 	_complete_wells()
 	check(QuestManager.status("canaan_wells") == "completed" and WorldManager.experience_state("isaac_wells") == "completed", "poços concluídos")
 	var main := "joseph_dothan_road"

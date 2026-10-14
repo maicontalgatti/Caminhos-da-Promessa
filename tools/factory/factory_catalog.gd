@@ -42,7 +42,7 @@ const SEVERITIES := ["critical", "major", "minor", "info"]
 const EVENT_SUPPORT := {
 	"talk_npc": {"level": "data_only", "engine": "evento custom num nó de diálogo, ou dialogue_finished"},
 	"inspect_object": {"level": "data_only", "engine": "Interactable com dialogue_id + dialogue_finished/interact"},
-	"observe_scene": {"level": "partial", "engine": "presentation_finished (apresentação em quadros); cena dirigida no mapa exige código"},
+	"observe_scene": {"level": "data_only", "engine": "cena dirigida no mapa (data/scenes, ação {scene: id}, evento scene_finished) ou apresentação em quadros (presentation_finished)"},
 	"journal_reflection": {"level": "partial", "engine": "descoberta ou flag; não há tela de reflexão"},
 	"help_npc": {"level": "partial", "engine": "escolha de diálogo com evento custom; ajuda física exige código"},
 	"assemble_clues": {"level": "partial", "engine": "vários eventos + flag; não há interface de pistas"},
@@ -61,6 +61,7 @@ var errors := PackedStringArray()
 var _regions: Dictionary = {}
 var _items: Dictionary = {}
 var _collectible_sets: Dictionary = {}
+var _scenes: Dictionary = {}
 var _book_by_name: Dictionary = {}
 
 
@@ -75,6 +76,34 @@ func _init() -> void:
 		_items[it.id] = it
 	for s in JsonUtil.read_collection("res://data/collectibles", "sets", errs):
 		_collectible_sets[s.id] = s
+	_scenes = SceneDatabase.ids_in()
+
+
+## Cenas dirigidas (data/scenes), regiões e experiências: erros de estrutura e de vínculos.
+func world_content_errors() -> PackedStringArray:
+	var out := PackedStringArray()
+	var errs := PackedStringArray()
+	var characters := {}
+	for c in JsonUtil.read_collection("res://data/characters", "characters", errs):
+		characters[c.id] = c
+	var sdb := SceneDatabase.new()
+	sdb.load_dir()
+	out.append_array(sdb.errors)
+	var sounds := SceneDatabase.manifest_sounds()
+	for sid in sdb.order:
+		out.append_array(SceneDatabase.validate_links(sdb.get_scene(sid), catalog, characters, _regions, sounds))
+	for rid in _regions:
+		out.append_array(WorldSchema.validate_region(_regions[rid]))
+	for x in JsonUtil.read_collection("res://data/world", "experiences", errs):
+		out.append_array(WorldSchema.validate_experience(x, _regions))
+	var dialogues := DialogueDatabase.new()
+	dialogues.load_dir("res://data/dialogues")
+	for d in dialogues.dialogues.values():
+		for scene_id in DialogueDatabase.referenced_scenes(d):
+			if not sdb.has_scene(scene_id):
+				out.append("diálogo %s: ação pede cena inexistente \"%s\"" % [d.id, scene_id])
+	out.append_array(errs)
+	return out
 
 
 func load_episodes() -> bool:
@@ -475,6 +504,10 @@ func quest_world_errors(q: Dictionary) -> PackedStringArray:
 			var type := String(t.get("type", ""))
 			if type == "ui":
 				continue
+			if type == "scene":
+				if not _scenes.has(t.id):
+					out.append("%s/%s: cena \"%s\" não existe em data/scenes" % [qid, o.id, t.id])
+				continue
 			if type == "region":
 				if not _regions.has(t.id):
 					out.append("%s/%s: região \"%s\" ainda não existe (missão fica em planejamento)" % [qid, o.id, t.id])
@@ -492,6 +525,9 @@ func quest_world_errors(q: Dictionary) -> PackedStringArray:
 			"region_entered", "region_unlocked":
 				if not _regions.has(trig.id):
 					out.append("%s/%s: região \"%s\" não existe" % [qid, o.id, trig.id])
+			"scene_finished":
+				if not _scenes.has(trig.id):
+					out.append("%s/%s: cena \"%s\" não existe em data/scenes" % [qid, o.id, trig.id])
 			"inventory", "item_collected", "item_received", "item_delivered":
 				if not _items.has(trig.id):
 					out.append("%s/%s: item \"%s\" não existe" % [qid, o.id, trig.id])

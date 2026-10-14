@@ -1,0 +1,23 @@
+{
+	"episode": "ep_048_o_nascimento_de_jesus",
+	"title": "O nascimento de Jesus",
+	"references": [
+		"Luke 2:1-20"
+	],
+	"chapter_ranges": [],
+	"narrative_mode": "observacao_contextual",
+	"region": "",
+	"created": "2026-10-14",
+	"gates": {
+		"0_selection": "done",
+		"1_research": "pending",
+		"2_design": "pending",
+		"3_review": "pending",
+		"4_implementation": "pending",
+		"5_audio": "pending",
+		"6_qa": "pending",
+		"7_publication": "pending"
+	},
+	"agents": [],
+	"costs": []
+}

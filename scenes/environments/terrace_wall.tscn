@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/terrace_wall.png" id="1_tm5cr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0g3o1"]
+size = Vector2(48, 7)
+
+[node name="TerraceWall" type="StaticBody2D" unique_id=74326780]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=625647523]
+texture = ExtResource("1_tm5cr")
+centered = false
+offset = Vector2(-24, -16)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=712013523]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_0g3o1")

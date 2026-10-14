@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/tent_worn.png" id="1_s7xv4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3wl5"]
+size = Vector2(44, 11)
+
+[node name="TentWorn" type="StaticBody2D" unique_id=1274383132]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1497023247]
+texture = ExtResource("1_s7xv4")
+centered = false
+offset = Vector2(-24, -38)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=287283668]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_t3wl5")

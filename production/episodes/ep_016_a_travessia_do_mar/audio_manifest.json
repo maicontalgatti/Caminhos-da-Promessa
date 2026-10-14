@@ -1,0 +1,2138 @@
+{
+	"_comment": "Gerado por tools/factory.gd audio-manifest. Não edite text/line_id/hash à mão: mude o texto no jogo e gere de novo. emotion, pronunciation e target_seconds são do audio-producer.",
+	"episode": "ep_016_a_travessia_do_mar",
+	"language": "pt-BR",
+	"generated": "2026-10-14",
+	"provider": "none",
+	"budget_approved": false,
+	"subtitles": "sempre: a caixa de diálogo mostra o texto de toda fala",
+	"total_characters": 12788,
+	"lines": [
+		{
+			"line_id": "sea_tzvi_talk/greet",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Paz, viajante. Sente-se, se quiser. Já não tenho força para armar tendas, mas ainda sei contar o caminho.",
+			"hash": "817b90b11099c0093eecd9b297bf062d5b78699c4318d9a694ca5f4d6d0f52a3",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__greet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/road1",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Saímos do Egito às pressas. De Ramessés fomos a Sucote, depois a Etã, na beira do deserto. E agora, este acampamento junto ao mar.",
+			"hash": "897f2b12b6e74903cdcc845ce0259556950951edb306cef8d2ebb2731ce9aaf4",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__road1.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/road2",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Êxodo 12:37 e 13:20 citam essas paradas. Onde ficavam esses lugares é debatido.)",
+			"hash": "4748fe2d81f8cff38f5e899a3ede90a1aff00a23623c3d80fb3b98af3e63660f",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__road2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/road3",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "O caminho da costa era o mais curto, mas não fomos por ele. Dizem que foi para o povo não desanimar se encontrasse guerra e quisesse voltar.",
+			"hash": "a52541811d52423f84bce4b96cab25f4ea1690e01f16113821d390b24024c813",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__road3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/road4",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Êxodo 13:17-18 diz que Deus não os guiou pelo caminho da terra dos filisteus, embora fosse mais perto, e os fez dar a volta pelo deserto.)",
+			"hash": "cc1c85fa3ed101e4b6eaab1f86f632c2561bab2dcebe2b9dcb978e91e59de910",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__road4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/pillar1",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Está vendo aquela nuvem adiante, sobre a água? Desde que saímos, ela vai à nossa frente. De noite, é fogo.",
+			"hash": "2a8edfdc909e3886f98b8e0505e58a427f1a6efb1a866e787395cd7eb81d5683",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__pillar1.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/pillar2",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Êxodo 13 fala dessa coluna:)",
+			"hash": "70d4e0a89bd7f805efe578b825571249666f5128c6e1741f8ed13deb442f006f",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__pillar2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 2.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/pillar3",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "O SENHOR ia adiante deles, de dia numa coluna de nuvem para guiá-los no caminho, e de noite numa coluna de fogo para iluminá-los, para que pudessem caminhar de dia e de noite: a coluna de nuvem de dia, e a coluna de fogo de noite, não se afastaram de diante do povo.",
+			"hash": "8797a9b3d0f5c553ed2b13354fa42e87675dd45b4c4c994c0e87c82980f0d293",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__pillar3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 19.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Exod 13:21-22",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "sea_tzvi_talk/bones1",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Você conhece a história de José, filho de Jacó? Antes de morrer, ele fez os filhos de Israel jurarem que levariam os seus ossos quando Deus os visitasse.",
+			"hash": "b99be0a5d4a5375fba63efe15eb5ab42ff5df58eb70d75a9553f434bedde737e",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__bones1.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 11.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/bones2",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Moisés trouxe esses ossos com ele. Gerações esperaram por esta viagem.",
+			"hash": "36ba30714ced910d7ac3f4c9dfef1b34259aab8da842011e0982c2465234344e",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__bones2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/bones3",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Êxodo 13:19 registra isso, lembrando o juramento de Gênesis 50:24-25.)",
+			"hash": "4095b5e7010b9093af96f820951121bf78d78eccbb3935c53929b08dbb8f7a78",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__bones3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/again",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Descanse um pouco, viajante. A tarde ainda vai longa.",
+			"hash": "07567dd3b9e96b04824aa6c22be390baaf6ec830e358006e96b7a3f97f9652a0",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/egypt1",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Desde menino carreguei fardos nas obras do faraó, com feitores em cima de nós. Ainda acordo à noite achando que estou lá.",
+			"hash": "dc4aa647efe0f51031e4080ebcd6f5935e71629e5fa822660c518e907a1d30a7",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__egypt1.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/egypt2",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Êxodo 1:11 conta que os egípcios puseram feitores sobre os israelitas e que eles construíram para o faraó as cidades-armazéns de Pitom e Ramsés.)",
+			"hash": "ddb4ef176a77fa918f3bb8596b6230c891b52f3c150e9572bae876c73625ad9e",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__egypt2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/where",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Isso ninguém aqui sabe dizer. A gente só sabe que ela vai na frente, e que a gente vai atrás.",
+			"hash": "f229b1bd87d955aa447d86aeb02082ba56c1f656a00dae97e02a13920e1d183d",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__where.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/bye",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Vá em paz. Se precisar de mim, estou junto ao fogo.",
+			"hash": "e5dec8b2b62e099413f75023dc9e191489b2350db1857fcc78949c8acbf3b18c",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__bye.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/dusk_wait",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "O sol já está baixo. Se alguém ainda precisa de ajuda no acampamento, vá agora. Shira estava atrás de galhos secos para o fogo.",
+			"hash": "23edc039916c01bfb5f493dcdedf80d3ac0e4a4ee4dc99cf46d9fa299b3c8409",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__dusk_wait.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/dusk",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Você também viu a poeira, não viu? Ninguém fala de outra coisa. As famílias estão vindo para a beira da água.",
+			"hash": "8d4196763bdc0f3badac6bd7e4ffb34258bbb421c732f83475a7dc247ef04637",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__dusk.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/dusk_warn",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Você também viu a poeira, não viu? Ninguém fala de outra coisa. As famílias estão vindo para a beira da água.",
+			"hash": "8d4196763bdc0f3badac6bd7e4ffb34258bbb421c732f83475a7dc247ef04637",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__dusk_warn.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/dusk_warn2",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Depois desta noite, o acampamento não ficará mais aqui. Se você prometeu ajudar alguém, ainda dá tempo.)",
+			"hash": "24371f2218ebdb432089c659af45c41fe99a342daf74a6bedc4105a723e9fdeb",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__dusk_warn2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/dusk2",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Eu vou ficar aqui. Velho não corre, mas também não fica sozinho.",
+			"hash": "8489ea2f193a7539423dcf00ff55236fda22889afc31c46ebe5a1fa22f14f3cb",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__dusk2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/dusk_later",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Vá, mas não demore. Junto ao mar, o escuro chega depressa.",
+			"hash": "efd3046b99d7582c1472a7386ce801811383cd30c4bb9e5fc8c84d2aa06836d2",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__dusk_later.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/night1",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O sol se põe. Famílias inteiras se juntam na beira da água, com crianças, trouxas e animais. Adiante, sobre o mar, a coluna agora brilha como fogo.",
+			"hash": "9fea27ec82693e3be842683292bafa5ef98d1e4a4703aa0ac4f2f452b840fa40",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__night1.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/night2",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Atrás de nós, os carros. Na frente, o mar. Tem gente dizendo que era melhor ter ficado no Egito, servindo.",
+			"hash": "ca2765b49c8401128c3abd6e134e73d32c18d6e511fc5174d0aab85c14c2730f",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__night2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/night3",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Êxodo 14:10-12 conta que o povo ficou com muito medo, clamou ao SENHOR e se queixou a Moisés.)",
+			"hash": "b28acc43e8467e15a5466accf9dcba14a96e19c3fc238f2be126b88b30d47dfb",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__night3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/night4",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Mas corre entre as tendas o que Moisés disse ao povo: que não tivessem medo, que ficassem firmes e vissem a salvação do SENHOR. Que o SENHOR lutaria por eles.",
+			"hash": "c9f3bcfdcfb5846bb26f9b752ebe15243115b22b30262dd1a4e2fa85fda6efa7",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__night4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 11.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/night5",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Esse é um resumo do jogo, na voz de Tzvi. As palavras de Moisés estão em Êxodo 14:13-14:)",
+			"hash": "cac704411d4eb81361461945968642204f0a3b82ca40e95dfac7df6d1252c4b9",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__night5.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/night6",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Moisés disse ao povo: “Não tenham medo. Fiquem firmes e vejam a salvação do SENHOR, que ele realizará por vocês hoje; pois os egípcios que vocês veem hoje, nunca mais os verão. O SENHOR lutará por vocês, e vocês ficarão quietos.”",
+			"hash": "36f0ce979cbf0e0f2b5daf98edb1500820fe710fefa642a5be68f03076ee0909",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__night6.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 16.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Exod 14:13-14",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "sea_tzvi_talk/night_choice",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Não sei o que vai acontecer esta noite. Mas não saio daqui.",
+			"hash": "942cde5011fbbae76337dd1323eef9559a7bd9bf5b59693965c99f23edb5f98f",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__night_choice.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/watch",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Você fica entre as famílias, perto da água, olhando a coluna de fogo sobre o mar. (Daqui em diante, você só acompanha. Esc pula a cena.)",
+			"hash": "37f8a94d4e52077a4fbbb9df6a7d070c1569e9869071ee29ee341e6d477aa51a",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__watch.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/not_yet",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Fique por perto. Esta noite ninguém dorme.",
+			"hash": "727adf5edc327081e13dcc4b97778af97c2bbcaecfbf86d677dd08f758360c20",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__not_yet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/night_again",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Ainda acordado, viajante? Ninguém aqui vai dormir esta noite.",
+			"hash": "08cd493d5e0f39521c6dc2354e3f7a2208cee0bd9946160178f16488955bc23c",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__night_again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/dawn",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Andamos a noite toda, com o vento soprando e o chão seco debaixo dos pés.",
+			"hash": "c8270e92c2a9fd3ea22737a95664f7e3d0e9e358eb164a21b37731d1b3aca853",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__dawn.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/dawn2",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Agora olho para o mar e não encontro palavras. Não é festa o que sinto. É temor. E gratidão por estarmos vivos.",
+			"hash": "6dc0bbdf1ecc22c326ec662c45041249d8fb04e716839f03fa115e00fd607f50",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__dawn2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/dawn3",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Êxodo 14:31 registra o que o povo sentiu naquele dia:)",
+			"hash": "81bde4a7da90afaedee7693a088ed3fad8b53055a2fe22b19042a342b88921fe",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__dawn3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_tzvi_talk/dawn4",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Israel viu a grande obra que o SENHOR realizou contra os egípcios, e o povo temeu ao SENHOR; e creram no SENHOR e em seu servo Moisés.",
+			"hash": "f05b8c2d2fec79b56cec81ee8d7bb8e04e53f7f9facc0d04a864df952d122d74",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__dawn4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Exod 14:31",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "sea_tzvi_talk/dawn_again",
+			"speaker": "sea_tzvi",
+			"voice_profile": "sea_tzvi",
+			"kind": "fictional_dialogue",
+			"text": "Deixe o velho olhar o mar mais um pouco, viajante.",
+			"hash": "a62f15632bbad5248f6763e4c067fe1de20f44eb3b8d8c35245bbe00f9ea8208",
+			"file": "res://assets/audio/voice/sea_tzvi_talk__dawn_again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/greet",
+			"speaker": "sea_shira",
+			"voice_profile": "sea_shira",
+			"kind": "fictional_dialogue",
+			"text": "Paz! Não repare, estou com as mãos cheias de farinha.",
+			"hash": "82f1c79825425baeb2e052965ae658bd94bd5209afa4a1a7adbab775e307bf4c",
+			"file": "res://assets/audio/voice/sea_shira_talk__greet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/greet2",
+			"speaker": "sea_shira",
+			"voice_profile": "sea_shira",
+			"kind": "fictional_dialogue",
+			"text": "Saímos do Egito tão às pressas que a massa nem teve tempo de fermentar. Trouxemos a amassadeira enrolada no manto, nos ombros.",
+			"hash": "93bd001c7f174cad724deba1f1e951d3ca1a620a69a389bb81e3d6474ad622a8",
+			"file": "res://assets/audio/voice/sea_shira_talk__greet2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/greet3",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Êxodo 12:34 e 12:39 contam que o povo levou a massa antes de fermentar e, no caminho, assou bolos sem fermento.)",
+			"hash": "4b390c1201f4bd1ce4f751962351439242166766b4da59ac18c94aecd307225c",
+			"file": "res://assets/audio/voice/sea_shira_talk__greet3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/greet4",
+			"speaker": "sea_shira",
+			"voice_profile": "sea_shira",
+			"kind": "fictional_dialogue",
+			"text": "O problema é o fogo: aqui na costa quase não há lenha. Você me traria dois feixes de galhos secos? Há arbustos secos espalhados pelo acampamento.",
+			"hash": "ee39308cbf085fc5c9a8385da01c38c5496ab28ed2a07c1a19d3004072f6eb74",
+			"file": "res://assets/audio/voice/sea_shira_talk__greet4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/waiting",
+			"speaker": "sea_shira",
+			"voice_profile": "sea_shira",
+			"kind": "fictional_dialogue",
+			"text": "Dois feixes de galhos secos bastam para esquentar a pedra. Procure entre os arbustos do acampamento.",
+			"hash": "ee181ff4ed0b5e25f48d8891511df7cffb8b21b7c793a0821b610cb36bb4cc63",
+			"file": "res://assets/audio/voice/sea_shira_talk__waiting.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/deliver",
+			"speaker": "sea_shira",
+			"voice_profile": "sea_shira",
+			"kind": "fictional_dialogue",
+			"text": "Galhos secos! Agora, sim, a pedra vai esquentar.",
+			"hash": "864c5b4494d58ab20c81691c339cc0d9ca0c8eee3a31b25d53fbfd410f7a8a5d",
+			"file": "res://assets/audio/voice/sea_shira_talk__deliver.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/deliver2",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Shira estica a massa com as mãos e a deita sobre a pedra quente. Logo o cheiro de pão se espalha entre as tendas.",
+			"hash": "5733d4f7c6b4fe9fe6a3a8aa92bf6508c43ec865795f3717b4556ec0aace4b83",
+			"file": "res://assets/audio/voice/sea_shira_talk__deliver2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/deliver3",
+			"speaker": "sea_shira",
+			"voice_profile": "sea_shira",
+			"kind": "fictional_dialogue",
+			"text": "Ainda é pão sem fermento, como o da saída. Achatado e simples. Prove um pedaço, viajante.",
+			"hash": "55d3182a114c0fbeb50b173f6a7c6e16d9671681babde63b31b7b0adcebd2398",
+			"file": "res://assets/audio/voice/sea_shira_talk__deliver3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/after",
+			"speaker": "sea_shira",
+			"voice_profile": "sea_shira",
+			"kind": "fictional_dialogue",
+			"text": "Beni já comeu dois pedaços. Se eu deixar, ele come o pão da viagem inteira.",
+			"hash": "28659926c3949b2ae1ad600b0bd8e08b48e5d5823945f70f3d507c8ebb0699c2",
+			"file": "res://assets/audio/voice/sea_shira_talk__after.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/dusk",
+			"speaker": "sea_shira",
+			"voice_profile": "sea_shira",
+			"kind": "fictional_dialogue",
+			"text": "Você viu a poeira do lado do Egito? Estou juntando as nossas coisas. Se for preciso andar, quero as crianças perto de mim.",
+			"hash": "ddb3370d852009175d57060437c8fa95d2b494f556779056704e0fad84fbbed0",
+			"file": "res://assets/audio/voice/sea_shira_talk__dusk.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/night",
+			"speaker": "sea_shira",
+			"voice_profile": "sea_shira",
+			"kind": "fictional_dialogue",
+			"text": "Beni não quer largar a minha mão. Eu também não quero largar a dele.",
+			"hash": "23dcfa349f8f6cdbb13cea225e4ca220de84c8808078ca9a2f3088bc784ede85",
+			"file": "res://assets/audio/voice/sea_shira_talk__night.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/dawn",
+			"speaker": "sea_shira",
+			"voice_profile": "sea_shira",
+			"kind": "fictional_dialogue",
+			"text": "Ah, viajante. Que bom ver você aqui, deste lado.",
+			"hash": "4b5d18eedac9084b30279c787e940c1fd51569a014f0824669ebfeceb9b976fe",
+			"file": "res://assets/audio/voice/sea_shira_talk__dawn.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/dawn2",
+			"speaker": "sea_shira",
+			"voice_profile": "sea_shira",
+			"kind": "fictional_dialogue",
+			"text": "Não consigo parar de olhar para a água. Ontem à noite andamos no meio dela. Hoje ela está de volta ao seu lugar.",
+			"hash": "0a1f6d5e4774aedf70bde8832f95aeb701f43ca31028187bede5982da57a29ba",
+			"file": "res://assets/audio/voice/sea_shira_talk__dawn2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/dawn3",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Ao longe, entre as tendas, ouvem-se tamborins. Shira fica em silêncio, escutando.",
+			"hash": "e9c67d296527d2cc6925defb8afce0c60928f256e00d4cb07ee223b6a2e13a49",
+			"file": "res://assets/audio/voice/sea_shira_talk__dawn3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/dawn4",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Êxodo 15:20-21 fala de Miriã, a profetisa, e de tamborins depois da travessia.)",
+			"hash": "fcc81d79c45a948be559411bff955b25d7f0705425e754b0715ddc9a0e318311",
+			"file": "res://assets/audio/voice/sea_shira_talk__dawn4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/dawn5",
+			"speaker": "sea_shira",
+			"voice_profile": "sea_shira",
+			"kind": "fictional_dialogue",
+			"text": "Depois desta noite, eu também tenho muito a agradecer.",
+			"hash": "bc9521450bfe1d7fd0f31015e8ae34182450bc755d6975ab372f1ac3d452b630",
+			"file": "res://assets/audio/voice/sea_shira_talk__dawn5.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_shira_talk/dawn_again",
+			"speaker": "sea_shira",
+			"voice_profile": "sea_shira",
+			"kind": "fictional_dialogue",
+			"text": "Beni pegou no sono no meu colo. Foi uma noite longa para todos nós.",
+			"hash": "be32164a4364214901a0ea9611b8b91b81406bb71ba32361241dc8d6afdc9eb6",
+			"file": "res://assets/audio/voice/sea_shira_talk__dawn_again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_beni_talk/greet",
+			"speaker": "sea_beni",
+			"voice_profile": "sea_beni",
+			"kind": "fictional_dialogue",
+			"text": "Você viu a nuvem? Ela anda na nossa frente o tempo todo! Por que ela faz isso?",
+			"hash": "59789d97a59bfefa7b65efbf7938df84d4dacd55d9444f587aad039435855909",
+			"file": "res://assets/audio/voice/sea_beni_talk__greet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_beni_talk/elders",
+			"speaker": "sea_beni",
+			"voice_profile": "sea_beni",
+			"kind": "fictional_dialogue",
+			"text": "O velho Tzvi diz que é o SENHOR que vai na frente, mostrando o caminho. E de noite ela vira fogo, pra gente não andar no escuro.",
+			"hash": "4950eb20c5de4f942a401ac34aa06ae4ff5f33c6e428b413ebc71237a93f58bc",
+			"file": "res://assets/audio/voice/sea_beni_talk__elders.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_beni_talk/elders2",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Êxodo 13:21-22 diz que o SENHOR ia adiante do povo na coluna de nuvem e de fogo. O texto não explica mais do que isso.)",
+			"hash": "bcbe05fc41ae37a59af1dac3d833d760ff6fcf9cc154f0fadd9665d5cf4af6a0",
+			"file": "res://assets/audio/voice/sea_beni_talk__elders2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_beni_talk/fear",
+			"speaker": "sea_beni",
+			"voice_profile": "sea_beni",
+			"kind": "fictional_dialogue",
+			"text": "Medo, não. Mas eu não chego perto. E a mamãe também não deixa.",
+			"hash": "cb015c6ea41a1ce75e92902528a18bb2e2e98bd72e5200abecf6f1dd46c7d97b",
+			"file": "res://assets/audio/voice/sea_beni_talk__fear.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_beni_talk/again",
+			"speaker": "sea_beni",
+			"voice_profile": "sea_beni",
+			"kind": "fictional_dialogue",
+			"text": "A mamãe disse que hoje o pão não vai ter fermento. Eu nem ligo. Pão é pão!",
+			"hash": "1e313ffe94de6cdc9f50f10e63eb76be4b3a933935b4af6aaea191e08507d08f",
+			"file": "res://assets/audio/voice/sea_beni_talk__again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_beni_talk/dusk",
+			"speaker": "sea_beni",
+			"voice_profile": "sea_beni",
+			"kind": "fictional_dialogue",
+			"text": "Por que todo mundo está olhando para o lado de onde viemos? É chuva? ...Não é chuva, né?",
+			"hash": "f7937d54b4025a4db23314fac6ad95d02d134491bf29963c95e9c6c25fd57701",
+			"file": "res://assets/audio/voice/sea_beni_talk__dusk.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_beni_talk/night",
+			"speaker": "sea_beni",
+			"voice_profile": "sea_beni",
+			"kind": "fictional_dialogue",
+			"text": "Eu não estou com medo. ...Só um pouquinho. Você fica aqui com a gente?",
+			"hash": "5d62459575f95d7572fa4ac35855faff603f5b2db77ea67d41a835705f960f96",
+			"file": "res://assets/audio/voice/sea_beni_talk__night.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_beni_talk/dawn",
+			"speaker": "sea_beni",
+			"voice_profile": "sea_beni",
+			"kind": "fictional_dialogue",
+			"text": "A gente andou no meio do mar, e o chão estava seco! A água ficava dos dois lados.",
+			"hash": "f5f5b95ca96efb267ee2f09cef63f13833ad23c0d424c1ce39119487e0725f94",
+			"file": "res://assets/audio/voice/sea_beni_talk__dawn.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_beni_talk/dawn2",
+			"speaker": "sea_beni",
+			"voice_profile": "sea_beni",
+			"kind": "fictional_dialogue",
+			"text": "Agora todo mundo está quieto, olhando a água. Eu também.",
+			"hash": "40ade7ac5caa505539f48ca207ec767a6636100d6df4a250cda89fd0bb3c7a58",
+			"file": "res://assets/audio/voice/sea_beni_talk__dawn2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/greet",
+			"speaker": "sea_dror",
+			"voice_profile": "sea_dror",
+			"kind": "fictional_dialogue",
+			"text": "Paz, viajante. Você não viu uma ovelha ou uma cabra perdida por aí? O vento da tarde espalhou parte do meu rebanho.",
+			"hash": "44db17cdd11f7aaefa0212f08cdc048d34a933b4b508c08b2237afd9fca9b2d5",
+			"file": "res://assets/audio/voice/sea_dror_talk__greet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/greet2",
+			"speaker": "sea_dror",
+			"voice_profile": "sea_dror",
+			"kind": "fictional_dialogue",
+			"text": "São três ao todo. Quando venta, os animais procuram abrigo: atrás das pedras, das cristas, no meio dos juncos.",
+			"hash": "f7c105805b0f9e4c9db17994ec914e73c50abf442396eda0d3e22fffaf875201",
+			"file": "res://assets/audio/voice/sea_dror_talk__greet2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/again",
+			"speaker": "sea_dror",
+			"voice_profile": "sea_dror",
+			"kind": "fictional_dialogue",
+			"text": "Ainda faltam três animais. Quer me ajudar a procurar?",
+			"hash": "1587802cd55d82b97add99018669e362ae00ef35f389053b91191b8ac19e14c9",
+			"file": "res://assets/audio/voice/sea_dror_talk__again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/accept",
+			"speaker": "sea_dror",
+			"voice_profile": "sea_dror",
+			"kind": "fictional_dialogue",
+			"text": "Obrigado! Siga o balido. Eu fico aqui para os outros não se espalharem.",
+			"hash": "18c30eb2ad9258805a12e90b8ab91d39d8437e204a7e3168bf6f3318d5001f1a",
+			"file": "res://assets/audio/voice/sea_dror_talk__accept.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/decline",
+			"speaker": "sea_dror",
+			"voice_profile": "sea_dror",
+			"kind": "fictional_dialogue",
+			"text": "Tudo bem. Se mudar de ideia, estou aqui com o rebanho.",
+			"hash": "708fa9acc57738946654f50f25d184cdbc8b63e79dd7586f50e9b20bbd9a20f1",
+			"file": "res://assets/audio/voice/sea_dror_talk__decline.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/waiting",
+			"speaker": "sea_dror",
+			"voice_profile": "sea_dror",
+			"kind": "fictional_dialogue",
+			"text": "Ouviu algum balido? Olhe atrás das pedras grandes, atrás da crista junto à elevação e no meio dos juncos da beira.",
+			"hash": "309597b7d9746e3caf0d3e0c6ab857dc4c7015ab32e22f69d4210fe7f812b77e",
+			"file": "res://assets/audio/voice/sea_dror_talk__waiting.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/after_found",
+			"speaker": "sea_dror",
+			"voice_profile": "sea_dror",
+			"kind": "fictional_dialogue",
+			"text": "Os três! Você achou todos. Já estão junto com os outros.",
+			"hash": "1274aa9df800e1a12d0e7f95b87740eba1ee134c1f0034dde294e9d07f2a3204",
+			"file": "res://assets/audio/voice/sea_dror_talk__after_found.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/after_found2",
+			"speaker": "sea_dror",
+			"voice_profile": "sea_dror",
+			"kind": "fictional_dialogue",
+			"text": "Saímos do Egito com tudo o que tínhamos: ovelhas, cabras, bois. Cada animal conta.",
+			"hash": "249b950e82d4d01945b783dfff8a69a11c47d4090d2fffb10bf71b70317c46ed",
+			"file": "res://assets/audio/voice/sea_dror_talk__after_found2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/after_neighbors",
+			"speaker": "sea_dror",
+			"voice_profile": "sea_dror",
+			"kind": "fictional_dialogue",
+			"text": "Na pressa da noite, os vizinhos trouxeram os animais que faltavam. Estão todos aqui. Obrigado por ter procurado, viajante.",
+			"hash": "05561b9e57a1e59a8ef1f36844aeee4f70003fc234a697eeec18a44b4495ebfa",
+			"file": "res://assets/audio/voice/sea_dror_talk__after_neighbors.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/after_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Êxodo 12:38 registra que ovelhas, bois e muitíssimos animais saíram do Egito com o povo.)",
+			"hash": "9e033c7d4e5d734525b07d2eb07a17d6b007e2b1f60b994e2ed91c7d16ca03d4",
+			"file": "res://assets/audio/voice/sea_dror_talk__after_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/thanks_again",
+			"speaker": "sea_dror",
+			"voice_profile": "sea_dror",
+			"kind": "fictional_dialogue",
+			"text": "O rebanho está inteiro. Agora é esperar o que a noite traz.",
+			"hash": "b95b2580e3ad4e304a78e58dcc7575c3088fe7ea8932c90e7b5a7132cdd996da",
+			"file": "res://assets/audio/voice/sea_dror_talk__thanks_again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/night_flock",
+			"speaker": "sea_dror",
+			"voice_profile": "sea_dror",
+			"kind": "fictional_dialogue",
+			"text": "Não deu para achar todos antes do escuro. Os vizinhos prometeram ajudar. Agora, fique perto da água.",
+			"hash": "9dad2217b32c72c72d3ca8236f69bf8abf2964dda0bc206ad3f3b68476406e27",
+			"file": "res://assets/audio/voice/sea_dror_talk__night_flock.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/night",
+			"speaker": "sea_dror",
+			"voice_profile": "sea_dror",
+			"kind": "fictional_dialogue",
+			"text": "Os animais estão inquietos esta noite. Fico perto deles.",
+			"hash": "7e0c3f6480f4ca166d4b859753034e71908cd55b4873f1baccc95a98ed5330de",
+			"file": "res://assets/audio/voice/sea_dror_talk__night.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_dror_talk/dawn",
+			"speaker": "sea_dror",
+			"voice_profile": "sea_dror",
+			"kind": "fictional_dialogue",
+			"text": "Contei os animais duas vezes. Estão todos aqui. E nós também.",
+			"hash": "35df47cd3d4183172345b1b52485527d346242cbe67f63dfbebb2dd1dd97d2c3",
+			"file": "res://assets/audio/voice/sea_dror_talk__dawn.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/greet",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "Ai, meus joelhos... Paz, viajante. Os odres da minha família estão vazios, e eu já não aguento ir e voltar da fonte.",
+			"hash": "58af5c7c314586a0be86318a46e03d307e5d0405463e997df6d4f9a6d1fb6a2b",
+			"file": "res://assets/audio/voice/sea_nava_talk__greet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/greet2",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "Do mar não adianta tirar: a água é salgada. Mas junto às tamareiras, perto dos juncos, brota uma água que dá para beber.",
+			"hash": "48b3eeab404a32bf80f5f5388f58af6f25fb6595b0577dcb9c6c9aa792958b1e",
+			"file": "res://assets/audio/voice/sea_nava_talk__greet2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/again",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "Ainda por aqui? Os odres vazios ficaram perto da fonte, junto às tamareiras.",
+			"hash": "af17b7dede6e7b62272e2024df185cbea92db0b26e8ac7d1aff2471c7baae26c",
+			"file": "res://assets/audio/voice/sea_nava_talk__again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/accept",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "Deus lhe pague. Deixei os odres vazios lá, ao lado da fonte, hoje cedo. Encha e traga para mim.",
+			"hash": "27bfa7e4598562ce147df609b0632def7c2dcdbec42824a570357136c8eb69ad",
+			"file": "res://assets/audio/voice/sea_nava_talk__accept.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/decline",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "Vá em paz. Alguém da família há de ir.",
+			"hash": "495dd6c5f66c954b5ba825b2aba2e356afa4e99d8b08f8bd4b370e4560b5a1c1",
+			"file": "res://assets/audio/voice/sea_nava_talk__decline.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 2.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/waiting",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "A fonte fica entre as duas tamareiras, do outro lado do rebanho. Os odres estão lá.",
+			"hash": "35ebdd1b23d4bc362d73cf28e081d3cc3d10a4e30bca6cc4fa93acc0332b370a",
+			"file": "res://assets/audio/voice/sea_nava_talk__waiting.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/deliver",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "Cheios! E a água está boa, só um pouco salobra.",
+			"hash": "a59318d0e0d8825346795e85cf8dcf09749f2af0beab8a73f9cd47aa77d992a4",
+			"file": "res://assets/audio/voice/sea_nava_talk__deliver.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/deliver2",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "Hoje a minha família não passa sede. Obrigada, viajante.",
+			"hash": "8d96b210530f628c51d49f9a38539b9942fd77a5bbe3d851939bf5e566f37ef9",
+			"file": "res://assets/audio/voice/sea_nava_talk__deliver2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/after",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "Os odres estão pendurados no tripé, cheios. Que alívio.",
+			"hash": "fe90a6d783384d1fddaf64d55db133f66b57f7f074bd09028c2f4acaa11c0d60",
+			"file": "res://assets/audio/voice/sea_nava_talk__after.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/dusk",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "Você viu a poeira? São os carros do Egito. Há quem diga que teria sido melhor ficar lá, servindo, do que morrer no deserto.",
+			"hash": "5466b10bfa48826707a42e3680e500f2e48e40902872e86f104fd11697c6ad78",
+			"file": "res://assets/audio/voice/sea_nava_talk__dusk.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/dusk2",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Êxodo 14:10-12 registra o medo do povo e essa queixa feita a Moisés. Nava, personagem do jogo, repete o que se ouve nas tendas.)",
+			"hash": "4ac4723dda665cc542d566494c69dcea419441dee81b32506815140057e4c316",
+			"file": "res://assets/audio/voice/sea_nava_talk__dusk2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/dusk3",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "Eu não penso assim. Mas medo eu tenho, isso eu tenho.",
+			"hash": "340c683c478b59431e74e89ffd2cfd58bc0fb93ab8d2a9f1377871e3a2d56256",
+			"file": "res://assets/audio/voice/sea_nava_talk__dusk3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/night",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "Meus netos estão todos aqui, perto de mim. É o que importa esta noite.",
+			"hash": "f6fd7e49291dfeafa15a4b37927da83c2058b237a798399f707751cd2ed24414",
+			"file": "res://assets/audio/voice/sea_nava_talk__night.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/dawn_no_water",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "Na pressa da noite, outra família dividiu a água conosco. Ninguém passou sede.",
+			"hash": "5a4be9567515145b0295e471a370a8d3b7e2321f9acfbf946d4e4134f0d1807a",
+			"file": "res://assets/audio/voice/sea_nava_talk__dawn_no_water.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_nava_talk/dawn",
+			"speaker": "sea_nava",
+			"voice_profile": "sea_nava",
+			"kind": "fictional_dialogue",
+			"text": "Atravessei o mar com estes joelhos velhos. Eu, que reclamava de ir até a fonte.",
+			"hash": "069901d91664e9b42ceeeb9c981f2400fa0b0dc8d715cdb8f7633d517fd16a77",
+			"file": "res://assets/audio/voice/sea_nava_talk__dawn.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_meret_talk/greet",
+			"speaker": "sea_meret",
+			"voice_profile": "sea_meret",
+			"kind": "fictional_dialogue",
+			"text": "Você reparou na minha roupa, não foi? Todo mundo repara. Eu não nasci entre as famílias de Israel.",
+			"hash": "0476ba479aa902deb4a944707a9eab92ca75d4ce334f43255dd9a237d59b8709",
+			"file": "res://assets/audio/voice/sea_meret_talk__greet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_meret_talk/greet2",
+			"speaker": "sea_meret",
+			"voice_profile": "sea_meret",
+			"kind": "fictional_dialogue",
+			"text": "Quando eles partiram, eu vim junto. Os motivos são meus. Aqui, ninguém me mandou embora.",
+			"hash": "bccd268b38777b153c7a762335a0f4299e96c3e0c0d560d02cac6539d3878ca2",
+			"file": "res://assets/audio/voice/sea_meret_talk__greet2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_meret_talk/greet3",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Êxodo 12:38 diz que uma multidão mista subiu com os israelitas, mas não diz quem eram. Meret é uma personagem criada para o jogo.)",
+			"hash": "fb235865369cc086010cd5e9905d9471cfb636f200dd804c8dc9e2cfc3c5ff32",
+			"file": "res://assets/audio/voice/sea_meret_talk__greet3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_meret_talk/again",
+			"speaker": "sea_meret",
+			"voice_profile": "sea_meret",
+			"kind": "fictional_dialogue",
+			"text": "Tanta gente, tantos animais... e todos indo para o mesmo lado.",
+			"hash": "3ec2f19a4e723a74a1987e803698a8aacaabe4932a7ea6b2c47b8cda83871a9a",
+			"file": "res://assets/audio/voice/sea_meret_talk__again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_meret_talk/dusk",
+			"speaker": "sea_meret",
+			"voice_profile": "sea_meret",
+			"kind": "fictional_dialogue",
+			"text": "A poeira não sai do horizonte. Fico perto das tendas, com os outros.",
+			"hash": "5acc040ecb9961848143fdb526cd83a413046c74290d5601cbb6c7d9ab1c66d6",
+			"file": "res://assets/audio/voice/sea_meret_talk__dusk.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_meret_talk/dawn",
+			"speaker": "sea_meret",
+			"voice_profile": "sea_meret",
+			"kind": "fictional_dialogue",
+			"text": "Estou viva. E os que vieram comigo também. Hoje isso basta.",
+			"hash": "9dffaa09e89ae06d7a4b70006ccd8aea968c78ec165c61856ca57b0e6e41a136",
+			"file": "res://assets/audio/voice/sea_meret_talk__dawn.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "sea_meret_talk/dawn2",
+			"speaker": "sea_meret",
+			"voice_profile": "sea_meret",
+			"kind": "fictional_dialogue",
+			"text": "Do resto, prefiro guardar silêncio.",
+			"hash": "63a7ee37e547d347bac4b836b69c720dcbfebbdbbb022e614052dfcc1345bf51",
+			"file": "res://assets/audio/voice/sea_meret_talk__dawn2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 2.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "exod_014_sea/1_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "O SENHOR falou a Moisés, dizendo: “Diga aos filhos de Israel que voltem e acampem diante de Pi-Hairote, entre Migdol e o mar, diante de Baal-Zefom. Vocês acamparão em frente a ele, junto ao mar.",
+			"hash": "74ee4744bf4b8e01387a6d6be7a7aa9eb30b15301918845975eb5a508eb02a4e",
+			"file": "res://assets/audio/voice/exod_014_sea__1_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 14.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Exod 14:1-2",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "exod_014_sea/1_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Depois de sair do Egito, o povo recebe a ordem de voltar e acampar junto ao mar. Pi-Hairote, Migdol e Baal-Zefom não têm localização segura.",
+			"hash": "859e7e10f504ad9c1830408cc13c7408e156e1087245c5c22440a2a7943d4e99",
+			"file": "res://assets/audio/voice/exod_014_sea__1_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "exod_014_sea/2_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Em Êxodo 14, o texto diz apenas \"o mar\". Êxodo 13:18 e 15:4 chamam esse mar, em hebraico, de yam suf: a tradução carregada diz \"Mar Vermelho\", e muitos traduzem \"mar de juncos\". Há propostas no golfo de Suez, no de Ácaba e em lagos e lagunas mais ao norte. Nenhuma é consenso, e o jogo não aponta um lugar.",
+			"hash": "9077c08052511c2896d644099c53996a3beb77460031b97501c31309e0218cbe",
+			"file": "res://assets/audio/voice/exod_014_sea__2_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 22.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "exod_014_sea/3_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Os egípcios os perseguiram. Todos os cavalos e carros de Faraó, seus cavaleiros e o seu exército os alcançaram enquanto acampavam junto ao mar, perto de Pi-Hairote, diante de Baal-Zefom. Quando Faraó se aproximou, os filhos de Israel levantaram os olhos e eis que os egípcios marchavam atrás deles; e ficaram com muito medo. Os filhos de Israel clamaram ao SENHOR.",
+			"hash": "95e7ea87aecb98ededd809c506535559579504c4f6e1780b603207bc14998d17",
+			"file": "res://assets/audio/voice/exod_014_sea__3_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 26.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Exod 14:9-10",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "exod_014_sea/3_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O texto não dá o nome do faraó. No Novo Império egípcio (uma das épocas propostas para o Êxodo; datação debatida), os carros de guerra eram leves e puxados por dois cavalos.",
+			"hash": "1a45358c8c3c0e3837b69900b0a74aa089105108ba046734e854d4fac6507eb7",
+			"file": "res://assets/audio/voice/exod_014_sea__3_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 12.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "exod_014_sea/4_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Moisés disse ao povo: “Não tenham medo. Fiquem firmes e vejam a salvação do SENHOR, que ele realizará por vocês hoje; pois os egípcios que vocês veem hoje, nunca mais os verão. O SENHOR lutará por vocês, e vocês ficarão quietos.”",
+			"hash": "36f0ce979cbf0e0f2b5daf98edb1500820fe710fefa642a5be68f03076ee0909",
+			"file": "res://assets/audio/voice/exod_014_sea__4_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 16.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Exod 14:13-14",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "exod_014_sea/4_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Depois do medo e da queixa do povo (Êx 14:10-12), Moisés fala ao povo. Estas são as únicas palavras dele ao povo neste capítulo.",
+			"hash": "74db766f7215b0bd0a56f08f6d07947022164d0c8590514e6601d90d4a34c6a0",
+			"file": "res://assets/audio/voice/exod_014_sea__4_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "exod_014_sea/5_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "O anjo de Deus, que ia adiante do acampamento de Israel, moveu-se e foi para trás deles; e a coluna de nuvem moveu-se de diante deles e colocou-se atrás deles. Ela veio entre o acampamento do Egito e o acampamento de Israel. Havia a nuvem e a escuridão, mas ela iluminava a noite. Um não se aproximou do outro durante toda a noite.",
+			"hash": "ee2cfdfa6eb262a0dd9e0c86766d9a31331e2f2e3e7bf91a605db41e86a1738e",
+			"file": "res://assets/audio/voice/exod_014_sea__5_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 23.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Exod 14:19-20",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "exod_014_sea/5_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "A coluna que ia à frente se põe entre os dois acampamentos durante a noite. Para quem era a escuridão e para quem era a luz, as traduções e os intérpretes divergem.",
+			"hash": "79dadabc34ec31bb2b57414b71d76a6cb4ecebe7a285f5497ff7edafce302c09",
+			"file": "res://assets/audio/voice/exod_014_sea__5_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 11.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "exod_014_sea/6_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Moisés estendeu a mão sobre o mar, e o SENHOR fez o mar recuar por um forte vento oriental durante toda a noite, e tornou o mar em terra seca, e as águas foram divididas.",
+			"hash": "56e816a80e126af3d820d77426128be7649eefb271d08c75dfc81d30c2629434",
+			"file": "res://assets/audio/voice/exod_014_sea__6_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 12.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Exod 14:21",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "exod_014_sea/6_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O texto atribui ao SENHOR o recuo do mar, por meio de um forte vento oriental que sopra a noite inteira: um processo, não um instante. Moisés estende a mão; o texto não descreve nada saindo dela.",
+			"hash": "e1241937cfa44e766621b6362805790eba4f22deac77df6c21f2b8cab74398ee",
+			"file": "res://assets/audio/voice/exod_014_sea__6_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 14.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "exod_014_sea/7_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Os filhos de Israel entraram pelo meio do mar em terra seca; e as águas foram como um muro para eles à sua direita e à sua esquerda.",
+			"hash": "5b00379383f20b62e86cb19810b6617ee2b87e84a5a873e4e35ce41b4806c0ed",
+			"file": "res://assets/audio/voice/exod_014_sea__7_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Exod 14:22",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "exod_014_sea/7_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Uns leem o \"muro\" das águas ao pé da letra; outros, como imagem. O versículo 29 repete a mesma descrição.",
+			"hash": "ab9f04136514e62a61c1e2614a47ffe89101aecb3c205a296136bf41380ff7fc",
+			"file": "res://assets/audio/voice/exod_014_sea__7_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "exod_014_sea/8_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Os egípcios entram atrás do povo, e na vigília da manhã o exército é lançado em confusão (Êx 14:23-25). Ao amanhecer, as águas voltam e cobrem os carros, os cavaleiros e todo o exército que tinha entrado no mar (Êx 14:27-28). O texto não diz que o faraó morreu. O jogo não mostra esse momento.",
+			"hash": "a058de670f190b26b4abe30a525dcf336e8d43571590ffe54ca53de203dc3763",
+			"file": "res://assets/audio/voice/exod_014_sea__8_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 21.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "exod_014_sea/9_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Assim o SENHOR salvou Israel naquele dia da mão dos egípcios; e Israel viu os egípcios mortos na praia do mar. Israel viu a grande obra que o SENHOR realizou contra os egípcios, e o povo temeu ao SENHOR; e creram no SENHOR e em seu servo Moisés.",
+			"hash": "332a829d7563e4b7eae0abc0308a951c81803945b2ecb6852961d76275088f07",
+			"file": "res://assets/audio/voice/exod_014_sea__9_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 17.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Exod 14:30-31",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "exod_014_sea/9_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O capítulo termina com o povo diante do mar: o temor ao SENHOR e a confiança nele e em Moisés.",
+			"hash": "e0170b203d339cec40131ab699ea912e19d9390c35fcf2e10e463f8816de27d0",
+			"file": "res://assets/audio/voice/exod_014_sea__9_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "exod_014_sea/10_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Êxodo 15 traz o cântico de Moisés e dos israelitas e conta que Miriã, a profetisa, e as mulheres saíram com tamborins e danças (Êx 15:1, 20-21). No jogo, os tamborins são só ouvidos ao longe.",
+			"hash": "298ce73084403c6b31fac904d63a193254d0e9abe9315b9f4c93e796783390be",
+			"file": "res://assets/audio/voice/exod_014_sea__10_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 13.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "exod_014_sea/11_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Os trechos foram tirados de Êxodo 14; leia o capítulo inteiro numa Bíblia para conhecer o relato completo. As notas são do jogo. A data da saída do Egito e o lugar exato do mar são debatidos. O viajante, Tzvi, Shira, Beni, Dror, Nava, Meret e o acampamento são criações do jogo e não fazem parte deste relato.",
+			"hash": "1b0f42c1390390edafd3049f40bbd7e57905e58911dc6b0b0f1405ed48a38b9c",
+			"file": "res://assets/audio/voice/exod_014_sea__11_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 22.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		}
+	]
+}

@@ -1,0 +1,29 @@
+{
+	"_comment": "PROPOSTA (quest-designer, 2026-10-14): substitui a entrada shepherds_bethlehem (status planned) em data/world/experiences.json, mantendo o id e a era first_century. 'requires' segue o encadeamento do lote (principal de ruth_bethlehem = ruth_gleaning). 'travel' já é suportado por WorldManager.start_experience. Nenhum ano exibido: a data do nascimento é debatida (divergência com chronology.json registrada no design, §13). Linhas de 'passage' escritas pelo roteirista (IA, 2026-10-14), pending_review; Luke 2:1-3 e 2:5-7 não estão em bpm.json, por isso o cartão usa paráfrase com referência.",
+	"experience": {
+		"id": "shepherds_bethlehem",
+		"era": "first_century",
+		"title": "Os pastores de Belém",
+		"references": ["Luke 2:8-20"],
+		"place": "Campos de Belém",
+		"status": "available",
+		"requires": {"quest_completed": "ruth_gleaning"},
+		"locked_text": "Explore primeiro \"Rute em Belém\" para abrir esta experiência.",
+		"completed_by": "shepherds_night",
+		"travel": {"region": "bethlehem_night", "entry": "from_scripture_map"},
+		"summary": "Uma noite com pastores nos campos perto de Belém. Ajude a recolher o rebanho e a manter o fogo e, na vigília, acompanhe de longe o que Lucas 2 relata.",
+		"passage": {
+			"title": "OUTRO MOMENTO DA HISTÓRIA",
+			"lines": [
+				"De Rute a Lucas: muitos séculos depois, Belém continua uma pequena aldeia da Judeia, a \"cidade de Davi\" (Lucas 2:4). Agora a Judeia é governada por Herodes, rei aliado de Roma, no tempo do imperador Augusto (Lucas 2:1); Lucas situa estes relatos nos dias de Herodes (Lucas 1:5). A data exata é debatida, e o jogo não mostra ano.",
+				"Lucas 2:1-7 conta que José subiu de Nazaré a Belém para se registrar, com Maria, e que ali ela deu à luz o filho e o deitou numa manjedoura. Você chega aos campos perto de Belém ao entardecer e ajuda pastores no fim do dia, sem mudar nada do que o relato conta.",
+				"O viajante, Tamir e Shai são personagens criados para o jogo. Os pastores do relato aparecem como representação (o texto não diz quantos eram), e ninguém do relato conversa com você. O que o texto conta, você verá de longe e poderá ler no diário."
+			]
+		}
+	},
+	"also_needed": [
+		"Mapa das Escrituras: 'Revisitar' experiências concluídas com 'travel' (já pedido nos pacotes ep_016 e ep_025).",
+		"KNOWN_ISSUES: data/bible/chronology.json, evento shepherds_bethlehem (-6 a -4, approximate) × ficha bíblica (debated, ano null). O jogo não exibe ano; decidir se o metadado passa a 'debated' ou a uma faixa mais larga.",
+		"A entrada atual cita Luke 2:8-12; a proposta amplia para Luke 2:8-20 (todos os versículos já em bpm.json)."
+	]
+}

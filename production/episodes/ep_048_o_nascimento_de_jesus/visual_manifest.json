@@ -1,0 +1,49 @@
+{
+	"episode": "ep_048_o_nascimento_de_jesus",
+	"reuse": [
+		{"path": "res://assets/tilesets/canaan_tiles.png", "use": "relva, relva seca e caminhos (fonte 0 de lands_tileset.tres)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://assets/tilesets/lands_tiles.png", "use": "rocha, piso batido e palha (fonte 1; criado em ep_009)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://assets/characters/sheep.png", "use": "personagem bn_sheep", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://assets/characters/goat.png", "use": "cabras do rebanho (criado em ep_016)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/tree_olive.tscn", "use": "oliveiras", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/tree_oak.tscn", "use": "carvalhos", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/bush.tscn", "use": "arbusto (96,700)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/firewood.tscn", "use": "lenha no posto (328,480)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/rock_big.tscn", "use": "rochas; examinável bn_watch_stone (etapa B)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/rock_small.tscn", "use": "pedras", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/boundary_stone.tscn", "use": "examináveis bn_house_view e bn_west_path (etapa B)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/rock_crest.tscn", "use": "rochas da crista (criado em ep_016)", "license": "CC BY 4.0 (gerado por tools/art_gen)"}
+	],
+	"gaps": [
+		{"id": "bn_tamir", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "belem_campos", "status": "produced", "notes": "pastor velho, manto de lã, cajado"},
+		{"id": "bn_tamir_asleep", "kind": "character", "size": "32x16", "frames": "6x2", "palette": "belem_campos", "status": "produced", "notes": "Tamir deitado sob o manto (respira). A proposta pedia hframes 2/vframes 1/directions 1, incompatível com CharacterSprite; a folha segue o padrão de animal: hframes 6, vframes 2, directions 2."},
+		{"id": "bn_shai", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "belem_campos", "status": "produced", "notes": "pastor jovem com funda"},
+		{"id": "bn_rep_shepherd_a", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "belem_campos", "status": "produced", "notes": "pastor que representa os do relato (não é personagem nomeado)"},
+		{"id": "bn_rep_shepherd_b", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "belem_campos", "status": "produced", "notes": "idem"},
+		{"id": "bn_rep_shepherd_c", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "belem_campos", "status": "produced", "notes": "idem"},
+		{"id": "bn_dog", "kind": "animal", "size": "24x18", "frames": "6x2", "palette": "belem_campos", "status": "produced", "notes": "cão pastor (arte opcional na proposta)"},
+		{"id": "house_courtyard", "kind": "prop", "size": "64x54", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "casa de pátio de Belém; janela a (+8,-28) do pé"},
+		{"id": "house_on_rock", "kind": "prop", "size": "128x84", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "casa de pedra encostada na rocha com abertura baixa de animais; sem estrela, sem estábulo de madeira, sem placa; porta a (-16,-2) e abertura a (-48,-2) do pé"},
+		{"id": "stone_stairs", "kind": "prop", "size": "16x22", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "escada da casa (examinável bn_house_stairs)"},
+		{"id": "rock_shelter", "kind": "prop", "size": "60x44", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "abrigo de pedra do posto de vigia"},
+		{"id": "cloak_bed", "kind": "prop", "size": "26x12", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "manto estendido (sem colisão; examinável bn_cloak_bed)"},
+		{"id": "oil_lamp_niche", "kind": "prop", "size": "16x14", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "lamparina de barro (Herodiana) em nicho; sem lanterna de metal/vidro"},
+		{"id": "fold_wall_h/_v", "kind": "prop", "size": "16x26", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "muro do aprisco de pedra seca com galhos espinhosos no topo"},
+		{"id": "cave_mouth", "kind": "prop", "size": "52x40", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "boca de gruta na encosta"},
+		{"id": "thorn_bush", "kind": "prop", "size": "22x16", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "arbusto espinhoso (balança)"},
+		{"id": "terrace_wall", "kind": "prop", "size": "48x18", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "muro de terraço (bn_terraces)"},
+		{"id": "firepit_out", "kind": "prop", "size": "16x12", "frames": 1, "palette": "margem_do_mar", "status": "produced", "notes": "fogueira de pedras (criada em ep_016); o fogo aceso vem do efeito light_glow proposto"},
+		{"id": "silhuetas de cena (anúncio, casa)", "kind": "scene_actor", "size": "-", "frames": "-", "palette": "-", "status": "placeholder", "notes": "SceneActor desenha silhuetas por código; o anjo é só luz (efeito), sem asas nem auréola. scenes.proposal.json cita 'shepherd_rep_figure_a/b/c'; os personagens gerados são bn_rep_shepherd_a/b/c (data/scenes não usa o id antigo)."}
+	],
+	"environment": [
+		{"region": "bethlehem_night", "exists": true, "scene": "res://scenes/maps/bethlehem_night.tscn", "tileset": "res://assets/tilesets/lands_tileset.tres", "notes": "64x48 tiles. Camadas: Ground (relva), DryGrass, Rock (crista de Belém e afloramentos), Village, Fold (aprisco), Paths, Decor. Sem DaylightTint: a luz vem do campo 'lighting' (dusk #E9B98E, night #5A6496)."}
+	],
+	"generator": [
+		{"script": "res://tools/art_gen/art_lands.gd", "run": "godot --headless --path . --script res://tools/art_gen/generate_art.gd -- --v05-only", "origin": "gerado por tools/art_gen", "license": "CC BY 4.0"},
+		{"script": "res://tools/art_gen/build_regions.gd", "run": "godot --headless --path . --script res://tools/art_gen/build_regions.gd -- bethlehem_night", "origin": "LAYOUTS.bethlehem_night", "license": "CC BY 4.0"}
+	],
+	"map_inventory": [
+		{"region": "bethlehem_night", "entries": {"default": [40, 424], "from_scripture_map": [40, 424]}, "exits": {}, "areas": {"bn_watch_post": [232, 424, 128, 96], "bn_fold": [432, 560, 176, 96], "bn_gate_fire": [456, 488, 128, 72], "bn_house_approach": [592, 216, 96, 48]}, "solids_px": [[0, 0, 1024, 200]], "terrace_wall_row": 12, "stairs_gap_col": 46, "fold_wall_tiles": [27, 35, 37, 40], "fold_gate_col": 32, "house_on_rock_px": [728, 156], "house_door_px": [712, 154], "house_animal_opening_px": [680, 154], "window_glow_px": [[104, 28], [200, 12], [304, 32], [408, 16], [512, 36], [608, 20], [712, 152]], "reserved_px": [[380, 396, 280, 280], [480, 140, 280, 400], [232, 424, 128, 96]], "pending_stage_b": "npcs, examinables, pickups, discoveries_on_enter e efeitos/sons propostos no campo _stage_b de data/regions/bethlehem_night.json"}
+	],
+	"notes": "Etapa A (arte e mapa) por godot-implementer (IA), 2026-10-14. Arte vista em tela pelo render de tools/screenshot/map_overview.gd (sem a luz por estado). Restrições respeitadas: sem estrela sobre a casa, magos, camelos, neve, pinheiro, cacto, agave, eucalipto, estábulo de madeira, telhado de palha, boi e jumento junto à casa, estalajadeiro, cerca de madeira, lanterna de metal, cúpula/cruz/torre, anjo com asas, lua cheia ou silhueta do Heródio. As janelas acesas foram ajustadas à posição real das casas geradas (a proposta usava outras coordenadas)."
+}

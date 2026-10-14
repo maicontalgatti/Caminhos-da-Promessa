@@ -1,0 +1,353 @@
+{
+	"_comment": "PROPOSTA (ep_009, quest-designer, pending_review). Formato de data/quests/<região>/*.json. Destinos: joseph_caravan_watch -> data/quests/dothan/joseph_caravan_watch.json; as demais -> data/quests/egypt_house/<id>.json. Campos '_pending' são notas de implementação e devem ser removidos ao integrar. 'scene_finished' e o tipo 'observe_scene' dependem da cena dirigida (four_experiences_decisions.md). Gen 39:7-23 fica fora.",
+	"quests": [
+		{
+			"id": "joseph_caravan_watch",
+			"title": "A caravana para o Egito",
+			"category": "main",
+			"description": "Do alto de uma encosta em Dotã, observe de longe a caravana que desce para o Egito e leia o relato de Gênesis 37:25-28 e 37:36.",
+			"type": "story_witness",
+			"classification": "plausible_fiction",
+			"classification_note": "O viajante e o ponto de observação são criados para o jogo. A caravana vista de longe é uma representação de Gênesis 37:25-28; as legendas trazem o texto da tradução carregada. O viajante não interfere no relato.",
+			"region": "dothan",
+			"place_id": "dothan",
+			"era_id": "patriarchs",
+			"references": ["Gen 37:25-28", "Gen 37:36"],
+			"theme": "José vendido e levado para o Egito",
+			"people": ["joseph"],
+			"fictional_characters": [],
+			"intro": "Gênesis 37 continua em Dotã. O Mapa das Escrituras leva você de volta ao vale, onde uma caravana passa a caminho do Egito. Você vai observar de longe, sem interferir.",
+			"start": {"event": "experience_started", "id": "joseph_egypt"},
+			"prerequisites": {"quests_completed": ["joseph_dothan_road"], "flags": []},
+			"objectives": [
+				{
+					"id": "climb_ridge",
+					"type": "reach_location",
+					"text": "Suba à encosta alta a oeste do vale.",
+					"detail": "De lá se vê o vale inteiro.",
+					"complete_on": {"event": "location_reached", "id": "dothan_ridge"},
+					"targets": [{"type": "area", "id": "dothan_ridge"}],
+					"hints": [
+						"De um lugar alto se vê o vale inteiro.",
+						"Há uma encosta ao norte da entrada oeste de Dotã, acima da pedra do mirante.",
+						"Da entrada oeste, caminhe para o norte até a pedra grande na encosta."
+					],
+					"log": "Da encosta, você vê o vale inteiro e a borda sul, por onde passa uma estrada.",
+					"_pending": "Área dothan_ridge nova (delta em region.proposal.json)."
+				},
+				{
+					"id": "watch_caravan",
+					"type": "observe_scene",
+					"text": "Observe a estrada do vale.",
+					"detail": "Algo se move ao longe.",
+					"complete_on": {"event": "scene_finished", "id": "joseph_caravan_departs"},
+					"targets": [{"type": "examinable", "id": "dothan_ridge_view"}],
+					"hints": [
+						"Algo se move ao longe, na borda do vale.",
+						"Da pedra grande da encosta se vê a borda sul do vale.",
+						"Examine a pedra grande na encosta (E) e observe até o fim. Esc pula a cena."
+					],
+					"log": "De longe, você viu uma caravana com camelos carregados atravessar o vale para o oeste. Você não se aproximou.",
+					"_pending": "pending_target: evento scene_finished e tipo observe_scene dependem da cena dirigida; examinável dothan_ridge_view novo (delta)."
+				},
+				{
+					"id": "read_caravan_story",
+					"type": "read_scripture",
+					"text": "Leia no diário o relato de Gênesis 37:25-28 e 37:36.",
+					"detail": "O que aconteceu em Dotã naquele dia.",
+					"complete_on": {"event": "presentation_finished", "id": "gen_037_caravan"},
+					"targets": [{"type": "examinable", "id": "dothan_ridge_view"}],
+					"hints": [
+						"O diário guarda o relato desse dia.",
+						"Examine de novo a pedra grande, ou abra o diário (J) e escolha \"Ler o relato bíblico\".",
+						"Abra o diário (J), vá à missão \"A caravana para o Egito\" e leia o relato até o fim."
+					],
+					"log": "Você leu Gênesis 37:25-28 e 37:36: José foi vendido e levado para o Egito.",
+					"_pending": "Apresentação gen_037_caravan nova (scenes.proposal.json -> data/bible/presentations.json)."
+				}
+			],
+			"discoveries": ["caravan_to_egypt", "caravans_trade"],
+			"completion": {
+				"title": "A caravana se afastou",
+				"references": ["Gen 37:25-28", "Gen 37:36"],
+				"summary": [
+					"Caravanas levavam resinas de Gileade para o Egito; Gênesis 37:25 cita camelos carregados de especiarias, bálsamo e mirra.",
+					"José foi vendido por vinte peças de prata e levado para o Egito (Gênesis 37:28, 36).",
+					"O texto chama os mercadores de ismaelitas e de midianitas; o jogo não escolhe entre as leituras."
+				],
+				"unlock": [],
+				"next": "O relato continua no Egito, em Gênesis 39. Abra o Mapa das Escrituras (M), escolha \"José no Egito\" e \"Continuar\": é outro momento da história, e o viajante não viaja com a caravana."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta do agente de design (IA) com base em research_biblical.md e research_historical.md de ep_009. Aguarda verificador bíblico, revisor histórico e revisão humana."}
+		},
+		{
+			"id": "joseph_potiphar_house",
+			"title": "Uma casa como a de Potifar",
+			"category": "main",
+			"description": "Conheça uma casa de um oficial egípcio, criada para o jogo, como aquela onde José serviu, e leia o relato de Gênesis 39:1-6.",
+			"type": "context_exploration",
+			"classification": "plausible_fiction",
+			"classification_note": "A propriedade, Ipi, Meryt e Senbi são criados para o jogo. A casa é genérica: uma casa de um oficial egípcio, como aquela onde José serviu, e não a casa de Potifar; sem cidade, Faraó ou dinastia identificados. O relato bíblico aparece à parte, com o texto da tradução carregada. José e Potifar não aparecem nem falam.",
+			"region": "egypt_house",
+			"place_id": "egypt",
+			"era_id": "patriarchs",
+			"references": ["Gen 39:1-6"],
+			"theme": "José servindo numa casa estrangeira; o SENHOR estava com José",
+			"people": ["joseph"],
+			"fictional_characters": ["egypt_ipi", "egypt_meryt", "egypt_senbi"],
+			"intro": "Gênesis 39 conta que José foi levado para o Egito e comprado por Potifar, oficial do Faraó. O viajante chega, por conta própria e em outro momento da história, a uma casa de um oficial egípcio criada para o jogo: uma casa como aquela onde José serviu, não a casa de Potifar.",
+			"start": {"event": "quest_completed", "id": "joseph_caravan_watch"},
+			"prerequisites": {"quests_completed": ["joseph_caravan_watch"], "flags": []},
+			"objectives": [
+				{
+					"id": "arrive_egypt",
+					"type": "visit_region",
+					"region": "",
+					"text": "Abra o Mapa das Escrituras e siga para o Egito de José.",
+					"detail": "\"José no Egito\" tem uma nova etapa.",
+					"complete_on": {"event": "region_entered", "id": "egypt_house"},
+					"targets": [{"type": "ui", "id": "scripture_map"}],
+					"hints": [
+						"O relato continua em outro lugar.",
+						"O Mapa das Escrituras abre com M; \"José no Egito\" tem uma nova etapa.",
+						"Pressione M, escolha \"José no Egito\" e \"Continuar\"."
+					],
+					"log": "Você chegou a uma propriedade egípcia, em outro momento da história.",
+					"_pending": "Depende de 'stages' em experiences.json (experience.proposal.json)."
+				},
+				{
+					"id": "meet_porter",
+					"type": "talk_to_npc",
+					"text": "Fale com o porteiro da propriedade.",
+					"detail": "Grandes casas tinham quem cuidasse da entrada.",
+					"complete_on": {"event": "custom", "id": "egypt_ipi_welcome"},
+					"targets": [{"type": "npc", "id": "egypt_ipi"}],
+					"hints": [
+						"Grandes casas tinham quem cuidasse da entrada.",
+						"O porteiro fica do lado de fora do portão, no muro sul.",
+						"Siga a estrada até o portão sul e converse com Ipi."
+					],
+					"log": "Ipi, o porteiro, contou que a casa pertence a um oficial do rei."
+				},
+				{
+					"id": "enter_courtyard",
+					"type": "reach_location",
+					"text": "Entre no pátio da casa.",
+					"detail": "O trabalho da casa acontece ao ar livre.",
+					"complete_on": {"event": "location_reached", "id": "eh_courtyard"},
+					"targets": [{"type": "area", "id": "eh_courtyard"}],
+					"hints": [
+						"A vida da casa acontece ao ar livre.",
+						"O pátio fica logo depois do portão, diante do pórtico de colunas.",
+						"Atravesse o portão sul e caminhe até o centro do pátio."
+					],
+					"log": "No pátio, servos moem grão, carregam cestos e cuidam dos jarros."
+				},
+				{
+					"id": "household_records",
+					"type": "inspect_object",
+					"text": "Examine a mesa do escriba, junto ao depósito.",
+					"detail": "Uma casa grande conta o que entra e o que sai.",
+					"complete_on": {"event": "dialogue_finished", "id": "eh_records"},
+					"targets": [{"type": "examinable", "id": "eh_records"}],
+					"hints": [
+						"Uma casa grande precisa contar o que entra e o que sai.",
+						"Perto do depósito de jarros há uma mesa com papiro e paleta.",
+						"Examine a mesa do escriba, a leste do pátio, junto à porta do depósito."
+					],
+					"log": "Papiro, paleta e jarros selados mostram como uma grande casa egípcia controlava seus bens. Os registros são uma recriação do jogo.",
+					"unlock": ["egyptian_household"]
+				},
+				{
+					"id": "house_and_field",
+					"type": "wait_for_event",
+					"text": "Veja a casa e o campo: o celeiro e o campo irrigado.",
+					"detail": "Gênesis 39:5 fala do que havia na casa e no campo.",
+					"complete_on": {"event": "condition", "id": "eh_house_and_field", "condition": {"all": [{"event": "dialogue_finished", "id": "eh_granary"}, {"event": "dialogue_finished", "id": "eh_field"}]}},
+					"targets": [{"type": "examinable", "id": "eh_granary"}, {"type": "examinable", "id": "eh_field"}],
+					"hints": [
+						"Gênesis 39:5 fala da casa e do campo.",
+						"Os celeiros ficam a leste do muro; o campo, ao sul, junto ao canal.",
+						"Examine os silos a leste e depois a beira do campo, ao sul da estrada."
+					],
+					"log": "Silos e campos irrigados: uma grande casa egípcia vivia da terra junto à água.",
+					"unlock": ["nile_agriculture"]
+				},
+				{
+					"id": "read_potiphar_story",
+					"type": "read_scripture",
+					"text": "Leia no diário o relato de Gênesis 39:1-6.",
+					"detail": "José na casa de Potifar.",
+					"complete_on": {"event": "presentation_finished", "id": "gen_039_potiphar"},
+					"targets": [{"type": "examinable", "id": "eh_journal"}],
+					"hints": [
+						"O diário guarda o relato desta casa.",
+						"O diário de viagem está sobre um banco, junto ao tanque do jardim.",
+						"Examine o diário junto ao tanque, a noroeste dentro do muro, ou abra J e escolha \"Ler o relato bíblico\"."
+					],
+					"log": "Você leu Gênesis 39:1-6: o SENHOR estava com José, e Potifar lhe confiou tudo o que tinha.",
+					"_pending": "Apresentação gen_039_potiphar nova (scenes.proposal.json)."
+				}
+			],
+			"discoveries": ["egypt_black_land", "egyptian_household", "nile_agriculture", "joseph_steward"],
+			"completion": {
+				"title": "Uma casa no Egito",
+				"references": ["Gen 37:36", "Gen 39:1-6"],
+				"summary": [
+					"José foi comprado por Potifar, oficial do Faraó e capitão da guarda (Gênesis 39:1).",
+					"O SENHOR estava com José, e Potifar lhe confiou tudo o que tinha, na casa e no campo (Gênesis 39:2-6).",
+					"O texto não diz em que cidade ficava a casa de Potifar nem quanto tempo se passou. A casa que você visitou é fictícia, como aquela onde José serviu, e não a casa de Potifar."
+				],
+				"unlock": [],
+				"next": "A história de José continua em Gênesis 39-41. Essa parte está em planejamento e virá numa próxima versão."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta do agente de design (IA). Revisão E9-02 (coordenador): casa genérica, Ipi diz só 'oficial do rei', versão A do diálogo de Ipi descartada. Pendências: nomes egípcios dos servos (revisor histórico), objetivo de aprendizagem do catálogo. Aguarda revisão humana."}
+		},
+		{
+			"id": "egypt_granary_sacks",
+			"title": "Sacos para o celeiro",
+			"category": "side",
+			"description": "Senbi precisa levar a cevada da eira ao depósito antes do fim do dia. Ajude e entregue os sacos a Meryt.",
+			"type": "assist",
+			"classification": "plausible_fiction",
+			"classification_note": "Senbi, Meryt e a tarefa são criados para o jogo, numa casa fictícia. Gênesis 39:2 é citado só como contexto (uma casa egípcia onde José serviu); a ajuda do viajante não tem relação com José nem com a bênção de Gênesis 39:5.",
+			"region": "egypt_house",
+			"place_id": "egypt",
+			"era_id": "patriarchs",
+			"references": ["Gen 39:2"],
+			"_pending": "O validador exige ao menos uma referência na missão. Revisão E9-06: Gen 39:2 (José na casa do seu senhor egípcio) como ligação contextual; Gen 39:5 fica só na descoberta nile_agriculture.",
+			"theme": "Trabalho de colheita numa grande casa egípcia",
+			"people": [],
+			"fictional_characters": ["egypt_senbi", "egypt_meryt"],
+			"intro": "Na eira, Senbi terminou de debulhar a cevada. Os sacos precisam chegar ao depósito.",
+			"start": {"event": "custom", "id": "egypt_senbi_harvest"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "talk_senbi",
+					"type": "talk_to_npc",
+					"text": "Ouça o pedido de Senbi, na eira.",
+					"complete_on": {"event": "custom", "id": "egypt_senbi_harvest"},
+					"targets": [{"type": "npc", "id": "egypt_senbi"}],
+					"hints": [
+						"O lavrador parecia apressado.",
+						"Senbi está na eira, a leste do muro, perto dos celeiros.",
+						"Converse com Senbi, na eira a leste."
+					],
+					"log": "Senbi pediu ajuda para levar a cevada da eira ao depósito."
+				},
+				{
+					"id": "gather_sacks",
+					"type": "collect_item",
+					"text": "Recolha 3 sacos de cevada na eira.",
+					"complete_on": {"event": "inventory", "id": "barley_sack", "count": 3},
+					"targets": [{"type": "pickup", "id": "eh_sack_1"}, {"type": "pickup", "id": "eh_sack_2"}, {"type": "pickup", "id": "eh_sack_3"}],
+					"hints": [
+						"A cevada já está ensacada.",
+						"Os sacos estão em volta da eira.",
+						"Pegue os três sacos marcados em volta da eira."
+					],
+					"log": "Você recolheu os três sacos de cevada."
+				},
+				{
+					"id": "deliver_meryt",
+					"type": "deliver_item",
+					"text": "Entregue os sacos a Meryt, no depósito.",
+					"complete_on": {"event": "item_delivered", "id": "barley_sack"},
+					"targets": [{"type": "npc", "id": "egypt_meryt"}],
+					"hints": [
+						"Quem guarda o depósito confere o que entra.",
+						"Meryt fica na porta do depósito, a leste do pátio.",
+						"Converse com Meryt, na porta do depósito, com os sacos na bolsa."
+					],
+					"log": "Meryt conferiu os sacos e anotou a entrega."
+				},
+				{
+					"id": "back_to_senbi",
+					"type": "talk_to_npc",
+					"text": "Conte a Senbi que os sacos chegaram.",
+					"complete_on": {"event": "custom", "id": "egypt_senbi_thanks"},
+					"targets": [{"type": "npc", "id": "egypt_senbi"}],
+					"hints": [
+						"Senbi esperava notícias.",
+						"Senbi continua na eira.",
+						"Converse com Senbi."
+					],
+					"log": "Senbi agradeceu: a cevada estava guardada antes do fim do dia."
+				}
+			],
+			"rewards": {"flags": ["helped_egypt_harvest"]},
+			"discoveries": ["nile_agriculture"],
+			"completion": {
+				"title": "Cevada guardada",
+				"references": [],
+				"summary": [
+					"Grão era medido, ensacado e anotado antes de entrar no depósito de uma grande casa egípcia.",
+					"Senbi e Meryt são criações do jogo; a sua ajuda muda só a história deles."
+				],
+				"unlock": [],
+				"next": "No diário, a descoberta \"O campo junto ao Nilo\" fala das estações e das colheitas no Egito."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Ficção identificada, sem referência bíblica. Item novo barley_sack (categoria quest). Aguarda revisor histórico e revisão humana."}
+		},
+		{
+			"id": "egypt_house_life",
+			"title": "A vida na casa egípcia",
+			"category": "exploration",
+			"description": "Examine os lugares de trabalho da propriedade e registre o que encontrar em Minhas descobertas.",
+			"type": "investigation",
+			"classification": "historical_context",
+			"classification_note": "Tanque, forno, tear, jarros e shaduf ilustram a vida numa grande casa egípcia; os objetos do mapa são recriações do jogo. O shaduf é atestado com segurança a partir de um período posterior (hipótese).",
+			"region": "egypt_house",
+			"place_id": "egypt",
+			"era_id": "patriarchs",
+			"references": ["Gen 39:2"],
+			"theme": "O cotidiano de uma grande casa egípcia",
+			"people": [],
+			"fictional_characters": [],
+			"intro": "Uma grande casa egípcia era também um lugar de trabalho. Observe e registre.",
+			"start": {"event": "region_entered", "id": "egypt_house"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "first_life",
+					"type": "discover_information",
+					"text": "Encontre um primeiro registro da vida na casa.",
+					"complete_on": {"event": "collection", "id": "egypt_house_life", "count": 1},
+					"targets": [{"type": "examinable", "id": "eh_pool"}, {"type": "examinable", "id": "eh_oven"}, {"type": "examinable", "id": "eh_loom"}, {"type": "examinable", "id": "eh_jars"}, {"type": "examinable", "id": "eh_shaduf"}],
+					"hints": [
+						"Cada canto da casa tem um trabalho.",
+						"O tanque do jardim e o forno da cozinha ficam dentro do muro, a oeste.",
+						"Examine o tanque com lótus, no jardim a noroeste."
+					],
+					"log": "Você começou a registrar a vida na casa egípcia."
+				},
+				{
+					"id": "all_life",
+					"type": "discover_information",
+					"text": "Complete os 5 registros da vida na casa.",
+					"complete_on": {"event": "collection_completed", "id": "egypt_house_life"},
+					"targets": [{"type": "examinable", "id": "eh_pool"}, {"type": "examinable", "id": "eh_oven"}, {"type": "examinable", "id": "eh_loom"}, {"type": "examinable", "id": "eh_jars"}, {"type": "examinable", "id": "eh_shaduf"}],
+					"hints": [
+						"Falta pouco.",
+						"Procure o tear no pátio, os jarros no depósito e o balancim junto ao canal.",
+						"Abra o diário (J), aba Descobertas, para ver quais registros faltam."
+					],
+					"log": "Você completou os registros da vida na casa egípcia."
+				}
+			],
+			"discoveries": ["egyptian_household"],
+			"completion": {
+				"title": "Registros completos",
+				"references": [],
+				"summary": [
+					"Jardins com tanque, fornos, teares, depósitos e canais mostram como trabalhava uma grande casa egípcia.",
+					"Os objetos do mapa são recriações do jogo."
+				],
+				"unlock": [],
+				"next": "Gênesis 39:2 diz que José estava na casa do seu senhor egípcio; o texto não descreve a casa. Estes registros são contexto histórico."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Contexto aguarda o revisor histórico (shaduf, forno, tear horizontal) e revisão humana."}
+		}
+	]
+}

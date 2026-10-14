@@ -1,0 +1,129 @@
+{
+	"_comment": "Experiência \"Rute em Belém\" (ep_025). Integrado de production/episodes/ep_025_rute_noemi_e_boaz/quest.proposal.json; aguarda revisão humana.",
+	"quests": [
+		{
+			"id": "ruth_gleaning",
+			"title": "A colheita em Belém",
+			"category": "main",
+			"description": "Ajude na colheita da cevada num campo perto de Belém, aprenda por que o canto do campo fica de pé e observe de longe Rute respigando na parte do campo que era de Boaz (Rute 2).",
+			"type": "story_witness",
+			"classification": "plausible_fiction",
+			"classification_note": "O viajante, Ilan, Tova, os ceifeiros e o campo de Ilan são criados para o jogo. O relato de Rute 1:19-2:23 é observado de longe na cena dirigida e lido no diário com o texto da tradução carregada; o jogador não muda nem causa nada dele.",
+			"region": "bethlehem_fields",
+			"place_id": "bethlehem",
+			"era_id": "judges",
+			"references": ["Ruth 1:19-2:23", "Lev 19:9-10", "Lev 23:22", "Deut 24:19"],
+			"theme": "Colheita, a lei da respiga e o cuidado com quem não tem campo",
+			"people": ["ruth", "naomi", "boaz"],
+			"fictional_characters": ["bf_ilan", "bf_tova"],
+			"intro": "O livro de Rute se passa no tempo dos juízes. Noemi voltou de Moabe a Belém com a nora Rute no começo da colheita da cevada (Rute 1:22). O Mapa das Escrituras leva você aos campos de Belém nesses dias.",
+			"start": {"event": "quest_completed", "id": "exodus_sea_crossing"},
+			"prerequisites": {"quests_completed": ["exodus_sea_crossing"], "flags": []},
+			"objectives": [
+				{
+					"id": "open_map",
+					"type": "wait_for_event",
+					"region": "",
+					"text": "Abra o Mapa das Escrituras (M) e escolha \"Rute em Belém\".",
+					"detail": "A experiência fica na coluna Juízes.",
+					"complete_on": {"event": "experience_started", "id": "ruth_bethlehem"},
+					"targets": [{"type": "ui", "id": "scripture_map"}],
+					"hints": [
+						"O diário guarda relatos de outras épocas.",
+						"O Mapa das Escrituras abre com a tecla M ou com o botão \"M mapa\" no canto da tela.",
+						"Pressione M, selecione \"Rute em Belém\" na coluna Juízes e escolha \"Iniciar esta experiência\"."
+					],
+					"log": "Você abriu o Mapa das Escrituras no livro de Rute, no tempo dos juízes."
+				},
+				{
+					"id": "meet_ilan",
+					"type": "talk_to_npc",
+					"text": "Fale com o agricultor na beira do campo.",
+					"detail": "A colheita da cevada está começando.",
+					"complete_on": {"event": "custom", "id": "ruth_ilan_harvest"},
+					"targets": [{"type": "npc", "id": "bf_ilan"}],
+					"hints": [
+						"Na colheita, sempre falta gente para ajudar.",
+						"Um agricultor espera na beira do campo, ao sul da estrada.",
+						"Siga a estrada para o leste e converse com Ilan, no canto norte do campo de cevada."
+					],
+					"log": "Ilan, um agricultor de Belém, aceitou sua ajuda na colheita da cevada. Ele contou que a cidade se agitou com a volta de Noemi, vinda de Moabe com a nora."
+				},
+				{
+					"id": "harvest",
+					"type": "collect_item",
+					"text": "Junte 4 feixes de cevada no campo de Ilan.",
+					"detail": "Os feixes amarrados estão nas fileiras ceifadas.",
+					"complete_on": {"event": "inventory", "id": "barley_sheaf", "count": 4},
+					"targets": [{"type": "pickup", "id": "bf_sheaf_1"}, {"type": "pickup", "id": "bf_sheaf_2"}, {"type": "pickup", "id": "bf_sheaf_3"}, {"type": "pickup", "id": "bf_sheaf_4"}, {"type": "pickup", "id": "bf_sheaf_5"}, {"type": "pickup", "id": "bf_sheaf_6"}],
+					"hints": [
+						"Ilan disse que nem todo o campo é para ceifar.",
+						"Os feixes ficam nas fileiras já ceifadas; a faixa de cevada alta no canto sudeste é o canto do campo.",
+						"Colete 4 feixes nas fileiras ceifadas (E perto do feixe) e confira na bolsa (I)."
+					],
+					"log": "Você juntou feixes de cevada nas fileiras ceifadas do campo de Ilan."
+				},
+				{
+					"id": "bring_sheaves",
+					"type": "deliver_item",
+					"text": "Leve os feixes a Ilan.",
+					"detail": "Ele empilha os feixes para levar à eira.",
+					"complete_on": {"event": "item_delivered", "id": "barley_sheaf"},
+					"targets": [{"type": "npc", "id": "bf_ilan"}],
+					"hints": [
+						"Feixe junto é feixe que chega à eira.",
+						"Ilan continua no canto norte do campo.",
+						"Converse com Ilan com os 4 feixes na bolsa."
+					],
+					"log": "Ilan recebeu os feixes e explicou a lei da respiga: o canto do campo e as espigas que caem ficam para o pobre e o estrangeiro (Levítico 19:9-10; 23:22)."
+				},
+				{
+					"id": "watch_field",
+					"type": "observe_scene",
+					"text": "Observe o campo vizinho do marco de divisa.",
+					"detail": "Do outro lado dos marcos fica a parte do campo que era de Boaz.",
+					"complete_on": {"event": "scene_finished", "id": "ruth_gleaning_meal"},
+					"targets": [{"type": "examinable", "id": "bf_boundary_view"}],
+					"hints": [
+						"Ilan falou de uma jovem que respiga no campo vizinho.",
+						"Os marcos de pedra a leste do campo de Ilan separam os campos; há um terebinto com uma pedra ao lado.",
+						"Vá ao terebinto junto aos marcos de divisa, a leste do campo de Ilan, e examine a pedra para observar."
+					],
+					"log": "De longe, você viu uma jovem respigar atrás dos ceifeiros na parte do campo que era de Boaz, a refeição dos ceifeiros e a volta dela à cidade à tarde (Rute 2:3-18)."
+				},
+				{
+					"id": "read_story",
+					"type": "read_scripture",
+					"text": "Leia no diário o relato de Rute 1:19-2:23.",
+					"detail": "A chegada de Noemi e Rute e a respiga nos campos de Boaz.",
+					"complete_on": {"event": "presentation_finished", "id": "ruth_002_gleaning"},
+					"targets": [{"type": "examinable", "id": "bf_boundary_view"}],
+					"hints": [
+						"O que você viu de longe está contado no livro de Rute.",
+						"Examine de novo a pedra junto ao terebinto, ou abra o diário (J) e escolha \"Ler o relato bíblico\".",
+						"Abra o diário (J), vá à missão \"A colheita em Belém\" e leia o relato até o fim."
+					],
+					"log": "Você leu Rute 1:19-2:23: a chegada a Belém, a respiga no campo de Boaz e a resposta de Noemi."
+				}
+			],
+			"rewards": {"flags": ["helped_harvest"]},
+			"discoveries": ["barley_harvest", "gleaning_law", "ruth_gleaning"],
+			"completion": {
+				"title": "Um dia de colheita",
+				"references": ["Ruth 2:1-23", "Lev 19:9-10", "Lev 23:22", "Deut 24:19"],
+				"summary": [
+					"A lei de Israel mandava deixar o canto do campo e as espigas caídas para o pobre e o estrangeiro (Levítico 19:9-10; 23:22), e o feixe esquecido para o estrangeiro, o órfão e a viúva (Deuteronômio 24:19). O livro de Rute não cita essas leis; a ligação é feita pelo leitor.",
+					"Rute 2 conta que Rute respigou na parte do campo que era de Boaz, comeu com os ceifeiros e voltou à cidade com a cevada que juntou; Noemi reconheceu Boaz como parente próximo.",
+					"Ilan, Tova e o campo deles são criações do jogo."
+				],
+				"variants": [
+					{"if": {"choice": "ruth_field_corner", "option": "left"}, "next": "Você deixou o canto do campo de pé sem que ninguém precisasse pedir."},
+					{"if": {"choice": "ruth_field_corner", "option": "returned"}, "next": "Você devolveu os feixes do canto, e Ilan os deixou ali para quem viesse respigar."}
+				],
+				"unlock": [],
+				"next": "O livro de Rute continua nos capítulos 3 e 4; essa parte não faz parte desta experiência. No Mapa das Escrituras (M), a próxima experiência liberada é \"Os pastores de Belém\"."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA). Referências conferidas contra a ficha bíblica do ep_025; Lev 19 e Deut 24 ainda faltam em verse_counts.json. Aguarda roteirista, verificador bíblico e revisão humana."}
+		}
+	]
+}

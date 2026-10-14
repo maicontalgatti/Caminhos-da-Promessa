@@ -1,0 +1,112 @@
+{
+	"_comment": "Proposta do roteirista (IA, 2026-10-14) para data/characters/bethlehem_night.json. Ids com prefixo bn_ (four_experiences_decisions.md): tamir → bn_tamir, shai → bn_shai etc. Tamir e Shai são fictícios (plausible_fiction). Os três pastores do relato são REPRESENTAÇÃO (o texto não diz quantos eram, nem nomes ou idades): sem falas, só descrição do narrador (diálogo bn_rep_shepherds). 'visual_description' é briefing para o visual-asset-producer (paleta noturna e anacronismos em research_historical.md) e sai na integração. 'goat' vem do pacote ep_016 (definição única, genérica). bn_sheep usa a folha de sprite da ovelha existente com diálogo próprio, porque sheep_examine cita Adina (Canaã). bn_dog é opcional de arte. 'scene_figures' lista os figurantes das cenas dirigidas: não são personagens de data/characters, só sprites.",
+	"characters": [
+		{
+			"id": "bn_tamir",
+			"display_name": "Tamir",
+			"role": "Pastor, dono do rebanho",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Pastor fictício mais velho que passa a noite nos campos perto de Belém com o seu rebanho. Não é um dos pastores do relato de Lucas 2: dorme durante o anúncio e só repete o que ouviu na volta dos vizinhos.",
+			"dialogue_id": "bn_tamir_talk",
+			"sprite": {"sheet": "res://assets/characters/bn_tamir.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1},
+			"visual_description": "Homem de uns 50 anos, corpo firme de quem anda o dia inteiro. Barba cheia, escura com fios grisalhos; rosto queimado de sol. Túnica de lã marrom-escura até a canela, cinto de couro, manto retangular de lã grossa cinza-creme com uma faixa marrom na borda, jogado sobre os ombros. Pano de cabeça bege amarrado. Cajado de madeira com a ponta curva, bolsa de couro a tiracolo, sandálias. Cores naturais (creme, marrom, cinza). Diferente de Rafi (Dotã) e de Tzvi (ep_016): mais robusto e menos curvado. Sem halo, sem cores simbólicas."
+		},
+		{
+			"id": "bn_tamir_asleep",
+			"display_name": "Tamir",
+			"role": "Pastor, dormindo",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Tamir dormindo junto ao fogo durante a vigília do viajante. Mesmo personagem de bn_tamir, com outra pose.",
+			"dialogue_id": "bn_tamir_talk",
+			"sprite": {"sheet": "res://assets/characters/bn_tamir_asleep.png", "hframes": 2, "vframes": 1, "directions": 1, "portrait": false},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1},
+			"visual_description": "Tamir deitado de lado no chão, enrolado no manto cinza-creme, a cabeça apoiada no braço, rosto meio escondido. Cajado no chão ao lado. Dois quadros de respiração lenta. Recebe a luz quente da fogueira do posto."
+		},
+		{
+			"id": "bn_shai",
+			"display_name": "Shai",
+			"role": "Pastor jovem, trabalha com Tamir",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Pastor fictício, jovem adulto, que trabalha com Tamir. Faz a ronda do aprisco e conta o que se diz em Belém sobre Davi pastor. Não vê o anúncio: só vê os vizinhos subirem para Belém.",
+			"dialogue_id": "bn_shai_talk",
+			"sprite": {"sheet": "res://assets/characters/bn_shai.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": -1, "facing_y": 0},
+			"visual_description": "Homem jovem, uns 18–22 anos, barba curta e rala, cabelo escuro curto. Túnica creme até o joelho com duas faixas verticais estreitas marrons (clavi), cinto de couro com uma funda pendurada, manto marrom-claro dobrado sobre um ombro. Cajado reto, odre pequeno a tiracolo, sandálias. Silhueta mais leve que a de Tamir. Diferente de Dror (ep_016) na cor do manto e no cajado reto."
+		},
+		{
+			"id": "bn_rep_shepherd_a",
+			"display_name": "Pastor (representação)",
+			"role": "Um dos pastores do relato",
+			"kind": "person",
+			"classification": "recorded_event",
+			"description": "Representação de um dos pastores de Lucas 2:8-20. O texto não diz quantos eram, nem seus nomes ou idades; o jogo mostra três. Não fala: o que os pastores disseram aparece só por referência ou paráfrase identificada (Lc 2:15).",
+			"dialogue_id": "bn_rep_shepherds",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/bn_rep_shepherd_a.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 1, "facing_y": 0},
+			"visual_description": "Adulto de idade indefinida (nem menino nem idoso), barba curta castanha. Túnica de lã marrom até a canela, manto marrom-escuro sobre os ombros, pano de cabeça cru. Cajado. Sentado junto ao fogo na pose padrão. Sem halo, brilho próprio ou cores simbólicas."
+		},
+		{
+			"id": "bn_rep_shepherd_b",
+			"display_name": "Pastor (representação)",
+			"role": "Um dos pastores do relato",
+			"kind": "person",
+			"classification": "recorded_event",
+			"description": "Representação de um dos pastores de Lucas 2:8-20. O texto não diz quantos eram, nem seus nomes ou idades; o jogo mostra três. Não fala.",
+			"dialogue_id": "bn_rep_shepherds",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/bn_rep_shepherd_b.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": -1, "facing_y": 0},
+			"visual_description": "Adulto de idade indefinida, barba curta preta. Túnica cinza até a canela, manto de lã cru com faixa cinza, cabeça descoberta, cabelo escuro curto. Odre a tiracolo e cajado. Sem halo nem brilho próprio."
+		},
+		{
+			"id": "bn_rep_shepherd_c",
+			"display_name": "Pastor (representação)",
+			"role": "Um dos pastores do relato",
+			"kind": "person",
+			"classification": "recorded_event",
+			"description": "Representação de um dos pastores de Lucas 2:8-20. O texto não diz quantos eram, nem seus nomes ou idades; o jogo mostra três. Não fala.",
+			"dialogue_id": "bn_rep_shepherds",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/bn_rep_shepherd_c.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1},
+			"visual_description": "Adulto de idade indefinida, barba curta castanho-clara. Túnica creme até a canela, manto marrom-avermelhado desbotado (tingimento natural), pano de cabeça marrom. Bolsa de couro e cajado com a ponta curva. Altura média entre os outros dois. Sem halo nem brilho próprio."
+		},
+		{
+			"id": "bn_sheep",
+			"display_name": "Ovelha",
+			"role": "Animal",
+			"kind": "animal",
+			"classification": "historical_context",
+			"description": "Ovelhas de cauda gorda e cabras formavam os rebanhos dos campos de Belém.",
+			"dialogue_id": "bn_sheep_examine",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/sheep.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
+			"behavior": {"type": "wander", "speed": 12, "wander_radius": 28},
+			"visual_description": "Reaproveita a ovelha existente. Se houver tempo de arte: variante de cauda larga e gorda, lã creme-acinzentada (#B9B4A6 à noite)."
+		},
+		{
+			"id": "bn_dog",
+			"display_name": "Cão",
+			"role": "Animal",
+			"kind": "animal",
+			"classification": "plausible_fiction",
+			"description": "Cão de pastor que dorme perto do fogo do posto. Opcional; criação do jogo.",
+			"dialogue_id": "bn_dog_examine",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/bn_dog.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
+			"behavior": {"type": "idle", "facing_x": -1, "facing_y": 0},
+			"visual_description": "Cão magro de porte médio, ~20×16 px, pelo curto cor de areia, orelhas eretas, focinho fino, rabo curvado para cima. Deitado ou sentado. Sem coleira."
+		}
+	],
+	"scene_figures": [
+		{"sprite": "shepherd_rep_figure_a", "classification": "recorded_event", "note": "Representação de um pastor de Lucas 2 (o texto não diz quantos eram). Mesmo visual de bn_rep_shepherd_a.", "visual_description": "Poses: 'sit' (sentado ao fogo, cajado no colo), 'fear' (recua um passo e cobre o rosto com o braço, corpo curvado), 'stand' (de pé, cajado na mão), mais andar em 4 direções. Nenhum brilho próprio: a luz da glória é efeito do mapa (light_glow #FFF8E0), não do sprite."},
+		{"sprite": "shepherd_rep_figure_b", "classification": "recorded_event", "note": "Mesmo visual de bn_rep_shepherd_b.", "visual_description": "Mesmas poses; na pose 'fear' ajoelha e se curva para o chão, para variar."},
+		{"sprite": "shepherd_rep_figure_c", "classification": "recorded_event", "note": "Mesmo visual de bn_rep_shepherd_c.", "visual_description": "Mesmas poses; na pose 'fear' recua com as duas mãos diante do rosto."}
+	],
+	"not_shown": "Sem sprite para o anjo, a multidão celestial, Maria, José ou o bebê. A glória (Lc 2:9) e a multidão (Lc 2:13) são só efeitos de luz, sem forma, asas, auréola ou rosto."
+}

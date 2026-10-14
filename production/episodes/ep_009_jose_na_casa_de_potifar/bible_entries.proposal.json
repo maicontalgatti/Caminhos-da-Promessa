@@ -1,0 +1,95 @@
+{
+	"_comment": "PROPOSTA (ep_009, dialogue-writer, IA, pending_review). Entradas novas e alterações para data/bible/people.json e data/bible/places.json, no formato real. 'add' = acrescentar; 'change' = só os campos listados (o resto da entrada fica como está). Resumos próprios; apenas o que o texto diz. identification (lugares): established | probable | debated | fictional. Todas as referências conferidas em data/bible/verse_counts.json (Gen 29, 31, 37, 39).",
+	"people": {
+		"add": [
+			{
+				"id": "potiphar",
+				"name": "Potifar",
+				"era_id": "patriarchs",
+				"places": ["egypt"],
+				"references": ["Gen 37:36", "Gen 39:1-6"],
+				"summary": "Egípcio, oficial do Faraó e capitão da guarda. Compra José no Egito, percebe que o SENHOR estava com ele e o põe como administrador de tudo o que tinha. O texto não diz em que cidade morava nem a qual Faraó servia.",
+				"relations": [],
+				"moments": ["Compra José no Egito (Gn 37:36; 39:1)", "Põe José como administrador da casa (Gn 39:4-6)"],
+				"verification": {"status": "pending_review", "reviewer": "", "notes": "Sem fala, aparência ou caráter além do texto. Sentido exato de 'oficial' e 'capitão da guarda' a conferir em léxico (FB §11.6); a ficha usa só a forma da tradução. A continuação do capítulo (Gn 39:7-23) não está resumida aqui, de propósito (fora do escopo de ep_009)."}
+			},
+			{
+				"id": "judah",
+				"name": "Judá",
+				"era_id": "patriarchs",
+				"places": ["dothan"],
+				"references": ["Gen 29:35", "Gen 37:26-27"],
+				"summary": "Filho de Jacó e Lia, irmão de José. Em Dotã, propõe aos irmãos vender José aos ismaelitas em vez de matá-lo, e eles concordam.",
+				"relations": [{"person": "jacob", "label": "filho de"}, {"person": "joseph", "label": "irmão de"}],
+				"moments": ["Nascimento (Gn 29:35)", "Propõe vender José (Gn 37:26-27)"],
+				"verification": {"status": "pending_review", "reviewer": "", "notes": "Registra só a proposta, sem julgar Judá. O restante da história de Judá (Gn 38; 43-44; 49) fica para outras experiências."}
+			},
+			{
+				"id": "reuben",
+				"name": "Rúben",
+				"era_id": "patriarchs",
+				"places": ["dothan"],
+				"references": ["Gen 29:32", "Gen 37:21-22", "Gen 37:29-30"],
+				"summary": "Filho mais velho de Jacó e Lia. Em Dotã, convence os irmãos a não matar José e a pô-lo numa cisterna, com a intenção de devolvê-lo ao pai; quando volta à cisterna, José já não está lá.",
+				"relations": [{"person": "jacob", "label": "filho de"}, {"person": "joseph", "label": "irmão de"}],
+				"moments": ["Nascimento (Gn 29:32)", "Propõe a cisterna (Gn 37:21-22)", "Não encontra José na cisterna (Gn 37:29-30)"],
+				"verification": {"status": "pending_review", "reviewer": "", "notes": "Citado só na nota final da apresentação gen_037_caravan. O texto não diz onde Rúben estava durante a venda; a ficha não afirma nada sobre isso."}
+			}
+		],
+		"change": [
+			{
+				"id": "joseph",
+				"fields": {
+					"relations": [{"person": "jacob", "label": "filho de"}, {"person": "judah", "label": "irmão de"}, {"person": "reuben", "label": "irmão de"}],
+					"moments": ["Vendido em Dotã e levado ao Egito (Gn 37:17-28, 36)", "Na casa de Potifar (Gn 39:1-6)", "Governador do Egito (Gn 41:39-41)"]
+				},
+				"notes": "Acrescenta os irmãos citados e o 'levado ao Egito' (Gn 37:36). Resumo e referências atuais ficam como estão."
+			},
+			{
+				"id": "jacob",
+				"fields": {
+					"relations": [{"person": "isaac", "label": "filho de"}, {"person": "esau", "label": "irmão de"}, {"person": "joseph", "label": "pai de"}, {"person": "judah", "label": "pai de"}, {"person": "reuben", "label": "pai de"}]
+				},
+				"notes": "Só se judah e reuben forem aceitos."
+			}
+		]
+	},
+	"places": {
+		"add": [
+			{
+				"id": "gilead",
+				"name": "Gileade",
+				"kind": "região",
+				"identification": "established",
+				"eras": ["patriarchs", "exodus", "judges"],
+				"references": ["Gen 31:21", "Gen 37:25"],
+				"description": "Região montanhosa a leste do rio Jordão. Em Gênesis 37:25, uma caravana vinda de Gileade desce para o Egito com especiarias, bálsamo e mirra. Os limites exatos da região variam de época para época.",
+				"verification": {"status": "pending_review", "reviewer": "", "notes": "Identificação da região (leste do Jordão) amplamente aceita; limites aproximados. Aguarda revisor histórico."}
+			},
+			{
+				"id": "egypt_house",
+				"name": "Casa de um oficial egípcio (fictícia)",
+				"kind": "propriedade",
+				"identification": "fictional",
+				"eras": ["patriarchs"],
+				"references": [],
+				"description": "Propriedade fictícia, criada para o jogo: uma casa de um oficial egípcio, como aquela onde José serviu (Gn 39:1-6), e não a casa de Potifar. Inspirada nas grandes casas egípcias do II milênio a.C.: muro de tijolo de barro, casa com pórtico, jardim com tanque, depósito, celeiros, eira, curral, campos irrigados e canal. O mapa não identifica cidade, Faraó nem dinastia.",
+				"verification": {"status": "pending_review", "reviewer": "", "notes": "Conteúdo fictício identificado como tal (decisão E9-02 do coordenador: casa genérica). 'kind: propriedade' é novo; se o validador restringir os tipos, usar 'aldeia' ou acrescentar o tipo."}
+			}
+		],
+		"change": [
+			{
+				"id": "egypt",
+				"fields": {
+					"references": ["Gen 12:10", "Gen 37:28", "Gen 39:1", "Exod 1:11"],
+					"description": "Grande civilização às margens do Nilo, cercada de deserto. Nas narrativas bíblicas é destino de quem foge da fome, lugar para onde José é levado e onde serve na casa de Potifar, e de onde Israel sai no Êxodo. O Faraó dos relatos de José não é nomeado."
+				},
+				"notes": "Acrescenta Gen 39:1 e a menção à casa de Potifar."
+			}
+		]
+	},
+	"identification_notes": {
+		"pharaoh": "Não criar ficha de pessoa para 'o Faraó' de Gn 37:36 e 39:1: o texto não o nomeia, e nenhuma identificação é afirmada (research_historical.md §1).",
+		"ishmaelites_midianites": "Grupos, não pessoas; ficam só nas descobertas (caravan_to_egypt), sem ficha e sem resolver a alternância."
+	}
+}

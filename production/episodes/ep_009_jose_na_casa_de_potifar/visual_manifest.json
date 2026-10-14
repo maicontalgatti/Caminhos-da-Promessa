@@ -1,0 +1,52 @@
+{
+	"episode": "ep_009_jose_na_casa_de_potifar",
+	"reuse": [
+		{"path": "res://assets/tilesets/canaan_tiles.png", "use": "fonte 0 de lands_tileset.tres (caminhos de terra)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/sacks.tscn", "use": "sacos no pátio (520,392)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/basket.tscn", "use": "cesto no pátio (548,372)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/jar.tscn", "use": "jarro na cozinha (120,330)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/pots.tscn", "use": "potes na cozinha (236,326)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/firewood.tscn", "use": "lenha na cozinha (148,344)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/rock_small.tscn", "use": "pedras espalhadas", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/journal.tscn", "use": "examinável eh_journal (etapa B)", "license": "CC BY 4.0 (gerado por tools/art_gen)"}
+	],
+	"gaps": [
+		{"id": "lands_tiles", "kind": "tileset", "size": "16x16, atlas 8x16", "frames": 1, "palette": "egito_casa / margem_do_mar / belem_campos", "status": "produced", "notes": "assets/tilesets/lands_tiles.png: areia, solo escuro, rocha e sobreposições autotile (solo, água, piso batido, cevada, restolho, verde, rocha) + decorações (ondulação de areia, conchas, tufo, fileiras de cultivo, brilho na água, palha, lótus)."},
+		{"id": "egypt_ipi", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "egito_casa", "status": "produced", "notes": "porteiro: saiote de linho branco, sandálias de papiro"},
+		{"id": "egypt_meryt", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "egito_casa", "status": "produced", "notes": "serva: vestido de linho, cabelo escuro"},
+		{"id": "egypt_senbi", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "egito_casa", "status": "produced", "notes": "escriba-intendente: saiote e paleta de escriba, sem joias de ouro"},
+		{"id": "egypt_cattle", "kind": "animal", "size": "32x24", "frames": "6x2", "palette": "egito_casa", "status": "produced", "notes": "gado de chifres longos"},
+		{"id": "egypt_donkey", "kind": "animal", "size": "28x22", "frames": "6x2", "palette": "egito_casa", "status": "produced", "notes": "jumento com manta"},
+		{"id": "egypt_goose", "kind": "animal", "size": "18x16", "frames": "6x2", "palette": "egito_casa", "status": "produced", "notes": "ganso do Nilo"},
+		{"id": "egypt_cat", "kind": "animal", "size": "20x14", "frames": "6x2", "palette": "egito_casa", "status": "produced", "notes": "gato doméstico"},
+		{"id": "house_portico", "kind": "prop", "size": "192x128", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "casa genérica de tijolo de barro com pórtico de colunas de madeira; sem inscrição"},
+		{"id": "mudbrick_wall_h/_v", "kind": "prop", "size": "16x30", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "muro da propriedade"},
+		{"id": "reed_fence_h/_v", "kind": "prop", "size": "16x16", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "cerca de junco do curral"},
+		{"id": "garden_pool", "kind": "prop", "size": "56x36", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "tanque do jardim (examinável eh_pool)"},
+		{"id": "storage_jars", "kind": "prop", "size": "34x28", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "jarros de armazenagem"},
+		{"id": "scribe_table", "kind": "prop", "size": "30x20", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "mesa baixa com rolos e paleta (sem texto legível)"},
+		{"id": "egypt_oven", "kind": "prop", "size": "22x24", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "forno de barro"},
+		{"id": "saddle_quern", "kind": "prop", "size": "24x12", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "mó de vaivém de pedra"},
+		{"id": "floor_loom", "kind": "prop", "size": "38x18", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "tear horizontal de chão"},
+		{"id": "granary_silos", "kind": "prop", "size": "76x58", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "silos de barro em cúpula"},
+		{"id": "flax_bundles", "kind": "prop", "size": "28x18", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "feixes de linho"},
+		{"id": "shaduf", "kind": "prop", "size": "44x52", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "balancim de irrigação; risco aceito pelo coordenador (atestado com segurança só no Novo Reino)"},
+		{"id": "papyrus_reeds", "kind": "prop", "size": "26x30", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "papiros do canal (balançam)"},
+		{"id": "tree_date_palm", "kind": "prop", "size": "40x64", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "tamareira"},
+		{"id": "tree_sycamore", "kind": "prop", "size": "56x56", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "sicômoro"},
+		{"id": "tree_acacia", "kind": "prop", "size": "52x46", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "acácia do deserto"},
+		{"id": "barley_sack", "kind": "item_icon", "size": "12x12", "frames": 1, "palette": "egito_casa", "status": "produced", "notes": "saco de cevada (pickup eh_sack_*)"},
+		{"id": "silhuetas de cena (ep_009)", "kind": "scene_actor", "size": "-", "frames": "-", "palette": "-", "status": "placeholder", "notes": "SceneActor desenha silhuetas por código (scene_actor.gd); nenhuma silhueta PNG foi gerada nesta etapa."}
+	],
+	"environment": [
+		{"region": "egypt_house", "exists": true, "scene": "res://scenes/maps/egypt_house.tscn", "tileset": "res://assets/tilesets/lands_tileset.tres", "notes": "64x40 tiles. Camadas: Ground (areia), Soil (terra preta), Floors (piso batido), Green (jardim e campos), Water (canal), Paths, Decor. DaylightTint Color(1.0, 0.97, 0.88)."}
+	],
+	"generator": [
+		{"script": "res://tools/art_gen/art_lands.gd", "run": "godot --headless --path . --script res://tools/art_gen/generate_art.gd -- --v05-only", "origin": "gerado por tools/art_gen", "license": "CC BY 4.0"},
+		{"script": "res://tools/art_gen/build_regions.gd", "run": "godot --headless --path . --script res://tools/art_gen/build_regions.gd -- egypt_house", "origin": "LAYOUTS.egypt_house", "license": "CC BY 4.0"}
+	],
+	"map_inventory": [
+		{"region": "egypt_house", "entries": {"default": [40, 496], "from_passage": [40, 496]}, "exits": {"west_road": [0, 476, 12, 40]}, "areas": {"eh_courtyard": [320, 272, 272, 144], "eh_gate": [352, 432, 64, 48]}, "solids_px": [[0, 604, 1024, 36]], "walls_tiles": {"mudbrick_wall": [4, 4, 41, 27], "gate_south_cols": [22, 25], "reed_fence": [56, 18, 62, 26], "pen_gate_west_rows": [21, 23]}, "pending_stage_b": "npcs, examinables, pickups e discoveries_on_enter no campo _stage_b de data/regions/egypt_house.json"}
+	],
+	"notes": "Etapa A (arte e mapa) por godot-implementer (IA), 2026-10-14. Arte vista em tela pelo render de tools/screenshot/map_overview.gd (sem jogar). Restrições respeitadas: casa genérica (não identifica Potifar, cidade nem dinastia), sem camelos, sem moedas, sem ferro."
+}

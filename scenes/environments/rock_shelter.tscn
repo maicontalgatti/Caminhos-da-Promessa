@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/rock_shelter.png" id="1_f1o36"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etnsg"]
+size = Vector2(52, 10)
+
+[node name="RockShelter" type="StaticBody2D" unique_id=327246093]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=931252210]
+texture = ExtResource("1_f1o36")
+centered = false
+offset = Vector2(-30, -42)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1183617269]
+position = Vector2(0, -31)
+shape = SubResource("RectangleShape2D_etnsg")

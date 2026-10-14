@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/stone_wall_h.png" id="1_5vpb8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owrx5"]
+size = Vector2(16, 8)
+
+[node name="StoneWallH" type="StaticBody2D" unique_id=302106879]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=468403592]
+texture = ExtResource("1_5vpb8")
+centered = false
+offset = Vector2(-8, -23)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=436717968]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_owrx5")

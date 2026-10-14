@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/house_courtyard.png" id="1_k0wjq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgjl0"]
+size = Vector2(60, 16)
+
+[node name="HouseCourtyard" type="StaticBody2D" unique_id=1785092570]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1337875750]
+texture = ExtResource("1_k0wjq")
+centered = false
+offset = Vector2(-32, -52)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1448588902]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_tgjl0")

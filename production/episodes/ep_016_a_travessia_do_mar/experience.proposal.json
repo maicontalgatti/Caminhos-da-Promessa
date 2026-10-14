@@ -1,0 +1,36 @@
+{
+	"_comment": "Proposta do quest-designer (IA) para substituir a entrada exodus_sea em data/world/experiences.json (hoje status planned). Modelo: joseph_dothan. Campo travel já é suportado por WorldManager.start_experience; travel.entry_if é proposto (código pequeno, design.md §12). related_changes lista ajustes em outras experiências para o jogador poder sair de sea_camp (não há saída a pé entre épocas).",
+	"experience": {
+		"id": "exodus_sea",
+		"era": "exodus",
+		"title": "A travessia do mar",
+		"references": ["Exod 14:19-31"],
+		"place": "Junto ao mar (localização debatida)",
+		"status": "available",
+		"requires": {"quest_completed": "joseph_potiphar_house"},
+		"locked_text": "Explore primeiro \"José no Egito\" para abrir esta experiência.",
+		"completed_by": "exodus_sea_crossing",
+		"summary": "Uma tarde num acampamento junto ao mar, com famílias que saíram do Egito. À noite, você acompanha de longe o que Êxodo 14 relata.",
+		"travel": {
+			"region": "sea_camp",
+			"entry": "arrival",
+			"entry_if_proposed": [
+				{"if": {"event": "scene_finished", "id": "exodus_sea_crossing"}, "entry": "far_shore_dawn"}
+			]
+		},
+		"passage": {
+			"title": "OUTRO MOMENTO DA HISTÓRIA",
+			"lines": [
+				"Dos dias de José (Gênesis 37–50) para a saída do Egito (Êxodo 12–14): gerações separam os dois relatos; quanto tempo exatamente é debatido. Êxodo 1:6-8 conta que José e toda aquela geração morreram e que surgiu no Egito um novo rei que não conhecera José. A data da saída do Egito é debatida, e o jogo não indica um ano.",
+				"Êxodo 14 conta que o povo de Israel acampou junto ao mar. Você passará a tarde nesse acampamento, ajudando as famílias no que for preciso; o lugar exato do mar é debatido. O viajante não guia ninguém nem muda o que o relato conta: à noite, apenas acompanhará de longe o que o texto descreve.",
+				"O viajante é um personagem fictício: o Mapa das Escrituras o leva de um relato a outro como quem vira as páginas de um livro. As famílias do acampamento também são criadas para o jogo."
+			]
+		}
+	},
+	"related_changes": [
+		{"experience": "isaac_wells", "add": {"travel": {"region": "canaan_village", "entry": "default"}}, "why": "voltar de sea_camp à aldeia pelo Mapa das Escrituras"},
+		{"experience": "joseph_dothan", "add": {"travel": {"region": "dothan", "entry": "default"}}, "why": "voltar de sea_camp a Dotã; conferir que não quebra o objetivo open_map de joseph_dothan_road (ele só registra experience_started)"},
+		{"note": "Encadeamento pela ordem do lote (revisão E16-07): requires = joseph_potiphar_house, a missão principal do ep_009."},
+		{"note": "Exod 1:6-8 precisa ser importado em bpm.json se o cartão virar citação; aqui é paráfrase com referência (Exod 1 já está em verse_counts.json)."}
+	]
+}

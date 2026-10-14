@@ -1,0 +1,27 @@
+{
+	"_comment": "Proposta do roteirista (IA) para acrescentar a data/bible/presentations.json. Cada quadro com \"scripture\" mostra o texto da tradução carregada (importar antes: Exod 14:1-2, 14:9-10, 14:13-14, 14:19-20, 14:30-31; 14:21 e 14:22 já existem em bpm.json). \"text\" é nota própria do jogo, separada da citação. O quadro de Êx 14:27-28 é só nota própria (sem citação nem imagem), conforme four_experiences_decisions.md. Leitura opcional: aberta pelo examinável sea_far_view e pelo diário; não é objetivo.",
+	"presentations": [
+		{
+			"id": "exod_014_sea",
+			"title": "A travessia do mar",
+			"reference": "Exod 14:1-31",
+			"classification": "recorded_event",
+			"story_id": "exod_014_red_sea",
+			"unlock": ["sea_crossing"],
+			"steps": [
+				{"heading": "Junto ao mar", "reference": "Exod 14:1-2", "scripture": "Exod 14:1-2", "text": "Depois de sair do Egito, o povo recebe a ordem de voltar e acampar junto ao mar. Pi-Hairote, Migdol e Baal-Zefom não têm localização segura."},
+				{"heading": "Que mar era esse?", "reference": "Exod 13:18", "text": "Em Êxodo 14, o texto diz apenas \"o mar\". Êxodo 13:18 e 15:4 chamam esse mar, em hebraico, de yam suf: a tradução carregada diz \"Mar Vermelho\", e muitos traduzem \"mar de juncos\". Há propostas no golfo de Suez, no de Ácaba e em lagos e lagunas mais ao norte. Nenhuma é consenso, e o jogo não aponta um lugar."},
+				{"heading": "A perseguição", "reference": "Exod 14:9-10", "scripture": "Exod 14:9-10", "text": "O texto não dá o nome do faraó. No Novo Império egípcio (uma das épocas propostas para o Êxodo; datação debatida), os carros de guerra eram leves e puxados por dois cavalos."},
+				{"heading": "Não tenham medo", "reference": "Exod 14:13-14", "scripture": "Exod 14:13-14", "text": "Depois do medo e da queixa do povo (Êx 14:10-12), Moisés fala ao povo. Estas são as únicas palavras dele ao povo neste capítulo."},
+				{"heading": "A nuvem passa para trás", "reference": "Exod 14:19-20", "scripture": "Exod 14:19-20", "text": "A coluna que ia à frente se põe entre os dois acampamentos durante a noite. Para quem era a escuridão e para quem era a luz, as traduções e os intérpretes divergem."},
+				{"heading": "O vento a noite toda", "reference": "Exod 14:21", "scripture": "Exod 14:21", "text": "O texto atribui ao SENHOR o recuo do mar, por meio de um forte vento oriental que sopra a noite inteira: um processo, não um instante. Moisés estende a mão; o texto não descreve nada saindo dela."},
+				{"heading": "Em terra seca", "reference": "Exod 14:22", "scripture": "Exod 14:22", "text": "Uns leem o \"muro\" das águas ao pé da letra; outros, como imagem. O versículo 29 repete a mesma descrição."},
+				{"heading": "As águas voltam", "reference": "Exod 14:27-28", "text": "Os egípcios entram atrás do povo, e na vigília da manhã o exército é lançado em confusão (Êx 14:23-25). Ao amanhecer, as águas voltam e cobrem os carros, os cavaleiros e todo o exército que tinha entrado no mar (Êx 14:27-28). O texto não diz que o faraó morreu. O jogo não mostra esse momento."},
+				{"heading": "Temor e fé", "reference": "Exod 14:30-31", "scripture": "Exod 14:30-31", "text": "O capítulo termina com o povo diante do mar: o temor ao SENHOR e a confiança nele e em Moisés."},
+				{"heading": "Tamborins", "reference": "Exod 15:20-21", "text": "Êxodo 15 traz o cântico de Moisés e dos israelitas e conta que Miriã, a profetisa, e as mulheres saíram com tamborins e danças (Êx 15:1, 20-21). No jogo, os tamborins são só ouvidos ao longe."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "Os trechos foram tirados de Êxodo 14; leia o capítulo inteiro numa Bíblia para conhecer o relato completo. As notas são do jogo. A data da saída do Egito e o lugar exato do mar são debatidos. O viajante, Tzvi, Shira, Beni, Dror, Nava, Meret e o acampamento são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Notas próprias conferidas pelo agente de IA com a BPM (arquivo oficial). Pendente de decisão humana: citar 14:30 inteiro (inclui os mortos na praia, só como texto) ou só 14:30a e 14:31 (design.md §13, item 4). Exige importação BPM dos trechos citados. Aguarda revisão humana."}
+		}
+	]
+}

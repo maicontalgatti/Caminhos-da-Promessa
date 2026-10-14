@@ -50,7 +50,58 @@ const PALETTES := {
 		"Areia": "#d7c29a",
 		"Luz suave": "#fff3c4",
 	},
+	"egito_casa": {
+		"Areia do deserto": "#e3bf86",
+		"Terra negra": "#5e4a3a",
+		"Tijolo de barro": "#a8794e",
+		"Caiado": "#efe6d2",
+		"Linho": "#f2ecdc",
+		"Verde irrigado": "#6f8f3c",
+		"Agua do canal": "#3f8f8a",
+		"Palmeira": "#5e7f3a",
+	},
+	"margem_do_mar": {
+		"Areia da praia": "#e6c48e",
+		"Areia molhada": "#c9a26c",
+		"Mar fundo": "#1f5f7a",
+		"Mar raso": "#3a8fb0",
+		"Espuma": "#d8ecea",
+		"Pelo de cabra": "#3d302a",
+		"Rocha da crista": "#92765c",
+	},
+	"belem_campos": {
+		"Cevada madura": "#d9b860",
+		"Restolho": "#cdb682",
+		"Pedra calcaria": "#d6ccb4",
+		"Reboco": "#c9a57a",
+		"Verde oliva": "#7a8b3a",
+		"Madeira": "#795437",
+	},
 }
+
+# Atlas das terras novas (v0.5): 8 colunas x 16 linhas de 16x16, usado como
+# fonte 1 de assets/tilesets/lands_tileset.tres (a fonte 0 é o atlas de Canaã).
+const LANDS_SOURCE := 1
+const LANDS_ROWS := 16
+const SAND := [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+const SOIL := [Vector2i(4, 0), Vector2i(5, 0)]
+const ROCK := [Vector2i(6, 0), Vector2i(7, 0)]
+const SAND_RIPPLE := Vector2i(0, 1)
+const SHELLS := Vector2i(1, 1)
+const DESERT_TUFT := Vector2i(2, 1)
+const CROP_ROWS := Vector2i(3, 1)
+const CROP_ROWS_B := Vector2i(4, 1)
+const WATER_GLINT := Vector2i(5, 1)
+const STRAW := Vector2i(6, 1)
+const LOTUS := Vector2i(7, 1)
+## Sobreposições (autotile) do atlas novo, mesma máscara de vizinhos.
+const LANDS_OVERLAY_SOIL := 2
+const LANDS_OVERLAY_WATER := 4
+const LANDS_OVERLAY_FLOOR := 6
+const LANDS_OVERLAY_BARLEY := 8
+const LANDS_OVERLAY_STUBBLE := 10
+const LANDS_OVERLAY_GREEN := 12
+const LANDS_OVERLAY_ROCK := 14
 
 # Atlas de tiles: 8 colunas x 8 linhas de 16x16.
 const TILE := 16

@@ -1,0 +1,161 @@
+{
+	"_comment": "Proposta do roteirista (IA, 2026-10-14). 'discoveries' vai para data/bible/discoveries.json; 'collectible_sets' e 'collectibles' vão para data/collectibles/bethlehem_fields.json (conjunto bethlehem_harvest, citado pelos diálogos bf_*). Resumos próprios, sem citação de tradução; termos isolados entre aspas são da BPM. Pré-requisitos: Lev 19, Lev 23 e Deut 24 em data/bible/verse_counts.json; pessoas ruth, naomi, boaz e lugar bethlehem_fields de bible_entries.proposal.json. related.events e related.stories ficam vazios: não há evento de Rute em chronology.json nem história em data/bible/stories (criar ruth_002_gleaning lá é decisão do implementador). Tudo pending_review.",
+	"discoveries": [
+		{
+			"id": "bethlehem_judges",
+			"title": "Belém no tempo dos juízes",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "judges",
+			"summary": "Belém era uma pequena aldeia nas colinas de Judá, cercada de campos, oliveiras e encostas de pedra. O livro de Rute se passa no tempo dos juízes, sem dizer o ano nem qual juiz governava.",
+			"bible_note": "Rute 1:1 situa a história no tempo dos juízes; Rute 1:22, no começo da colheita da cevada.",
+			"references": ["Ruth 1:1", "Ruth 1:22"],
+			"sections": [
+				{"kind": "biblical_text", "title": "No texto", "text": "Uma família de Belém de Judá vai para Moabe por causa de uma fome (Rt 1:1). Anos depois, Noemi volta a Belém com a nora Rute, no começo da colheita da cevada (Rt 1:19-22)."},
+				{"kind": "historical", "title": "Uma aldeia das colinas", "text": "Nessa época, as colinas de Judá tinham pequenas aldeias agrícolas, sem palácios. Muitas casas tinham paredes de pedra bruta, pilares por dentro e teto plano de vigas e barro. Grandes jarros com borda em colarinho guardavam grão, azeite e água."},
+				{"kind": "historical", "title": "Pouco se encontrou", "text": "A cidade moderna cobre a Belém antiga, e quase não restam vestígios desse período. Tamanho, muro e porta da aldeia são reconstruídos por comparação com aldeias escavadas da mesma época, como Giloh, ali perto (hipótese)."},
+				{"kind": "chronology", "title": "Sem ano", "text": "O texto não dá ano para a história de Rute. O tempo dos juízes costuma ser associado ao Ferro I, por volta dos séculos XII e XI a.C., datas aproximadas e debatidas. O jogo não atribui ano a esta história."},
+				{"kind": "fiction", "title": "No jogo", "text": "A aldeia do mapa, as casas, a porta e os campos são uma recriação do jogo. O campo de Ilan e os moradores são fictícios; a porta aparece só como cenário."}
+			],
+			"related": {"people": ["naomi", "ruth"], "places": ["bethlehem"], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Contexto segundo research_historical.md do ep_025 (Ferro I, Giloh, casa de pilares, jarro de borda em colarinho); fontes a confirmar. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "barley_harvest",
+			"title": "A colheita da cevada",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "judges",
+			"summary": "A cevada amadurecia primeiro, na primavera; o trigo vinha algumas semanas depois. Ceifeiros cortavam os colmos com a foice, outros amarravam os feixes, e os feixes iam para a eira.",
+			"bible_note": "Rute 1:22 e 2:23 falam da colheita da cevada e da do trigo.",
+			"references": ["Ruth 1:22", "Ruth 2:23"],
+			"sections": [
+				{"kind": "historical", "title": "Da foice à eira", "text": "As foices tinham cabo curvo de madeira e pequenas lâminas de sílex encaixadas; ferramentas de ferro ainda eram raras nas aldeias das colinas. Na eira, um chão batido num lugar com vento, os feixes eram debulhados por bois ou por uma prancha com lascas de pedra, e o vento separava a palha do grão."},
+				{"kind": "chronology", "title": "A estação", "text": "No clima atual da região, a cevada é colhida por volta de abril e maio, e o trigo, de maio a junho. O Calendário de Gezer, uma inscrição de cerca do século X a.C., cita um mês da colheita da cevada. Os meses exatos no tempo de Rute são aproximados."},
+				{"kind": "biblical_text", "title": "No texto", "text": "Noemi e Rute chegam a Belém no começo da colheita da cevada (Rt 1:22). Rute respiga até o fim das colheitas da cevada e do trigo (Rt 2:23)."}
+			],
+			"related": {"people": ["ruth", "naomi"], "places": ["bethlehem", "bethlehem_fields"], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Calendário agrícola e ferramentas segundo research_historical.md (Borowski 1987; Rosen 1997); publicação do Calendário de Gezer a confirmar. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "gleaning_law",
+			"title": "A lei da respiga",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "judges",
+			"summary": "A lei de Israel mandava deixar o canto do campo e as espigas caídas para o pobre e o estrangeiro (Lv 19:9-10; 23:22), e não voltar para buscar o feixe esquecido, que ficava para o estrangeiro, o órfão e a viúva (Dt 24:19).",
+			"bible_note": "Levítico 19:9-10 e 23:22; Deuteronômio 24:19.",
+			"references": ["Lev 19:9-10", "Lev 23:22", "Deut 24:19"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que a lei pede", "text": "Levítico 19:9-10 manda não ceifar até o canto do campo nem recolher as espigas caídas, e faz o mesmo pedido para a vinha: isso fica para o pobre e o estrangeiro. Levítico 23:22 repete a lei no meio do calendário das festas. Deuteronômio 24:19 acrescenta o feixe esquecido no campo, deixado para o estrangeiro, o órfão e a viúva."},
+				{"kind": "historical", "title": "Respigar", "text": "Respigar era andar atrás dos ceifeiros recolhendo o que ficava no chão. Para quem não tinha terra, podia ser o jeito de guardar grão para o resto do ano. Os campos não eram cercados: marcos de pedra separavam as partes de cada família. Como e quando essas leis eram praticadas no tempo dos juízes não se sabe."},
+				{"kind": "interpretation", "title": "Rute e a lei", "text": "O livro de Rute não cita essas leis. Muitos leitores ligam a respiga de Rute, estrangeira e viúva, a elas, e veem na ordem de Boaz de deixar cair espigas de propósito (Rt 2:15-16) uma generosidade além do que a lei pedia. Essa ligação é feita pelo leitor, não pelo texto."},
+				{"kind": "fiction", "title": "No jogo", "text": "Ilan, o campo dele, o canto de cevada em pé e o feixe esquecido são criações do jogo para mostrar o costume."}
+			],
+			"related": {"people": ["ruth", "boaz"], "places": ["bethlehem_fields"], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumos de Lv 19:9-10, Lv 23:22 e Dt 24:19 feitos sobre a BPM pela ficha bíblica do ep_025; Lev 19, Lev 23 e Deut 24 ainda faltam em verse_counts.json. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "ruth_gleaning",
+			"title": "Rute respiga no campo de Boaz",
+			"classification": "recorded_event",
+			"presentation": "toast",
+			"era_id": "judges",
+			"summary": "Em Rute 1:19-2:23, Noemi volta a Belém com a nora Rute no começo da colheita da cevada. Rute respiga na parte do campo que era de Boaz, parente da família de Noemi, e volta para casa com a cevada que juntou.",
+			"bible_note": "Rute 1:19-22 e Rute 2:1-23.",
+			"references": ["Ruth 1:19-22", "Ruth 2:1-23"],
+			"sections": [
+				{"kind": "biblical_text", "title": "A chegada", "text": "Quando Noemi e Rute chegam, a cidade se agita, e as mulheres perguntam se aquela é Noemi. Ela pede para ser chamada Mara: diz que partiu cheia e que o SENHOR a trouxe de volta vazia (Rt 1:21). As duas chegam no começo da colheita da cevada (Rt 1:19-22)."},
+				{"kind": "biblical_text", "title": "No campo de Boaz", "text": "O narrador apresenta Boaz, parente do marido de Noemi. Rute pede para ir respigar e chega à parte do campo que era dele. Boaz saúda os ceifeiros em nome do SENHOR, pergunta quem é a jovem, diz a ela que fique no seu campo, a chama para a refeição dos ceifeiros e manda os jovens deixarem espigas para ela (Rt 2:1-16)."},
+				{"kind": "biblical_text", "title": "De volta para casa", "text": "À tarde, Rute bate o que respigou e leva a cevada à cidade. Noemi abençoa quem a ajudou e, ao ouvir o nome de Boaz, diz que ele é parente próximo, um dos resgatadores da família. Rute respiga até o fim das colheitas da cevada e do trigo (Rt 2:17-23)."},
+				{"kind": "interpretation", "title": "\"Por acaso\"", "text": "O texto diz que Rute chegou \"por acaso\" ao campo de Boaz (Rt 2:3). Muitos leitores veem nisso uma providência discreta de Deus, que o narrador não explica. É uma interpretação, não uma afirmação do texto."},
+				{"kind": "chronology", "title": "Quando", "text": "O texto não dá ano. Sabe-se só a estação: do começo da colheita da cevada até o fim da do trigo (Rt 1:22; 2:23). O que significa ser \"resgatador\" aparece nos capítulos 3 e 4, fora desta experiência."},
+				{"kind": "fiction", "title": "O viajante", "text": "O viajante assiste de longe, do campo vizinho. Ilan, Tova e o campo deles são criações do jogo. Rute, Noemi e Boaz não falam com o viajante: o que eles dizem está só no texto bíblico."}
+			],
+			"related": {"people": ["ruth", "naomi", "boaz"], "places": ["bethlehem", "bethlehem_fields"], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumo próprio de Rt 1:19-2:23 conferido com a paráfrase da ficha bíblica do ep_025 (falas atribuídas a quem as diz no texto). Liberada pela apresentação ruth_002_gleaning. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "harvest_meal",
+			"title": "Comida de colheita",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "judges",
+			"summary": "Na colheita, comia-se no próprio campo: pão, grão tostado no fogo e um líquido azedo em que se molhava o pão. A água ficava em vasilhas na beira do campo.",
+			"bible_note": "Rute 2:14 cita pão, \"vinagre\" e grão tostado na refeição dos ceifeiros.",
+			"references": ["Ruth 2:14", "Ruth 2:9", "Lev 23:14"],
+			"sections": [
+				{"kind": "historical", "title": "Comida de campo", "text": "O grão tostado era feito com espigas ainda verdes ou com grãos postos no fogo: comida simples e típica do tempo da colheita. O \"vinagre\" de Rute 2:14 era provavelmente vinho azedo ou outra bebida ácida, em que se molhava o pão."},
+				{"kind": "biblical_text", "title": "No texto", "text": "Boaz chama Rute para comer com os ceifeiros; ela come, fica satisfeita e ainda sobra (Rt 2:14). Antes, ele a autoriza a beber da água que os jovens tiravam (Rt 2:9). Levítico 23:14 cita o grão tostado entre o que não se comia da nova colheita antes da oferta das primícias."},
+				{"kind": "fiction", "title": "No jogo", "text": "O grão tostado que Tova oferece é um gesto da história do jogo; não vira item."}
+			],
+			"related": {"people": ["ruth", "boaz"], "places": ["bethlehem_fields"], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Sentido do 'vinagre' segundo research_historical.md (hipótese comum, conferir em léxico). Lev 23 falta em verse_counts.json. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		}
+	],
+	"collectible_sets": [
+		{"id": "bethlehem_harvest", "title": "Sinais da colheita", "region": "bethlehem_fields"}
+	],
+	"collectibles": [
+		{
+			"id": "bf_sickle",
+			"set": "bethlehem_harvest",
+			"title": "Foice de sílex",
+			"category": "object",
+			"region": "bethlehem_fields",
+			"classification": "historical_context",
+			"summary": "Foice de cabo curvo de madeira com pequenas lâminas de sílex encaixadas. No tempo dos juízes, lâminas de pedra ainda eram comuns; o ferro era raro nas aldeias das colinas. Esta foice é criada para o jogo.",
+			"references": []
+		},
+		{
+			"id": "bf_pithos",
+			"set": "bethlehem_harvest",
+			"title": "Jarro de borda em colarinho",
+			"category": "object",
+			"region": "bethlehem_fields",
+			"classification": "historical_context",
+			"summary": "Jarro alto com uma borda grossa em volta do gargalo, típico das aldeias das colinas nessa época. Guardava grão, azeite ou água. Este jarro é criado para o jogo.",
+			"references": []
+		},
+		{
+			"id": "bf_parcel_marker",
+			"set": "bethlehem_harvest",
+			"title": "Marco entre os campos",
+			"category": "geographic",
+			"region": "bethlehem_fields",
+			"classification": "historical_context",
+			"summary": "Os campos não tinham cerca; marcos de pedra separavam a parte de cada família. Rute 2:3 fala da \"parte do campo\" que era de Boaz, e Deuteronômio 19:14 proíbe mudar o marco do vizinho.",
+			"references": ["Ruth 2:3", "Deut 19:14"]
+		},
+		{
+			"id": "bf_threshing_floor",
+			"set": "bethlehem_harvest",
+			"title": "A eira",
+			"category": "cultural",
+			"region": "bethlehem_fields",
+			"classification": "historical_context",
+			"summary": "Chão batido num lugar com vento, onde os feixes eram debulhados e o grão era separado da palha. A eira do mapa é mostrada de dia, como lugar de trabalho, e é criada para o jogo.",
+			"references": []
+		},
+		{
+			"id": "bf_shelter",
+			"set": "bethlehem_harvest",
+			"title": "Abrigo de ramos",
+			"category": "cultural",
+			"region": "bethlehem_fields",
+			"classification": "plausible_fiction",
+			"summary": "Um abrigo de galhos para o descanso dos trabalhadores é uma hipótese: Rute 2:7 tem um trecho difícil no hebraico, e as traduções variam. Este abrigo é criado para o jogo.",
+			"references": ["Ruth 2:7"]
+		},
+		{
+			"id": "bf_gate",
+			"set": "bethlehem_harvest",
+			"title": "A porta da aldeia",
+			"category": "geographic",
+			"region": "bethlehem_fields",
+			"classification": "historical_context",
+			"summary": "Na porta da cidade, os moradores se encontravam e resolviam negócios diante de testemunhas. A forma desta porta, simples, com bancos de pedra, é uma reconstrução do jogo.",
+			"references": []
+		}
+	]
+}

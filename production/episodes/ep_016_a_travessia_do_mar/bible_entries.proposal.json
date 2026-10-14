@@ -1,0 +1,41 @@
+{
+	"_comment": "Proposta do roteirista (IA) para acrescentar a data/bible/people.json e data/bible/places.json. Resumos próprios, conferidos com a BPM no arquivo oficial. Época do Êxodo sem data (debatida). Pré-requisito: verse_counts de Exod 2 (25), Exod 3 (22), Exod 15 (27) e Num 26 (65), além dos já pedidos no pacote (Exod 12, Exod 13, Gen 50). '_certainty' é metadado de revisão (people.json não tem campo de certeza); em places, a certeza vai em 'identification'.",
+	"people": [
+		{
+			"id": "moses",
+			"name": "Moisés",
+			"era_id": "exodus",
+			"_certainty": "Época debatida, sem data. O que o jogo afirma vem só do texto.",
+			"places": ["egypt", "exodus_sea"],
+			"references": ["Exod 2:10", "Exod 3:10", "Exod 14:21", "Exod 14:31"],
+			"summary": "Adotado pela filha do faraó, que lhe deu o nome (Êx 2:10). Deus o envia ao faraó para tirar do Egito os filhos de Israel. Junto ao mar, estende a mão sobre as águas; o texto atribui ao SENHOR a abertura do mar.",
+			"relations": [{"person": "miriam", "label": "irmão de"}],
+			"moments": ["Adotado pela filha do faraó, que lhe dá o nome (Êx 2:10)", "Enviado ao faraó (Êx 3:10)", "Estende a mão sobre o mar (Êx 14:21)", "O povo crê no SENHOR e em Moisés (Êx 14:31)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "No jogo, Moisés aparece só como silhueta distante na cena dirigida, sem falas; Êx 14:13-14 aparece por citação da tradução carregada ou por resumo identificado. Aguarda revisão humana."}
+		},
+		{
+			"id": "miriam",
+			"name": "Miriã",
+			"era_id": "exodus",
+			"_certainty": "Época debatida, sem data.",
+			"places": ["exodus_sea"],
+			"references": ["Exod 15:20-21", "Num 26:59"],
+			"summary": "Profetisa, irmã de Arão e de Moisés. Depois da travessia do mar, pega um tamborim, e as mulheres saem atrás dela com tamborins e danças.",
+			"relations": [{"person": "moses", "label": "irmã de"}],
+			"moments": ["Tamborins e danças depois da travessia (Êx 15:20-21)", "Citada entre os filhos de Anrão e Joquebede (Nm 26:59)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "A irmã do menino em Êx 2:4 não é nomeada no texto; a identificação com Miriã é tradicional e fica fora da ficha. Aguarda revisão humana."}
+		}
+	],
+	"places": [
+		{
+			"id": "exodus_sea",
+			"name": "O mar (localização debatida)",
+			"kind": "mar",
+			"identification": "debated",
+			"eras": ["exodus"],
+			"references": ["Exod 13:18", "Exod 14:2", "Exod 14:21-22", "Exod 15:4"],
+			"description": "O mar atravessado pelos israelitas depois da saída do Egito. Êxodo 14 o chama só de \"o mar\"; em outras passagens o nome hebraico é yam suf, traduzido como \"Mar Vermelho\" ou \"mar de juncos\". A localização é debatida: há propostas no golfo de Suez, no de Ácaba e em lagos e lagunas entre o Egito e o Sinai. Pi-Hairote, Migdol e Baal-Zefom (Êx 14:2) também não têm identificação segura.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Sem coordenadas nem marco no mapa. Propostas de localização segundo research_historical.md (não verificadas). Aguarda revisão humana."}
+		}
+	]
+}

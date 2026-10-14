@@ -1,0 +1,124 @@
+{
+	"_comment": "Experiência \"Os pastores de Belém\" (ep_048). Integrado de production/episodes/ep_048_o_nascimento_de_jesus/quest.proposal.json; aguarda revisão humana.",
+	"quests": [
+		{
+			"id": "shepherds_night",
+			"title": "Uma noite nos campos de Belém",
+			"category": "main",
+			"description": "Passe a noite com pastores nos campos perto de Belém, ajude a recolher o rebanho e a manter o fogo e, na vigília, acompanhe de longe o que Lucas 2:8-20 relata.",
+			"type": "story_witness",
+			"classification": "plausible_fiction",
+			"classification_note": "O viajante, Tamir, Shai, o rebanho deles e o posto de vigia são criados para o jogo. O relato de Lucas 2:8-20 é visto de longe em duas cenas dirigidas e lido no diário com o texto da tradução carregada. A luz (sem figura de anjo), os três pastores e a casa são representação; o jogador não muda nem causa nada do relato.",
+			"region": "bethlehem_night",
+			"place_id": "bethlehem",
+			"era_id": "roman_judea",
+			"references": ["Luke 2:8-20"],
+			"theme": "A vigília dos pastores e o anúncio do nascimento em Belém",
+			"people": ["jesus", "mary_mother_of_jesus", "joseph_of_nazareth"],
+			"fictional_characters": ["bn_tamir", "bn_shai"],
+			"intro": "Lucas conta que, quando Jesus nasceu em Belém, havia pastores nos campos da região vigiando o rebanho à noite (Lucas 2:8). Você chega a esses campos ao entardecer.",
+			"start": {"event": "experience_started", "id": "shepherds_bethlehem"},
+			"prerequisites": {"quests_completed": ["ruth_gleaning"], "flags": []},
+			"objectives": [
+				{
+					"id": "meet_tamir",
+					"type": "talk_to_npc",
+					"text": "Fale com o pastor no posto de vigia.",
+					"detail": "O sol está se pondo sobre Belém.",
+					"complete_on": {"event": "custom", "id": "bn_tamir_hello"},
+					"targets": [{"type": "npc", "id": "bn_tamir"}],
+					"hints": [
+						"Onde há rebanho no fim do dia, há um pastor por perto.",
+						"Há fumaça e um abrigo na rocha perto de onde você chegou.",
+						"Siga a trilha a partir da entrada e converse com Tamir, junto ao abrigo de rocha."
+					],
+					"log": "Você chegou aos campos perto de Belém ao entardecer. Tamir, um pastor, contou que algumas ovelhas se afastaram e precisam entrar no aprisco antes da noite."
+				},
+				{
+					"id": "gather_flock",
+					"type": "wait_for_event",
+					"text": "Conduza ao aprisco as 4 ovelhas que se afastaram.",
+					"detail": "O aprisco de pedra fica abaixo do posto de vigia.",
+					"complete_on": {"event": "condition", "id": "bn_flock_gathered", "condition": {"all": [{"flag": "bn_stray_1"}, {"flag": "bn_stray_2"}, {"flag": "bn_stray_3"}, {"flag": "bn_stray_4"}]}},
+					"targets": [{"type": "examinable", "id": "bn_stray_1"}, {"type": "examinable", "id": "bn_stray_2"}, {"type": "examinable", "id": "bn_stray_3"}, {"type": "examinable", "id": "bn_stray_4"}],
+					"hints": [
+						"Ovelhas desgarradas procuram pasto entre pedras e arbustos.",
+						"Tamir disse: uma nos terraços perto da entrada, uma nos espinhos encosta abaixo, uma nas rochas e uma perto da boca da gruta.",
+						"Procure os brilhos nos terraços perto da entrada, nos arbustos encosta abaixo, nas rochas e na boca da gruta, e examine cada animal."
+					],
+					"log": "Você conduziu as ovelhas desgarradas até o aprisco de pedra."
+				},
+				{
+					"id": "kindle_fire",
+					"type": "deliver_item",
+					"text": "Junte 3 lenhas secas e leve a Tamir.",
+					"detail": "Lenha é escassa na encosta: galhos secos de arbustos espinhosos.",
+					"complete_on": {"event": "custom", "id": "bn_tamir_fire"},
+					"targets": [{"type": "pickup", "id": "bn_wood_1"}, {"type": "pickup", "id": "bn_wood_2"}, {"type": "pickup", "id": "bn_wood_3"}, {"type": "pickup", "id": "bn_wood_4"}, {"type": "npc", "id": "bn_tamir"}],
+					"hints": [
+						"A noite no campo é escura e fria sem fogo.",
+						"Há galhos secos junto aos arbustos espalhados pela encosta.",
+						"Pegue 3 lenhas secas (E perto do galho) e converse com Tamir no posto de vigia."
+					],
+					"log": "Você levou lenha a Tamir. O fogo foi aceso, a noite caiu, e Tamir combinou os turnos da vigília."
+				},
+				{
+					"id": "night_watch",
+					"type": "observe_scene",
+					"text": "Fique de vigia no posto enquanto Tamir dorme.",
+					"detail": "Da pedra do posto se vê o aprisco inteiro e o fogo do portão.",
+					"complete_on": {"event": "scene_finished", "id": "shepherds_announcement"},
+					"targets": [{"type": "examinable", "id": "bn_watch_stone"}],
+					"hints": [
+						"Alguém precisa ficar acordado enquanto os outros dormem.",
+						"A pedra de vigia fica ao lado do fogo de Tamir, de frente para o aprisco.",
+						"Examine a pedra de vigia, junto ao fogo de Tamir, e escolha ficar de vigia."
+					],
+					"log": "Durante a vigília, você viu de longe uma luz ao redor de três pastores (representação), como Lucas 2:8-14 relata. Depois eles combinaram ir a Belém e subiram depressa (Lucas 2:15)."
+				},
+				{
+					"id": "follow_shepherds",
+					"type": "observe_scene",
+					"text": "Siga de longe o caminho até Belém.",
+					"detail": "Os pastores subiram a encosta em direção às casas.",
+					"complete_on": {"event": "scene_finished", "id": "shepherds_at_the_house"},
+					"targets": [{"type": "examinable", "id": "bn_house_view"}],
+					"hints": [
+						"O caminho da encosta leva às casas de Belém.",
+						"O caminho sobe em zigue-zague até um muro de terraço, abaixo de uma casa encostada na rocha.",
+						"Suba o caminho até a oliveira junto ao muro de terraço e examine o ponto de observação."
+					],
+					"log": "De longe, você viu os pastores subirem a uma casa (representação do jogo). Lucas 2:16 diz que encontraram Maria, José e o bebê na manjedoura."
+				},
+				{
+					"id": "return_to_fire",
+					"type": "talk_to_npc",
+					"text": "Volte ao fogo e converse com Tamir.",
+					"detail": "Tamir acordou.",
+					"complete_on": {"event": "custom", "id": "bn_tamir_after"},
+					"targets": [{"type": "npc", "id": "bn_tamir"}],
+					"hints": [
+						"O turno de vigília terminou.",
+						"Tamir está de pé junto ao fogo do posto de vigia.",
+						"Desça o caminho e converse com Tamir no posto de vigia."
+					],
+					"log": "Tamir contou que ouviu os pastores voltarem louvando a Deus e contarem o que lhes fora dito sobre um menino. Tamir é fictício; Lucas 2:17-18 não diz quem ouviu."
+				}
+			],
+			"rewards": {"flags": ["kept_night_watch"]},
+			"discoveries": ["bethlehem_first_century", "night_shepherding", "glory_around_shepherds", "manger_katalyma", "shepherds_told"],
+			"completion": {
+				"title": "O que eles ouviram e viram",
+				"references": ["Luke 2:8-20"],
+				"summary": [
+					"Lucas 2:8-14 relata que a glória do Senhor brilhou ao redor de pastores que vigiavam o rebanho à noite e que um anjo anunciou o nascimento, na cidade de Davi, de um Salvador; uma multidão do exército celestial louvava a Deus.",
+					"Os pastores foram depressa a Belém, encontraram Maria, José e o bebê deitado na manjedoura, contaram o que tinham ouvido e voltaram glorificando e louvando a Deus (Lucas 2:15-20).",
+					"O viajante, Tamir, Shai e o rebanho deles são criações do jogo. A luz, os três pastores e a casa são representação: o texto não descreve o anjo nem diz quantos pastores eram."
+				],
+				"unlock": [],
+				"next": "Lucas 2:21 continua com o oitavo dia; essa parte não faz parte desta experiência."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA). Referências conferidas contra a ficha bíblica do ep_048 e verse_counts.json. Textos do roteirista (IA) em dialogues/discoveries/presentations.proposal.json. Decisões do coordenador aplicadas: nota curta da variante de Lc 2:14 só no diário; Tamir só repete, em paráfrase identificada, o que Lc 2:17-18 permite (e a volta louvando, 2:20). Ids de personagens com prefixo bn_. Aguarda verificador bíblico e revisão humana."}
+		}
+	]
+}

@@ -1,0 +1,64 @@
+{
+	"_comment": "Experiência \"José no Egito\" (ep_009). Integrado de production/episodes/ep_009_jose_na_casa_de_potifar/quest.proposal.json; aguarda revisão humana.",
+	"quests": [
+		{
+			"id": "egypt_house_life",
+			"title": "A vida na casa egípcia",
+			"category": "exploration",
+			"description": "Examine os lugares de trabalho da propriedade e registre o que encontrar em Minhas descobertas.",
+			"type": "investigation",
+			"classification": "historical_context",
+			"classification_note": "Tanque, forno, tear, jarros e shaduf ilustram a vida numa grande casa egípcia; os objetos do mapa são recriações do jogo. O shaduf é atestado com segurança a partir de um período posterior (hipótese).",
+			"region": "egypt_house",
+			"place_id": "egypt",
+			"era_id": "patriarchs",
+			"references": ["Gen 39:2"],
+			"theme": "O cotidiano de uma grande casa egípcia",
+			"people": [],
+			"fictional_characters": [],
+			"intro": "Uma grande casa egípcia era também um lugar de trabalho. Observe e registre.",
+			"start": {"event": "region_entered", "id": "egypt_house"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "first_life",
+					"type": "discover_information",
+					"text": "Encontre um primeiro registro da vida na casa.",
+					"complete_on": {"event": "collection", "id": "egypt_house_life", "count": 1},
+					"targets": [{"type": "examinable", "id": "eh_pool"}, {"type": "examinable", "id": "eh_oven"}, {"type": "examinable", "id": "eh_loom"}, {"type": "examinable", "id": "eh_jars"}, {"type": "examinable", "id": "eh_shaduf"}],
+					"hints": [
+						"Cada canto da casa tem um trabalho.",
+						"O tanque do jardim e o forno da cozinha ficam dentro do muro, a oeste.",
+						"Examine o tanque com lótus, no jardim a noroeste."
+					],
+					"log": "Você começou a registrar a vida na casa egípcia."
+				},
+				{
+					"id": "all_life",
+					"type": "discover_information",
+					"text": "Complete os 5 registros da vida na casa.",
+					"complete_on": {"event": "collection_completed", "id": "egypt_house_life"},
+					"targets": [{"type": "examinable", "id": "eh_pool"}, {"type": "examinable", "id": "eh_oven"}, {"type": "examinable", "id": "eh_loom"}, {"type": "examinable", "id": "eh_jars"}, {"type": "examinable", "id": "eh_shaduf"}],
+					"hints": [
+						"Falta pouco.",
+						"Procure o tear no pátio, os jarros no depósito e o balancim junto ao canal.",
+						"Abra o diário (J), aba Descobertas, para ver quais registros faltam."
+					],
+					"log": "Você completou os registros da vida na casa egípcia."
+				}
+			],
+			"discoveries": ["egyptian_household"],
+			"completion": {
+				"title": "Registros completos",
+				"references": [],
+				"summary": [
+					"Jardins com tanque, fornos, teares, depósitos e canais mostram como trabalhava uma grande casa egípcia.",
+					"Os objetos do mapa são recriações do jogo."
+				],
+				"unlock": [],
+				"next": "Gênesis 39:2 diz que José estava na casa do seu senhor egípcio; o texto não descreve a casa. Estes registros são contexto histórico."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Contexto aguarda o revisor histórico (shaduf, forno, tear horizontal) e revisão humana."}
+		}
+	]
+}

@@ -1,20 +1,42 @@
 {
 	"episode": "ep_025_rute_noemi_e_boaz",
+	"_comment": "Veredito de agente nunca é 'verified'. Só uma pessoa preenche human.approved_by. Escopo: experiência 'Rute em Belém' (Rt 1:19-2:23); caps. 3-4 fora.",
 	"biblical": {
-		"verdict": "pending",
-		"reviewer_agent": "",
-		"date": ""
+		"verdict": "ok_for_human_review",
+		"reviewer_agent": "biblical-verifier (subagente 9a258f05-e63f-4bc5-a968-18b76ecaf0b1)",
+		"date": "2026-10-14",
+		"scope": "dialogues, discoveries, presentations, scenes, experience, bible_entries, characters, items e textos de quest.proposal.json do pacote",
+		"limits": "Rt 1:1-5, 1:19-2:23, Lv 19:9-10, 23:14, 23:22, Dt 19:14, 24:19, 1Sm 16-17 conferidos contra o VPL oficial. Exibição no jogo não executada na revisão.",
+		"first_pass": "changes_required (V01..V08)",
+		"recheck": {"date": "2026-10-14", "verdict": "ok_for_human_review", "result": "V01..V08 resolvidos."}
 	},
 	"historical": {
-		"verdict": "pending",
-		"reviewer_agent": "",
-		"date": ""
+		"verdict": "ok_for_human_review",
+		"reviewer_agent": "historical-reviewer (subagente 35e5b3cb-e00e-431d-bb5b-2c1f25678a32)",
+		"date": "2026-10-14",
+		"scope": "textos, descrições visuais, props e cenas propostos, contra research_historical.md",
+		"limits": "Fontes citadas de memória ('a confirmar' na ficha).",
+		"recheck": {"date": "2026-10-14", "verdict": "ok_for_human_review", "result": "H12, H13 resolvidos."}
 	},
-	"findings": [],
+	"findings": [
+		{"id": "V01", "source": "biblical", "severity": "minor", "status": "resolved", "where": "ruth_gleaning bring_sheaves.log", "problem": "Dt 24:19 citado para canto e espigas; Lv 19 sem órfão/viúva.", "fix": "Canto e espigas: pobre e estrangeiro (Lv 19:9-10; 23:22); Dt 24:19 só para o feixe esquecido."},
+		{"id": "V02", "source": "biblical", "severity": "minor", "status": "resolved", "where": "ruth_gleaning completion", "problem": "Mesma mistura.", "fix": "Leis separadas."},
+		{"id": "V03", "source": "biblical", "severity": "minor", "status": "resolved", "where": "watch_field.log e cena", "problem": "'Meio-dia' não está no texto.", "fix": "'a refeição dos ceifeiros'."},
+		{"id": "V04", "source": "biblical", "severity": "low", "status": "resolved", "where": "bf_ilan_talk.law_ref", "problem": "Lv 19:10 trata da vinha.", "fix": "Lev 23:22."},
+		{"id": "V05", "source": "biblical", "severity": "low", "status": "resolved", "where": "discoveries ruth_gleaning", "problem": "Omitia o agente de Rt 1:21.", "fix": "'o SENHOR a trouxe de volta vazia'."},
+		{"id": "V06", "source": "biblical", "severity": "low", "status": "resolved", "where": "bible_entries ruth", "problem": "Motivo inferido.", "fix": "'leva a cevada à sogra (Rt 2:18)'."},
+		{"id": "V07", "source": "biblical", "severity": "low", "status": "resolved", "where": "bf_ilan_talk.news_ref", "problem": "Referência menor que a nota.", "fix": "Ruth 1:19-22."},
+		{"id": "V08", "source": "biblical", "severity": "info", "status": "resolved", "where": "experience requires", "problem": "Fora do encadeamento.", "fix": "exodus_sea_crossing."},
+		{"id": "H12", "source": "historical", "severity": "low", "status": "resolved", "where": "gleaning_law", "problem": "Prática na época dos juízes como certa.", "fix": "'Como e quando essas leis eram praticadas no tempo dos juízes não se sabe.'"},
+		{"id": "H13", "source": "historical", "severity": "low", "status": "resolved", "where": "bethlehem_judges", "problem": "Casa de pilares como regra no Ferro I.", "fix": "'Muitas casas tinham…'."}
+	],
+	"open_for_human": [
+		"Decisões provisórias: caps. 3-4 fora; Rute, Noemi e Boaz só por legenda e paráfrase identificada.",
+		"Tova (viúva fictícia) pode espelhar Noemi; mantida sem paralelos explícitos."
+	],
 	"human": {
 		"approved_by": "",
 		"date": "",
 		"notes": ""
-	},
-	"_comment": "Veredito de agente nunca é 'verified'. Só uma pessoa preenche human.approved_by."
+	}
 }

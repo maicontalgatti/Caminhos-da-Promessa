@@ -1,0 +1,38 @@
+{
+	"_comment": "Proposta do roteirista (IA, 2026-10-14) para data/items/items.json. Sem moedas e sem medida numérica (o efa nunca recebe número). Os feixes do canto são item próprio para a lição do canto do campo (design.md §2.1); nenhum item é recompensa de missão. Ícones a gerar por tools/art_gen/generate_art.gd.",
+	"items": [
+		{
+			"id": "barley_sheaf",
+			"name": "Feixe de cevada",
+			"category": "material",
+			"description": "Um feixe de colmos de cevada, cortados com a foice e amarrados com palha torcida. Vai para a eira de Ilan.",
+			"history_note": "Na colheita, uns ceifavam e outros amarravam os feixes; depois, os feixes eram levados para a eira para debulhar.",
+			"icon": "res://assets/items/barley_sheaf.png",
+			"max_stack": 6,
+			"no_discard": true,
+			"classification": "historical_context"
+		},
+		{
+			"id": "corner_sheaf",
+			"name": "Feixe do canto do campo",
+			"category": "quest",
+			"essential": true,
+			"description": "Cevada da faixa que ainda estava de pé no canto do campo de Ilan. O canto costuma ficar sem ceifar.",
+			"history_note": "A lei de Israel mandava não ceifar até o canto do campo (Levítico 19:9).",
+			"icon": "res://assets/items/corner_sheaf.png",
+			"max_stack": 2,
+			"classification": "historical_context"
+		},
+		{
+			"id": "tova_grain",
+			"name": "Cevada de Tova",
+			"category": "quest",
+			"essential": true,
+			"description": "Um saco de pano cheio de grãos de cevada, batidos das espigas que Tova respigou. É dela; leve até a casa dela.",
+			"history_note": "Quem respigava batia as espigas com uma vara, ali mesmo no campo, para levar só o grão para casa.",
+			"icon": "res://assets/items/tova_grain.png",
+			"max_stack": 1,
+			"classification": "plausible_fiction"
+		}
+	]
+}

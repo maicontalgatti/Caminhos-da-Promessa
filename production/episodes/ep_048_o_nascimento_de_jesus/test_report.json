@@ -1,0 +1,23 @@
+{
+	"episode": "ep_048_o_nascimento_de_jesus",
+	"overall": "passed",
+	"date": "2026-10-14",
+	"qa_agent": "quest-qa (subagente 8fbce076-1e69-416c-8032-e7ae27fb9c86): auditoria estática; sem shell nessa sessão. Comandos executados pelo coordenador depois das correções.",
+	"runs": [
+		{"cmd": "res://tests/test_runner.tscn", "result": "Realizado e aprovado: 1482 passaram, 0 falharam"},
+		{"cmd": "--script res://tests/flow_smoke.gd", "result": "Realizado e aprovado: 17/17"},
+		{"cmd": "--script res://tools/validate_content.gd", "result": "Realizado e aprovado: SEM ERROS DE DADOS"},
+		{"cmd": "--script res://tools/factory.gd -- check", "result": "Realizado e aprovado: 0 erros em 78 episódios"},
+		{"cmd": "--script res://tools/audio/audit_audio.gd", "result": "Realizado e aprovado: 131 arquivos, 0 problemas"},
+		{"cmd": "capturas em janela (tools/screenshot/capture_v06.tscn)", "result": "Realizado pelo implementador da arte: 5 cenas rodaram até o fim; quadros em docs/images/v06_*.png"},
+		{"cmd": "sessão de jogo humana", "result": "não executado (KI-02)"}
+	],
+	"issues": [
+		{"id": "QA-048-01", "severity": "major", "status": "resolved", "where": "data/quests/bethlehem/shepherds_night.json kindle_fire", "problem": "Concluía pelo evento item_delivered dry_wood já gravado em Dotã; a noite não caía.", "fix": "Conclui pelo evento próprio bn_tamir_fire, emitido no nó deliver de Tamir. Conferido: nenhum outro objetivo novo usa item que exista antes."},
+		{"id": "QA-048-02", "severity": "major", "status": "resolved", "where": "data/scenes/shepherds_announcement.json", "problem": "Avisos de representação substituídos antes de aparecer.", "fix": "wait: true em todas as legendas; validador recusa o caso."},
+		{"id": "QA-048-03", "severity": "low", "status": "resolved", "where": "data/scenes/shepherds_at_the_house.json", "problem": "Legenda de contexto ~3,6 s.", "fix": "wait: true."},
+		{"id": "QA-048-04", "severity": "low", "status": "deferred", "where": "data/regions/bethlehem_night.json _ambient_*_proposed", "problem": "Não suportado pelo GameMap.", "fix": "KI-20."}
+	],
+	"verdict": "pass_with_issues",
+	"verdict_note": "Sem bloqueadores; problemas major corrigidos e cobertos por teste; restam itens low adiados. Sem sessão de jogo humana."
+}

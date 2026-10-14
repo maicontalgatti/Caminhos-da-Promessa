@@ -1,0 +1,134 @@
+{
+	"_comment": "Proposta do quest-designer (IA) para data/regions/sea_camp.json, no formato de dothan.json/caravan_road.json. Campos marcados como _proposed (lighting, ambient_effects, ambient_sfx) exigem código pequeno (design.md §12). Mapa 64x72 tiles (1024x1152 px): margem sul (acampamento), mar com colisão contínua nas linhas 18-41, margem norte (amanhecer). Estados: PRE_NIGHT = not_flag sea_night; NIGHT = flag sea_night e não DAWN; DAWN = evento scene_finished:exodus_sea_crossing. _layout é para tools/art_gen/build_regions.gd (não vai para o JSON da região).",
+	"regions": [
+		{
+			"id": "sea_camp",
+			"display_name": "Acampamento junto ao mar",
+			"area_label": "Junto ao mar (localização debatida)",
+			"subtitle": "Época do Êxodo (datação debatida)",
+			"biome": "desert_coast",
+			"map_scene": "res://scenes/maps/sea_camp.tscn",
+			"classification": "plausible_fiction",
+			"notes": "Acampamento fictício inspirado em Êxodo 14:1-2 e 14:9 (o povo acampa junto ao mar). O nome hebraico do mar (yam suf) e o lugar exato são debatidos; Pi-Hairote, Migdol e Baal-Zefom não têm identificação segura e não são marcados no mapa. Famílias, tendas, rebanhos e a fonte junto às tamareiras são criados para o jogo. O corredor entre as margens só aparece na cena dirigida.",
+			"related_stories": ["exod_014_red_sea"],
+			"context": {
+				"place_id": "exodus_sea",
+				"era_id": "exodus",
+				"references": ["Exod 14:1-2"],
+				"theme": "O acampamento junto ao mar",
+				"discoveries_on_enter": []
+			},
+			"entries": {
+				"default": {"x": 904, "y": 968, "facing": "left"},
+				"arrival": {"x": 904, "y": 968, "facing": "left"},
+				"far_shore_dawn": {"x": 512, "y": 236, "facing": "down"}
+			},
+			"exits": [],
+			"areas": [
+				{"id": "shore_encampment", "rect": [400, 800, 256, 128], "label": "Centro do acampamento"},
+				{"id": "south_lookout", "rect": [288, 976, 96, 64], "label": "Elevação junto às cristas"},
+				{"id": "shore_gathering", "rect": [672, 672, 224, 48], "label": "Beira da água"},
+				{"id": "far_shore", "rect": [384, 192, 256, 80], "label": "A outra margem"}
+			],
+			"npcs": [
+				{"id": "sea_tzvi", "character": "sea_tzvi", "x": 560, "y": 836, "visible_if": {"not_flag": "sea_chariots_seen"}},
+				{"id": "sea_tzvi_shore", "character": "sea_tzvi", "x": 720, "y": 690, "visible_if": {"all": [{"flag": "sea_chariots_seen"}, {"not": {"event": "scene_finished", "id": "exodus_sea_crossing"}}]}},
+				{"id": "sea_tzvi_dawn", "character": "sea_tzvi", "x": 600, "y": 204, "visible_if": {"event": "scene_finished", "id": "exodus_sea_crossing"}},
+
+				{"id": "sea_shira", "character": "sea_shira", "x": 300, "y": 804, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "sea_shira_shore", "character": "sea_shira", "x": 770, "y": 700, "visible_if": {"all": [{"flag": "sea_night"}, {"not": {"event": "scene_finished", "id": "exodus_sea_crossing"}}]}},
+				{"id": "sea_shira_dawn", "character": "sea_shira", "x": 448, "y": 184, "visible_if": {"event": "scene_finished", "id": "exodus_sea_crossing"}},
+
+				{"id": "sea_beni", "character": "sea_beni", "x": 334, "y": 836, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "sea_beni_shore", "character": "sea_beni", "x": 790, "y": 712, "visible_if": {"all": [{"flag": "sea_night"}, {"not": {"event": "scene_finished", "id": "exodus_sea_crossing"}}]}},
+				{"id": "sea_beni_dawn", "character": "sea_beni", "x": 472, "y": 200, "visible_if": {"event": "scene_finished", "id": "exodus_sea_crossing"}},
+
+				{"id": "sea_dror", "character": "sea_dror", "x": 760, "y": 806, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "sea_dror_shore", "character": "sea_dror", "x": 840, "y": 694, "visible_if": {"all": [{"flag": "sea_night"}, {"not": {"event": "scene_finished", "id": "exodus_sea_crossing"}}]}},
+				{"id": "sea_dror_dawn", "character": "sea_dror", "x": 760, "y": 150, "visible_if": {"event": "scene_finished", "id": "exodus_sea_crossing"}},
+
+				{"id": "sea_nava", "character": "sea_nava", "x": 636, "y": 958, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "sea_nava_shore", "character": "sea_nava", "x": 690, "y": 704, "visible_if": {"all": [{"flag": "sea_night"}, {"not": {"event": "scene_finished", "id": "exodus_sea_crossing"}}]}},
+				{"id": "sea_nava_dawn", "character": "sea_nava", "x": 300, "y": 150, "visible_if": {"event": "scene_finished", "id": "exodus_sea_crossing"}},
+
+				{"id": "sea_meret", "character": "sea_meret", "x": 452, "y": 930, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "sea_meret_dawn", "character": "sea_meret", "x": 380, "y": 128, "visible_if": {"event": "scene_finished", "id": "exodus_sea_crossing"}},
+
+				{"id": "sheep_s1", "character": "sheep", "x": 730, "y": 870, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "sheep_s2", "character": "sheep", "x": 770, "y": 890, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "goat_s1", "character": "goat", "x": 800, "y": 866, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "goat_s2", "character": "goat", "x": 750, "y": 906, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "donkey_s1", "character": "donkey", "x": 850, "y": 880, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "stray_back_1", "character": "sheep", "x": 790, "y": 910, "visible_if": {"all": [{"flag": "sea_stray_1"}, {"not_flag": "sea_night"}]}},
+				{"id": "stray_back_2", "character": "goat", "x": 716, "y": 896, "visible_if": {"all": [{"flag": "sea_stray_2"}, {"not_flag": "sea_night"}]}},
+				{"id": "stray_back_3", "character": "sheep", "x": 820, "y": 900, "visible_if": {"all": [{"flag": "sea_stray_3"}, {"not_flag": "sea_night"}]}},
+
+				{"id": "sheep_n1", "character": "sheep", "x": 740, "y": 128, "visible_if": {"event": "scene_finished", "id": "exodus_sea_crossing"}},
+				{"id": "sheep_n2", "character": "sheep", "x": 780, "y": 140, "visible_if": {"event": "scene_finished", "id": "exodus_sea_crossing"}},
+				{"id": "goat_n1", "character": "goat", "x": 812, "y": 124, "visible_if": {"event": "scene_finished", "id": "exodus_sea_crossing"}},
+				{"id": "donkey_n1", "character": "donkey", "x": 840, "y": 170, "visible_if": {"event": "scene_finished", "id": "exodus_sea_crossing"}}
+			],
+			"examinables": [
+				{"id": "sea_dust_view", "x": 328, "y": 996, "prop": "rock_big", "dialogue": "sea_dust_view", "prompt": "Observar o horizonte", "center_y": -6, "prompt_y": -24, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "sea_bundle", "x": 282, "y": 816, "prop": "kneading_bundle", "_provisional_prop": "sacks", "dialogue": "sea_bundle", "prompt": "Examinar a trouxa", "prompt_y": -18, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "sea_shelter", "x": 180, "y": 780, "prop": "cloth_shelter", "_provisional_prop": "tent", "dialogue": "sea_shelter", "prompt": "Examinar o abrigo", "prompt_y": -24, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "sea_reeds", "x": 980, "y": 700, "prop": "reeds", "dialogue": "sea_reeds", "prompt": "Examinar os juncos", "prompt_y": -18, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "sea_seep", "x": 936, "y": 860, "dialogue": "sea_seep", "prompt": "Examinar a fonte", "marker": "sparkle", "radius": 14, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "sea_stray_1", "x": 120, "y": 1000, "dialogue": "sea_stray_1", "prompt": "Seguir o balido", "marker": "sparkle", "radius": 12, "visible_if": {"all": [{"quest_active": "sea_camp_flock"}, {"not_flag": "sea_stray_1"}, {"not_flag": "sea_night"}]}},
+				{"id": "sea_stray_2", "x": 470, "y": 1008, "dialogue": "sea_stray_2", "prompt": "Seguir o balido", "marker": "sparkle", "radius": 12, "visible_if": {"all": [{"quest_active": "sea_camp_flock"}, {"not_flag": "sea_stray_2"}, {"not_flag": "sea_night"}]}},
+				{"id": "sea_stray_3", "x": 990, "y": 760, "dialogue": "sea_stray_3", "prompt": "Seguir o balido", "marker": "sparkle", "radius": 12, "visible_if": {"all": [{"quest_active": "sea_camp_flock"}, {"not_flag": "sea_stray_3"}, {"not_flag": "sea_night"}]}},
+				{"id": "sea_far_view", "x": 512, "y": 268, "prop": "boundary_stone", "dialogue": "sea_far_view", "prompt": "Olhar o mar", "center_y": -6, "prompt_y": -24, "visible_if": {"event": "scene_finished", "id": "exodus_sea_crossing"}}
+			],
+			"pickups": [
+				{"id": "brushwood_1", "item": "brushwood", "x": 160, "y": 900, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "brushwood_2", "item": "brushwood", "x": 560, "y": 1000, "visible_if": {"not_flag": "sea_night"}},
+				{"id": "brushwood_3", "item": "brushwood", "x": 880, "y": 1010, "visible_if": {"not_flag": "sea_night"}}
+			],
+			"lighting_proposed": [
+				{"id": "dawn", "if": {"event": "scene_finished", "id": "exodus_sea_crossing"}, "modulate": "#FFE6CC"},
+				{"id": "night", "if": {"flag": "sea_night"}, "modulate": "#5A6490"},
+				{"id": "dusk", "if": {"flag": "sea_chariots_seen"}, "modulate": "#F2C8A0"},
+				{"id": "afternoon", "modulate": "#FFF2DC"}
+			],
+			"ambient_effects_proposed": [
+				{"id": "pillar_ahead_day", "effect": "pillar", "at": [560, 560], "params": {"form": "cloud", "height_px": 96}, "if": {"all": [{"not_flag": "sea_night"}, {"not": {"event": "scene_finished", "id": "exodus_sea_crossing"}}]}},
+				{"id": "pillar_ahead_night", "effect": "pillar", "at": [560, 560], "params": {"form": "fire", "height_px": 96, "light_radius": 160}, "if": {"all": [{"flag": "sea_night"}, {"not": {"event": "scene_finished", "id": "exodus_sea_crossing"}}]}},
+				{"id": "pillar_dawn_far", "effect": "pillar", "at": [512, 24], "params": {"form": "cloud", "height_px": 72, "opacity": 0.5}, "if": {"event": "scene_finished", "id": "exodus_sea_crossing"}, "_pending_decision": "coluna no amanhecer: discreta (proposta) ou omitida"},
+				{"id": "chariot_dust", "effect": "dust", "at": [160, 1140], "params": {"far": true, "chariots": 4}, "if": {"all": [{"flag": "sea_chariots_seen"}, {"not_flag": "sea_night"}]}},
+				{"id": "camp_fires", "effect": "light_glow", "at": [[528, 848], [320, 812], [780, 832]], "params": {"radius": 40, "color": "#F2A93B"}, "if": {"any": [{"flag": "sea_chariots_seen"}, {"flag": "sea_night"}]}},
+				{"id": "dawn_smoke", "effect": "light_glow", "at": [[560, 140]], "params": {"radius": 0, "smoke": true}, "if": {"event": "scene_finished", "id": "exodus_sea_crossing"}}
+			],
+			"ambient_sfx_proposed": [
+				{"if": {"event": "scene_finished", "id": "exodus_sea_crossing"}, "loops": ["amb_sea_calm"]},
+				{"if": {"flag": "sea_night"}, "loops": ["amb_sea_calm", "amb_campfire"]},
+				{"loops": ["amb_sea_calm", "amb_wind_light"]}
+			],
+			"_layout": {
+				"scene": "res://scenes/maps/sea_camp.tscn", "node": "SeaCamp", "size": [64, 72],
+				"bands_tiles": {
+					"north_crest": [0, 5], "north_plain": [6, 14], "north_beach": [15, 17],
+					"sea": [18, 41], "sea_shallow_rows": [18, 19, 40, 41],
+					"south_beach": [42, 44], "camp": [45, 63], "south_rim": [64, 71]
+				},
+				"corridor_visual_only": {"cols_wall_left": [28, 29], "cols_floor": [30, 33], "cols_wall_right": [34, 35], "rows": [18, 41]},
+				"south_rim_gap_cols": [6, 13],
+				"lookout_cols": [18, 23],
+				"collision": "mar inteiro (linhas 18-41) sólido; cristas norte e sul sólidas exceto o vão sul (que só mostra o horizonte, sem passagem)",
+				"props": [
+					["tent_worn", 260, 776], ["tent_worn", 470, 772], ["tent_worn", 700, 770], ["tent_worn", 620, 940], ["tent_worn", 820, 780],
+					["cloth_shelter", 180, 780], ["cloth_shelter", 380, 760], ["cloth_shelter", 560, 760], ["cloth_shelter", 900, 790], ["cloth_shelter", 220, 940], ["cloth_shelter", 520, 960],
+					["firepit_small", 528, 848], ["bread_stone_fire", 320, 812], ["firepit_small", 780, 832],
+					["skins_tripod", 620, 952], ["jar", 640, 944], ["pots", 300, 790], ["kneading_bundle", 282, 816], ["sacks", 860, 900],
+					["tamarisk", 120, 760], ["tamarisk", 400, 900], ["tamarisk", 980, 960], ["tamarisk", 60, 900],
+					["date_palm", 920, 840], ["date_palm", 960, 880],
+					["reeds", 980, 700], ["reeds", 940, 690], ["reeds", 80, 690], ["reeds", 120, 300], ["reeds", 900, 300],
+					["rock_crest", 300, 1060], ["rock_crest", 620, 1080], ["dune", 820, 1080], ["rock_big", 100, 1010], ["rock_crest", 460, 1030],
+					["cloth_shelter", 420, 120], ["cloth_shelter", 560, 110], ["cloth_shelter", 700, 130], ["sacks", 470, 150], ["firepit_out", 560, 140],
+					["dune", 200, 40], ["rock_crest", 640, 30], ["dune", 900, 50]
+				],
+				"background": ["silhuetas de tendas a leste e a oeste (parallax)", "faixa de poeira com 3-5 carros de 8-10 px no vão sul, só no entardecer"],
+				"forbidden": ["camelo", "galinha", "cavaleiro montado", "poço", "casa", "forno fixo", "cerca de madeira", "oliveira", "barco", "pirâmide", "lua cheia", "estandarte", "ferro", "moeda"]
+			}
+		}
+	]
+}

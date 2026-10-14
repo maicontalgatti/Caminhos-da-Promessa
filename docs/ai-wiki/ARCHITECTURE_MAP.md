@@ -57,6 +57,13 @@ Conferido contra o código em 2026-10-14 (assinaturas abaixo copiadas dos script
 - **Arquivos:** `scripts/world/world_manager.gd` (autoload `WorldManager`), `map_exit.gd` (`MapExit`), `map_area.gd` (`MapArea`), `game_map.gd` (instancia saídas, áreas, NPCs, examináveis e coletáveis do JSON; `find_object(type, id)`), `scripts/core/game.gd` (`_on_travel_requested`: escurece, troca o mapa, título da região, salvamento automático). Dados: `data/regions/<id>.json` (`canaan`, `caravan_road`, `dothan`), `data/world/experiences.json`. Mapas: `scenes/maps/caravan_road.tscn` e `dothan.tscn`, gerados por `tools/art_gen/build_regions.gd`.
 - **Interfaces:** `WorldManager.region(id)`, `current_region_id()`, `exits()`, `is_exit_open()`, `route_exit(de, para)`, `travel(região, entrada)`, `is_picked()/mark_picked()`, `experience_state(id)`, `start_experience(id)`; sinais `travel_requested`, `experience_started`. `ObjectiveGuide.points()` aponta para a saída quando `QuestManager.objective_region(qid)` é outra região.
 - **Cuidados:** regenerar os mapas novos só com `build_regions.gd` (não mexe em `canaan_village.tscn`). Cada alvo de missão precisa existir no JSON ou no `.tscn` da sua região (testes e `factory check`).
+- **Destino, etapas e passagens (ADR-028):** `WorldManager.resolve_travel(t)` (`entry_if`), `experience_destination(id)`, `experience_stage(id)`, `experience_regions(id)`, `pending_passage(id)`, `stage_flag(exp, etapa)`, `travel_with_passage(região, entrada, passage)` + sinal `passage_requested` (`Game` abre o cartão no `ScriptureMap.open_passage`). Saída com `passage`: `MapExit`. Validação sem autoloads: `scripts/world/world_schema.gd` (`WorldSchema.validate_region/validate_experience/validate_lighting/validate_travel`).
+- **Luz por estado (ADR-028):** `GameMap.lighting_tint()`, `refresh_lighting(tempo)`, `set_tint(cor, tempo)`, `lighting_locked` (cena dirigida no controle); o CanvasModulate `Lighting` só é criado quando há tinta.
+
+### Cenas dirigidas (ADR-028)
+- **Arquivos:** `scripts/world/scene_database.gd` (`SceneDatabase`: `load_dir()`, `get_scene()`, `ids_in()`, `validate()`, `validate_links()`, `manifest_sounds()`; sem autoloads), `scene_director.gd` (`SceneDirector`, filho de `Game`), `scene_actor.gd` (`SceneActor`: personagem ou silhueta), `scene_fx.gd` (`SceneFx`: `light_glow`, `pillar`, `wind`, `water_walls`, `dust`). Dados em `data/scenes/*.json` (hoje vazio); dados de teste em `tests/data/scenes/`.
+- **Interfaces:** `Game.play_scene(id) -> bool`; ação de diálogo `{"scene": id}`; `SceneDirector.play(id, map)`, `play_data(cena, map)`, `refusal(cena, map)`, `skip()`, `is_playing()`, sinais `scene_started(id)`, `scene_finished(id, skipped)`; evento de missão `scene_finished`.
+- **Cuidados:** bloqueia a UI com o dono `"scene"`; Esc pula (aplica `on_end`); sem campos novos no save (flags `ev:scene_finished:<id>`); viagem e fechamento da janela pulam a cena antes. Camadas: brilhos na CanvasLayer 1 (`SceneGlow`, acima da tinta), legendas na 39. Formato em [docs/quests.md](../quests.md#cenas-dirigidas-datascenesjson-chave-scenes--adr-028).
 
 ### Itens e colecionáveis (v0.4)
 - **Arquivos:** `scripts/items/inventory.gd` (autoload `Inventory`), `collectibles.gd` (autoload `Collectibles`), `pickup.gd` (coletável no mapa); dados em `data/items/items.json` e `data/collectibles/*.json`; ícones gerados por `tools/art_gen/generate_art.gd`.
@@ -69,7 +76,7 @@ Conferido contra o código em 2026-10-14 (assinaturas abaixo copiadas dos script
   - `cinematic.gd`: prólogo e apresentações; `play_prologue()`, `play_presentation()`, `is_playing()`, sinal `finished(kind, id, skipped)`.
   - `journal.gd` + `journal_content.gd` (`JournalContent`): diário em 6 abas (Jornada por categoria, Escrituras, Personagens, Lugares, Linha do tempo, Descobertas); `open(tab, focus)`, `close()`, sinais `closed`, `presentation_requested`.
   - `inventory_screen.gd`: bolsa (tecla I), camada própria; `open()`, `close()`, sinal `closed`.
-  - `scripture_map.gd` (`ScriptureMap`, camada 37): Mapa das Escrituras (tecla M) com épocas e experiências; sinais `closed`, `atlas_requested`.
+  - `scripture_map.gd` (`ScriptureMap`, camada 37): Mapa das Escrituras (tecla M) com épocas e experiências; botão Iniciar/Continuar/Revisitar para experiências com destino; `open_passage(passage, subtítulo, ao_confirmar)` (cartão de saída); sinais `closed`, `atlas_requested`.
   - `pause_menu.gd`: sinais `journal_requested`, `prologue_requested`.
   - `main_menu.gd`, `dialogue_box.gd`, `ui_style.gd`.
   - `debug_panel.gd`: só em build de debug.
@@ -92,4 +99,4 @@ Conferido contra o código em 2026-10-14 (assinaturas abaixo copiadas dos script
 - **Wiki:** `tools/check_wiki.ps1`.
 
 ### Testes
-`tests/test_runner.gd` + `tests/test_runner.tscn` (suíte principal; chama `tests/world_tests.gd` para regiões, bolsa, escolhas, missões entre regiões e telas, e `tests/audio_tests.gd` para áudio; falha se esses scripts não compilarem), `tests/flow_smoke.gd` (fluxo pelos menus). Capturas da v0.4: `tools/screenshot/capture_v04.tscn`. Ver [TESTING.md](TESTING.md).
+`tests/test_runner.gd` + `tests/test_runner.tscn` (suíte principal; chama `tests/world_tests.gd` para regiões, bolsa, escolhas, missões entre regiões e telas, `tests/audio_tests.gd` para áudio e `tests/scene_tests.gd` para cenas dirigidas, luz por estado e experiências; falha se esses scripts não compilarem), `tests/flow_smoke.gd` (fluxo pelos menus). Capturas da v0.4: `tools/screenshot/capture_v04.tscn`. Ver [TESTING.md](TESTING.md).

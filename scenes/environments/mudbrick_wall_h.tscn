@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/mudbrick_wall_h.png" id="1_slo7s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rltre"]
+size = Vector2(16, 8)
+
+[node name="MudbrickWallH" type="StaticBody2D" unique_id=43006958]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=358147251]
+texture = ExtResource("1_slo7s")
+centered = false
+offset = Vector2(-8, -29)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=775051250]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_rltre")

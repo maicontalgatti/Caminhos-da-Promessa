@@ -35,6 +35,109 @@
 				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "O que acontece em Dotã continua em Gênesis 37:18-36, em outro capítulo desta jornada. As notas são do jogo. O viajante, Malik, Rafi e as famílias de pastores são criações do jogo e não fazem parte deste relato."}
 			],
 			"verification": {"status": "pending_review", "reviewer": "", "notes": "Trechos citados da tradução carregada (BPM, importada do arquivo oficial). Notas do jogo seguem research_missions_v04.md (A.2). Aguarda revisão humana."}
+		},
+		{
+			"id": "gen_037_caravan",
+			"title": "José é levado para o Egito",
+			"reference": "Gen 37:25-28",
+			"classification": "recorded_event",
+			"story_id": "gen_037_joseph_sold",
+			"unlock": ["caravan_to_egypt"],
+			"steps": [
+				{"heading": "Uma caravana de Gileade", "reference": "Gen 37:25", "scripture": "Gen 37:25", "text": "Gileade fica a leste do rio Jordão. Resinas perfumadas como estas eram levadas ao Egito; as plantas exatas são debatidas. O texto não diz quantas pessoas nem quantos animais havia na caravana."},
+				{"heading": "A proposta de Judá", "reference": "Gen 37:26-27", "scripture": "Gen 37:26-27", "text": "Judá é um dos irmãos de José. O texto registra a proposta dele e o acordo dos irmãos, sem comentário do narrador."},
+				{"heading": "Vinte peças de prata", "reference": "Gen 37:28", "scripture": "Gen 37:28", "text": "A prata era pesada, não contada em moedas: moedas cunhadas só surgem muitos séculos depois. O versículo fala de midianitas e de ismaelitas e não deixa claro quem tirou José da cisterna. O jogo não decide."},
+				{"heading": "No Egito", "reference": "Gen 37:36", "scripture": "Gen 37:36", "text": "Potifar volta a aparecer em Gênesis 39. O texto não diz o nome do Faraó nem em que cidade José foi vendido."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "Esta apresentação mostra Gênesis 37:25-28 e 37:36. Resumo do jogo, sem citação: antes, os irmãos planejam matar José, e Rúben os convence a pô-lo numa cisterna (Gn 37:18-24); entre os versículos 28 e 36, Rúben volta e não o encontra, e Jacó, ao reconhecer a túnica de José que os filhos levam a seu pai, chora o filho como morto (Gn 37:29-35). Leia o capítulo inteiro numa Bíblia. As notas são do jogo. O viajante, Malik, Rafi, Talia e Oren são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta do agente de design (IA). Inclui Gen 37:26-27 além do escopo mínimo decidido (37:25-28 cobre). Aguarda verificador bíblico e revisão humana."}
+		},
+		{
+			"id": "gen_039_potiphar",
+			"title": "José na casa de Potifar",
+			"reference": "Gen 39:1-6",
+			"classification": "recorded_event",
+			"story_id": "gen_039_joseph_potiphar",
+			"unlock": ["joseph_steward"],
+			"steps": [
+				{"heading": "Comprado por um oficial", "reference": "Gen 39:1", "scripture": "Gen 39:1", "text": "O texto não diz em que cidade ficava a casa de Potifar nem quem era o Faraó. Em Gênesis 37:36 os vendedores são chamados de midianitas; aqui, de ismaelitas. 'Oficial do Faraó' e 'capitão da guarda' são as palavras desta tradução."},
+				{"heading": "O SENHOR estava com José", "reference": "Gen 39:2-3", "scripture": "Gen 39:2-3", "text": "O narrador repete que o SENHOR estava com José. O texto não diz como Potifar percebeu isso nem quanto tempo levou."},
+				{"heading": "Administrador da casa", "reference": "Gen 39:4", "scripture": "Gen 39:4", "text": "Grandes casas egípcias tinham um administrador que cuidava dos bens, dos servos e dos depósitos. O texto não descreve as tarefas de José."},
+				{"heading": "Na casa e no campo", "reference": "Gen 39:5", "scripture": "Gen 39:5", "text": "O texto atribui a bênção ao SENHOR, por causa de José. Ela alcança tudo o que Potifar tinha, na casa e no campo."},
+				{"heading": "Tudo nas mãos de José", "reference": "Gen 39:6", "scripture": "Gen 39:6", "text": "O texto não explica por que a comida de Potifar ficava fora dos cuidados de José. Há leituras diferentes, e o jogo não escolhe."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "Gênesis 39 continua nos versículos 7 a 23, contados em outro capítulo desta jornada. Leia o capítulo inteiro numa Bíblia. As notas são do jogo. A casa que você visitou é fictícia: uma casa de um oficial egípcio, como aquela onde José serviu, e não a casa de Potifar. Ipi, Meryt e Senbi são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta do agente de design (IA). story_id gen_039_joseph_potiphar não existe em data/bible/stories: criar ou usar um existente. Aguarda verificador bíblico e revisão humana."}
+		},
+		{
+			"id": "exod_014_sea",
+			"title": "A travessia do mar",
+			"reference": "Exod 14:1-31",
+			"classification": "recorded_event",
+			"story_id": "exod_014_red_sea",
+			"unlock": ["sea_crossing"],
+			"steps": [
+				{"heading": "Junto ao mar", "reference": "Exod 14:1-2", "scripture": "Exod 14:1-2", "text": "Depois de sair do Egito, o povo recebe a ordem de voltar e acampar junto ao mar. Pi-Hairote, Migdol e Baal-Zefom não têm localização segura."},
+				{"heading": "Que mar era esse?", "reference": "Exod 13:18", "text": "Em Êxodo 14, o texto diz apenas \"o mar\". Êxodo 13:18 e 15:4 chamam esse mar, em hebraico, de yam suf: a tradução carregada diz \"Mar Vermelho\", e muitos traduzem \"mar de juncos\". Há propostas no golfo de Suez, no de Ácaba e em lagos e lagunas mais ao norte. Nenhuma é consenso, e o jogo não aponta um lugar."},
+				{"heading": "A perseguição", "reference": "Exod 14:9-10", "scripture": "Exod 14:9-10", "text": "O texto não dá o nome do faraó. No Novo Império egípcio (uma das épocas propostas para o Êxodo; datação debatida), os carros de guerra eram leves e puxados por dois cavalos."},
+				{"heading": "Não tenham medo", "reference": "Exod 14:13-14", "scripture": "Exod 14:13-14", "text": "Depois do medo e da queixa do povo (Êx 14:10-12), Moisés fala ao povo. Estas são as únicas palavras dele ao povo neste capítulo."},
+				{"heading": "A nuvem passa para trás", "reference": "Exod 14:19-20", "scripture": "Exod 14:19-20", "text": "A coluna que ia à frente se põe entre os dois acampamentos durante a noite. Para quem era a escuridão e para quem era a luz, as traduções e os intérpretes divergem."},
+				{"heading": "O vento a noite toda", "reference": "Exod 14:21", "scripture": "Exod 14:21", "text": "O texto atribui ao SENHOR o recuo do mar, por meio de um forte vento oriental que sopra a noite inteira: um processo, não um instante. Moisés estende a mão; o texto não descreve nada saindo dela."},
+				{"heading": "Em terra seca", "reference": "Exod 14:22", "scripture": "Exod 14:22", "text": "Uns leem o \"muro\" das águas ao pé da letra; outros, como imagem. O versículo 29 repete a mesma descrição."},
+				{"heading": "As águas voltam", "reference": "Exod 14:27-28", "text": "Os egípcios entram atrás do povo, e na vigília da manhã o exército é lançado em confusão (Êx 14:23-25). Ao amanhecer, as águas voltam e cobrem os carros, os cavaleiros e todo o exército que tinha entrado no mar (Êx 14:27-28). O texto não diz que o faraó morreu. O jogo não mostra esse momento."},
+				{"heading": "Temor e fé", "reference": "Exod 14:30-31", "scripture": "Exod 14:30-31", "text": "O capítulo termina com o povo diante do mar: o temor ao SENHOR e a confiança nele e em Moisés."},
+				{"heading": "Tamborins", "reference": "Exod 15:20-21", "text": "Êxodo 15 traz o cântico de Moisés e dos israelitas e conta que Miriã, a profetisa, e as mulheres saíram com tamborins e danças (Êx 15:1, 20-21). No jogo, os tamborins são só ouvidos ao longe."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "Os trechos foram tirados de Êxodo 14; leia o capítulo inteiro numa Bíblia para conhecer o relato completo. As notas são do jogo. A data da saída do Egito e o lugar exato do mar são debatidos. O viajante, Tzvi, Shira, Beni, Dror, Nava, Meret e o acampamento são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Notas próprias conferidas pelo agente de IA com a BPM (arquivo oficial). Pendente de decisão humana: citar 14:30 inteiro (inclui os mortos na praia, só como texto) ou só 14:30a e 14:31 (design.md §13, item 4). Exige importação BPM dos trechos citados. Aguarda revisão humana."}
+		},
+		{
+			"id": "ruth_002_gleaning",
+			"title": "Rute nos campos de Belém",
+			"reference": "Ruth 1:19-2:23",
+			"classification": "recorded_event",
+			"unlock": ["ruth_gleaning"],
+			"steps": [
+				{"heading": "A volta a Belém", "reference": "Ruth 1:19", "scripture": "Ruth 1:19", "text": "Noemi tinha saído de Belém com o marido e os dois filhos por causa de uma fome; em Moabe ficou viúva e perdeu os filhos (Rute 1:1-5). Agora volta com Rute, a nora moabita."},
+				{"heading": "Mara", "reference": "Ruth 1:20-21", "scripture": "Ruth 1:20-21", "text": "O próprio texto liga o nome Mara à amargura. Que Noemi signifique algo como \"agradável\" é nota lexical, não parte do versículo."},
+				{"heading": "O começo da colheita", "reference": "Ruth 1:22", "scripture": "Ruth 1:22", "text": "A cevada amadurece antes do trigo, na primavera. O mês exato no tempo de Rute é aproximado."},
+				{"heading": "Boaz", "reference": "Ruth 2:1", "scripture": "Ruth 2:1", "text": "O narrador apresenta Boaz antes de Rute chegar ao campo dele. A expressão traduzida por \"muito rico\" também pode ter o sentido de valor ou força (nuance discutida)."},
+				{"heading": "Ir respigar", "reference": "Ruth 2:2-3", "scripture": "Ruth 2:2-3", "text": "Respigar era recolher o que ficava no chão depois dos ceifeiros. Ver uma providência discreta no \"por acaso\" do versículo 3 é uma leitura comum, mas é interpretação."},
+				{"heading": "A saudação", "reference": "Ruth 2:4-7", "scripture": "Ruth 2:4-7", "text": "Boaz e os ceifeiros se saúdam em nome do SENHOR. O versículo 7 tem um trecho difícil no hebraico, e as traduções variam."},
+				{"heading": "No campo de Boaz", "reference": "Ruth 2:8-13", "scripture": "Ruth 2:8-13", "text": "Rute, estrangeira, pergunta por que recebe esse favor; Boaz fala do que ela fez pela sogra. As \"asas\" do versículo 12 são uma imagem de refúgio."},
+				{"heading": "A refeição dos ceifeiros", "reference": "Ruth 2:14", "scripture": "Ruth 2:14", "text": "Pão, grão tostado e um líquido azedo para molhar o pão eram comida comum de colheita. O texto não diz onde nem a que hora foi a refeição dos ceifeiros."},
+				{"heading": "Espigas deixadas de propósito", "reference": "Ruth 2:15-16", "scripture": "Ruth 2:15-16", "text": "A lei pedia que se deixassem o canto do campo e o que caía para o pobre e o estrangeiro (Levítico 19:9-10; 23:22). Aqui Boaz manda deixar cair espigas de propósito. O livro de Rute não cita a lei; a comparação é do leitor."},
+				{"heading": "Até a tarde", "reference": "Ruth 2:17-18", "scripture": "Ruth 2:17-18", "text": "O efa era uma medida de grãos secos. Os estudiosos estimam o volume de formas diferentes, e o jogo não dá número."},
+				{"heading": "Um resgatador", "reference": "Ruth 2:19-20", "scripture": "Ruth 2:19-20", "text": "Noemi diz que Boaz é parente próximo, um dos que podiam \"resgatar\" a família. O que isso significa aparece nos capítulos 3 e 4, fora desta experiência."},
+				{"heading": "Até o fim das colheitas", "reference": "Ruth 2:21-23", "scripture": "Ruth 2:21-23", "text": "A colheita do trigo vinha algumas semanas depois da cevada. Rute continua morando com a sogra."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "Os trechos foram tirados de Rute 1 e 2; leia o livro inteiro numa Bíblia para conhecer o relato completo. As notas são do jogo. O viajante, Ilan, Tova, o campo de Ilan e os moradores do mapa são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Quadros conforme design.md §5. Trechos citados da tradução carregada (BPM, a importar do arquivo oficial); notas próprias do jogo escritas pelo roteirista (IA) com base nas fichas do ep_025 (nuances lexicais de 2:1, 2:7 e efa a conferir). Aguarda revisão humana."},
+			"story_id": "ruth_002_gleaning"
+		},
+		{
+			"id": "luke_002_shepherds",
+			"title": "Os pastores de Belém",
+			"reference": "Luke 2:8-20",
+			"classification": "recorded_event",
+			"story_id": "luke_002_shepherds",
+			"unlock": ["shepherds_told"],
+			"steps": [
+				{"heading": "Um recenseamento", "reference": "Luke 2:1-3", "text": "Lucas conta que saiu uma ordem de César Augusto para recensear todo o mundo, no tempo em que Quirino governava a Síria, e que cada um ia se registrar na sua cidade (Lc 2:1-3). A data desse recenseamento é debatida, e o jogo não mostra ano."},
+				{"heading": "A cidade de Davi", "reference": "Luke 2:4", "scripture": "Luke 2:4", "text": "Nazaré fica na Galileia, ao norte; Belém, na Judeia, ao sul de Jerusalém. São alguns dias de viagem, e o texto não diz como fizeram o caminho."},
+				{"heading": "Não havia lugar", "reference": "Luke 2:5-7", "text": "José vai se registrar com Maria, que estava grávida. Em Belém, ela dá à luz o filho primogênito, envolve-o em faixas de pano e o deita numa manjedoura, porque não havia lugar para eles na \"hospedaria\" (Lc 2:5-7). A palavra grega, katalyma, pode indicar um quarto de hóspedes numa casa ou um abrigo de viajantes; uma tradição do século II fala de uma gruta. O lugar é debatido."},
+				{"heading": "Pastores no campo", "reference": "Luke 2:8", "scripture": "Luke 2:8", "text": "O texto não diz quantos pastores eram, nem seus nomes ou idades."},
+				{"heading": "A glória do Senhor", "reference": "Luke 2:9", "scripture": "Luke 2:9", "text": "A única descrição visual é a glória que brilha ao redor dos pastores. O anjo não é nomeado nem descrito."},
+				{"heading": "A mensagem", "reference": "Luke 2:10-12", "scripture": "Luke 2:10-12", "text": "\"Cidade de Davi\" é Belém, terra de Davi. O sinal dado aos pastores é simples: um bebê em faixas, deitado numa manjedoura."},
+				{"heading": "A multidão celestial", "reference": "Luke 2:13-14", "scripture": "Luke 2:13-14", "text": "O texto diz \"louvando… e dizendo\", não \"cantando\". Os manuscritos antigos trazem duas formas do fim do versículo 14: a tradução carregada segue uma; muitas traduções seguem a outra, que fala de paz para as pessoas a quem Deus concede o seu favor."},
+				{"heading": "Vamos a Belém", "reference": "Luke 2:15", "scripture": "Luke 2:15", "text": "A decisão é de todos juntos: o texto não destaca nenhum pastor."},
+				{"heading": "Em Belém", "reference": "Luke 2:16", "scripture": "Luke 2:16", "text": "O texto não diz como acharam o lugar, nem se deixaram alguém com o rebanho."},
+				{"heading": "Contaram", "reference": "Luke 2:17-18", "scripture": "Luke 2:17-18", "text": "O texto não diz quem eram os que ouviram e ficaram admirados."},
+				{"heading": "Maria guardava", "reference": "Luke 2:19", "scripture": "Luke 2:19", "text": "Lucas repete esta nota sobre Maria mais adiante, em Lucas 2:51."},
+				{"heading": "A volta", "reference": "Luke 2:20", "scripture": "Luke 2:20", "text": "Oito dias depois, o menino recebe o nome Jesus (Lc 2:21). Essa parte fica fora desta experiência."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "Os trechos foram tirados de Lucas 2; leia o capítulo inteiro numa Bíblia para conhecer o relato completo. As notas são do jogo. O texto não dá a data do nascimento, e o jogo não mostra ano. A luz, os três pastores e a casa são representação. O viajante, Tamir, Shai e o rebanho deles são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Trechos citados da tradução carregada (BPM, importada do arquivo oficial): Luke 2:4, 2:8-20. Lc 2:1-3 e 2:5-7 só em paráfrase própria até serem importados. Notas segundo research_biblical.md e research_historical.md. Aguarda revisão humana."}
 		}
 	]
 }

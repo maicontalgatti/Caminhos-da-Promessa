@@ -1,0 +1,29 @@
+{
+	"_comment": "Proposta do roteirista (IA, 2026-10-14) para acrescentar a data/bible/presentations.json. Cada quadro com \"scripture\" mostra o texto da tradução carregada; todos os citados (Luke 2:4, 2:8 a 2:20) já existem em bpm.json. \"text\" é nota própria do jogo, separada da citação. Lucas 2:1-3 e 2:5-7 não estão em bpm.json: entram só como nota em paráfrase, com referência. Nenhum ano é exibido. Nota da variante de 2:14 curta (decisão do coordenador). Aberta por Tamir (depois da volta dos pastores), pelo ponto de observação da casa e pelo diário; não é objetivo.",
+	"presentations": [
+		{
+			"id": "luke_002_shepherds",
+			"title": "Os pastores de Belém",
+			"reference": "Luke 2:8-20",
+			"classification": "recorded_event",
+			"story_id": "luke_002_shepherds",
+			"unlock": ["shepherds_told"],
+			"steps": [
+				{"heading": "Um recenseamento", "reference": "Luke 2:1-3", "text": "Lucas conta que saiu uma ordem de César Augusto para recensear todo o mundo, no tempo em que Quirino governava a Síria, e que cada um ia se registrar na sua cidade (Lc 2:1-3). A data desse recenseamento é debatida, e o jogo não mostra ano."},
+				{"heading": "A cidade de Davi", "reference": "Luke 2:4", "scripture": "Luke 2:4", "text": "Nazaré fica na Galileia, ao norte; Belém, na Judeia, ao sul de Jerusalém. São alguns dias de viagem, e o texto não diz como fizeram o caminho."},
+				{"heading": "Não havia lugar", "reference": "Luke 2:5-7", "text": "José vai se registrar com Maria, que estava grávida. Em Belém, ela dá à luz o filho primogênito, envolve-o em faixas de pano e o deita numa manjedoura, porque não havia lugar para eles na \"hospedaria\" (Lc 2:5-7). A palavra grega, katalyma, pode indicar um quarto de hóspedes numa casa ou um abrigo de viajantes; uma tradição do século II fala de uma gruta. O lugar é debatido."},
+				{"heading": "Pastores no campo", "reference": "Luke 2:8", "scripture": "Luke 2:8", "text": "O texto não diz quantos pastores eram, nem seus nomes ou idades."},
+				{"heading": "A glória do Senhor", "reference": "Luke 2:9", "scripture": "Luke 2:9", "text": "A única descrição visual é a glória que brilha ao redor dos pastores. O anjo não é nomeado nem descrito."},
+				{"heading": "A mensagem", "reference": "Luke 2:10-12", "scripture": "Luke 2:10-12", "text": "\"Cidade de Davi\" é Belém, terra de Davi. O sinal dado aos pastores é simples: um bebê em faixas, deitado numa manjedoura."},
+				{"heading": "A multidão celestial", "reference": "Luke 2:13-14", "scripture": "Luke 2:13-14", "text": "O texto diz \"louvando… e dizendo\", não \"cantando\". Os manuscritos antigos trazem duas formas do fim do versículo 14: a tradução carregada segue uma; muitas traduções seguem a outra, que fala de paz para as pessoas a quem Deus concede o seu favor."},
+				{"heading": "Vamos a Belém", "reference": "Luke 2:15", "scripture": "Luke 2:15", "text": "A decisão é de todos juntos: o texto não destaca nenhum pastor."},
+				{"heading": "Em Belém", "reference": "Luke 2:16", "scripture": "Luke 2:16", "text": "O texto não diz como acharam o lugar, nem se deixaram alguém com o rebanho."},
+				{"heading": "Contaram", "reference": "Luke 2:17-18", "scripture": "Luke 2:17-18", "text": "O texto não diz quem eram os que ouviram e ficaram admirados."},
+				{"heading": "Maria guardava", "reference": "Luke 2:19", "scripture": "Luke 2:19", "text": "Lucas repete esta nota sobre Maria mais adiante, em Lucas 2:51."},
+				{"heading": "A volta", "reference": "Luke 2:20", "scripture": "Luke 2:20", "text": "Oito dias depois, o menino recebe o nome Jesus (Lc 2:21). Essa parte fica fora desta experiência."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "Os trechos foram tirados de Lucas 2; leia o capítulo inteiro numa Bíblia para conhecer o relato completo. As notas são do jogo. O texto não dá a data do nascimento, e o jogo não mostra ano. A luz, os três pastores e a casa são representação. O viajante, Tamir, Shai e o rebanho deles são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Trechos citados da tradução carregada (BPM, importada do arquivo oficial): Luke 2:4, 2:8-20. Lc 2:1-3 e 2:5-7 só em paráfrase própria até serem importados. Notas segundo research_biblical.md e research_historical.md. Aguarda revisão humana."}
+		}
+	]
+}

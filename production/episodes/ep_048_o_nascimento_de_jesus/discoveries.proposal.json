@@ -1,0 +1,118 @@
+{
+	"_comment": "Proposta do roteirista (IA, 2026-10-14) para acrescentar a data/bible/discoveries.json. Resumos e seções são texto próprio (paráfrase), conferidos com research_biblical.md e com bpm.json; nenhum versículo está transcrito. Palavras entre aspas são termos usados para identificar o trecho. Todas as referências estão em capítulos já presentes em verse_counts.json (Luke 1, 2, 10; Matt 2; 1Sam 16, 17). Luke 22:11 (katalyma), John 7:42, Mic 5:2 e Isa 1:3 são citados só por descrição, sem referência, até os capítulos entrarem em verse_counts.json. Pré-requisitos: people jesus, mary_mother_of_jesus, joseph_of_nazareth e a história luke_002_shepherds (bible_entries.proposal.json). Nenhum ano é exibido. Todas em pending_review.",
+	"discoveries": [
+		{
+			"id": "bethlehem_first_century",
+			"title": "Belém nos dias de Herodes",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "roman_judea",
+			"summary": "Belém era uma pequena aldeia da Judeia, que Lucas chama de \"cidade de Davi\" (Lc 2:4). A Judeia era governada por Herodes, rei aliado de Roma, no tempo do imperador Augusto (Lc 2:1). A data exata é debatida.",
+			"bible_note": "Lucas 1:5; 2:1-4.",
+			"references": ["Luke 1:5", "Luke 2:1-4", "1Sam 16:1", "Matt 2:1"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que o texto diz", "text": "Lucas situa estes relatos nos dias de Herodes (Lc 1:5; cf. Mt 2:1) e conta que saiu uma ordem de César Augusto para recensear todo o mundo (Lc 2:1). José, da casa e família de Davi, sobe de Nazaré, na Galileia, a Belém, na Judeia (Lc 2:4). Séculos antes, Jessé, pai de Davi, é chamado de belemita (1Sm 16:1)."},
+				{"kind": "historical", "title": "A aldeia", "text": "Casas de pedra calcária com teto plano, agrupadas em volta de pátios, com portas baixas e janelas pequenas. À noite, só lamparinas de barro. Perto da aldeia, oliveiras e vinhas nos terraços; nas encostas que descem para o deserto, pastoreio de ovelhas e cabras. A Belém dessa época tem poucos restos escavados, e a forma da aldeia no jogo é uma reconstrução por analogia com outras aldeias da época."},
+				{"kind": "chronology", "title": "Sem ano", "text": "O texto não dá um ano. Lucas situa estes relatos nos dias de Herodes (Lc 1:5; cf. Mt 2:1) e liga o nascimento a um recenseamento feito quando Quirino governava a Síria (Lc 2:2). Conciliar essas indicações com outras fontes antigas é discutido, e há várias propostas. Por isso o jogo não mostra ano. Dia e estação também não são dados no texto; 25 de dezembro é uma data litúrgica posterior."},
+				{"kind": "fiction", "title": "No jogo", "text": "Os campos, o posto de vigia, Tamir, Shai e o rebanho deles são criações do jogo. Onde exatamente ficavam os campos dos pastores é desconhecido; o \"Campo dos Pastores\" mostrado hoje perto de Belém é tradição posterior."}
+			],
+			"related": {"people": ["david", "joseph_of_nazareth", "mary_mother_of_jesus"], "places": ["bethlehem", "nazareth"], "events": ["shepherds_bethlehem", "david_shepherd"], "stories": ["luke_002_shepherds"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com research_biblical.md e bpm.json (Luke 2:4). Contexto da aldeia segundo research_historical.md (hipóteses marcadas). Datação: certainty 'debated', sem ano; divergência com chronology.json (shepherds_bethlehem: -6 a -4, approximate) a registrar em KNOWN_ISSUES. Revisão H01/H02/V14 aplicada. Aguarda revisão humana."}
+		},
+		{
+			"id": "night_shepherding",
+			"title": "A vigília do rebanho",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "roman_judea",
+			"summary": "À noite, o rebanho ficava num aprisco de pedra com uma só abertura, e os pastores se revezavam junto ao fogo. Lucas 2:8 fala de pastores que ficavam no campo perto de Belém e vigiavam o rebanho durante a noite.",
+			"bible_note": "Lucas 2:8.",
+			"references": ["Luke 2:8", "1Sam 17:34-35"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que o texto diz", "text": "Na mesma região de Belém, havia pastores que ficavam no campo e vigiavam o rebanho durante a noite (Lc 2:8). O texto não diz quantos eram, nem seus nomes ou idades."},
+				{"kind": "historical", "title": "Aprisco e fogo", "text": "Segundo relatos de pastores da região (costume posterior, usado aqui como analogia), o aprisco era um cercado de pedra seca, da altura do joelho à cintura, com galhos espinhosos no topo e uma abertura estreita, onde o pastor podia se deitar. Às vezes se encostava numa gruta ou num paredão. Os pastores se revezavam junto a uma fogueira de gravetos e arbustos, porque a lenha era escassa."},
+				{"kind": "historical", "title": "Predadores e rebanho", "text": "O fogo e a vigília afastavam ladrões e predadores, como lobos, chacais e hienas. Séculos antes, Davi fala de leão e urso (1Sm 17:34-35). Os rebanhos costumavam ser mistos: ovelhas de cauda gorda e cabras escuras."},
+				{"kind": "interpretation", "title": "Pastores desprezados?", "text": "Diz-se muitas vezes que os pastores eram desprezados ou considerados impuros na época. Essa ideia vem sobretudo de textos rabínicos posteriores e é discutida pelos estudiosos. Lucas não diz isso."},
+				{"kind": "fiction", "title": "No jogo", "text": "Tamir, Shai, o posto de vigia, as tarefas e os turnos são criações do jogo, baseadas no contexto histórico."}
+			],
+			"related": {"people": ["david"], "places": ["bethlehem"], "events": ["shepherds_bethlehem", "david_shepherd"], "stories": ["luke_002_shepherds"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Contexto segundo research_historical.md (Cotidiano; Aprisco e campo). Tese dos pastores desprezados tratada como interpretação (research_biblical.md, risco 10). Aguarda revisão humana."}
+		},
+		{
+			"id": "glory_around_shepherds",
+			"title": "A glória ao redor dos pastores",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "roman_judea",
+			"summary": "Lucas 2:9-14 relata que um anjo do Senhor apareceu a pastores no campo, que a glória do Senhor brilhou ao redor deles e que o anjo anunciou o nascimento de um Salvador na cidade de Davi. Depois, uma multidão do exército celestial louvou a Deus.",
+			"bible_note": "Lucas 2:8-15.",
+			"references": ["Luke 2:8-15", "Luke 1:26"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O anúncio", "text": "Um anjo do Senhor aparece aos pastores, a glória do Senhor brilha ao redor deles, e eles ficam com muito medo (Lc 2:9). O anjo diz que não tenham medo: traz uma boa notícia de grande alegria para todo o povo. Naquele dia, na cidade de Davi, tinha nascido um Salvador, que é Cristo, o Senhor. O sinal: um bebê envolto em faixas de pano, deitado numa manjedoura (Lc 2:10-12)."},
+				{"kind": "biblical_text", "title": "Louvando e dizendo", "text": "De repente, uma multidão do exército celestial aparece com o anjo, louvando a Deus e dizendo palavras de glória a Deus e paz na terra (Lc 2:13-14). O texto diz \"louvando… e dizendo\", não \"cantando\". Depois, os anjos se afastam em direção ao céu (Lc 2:15)."},
+				{"kind": "biblical_text", "title": "O que o texto não descreve", "text": "O anjo não é nomeado neste trecho (Gabriel aparece antes, em Lc 1:26), e sua aparência não é descrita. A única descrição visual é a glória que brilha ao redor dos pastores. O número de anjos também não é dito."},
+				{"kind": "interpretation", "title": "Duas formas do versículo 14", "text": "Os manuscritos antigos trazem duas formas do fim de Lucas 2:14. A tradução carregada segue uma delas; muitas traduções seguem a outra, que fala de paz para as pessoas a quem Deus concede o seu favor. O jogo não escolhe entre elas."},
+				{"kind": "fiction", "title": "A cena do jogo", "text": "A cena é uma representação. O jogo mostra só luz: nenhuma figura de anjo, asa ou rosto, e luzes pequenas no céu para a multidão. Os três pastores representam os do relato. O viajante fica à margem, fora da luz, e Tamir dorme: nenhum personagem do jogo recebe o anúncio."}
+			],
+			"related": {"people": ["jesus"], "places": ["bethlehem"], "events": ["shepherds_bethlehem"], "stories": ["luke_002_shepherds"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com bpm.json (Luke 2:8-15). Nota da variante de 2:14 curta e só no diário, conforme decisão do coordenador; conhecimento geral de crítica textual, a confirmar na revisão humana. Aguarda revisão humana."}
+		},
+		{
+			"id": "manger_katalyma",
+			"title": "A manjedoura e a \"hospedaria\"",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "roman_judea",
+			"summary": "Lucas 2:7 diz que Maria deitou o bebê numa manjedoura, porque não havia lugar para eles na \"hospedaria\". Que lugar era esse é debatido, e o texto não fala de estábulo nem de animais.",
+			"bible_note": "Lucas 2:7, 12, 16.",
+			"references": ["Luke 2:7", "Luke 2:12", "Luke 2:16", "Luke 10:34"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que o texto diz", "text": "Maria dá à luz o filho primogênito, envolve-o em faixas de pano e o deita numa manjedoura, porque não havia lugar para eles na hospedaria (Lc 2:7). A manjedoura volta no sinal dado aos pastores (Lc 2:12) e quando eles chegam (Lc 2:16). O texto não fala de estábulo, gruta, boi, jumento nem de alguém que recusou o casal."},
+				{"kind": "historical", "title": "A manjedoura", "text": "Manjedoura é o cocho onde se põe comida para os animais. Cochos de pedra calcária são bem conhecidos na região; também podiam ser de madeira. O texto não diz o material."},
+				{"kind": "interpretation", "title": "Três leituras", "text": "A palavra grega traduzida por \"hospedaria\" é katalyma, que também pode significar \"sala de hóspedes\" (outra passagem de Lucas costuma ser comparada; referência a importar). Para a hospedaria da parábola do samaritano, Lucas usa outra palavra (Lc 10:34). Por isso há três leituras principais: um quarto de hóspedes cheio numa casa de família, com o bebê na área dos animais; um abrigo de viajantes com pátio; ou uma gruta usada como estábulo, tradição atestada a partir do século II. Nenhuma é comprovada."},
+				{"kind": "historical", "title": "Boi e jumento", "text": "O boi e o jumento junto à manjedoura vêm de uma leitura cristã posterior de um versículo de Isaías, não de Lucas."},
+				{"kind": "fiction", "title": "No jogo", "text": "A casa de pedra encostada na rocha, com uma abertura para animais, é uma composição compatível com mais de uma leitura. Ela é vista só de fora: o jogo não mostra o interior, Maria, José nem o bebê. Não há estalajadeiro, estábulo de madeira nem estrela."}
+			],
+			"related": {"people": ["jesus", "mary_mother_of_jesus", "joseph_of_nazareth"], "places": ["bethlehem"], "events": ["shepherds_bethlehem"], "stories": ["luke_002_shepherds"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Leituras segundo research_biblical.md §6 e research_historical.md (Bailey, Carlson, Justino, Orígenes; não verificados nesta sessão). Luke 22:11 e Isa 1:3 não citados como referência: capítulos ausentes de verse_counts.json. Aguarda revisão humana."}
+		},
+		{
+			"id": "shepherds_told",
+			"title": "O que os pastores contaram",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "roman_judea",
+			"summary": "Os pastores foram depressa a Belém, encontraram Maria, José e o bebê deitado na manjedoura e contaram o que lhes fora dito sobre o menino. Todos os que ouviram ficaram admirados, e os pastores voltaram louvando a Deus (Lc 2:15-20).",
+			"bible_note": "Lucas 2:15-20.",
+			"references": ["Luke 2:15-20", "Luke 2:21", "Luke 2:51"],
+			"sections": [
+				{"kind": "biblical_text", "title": "A ida", "text": "Os pastores combinam entre si ir a Belém ver o que tinha acontecido (Lc 2:15). Vão depressa e encontram Maria, José e o bebê deitado na manjedoura (Lc 2:16). O texto não diz se deixaram o rebanho, com quem, nem como acharam o lugar."},
+				{"kind": "biblical_text", "title": "Contaram", "text": "Depois de ver o menino, os pastores contam o que lhes tinha sido dito a respeito dele, e todos os que ouvem ficam admirados (Lc 2:17-18). O texto não diz quem eram esses ouvintes."},
+				{"kind": "biblical_text", "title": "Maria guardava", "text": "Lucas diz que Maria guardava tudo isso e meditava no coração (Lc 2:19), e repete a nota mais adiante (Lc 2:51). Nenhuma fala dela é registrada neste trecho."},
+				{"kind": "biblical_text", "title": "A volta", "text": "Os pastores voltam glorificando e louvando a Deus por tudo o que tinham ouvido e visto, como lhes fora dito (Lc 2:20)."},
+				{"kind": "chronology", "title": "Na mesma noite?", "text": "O texto diz que foram depressa, mas não fixa horas. O nome Jesus é dado no oitavo dia (Lc 2:21), fora desta experiência."},
+				{"kind": "fiction", "title": "No jogo", "text": "O viajante vê tudo de longe e não entra na casa. Tamir, que dormia, só repete o que ouviu na volta dos vizinhos. Tamir é fictício; Lucas 2:17-18 não diz quem ouviu. Tamir, Shai e o viajante são personagens do jogo e não fazem parte do relato."}
+			],
+			"related": {"people": ["jesus", "mary_mother_of_jesus", "joseph_of_nazareth"], "places": ["bethlehem"], "events": ["shepherds_bethlehem"], "stories": ["luke_002_shepherds"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com bpm.json (Luke 2:15-20). Aguarda revisão humana."}
+		},
+		{
+			"id": "david_shepherd_bethlehem",
+			"title": "Davi, pastor em Belém",
+			"classification": "recorded_event",
+			"presentation": "toast",
+			"era_id": "united_monarchy",
+			"summary": "Muitos séculos antes de Lucas 2, Davi, filho caçula de Jessé, de Belém, cuidava das ovelhas da família (1Sm 16:11; 17:15). Lucas chama Belém de \"cidade de Davi\" (Lc 2:4).",
+			"bible_note": "1 Samuel 16:11; 17:15, 34-35.",
+			"references": ["1Sam 16:11", "1Sam 17:15", "1Sam 17:34-35", "Luke 2:4", "Luke 1:32"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O caçula no pasto", "text": "Quando Samuel vai à casa de Jessé, o filho mais novo não está: está cuidando das ovelhas (1Sm 16:11). Mais tarde, Davi vai e volta de junto de Saul para apascentar as ovelhas do pai em Belém (1Sm 17:15). Diante de Saul, ele conta como defendia o rebanho de leões e ursos (1Sm 17:34-35)."},
+				{"kind": "chronology", "title": "Outra época", "text": "Davi viveu muitos séculos antes do nascimento de Jesus, na época da monarquia unida. São dois momentos diferentes da história de Belém."},
+				{"kind": "interpretation", "title": "A cidade de Davi", "text": "Lucas liga o nascimento em Belém à casa de Davi (Lc 2:4) e, antes, ao trono de Davi (Lc 1:32). Muitos leitores veem nisso a esperança de um rei da família de Davi. É uma leitura teológica do texto."},
+				{"kind": "fiction", "title": "No jogo", "text": "Shai repete o que se conta em Belém. A ronda do aprisco e Shai são criações do jogo."}
+			],
+			"related": {"people": ["david"], "places": ["bethlehem"], "events": ["david_shepherd", "shepherds_bethlehem"], "stories": ["luke_002_shepherds"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com bpm.json (1Sam 16:11, 17:34-35) e research_biblical.md (1Sam 17:15). Aguarda revisão humana."}
+		}
+	]
+}

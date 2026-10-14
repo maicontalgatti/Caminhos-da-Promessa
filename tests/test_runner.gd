@@ -77,6 +77,26 @@ func _run_all() -> void:
 	wt.test_main_quest_flow()
 	await wt.test_travel()
 	await wt.test_pickups_and_screens()
+	print("\n[cenas dirigidas, luz por estado e experiências]")
+	var st_script: GDScript = load("res://tests/scene_tests.gd")
+	check(st_script != null and st_script.can_instantiate(), "tests/scene_tests.gd compila")
+	if st_script != null and st_script.can_instantiate():
+		var st = st_script.new(self)
+		st.test_data()
+		st.test_world_schema()
+		st.test_experiences()
+		await st.test_play_and_skip()
+		await st.test_lighting()
+		await st.test_scripture_map_and_passage()
+	print("\n[experiências: José no Egito, Mar, Rute, Pastores]")
+	var xt_script: GDScript = load("res://tests/experience_content_tests.gd")
+	check(xt_script != null and xt_script.can_instantiate(), "tests/experience_content_tests.gd compila")
+	if xt_script != null and xt_script.can_instantiate():
+		var xt = xt_script.new(self)
+		xt.test_experiences_available_and_chained()
+		xt.test_quests_and_links()
+		xt.test_scenes()
+		xt.test_region_targets()
 	print("\n[áudio]")
 	var at_script: GDScript = load("res://tests/audio_tests.gd")
 	check(at_script != null and at_script.can_instantiate(), "tests/audio_tests.gd compila")
@@ -216,7 +236,10 @@ func _test_scripture() -> void:
 			if n.has("scripture"):
 				quoted += 1
 				var line := DialogueManager.line_text(n)
-				check(line != String(n.text) and line.contains(cat.verses_of(n.scripture)[0].text), "fala cita %s" % n.scripture)
+				if cat.verses_of(n.scripture).size() > 3:
+					check(line == String(n.text), "fala com trecho longo (%s) mostra a nota própria" % n.scripture)
+				else:
+					check(line != String(n.text) and line.contains(cat.verses_of(n.scripture)[0].text), "fala cita %s" % n.scripture)
 	check(quoted >= 3, "diálogos citam trechos bíblicos (%d)" % quoted)
 	check(DialogueManager.line_text({"scripture": "Gen 1:1", "text": "(Gênesis 1:1)"}) == "(Gênesis 1:1)", "sem o texto, a fala mostra a referência")
 
@@ -379,6 +402,7 @@ func _test_quest_targets_in_map() -> void:
 				match String(t.type):
 					"ui": ok = t.id in QuestDatabase.UI_TARGETS
 					"region": ok = GameData.regions.has(t.id)
+					"scene": ok = SceneDatabase.ids_in().has(t.id)
 					_: ok = found.has(rid) and found[rid].get(t.type, {}).has(t.id)
 				check(ok, "%s/%s: alvo %s '%s' existe na região %s" % [id, o.id, t.type, t.id, rid])
 
@@ -491,7 +515,7 @@ func _test_quest_editor_model() -> void:
 	check(m.load_errors.is_empty() and m.order.has("canaan_wells"), "editor: missões carregadas")
 	check(m.validate(m.quests.canaan_wells).is_empty(), "editor: missão-piloto valida")
 	check(m.filter("", "Gen", "", "", "").has("canaan_wells"), "editor: filtro por livro")
-	check(m.filter("", "Luke", "", "", "").is_empty(), "editor: filtro por livro exclui")
+	check(m.filter("", "Rev", "", "", "").is_empty(), "editor: filtro por livro exclui")
 	check(m.filter("poços", "", "canaan_village", "patriarchs", "pending_review").has("canaan_wells"), "editor: busca + região + época + status")
 	check(m.filter("26:18", "", "", "", "").has("canaan_wells"), "editor: busca por referência")
 	var q: Dictionary = m.quests.canaan_wells.duplicate(true)

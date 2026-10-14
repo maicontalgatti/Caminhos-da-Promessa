@@ -1,0 +1,209 @@
+{
+	"_comment": "PROPOSTA (ep_009, dialogue-writer, IA, pending_review). Formato de data/dialogues/*.json. Destinos: dothan_ridge_view -> acrescentar a data/dialogues/caravan_road_dothan.json; os demais -> data/dialogues/egypt_house.json. Personagens fictícios com prefixo da região (egypt_ipi, egypt_meryt, egypt_senbi, egypt_cattle, egypt_donkey, egypt_goose, egypt_cat), já alinhados em quest.proposal.json e region.proposal.json. Nenhum personagem bíblico fala; José e Potifar não aparecem. A casa é genérica (ficção do jogo), não a casa de Potifar. Versículos só por referência ('scripture'); 'text' nesses nós é o resumo de reserva, sem o texto bíblico. Ação de cena: \"action\": {\"scene\": id} (formato da especificação do lote; o validador de diálogos hoje só aceita {\"presentation\": id} e precisa ser estendido).",
+	"dialogues": [
+		{
+			"id": "dothan_ridge_view",
+			"start": "view",
+			"start_if": [
+				{"objective": "joseph_caravan_watch/watch_caravan", "node": "watch"},
+				{"objective": "joseph_caravan_watch/read_caravan_story", "node": "read"},
+				{"quest_completed": "joseph_caravan_watch", "node": "after"}
+			],
+			"nodes": {
+				"view": {"speaker": "narrator", "text": "Do alto da encosta se vê o vale inteiro: os pastos, as tendas dos pastores e, na borda sul, uma estrada que segue para o oeste.", "next": "end"},
+				"watch": {"speaker": "narrator", "text": "Do alto da encosta se vê o vale inteiro. Lá embaixo, na borda sul, alguma coisa se move na estrada.", "next": "watch2"},
+				"watch2": {"speaker": "narrator", "text": "Você fica onde está e observa de longe. (Esc pula a cena.)", "next": "end", "action": {"scene": "joseph_caravan_departs"}},
+				"read": {"speaker": "narrator", "text": "A caravana sumiu no horizonte. Você abre o diário de viagem nos trechos de Gênesis 37 sobre o que aconteceu em Dotã.", "next": "end", "action": {"presentation": "gen_037_caravan"}},
+				"after": {"speaker": "narrator", "text": "A estrada da borda sul está vazia. Só o vento levanta um pouco de poeira.", "choices": [
+					{"text": "Reler no diário o relato de Gênesis 37.", "next": "reread"},
+					{"text": "Descer da encosta.", "next": "end"}
+				]},
+				"reread": {"speaker": "narrator", "text": "Você abre de novo o diário de viagem em Gênesis 37.", "next": "end", "action": {"presentation": "gen_037_caravan"}}
+			}
+		},
+		{
+			"id": "ipi_talk",
+			"start": "greet",
+			"start_if": [
+				{"flag": "met_egypt_ipi", "node": "hub"}
+			],
+			"nodes": {
+				"greet": {"speaker": "egypt_ipi", "text": "Um estrangeiro, e a pé! Pare um pouco. Eu cuido deste portão: ninguém entra sem que o velho Ipi saiba.", "next": "house", "set_flags": ["met_egypt_ipi"]},
+				"house": {"speaker": "egypt_ipi", "text": "Esta casa é de um oficial do rei. A casa, os celeiros, o gado e os campos até o canal: tudo pertence a ele.", "next": "house_note", "event": "egypt_ipi_welcome"},
+				"house_note": {"speaker": "narrator", "text": "(Gênesis chama o rei do Egito de Faraó. Esta casa e o seu dono são criações do jogo: uma casa de um oficial egípcio, como aquela onde José serviu, não a casa de Potifar.)", "next": "work"},
+				"work": {"speaker": "egypt_ipi", "text": "Muita gente trabalha aqui: padeiros, tecelãs, lavradores, quem cuida do gado. Meryt guarda o depósito; Senbi está na eira, depois do muro.", "next": "work2"},
+				"work2": {"speaker": "egypt_ipi", "text": "Pode entrar e olhar, desde que não atrapalhe ninguém. O pátio fica logo depois do portão.", "next": "end"},
+				"hub": {"speaker": "egypt_ipi", "text": "Ainda por aqui, estrangeiro?", "choices": [
+					{"text": "De quem é esta casa?", "next": "house_again"},
+					{"text": "Quem trabalha aqui?", "next": "work"},
+					{"text": "Até mais, Ipi.", "next": "bye"}
+				]},
+				"house_again": {"speaker": "egypt_ipi", "text": "De um oficial do rei. Eu só cuido do portão; dos negócios da casa, sei pouco.", "next": "end"},
+				"bye": {"speaker": "egypt_ipi", "text": "Vá em paz. E não deixe os gansos entrarem na cozinha.", "next": "end"}
+			}
+		},
+		{
+			"id": "meryt_talk",
+			"start": "greet",
+			"start_if": [
+				{"if": {"all": [{"objective": "egypt_granary_sacks/deliver_meryt"}, {"has_item": "barley_sack", "count": 3}]}, "node": "delivery"},
+				{"objective": "egypt_granary_sacks/deliver_meryt", "node": "not_yet"},
+				{"objective": "egypt_granary_sacks/gather_sacks", "node": "not_yet"},
+				{"flag": "met_egypt_meryt", "node": "hub"}
+			],
+			"nodes": {
+				"greet": {"speaker": "egypt_meryt", "text": "Ipi deixou você passar? Então pode olhar. Só não mexa nos jarros, por favor.", "next": "store", "set_flags": ["met_egypt_meryt"]},
+				"store": {"speaker": "egypt_meryt", "text": "Eu cuido do depósito. Cada jarro tem tampa de barro com um selo: se o selo está inteiro, ninguém mexeu no que tem dentro.", "next": "store2"},
+				"store2": {"speaker": "egypt_meryt", "text": "O grão sai em rações, medido no hekat, a nossa medida de grão. O escriba anota o que entra e o que sai.", "next": "store3", "event": "egypt_meryt_storeroom"},
+				"store3": {"speaker": "egypt_meryt", "text": "É tempo de colheita, e o grão novo está chegando. Por isso conto tudo duas vezes.", "next": "end"},
+				"hub": {"speaker": "egypt_meryt", "text": "Precisa de alguma coisa?", "choices": [
+					{"text": "Para que servem os selos nos jarros?", "next": "store"},
+					{"text": "Nada, obrigado. Até mais, Meryt.", "next": "bye"}
+				]},
+				"not_yet": {"speaker": "egypt_meryt", "text": "A cevada de Senbi? Traga os três sacos de uma vez, que eu confiro e mando anotar.", "next": "end"},
+				"delivery": {"speaker": "egypt_meryt", "text": "Três sacos da eira de Senbi. Cheios e bem amarrados. Pode pôr ali, junto à parede.", "next": "delivery2", "take": [{"item": "barley_sack", "qty": 3}], "event": "egypt_meryt_sacks", "set_flags": ["met_egypt_meryt"]},
+				"delivery2": {"speaker": "egypt_meryt", "text": "Três sacos de cevada, entregues hoje. Vou mandar anotar. Avise Senbi que chegaram.", "next": "end"},
+				"bye": {"speaker": "egypt_meryt", "text": "Vá em paz. E feche a porta do depósito se passar por ela.", "next": "end"}
+			}
+		},
+		{
+			"id": "senbi_talk",
+			"start": "greet",
+			"start_if": [
+				{"objective": "egypt_granary_sacks/back_to_senbi", "node": "thanks"},
+				{"if": {"quest_active": "egypt_granary_sacks"}, "node": "remind"},
+				{"quest_completed": "egypt_granary_sacks", "node": "again"},
+				{"flag": "met_egypt_senbi", "node": "hub"}
+			],
+			"nodes": {
+				"greet": {"speaker": "egypt_senbi", "text": "Paz, estrangeiro. Chegou em tempo de colheita: aqui ninguém fica parado.", "next": "seasons", "set_flags": ["met_egypt_senbi"]},
+				"seasons": {"speaker": "egypt_senbi", "text": "O ano aqui tem três tempos: a cheia, quando o rio cobre os campos; a semeadura; e a colheita, quando o sol seca a cevada.", "next": "seasons2"},
+				"seasons2": {"speaker": "egypt_senbi", "text": "A água deixa a terra escura e boa. Lá longe, onde ela não chega, só há areia.", "next": "hub"},
+				"hub": {"speaker": "egypt_senbi", "text": "Quer saber mais alguma coisa?", "choices": [
+					{"text": "Precisa de ajuda?", "next": "request", "if": {"not": {"quest_started": "egypt_granary_sacks"}}},
+					{"text": "O que se planta aqui?", "next": "crops"},
+					{"text": "Até mais, Senbi.", "next": "bye"}
+				]},
+				"crops": {"speaker": "egypt_senbi", "text": "Cevada e trigo, para o pão e a cerveja. E linho, para os panos: a gente arranca o linho com raiz e deixa secar em feixes.", "next": "hub"},
+				"request": {"speaker": "egypt_senbi", "text": "Preciso, sim. Debulhei a cevada e enchi três sacos, mas ainda tenho a palha para juntar.", "next": "request2"},
+				"request2": {"speaker": "egypt_senbi", "text": "Leve os sacos até Meryt, no depósito, antes do fim do dia. Ela confere e manda anotar. Estão aqui, em volta da eira.", "next": "end", "event": "egypt_senbi_harvest"},
+				"remind": {"speaker": "egypt_senbi", "text": "Os três sacos estão em volta da eira. Meryt fica na porta do depósito, a leste do pátio.", "next": "end"},
+				"thanks": {"speaker": "egypt_senbi", "text": "Meryt recebeu os três? Então a cevada está guardada antes de escurecer.", "next": "thanks2", "event": "egypt_senbi_thanks"},
+				"thanks2": {"speaker": "egypt_senbi", "text": "Obrigado, estrangeiro. Amanhã cedo é a vez do linho.", "next": "end"},
+				"again": {"speaker": "egypt_senbi", "text": "Ainda há água no fundo do canal. Dá para regar a horta mais alguns dias, até a cheia voltar.", "next": "end"},
+				"bye": {"speaker": "egypt_senbi", "text": "Vá em paz. Cuidado com os diques, que a terra cede.", "next": "end"}
+			}
+		},
+		{
+			"id": "eh_records",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Uma mesa baixa junto ao depósito: um rolo de papiro aberto, uma prancheta de madeira, uma paleta com tinta preta e vermelha e pincéis de junco.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "As marcas no papiro são de uma escrita cursiva que você não consegue ler. Ao lado, jarros com tampa de barro e selo.", "next": "n3"},
+				"n3": {"speaker": "narrator", "text": "Grandes casas egípcias anotavam o grão que entrava, as rações que saíam e o gado contado.", "next": "n4"},
+				"n4": {"speaker": "narrator", "text": "(Gênesis 39:4 conta que Potifar pôs José como administrador da casa dele, mas não descreve as tarefas. Esta casa e esta mesa são recriações do jogo.)", "next": "end", "unlock": ["egyptian_household"]}
+			}
+		},
+		{
+			"id": "eh_granary",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Silos de tijolo de barro, com o topo em cúpula. Uma escada leva à abertura de cima, por onde se despeja o grão; embaixo, uma portinhola para retirá-lo.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "O grão guardado precisava durar até a próxima colheita. Um gato cochila na sombra: gatos ajudavam a afastar os ratos.", "next": "end"}
+			}
+		},
+		{
+			"id": "eh_field",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Campos em faixas, separados por diques baixos de terra. A cevada já está dourada; parte do linho foi arrancada e seca em feixes.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "A água do canal entra nos campos pelos diques. Ao longe, onde ela não chega, começa o deserto.", "next": "n3"},
+				"n3": {"speaker": "narrator", "text": "(Grandes casas egípcias viviam do que a terra irrigada produzia. Este campo é uma recriação do jogo.)", "next": "end", "unlock": ["nile_agriculture"]}
+			}
+		},
+		{
+			"id": "eh_journal",
+			"start": "read",
+			"start_if": [
+				{"quest_completed": "joseph_potiphar_house", "node": "again"}
+			],
+			"nodes": {
+				"read": {"speaker": "narrator", "text": "O seu diário de viagem, sobre o banco à sombra. Você o abre nos trechos de Gênesis 39 sobre José na casa de Potifar, uma casa como esta.", "next": "end", "action": {"presentation": "gen_039_potiphar"}},
+				"again": {"speaker": "narrator", "text": "O seu diário de viagem, sobre o banco à sombra.", "choices": [
+					{"text": "Rever o relato de Gênesis 39:1-6.", "next": "reread"},
+					{"text": "Deixar o diário onde está.", "next": "end"}
+				]},
+				"reread": {"speaker": "narrator", "text": "Você abre de novo o diário em Gênesis 39.", "next": "end", "action": {"presentation": "gen_039_potiphar"}}
+			}
+		},
+		{
+			"id": "eh_pool",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um tanque retangular com borda de tijolo, coberto de lótus azuis e brancos. Peixes pequenos aparecem perto da superfície.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Jardins com tanque e árvores de sombra aparecem em modelos e pinturas de casas egípcias ricas. Eram sinal de prestígio.", "next": "end", "grant_collectible": "eh_pool"}
+			}
+		},
+		{
+			"id": "eh_oven",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um forno cilíndrico de barro, ainda morno. Ao lado, moldes de pão em forma de cone e uma pedra de moer.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Pão e cerveja eram a base da comida no Egito. Os dois começavam com grão moído à mão, numa pedra como esta.", "next": "end", "grant_collectible": "eh_oven"}
+			}
+		},
+		{
+			"id": "eh_loom",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um tear estendido rente ao chão, preso por estacas. O pano de linho está pela metade.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Os egípcios vestiam sobretudo linho. Teares horizontais como este eram usados desde cedo; o tear vertical aparece mais tarde.", "next": "end", "grant_collectible": "eh_loom"}
+			}
+		},
+		{
+			"id": "eh_jars",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Fileiras de jarros grandes, alguns meio enterrados no chão fresco do depósito. Cada tampa de barro leva a marca de um selo.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Um selo partido mostrava que o jarro tinha sido aberto. Jarros assim guardavam grão, óleo, cerveja e outros mantimentos.", "next": "end", "grant_collectible": "eh_jars"}
+			}
+		},
+		{
+			"id": "eh_shaduf",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um balancim junto ao canal: uma vara comprida apoiada num poste, com um balde numa ponta e um peso de barro na outra.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Com ele, uma só pessoa erguia água do canal para a horta. (O balancim aparece em pinturas egípcias de época mais tardia; se já era usado nos dias de José, não se sabe.)", "next": "end", "grant_collectible": "eh_shaduf"}
+			}
+		},
+		{
+			"id": "egypt_cattle_examine",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Bois de chifres longos ruminam no curral. Gado era riqueza numa grande casa egípcia: os animais eram contados e anotados.", "next": "end"}
+			}
+		},
+		{
+			"id": "egypt_donkey_examine",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um jumento descansa à sombra. No Egito, jumentos levavam carga e pisavam o grão na eira.", "next": "end"}
+			}
+		},
+		{
+			"id": "egypt_goose_examine",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Gansos grasnam e andam em fila até a água. Eram criados nas casas egípcias por causa da carne e dos ovos.", "next": "end"}
+			}
+		},
+		{
+			"id": "egypt_cat_examine",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um gato se espreguiça junto aos silos. Perto do grão, sempre aparecem ratos, e os gatos davam conta deles.", "next": "end"}
+			}
+		}
+	],
+	"verification": {"status": "pending_review", "reviewer": "", "notes": "Falas de personagens fictícios escritas pelo agente roteirista (IA) com base no design.md, research_biblical.md e research_historical.md de ep_009. Nenhuma fala de José, Potifar, Judá, Rúben ou mercadores do relato. Revisão E9-02 (decisão do coordenador): a casa é genérica, 'uma casa de um oficial egípcio, como a de Potifar'; Ipi diz só 'oficial do rei'; a versão A (administrador estrangeiro) foi retirada, porque poria José nesta casa. Referência em nota do narrador: Gen 39:4. Pendências: nomes egípcios e 'hekat' (revisor histórico); extensão do validador para action.scene. Aguarda revisão humana."}
+}

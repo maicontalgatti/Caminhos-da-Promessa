@@ -1,0 +1,23 @@
+{
+	"episode": "ep_016_a_travessia_do_mar",
+	"title": "A travessia do mar",
+	"references": [
+		"Exod 14:1-31"
+	],
+	"chapter_ranges": [],
+	"narrative_mode": "observacao_contextual",
+	"region": "",
+	"created": "2026-10-14",
+	"gates": {
+		"0_selection": "done",
+		"1_research": "pending",
+		"2_design": "pending",
+		"3_review": "pending",
+		"4_implementation": "pending",
+		"5_audio": "pending",
+		"6_qa": "pending",
+		"7_publication": "pending"
+	},
+	"agents": [],
+	"costs": []
+}

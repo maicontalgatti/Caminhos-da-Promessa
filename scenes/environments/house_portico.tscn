@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/house_portico.png" id="1_1nq3u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x44x"]
+size = Vector2(188, 54)
+
+[node name="HousePortico" type="StaticBody2D" unique_id=1700194702]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=113490255]
+texture = ExtResource("1_1nq3u")
+centered = false
+offset = Vector2(-96, -125)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=651884525]
+position = Vector2(0, -31)
+shape = SubResource("RectangleShape2D_2x44x")

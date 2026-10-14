@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/threshing_sledge.png" id="1_uk1mb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_teaq6"]
+size = Vector2(24, 4)
+
+[node name="ThreshingSledge" type="StaticBody2D" unique_id=2016630844]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1724691829]
+texture = ExtResource("1_uk1mb")
+centered = false
+offset = Vector2(-14, -10)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2060049908]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_teaq6")

@@ -1,0 +1,58 @@
+{
+	"_comment": "Proposta do roteirista (IA, 2026-10-14) para data/collectibles/bethlehem_night.json, no formato de data/collectibles/caravan_road_dothan.json. Coleção 'bethlehem_night' (5) da missão bethlehem_night_signs. bn_herodium_view saiu (decisão: Heródio fora) e foi trocado por bn_terraces. Nada da cena do anúncio vira colecionável (regra 12): só objetos e paisagem do posto de vigia.",
+	"sets": [
+		{"id": "bethlehem_night", "title": "Sinais da vigília", "region": "bethlehem_night"}
+	],
+	"collectibles": [
+		{
+			"id": "bn_staff",
+			"set": "bethlehem_night",
+			"title": "Cajado e vara",
+			"category": "object",
+			"region": "bethlehem_night",
+			"classification": "historical_context",
+			"summary": "Com o cajado longo, o pastor guiava o rebanho e apoiava o passo nas encostas; a vara curta servia para afastar animais selvagens. Este cajado é criado para o jogo.",
+			"references": []
+		},
+		{
+			"id": "bn_sling",
+			"set": "bethlehem_night",
+			"title": "Funda de pastor",
+			"category": "object",
+			"region": "bethlehem_night",
+			"classification": "historical_context",
+			"summary": "Uma funda de couro e pedras lisas, para afastar predadores. Em 1 Samuel 17:40, o jovem Davi escolhe cinco pedras lisas para a sua funda.",
+			"references": ["1Sam 17:40"]
+		},
+		{
+			"id": "bn_cloak_bed",
+			"set": "bethlehem_night",
+			"title": "Manto de lã",
+			"category": "cultural",
+			"region": "bethlehem_night",
+			"classification": "historical_context",
+			"summary": "O manto grosso de lã agasalhava de dia e virava cobertor à noite, para quem dormia no campo.",
+			"references": []
+		},
+		{
+			"id": "bn_oil_lamp",
+			"set": "bethlehem_night",
+			"title": "Lamparina de barro",
+			"category": "object",
+			"region": "bethlehem_night",
+			"classification": "historical_context",
+			"summary": "Lamparinas de barro feitas no torno, com o bico largo, eram comuns na Judeia nos dias de Herodes. Queimavam azeite de oliva e davam uma luz fraca e quente.",
+			"references": []
+		},
+		{
+			"id": "bn_terraces",
+			"set": "bethlehem_night",
+			"title": "Terraços de pedra seca",
+			"category": "geographic",
+			"region": "bethlehem_night",
+			"classification": "historical_context",
+			"summary": "Muros baixos de pedra seca seguravam a terra das encostas em degraus, para oliveiras, videiras e cereais; as encostas pedregosas ficavam para os rebanhos. A idade de muitos terraços da região é debatida.",
+			"references": []
+		}
+	]
+}

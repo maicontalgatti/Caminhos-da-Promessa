@@ -1,0 +1,62 @@
+{
+	"_comment": "Proposta do roteirista (IA, 2026-10-14) para data/bible/people.json e data/bible/places.json. Resumos próprios a partir da ficha bíblica do ep_025 (BPM). As referências ficam em Rute 1-2, porque Ruth 3 e Ruth 4 não estão em verse_counts.json e estão fora desta experiência; quando houver experiência dos capítulos 3-4 (eira, porta, Obede, genealogia, Mt 1:5), as fichas ganham esses momentos. '_certainty' é metadado de revisão (people.json não tem campo de certeza); em places, a certeza vai em 'identification'. 'places_update' sugere novo texto para o lugar bethlehem que já existe.",
+	"people": [
+		{
+			"id": "ruth",
+			"name": "Rute",
+			"era_id": "judges",
+			"_certainty": "Pessoa do relato. Época dos juízes, sem ano (null) e sem saber em que momento do período (unknown).",
+			"places": ["bethlehem"],
+			"references": ["Ruth 1:4", "Ruth 1:14-18", "Ruth 1:22", "Ruth 2:2-3", "Ruth 2:17-18"],
+			"summary": "Mulher moabita, nora de Noemi. Viúva, fica com a sogra e declara que o povo e o Deus de Noemi serão os seus. Em Belém, respiga nos campos, na parte que era de Boaz, e leva a cevada à sogra (Rt 2:18).",
+			"relations": [{"person": "naomi", "label": "nora de"}],
+			"moments": ["Fica com a sogra (Rt 1:14-18)", "Chega a Belém no começo da colheita (Rt 1:22)", "Respiga no campo de Boaz (Rt 2:2-17)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "No jogo, Rute aparece só como figura distante na cena dirigida, sem falas; o que diz está no texto citado. O livro continua nos capítulos 3 e 4 (fora desta experiência). Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "naomi",
+			"name": "Noemi",
+			"era_id": "judges",
+			"_certainty": "Pessoa do relato. Época dos juízes, sem ano; 'cerca de dez anos' em Moabe é número do próprio texto (Rt 1:4).",
+			"places": ["bethlehem"],
+			"references": ["Ruth 1:1-5", "Ruth 1:19-21", "Ruth 2:19-20"],
+			"summary": "Mulher de Belém, casada com Elimeleque. Por causa de uma fome, vai para Moabe com a família; lá perde o marido e os dois filhos. Volta a Belém com a nora Rute e pede para ser chamada Mara. Reconhece Boaz como parente próximo da família.",
+			"relations": [{"person": "ruth", "label": "sogra de"}],
+			"moments": ["Vai para Moabe com a família (Rt 1:1-5)", "Volta a Belém e pede o nome Mara (Rt 1:19-21)", "Reconhece Boaz como resgatador (Rt 2:19-20)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Noemi não aparece no mapa nem na cena; só no texto citado e no diário. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "boaz",
+			"name": "Boaz",
+			"era_id": "judges",
+			"_certainty": "Pessoa do relato. Época dos juízes, sem ano. 'Muito rico' (Rt 2:1) tem nuance lexical discutida (valor, força).",
+			"places": ["bethlehem", "bethlehem_fields"],
+			"references": ["Ruth 2:1", "Ruth 2:4", "Ruth 2:8-16", "Ruth 2:20"],
+			"summary": "Homem de Belém, da família de Elimeleque, marido de Noemi, descrito como muito rico. Em Rute 2, saúda os ceifeiros em nome do SENHOR, deixa Rute respigar no campo dele, a chama para a refeição dos ceifeiros e manda deixar espigas para ela. Noemi o reconhece como resgatador.",
+			"relations": [{"person": "naomi", "label": "parente do marido de"}],
+			"moments": ["Apresentado pelo narrador (Rt 2:1)", "Saúda os ceifeiros (Rt 2:4)", "Acolhe Rute no campo (Rt 2:8-16)", "Chamado de resgatador por Noemi (Rt 2:20)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "No jogo, Boaz aparece só como figura distante na cena dirigida, sem falas. Momentos dos capítulos 3 e 4 ficam para outra experiência. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		}
+	],
+	"places": [
+		{
+			"id": "bethlehem_fields",
+			"name": "Campos de Belém",
+			"kind": "campos",
+			"identification": "debated",
+			"_certainty": "Que havia campos de cereal fora de Belém é do texto (Rt 2:3-4). A localização da parte do campo de Boaz é desconhecida; a tradição de Beit Sahur é posterior e sem prova. O mapa do jogo é recriação.",
+			"eras": ["judges"],
+			"references": ["Ruth 2:3", "Ruth 2:4", "Ruth 2:23"],
+			"description": "Campos de cevada e trigo nos vales e encostas em volta de Belém. Rute 2 conta que Boaz veio de Belém ao campo, então os campos ficavam fora da aldeia, a pé. Onde ficava a parte do campo de Boaz é desconhecido: a tradição que o mostra em Beit Sahur, a leste, é bem posterior. Os campos do jogo são uma recriação.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Geografia segundo research_historical.md do ep_025. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		}
+	],
+	"places_update": [
+		{
+			"id": "bethlehem",
+			"_change": "Só a descrição e uma referência a mais (Rt 1:19); identification continua established.",
+			"references": ["Ruth 1:1", "Ruth 1:19", "1Sam 16:1", "Luke 2:4"],
+			"description": "Pequena cidade nas colinas de Judá, a cerca de 8 a 9 km ao sul de Jerusalém. Cenário do livro de Rute, terra de Davi e, segundo os evangelhos, lugar do nascimento de Jesus. Da Belém do tempo dos juízes quase não restam vestígios: a cidade atual está por cima."
+		}
+	]
+}

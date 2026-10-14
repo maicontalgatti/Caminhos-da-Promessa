@@ -396,3 +396,72 @@ no ciclo fica explicitamente pendente.
 
 ### Não verificado / pendente
 - Build do exe não refeito (nada do exe mudou). Resultado do workflow e da publicação no HANDOFF.
+
+## 2026-10-14 — Infraestrutura: cenas dirigidas, luz por estado, experiências com destino (ADR-028)
+
+### Entregue
+- `scripts/world/scene_database.gd`, `scene_director.gd`, `scene_actor.gd`, `scene_fx.gd`, `world_schema.gd` (novos); integração em `game.gd`, `game_map.gd` (luz), `world_manager.gd` (destino, etapas, passagens), `map_exit.gd`, `scripture_map.gd` (botão e cartão de passagem), `quest_database.gd`, `dialogue_database.gd`, fábrica, `validate_content.gd`, `export_self_test.gd`.
+- `data/world/experiences.json`: `travel` em `isaac_wells` e `joseph_dothan` (e `regions` em `joseph_dothan`). Nenhum conteúdo de episódio, nenhum campo novo no save.
+- `tests/scene_tests.gd` + `tests/data/scenes/test_scenes.json` (fora da exportação).
+
+### Problemas corrigidos durante a tarefa
+- A chave proibida `points` (recompensa) colidia com `params.points` do `light_glow`: virou `score`.
+- Erro de referência repetido pelo catálogo (início e fim do intervalo) agora aparece uma vez só nas cenas.
+
+### Verificado
+- Suíte 775/775, fluxo 17/17, validação sem erros, fábrica 0 erros em 78 episódios; autoteste (`-- --self-test`) rodado pelo editor: checagens de cenas aprovadas (as 4 falhas são as esperadas fora de um exe release).
+
+### Não verificado / pendente
+- Exe não gerado; efeitos sem avaliação visual nem captura; propostas de `production/` divergem do formato (KI-20).
+
+## 2026-10-14 — Quatro experiências, etapa A: arte, mapas e dados de região
+
+### Entregue
+- `tools/art_gen/art_lands.gd` (novo; `generate_art.gd -- --v05-only`): atlas `lands_tiles.png`, 52 objetos de cenário, 18 folhas de personagem (17 em pé + Tamir deitado), 7 animais e 5 ícones; paletas `egito_casa`, `margem_do_mar`, `belem_campos`.
+- `build_regions.gd`: caminho v0.5 (`"tileset": "lands"`) com `lands_tileset.tres` (fonte 0 Canaã, fonte 1 terras), sobreposições por retângulo/disco, muros, colisões fixas; mapas `egypt_house`, `sea_camp`, `bethlehem_fields`, `bethlehem_night`. Mapas antigos não foram refeitos.
+- `data/regions/` das quatro regiões; NPCs, examináveis, itens e descobertas ficam em `_stage_b` até existirem personagens, diálogos e itens. Ambiente provisório em `data/audio/sfx.json`. `map_overview.gd` aceita regiões e `--out=`.
+
+### Verificado
+- Render dos quatro mapas por `map_overview.gd` (pasta temporária). Suíte: 805/805 na 1ª execução; na 2ª, com conteúdo da etapa B chegando em paralelo, 929 ok / 125 falhas (alvos de missões ainda em `_stage_b`, textos bíblicos e cenas). Fluxo 17/17. Validação: 41 erros, nenhum de região, mapa ou som.
+
+## 2026-10-14 — Quatro experiências, etapa B: dados de ep_009, ep_016, ep_025 e ep_048
+
+### Entregue
+- Missões (`data/quests/egypt`, `sea`, `bethlehem`), diálogos, personagens, coleções, 5 cenas em `data/scenes/` (formato ADR-028: `player_to`, `on_end` só com `set_flags`/`unlock`/`player_to`, silhuetas `silhouette_*`), descobertas, apresentações, pessoas, lugares, itens e `data/bible/stories/four_experiences.json`; falas e textos copiados das propostas, verificação `pending_review`.
+- `experiences.json`: as quatro experiências `available`, encadeadas por `requires`, com `travel`, `passage`, `stages` (José) e `entry_if` (mar); rótulo de era "Século I" → "Nos dias de Herodes".
+- `bpm.json` regenerado por `import_scripture` (327 versículos). Sons trocados por ids existentes: `amb_campfire`→`interact_fire`, `amb_wind_strong`→`amb_wind_road`, `grain_beat`→`interact_wood`; `sfx_water_rush_slow` e `amb_sea_calm` omitidos.
+- `tests/experience_content_tests.gd` (novo); `scene_tests.gd` e `world_tests.gd` usam uma experiência `planned` injetada.
+
+### Verificado
+- Suíte: 1093 ok / 195 falhas, todas de alvos que dependem das regiões (NPCs, examináveis e itens ainda em `_stage_b`, e o delta de Dotã). Fluxo 17/17. Validação sem erros de dados. Fábrica `check`: 0 erros em 78 episódios.
+
+### Não verificado / pendente
+- Delta de Dotã (`dothan_ridge`, `dothan_ridge_view`) não aplicado; alvos de região da etapa A; revisão das duas histórias escritas à mão (Gn 39, Rute 2); exe não gerado.
+
+## 2026-10-14 — Quatro experiências, etapa A2: reconciliação de regiões e dados
+
+### Entregue
+- `_stage_b` promovido a `npcs`/`examinables`/`pickups` nas quatro regiões; `discoveries_on_enter` ligados. Dotã: área `dothan_ridge` e examinável `dothan_ridge_view` (visível com `experience:joseph_egypt`).
+- `build_regions.gd`: variante `boundary_stone_plain` (sem o diálogo de Canaã) nos campos de Belém; potes do acampamento do mar trocados por `jar`; cenas de objeto só são regravadas quando mudam (sem troca de `unique_id`).
+- `sfx.json`: som de material para os 46 novos diálogos de examináveis e para 5 itens novos (ids existentes).
+- `joseph_caravan_departs`: caravana 44 px mais ao norte, fora da fileira de árvores da borda sul.
+- `tools/screenshot/capture_v06.tscn` (janela, não headless): mapas inteiros com luz por estado, visão de jogo e quadros das cenas; seleção em `docs/images/v06_*.png`.
+
+### Verificado
+- Import sem erros; suíte 1481/1481; fluxo 17/17; validação sem erros de dados; fábrica `check` 0 erros em 78 episódios; áudio 131 arquivos, 0 problemas. As cinco cenas tocaram nas capturas.
+
+### Não verificado / pendente
+- Efeitos e sons de ambiente por estado (`_ambient_*_proposed` em `sea_camp` e `bethlehem_night`) não têm suporte no `GameMap`; exe não gerado; revisão bíblica das propostas segue `pending_review`.
+
+## 2026-10-14 — v0.6.0: QA, correções, build e fechamento das quatro experiências (coordenador)
+
+### Entregue
+- QA estático (quest-qa) sem bloqueadores; correções: `wait: true` nas 12 legendas de cena que eram substituídas antes de serem lidas; `SceneDatabase.validate` recusa esse caso (2 testes novos em `scene_tests.gd`); `kindle_fire` (pastores) conclui pelo evento `bn_tamir_fire` em vez de `item_delivered dry_wood`, que já podia ter ocorrido em Dotã; `ruth_gleaning.references` = `Ruth 1:19-2:23` (botão "Ler o relato bíblico" no diário); `completion.next` de `joseph_dothan_road`, `joseph_potiphar_house`, `exodus_sea_crossing` e `ruth_gleaning` apontam a próxima experiência.
+- Fábrica: `link` (missão, diálogos e apresentação principais), `audio-manifest` e estados até `tested` para ep_009, ep_016, ep_025 e ep_048; `test_report.json` em cada pacote.
+- Versão 0.6.0 (`project.godot`, `export_presets.cfg`, `CHANGELOG.md`).
+
+### Verificado
+- Suíte 1482/1482; fluxo 17/17; validação sem erros; fábrica 0 erros em 78 episódios; áudio 131 arquivos, 0 problemas; build do exe 0.6.0 (108,9 MB) com autoteste OK e inicialização com GPU OK.
+
+### Não verificado
+- Sessão de jogo humana (KI-02); revisão humana do conteúdo bíblico (KI-03, KI-21).

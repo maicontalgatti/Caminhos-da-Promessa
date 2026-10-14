@@ -23,6 +23,12 @@ func _init() -> void:
 		print("generate_art: concluido (v0.4)")
 		quit()
 		return
+	if "--v05-only" in OS.get_cmdline_user_args():
+		_palettes()
+		_v05_art()
+		print("generate_art: concluido (v0.5)")
+		quit()
+		return
 	rng.seed = 7_2026
 	_palettes()
 	_tiles()
@@ -32,8 +38,16 @@ func _init() -> void:
 	_ui()
 	_menu_background()
 	_v04_art()
+	_v05_art()
 	print("generate_art: concluido")
 	quit()
+
+
+## v0.5: terras, objetos, personagens e ícones das quatro experiências
+## (Egito, mar, campos e noite de Belém). Sempre por último, com sementes próprias.
+func _v05_art() -> void:
+	var lands = load("res://tools/art_gen/art_lands.gd").new(self)
+	lands.generate()
 
 
 # ---------------------------------------------------------------- v0.4: regiões novas
@@ -440,11 +454,13 @@ func _character_frame(dir: int, frame: int, look: Dictionary):
 	var head_sh := Color(look.head_shade)
 	var band := Color(look.band)
 	var hair := Color(look.hair)
-	var sandal := Color("#5a3a22")
+	var sandal := Color(String(look.get("feet", "#5a3a22")))
+	# Campos opcionais (v0.5): ausentes, o quadro sai idêntico ao de antes.
+	var stoop := int(look.get("stoop", 0))
 
 	var cx := 12
-	var top := 18 if child else 13
-	var head_cy := 13 if child else 8
+	var top := (18 if child else 13) + stoop
+	var head_cy := (13 if child else 8) + stoop
 	var head_r := 4.5 if child else 5.0
 	var hw_top := 3.0 if child else 4.0
 	var hw_bot := 4.5 if child else 6.0
@@ -463,8 +479,15 @@ func _character_frame(dir: int, frame: int, look: Dictionary):
 		cv.rect(cx - 4, lf, 3, 2, sandal)
 		cv.rect(cx + 1, rf, 3, 2, sandal)
 
-	# Túnica
-	var robe_bottom := 29
+	# Túnica (robe_bottom < 29: saiote ou túnica curta, com as pernas à mostra)
+	var robe_bottom := int(look.get("robe_bottom", 29))
+	if robe_bottom < 29:
+		if side:
+			cv.rect(cx - 1 + step, robe_bottom, 2, 29 - robe_bottom, skin)
+			cv.rect(cx - 1 - step, robe_bottom, 2, 29 - robe_bottom, skin_sh)
+		else:
+			cv.rect(cx - 3, robe_bottom, 2, 29 - robe_bottom, skin)
+			cv.rect(cx + 1, robe_bottom, 2, 29 - robe_bottom, skin_sh)
 	for y in range(top + bob, robe_bottom):
 		var t := float(y - top - bob) / float(robe_bottom - top - bob)
 		var hw := roundi(lerpf(hw_top, hw_bot, t))
@@ -473,11 +496,36 @@ func _character_frame(dir: int, frame: int, look: Dictionary):
 		cv.px(cx + hw - 1, y, robe_sh)
 		cv.px(cx + hw - 2, y, robe_sh)
 	cv.rect(cx - roundi(hw_bot) + 1, robe_bottom - 1, roundi(hw_bot) * 2 - 2, 1, robe_sh)
+	if look.has("hem"):
+		cv.rect(cx - roundi(hw_bot) + 1, robe_bottom - 2, roundi(hw_bot) * 2 - 2, 1, Color(String(look.hem)))
+	if look.has("clavi") and dir != 3 and not side:
+		for x in [cx - 2, cx + 1]:
+			cv.rect(x, top + bob, 1, robe_bottom - top - bob - 1, Color(String(look.clavi)))
 	var sash_y := top + bob + (4 if child else 6)
 	var sash_hw := roundi(lerpf(hw_top, hw_bot, float(sash_y - top - bob) / float(robe_bottom - top - bob)))
 	cv.rect(cx - sash_hw, sash_y, sash_hw * 2, 1, sash)
 	if not side:
 		cv.px(cx + 1, sash_y + 1, sash)
+	if look.has("mantle"):
+		var mc := Color(String(look.mantle))
+		var rows := 4 if child else 6
+		for y in range(top + bob, top + bob + rows):
+			var mhw := roundi(lerpf(hw_top, hw_bot, float(y - top - bob) / float(robe_bottom - top - bob))) + 1
+			cv.rect(cx - mhw, y, mhw * 2, 1, mc)
+			cv.px(cx + mhw - 1, y, mc.darkened(0.2))
+		var edge_c := Color(String(look.get("mantle_edge", ""))) if look.has("mantle_edge") else mc.darkened(0.25)
+		var ehw := roundi(lerpf(hw_top, hw_bot, float(rows - 1) / float(robe_bottom - top - bob))) + 1
+		cv.rect(cx - ehw, top + bob + rows - 1, ehw * 2, 1, edge_c)
+	if look.has("collar") and dir == 0:
+		cv.rect(cx - 3, top + bob, 6, 1, Color(String(look.collar)))
+		cv.rect(cx - 2, top + bob + 1, 4, 1, Color(String(look.collar)).darkened(0.15))
+	if look.has("bag") and dir != 3:
+		var bag_c := Color(String(look.bag))
+		if side:
+			cv.rect(cx - 4, top + bob + 7, 3, 3, bag_c)
+		else:
+			cv.line(cx - 3, top + bob, cx + 3, top + bob + 7, bag_c.darkened(0.2))
+			cv.rect(cx + 3, top + bob + 7, 3, 3, bag_c)
 
 	# Braços
 	var arm_len := 5 if child else 7
@@ -492,6 +540,24 @@ func _character_frame(dir: int, frame: int, look: Dictionary):
 		cv.rect(lx, top + bob + arm_len + step, 2, 2, skin)
 		cv.rect(rx, top + 1 + bob - step, 2, arm_len, robe_sh)
 		cv.rect(rx, top + bob + arm_len - step, 2, 2, skin_sh)
+
+	if look.has("basket") and dir != 3:
+		var bk := Color(String(look.basket))
+		var bx := cx - 5 if side else cx + roundi(hw_top) + 2
+		cv.ellipse(bx, top + bob + 11, 3, 2.2, bk.darkened(0.2))
+		cv.ellipse(bx - 0.5, top + bob + 10.5, 2.5, 1.6, bk)
+		cv.px(bx - 1, top + bob + 9, Color("#e8c27a"))
+		cv.px(bx + 1, top + bob + 9, Color("#d9b860"))
+	if look.has("staff"):
+		var wood := Color(String(look.staff))
+		var sx := cx + 4 if side else (cx - roundi(hw_top) - 3 if dir == 3 else cx + roundi(hw_top) + 2)
+		var sy0 := head_cy + bob - 4
+		cv.rect(sx, sy0, 1, 30 - sy0, wood)
+		cv.px(sx, sy0, wood.lightened(0.25))
+		if look.get("crook", false):
+			cv.px(sx + 1, sy0 - 1, wood)
+			cv.px(sx + 2, sy0, wood)
+			cv.px(sx + 2, sy0 + 1, wood)
 
 	# Cabeça
 	var hy := head_cy + bob

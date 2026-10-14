@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/oil_lamp_niche.png" id="1_xqxae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tx03"]
+size = Vector2(10, 3)
+
+[node name="OilLampNiche" type="StaticBody2D" unique_id=86408775]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1093656961]
+texture = ExtResource("1_xqxae")
+centered = false
+offset = Vector2(-8, -12)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1421358696]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_2tx03")

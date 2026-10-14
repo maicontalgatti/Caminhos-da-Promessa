@@ -1,0 +1,99 @@
+{
+	"_comment": "PROPOSTA (ep_009, dialogue-writer, IA, pending_review). Formato de data/characters/*.json (destino: data/characters/egypt_house.json). Ids com prefixo da região (decisão do lote). Nenhum é personagem bíblico: não encontram, não descrevem nem falam por José ou Potifar. 'art_brief' é só para o visual-asset-producer e deve ser removido na integração (ou movido para o visual_manifest). Nomes egípcios plausíveis, a conferir pelo revisor histórico. Nenhum servo é hebreu/semita nesta versão (decisão humana pendente, design §5).",
+	"characters": [
+		{
+			"id": "egypt_ipi",
+			"display_name": "Ipi",
+			"role": "Porteiro",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Porteiro idoso, fictício, que cuida da entrada de uma grande casa egípcia recriada para o jogo. Não é personagem do relato de Gênesis 39.",
+			"dialogue_id": "ipi_talk",
+			"sprite": {"sheet": "res://assets/characters/egypt_ipi.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1},
+			"art_brief": "Homem idoso e magro, pele morena média (#A86F48), cabeça raspada ou cabelo branco bem curto, rosto barbeado. Saiote de linho branco até o joelho e túnica curta e leve por cima; sandálias de fibra. Segura um bastão simples de madeira (de porteiro, não de oficial). Sem peruca, colar largo, coroa, cobra na testa ou qualquer símbolo real; sem arma."
+		},
+		{
+			"id": "egypt_meryt",
+			"display_name": "Meryt",
+			"role": "Despenseira",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Despenseira fictícia que guarda os jarros e confere o grão no depósito da casa egípcia recriada.",
+			"dialogue_id": "meryt_talk",
+			"sprite": {"sheet": "res://assets/characters/egypt_meryt.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": -1, "facing_y": 0},
+			"art_brief": "Mulher adulta, de meia-idade, pele morena escura (#6E4630), cabelo preto natural na altura dos ombros preso com uma faixa de linho. Vestido de linho branco simples, longo, de alças largas e com uma túnica curta por cima (vestimenta modesta); contorno escuro nos olhos (kohl). Pode trazer um pequeno selo de argila ou um cesto. Nada de joias de elite, véus 'orientalistas' ou trajes de fantasia."
+		},
+		{
+			"id": "egypt_senbi",
+			"display_name": "Senbi",
+			"role": "Lavrador",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Lavrador fictício que trabalha na eira e nos campos da casa egípcia recriada.",
+			"dialogue_id": "senbi_talk",
+			"sprite": {"sheet": "res://assets/characters/egypt_senbi.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "wander", "speed": 14, "wander_radius": 20},
+			"art_brief": "Homem jovem adulto, forte, pele morena clara-avermelhada (#8A5A3C), cabelo preto curto natural, barbeado. Saiote curto de linho branco já gasto, com túnica curta sem mangas; descalço. Pode segurar uma pá de joeirar de madeira ou uma foice de madeira com dentes de sílex. Sem ferramentas de ferro, sem chapéu de palha moderno."
+		},
+		{
+			"id": "egypt_cattle",
+			"display_name": "Boi",
+			"role": "Animal",
+			"kind": "animal",
+			"classification": "historical_context",
+			"description": "Gado de chifres longos era riqueza das grandes casas egípcias e era contado e anotado.",
+			"dialogue_id": "egypt_cattle_examine",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/egypt_cattle.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
+			"behavior": {"type": "wander", "speed": 8, "wander_radius": 16},
+			"art_brief": "Boi de chifres longos em forma de lira, pelagem malhada (branco com manchas castanhas ou pretas), corpo esguio. Sem canga nem arado."
+		},
+		{
+			"id": "egypt_donkey",
+			"display_name": "Jumento",
+			"role": "Animal",
+			"kind": "animal",
+			"classification": "historical_context",
+			"description": "Jumentos levavam carga e pisavam o grão na eira.",
+			"dialogue_id": "egypt_donkey_examine",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/egypt_donkey.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
+			"behavior": {"type": "idle", "facing_x": 1, "facing_y": 0},
+			"art_brief": "Jumento cinza-acastanhado, focinho claro, sem sela; no máximo uma manta simples."
+		},
+		{
+			"id": "egypt_goose",
+			"display_name": "Ganso",
+			"role": "Animal",
+			"kind": "animal",
+			"classification": "historical_context",
+			"description": "Gansos eram criados nas casas egípcias por causa da carne e dos ovos.",
+			"dialogue_id": "egypt_goose_examine",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/egypt_goose.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
+			"behavior": {"type": "wander", "speed": 16, "wander_radius": 24},
+			"art_brief": "Ganso-do-nilo ou ganso cinzento doméstico, pequeno no sprite; tons de cinza, castanho e branco. Não usar galinhas."
+		},
+		{
+			"id": "egypt_cat",
+			"display_name": "Gato",
+			"role": "Animal",
+			"kind": "animal",
+			"classification": "historical_context",
+			"description": "Gatos domésticos afastavam os ratos dos celeiros.",
+			"dialogue_id": "egypt_cat_examine",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/egypt_cat.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
+			"behavior": {"type": "wander", "speed": 12, "wander_radius": 20},
+			"art_brief": "Gato de pelo curto, cor de areia com listras finas, orelhas grandes. Sem coleira com joias ou aparência de 'gato sagrado'."
+		}
+	],
+	"scene_figures": {
+		"_comment": "Figurantes da cena dirigida joseph_caravan_departs (Dotã). Não são personagens com diálogo nem entram em data/characters; o texto do relato não lhes dá nome nem fala. Descrição para o artista.",
+		"silhouette_camel": "Dromedário (uma corcova) com fardos de couro e tecido sobre manta ou almofada simples; sem sela de armação sobre a corcova, sem cavaleiro, sem borlas ou franjas. Tons: couro #8B5A2B, lã natural #D8C9A8.",
+		"silhouette_merchant": "Mercador a pé, túnica longa de lã (alguma com faixas coloridas discretas), barba, sandálias, cajado. Sem keffiyeh moderno, turbante 'das Arábias' ou cimitarra. Não identificar como ismaelita ou midianita de forma caricata.",
+		"silhouette_youth": "Jovem pequeno e discreto entre os mercadores (José, decisão do criador): túnica simples, a pé, sem cordas, correntes, chicote, ferimentos ou postura de sofrimento exagerada; sem destaque de cor, sem rótulo e sem close."
+	}
+}

@@ -1,0 +1,126 @@
+{
+	"_comment": "Experiência \"José no Egito\" (ep_009). Integrado de production/episodes/ep_009_jose_na_casa_de_potifar/quest.proposal.json; aguarda revisão humana.",
+	"quests": [
+		{
+			"id": "joseph_potiphar_house",
+			"title": "Uma casa como a de Potifar",
+			"category": "main",
+			"description": "Conheça uma casa de um oficial egípcio, criada para o jogo, como aquela onde José serviu, e leia o relato de Gênesis 39:1-6.",
+			"type": "context_exploration",
+			"classification": "plausible_fiction",
+			"classification_note": "A propriedade, Ipi, Meryt e Senbi são criados para o jogo. A casa é genérica: uma casa de um oficial egípcio, como aquela onde José serviu, e não a casa de Potifar; sem cidade, Faraó ou dinastia identificados. O relato bíblico aparece à parte, com o texto da tradução carregada. José e Potifar não aparecem nem falam.",
+			"region": "egypt_house",
+			"place_id": "egypt",
+			"era_id": "patriarchs",
+			"references": ["Gen 39:1-6"],
+			"theme": "José servindo numa casa estrangeira; o SENHOR estava com José",
+			"people": ["joseph"],
+			"fictional_characters": ["egypt_ipi", "egypt_meryt", "egypt_senbi"],
+			"intro": "Gênesis 39 conta que José foi levado para o Egito e comprado por Potifar, oficial do Faraó. O viajante chega, por conta própria e em outro momento da história, a uma casa de um oficial egípcio criada para o jogo: uma casa como aquela onde José serviu, não a casa de Potifar.",
+			"start": {"event": "quest_completed", "id": "joseph_caravan_watch"},
+			"prerequisites": {"quests_completed": ["joseph_caravan_watch"], "flags": []},
+			"objectives": [
+				{
+					"id": "arrive_egypt",
+					"type": "visit_region",
+					"region": "",
+					"text": "Abra o Mapa das Escrituras e siga para o Egito de José.",
+					"detail": "\"José no Egito\" tem uma nova etapa.",
+					"complete_on": {"event": "region_entered", "id": "egypt_house"},
+					"targets": [{"type": "ui", "id": "scripture_map"}],
+					"hints": [
+						"O relato continua em outro lugar.",
+						"O Mapa das Escrituras abre com M; \"José no Egito\" tem uma nova etapa.",
+						"Pressione M, escolha \"José no Egito\" e \"Continuar\"."
+					],
+					"log": "Você chegou a uma propriedade egípcia, em outro momento da história."
+				},
+				{
+					"id": "meet_porter",
+					"type": "talk_to_npc",
+					"text": "Fale com o porteiro da propriedade.",
+					"detail": "Grandes casas tinham quem cuidasse da entrada.",
+					"complete_on": {"event": "custom", "id": "egypt_ipi_welcome"},
+					"targets": [{"type": "npc", "id": "egypt_ipi"}],
+					"hints": [
+						"Grandes casas tinham quem cuidasse da entrada.",
+						"O porteiro fica do lado de fora do portão, no muro sul.",
+						"Siga a estrada até o portão sul e converse com Ipi."
+					],
+					"log": "Ipi, o porteiro, contou que a casa pertence a um oficial do rei."
+				},
+				{
+					"id": "enter_courtyard",
+					"type": "reach_location",
+					"text": "Entre no pátio da casa.",
+					"detail": "O trabalho da casa acontece ao ar livre.",
+					"complete_on": {"event": "location_reached", "id": "eh_courtyard"},
+					"targets": [{"type": "area", "id": "eh_courtyard"}],
+					"hints": [
+						"A vida da casa acontece ao ar livre.",
+						"O pátio fica logo depois do portão, diante do pórtico de colunas.",
+						"Atravesse o portão sul e caminhe até o centro do pátio."
+					],
+					"log": "No pátio, servos moem grão, carregam cestos e cuidam dos jarros."
+				},
+				{
+					"id": "household_records",
+					"type": "inspect_object",
+					"text": "Examine a mesa do escriba, junto ao depósito.",
+					"detail": "Uma casa grande conta o que entra e o que sai.",
+					"complete_on": {"event": "dialogue_finished", "id": "eh_records"},
+					"targets": [{"type": "examinable", "id": "eh_records"}],
+					"hints": [
+						"Uma casa grande precisa contar o que entra e o que sai.",
+						"Perto do depósito de jarros há uma mesa com papiro e paleta.",
+						"Examine a mesa do escriba, a leste do pátio, junto à porta do depósito."
+					],
+					"log": "Papiro, paleta e jarros selados mostram como uma grande casa egípcia controlava seus bens. Os registros são uma recriação do jogo.",
+					"unlock": ["egyptian_household"]
+				},
+				{
+					"id": "house_and_field",
+					"type": "wait_for_event",
+					"text": "Veja a casa e o campo: o celeiro e o campo irrigado.",
+					"detail": "Gênesis 39:5 fala do que havia na casa e no campo.",
+					"complete_on": {"event": "condition", "id": "eh_house_and_field", "condition": {"all": [{"event": "dialogue_finished", "id": "eh_granary"}, {"event": "dialogue_finished", "id": "eh_field"}]}},
+					"targets": [{"type": "examinable", "id": "eh_granary"}, {"type": "examinable", "id": "eh_field"}],
+					"hints": [
+						"Gênesis 39:5 fala da casa e do campo.",
+						"Os celeiros ficam a leste do muro; o campo, ao sul, junto ao canal.",
+						"Examine os silos a leste e depois a beira do campo, ao sul da estrada."
+					],
+					"log": "Silos e campos irrigados: uma grande casa egípcia vivia da terra junto à água.",
+					"unlock": ["nile_agriculture"]
+				},
+				{
+					"id": "read_potiphar_story",
+					"type": "read_scripture",
+					"text": "Leia no diário o relato de Gênesis 39:1-6.",
+					"detail": "José na casa de Potifar.",
+					"complete_on": {"event": "presentation_finished", "id": "gen_039_potiphar"},
+					"targets": [{"type": "examinable", "id": "eh_journal"}],
+					"hints": [
+						"O diário guarda o relato desta casa.",
+						"O diário de viagem está sobre um banco, junto ao tanque do jardim.",
+						"Examine o diário junto ao tanque, a noroeste dentro do muro, ou abra J e escolha \"Ler o relato bíblico\"."
+					],
+					"log": "Você leu Gênesis 39:1-6: o SENHOR estava com José, e Potifar lhe confiou tudo o que tinha."
+				}
+			],
+			"discoveries": ["egypt_black_land", "egyptian_household", "nile_agriculture", "joseph_steward"],
+			"completion": {
+				"title": "Uma casa no Egito",
+				"references": ["Gen 37:36", "Gen 39:1-6"],
+				"summary": [
+					"José foi comprado por Potifar, oficial do Faraó e capitão da guarda (Gênesis 39:1).",
+					"O SENHOR estava com José, e Potifar lhe confiou tudo o que tinha, na casa e no campo (Gênesis 39:2-6).",
+					"O texto não diz em que cidade ficava a casa de Potifar nem quanto tempo se passou. A casa que você visitou é fictícia, como aquela onde José serviu, e não a casa de Potifar."
+				],
+				"unlock": [],
+				"next": "A história de José continua em Gênesis 39-41; essa parte não faz parte desta experiência. No Mapa das Escrituras (M), a próxima experiência liberada é \"A travessia do mar\"."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta do agente de design (IA). Revisão E9-02 (coordenador): casa genérica, Ipi diz só 'oficial do rei', versão A do diálogo de Ipi descartada. Pendências: nomes egípcios dos servos (revisor histórico), objetivo de aprendizagem do catálogo. Aguarda revisão humana."}
+		}
+	]
+}

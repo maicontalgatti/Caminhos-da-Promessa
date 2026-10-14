@@ -1,0 +1,42 @@
+{
+	"episode": "ep_009_jose_na_casa_de_potifar",
+	"_comment": "Veredito de agente nunca é 'verified'. Só uma pessoa preenche human.approved_by. Escopo deste ciclo: experiência 'José no Egito' (Gn 37:25-28, 36 e Gn 39:1-6); Gn 39:7-23 fora.",
+	"biblical": {
+		"verdict": "ok_for_human_review",
+		"reviewer_agent": "biblical-verifier (subagente 84a49015-cc7e-4ed0-9c4c-8d3c6dd35170)",
+		"date": "2026-10-14",
+		"scope": "dialogues, discoveries, presentations, scenes, experience, bible_entries, characters e textos de quest.proposal.json do pacote",
+		"limits": "Gn 37:2-36 e 39:1-7 conferidos contra o VPL oficial. Exibição no jogo não executada na revisão.",
+		"first_pass": "changes_required (E9-01..E9-06)",
+		"recheck": {"date": "2026-10-14", "verdict": "ok_for_human_review", "result": "E9-01..E9-06 resolvidos."}
+	},
+	"historical": {
+		"verdict": "ok_for_human_review",
+		"reviewer_agent": "historical-reviewer (subagente 35e5b3cb-e00e-431d-bb5b-2c1f25678a32)",
+		"date": "2026-10-14",
+		"scope": "textos, descrições visuais, props e cenas propostos, contra research_historical.md",
+		"limits": "Fontes arqueológicas citadas de memória ('a confirmar' na ficha).",
+		"recheck": {"date": "2026-10-14", "verdict": "ok_for_human_review", "result": "H09..H11 resolvidos."}
+	},
+	"findings": [
+		{"id": "E9-01", "source": "biblical", "severity": "major", "status": "resolved", "where": "scenes joseph_caravan_departs, ator youth", "problem": "Silhueta de José vinha com a caravana desde Gileade.", "fix": "Silhueta criada só depois da legenda de Gn 37:28, já seguindo para o oeste."},
+		{"id": "E9-02", "source": "biblical", "severity": "major", "status": "resolved", "where": "ipi_talk, meryt_talk, título da missão", "problem": "Casa ambígua entre a de Potifar e uma genérica; ausência de José sem explicação; bênção de 39:5 como algo visível.", "fix": "Decisão do coordenador: casa genérica de um oficial do rei, 'como aquela onde José serviu'; sem 'capitão da guarda' nem 'silos cheios'."},
+		{"id": "E9-03", "source": "biblical", "severity": "minor", "status": "resolved", "where": "discoveries joseph_steward", "problem": "'Pouco antes, José tinha dezessete anos'.", "fix": "'No início de Gênesis 37, José tem dezessete anos'."},
+		{"id": "E9-04", "source": "biblical", "severity": "minor", "status": "resolved", "where": "presentations gen_037_caravan; scenes", "problem": "'a túnica que os filhos lhe mandam' (37:32 diz 'levaram').", "fix": "'que os filhos levam a seu pai'."},
+		{"id": "E9-05", "source": "biblical", "severity": "low", "status": "resolved", "where": "joseph_caravan_watch", "problem": "Texto dizia 37:25-36, leitura mostra 25-28 e 36.", "fix": "'37:25-28 e 37:36'; 29-35 só como resumo identificado."},
+		{"id": "E9-06", "source": "biblical", "severity": "low", "status": "resolved", "where": "egypt_granary_sacks.references", "problem": "Gn 39:5 ligava a tarefa do jogador à bênção.", "fix": "Gen 39:2; 39:5 só na descoberta."},
+		{"id": "H09", "source": "historical", "severity": "minor", "status": "resolved", "where": "senbi_talk.again", "problem": "Canal cheio na colheita (shemu).", "fix": "'Ainda há água no fundo do canal'."},
+		{"id": "H10", "source": "historical", "severity": "low", "status": "resolved", "where": "scenes, sfx", "problem": "Som de cascos sugere cavalos.", "fix": "Passos abafados."},
+		{"id": "H11", "source": "historical", "severity": "low", "status": "resolved", "where": "ipi_talk", "problem": "'Faraó' na boca de um servo do Reino Médio é debatido.", "fix": "Ipi diz 'um oficial do rei'; nota do narrador explica o termo de Gênesis."}
+	],
+	"open_for_human": [
+		"Decisões provisórias do coordenador (production/reports/four_experiences_decisions.md): escopo sem Gn 39:7-23, caravana vista de longe, casa genérica.",
+		"Objetivo de aprendizagem do catálogo ('Integridade diante da injustiça') e referência Gn 39:1-23 não batem com o escopo.",
+		"H5 do ep_008 (prata) continua aberto; sentidos de 'oficial' e 'capitão da guarda' a conferir em léxico."
+	],
+	"human": {
+		"approved_by": "",
+		"date": "",
+		"notes": ""
+	}
+}

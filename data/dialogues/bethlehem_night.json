@@ -1,0 +1,262 @@
+{
+	"_comment": "Campos de Belém à noite (ep_048, \"Os pastores de Belém\"). Tamir e Shai são fictícios; o anjo, os pastores do relato, Maria e José não têm falas. Integrado de dialogues.proposal.json; aguarda revisão humana.",
+	"dialogues": [
+		{
+			"id": "bn_tamir_talk",
+			"start": "hello",
+			"start_if": [
+				{"if": {"event": "custom", "id": "bn_tamir_after"}, "node": "after_again"},
+				{"if": {"event": "scene_finished", "id": "shepherds_at_the_house"}, "node": "after"},
+				{"if": {"event": "scene_finished", "id": "shepherds_announcement"}, "node": "asleep_late"},
+				{"flag": "bn_night", "node": "asleep"},
+				{"if": {"all": [{"objective": "shepherds_night/kindle_fire"}, {"has_item": "dry_wood", "count": 3}]}, "node": "deliver"},
+				{"if": {"all": [{"objective": "shepherds_night/kindle_fire"}, {"flag": "bn_wood_asked"}]}, "node": "wood_waiting"},
+				{"objective": "shepherds_night/kindle_fire", "node": "wood_ask"},
+				{"objective": "shepherds_night/gather_flock", "node": "flock_waiting"},
+				{"flag": "bn_met_tamir", "node": "again"}
+			],
+			"nodes": {
+				"hello": {"speaker": "bn_tamir", "text": "Paz, viajante. Chegou na hora em que o sol se põe sobre Belém. Sente-se, se quiser.", "next": "hello2", "set_flags": ["bn_met_tamir"]},
+				"hello2": {"speaker": "bn_tamir", "text": "Só não posso parar agora. Quatro animais do meu rebanho se afastaram pastando, e todos precisam entrar no aprisco antes da noite.", "next": "hello3"},
+				"hello3": {"speaker": "bn_tamir", "text": "O aprisco é aquele muro de pedra lá embaixo, com galhos de espinho por cima. De noite, só se entra pela abertura do portão.", "next": "hello4"},
+				"hello4": {"speaker": "bn_tamir", "text": "Junto ao portão, os vizinhos vigiam o rebanho deles. Cada um cuida do seu rebanho.", "next": "hello5"},
+				"hello5": {"speaker": "bn_tamir", "text": "Daqui de cima eu vejo as desgarradas: uma nos terraços, perto do caminho por onde você chegou; uma nos espinhos, encosta abaixo; a cabra nas rochas; e outra perto da boca da gruta.", "next": "end", "event": "bn_tamir_hello", "unlock": ["night_shepherding"]},
+				"flock_waiting": {"speaker": "bn_tamir", "text": "Ainda falta trazer algumas. Siga o balido: nos terraços perto da entrada, nos espinhos encosta abaixo, nas rochas e na boca da gruta.", "next": "end"},
+				"wood_ask": {"speaker": "bn_tamir", "text": "Todas no aprisco. Obrigado, viajante. Agora, o fogo.", "next": "wood_ask2", "set_flags": ["bn_wood_asked"]},
+				"wood_ask2": {"speaker": "bn_tamir", "text": "Lenha aqui é pouca: só galhos secos dos arbustos de espinho. Traga três, e o fogo aguenta até o meu turno.", "next": "end"},
+				"wood_waiting": {"speaker": "bn_tamir", "text": "Três galhos secos bastam. Procure junto aos arbustos espalhados pela encosta.", "next": "end"},
+				"deliver": {"speaker": "bn_tamir", "text": "Galhos secos e bem escolhidos. Agora, sim.", "next": "deliver2", "take": [{"item": "dry_wood", "qty": 3}], "set_flags": ["bn_met_tamir"], "event": "bn_tamir_fire"},
+				"deliver2": {"speaker": "narrator", "text": "Tamir sopra as brasas, e o fogo pega. O sol some atrás da crista de Belém, e a noite cai sobre os campos.", "next": "deliver3", "set_flags": ["bn_night"]},
+				"deliver3": {"speaker": "bn_tamir", "text": "Vamos dividir a noite. Eu durmo primeiro; você fica de vigia.", "next": "deliver4"},
+				"deliver4": {"speaker": "bn_tamir", "text": "Sente-se na pedra ao lado do fogo. Dali se vê o aprisco inteiro e o fogo dos vizinhos. Se algum animal rondar o muro, me acorde.", "next": "deliver5"},
+				"deliver5": {"speaker": "narrator", "text": "Tamir se enrola no manto, perto do fogo, e fecha os olhos.", "next": "end"},
+				"asleep": {"speaker": "narrator", "text": "Tamir dorme enrolado no manto, perto do fogo. A vigília agora é sua.", "next": "end"},
+				"asleep_late": {"speaker": "narrator", "text": "Tamir continua dormindo, enrolado no manto. Lá em cima, o caminho de Belém sobe no escuro.", "next": "end"},
+				"after": {"speaker": "bn_tamir", "text": "Ainda acordado, viajante? Eu também. Acordei com vozes no caminho.", "next": "after2"},
+				"after2": {"speaker": "bn_tamir", "text": "Eram os vizinhos do portão, voltando de Belém. Vinham louvando a Deus.", "next": "after3"},
+				"after3": {"speaker": "bn_tamir", "text": "Pararam junto ao fogo e contaram o que lhes tinha sido dito a respeito de um menino que eles viram em Belém.", "next": "after4"},
+				"after4": {"speaker": "bn_tamir", "text": "Eu não vi nada disso. Só ouvi. E fiquei admirado. Não sei dizer mais do que isso.", "next": "after5"},
+				"after5": {"speaker": "narrator", "text": "(Resumo do jogo, na voz de Tamir. Tamir é fictício; Lucas 2:17-18 não diz quem ouviu. O texto conta o que os pastores fizeram:)", "next": "after6"},
+				"after6": {"speaker": "narrator", "scripture": "Luke 2:17-18", "text": "(Lucas 2:17-18: os pastores contaram o que lhes fora dito a respeito do menino, e todos os que ouviram ficaram admirados.)", "next": "after7", "event": "bn_tamir_after", "unlock": ["shepherds_told"]},
+				"after7": {"speaker": "narrator", "scripture": "Luke 2:20", "text": "(Lucas 2:20: os pastores voltaram glorificando e louvando a Deus por tudo o que tinham ouvido e visto.)", "next": "after_choice"},
+				"after_choice": {"speaker": "bn_tamir", "text": "A noite ainda não acabou. Fique um pouco junto ao fogo.", "choices": [{"text": "Ler o relato no diário (Lucas 2:8-20).", "next": "read"}, {"text": "Agora não.", "next": "bye"}]},
+				"read": {"speaker": "narrator", "text": "Você abre o diário de viagem nos trechos de Lucas 2.", "next": "end", "action": {"presentation": "luke_002_shepherds"}},
+				"bye": {"speaker": "bn_tamir", "text": "Descanse, viajante. Amanhã cedo as ovelhas saem de novo para o pasto.", "next": "end"},
+				"after_again": {"speaker": "bn_tamir", "text": "O fogo ainda está aceso. O rebanho dorme.", "choices": [{"text": "Ler o relato no diário (Lucas 2:8-20).", "next": "read"}, {"text": "Boa noite, Tamir.", "next": "bye"}]},
+				"again": {"speaker": "bn_tamir", "text": "O vento da encosta esfria depressa quando o sol se vai. Fique perto do fogo, viajante.", "next": "end"}
+			}
+		},
+		{
+			"id": "bn_shai_talk",
+			"start": "greet",
+			"start_if": [
+				{"objective": "bn_fold_round/report_shai", "node": "round_done"},
+				{"if": {"quest_active": "bn_fold_round"}, "node": "round_waiting"},
+				{"if": {"all": [{"event": "scene_finished", "id": "shepherds_at_the_house"}, {"not_flag": "bn_shai_saw_return"}]}, "node": "after_house"},
+				{"if": {"all": [{"event": "scene_finished", "id": "shepherds_announcement"}, {"not": {"event": "scene_finished", "id": "shepherds_at_the_house"}}, {"not_flag": "bn_shai_saw_leave"}]}, "node": "after_scene"},
+				{"if": {"all": [{"flag": "bn_night"}, {"not": {"quest_started": "bn_fold_round"}}]}, "node": "round"},
+				{"flag": "bn_night", "node": "night_again"},
+				{"flag": "bn_met_shai", "node": "again"}
+			],
+			"nodes": {
+				"greet": {"speaker": "bn_shai", "text": "Paz, viajante. Eu sou Shai; trabalho com Tamir no rebanho.", "next": "greet2", "set_flags": ["bn_met_shai"]},
+				"greet2": {"speaker": "bn_shai", "text": "Quando o sol baixa, as ovelhas se escondem onde ainda tem capim: entre as pedras, nos espinhos, até na boca da gruta.", "next": "end"},
+				"again": {"speaker": "bn_shai", "text": "Tamir conta as ovelhas duas vezes, toda noite. E ainda assim confere de manhã.", "next": "end"},
+				"round": {"speaker": "bn_shai", "text": "Antes de dormir, eu dou a volta no muro do aprisco. Hoje tem trabalho.", "next": "round2"},
+				"round2": {"speaker": "bn_shai", "text": "Uma pedra soltou do muro, do lado do posto de vigia; uns galhos de espinho caíram do outro lado; e ouvi barulho nas rochas, encosta abaixo.", "choices": [{"text": "Eu dou a volta com você.", "next": "round_accept"}, {"text": "Agora não.", "next": "round_decline"}]},
+				"round_accept": {"speaker": "bn_shai", "text": "Ótimo. Eu fico aqui na parte de dentro. Depois me conte o que encontrou.", "next": "end", "event": "bn_shai_round"},
+				"round_decline": {"speaker": "bn_shai", "text": "Tudo bem. O muro não sai daqui.", "next": "end"},
+				"round_waiting": {"speaker": "bn_shai", "text": "A pedra solta fica do lado do posto de vigia, os galhos caídos do outro lado do muro, e o barulho veio das rochas, encosta abaixo.", "next": "end"},
+				"round_done": {"speaker": "bn_shai", "text": "Pedra no lugar, espinhos no muro e o chacal longe do fogo. Agora o rebanho dorme em paz.", "next": "round_done2"},
+				"round_done2": {"speaker": "bn_shai", "text": "Contam em Belém que o jovem Davi também cuidava das ovelhas do pai por estes lados, e que defendia o rebanho até de leão e de urso.", "next": "round_done3"},
+				"round_done3": {"speaker": "narrator", "text": "(Shai repete o que se conta em Belém. 1 Samuel 16:11 e 17:15 dizem que Davi cuidava das ovelhas do pai; em 17:34-35, ele conta a Saul:)", "next": "round_done4"},
+				"round_done4": {"speaker": "narrator", "scripture": "1Sam 17:34-35", "text": "(1 Samuel 17:34-35: Davi conta a Saul que, quando um leão ou um urso levava uma ovelha do rebanho do pai, ele ia atrás e a resgatava.)", "next": "end", "event": "bn_shai_round_done", "unlock": ["david_shepherd_bethlehem"]},
+				"after_scene": {"speaker": "bn_shai", "text": "Viajante! Os vizinhos do portão subiram o caminho de Belém, quase correndo.", "next": "after_scene2", "set_flags": ["bn_shai_saw_leave"]},
+				"after_scene2": {"speaker": "bn_shai", "text": "Eu estava aqui embaixo, do outro lado do muro, e só vi quando eles já subiam. Não disseram nada.", "next": "after_scene3"},
+				"after_scene3": {"speaker": "bn_shai", "text": "Nunca vi pastor sair assim no meio da noite. Depois eles contam.", "next": "end"},
+				"after_house": {"speaker": "bn_shai", "text": "Ouviu? Os vizinhos voltaram pelo caminho, louvando a Deus.", "next": "after_house2", "set_flags": ["bn_shai_saw_return"]},
+				"after_house2": {"speaker": "bn_shai", "text": "Tamir acordou com as vozes. Ele está de pé, junto ao fogo.", "next": "end"},
+				"night_again": {"speaker": "bn_shai", "text": "O rebanho está deitado. Eu fico perto do muro até a minha vez de dormir.", "next": "end"}
+			}
+		},
+		{
+			"id": "bn_rep_shepherds",
+			"start": "n1",
+			"start_if": [
+				{"if": {"event": "scene_finished", "id": "shepherds_at_the_house"}, "node": "returned"}
+			],
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Três pastores vigiam o próprio rebanho em volta do fogo, junto ao portão do aprisco.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "(Representação dos pastores de Lucas 2:8. O texto não diz quantos eram, nem seus nomes ou idades.)", "next": "end"},
+				"returned": {"speaker": "narrator", "text": "Os pastores estão de volta ao fogo do portão.", "next": "returned2"},
+				"returned2": {"speaker": "narrator", "scripture": "Luke 2:20", "text": "(Lucas 2:20: os pastores voltaram glorificando e louvando a Deus por tudo o que tinham ouvido e visto.)", "next": "end"}
+			}
+		},
+		{
+			"id": "bn_watch_stone",
+			"start": "n1",
+			"start_if": [
+				{"if": {"event": "scene_finished", "id": "shepherds_at_the_house"}, "node": "after_house"},
+				{"if": {"event": "scene_finished", "id": "shepherds_announcement"}, "node": "after"},
+				{"objective": "shepherds_night/night_watch", "node": "watch"}
+			],
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Uma pedra lisa ao lado do fogo de Tamir. Daqui se vê o aprisco inteiro e, adiante, o fogo do portão.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "À noite, alguém sempre fica acordado junto ao rebanho.", "next": "end"},
+				"watch": {"speaker": "narrator", "text": "A noite está fria e quieta. No aprisco, o rebanho está deitado. Junto ao portão, brilha o fogo dos vizinhos.", "choices": [{"text": "Ficar de vigia.", "next": "watch_go"}, {"text": "Ainda não.", "next": "end"}]},
+				"watch_go": {"speaker": "narrator", "text": "Você se senta na pedra e fica de vigia enquanto Tamir dorme. (Daqui em diante, você só acompanha. Esc pula a cena.)", "next": "end", "set_flags": ["bn_watch_begun"], "action": {"scene": "shepherds_announcement"}},
+				"after": {"speaker": "narrator", "text": "O fogo do portão crepita. Lá em cima, o caminho sobe no escuro para Belém.", "next": "end"},
+				"after_house": {"speaker": "narrator", "text": "Os pastores estão de volta ao fogo do portão. O rebanho dorme.", "next": "end"}
+			}
+		},
+		{
+			"id": "bn_house_view",
+			"start": "n1",
+			"start_if": [
+				{"if": {"event": "scene_finished", "id": "shepherds_at_the_house"}, "node": "after"},
+				{"objective": "shepherds_night/follow_shepherds", "node": "follow"}
+			],
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Acima do muro do terraço, uma casa de pedra encostada na rocha, com pátio e porta baixa.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Ao lado, uma abertura mais baixa parece levar a um abrigo de animais. Muitas casas da região aproveitavam assim a rocha e as grutas.", "next": "n3"},
+				"n3": {"speaker": "narrator", "text": "(A casa é uma composição do jogo, baseada em casas da região.)", "next": "end"},
+				"follow": {"speaker": "narrator", "text": "Os pastores do portão subiram por aqui, depressa. Lá em cima fica a casa encostada na rocha.", "choices": [{"text": "Observar daqui.", "next": "follow_go"}, {"text": "Ainda não.", "next": "end"}]},
+				"follow_go": {"speaker": "narrator", "text": "Você fica junto ao muro do terraço, de longe. Não sobe nem se aproxima. (Daqui em diante, você só acompanha. Esc pula a cena.)", "next": "end", "action": {"scene": "shepherds_at_the_house"}},
+				"after": {"speaker": "narrator", "text": "A luz da porta continua acesa. O que aconteceu lá dentro, Lucas 2:16-19 conta; o jogo não mostra.", "choices": [{"text": "Ler o relato no diário (Lucas 2:8-20).", "next": "read"}, {"text": "Descer de volta ao fogo.", "next": "end"}]},
+				"read": {"speaker": "narrator", "text": "Você abre o diário de viagem nos trechos de Lucas 2.", "next": "end", "action": {"presentation": "luke_002_shepherds"}}
+			}
+		},
+		{
+			"id": "bn_house_stairs",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Uma escada estreita de pedra sobe para as casas. Você fica aqui embaixo.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "(Nesta experiência, Belém é vista só de fora.)", "next": "end"}
+			}
+		},
+		{
+			"id": "bn_stray_1",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Entre os muros dos terraços, uma ovelha mastiga o último capim do dia.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Você a conduz devagar, encosta abaixo, até a abertura do aprisco.", "next": "end", "set_flags": ["bn_stray_1"], "unlock": ["sheep_goats"]}
+			}
+		},
+		{
+			"id": "bn_stray_2",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um balido vem do meio dos espinhos. A lã da ovelha prendeu num galho.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Você solta a lã com cuidado e leva a ovelha até o aprisco.", "next": "end", "set_flags": ["bn_stray_2"]}
+			}
+		},
+		{
+			"id": "bn_stray_3",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Lá no alto das rochas, uma cabra escura olha para você como se a pedra fosse dela.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Com paciência, ela desce sozinha e segue você até o aprisco.", "next": "end", "set_flags": ["bn_stray_3"]}
+			}
+		},
+		{
+			"id": "bn_stray_4",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Na boca da gruta, uma ovelha se deitou no fresco da pedra.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Você a faz levantar e a conduz até o aprisco, antes que escureça.", "next": "end", "set_flags": ["bn_stray_4"]}
+			}
+		},
+		{
+			"id": "bn_round_gap",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Uma pedra caiu do alto do muro e deixou uma brecha do tamanho de uma ovelha.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Você recoloca a pedra e firma as outras em volta.", "next": "end", "set_flags": ["bn_round_gap"]}
+			}
+		},
+		{
+			"id": "bn_round_thorns",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Os galhos de espinho do topo do muro caíram para fora.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Você os repõe no alto, com cuidado para não se ferir. Espinhos assim mantêm os animais do lado de dentro e os predadores do lado de fora.", "next": "end", "set_flags": ["bn_round_thorns"]}
+			}
+		},
+		{
+			"id": "bn_round_noise",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Algo se mexe entre as rochas. Dois olhos brilham com a luz do fogo.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "É um chacal. Ele olha o fogo, olha você e some na escuridão da encosta.", "next": "end", "set_flags": ["bn_round_noise"]}
+			}
+		},
+		{
+			"id": "bn_staff",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um cajado longo de madeira, com a ponta curva, encostado na rocha. Ao lado, uma vara curta e grossa.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Com o cajado, o pastor guiava o rebanho e apoiava o passo nas encostas. A vara curta servia para afastar animais selvagens.", "next": "end", "grant_collectible": "bn_staff"}
+			}
+		},
+		{
+			"id": "bn_sling",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Uma funda de couro e um punhado de pedras lisas, guardados numa bolsa.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "(Pastores usavam a funda para afastar predadores. Em 1 Samuel 17:40, o jovem Davi escolhe cinco pedras lisas para a sua funda.)", "next": "end", "grant_collectible": "bn_sling"}
+			}
+		},
+		{
+			"id": "bn_cloak_bed",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um manto grosso de lã, estendido no chão junto ao abrigo de rocha.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "De dia, o manto agasalhava. À noite, virava cobertor para quem dormia no campo.", "next": "end", "grant_collectible": "bn_cloak_bed"}
+			}
+		},
+		{
+			"id": "bn_oil_lamp",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Uma pequena lamparina de barro, num nicho da rocha. A chama é do tamanho de uma unha.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Lamparinas como esta, feitas no torno e com o bico largo, eram comuns na Judeia nos dias de Herodes. Queimavam azeite de oliva.", "next": "end", "unlock": ["bethlehem_first_century"], "grant_collectible": "bn_oil_lamp"}
+			}
+		},
+		{
+			"id": "bn_terraces",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Muros baixos de pedra seca seguram a terra da encosta em degraus.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Nos terraços se plantavam oliveiras, videiras e cereais; nas encostas pedregosas, pastavam os rebanhos.", "next": "n3"},
+				"n3": {"speaker": "narrator", "text": "(A idade de muitos terraços da região é debatida.)", "next": "end", "grant_collectible": "bn_terraces"}
+			}
+		},
+		{
+			"id": "bn_west_path",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "O caminho segue para outras aldeias da Judeia.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "(Para ir a outro momento da história, abra o Mapa das Escrituras, tecla M.)", "next": "end"}
+			}
+		},
+		{
+			"id": "bn_sheep_examine",
+			"start": "n1",
+			"start_if": [
+				{"flag": "bn_night", "node": "night"}
+			],
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Uma ovelha de cauda gorda rumina sem pressa e nem se importa com você.", "next": "end", "unlock": ["sheep_goats"]},
+				"night": {"speaker": "narrator", "text": "A ovelha dorme encostada nas outras, dentro do muro de pedra.", "next": "end", "unlock": ["sheep_goats"]}
+			}
+		},
+		{
+			"id": "bn_dog_examine",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um cão magro, deitado perto do fogo, levanta uma orelha quando você passa.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Cães ajudavam a guardar rebanhos na região. (Este cão é criação do jogo.)", "next": "end"}
+			}
+		}
+	]
+}

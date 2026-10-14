@@ -223,6 +223,9 @@ func _check(rest: Array) -> int:
 		if rest.is_empty() or String(e).begins_with(String(rest[0]) + " "):
 			print("ERRO " + e)
 			bad += 1
+	for e in fc.world_content_errors():
+		print("ERRO (cenas/mundo) " + e)
+		bad += 1
 	for ep in eps:
 		if String(ep.get("game", {}).get("quest_id", "")) == "":
 			continue

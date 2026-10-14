@@ -1,0 +1,68 @@
+{
+	"_comment": "Experiência \"A travessia do mar\" (ep_016). Integrado de production/episodes/ep_016_a_travessia_do_mar/quest.proposal.json; alvos de NPC usam o id do personagem (as variantes por estado são NPCs da região). Aguarda revisão humana.",
+	"quests": [
+		{
+			"id": "sea_camp_water",
+			"title": "Água para a tenda de Nava",
+			"category": "side",
+			"description": "Os odres da família de Nava estão vazios, e a água do mar é salgada. Há uma fonte junto às tamareiras.",
+			"type": "assist",
+			"classification": "plausible_fiction",
+			"classification_note": "Nava, sua família e a fonte junto às tamareiras são criadas para o jogo. Êxodo 12:37-38 registra que um povo numeroso saiu com muitos animais; a necessidade de água num acampamento é contexto plausível.",
+			"region": "sea_camp",
+			"place_id": "exodus_sea",
+			"era_id": "exodus",
+			"references": ["Exod 12:37-38"],
+			"theme": "Água num acampamento em movimento",
+			"people": [],
+			"fictional_characters": ["sea_nava"],
+			"intro": "Nava, avó de uma família, não consegue mais carregar os odres até a fonte.",
+			"start": {"event": "custom", "id": "sea_nava_water"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "fill_skins",
+					"type": "wait_for_event",
+					"text": "Encha os odres de Nava na fonte junto às tamareiras.",
+					"detail": "A água do mar não serve para beber.",
+					"complete_on": {"event": "condition", "id": "sea_skins_filled", "condition": {"any": [{"event": "item_received", "id": "full_water_skins"}, {"event": "scene_finished", "id": "exodus_sea_crossing"}]}},
+					"targets": [{"type": "examinable", "id": "sea_seep"}],
+					"hints": [
+						"Onde há palmeiras, costuma haver água por perto.",
+						"Duas tamareiras crescem na ponta do acampamento, perto dos juncos.",
+						"Vá às tamareiras, além do rebanho, e use a fonte entre elas."
+					],
+					"log": "Você encheu os odres na fonte junto às tamareiras."
+				},
+				{
+					"id": "deliver_water",
+					"type": "give_item",
+					"text": "Leve os odres a Nava.",
+					"complete_on": {"event": "custom", "id": "sea_nava_water_done"},
+					"targets": [{"type": "npc", "id": "sea_nava"}],
+					"hints": [
+						"Nava espera junto à tenda dela.",
+						"Nava fica perto do tripé de odres, entre a fogueira central e as cristas.",
+						"Converse com Nava, junto ao tripé de odres."
+					],
+					"log": "A família de Nava teve água para a noite."
+				}
+			],
+			"discoveries": [],
+			"completion": {
+				"title": "Odres cheios",
+				"references": ["Exod 12:37-38"],
+				"summary": [
+					"Nava e sua família são criações do jogo."
+				],
+				"variants": [
+					{"if": {"flag": "sea_water_delivered"}, "summary": ["Você levou água à família de Nava antes da noite.", "Nava e sua família são criações do jogo."]},
+					{"if": {"event": "scene_finished", "id": "exodus_sea_crossing"}, "summary": ["Na pressa da noite, outra família dividiu a água com Nava.", "Nava e sua família são criações do jogo."]}
+				],
+				"unlock": [],
+				"next": ""
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Ficção identificada; fonte salobra junto às tamareiras é ficção plausível (research_historical.md, vegetação costeira). Desfecho automático no amanhecer evita trava. Aguarda revisão humana."}
+		}
+	]
+}

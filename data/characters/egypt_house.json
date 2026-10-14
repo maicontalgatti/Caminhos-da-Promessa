@@ -1,0 +1,86 @@
+{
+	"_comment": "Casa de um oficial egípcio (ep_009). Personagens fictícios e animais. Integrado de characters.proposal.json.",
+	"characters": [
+		{
+			"id": "egypt_ipi",
+			"display_name": "Ipi",
+			"role": "Porteiro",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Porteiro idoso, fictício, que cuida da entrada de uma grande casa egípcia recriada para o jogo. Não é personagem do relato de Gênesis 39.",
+			"dialogue_id": "ipi_talk",
+			"sprite": {"sheet": "res://assets/characters/egypt_ipi.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1}
+		},
+		{
+			"id": "egypt_meryt",
+			"display_name": "Meryt",
+			"role": "Despenseira",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Despenseira fictícia que guarda os jarros e confere o grão no depósito da casa egípcia recriada.",
+			"dialogue_id": "meryt_talk",
+			"sprite": {"sheet": "res://assets/characters/egypt_meryt.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": -1, "facing_y": 0}
+		},
+		{
+			"id": "egypt_senbi",
+			"display_name": "Senbi",
+			"role": "Lavrador",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Lavrador fictício que trabalha na eira e nos campos da casa egípcia recriada.",
+			"dialogue_id": "senbi_talk",
+			"sprite": {"sheet": "res://assets/characters/egypt_senbi.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "wander", "speed": 14, "wander_radius": 20}
+		},
+		{
+			"id": "egypt_cattle",
+			"display_name": "Boi",
+			"role": "Animal",
+			"kind": "animal",
+			"classification": "historical_context",
+			"description": "Gado de chifres longos era riqueza das grandes casas egípcias e era contado e anotado.",
+			"dialogue_id": "egypt_cattle_examine",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/egypt_cattle.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
+			"behavior": {"type": "wander", "speed": 8, "wander_radius": 16}
+		},
+		{
+			"id": "egypt_donkey",
+			"display_name": "Jumento",
+			"role": "Animal",
+			"kind": "animal",
+			"classification": "historical_context",
+			"description": "Jumentos levavam carga e pisavam o grão na eira.",
+			"dialogue_id": "egypt_donkey_examine",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/egypt_donkey.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
+			"behavior": {"type": "idle", "facing_x": 1, "facing_y": 0}
+		},
+		{
+			"id": "egypt_goose",
+			"display_name": "Ganso",
+			"role": "Animal",
+			"kind": "animal",
+			"classification": "historical_context",
+			"description": "Gansos eram criados nas casas egípcias por causa da carne e dos ovos.",
+			"dialogue_id": "egypt_goose_examine",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/egypt_goose.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
+			"behavior": {"type": "wander", "speed": 16, "wander_radius": 24}
+		},
+		{
+			"id": "egypt_cat",
+			"display_name": "Gato",
+			"role": "Animal",
+			"kind": "animal",
+			"classification": "historical_context",
+			"description": "Gatos domésticos afastavam os ratos dos celeiros.",
+			"dialogue_id": "egypt_cat_examine",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/egypt_cat.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
+			"behavior": {"type": "wander", "speed": 12, "wander_radius": 20}
+		}
+	]
+}

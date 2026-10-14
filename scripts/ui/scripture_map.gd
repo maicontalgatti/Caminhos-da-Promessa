@@ -3,7 +3,9 @@ extends CanvasLayer
 ## Mapa das Escrituras (tecla M): experiências agrupadas por época. O jogador
 ## não caminha entre épocas; iniciar uma experiência mostra um cartão de
 ## passagem narrativa e então a registra (WorldManager.start_experience).
-## Experiências em planejamento aparecem, mas não são jogáveis.
+## Experiências exploradas com destino podem ser revisitadas. Experiências em
+## planejamento aparecem, mas não são jogáveis. O mesmo cartão de passagem
+## serve às saídas de mapa com "passage" (open_passage).
 
 signal closed
 signal atlas_requested
@@ -15,6 +17,11 @@ const STATE_LABELS := {
 	"active": "Em andamento",
 	"completed": "Explorada",
 }
+const ACTION_LABELS := {
+	"available": "Iniciar esta experiência",
+	"active": "Continuar",
+	"completed": "Revisitar",
+}
 
 var _columns: HBoxContainer
 var _detail_title: Label
@@ -25,6 +32,8 @@ var _passage_box: VBoxContainer
 var _main_box: VBoxContainer
 var _selected := ""
 var _passage_for := ""
+## Cartão aberto por uma saída de mapa: o que fazer ao confirmar.
+var _passage_action := Callable()
 
 
 func _ready() -> void:
@@ -65,7 +74,7 @@ func _input(event: InputEvent) -> void:
 		return
 	if event.is_action_pressed("pause") or event.is_action_pressed("places_map"):
 		close()
-	elif event.is_action_pressed("interact") and _passage_for != "":
+	elif event.is_action_pressed("interact") and (_passage_for != "" or _passage_action.is_valid()):
 		_confirm_passage()
 	else:
 		return
@@ -117,14 +126,14 @@ func select(xid: String) -> void:
 	if state == "locked":
 		text += "\n\n" + String(x.get("locked_text", ""))
 	_detail_text.text = text
-	_action.visible = state in ["available", "active"]
-	_action.text = "Iniciar esta experiência" if state == "available" else "Continuar"
+	_action.visible = state in ["available", "active"] or (state == "completed" and not WorldManager.experience_destination(xid).is_empty())
+	_action.text = String(ACTION_LABELS.get(state, ""))
 
 
 func _on_action() -> void:
-	var state := WorldManager.experience_state(_selected)
-	if state == "available" and WorldManager.experience(_selected).has("passage"):
-		_show_passage(_selected)
+	var p := WorldManager.pending_passage(_selected)
+	if not p.is_empty():
+		_show_passage(_selected, p)
 		return
 	_start(_selected)
 
@@ -138,13 +147,27 @@ func _start(xid: String) -> void:
 	close()
 
 
-func _show_passage(xid: String) -> void:
+func _show_passage(xid: String, p: Dictionary) -> void:
 	_passage_for = xid
-	var p: Dictionary = WorldManager.experience(xid).passage
+	var x := WorldManager.experience(xid)
+	_fill_passage(p, String(x.title) + " · " + Bible.refs(x.get("references", [])))
+
+
+## Cartão de passagem de uma saída de mapa; `on_confirm` roda depois de fechar.
+func open_passage(p: Dictionary, subtitle: String, on_confirm: Callable) -> void:
+	visible = true
+	get_tree().paused = true
+	GameState.block_ui("scripture_map")
+	_passage_for = ""
+	_passage_action = on_confirm
+	_fill_passage(p, subtitle)
+
+
+func _fill_passage(p: Dictionary, subtitle: String) -> void:
 	for c in _passage_box.get_children():
 		c.queue_free()
 	_passage_box.add_child(UiStyle.label(String(p.get("title", "")), 9, UiStyle.BROWN))
-	_passage_box.add_child(UiStyle.label(String(WorldManager.experience(xid).title) + " · " + Bible.refs(WorldManager.experience(xid).get("references", [])), 7, UiStyle.MUTED))
+	_passage_box.add_child(UiStyle.label(subtitle, 7, UiStyle.MUTED))
 	for line in p.get("lines", []):
 		var l := UiStyle.label(String(line), 7, UiStyle.INK, true)
 		l.custom_minimum_size.x = 360
@@ -159,13 +182,18 @@ func _show_passage(xid: String) -> void:
 
 func _confirm_passage() -> void:
 	var xid := _passage_for
-	_passage_for = ""
+	var action := _passage_action
 	_show_main()
+	if action.is_valid():
+		close()
+		action.call()
+		return
 	_start(xid)
 
 
 func _show_main() -> void:
 	_passage_for = ""
+	_passage_action = Callable()
 	if _main_box:
 		_main_box.visible = true
 		_passage_box.visible = false

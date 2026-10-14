@@ -3,6 +3,18 @@
 Resumo por versão/entrega. Detalhes, problemas corrigidos e o que não foi verificado estão em
 [docs/implementation_log.md](../implementation_log.md).
 
+## 2026-10-14 — v0.6.0: quatro experiências do Mapa das Escrituras (PR #2)
+- Episódios ep_009 ("José no Egito": caravana vista de longe em Dotã, Gn 37:25-28 e 36; casa egípcia como a de Potifar, Gn 39:1-6), ep_016 ("A travessia do mar", Êx 13:17–14:31), ep_025 ("Rute em Belém", Rt 1:19–2:23) e ep_048 ("Os pastores de Belém", Lc 2:8-20), pelo processo da fábrica: pesquisa bíblica e histórica, design, roteiro, revisões independentes (`ok_for_human_review`), integração, QA (`test_report.json`); estados `tested`.
+- Regiões novas `egypt_house`, `sea_camp`, `bethlehem_fields`, `bethlehem_night` (arte e mapas pelos geradores de `tools/art_gen`), encosta de observação em Dotã; 13 missões, 5 cenas dirigidas, personagens fictícios, 25 descobertas, 5 apresentações, histórias, itens e colecionáveis; experiências encadeadas no Mapa M; época "Nos dias de Herodes".
+- Texto BPM reimportado (327 versículos); `verse_counts` com 11 capítulos novos; certeza da data dos pastores na cronologia passou a "debated".
+- Correções da QA: legendas de cena que se sobrepunham (validador agora recusa), fogueira dos pastores concluída por evento próprio, referência de Rute no diário, textos de conclusão apontam a próxima experiência.
+- Testes 1482/1482, fluxo 17/17, validação e fábrica sem erros, áudio 0 problemas; exe 0.6.0 com autoteste OK. KI-20 atualizado, KI-21 novo.
+
+## 2026-10-14 — Infraestrutura de cenas dirigidas, luz por estado e experiências com destino (branch `content/four-experiences`)
+- Cenas dirigidas por dados (`data/scenes/*.json`): `SceneDatabase`, `SceneDirector`, `SceneActor`, `SceneFx` (brilho, coluna de nuvem/fogo, vento, paredes de água, poeira); ação de diálogo `{"scene": id}`; Esc pula para o estado final; evento `scene_finished`, objetivo `observe_scene`, alvo `scene`; ADR-028.
+- Região: `lighting [{if, tint}]` e `exits[].passage`. Experiência: `travel`, `entry_if`, `regions`, `stages`; botão Iniciar/Continuar/Revisitar no Mapa das Escrituras; `isaac_wells` e `joseph_dothan` ganharam destino na aldeia.
+- Validador, fábrica e autoteste do exe conhecem cenas; `tests/scene_tests.gd` (suíte 665 → 775). Sem conteúdo de episódio e sem mudança no save.
+
 ## 2026-10-14 — Publicação pública e colaboração com IA (documentação e repositório; jogo sem mudanças)
 - Auditoria de segurança do histórico completo e auditoria de direitos autorais; inventário em `docs/legal/ASSET_LICENSES.md`.
 - Licenças: `LICENSE` (MIT, código) e `LICENSE-ASSETS.md` (CC BY 4.0, arte, sons e textos próprios); ADR-027.

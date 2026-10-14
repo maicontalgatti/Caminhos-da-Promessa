@@ -1,6 +1,7 @@
 extends Node
 ## Cena de jogo: carrega o mapa atual do GameState e hospeda a UI de jogo
-## (HUD, diálogos, diário, cenas guiadas e, só em builds de debug, o painel F3).
+## (HUD, diálogos, diário, cenas guiadas, cenas dirigidas no mapa e, só em
+## builds de debug, o painel F3).
 
 const PROLOGUE_ID := "new_game"
 const DEBUG_PANEL := "res://scripts/ui/debug_panel.gd"
@@ -14,6 +15,7 @@ const DEBUG_PANEL := "res://scripts/ui/debug_panel.gd"
 var map: GameMap
 var inventory_screen: InventoryScreen
 var scripture_map: ScriptureMap
+var scene_director: SceneDirector
 var _replaying_prologue := false
 var _traveling := false
 
@@ -33,6 +35,11 @@ func _ready() -> void:
 	scripture_map = ScriptureMap.new()
 	scripture_map.name = "ScriptureMap"
 	add_child(scripture_map)
+	scene_director = SceneDirector.new()
+	scene_director.name = "SceneDirector"
+	add_child(scene_director)
+	scene_director.scene_started.connect(func(_id): hud.visible = false)
+	scene_director.scene_finished.connect(_on_scene_finished)
 	hud.inventory_requested.connect(func(): inventory_screen.open())
 	hud.scripture_map_requested.connect(func(): scripture_map.open())
 	scripture_map.atlas_requested.connect(func(): journal.open("places", "place:" + String(QuestManager.get_context().get("place_id", ""))))
@@ -43,6 +50,7 @@ func _ready() -> void:
 	cinematic.finished.connect(_on_cinematic_finished)
 	DialogueManager.action_requested.connect(_on_dialogue_action)
 	WorldManager.travel_requested.connect(_on_travel_requested)
+	WorldManager.passage_requested.connect(_on_passage_requested)
 
 	_enter_region()
 	if not GameState.get_flag("prologue_seen") and GameData.prologues.has(PROLOGUE_ID):
@@ -55,11 +63,14 @@ func _ready() -> void:
 func _exit_tree() -> void:
 	GameState.in_game = false
 	GameState.unblock_ui("travel")
+	GameState.unblock_ui(SceneDirector.BLOCKER)
 	AudioManager.stop_ambience()
 	if DialogueManager.action_requested.is_connected(_on_dialogue_action):
 		DialogueManager.action_requested.disconnect(_on_dialogue_action)
 	if WorldManager.travel_requested.is_connected(_on_travel_requested):
 		WorldManager.travel_requested.disconnect(_on_travel_requested)
+	if WorldManager.passage_requested.is_connected(_on_passage_requested):
+		WorldManager.passage_requested.disconnect(_on_passage_requested)
 
 
 func _load_map(path: String) -> void:
@@ -84,6 +95,8 @@ func is_traveling() -> bool:
 func _on_travel_requested(_region_id: String, _entry_id: String) -> void:
 	if _traveling:
 		return
+	if scene_director.is_playing():
+		scene_director.skip()
 	_traveling = true
 	GameState.block_ui("travel")
 	AudioManager.play("travel")
@@ -107,6 +120,8 @@ func _on_travel_requested(_region_id: String, _entry_id: String) -> void:
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST and GameState.in_game:
+		if scene_director and scene_director.is_playing():
+			scene_director.skip()
 		GameState.save_game()
 
 
@@ -144,9 +159,30 @@ func play_presentation(id: String) -> void:
 	cinematic.play_presentation(pres)
 
 
+## Cena dirigida no mapa atual (data/scenes). false se não pôde tocar.
+func play_scene(id: String) -> bool:
+	if cinematic.is_playing() or _traveling:
+		return false
+	return scene_director.play(id, map)
+
+
+func _on_scene_finished(_id: String, _skipped: bool) -> void:
+	hud.visible = true
+	hud.refresh_tracker()
+
+
+## Saída com "passage": cartão "OUTRO MOMENTO DA HISTÓRIA" antes de viajar.
+func _on_passage_requested(passage: Dictionary, region_id: String, entry_id: String) -> void:
+	var dest := WorldManager.region(region_id)
+	var subtitle := String(dest.get("display_name", region_id))
+	scripture_map.open_passage(passage, subtitle, func(): WorldManager.travel(region_id, entry_id))
+
+
 func _on_dialogue_action(action: Dictionary) -> void:
 	if action.has("presentation"):
 		play_presentation(String(action.presentation))
+	elif action.has("scene"):
+		play_scene(String(action.scene))
 
 
 func _on_cinematic_finished(kind: String, id: String, skipped: bool) -> void:

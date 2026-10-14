@@ -1,0 +1,51 @@
+{
+	"_comment": "Cena dirigida de Rute 2:3-18 vista de longe (ep_025). Integrado de scenes.proposal.json; aguarda revisão humana.",
+	"scenes": [
+		{
+			"id": "ruth_gleaning_meal",
+			"region": "bethlehem_fields",
+			"title": "A respiga no campo de Boaz",
+			"classification": "recorded_event",
+			"references": ["Ruth 2:3-18"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA); legendas de resumo escritas pelo roteirista (IA), em discurso indireto e com referência, a conferir pelo verificador bíblico. Sem close; figuras sem rosto detalhado; Rute sem marca visual de 'estrangeira exótica'."},
+			"skippable": true,
+			"steps": [
+				{"type": "camera", "to": [672, 448], "time": 2, "zoom": 1, "wait": true},
+				{"type": "actor", "id": "ruth", "sprite": "silhouette_bf_ruth", "at": [544, 528], "facing": "right"},
+				{"type": "actor", "id": "servant_1", "sprite": "silhouette_bf_servant", "at": [624, 496], "facing": "right"},
+				{"type": "actor", "id": "overseer", "sprite": "silhouette_bf_overseer", "at": [656, 392], "facing": "down"},
+				{"type": "move", "actor": "ruth", "path": [[544, 528], [592, 520], [640, 516]], "speed": 14},
+				{"type": "caption", "scripture": "Ruth 2:3", "wait": true},
+				{"type": "actor", "id": "boaz", "sprite": "silhouette_bf_boaz", "at": [512, 344], "facing": "down"},
+				{"type": "move", "actor": "boaz", "path": [[512, 344], [560, 376], [624, 392]], "speed": 22, "wait": true},
+				{"type": "caption", "scripture": "Ruth 2:4", "wait": true},
+				{"type": "caption", "text": "Resumo de Rute 2:5-7: Boaz pergunta ao encarregado de quem é aquela jovem. O encarregado responde que é a moabita que voltou com Noemi e que pediu para respigar entre os feixes.", "kind": "narration", "wait": true},
+				{"type": "move", "actor": "boaz", "path": [[624, 392], [640, 472], [616, 500]], "speed": 18, "wait": true},
+				{"type": "caption", "text": "Resumo de Rute 2:8-13: Boaz diz a Rute que fique no campo dele, perto das servas, e beba da água dos jovens. Ela pergunta por que recebe esse favor, sendo estrangeira; ele responde que soube do que ela fez pela sogra.", "kind": "narration", "wait": true},
+				{"type": "tint", "color": "#FFF2D6", "time": 2},
+				{"type": "move", "actor": "servant_1", "path": [[624, 496], [776, 384]], "speed": 22},
+				{"type": "move", "actor": "overseer", "path": [[656, 392], [792, 376]], "speed": 22},
+				{"type": "move", "actor": "boaz", "path": [[616, 500], [808, 368]], "speed": 22},
+				{"type": "move", "actor": "ruth", "path": [[640, 516], [768, 392]], "speed": 20, "wait": true},
+				{"type": "camera", "to": [784, 400], "time": 1.5, "wait": true},
+				{"type": "caption", "scripture": "Ruth 2:14", "wait": true},
+				{"type": "wait", "time": 2},
+				{"type": "caption", "text": "Resumo de Rute 2:15-16: Boaz manda os jovens deixarem Rute respigar até entre os feixes e deixarem cair espigas para ela, sem repreendê-la.", "kind": "narration", "wait": true},
+				{"type": "remove", "actor": "boaz"},
+				{"type": "remove", "actor": "overseer"},
+				{"type": "move", "actor": "servant_1", "path": [[776, 384], [672, 456]], "speed": 22},
+				{"type": "move", "actor": "ruth", "path": [[768, 392], [704, 504]], "speed": 16, "wait": true},
+				{"type": "tint", "color": "#F2C890", "time": 3},
+				{"type": "sfx", "id": "interact_wood"},
+				{"type": "caption", "scripture": "Ruth 2:17", "wait": true},
+				{"type": "camera", "to": [560, 300], "time": 2},
+				{"type": "move", "actor": "ruth", "path": [[704, 504], [512, 344], [512, 120]], "speed": 26},
+				{"type": "caption", "text": "Resumo de Rute 2:18: ela leva a cevada à cidade, mostra à sogra o que respigou e lhe dá o que sobrou da refeição dos ceifeiros. A conversa das duas está no diário (Rute 2:19-23).", "kind": "narration", "wait": true},
+				{"type": "remove", "actor": "ruth"},
+				{"type": "remove", "actor": "servant_1"},
+				{"type": "tint", "color": "#FFF7E8", "time": 2},
+				{"type": "camera", "follow": "player", "time": 1.5, "wait": true}
+			]
+		}
+	]
+}

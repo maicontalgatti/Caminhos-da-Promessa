@@ -1,0 +1,261 @@
+{
+	"_comment": "PROPOSTA (quest-designer, 2026-10-14) para ep_048 / experiência shepherds_bethlehem. Destino sugerido: data/quests/bethlehem_night/shepherds_night.json, bn_fold_round.json e bethlehem_night_signs.json. Escopo: Lc 2:8-20 (contexto 2:1-7 só em paráfrase). Anjo só como luz; pastores do relato = 3 figuras de representação, sem falas livres (2:15 só em paráfrase identificada); casa vista de fora; Maria, José e o bebê nunca em tela. Tamir e Shai são fictícios. Pendências de código (comuns ao lote): evento scene_finished, tipo observe_scene, action de cena, lighting. Textos de log, pistas e conclusão são rascunho para o roteirista. Luke 2:8-20 já está em bpm.json; 1Sam 16/17 e Luke 1/2/10 já estão em verse_counts.json.",
+	"quests": [
+		{
+			"id": "shepherds_night",
+			"title": "Uma noite nos campos de Belém",
+			"category": "main",
+			"description": "Passe a noite com pastores nos campos perto de Belém, ajude a recolher o rebanho e a manter o fogo e, na vigília, acompanhe de longe o que Lucas 2:8-20 relata.",
+			"type": "story_witness",
+			"classification": "plausible_fiction",
+			"classification_note": "O viajante, Tamir, Shai, o rebanho deles e o posto de vigia são criados para o jogo. O relato de Lucas 2:8-20 é visto de longe em duas cenas dirigidas e lido no diário com o texto da tradução carregada. A luz (sem figura de anjo), os três pastores e a casa são representação; o jogador não muda nem causa nada do relato.",
+			"region": "bethlehem_night",
+			"place_id": "bethlehem",
+			"era_id": "roman_judea",
+			"references": ["Luke 2:8-20"],
+			"theme": "A vigília dos pastores e o anúncio do nascimento em Belém",
+			"people": ["jesus", "mary_mother_of_jesus", "joseph_of_nazareth"],
+			"fictional_characters": ["bn_tamir", "bn_shai"],
+			"intro": "Lucas conta que, quando Jesus nasceu em Belém, havia pastores nos campos da região vigiando o rebanho à noite (Lucas 2:8). Você chega a esses campos ao entardecer.",
+			"start": {"event": "experience_started", "id": "shepherds_bethlehem"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "meet_tamir",
+					"type": "talk_to_npc",
+					"text": "Fale com o pastor no posto de vigia.",
+					"detail": "O sol está se pondo sobre Belém.",
+					"complete_on": {"event": "custom", "id": "bn_tamir_hello"},
+					"targets": [{"type": "npc", "id": "bn_tamir"}],
+					"hints": [
+						"Onde há rebanho no fim do dia, há um pastor por perto.",
+						"Há fumaça e um abrigo na rocha perto de onde você chegou.",
+						"Siga a trilha a partir da entrada e converse com Tamir, junto ao abrigo de rocha."
+					],
+					"log": "Você chegou aos campos perto de Belém ao entardecer. Tamir, um pastor, contou que algumas ovelhas se afastaram e precisam entrar no aprisco antes da noite."
+				},
+				{
+					"id": "gather_flock",
+					"type": "wait_for_event",
+					"text": "Conduza ao aprisco as 4 ovelhas que se afastaram.",
+					"detail": "O aprisco de pedra fica abaixo do posto de vigia.",
+					"complete_on": {"event": "condition", "id": "bn_flock_gathered", "condition": {"all": [{"flag": "bn_stray_1"}, {"flag": "bn_stray_2"}, {"flag": "bn_stray_3"}, {"flag": "bn_stray_4"}]}},
+					"targets": [{"type": "examinable", "id": "bn_stray_1"}, {"type": "examinable", "id": "bn_stray_2"}, {"type": "examinable", "id": "bn_stray_3"}, {"type": "examinable", "id": "bn_stray_4"}],
+					"hints": [
+						"Ovelhas desgarradas procuram pasto entre pedras e arbustos.",
+						"Tamir disse: uma nos terraços perto da entrada, uma nos espinhos encosta abaixo, uma nas rochas e uma perto da boca da gruta.",
+						"Procure os brilhos nos terraços perto da entrada, nos arbustos encosta abaixo, nas rochas e na boca da gruta, e examine cada animal."
+					],
+					"log": "Você conduziu as ovelhas desgarradas até o aprisco de pedra."
+				},
+				{
+					"id": "kindle_fire",
+					"type": "deliver_item",
+					"text": "Junte 3 lenhas secas e leve a Tamir.",
+					"detail": "Lenha é escassa na encosta: galhos secos de arbustos espinhosos.",
+					"complete_on": {"event": "item_delivered", "id": "dry_wood"},
+					"targets": [
+						{"type": "pickup", "id": "bn_wood_1"}, {"type": "pickup", "id": "bn_wood_2"},
+						{"type": "pickup", "id": "bn_wood_3"}, {"type": "pickup", "id": "bn_wood_4"},
+						{"type": "npc", "id": "bn_tamir"}
+					],
+					"hints": [
+						"A noite no campo é escura e fria sem fogo.",
+						"Há galhos secos junto aos arbustos espalhados pela encosta.",
+						"Pegue 3 lenhas secas (E perto do galho) e converse com Tamir no posto de vigia."
+					],
+					"log": "Você levou lenha a Tamir. O fogo foi aceso, a noite caiu, e Tamir combinou os turnos da vigília."
+				},
+				{
+					"id": "night_watch",
+					"type": "observe_scene",
+					"text": "Fique de vigia no posto enquanto Tamir dorme.",
+					"detail": "Da pedra do posto se vê o aprisco inteiro e o fogo do portão.",
+					"complete_on": {"event": "scene_finished", "id": "shepherds_announcement"},
+					"targets": [{"type": "examinable", "id": "bn_watch_stone"}],
+					"hints": [
+						"Alguém precisa ficar acordado enquanto os outros dormem.",
+						"A pedra de vigia fica ao lado do fogo de Tamir, de frente para o aprisco.",
+						"Examine a pedra de vigia, junto ao fogo de Tamir, e escolha ficar de vigia."
+					],
+					"log": "Durante a vigília, você viu de longe uma luz ao redor de três pastores (representação), como Lucas 2:8-14 relata. Depois eles combinaram ir a Belém e subiram depressa (Lucas 2:15)."
+				},
+				{
+					"id": "follow_shepherds",
+					"type": "observe_scene",
+					"text": "Siga de longe o caminho até Belém.",
+					"detail": "Os pastores subiram a encosta em direção às casas.",
+					"complete_on": {"event": "scene_finished", "id": "shepherds_at_the_house"},
+					"targets": [{"type": "examinable", "id": "bn_house_view"}],
+					"hints": [
+						"O caminho da encosta leva às casas de Belém.",
+						"O caminho sobe em zigue-zague até um muro de terraço, abaixo de uma casa encostada na rocha.",
+						"Suba o caminho até a oliveira junto ao muro de terraço e examine o ponto de observação."
+					],
+					"log": "De longe, você viu os pastores subirem a uma casa (representação do jogo). Lucas 2:16 diz que encontraram Maria, José e o bebê na manjedoura."
+				},
+				{
+					"id": "return_to_fire",
+					"type": "talk_to_npc",
+					"text": "Volte ao fogo e converse com Tamir.",
+					"detail": "Tamir acordou.",
+					"complete_on": {"event": "custom", "id": "bn_tamir_after"},
+					"targets": [{"type": "npc", "id": "bn_tamir"}],
+					"hints": [
+						"O turno de vigília terminou.",
+						"Tamir está de pé junto ao fogo do posto de vigia.",
+						"Desça o caminho e converse com Tamir no posto de vigia."
+					],
+					"log": "Tamir contou que ouviu os pastores voltarem louvando a Deus e contarem o que lhes fora dito sobre um menino. Tamir é fictício; Lucas 2:17-18 não diz quem ouviu."
+				}
+			],
+			"rewards": {"flags": ["kept_night_watch"]},
+			"discoveries": ["bethlehem_first_century", "night_shepherding", "glory_around_shepherds", "manger_katalyma", "shepherds_told"],
+			"completion": {
+				"title": "O que eles ouviram e viram",
+				"references": ["Luke 2:8-20"],
+				"summary": [
+					"Lucas 2:8-14 relata que a glória do Senhor brilhou ao redor de pastores que vigiavam o rebanho à noite e que um anjo anunciou o nascimento, na cidade de Davi, de um Salvador; uma multidão do exército celestial louvava a Deus.",
+					"Os pastores foram depressa a Belém, encontraram Maria, José e o bebê deitado na manjedoura, contaram o que tinham ouvido e voltaram glorificando e louvando a Deus (Lucas 2:15-20).",
+					"O viajante, Tamir, Shai e o rebanho deles são criações do jogo. A luz, os três pastores e a casa são representação: o texto não descreve o anjo nem diz quantos pastores eram."
+				],
+				"unlock": [],
+				"next": "Lucas 2:21 continua com o oitavo dia; essa parte não faz parte desta experiência."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA). Referências conferidas contra a ficha bíblica do ep_048 e verse_counts.json. Textos do roteirista (IA) em dialogues/discoveries/presentations.proposal.json. Decisões do coordenador aplicadas: nota curta da variante de Lc 2:14 só no diário; Tamir só repete, em paráfrase identificada, o que Lc 2:17-18 permite (e a volta louvando, 2:20). Ids de personagens com prefixo bn_. Aguarda verificador bíblico e revisão humana."}
+		},
+		{
+			"id": "bn_fold_round",
+			"title": "A ronda do aprisco",
+			"category": "side",
+			"description": "Antes de dormir, Shai dá a volta no muro do aprisco. Ajude-o a conferir a pedra solta, os espinhos e o barulho nas rochas.",
+			"type": "assist",
+			"classification": "plausible_fiction",
+			"classification_note": "Shai, o aprisco e a ronda são criados para o jogo. Muros de pedra seca com galhos espinhosos, fogo e vigília contra predadores são contexto histórico do pastoreio na região; a lembrança de Davi é referência bíblica.",
+			"region": "bethlehem_night",
+			"place_id": "bethlehem",
+			"era_id": "roman_judea",
+			"references": ["1Sam 16:11", "1Sam 17:15", "1Sam 17:34-35"],
+			"theme": "A vigília do rebanho à noite",
+			"people": ["david"],
+			"fictional_characters": ["bn_shai", "bn_tamir"],
+			"intro": "Com o fogo aceso, Shai pega o cajado para a última volta no aprisco.",
+			"start": {"event": "custom", "id": "bn_shai_round"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "walk_round",
+					"type": "wait_for_event",
+					"text": "Dê a volta no aprisco e confira os três pontos que Shai indicou.",
+					"detail": "Uma brecha no muro, espinhos caídos e um barulho nas rochas.",
+					"complete_on": {"event": "condition", "id": "bn_round_checked", "condition": {"all": [{"flag": "bn_round_gap"}, {"flag": "bn_round_thorns"}, {"flag": "bn_round_noise"}]}},
+					"targets": [{"type": "examinable", "id": "bn_round_gap"}, {"type": "examinable", "id": "bn_round_thorns"}, {"type": "examinable", "id": "bn_round_noise"}],
+					"hints": [
+						"Um muro baixo só protege se não tiver brechas.",
+						"Shai falou do muro do lado do posto de vigia, do outro lado do muro e das rochas encosta abaixo.",
+						"Examine a pedra solta (muro do lado do posto), os galhos caídos (outro lado do muro) e as rochas encosta abaixo."
+					],
+					"log": "Você recolocou uma pedra solta, repôs galhos espinhosos no muro e viu um chacal se afastar do fogo."
+				},
+				{
+					"id": "report_shai",
+					"type": "talk_to_npc",
+					"text": "Conte a Shai o que encontrou.",
+					"complete_on": {"event": "custom", "id": "bn_shai_round_done"},
+					"targets": [{"type": "npc", "id": "bn_shai"}],
+					"hints": [
+						"Shai espera notícias da ronda.",
+						"Shai está junto ao muro do aprisco, do lado oposto ao posto de vigia.",
+						"Converse com Shai, no muro do aprisco, do lado oposto ao posto de vigia."
+					],
+					"log": "Shai agradeceu e lembrou que, segundo as Escrituras, Davi também pastoreou ovelhas em Belém e as defendia."
+				}
+			],
+			"rewards": {"flags": ["helped_fold_round"]},
+			"discoveries": ["david_shepherd_bethlehem"],
+			"completion": {
+				"title": "O muro conferido",
+				"references": ["1Sam 17:34-35"],
+				"summary": [
+					"Apriscos de pedra seca com galhos espinhosos no topo e uma só abertura protegiam o rebanho à noite; o fogo e a vigília afastavam ladrões e predadores.",
+					"1 Samuel 16:11 e 17:15 contam que Davi cuidava das ovelhas da família em Belém, e em 17:34-35 ele conta a Saul como defendia o rebanho. Shai e a ronda são criações do jogo."
+				],
+				"unlock": [],
+				"next": "No diário, a descoberta \"Davi, pastor em Belém\" liga o pastoreio de Belém à \"cidade de Davi\" de Lucas 2:4."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA). 1Sam 16 e 17 estão em verse_counts.json. Aguarda roteirista e revisão humana."}
+		},
+		{
+			"id": "bethlehem_night_signs",
+			"title": "Sinais da vigília",
+			"category": "exploration",
+			"description": "Examine os objetos do posto de vigia e o horizonte dos campos de Belém.",
+			"type": "investigation",
+			"classification": "historical_context",
+			"classification_note": "Cajado, funda, manto, lamparina e terraços de pedra seca ilustram o pastoreio e a Judeia nos dias de Herodes. Os objetos do mapa são criados para o jogo.",
+			"region": "bethlehem_night",
+			"place_id": "bethlehem",
+			"era_id": "roman_judea",
+			"references": ["1Sam 17:40", "Luke 2:8"],
+			"theme": "O equipamento do pastor e a paisagem de Belém",
+			"people": [],
+			"fictional_characters": [],
+			"intro": "O posto de vigia guarda o que os pastores usam toda noite. Registre o que encontrar em Minhas descobertas.",
+			"start": {"event": "region_entered", "id": "bethlehem_night"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "first_sign",
+					"type": "discover_information",
+					"text": "Encontre um primeiro sinal da vigília.",
+					"complete_on": {"event": "collection", "id": "bethlehem_night", "count": 1},
+					"targets": [{"type": "examinable", "id": "bn_staff"}, {"type": "examinable", "id": "bn_sling"}, {"type": "examinable", "id": "bn_cloak_bed"}, {"type": "examinable", "id": "bn_oil_lamp"}, {"type": "examinable", "id": "bn_terraces"}],
+					"hints": [
+						"Todo pastor deixa as ferramentas por perto.",
+						"Há um cajado encostado no abrigo de rocha do posto de vigia.",
+						"Examine o cajado ao lado do abrigo de rocha, junto a Tamir."
+					],
+					"log": "Você começou a registrar os sinais da vigília."
+				},
+				{
+					"id": "three_signs",
+					"type": "discover_information",
+					"text": "Reúna 3 sinais da vigília.",
+					"complete_on": {"event": "collection", "id": "bethlehem_night", "count": 3},
+					"targets": [{"type": "examinable", "id": "bn_staff"}, {"type": "examinable", "id": "bn_sling"}, {"type": "examinable", "id": "bn_cloak_bed"}, {"type": "examinable", "id": "bn_oil_lamp"}, {"type": "examinable", "id": "bn_terraces"}],
+					"hints": [
+						"A noite inteira cabe num pequeno abrigo.",
+						"Procure a funda, o manto estendido e um nicho na rocha com uma luz pequena.",
+						"Examine os objetos marcados pela seta ao redor do abrigo de rocha."
+					],
+					"log": "Você reuniu três sinais da vigília."
+				},
+				{
+					"id": "all_signs",
+					"type": "discover_information",
+					"text": "Complete os 5 sinais da vigília.",
+					"complete_on": {"event": "collection_completed", "id": "bethlehem_night"},
+					"targets": [{"type": "examinable", "id": "bn_staff"}, {"type": "examinable", "id": "bn_sling"}, {"type": "examinable", "id": "bn_cloak_bed"}, {"type": "examinable", "id": "bn_oil_lamp"}, {"type": "examinable", "id": "bn_terraces"}],
+					"hints": [
+						"Nem todo sinal está junto ao fogo: a própria encosta conta algo.",
+						"Nos terraços perto da entrada, onde uma das ovelhas se perdeu, há muros de pedra seca.",
+						"Abra o diário (J), aba Descobertas, para ver quais sinais faltam."
+					],
+					"log": "Você completou os sinais da vigília."
+				}
+			],
+			"discoveries": [],
+			"completion": {
+				"title": "Sinais registrados",
+				"references": ["1Sam 17:40", "Luke 2:8"],
+				"summary": [
+					"Cajado, funda, manto de lã e lamparina de barro mostram como pastores passavam a noite no campo; os terraços de pedra mostram como se aproveitavam as encostas.",
+					"Os objetos do posto de vigia são criações do jogo baseadas no contexto histórico."
+				],
+				"unlock": [],
+				"next": "Os sinais ficam em Minhas descobertas (J, aba Descobertas)."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA). Contexto segue research_historical.md do ep_048. Heródio fora (decisão do coordenador): bn_herodium_view trocado por bn_terraces; textos do roteirista (IA) em dialogues.proposal.json e collectibles.proposal.json."}
+		}
+	]
+}

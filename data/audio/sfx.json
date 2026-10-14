@@ -110,7 +110,53 @@
 			"cr_bundle": "interact_cloth",
 			"cr_tracks": "interact_dirt",
 			"journal_intro": "interact_parchment",
-			"house_door": "interact_door"
+			"house_door": "interact_door",
+			"dothan_ridge_view": "interact_stone",
+			"eh_records": "interact_parchment",
+			"eh_granary": "interact_dirt",
+			"eh_field": "interact_dirt",
+			"eh_journal": "interact_parchment",
+			"eh_pool": "interact_water_cistern",
+			"eh_oven": "interact_ceramic",
+			"eh_loom": "interact_wood",
+			"eh_jars": "interact_ceramic",
+			"eh_shaduf": "interact_wood",
+			"sea_dust_view": "interact_stone",
+			"sea_bundle": "interact_cloth",
+			"sea_shelter": "interact_cloth",
+			"sea_reeds": "interact_wood",
+			"sea_seep": "interact_water_cistern",
+			"sea_stray_1": "interact_dirt",
+			"sea_stray_2": "interact_dirt",
+			"sea_stray_3": "interact_dirt",
+			"sea_far_view": "interact_stone",
+			"bf_boundary_view": "interact_stone",
+			"bf_forgotten_sheaf": "interact_dirt",
+			"bf_beating_stone": "interact_stone",
+			"bf_corner_returned": "interact_dirt",
+			"bf_sickle": "interact_wood",
+			"bf_pithos": "interact_ceramic",
+			"bf_parcel_marker": "interact_stone",
+			"bf_threshing_floor": "interact_dirt",
+			"bf_shelter": "interact_wood",
+			"bf_gate": "interact_wood",
+			"bf_road_west": "interact_stone",
+			"bn_stray_1": "interact_dirt",
+			"bn_stray_2": "interact_dirt",
+			"bn_stray_3": "interact_dirt",
+			"bn_stray_4": "interact_dirt",
+			"bn_watch_stone": "interact_stone",
+			"bn_house_view": "interact_stone",
+			"bn_house_stairs": "interact_stone",
+			"bn_round_gap": "interact_stone",
+			"bn_round_thorns": "interact_wood",
+			"bn_round_noise": "interact_dirt",
+			"bn_staff": "interact_wood",
+			"bn_sling": "interact_cloth",
+			"bn_cloak_bed": "interact_cloth",
+			"bn_oil_lamp": "interact_ceramic",
+			"bn_terraces": "interact_stone",
+			"bn_west_path": "interact_stone"
 		},
 		"kinds": {"TALK": "dialogue_open", "EXAMINE": "interact_generic", "READ": "interact_parchment", "OPEN": "interact_wood", "DOOR": "interact_door", "COLLECT": ""}
 	},
@@ -124,7 +170,12 @@
 		"barley_bread": "item_food",
 		"dried_figs": "item_food",
 		"provisions_basket": "item_food",
-		"wool_cloth": "item_cloth"
+		"wool_cloth": "item_cloth",
+		"barley_sheaf": "item_fiber",
+		"corner_sheaf": "item_fiber",
+		"tova_grain": "item_food",
+		"barley_sack": "item_food",
+		"brushwood": "item_wood"
 	},
 
 	"ambience": {
@@ -155,6 +206,44 @@
 				{"sounds": ["amb_bird"], "interval": [10.0, 24.0], "spread": 240}
 			],
 			"emitters": [{"sound": "amb_water_cistern", "x": 790, "y": 240, "max_distance": 130}]
+		},
+		"egypt_house": {
+			"_comment": "Provisório (etapa A, sons existentes reaproveitados); sons próprios do Egito ficam para a etapa de áudio.",
+			"bed": "amb_wind_road",
+			"layers": [
+				{"sounds": ["amb_bird"], "interval": [6.0, 16.0], "spread": 240},
+				{"sounds": ["amb_village_grind", "amb_village_knock"], "interval": [14.0, 30.0], "spread": 220},
+				{"sounds": ["amb_insects"], "interval": [10.0, 24.0], "spread": 200}
+			],
+			"emitters": [{"sound": "amb_water_well", "x": 720, "y": 600, "max_distance": 140}]
+		},
+		"sea_camp": {
+			"_comment": "Provisório (etapa A); o laço de mar e o fogo da noite ficam para a etapa de áudio.",
+			"bed": "amb_wind_road",
+			"layers": [
+				{"sounds": ["amb_sheep", "amb_goat"], "interval": [10.0, 24.0], "spread": 260},
+				{"sounds": ["amb_bird"], "interval": [14.0, 30.0], "spread": 260}
+			],
+			"emitters": []
+		},
+		"bethlehem_fields": {
+			"_comment": "Provisório (etapa A, sons existentes reaproveitados).",
+			"bed": "amb_wind_canaan",
+			"layers": [
+				{"sounds": ["amb_bird"], "interval": [6.0, 16.0], "spread": 240},
+				{"sounds": ["amb_insects"], "interval": [9.0, 22.0], "spread": 200},
+				{"sounds": ["amb_village_grind", "amb_village_knock"], "interval": [18.0, 36.0], "spread": 240}
+			],
+			"emitters": []
+		},
+		"bethlehem_night": {
+			"_comment": "Provisório (etapa A); campo noturno e fogueira ficam para a etapa de áudio.",
+			"bed": "amb_wind_dothan",
+			"layers": [
+				{"sounds": ["amb_sheep", "amb_goat"], "interval": [9.0, 22.0], "spread": 260},
+				{"sounds": ["amb_insects"], "interval": [8.0, 20.0], "spread": 200}
+			],
+			"emitters": []
 		}
 	}
 }

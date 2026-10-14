@@ -1,0 +1,46 @@
+{
+	"episode": "ep_016_a_travessia_do_mar",
+	"_comment": "Veredito de agente nunca é 'verified'. Só uma pessoa preenche human.approved_by. Escopo: experiência 'A travessia do mar' (Êx 13:17-14:31; Êx 15 só como eco).",
+	"biblical": {
+		"verdict": "ok_for_human_review",
+		"reviewer_agent": "biblical-verifier (subagente 84a49015-cc7e-4ed0-9c4c-8d3c6dd35170)",
+		"date": "2026-10-14",
+		"scope": "dialogues, discoveries, presentations, scenes, experience, bible_entries, characters e textos de quest.proposal.json do pacote",
+		"limits": "Êx 1:6-11, 12:32-51, 13, 14, 15:1-7 e 15:19-21 conferidos contra o VPL oficial; Lv 23:42-43, Hb 11:29 e Nm 26:59 não conferidos. Exibição no jogo não executada na revisão.",
+		"first_pass": "changes_required (E16-01..E16-07)",
+		"recheck": {"date": "2026-10-14", "verdict": "changes_required", "result": "E16-01, 02, 04-07 resolvidos; E16-03 aberto; achado novo N16-01. Ambos corrigidos depois pelo coordenador (texto indicado pelo verificador)."}
+	},
+	"historical": {
+		"verdict": "ok_for_human_review",
+		"reviewer_agent": "historical-reviewer (subagente 35e5b3cb-e00e-431d-bb5b-2c1f25678a32)",
+		"date": "2026-10-14",
+		"scope": "textos, descrições visuais, props e cenas propostos, contra research_historical.md",
+		"limits": "Fontes citadas de memória ('a confirmar' na ficha).",
+		"recheck": {"date": "2026-10-14", "verdict": "ok_for_human_review", "result": "H05..H08 resolvidos."}
+	},
+	"findings": [
+		{"id": "E16-01", "source": "biblical", "severity": "major", "status": "resolved", "where": "scenes exodus_sea_crossing", "problem": "Tamborins logo após 'Israel viu os egípcios mortos na praia' (14:30) soavam como celebração.", "fix": "Decisão do coordenador: tamborins fora da cena; só ouvidos ao longe no amanhecer, Shira apenas escuta."},
+		{"id": "E16-02", "source": "biblical", "severity": "minor", "status": "resolved", "where": "presentations exod_014_sea; discoveries sea_pursuit", "problem": "'Carros dessa época'/'Novo Império' supunham data.", "fix": "'Novo Império (uma das épocas propostas; datação debatida)', como hipótese."},
+		{"id": "E16-03", "source": "biblical", "severity": "minor", "status": "resolved", "where": "experience passage linha 1", "problem": "'Muitas gerações' afirmava duração debatida.", "fix": "'gerações separam os dois relatos; quanto tempo exatamente é debatido' (aplicado pelo coordenador após a reconferência)."},
+		{"id": "E16-04", "source": "biblical", "severity": "low", "status": "resolved", "where": "sea_tzvi_talk.dawn", "problem": "'Vento no rosto' dava direção.", "fix": "'com o vento soprando'."},
+		{"id": "E16-05", "source": "biblical", "severity": "low", "status": "resolved", "where": "sea_shira_talk, sea_beni_talk", "problem": "Afirmava ser a mesma massa da saída.", "fix": "Sem afirmar que é a mesma massa."},
+		{"id": "E16-06", "source": "biblical", "severity": "low", "status": "resolved", "where": "bible_entries moses", "problem": "'Criado na casa da filha do faraó'.", "fix": "'Adotado pela filha do faraó, que lhe deu o nome (Êx 2:10)'."},
+		{"id": "E16-07", "source": "biblical", "severity": "low", "status": "resolved", "where": "experience requires", "problem": "Requisito fora do encadeamento.", "fix": "joseph_potiphar_house."},
+		{"id": "N16-01", "source": "biblical", "severity": "low", "status": "resolved", "where": "sea_tzvi_talk.egypt2", "problem": "Êx 1:11 grafa 'Ramsés' (12:37 grafa 'Ramessés').", "fix": "'Pitom e Ramsés' (aplicado pelo coordenador, conferido no VPL)."},
+		{"id": "H05", "source": "historical", "severity": "minor", "status": "resolved", "where": "falas e área south_lookout", "problem": "Pontos cardeais reais contradiziam a costa genérica.", "fix": "'do lado do Egito', 'por onde viemos'; 'Elevação junto às cristas'."},
+		{"id": "H06", "source": "historical", "severity": "minor", "status": "resolved", "where": "presentations", "problem": "Novo Império como fato.", "fix": "Marcado como hipótese."},
+		{"id": "H07", "source": "historical", "severity": "minor", "status": "resolved", "where": "sea_shira_talk.dawn", "problem": "'Mulheres cantam e dançam' ia além da decisão.", "fix": "Só tamborins ao longe."},
+		{"id": "H08", "source": "historical", "severity": "low", "status": "resolved", "where": "sea_tzvi_talk", "problem": "Grafia variava.", "fix": "Grafia da BPM."}
+	],
+	"open_for_human": [
+		"Decisões provisórias do coordenador (production/reports/four_experiences_decisions.md): cena até a travessia; morte dos egípcios só narrada; Moisés distante com a vara; Êx 15 só eco.",
+		"Citar Êx 14:30 inteiro (inclui os egípcios mortos na praia) ou só parte.",
+		"Coluna ao amanhecer; Meret (multidão mista); altura das paredes de água.",
+		"pilot.json prevê escolta na travessia; o jogo seguiu a decisão do criador (só observar)."
+	],
+	"human": {
+		"approved_by": "",
+		"date": "",
+		"notes": ""
+	}
+}

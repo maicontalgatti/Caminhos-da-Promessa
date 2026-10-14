@@ -1,0 +1,48 @@
+{
+	"_comment": "Cena dirigida de Lucas 2:16-20 vista de longe (ep_048): a casa só por fora. Integrado de scenes.proposal.json; aguarda revisão humana.",
+	"scenes": [
+		{
+			"id": "shepherds_at_the_house",
+			"region": "bethlehem_night",
+			"title": "Em Belém, vistos de fora",
+			"classification": "recorded_event",
+			"classification_note": "Representação de Lucas 2:16-20 vista de fora. A casa de pedra encostada na rocha, com área de animais, é composição do jogo; onde exatamente estava a manjedoura e o sentido de 'hospedaria' são debatidos. Maria, José e o bebê não aparecem; o interior não é mostrado.",
+			"references": ["Luke 2:16-20"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA). Narração de 2:17-18 e legenda de contexto escritas pelo roteirista (IA); a conferir pelo verificador bíblico."},
+			"skippable": true,
+			"steps": [
+				{"type": "player_to", "at": [632, 248], "facing": "up"},
+				{"type": "camera", "to": [688, 176], "time": 2, "zoom": 1, "wait": true},
+				{"type": "caption", "text": "Representação: casa de pedra com área de animais, vista só de fora. Onde o bebê estava e o sentido de \"hospedaria\" (Lucas 2:7) são debatidos.", "kind": "context", "wait": true},
+				{"type": "actor", "id": "rep_a", "sprite": "silhouette_shepherd_staff_a", "at": [744, 216], "facing": "up", "pose": "stand"},
+				{"type": "actor", "id": "rep_b", "sprite": "silhouette_shepherd_staff_b", "at": [752, 232], "facing": "up", "pose": "stand"},
+				{"type": "actor", "id": "rep_c", "sprite": "silhouette_shepherd_staff_c", "at": [736, 240], "facing": "up", "pose": "stand"},
+				{"type": "move", "actor": "rep_a", "path": [[744, 216], [744, 168], [712, 152]], "speed": 30},
+				{"type": "move", "actor": "rep_b", "path": [[752, 232], [744, 168], [712, 152]], "speed": 30},
+				{"type": "move", "actor": "rep_c", "path": [[736, 240], [744, 168], [712, 152]], "speed": 30, "wait": true},
+				{"type": "effect", "id": "door_lamp", "effect": "light_glow", "on": true, "at": [712, 152], "params": {"color": "#E9A955", "radius": 14}},
+				{"type": "remove", "actor": "rep_a"},
+				{"type": "remove", "actor": "rep_b"},
+				{"type": "remove", "actor": "rep_c"},
+				{"type": "caption", "scripture": "Luke 2:16", "wait": true},
+				{"type": "wait", "time": 2.5},
+				{"type": "caption", "text": "Depois de ver o menino, os pastores contaram o que lhes fora dito a respeito dele, e todos os que ouviram ficaram admirados. (Paráfrase de Lucas 2:17-18.)", "kind": "narration", "wait": true},
+				{"type": "wait", "time": 2},
+				{"type": "actor", "id": "rep_a", "sprite": "silhouette_shepherd_staff_a", "at": [712, 160], "facing": "down", "pose": "stand"},
+				{"type": "actor", "id": "rep_b", "sprite": "silhouette_shepherd_staff_b", "at": [720, 164], "facing": "down", "pose": "stand"},
+				{"type": "actor", "id": "rep_c", "sprite": "silhouette_shepherd_staff_c", "at": [704, 166], "facing": "down", "pose": "stand"},
+				{"type": "move", "actor": "rep_a", "path": [[712, 160], [744, 168], [744, 200], [664, 256], [584, 328], [488, 424], [520, 520]], "speed": 26},
+				{"type": "move", "actor": "rep_b", "path": [[720, 164], [744, 168], [744, 200], [664, 256], [584, 328], [488, 424], [520, 520]], "speed": 26},
+				{"type": "move", "actor": "rep_c", "path": [[704, 166], [744, 168], [744, 200], [664, 256], [584, 328], [488, 424], [520, 520]], "speed": 26},
+				{"type": "camera", "to": [632, 260], "time": 3, "wait": true},
+				{"type": "caption", "scripture": "Luke 2:20", "wait": true},
+				{"type": "wait", "time": 2},
+				{"type": "remove", "actor": "rep_a"},
+				{"type": "remove", "actor": "rep_b"},
+				{"type": "remove", "actor": "rep_c"},
+				{"type": "camera", "follow": "player", "time": 1.5, "wait": true}
+			],
+			"on_end": {"unlock": ["manger_katalyma"], "player_to": {"at": [632, 248], "facing": "down"}}
+		}
+	]
+}
