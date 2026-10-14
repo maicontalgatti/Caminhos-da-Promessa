@@ -1,0 +1,93 @@
+{
+	"_comment": "Fichas de personagens bíblicos do diário. Moradores fictícios ficam em data/characters e aparecem no diário identificados como criados para o jogo.",
+	"people": [
+		{
+			"id": "abraham",
+			"name": "Abraão",
+			"era_id": "patriarchs",
+			"places": ["canaan", "gerar", "beersheba"],
+			"references": ["Gen 12:1-5", "Gen 21:25-31", "Gen 25:7-8"],
+			"summary": "Patriarca que deixa Harã rumo a Canaã. Gênesis acompanha sua família, suas viagens e os acordos que fez, inclusive sobre poços em Berseba.",
+			"relations": [{"person": "isaac", "label": "pai de"}],
+			"moments": ["Parte para Canaã (Gn 12:1-5)", "Acordo com Abimeleque sobre um poço (Gn 21:25-31)", "Morte e sepultamento (Gn 25:7-10)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "isaac",
+			"name": "Isaque",
+			"era_id": "patriarchs",
+			"places": ["gerar", "beersheba"],
+			"references": ["Gen 21:1-3", "Gen 26:1-33", "Gen 35:28-29"],
+			"summary": "Filho de Abraão e Sara, marido de Rebeca e pai de Esaú e Jacó. Em Gênesis 26 vive em Gerar, reabre os poços de seu pai e enfrenta disputas por água antes de seguir para Berseba.",
+			"relations": [{"person": "abraham", "label": "filho de"}, {"person": "rebekah", "label": "marido de"}, {"person": "jacob", "label": "pai de"}, {"person": "esau", "label": "pai de"}],
+			"moments": ["Nascimento (Gn 21:1-3)", "Casamento com Rebeca (Gn 24)", "Poços em Gerar e Berseba (Gn 26:12-33)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "rebekah",
+			"name": "Rebeca",
+			"era_id": "patriarchs",
+			"places": [],
+			"references": ["Gen 24:15-20", "Gen 25:21-26"],
+			"summary": "Mulher de Isaque e mãe de Esaú e Jacó. Gênesis 24 a apresenta junto a uma fonte, com o cântaro no ombro, dando de beber ao servo de Abraão e aos camelos.",
+			"relations": [{"person": "isaac", "label": "mulher de"}, {"person": "jacob", "label": "mãe de"}, {"person": "esau", "label": "mãe de"}],
+			"moments": ["Encontro junto à fonte (Gn 24:15-20)", "Nascimento dos gêmeos (Gn 25:21-26)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "abimelech",
+			"name": "Abimeleque, rei de Gerar",
+			"era_id": "patriarchs",
+			"places": ["gerar", "beersheba"],
+			"references": ["Gen 26:1", "Gen 26:16", "Gen 26:26-31"],
+			"summary": "Governante de Gerar nas narrativas de Abraão e de Isaque. Em Gênesis 26 pede que Isaque se afaste e, mais tarde, faz um acordo de paz com ele. O nome aparece em mais de um relato, e não há consenso se se trata da mesma pessoa ou de um título.",
+			"relations": [],
+			"moments": ["Pede que Isaque se afaste (Gn 26:16)", "Acordo com Isaque (Gn 26:26-31)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "jacob",
+			"name": "Jacó (Israel)",
+			"era_id": "patriarchs",
+			"places": ["canaan", "shechem"],
+			"references": ["Gen 25:27", "Gen 32:28", "Gen 37:3"],
+			"summary": "Filho de Isaque e Rebeca, irmão gêmeo de Esaú. Descrito como homem que habitava em tendas. Recebe o nome Israel, e seus doze filhos dão nome às tribos.",
+			"relations": [{"person": "isaac", "label": "filho de"}, {"person": "esau", "label": "irmão de"}, {"person": "joseph", "label": "pai de"}],
+			"moments": ["Habitava em tendas (Gn 25:27)", "Recebe o nome Israel (Gn 32:28)", "Prefere José entre os filhos (Gn 37:3)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "esau",
+			"name": "Esaú",
+			"era_id": "patriarchs",
+			"places": [],
+			"references": ["Gen 25:25-27"],
+			"summary": "Filho de Isaque e Rebeca, irmão gêmeo de Jacó, descrito como caçador e homem do campo.",
+			"relations": [{"person": "isaac", "label": "filho de"}, {"person": "jacob", "label": "irmão de"}],
+			"moments": ["Nascimento dos gêmeos (Gn 25:25-26)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "joseph",
+			"name": "José",
+			"era_id": "patriarchs",
+			"places": ["shechem", "dothan", "egypt"],
+			"references": ["Gen 37:2-36", "Gen 39:1-6", "Gen 41:39-41"],
+			"summary": "Filho de Jacó. Vendido pelos irmãos a uma caravana, é levado ao Egito, passa pela prisão e chega a governar o país sob o faraó.",
+			"relations": [{"person": "jacob", "label": "filho de"}],
+			"moments": ["Vendido em Dotã (Gn 37:17-28)", "Na casa de Potifar (Gn 39:1-6)", "Governador do Egito (Gn 41:39-41)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "david",
+			"name": "Davi",
+			"era_id": "united_monarchy",
+			"places": ["bethlehem", "jerusalem"],
+			"references": ["1Sam 16:11-13", "1Sam 17:34-35", "2Sam 5:3-7"],
+			"summary": "Filho caçula de Jessé, de Belém. Era pastor das ovelhas da família quando foi ungido. Tornou-se rei de Israel e conquistou Jerusalém.",
+			"relations": [],
+			"moments": ["Ungido por Samuel (1Sm 16:11-13)", "Fala do cuidado com o rebanho (1Sm 17:34-35)", "Rei e conquista de Jerusalém (2Sm 5:3-7)"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		}
+	]
+}

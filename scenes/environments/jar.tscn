@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/jar.png" id="1_sed75"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpi5t"]
+size = Vector2(6, 3)
+
+[node name="Jar" type="StaticBody2D" unique_id=1044131027]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1107038260]
+texture = ExtResource("1_sed75")
+centered = false
+offset = Vector2(-5, -15)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1127635874]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_fpi5t")

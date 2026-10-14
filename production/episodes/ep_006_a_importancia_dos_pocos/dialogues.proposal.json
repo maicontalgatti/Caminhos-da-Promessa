@@ -1,0 +1,22 @@
+{
+	"_comment": "Proposta ep_006 (dialogue-writer, IA, pending_review). Só o diálogo alterado: ari_talk. Ids de nós existentes (greet, n2, again) e a flag met_ari preservados; nós novos: well, well2, well3, share. Evento novo: wells_ari_well (em n2 e em well3), para o objetivo canaan_wells/listen_ari usar complete_on custom. Ari é morador fictício; não há falas de personagens bíblicos nem citações.",
+	"dialogues": [
+		{
+			"id": "ari_talk",
+			"start": "greet",
+			"start_if": [
+				{"objective": "canaan_wells/listen_ari", "node": "well"},
+				{"flag": "met_ari", "node": "again"}
+			],
+			"nodes": {
+				"greet": {"speaker": "ari", "text": "Você é de onde? Nunca vi essas roupas por aqui!", "next": "n2", "set_flags": ["met_ari"]},
+				"n2": {"speaker": "ari", "text": "Meu avô diz que antigamente o poço secou e todo mundo teve que cavar mais fundo. Eu ajudei a carregar as pedras... bom, as pequenas.", "next": "share", "event": "wells_ari_well"},
+				"well": {"speaker": "ari", "text": "Veio ver o poço? Eu sei uma história dele! Foi o meu avô que contou.", "next": "well2", "set_flags": ["met_ari"]},
+				"well2": {"speaker": "ari", "text": "Uma vez o poço secou. Não tinha água pra ninguém, nem pras ovelhas. Aí todo mundo cavou mais fundo, até a água voltar.", "next": "well3"},
+				"well3": {"speaker": "ari", "text": "Eu ajudei a carregar as pedras... bom, as pequenas. O vovô diz que poço é que nem rebanho: precisa de cuidado todo dia.", "next": "share", "event": "wells_ari_well"},
+				"share": {"speaker": "ari", "text": "Ele também conta que cada família queria o poço só pra ela. Aí os mais velhos sentaram e combinaram a vez de cada uma tirar água.", "next": "end"},
+				"again": {"speaker": "ari", "text": "Aposto que você não me alcança! ...Tá bom, hoje não, estou cansado.", "next": "end"}
+			}
+		}
+	]
+}

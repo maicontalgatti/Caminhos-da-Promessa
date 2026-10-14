@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/pots.png" id="1_pop5y"]
+[ext_resource type="Script" path="res://scripts/interaction/interactable.gd" id="2_wolgi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brujd"]
+size = Vector2(22, 4)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a7gn5"]
+radius = 12.0
+
+[node name="Pots" type="StaticBody2D" unique_id=316179896]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=800432316]
+texture = ExtResource("1_pop5y")
+centered = false
+offset = Vector2(-13, -15)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1710955493]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_brujd")
+
+[node name="Interactable" type="Area2D" parent="." unique_id=712638876]
+position = Vector2(0, -6)
+script = ExtResource("2_wolgi")
+dialogue_id = "pots_examine"
+prompt_offset = Vector2(0, -14)
+
+[node name="Shape" type="CollisionShape2D" parent="Interactable" unique_id=335468809]
+shape = SubResource("CircleShape2D_a7gn5")

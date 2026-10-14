@@ -1,0 +1,53 @@
+{
+	"regions": [
+		{
+			"id": "caravan_road",
+			"display_name": "Caminho das Caravanas",
+			"area_label": "Região de Canaã",
+			"subtitle": "Época dos patriarcas (datação aproximada e debatida)",
+			"biome": "canaa",
+			"map_scene": "res://scenes/maps/caravan_road.tscn",
+			"classification": "plausible_fiction",
+			"notes": "Estrada de terra fictícia entre colinas, entre a aldeia e os pastos de Dotã. Gênesis 37:25 menciona uma caravana passando perto de Dotã a caminho do Egito; o traçado exato das rotas da época é reconstruído por hipótese.",
+			"related_stories": ["gen_037_joseph_sold"],
+			"context": {
+				"place_id": "canaan",
+				"era_id": "patriarchs",
+				"references": ["Gen 37:25"],
+				"theme": "Estradas, caravanas e viajantes",
+				"discoveries_on_enter": []
+			},
+			"entries": {
+				"default": {"x": 24, "y": 272, "facing": "right"},
+				"from_canaan": {"x": 24, "y": 272, "facing": "right"},
+				"from_dothan": {"x": 1000, "y": 304, "facing": "left"}
+			},
+			"exits": [
+				{"id": "west_village", "rect": [0, 252, 12, 40], "to": "canaan_village", "entry": "from_caravan_road", "label": "Aldeia em Canaã (oeste)"},
+				{"id": "east_dothan", "rect": [1012, 284, 12, 40], "to": "dothan", "entry": "from_caravan_road", "label": "Dotã (leste)"}
+			],
+			"areas": [
+				{"id": "caravan_lookout", "rect": [448, 160, 96, 80], "label": "Trecho alto da estrada"}
+			],
+			"npcs": [
+				{"id": "malik", "character": "malik", "x": 446, "y": 236}
+			],
+			"examinables": [
+				{"id": "cr_tracks", "x": 600, "y": 208, "dialogue": "cr_tracks", "prompt": "Examinar o rastro", "marker": "sparkle", "radius": 12},
+				{"id": "cr_marker", "x": 360, "y": 180, "prop": "boundary_stone", "dialogue": "cr_marker", "prompt": "Examinar a pedra", "center_y": -6, "prompt_y": -24},
+				{"id": "cr_campfire", "x": 650, "y": 160, "prop": "firepit", "dialogue": "cr_campfire", "prompt": "Examinar as cinzas", "prompt_y": -16},
+				{"id": "cr_bundle", "x": 860, "y": 340, "prop": "sacks", "dialogue": "cr_bundle", "prompt": "Examinar o fardo", "prompt_y": -18},
+				{"id": "cr_jar", "x": 150, "y": 306, "prop": "jar", "dialogue": "cr_jar", "prompt": "Examinar o jarro", "prompt_y": -20}
+			],
+			"pickups": [
+				{"id": "fiber_1", "item": "plant_fiber", "x": 120, "y": 236},
+				{"id": "fiber_2", "item": "plant_fiber", "x": 250, "y": 310},
+				{"id": "fiber_3", "item": "plant_fiber", "x": 560, "y": 252},
+				{"id": "fiber_4", "item": "plant_fiber", "x": 760, "y": 250},
+				{"id": "wood_1", "item": "dry_wood", "x": 300, "y": 150},
+				{"id": "wood_2", "item": "dry_wood", "x": 690, "y": 345},
+				{"id": "wood_3", "item": "dry_wood", "x": 930, "y": 262}
+			]
+		}
+	]
+}

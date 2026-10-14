@@ -1,0 +1,242 @@
+{
+	"_comment": "Cronologia do jogo. Anos: inteiros, negativos = a.C., positivos = d.C., nunca 0 (não existe ano zero). 'span' nulo = sem datação atribuída. certainty: documented | approximate | debated | unknown. precision: year | century. Eventos com 'anchor' aparecem sempre como marcos de referência.",
+	"eras": [
+		{
+			"id": "patriarchs",
+			"label": "Época dos patriarcas",
+			"order": 10,
+			"span": null,
+			"certainty": "debated",
+			"display": "cronologia aproximada e debatida",
+			"books": ["Gen"],
+			"description": "Período das narrativas de Abraão, Isaque, Jacó e José (Gênesis 12–50). O texto bíblico não traz datas no calendário atual, e não há consenso sobre onde situar esses relatos: muitas propostas ficam em algum ponto do II milênio a.C., mas há outras posições. Por isso o jogo não atribui anos a esses acontecimentos.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Descrição geral; revisão humana recomendada."}
+		},
+		{
+			"id": "exodus",
+			"label": "Êxodo e peregrinação no deserto",
+			"order": 20,
+			"span": null,
+			"certainty": "debated",
+			"display": "datação debatida",
+			"books": ["Exod", "Lev", "Num", "Deut"],
+			"description": "Saída do Egito, Sinai e caminhada pelo deserto. A datação é uma das mais discutidas da história bíblica; as duas hipóteses mais citadas estão abaixo. Há também estudiosos que propõem outros modelos ou questionam a historicidade de partes do relato.",
+			"hypotheses": [
+				{"label": "Datação antiga", "span": {"from": -1500, "to": -1401, "precision": "century", "certainty": "debated"}, "basis": "Leitura literal de 1 Reis 6:1, que conta 480 anos entre a saída do Egito e o 4º ano do reinado de Salomão.", "references": ["1Kgs 6:1"]},
+				{"label": "Datação tardia", "span": {"from": -1300, "to": -1201, "precision": "century", "certainty": "debated"}, "basis": "Argumentos arqueológicos e a menção à cidade de Ramessés em Êxodo 1:11.", "references": ["Exod 1:11"]}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Hipóteses resumidas; revisão humana recomendada."}
+		},
+		{
+			"id": "judges",
+			"label": "Período dos juízes",
+			"order": 30,
+			"span": {"from": -1200, "to": -1001, "precision": "century", "certainty": "approximate"},
+			"certainty": "approximate",
+			"books": ["Josh", "Judg", "Ruth"],
+			"description": "Tribos de Israel estabelecidas em Canaã, sem rei, lideradas em momentos de crise por juízes. As datas são aproximadas.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "united_monarchy",
+			"label": "Monarquia unida (Saul, Davi e Salomão)",
+			"order": 40,
+			"span": {"from": -1050, "to": -931, "precision": "century", "certainty": "approximate"},
+			"certainty": "approximate",
+			"books": ["1Sam", "2Sam", "1Kgs", "1Chr", "2Chr"],
+			"description": "Reinados de Saul, Davi e Salomão. A cronologia usual situa Davi e Salomão no século X a.C., com datas aproximadas e discutidas em detalhes.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "divided_kingdom",
+			"label": "Reinos de Israel e Judá",
+			"order": 50,
+			"span": {"from": -931, "to": -587, "precision": "year", "certainty": "approximate"},
+			"certainty": "approximate",
+			"books": ["1Kgs", "2Kgs", "Isa", "Hos", "Amos", "Mic", "Jonah", "Nah"],
+			"description": "Divisão do reino após Salomão: Israel ao norte e Judá ao sul. Época de muitos profetas. Registros assírios e babilônicos ajudam a datar vários acontecimentos.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "babylonian_exile",
+			"label": "Exílio na Babilônia",
+			"order": 60,
+			"span": {"from": -587, "to": -539, "precision": "year", "certainty": "approximate"},
+			"certainty": "approximate",
+			"books": ["2Kgs", "Jer", "Lam", "Ezek", "Dan"],
+			"description": "Destruição de Jerusalém pelos babilônios e deportação de parte da população de Judá, até a conquista da Babilônia por Ciro, da Pérsia.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "persian",
+			"label": "Período persa (início do Segundo Templo)",
+			"order": 70,
+			"span": {"from": -539, "to": -332, "precision": "year", "certainty": "documented"},
+			"certainty": "documented",
+			"books": ["Ezra", "Neh", "Esth", "Hag", "Zech", "Mal"],
+			"description": "Retorno de exilados, reconstrução do Templo e dos muros de Jerusalém sob o domínio persa. Começa aqui o chamado período do Segundo Templo.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "hellenistic",
+			"label": "Período helenístico",
+			"order": 80,
+			"span": {"from": -332, "to": -63, "precision": "year", "certainty": "documented"},
+			"certainty": "documented",
+			"books": [],
+			"description": "Domínio dos sucessores de Alexandre e, depois, a dinastia hasmoneia. Faz parte do período do Segundo Templo.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "roman_judea",
+			"label": "Domínio romano na Judeia",
+			"order": 90,
+			"span": {"from": -63, "to": 70, "precision": "year", "certainty": "documented"},
+			"certainty": "documented",
+			"books": ["Matt", "Mark", "Luke", "John", "Acts"],
+			"description": "Da tomada de Jerusalém por Pompeu (63 a.C.) à destruição do Templo (70 d.C.). Inclui o reinado de Herodes, o nascimento e o ministério de Jesus e o início da Igreja.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "jesus_ministry",
+			"label": "Ministério de Jesus",
+			"order": 95,
+			"span": {"from": 27, "to": 30, "precision": "year", "certainty": "approximate"},
+			"certainty": "approximate",
+			"books": ["Matt", "Mark", "Luke", "John"],
+			"description": "Pregação de João Batista, batismo e ministério de Jesus na Galileia e na Judeia. Datas aproximadas: algumas propostas estendem o período até 33 d.C.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "apostolic",
+			"label": "Igreja primitiva",
+			"order": 100,
+			"span": {"from": 30, "to": 100, "precision": "year", "certainty": "approximate"},
+			"certainty": "approximate",
+			"books": ["Acts", "Rom", "1Cor", "Gal", "Heb", "Rev"],
+			"description": "Expansão das primeiras comunidades cristãs, viagens dos apóstolos e cartas do Novo Testamento.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		}
+	],
+	"events": [
+		{
+			"id": "abraham_abimelech_well",
+			"title": "Abraão e Abimeleque fazem um acordo sobre um poço",
+			"era_id": "patriarchs",
+			"sequence": 1,
+			"date": null,
+			"references": ["Gen 21:25-31"],
+			"classification": "recorded_event",
+			"places": ["beersheba"],
+			"people": ["abraham", "abimelech"],
+			"summary": "Abraão reclama de um poço tomado pelos servos de Abimeleque; os dois fazem um acordo, e o lugar recebe o nome de Berseba.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "isaac_wells",
+			"title": "Isaque reabre e cava poços em Gerar",
+			"era_id": "patriarchs",
+			"sequence": 2,
+			"date": null,
+			"references": ["Gen 26:18-22"],
+			"classification": "recorded_event",
+			"story_id": "gen_026_isaac_wells",
+			"places": ["gerar"],
+			"people": ["isaac"],
+			"summary": "Isaque reabre os poços dos dias de Abraão; dois novos poços geram disputas (Eseque e Sitna) e um terceiro, sem contenda, recebe o nome de Reobote.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "joseph_sold",
+			"title": "José é vendido a uma caravana",
+			"era_id": "patriarchs",
+			"sequence": 3,
+			"date": null,
+			"references": ["Gen 37:12-36"],
+			"classification": "recorded_event",
+			"story_id": "gen_037_joseph_sold",
+			"places": ["shechem", "dothan", "egypt"],
+			"people": ["joseph", "jacob"],
+			"summary": "Enviado ao encontro dos irmãos que pastoreavam perto de Siquém, José é lançado numa cisterna em Dotã e vendido a uma caravana a caminho do Egito.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "david_shepherd",
+			"title": "Davi, o jovem pastor",
+			"era_id": "united_monarchy",
+			"sequence": 1,
+			"date": null,
+			"references": ["1Sam 16:11-13", "1Sam 17:34-35"],
+			"classification": "recorded_event",
+			"places": ["bethlehem"],
+			"people": ["david"],
+			"summary": "Davi, filho caçula de Jessé, cuidava das ovelhas da família em Belém quando foi ungido por Samuel; diante de Saul, ele conta como defendia o rebanho.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "fall_of_samaria",
+			"title": "Queda de Samaria diante da Assíria",
+			"era_id": "divided_kingdom",
+			"anchor": true,
+			"date": {"from": -722, "to": -721, "precision": "year", "certainty": "documented"},
+			"references": ["2Kgs 17:5-6"],
+			"classification": "recorded_event",
+			"places": [],
+			"people": [],
+			"summary": "A capital do reino do norte cai após um cerco assírio, e parte da população é deportada. O acontecimento também aparece em registros assírios.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "fall_of_jerusalem_587",
+			"title": "Jerusalém e o Templo são destruídos pelos babilônios",
+			"era_id": "babylonian_exile",
+			"anchor": true,
+			"date": {"from": -587, "to": -586, "precision": "year", "certainty": "documented"},
+			"references": ["2Kgs 25:8-11"],
+			"classification": "recorded_event",
+			"places": ["jerusalem", "babylon"],
+			"people": [],
+			"summary": "O exército de Nabucodonosor incendeia o Templo e a cidade, e parte do povo é levada para a Babilônia. Os historiadores discutem se o ano foi 587 ou 586 a.C.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "cyrus_decree",
+			"title": "Ciro conquista a Babilônia; começa o retorno",
+			"era_id": "persian",
+			"anchor": true,
+			"date": {"from": -539, "to": -539, "precision": "year", "certainty": "documented"},
+			"references": ["Ezra 1:1-4"],
+			"classification": "recorded_event",
+			"places": ["babylon", "jerusalem"],
+			"people": [],
+			"summary": "Ciro, rei da Pérsia, toma a Babilônia em 539 a.C. O livro de Esdras registra seu decreto permitindo o retorno e a reconstrução do Templo.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "shepherds_bethlehem",
+			"title": "Pastores nos campos de Belém",
+			"era_id": "roman_judea",
+			"sequence": 1,
+			"date": {"from": -6, "to": -4, "precision": "year", "certainty": "approximate"},
+			"references": ["Luke 2:8-20"],
+			"classification": "recorded_event",
+			"places": ["bethlehem"],
+			"people": [],
+			"summary": "Lucas narra que pastores que vigiavam o rebanho à noite receberam o anúncio do nascimento de Jesus. A data do nascimento é aproximada.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Datação do nascimento (c. 6–4 a.C.) é aproximada e discutida."}
+		},
+		{
+			"id": "temple_destroyed_70",
+			"title": "Destruição do Templo pelos romanos",
+			"era_id": "roman_judea",
+			"anchor": true,
+			"date": {"from": 70, "to": 70, "precision": "year", "certainty": "documented"},
+			"references": ["Mark 13:1-2"],
+			"classification": "historical_context",
+			"places": ["jerusalem"],
+			"people": [],
+			"summary": "Durante a revolta judaica, as tropas romanas destroem o Templo de Jerusalém. Os evangelhos registram que Jesus havia anunciado essa destruição (Marcos 13:1-2).",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		}
+	]
+}

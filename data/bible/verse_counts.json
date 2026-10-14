@@ -1,0 +1,18 @@
+{
+	"_comment": "Número de versículos por capítulo (versificação das Bíblias em português, igual à inglesa nestes capítulos). Usado para validar referências. Todo capítulo citado nos dados precisa constar aqui; os testes falham caso contrário.",
+	"verse_counts": {
+		"Gen 4": 26, "Gen 12": 20, "Gen 13": 18, "Gen 17": 27, "Gen 18": 33, "Gen 20": 18, "Gen 21": 34, "Gen 23": 20,
+		"Gen 24": 67, "Gen 25": 34, "Gen 26": 35, "Gen 29": 35, "Gen 31": 55, "Gen 32": 32, "Gen 33": 20,
+		"Gen 35": 29, "Gen 37": 36, "Gen 39": 23, "Gen 40": 23, "Gen 41": 57, "Gen 42": 38,
+		"Exod 1": 22, "Exod 14": 31, "Exod 26": 37, "Exod 35": 35,
+		"Lev 26": 46, "Num 13": 33, "Num 34": 29, "Deut 8": 20, "Deut 19": 21,
+		"Josh 3": 17, "Josh 9": 27, "Ruth 1": 22, "Ruth 2": 23,
+		"1Sam 16": 23, "1Sam 17": 58, "1Sam 25": 44, "2Sam 5": 25,
+		"1Kgs 6": 38, "2Kgs 6": 33, "2Kgs 17": 41, "2Kgs 24": 20, "2Kgs 25": 30,
+		"Ezra 1": 11, "Prov 3": 35, "Prov 22": 29, "Prov 31": 31, "Jer 18": 23, "Dan 1": 21,
+		"Jonah 1": 17, "Jonah 3": 10, "Nah 1": 15,
+		"Matt 2": 23, "Matt 3": 17, "Matt 4": 25, "Mark 1": 45, "Mark 13": 37,
+		"Luke 1": 80, "Luke 2": 52, "Luke 3": 38, "Luke 4": 44, "Luke 10": 42, "Luke 19": 48,
+		"John 4": 54, "Heb 11": 40
+	}
+}

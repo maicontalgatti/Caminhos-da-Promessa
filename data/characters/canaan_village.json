@@ -1,0 +1,61 @@
+{
+	"_comment": "Moradores fictícios da aldeia do protótipo. Nomes de inspiração semítica; nenhum deles é personagem bíblico.",
+	"characters": [
+		{
+			"id": "adina",
+			"display_name": "Adina",
+			"role": "Pastora",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Jovem pastora que cuida do pequeno rebanho da aldeia.",
+			"dialogue_id": "adina_talk",
+			"sprite": {"sheet": "res://assets/characters/adina.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "wander", "speed": 22, "wander_radius": 36}
+		},
+		{
+			"id": "ezer",
+			"display_name": "Ezer",
+			"role": "Oleiro",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Oleiro idoso; molda jarros e panelas para a aldeia.",
+			"dialogue_id": "ezer_talk",
+			"sprite": {"sheet": "res://assets/characters/ezer.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1}
+		},
+		{
+			"id": "yaron",
+			"display_name": "Yaron",
+			"role": "Mercador",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Mercador que vende frutas, azeite e notícias das caravanas.",
+			"dialogue_id": "yaron_talk",
+			"sprite": {"sheet": "res://assets/characters/yaron.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 1, "facing_y": 0}
+		},
+		{
+			"id": "ari",
+			"display_name": "Ari",
+			"role": "Criança da aldeia",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Menino curioso que corre pela praça do poço.",
+			"dialogue_id": "ari_talk",
+			"sprite": {"sheet": "res://assets/characters/ari.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "wander", "speed": 34, "wander_radius": 60}
+		},
+		{
+			"id": "sheep",
+			"display_name": "Ovelha",
+			"role": "Animal",
+			"kind": "animal",
+			"classification": "historical_context",
+			"description": "Ovelhas e cabras eram a base da vida pastoril em Canaã.",
+			"dialogue_id": "sheep_examine",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/sheep.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
+			"behavior": {"type": "wander", "speed": 12, "wander_radius": 28}
+		}
+	]
+}

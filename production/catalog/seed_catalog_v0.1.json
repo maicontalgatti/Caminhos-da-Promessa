@@ -1,0 +1,2973 @@
+{
+  "project": "Caminhos da Promessa",
+  "artifact": "Catálogo-semente de episódios e missões",
+  "version": "0.1-draft",
+  "disclaimer": "Ideias iniciais, NÃO fatos ou datas validados e NÃO missões implementadas. As referências requerem conferência independente; atividades fictícias devem ser explicitadas. Os target_id são rótulos de planejamento e não assets já presentes no Godot.",
+  "source_canon": "66 livros do cânon protestante como base extensível",
+  "items": [
+    {
+      "id": "ep_001_a_criacao_e_o_cuidado",
+      "title": "A criação e o cuidado",
+      "testament": "AT",
+      "book": "Gênesis",
+      "reference": "1–2",
+      "region_or_context": "Painel narrativo: criação",
+      "narrative_mode": "exploracao_educativa",
+      "learning_goal": "Criação, dignidade e responsabilidade humana",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "creation_gallery",
+          "description": "Percorrer o painel artístico da criação",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "creation_elements",
+          "description": "Identificar elementos retratados no texto",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "creation_stewardship",
+          "description": "Desbloquear o estudo sobre cuidado e responsabilidade",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_002_noe_e_a_arca",
+      "title": "Noé e a arca",
+      "testament": "AT",
+      "book": "Gênesis",
+      "reference": "6–9",
+      "region_or_context": "Mundo de Noé (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Juízo, aliança e o sinal do arco-íris",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "talk_npc",
+          "target_id": "fictional_carpenter",
+          "description": "Conhecer uma oficina fictícia de construção",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "ark_plan",
+          "description": "Explorar informações textuais sobre a arca",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "rainbow_covenant",
+          "description": "Presenciar uma representação do sinal da aliança",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_003_a_torre_de_babel",
+      "title": "A torre de Babel",
+      "testament": "AT",
+      "book": "Gênesis",
+      "reference": "11:1–9",
+      "region_or_context": "Sinar (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Dispersão, línguas e limites da soberba",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "babel_settlement",
+          "description": "Explorar o assentamento",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "construction_site",
+          "description": "Conhecer o projeto da torre",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "languages_divided",
+          "description": "Acompanhar a mudança de línguas sem alterar o desfecho",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_004_o_chamado_de_abrao",
+      "title": "O chamado de Abrão",
+      "testament": "AT",
+      "book": "Gênesis",
+      "reference": "12:1–9",
+      "region_or_context": "Caminhos de Canaã",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Chamado, jornada e promessa",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "travel_route",
+          "description": "Analisar a rota da jornada",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "talk_npc",
+          "target_id": "fictional_traveler",
+          "description": "Conversar sobre deslocamentos antigos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "abram_departure",
+          "description": "Conhecer o relato da partida de Abrão",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_005_a_hospitalidade_de_abraao",
+      "title": "A hospitalidade de Abraão",
+      "testament": "AT",
+      "book": "Gênesis",
+      "reference": "18:1–15",
+      "region_or_context": "Carvalhais de Manre (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Hospitalidade e promessa",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "encampment",
+          "description": "Explorar o acampamento",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "hospitality_items",
+          "description": "Examinar costumes de acolhimento",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "abraham_visitors",
+          "description": "Acompanhar o relato dos visitantes sem substituí-los",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_006_a_importancia_dos_pocos",
+      "title": "A importância dos poços",
+      "testament": "AT",
+      "book": "Gênesis",
+      "reference": "26:18–22",
+      "region_or_context": "Canaã — aldeia fictícia",
+      "narrative_mode": "ficcao_contextual",
+      "learning_goal": "Água, conflitos e convivência",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "talk_npc",
+          "target_id": "adina",
+          "description": "Conversar com Adina sobre a água",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "village_well",
+          "description": "Examinar o poço e a descoberta bíblica",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "talk_npc",
+          "target_id": "ezer",
+          "description": "Conversar com Ezer sobre os conflitos por poços",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_007_o_sonho_de_jaco",
+      "title": "O sonho de Jacó",
+      "testament": "AT",
+      "book": "Gênesis",
+      "reference": "28:10–22",
+      "region_or_context": "Betel (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "A experiência de Jacó e a promessa",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "travel_stone",
+          "description": "Investigar a paisagem da viagem",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "observe_scene",
+          "target_id": "jacob_dream",
+          "description": "Assistir à representação do sonho de Jacó",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "jacob_promise",
+          "description": "Desbloquear o contexto do relato",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_008_jose_e_seus_irmaos",
+      "title": "José e seus irmãos",
+      "testament": "AT",
+      "book": "Gênesis",
+      "reference": "37:12–36",
+      "region_or_context": "Região de Dotã (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Inveja, sofrimento e trajetória de José",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "dothan_fields",
+          "description": "Conhecer os campos de pastoreio",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "trade_caravan",
+          "description": "Investigar comércio e caravanas",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "joseph_sold",
+          "description": "Acompanhar o relato sem libertar José ou mudar a venda",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_009_jose_na_casa_de_potifar",
+      "title": "José na casa de Potifar",
+      "testament": "AT",
+      "book": "Gênesis",
+      "reference": "39:1–23",
+      "region_or_context": "Egito (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Integridade diante da injustiça",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "egyptian_house",
+          "description": "Explorar um ambiente doméstico contextual",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "household_records",
+          "description": "Conhecer funções administrativas antigas",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "joseph_imprisoned",
+          "description": "Acompanhar a prisão sem alterar o relato",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_010_os_sonhos_na_prisao",
+      "title": "Os sonhos na prisão",
+      "testament": "AT",
+      "book": "Gênesis",
+      "reference": "40:1–23",
+      "region_or_context": "Prisão egípcia (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Sonhos, memória e espera",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "talk_npc",
+          "target_id": "fictional_guard",
+          "description": "Conhecer as condições de prisão na recriação",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "dream_records",
+          "description": "Investigar os sonhos relatados",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "joseph_interprets",
+          "description": "Conhecer as interpretações dadas por José",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_011_jose_e_o_tempo_de_fartura",
+      "title": "José e o tempo de fartura",
+      "testament": "AT",
+      "book": "Gênesis",
+      "reference": "41:1–57",
+      "region_or_context": "Egito — armazéns",
+      "narrative_mode": "ficcao_contextual",
+      "learning_goal": "Prudência, administração e preparação",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "grain_store",
+          "description": "Conhecer armazenagem de grãos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "organize",
+          "target_id": "supplies_demo",
+          "description": "Organizar um estoque fictício de demonstração",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "joseph_governor",
+          "description": "Conhecer a ascensão de José no relato",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_012_a_reconciliacao_da_familia",
+      "title": "A reconciliação da família",
+      "testament": "AT",
+      "book": "Gênesis",
+      "reference": "42–45",
+      "region_or_context": "Egito (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Reconciliação e perdão",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "grain_market",
+          "description": "Explorar a busca de alimento",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "brothers_journey",
+          "description": "Organizar os acontecimentos da jornada",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "joseph_reveals",
+          "description": "Acompanhar o reencontro sem substituir personagens",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_013_moises_e_o_cesto",
+      "title": "Moisés e o cesto",
+      "testament": "AT",
+      "book": "Êxodo",
+      "reference": "2:1–10",
+      "region_or_context": "Margens do Nilo (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Proteção e contexto do nascimento de Moisés",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "nile_bank",
+          "description": "Explorar as margens do Nilo",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "reed_basket",
+          "description": "Conhecer materiais empregados em cestos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "moses_found",
+          "description": "Acompanhar o relato da filha de Faraó",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_014_a_sarca_ardente",
+      "title": "A sarça ardente",
+      "testament": "AT",
+      "book": "Êxodo",
+      "reference": "3:1–12",
+      "region_or_context": "Monte Horebe (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Vocação de Moisés e santidade",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "horeb_trail",
+          "description": "Explorar o caminho de pastoreio",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "shepherd_staff",
+          "description": "Conhecer o cajado e o trabalho pastoral",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "burning_bush",
+          "description": "Assistir à representação com reverência, sem assumir o papel de Deus",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_015_a_primeira_pascoa",
+      "title": "A primeira Páscoa",
+      "testament": "AT",
+      "book": "Êxodo",
+      "reference": "12:1–28",
+      "region_or_context": "Egito — casas (recriação)",
+      "narrative_mode": "exploracao_educativa",
+      "learning_goal": "Libertação e significado da Páscoa no Êxodo",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "passover_symbols",
+          "description": "Examinar símbolos da instrução bíblica",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "passover_sequence",
+          "description": "Organizar a sequência textual dos acontecimentos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "exodus_passover",
+          "description": "Consultar Êxodo 12 no diário",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_016_a_travessia_do_mar",
+      "title": "A travessia do mar",
+      "testament": "AT",
+      "book": "Êxodo",
+      "reference": "14:1–31",
+      "region_or_context": "Caminho do Êxodo (representação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Libertação e travessia",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "shore_encampment",
+          "description": "Explorar o acampamento",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "talk_npc",
+          "target_id": "fictional_traveler_exodus",
+          "description": "Conhecer o contexto do deslocamento",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "sea_parted",
+          "description": "Acompanhar a abertura do mar atribuída a Deus",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_017_o_mana_no_deserto",
+      "title": "O maná no deserto",
+      "testament": "AT",
+      "book": "Êxodo",
+      "reference": "16:1–36",
+      "region_or_context": "Deserto do Êxodo (recriação)",
+      "narrative_mode": "ficcao_contextual",
+      "learning_goal": "Provisão e orientações sobre o maná",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "talk_npc",
+          "target_id": "fictional_family",
+          "description": "Ouvir as necessidades de uma família fictícia",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "manna_reference",
+          "description": "Examinar a passagem sobre coleta e armazenamento",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "assemble_clues",
+          "target_id": "manna_guidelines",
+          "description": "Relacionar instruções com o relato",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_018_o_sinai_e_os_mandamentos",
+      "title": "O Sinai e os mandamentos",
+      "testament": "AT",
+      "book": "Êxodo",
+      "reference": "19–20",
+      "region_or_context": "Sinai (representação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Aliança e mandamentos",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "sinai_camp",
+          "description": "Explorar o acampamento",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "camp_boundaries",
+          "description": "Conhecer as instruções e limites do texto",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "ten_commandments",
+          "description": "Consultar o conteúdo de Êxodo 20",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_019_a_construcao_do_tabernaculo",
+      "title": "A construção do tabernáculo",
+      "testament": "AT",
+      "book": "Êxodo",
+      "reference": "35–40",
+      "region_or_context": "Acampamento de Israel (recriação)",
+      "narrative_mode": "ficcao_contextual",
+      "learning_goal": "Contribuições, artesanato e culto",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "tabernacle_materials",
+          "description": "Investigar materiais descritos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "organize",
+          "target_id": "craft_inventory",
+          "description": "Montar um inventário didático",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "tabernacle_completion",
+          "description": "Conhecer a conclusão relatada",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_020_justica_no_cotidiano",
+      "title": "Justiça no cotidiano",
+      "testament": "AT",
+      "book": "Levítico",
+      "reference": "19:9–18",
+      "region_or_context": "Aldeia didática (fictícia)",
+      "narrative_mode": "ensino_aplicado",
+      "learning_goal": "Responsabilidade social e cuidado com o próximo",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "talk_npc",
+          "target_id": "fictional_farmer",
+          "description": "Conversar sobre a colheita",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "help_npc",
+          "target_id": "fictional_neighbor",
+          "description": "Participar de uma situação ilustrativa de ajuda",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "leviticus_ethics",
+          "description": "Ler o contexto de Levítico 19",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_021_os_espias_em_canaa",
+      "title": "Os espias em Canaã",
+      "testament": "AT",
+      "book": "Números",
+      "reference": "13–14",
+      "region_or_context": "Acampamento de Israel (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Medo, confiança e consequências",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "canaan_map",
+          "description": "Explorar o mapa regional aproximado",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "spies_reports",
+          "description": "Comparar os relatos dos espias",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "community_response",
+          "description": "Acompanhar a reação da comunidade",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_022_o_ensino_entre_geracoes",
+      "title": "O ensino entre gerações",
+      "testament": "AT",
+      "book": "Deuteronômio",
+      "reference": "6:4–9",
+      "region_or_context": "Tenda familiar didática",
+      "narrative_mode": "ensino_aplicado",
+      "learning_goal": "Memória, ensino e fidelidade",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "talk_npc",
+          "target_id": "fictional_family_teacher",
+          "description": "Conversar com um educador fictício",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "family_teaching",
+          "description": "Examinar objetos de ensino contextual",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "deut_shema",
+          "description": "Consultar a passagem e seu contexto",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_023_jerico",
+      "title": "Jericó",
+      "testament": "AT",
+      "book": "Josué",
+      "reference": "6:1–27",
+      "region_or_context": "Jericó (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Relato da conquista e seu contexto",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "jericho_perimeter",
+          "description": "Explorar um perímetro contextual",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "jericho_city",
+          "description": "Ler o contexto da cidade",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "jericho_event",
+          "description": "Acompanhar o relato sem reescrever a conquista",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_024_o_chamado_de_gideao",
+      "title": "O chamado de Gideão",
+      "testament": "AT",
+      "book": "Juízes",
+      "reference": "6–7",
+      "region_or_context": "Ofra e arredores (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Insegurança, chamado e confiança",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "gideon_village",
+          "description": "Explorar o ambiente de Gideão",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "gideon_events",
+          "description": "Organizar a sequência do relato",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "gideon_victory",
+          "description": "Acompanhar o desfecho sem substituir Gideão",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_025_rute_noemi_e_boaz",
+      "title": "Rute, Noemi e Boaz",
+      "testament": "AT",
+      "book": "Rute",
+      "reference": "1–4",
+      "region_or_context": "Belém (recriação)",
+      "narrative_mode": "ficcao_contextual",
+      "learning_goal": "Lealdade, acolhimento e provisão",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "talk_npc",
+          "target_id": "fictional_harvester",
+          "description": "Conhecer costumes da colheita",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "collect_item",
+          "target_id": "demonstration_ears",
+          "description": "Realizar recolhimento didático em área fictícia",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "ruth_boaz",
+          "description": "Conhecer os principais encontros do relato",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_026_o_chamado_de_samuel",
+      "title": "O chamado de Samuel",
+      "testament": "AT",
+      "book": "1 Samuel",
+      "reference": "3:1–21",
+      "region_or_context": "Siló (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Ouvir, discernir e responder",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "shiloh_courtyard",
+          "description": "Explorar o contexto de Siló",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "lamp_context",
+          "description": "Conhecer objetos do serviço religioso",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "samuel_call",
+          "description": "Acompanhar a chamada de Samuel sem falar em nome de Deus",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_027_davi_e_golias",
+      "title": "Davi e Golias",
+      "testament": "AT",
+      "book": "1 Samuel",
+      "reference": "17:1–58",
+      "region_or_context": "Vale de Elá (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Coragem e confiança",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "elah_camp",
+          "description": "Visitar o contexto dos acampamentos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "shepherd_tools",
+          "description": "Examinar equipamentos associados ao pastoreio",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "david_goliath",
+          "description": "Presenciar o confronto sem tomar o lugar de Davi",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_028_davi_e_mefibosete",
+      "title": "Davi e Mefibosete",
+      "testament": "AT",
+      "book": "2 Samuel",
+      "reference": "9:1–13",
+      "region_or_context": "Jerusalém (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Bondade, memória e compromisso",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "royal_household",
+          "description": "Conhecer a organização de uma casa real",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "saul_family",
+          "description": "Examinar a relação entre Davi e a família de Saul",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "mephibosheth_meeting",
+          "description": "Acompanhar o encontro",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_029_a_construcao_do_templo",
+      "title": "A construção do templo",
+      "testament": "AT",
+      "book": "1 Reis",
+      "reference": "6–8",
+      "region_or_context": "Jerusalém — período monárquico",
+      "narrative_mode": "exploracao_educativa",
+      "learning_goal": "O templo e a dedicação",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "temple_plan",
+          "description": "Explorar representações condicionadas ao texto",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "temple_components",
+          "description": "Relacionar elementos descritos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "temple_dedication",
+          "description": "Acompanhar a dedicação no relato",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_030_elias_no_carmelo",
+      "title": "Elias no Carmelo",
+      "testament": "AT",
+      "book": "1 Reis",
+      "reference": "18:20–46",
+      "region_or_context": "Monte Carmelo (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Confronto profético e fidelidade",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "carmel_site",
+          "description": "Explorar o ambiente do Carmelo",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "carmel_sequence",
+          "description": "Organizar os eventos descritos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "carmel_event",
+          "description": "Acompanhar a narrativa sem intervir no resultado",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_031_naama_e_eliseu",
+      "title": "Naamã e Eliseu",
+      "testament": "AT",
+      "book": "2 Reis",
+      "reference": "5:1–19",
+      "region_or_context": "Samaria e rio Jordão (representação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Humildade e obediência",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "naaman_route",
+          "description": "Conhecer a viagem de Naamã",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "elisha_instructions",
+          "description": "Identificar as instruções enviadas por Eliseu",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "naaman_healed",
+          "description": "Acompanhar a cura sem substituir Eliseu",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_032_o_retorno_e_o_altar",
+      "title": "O retorno e o altar",
+      "testament": "AT",
+      "book": "Esdras",
+      "reference": "1–3",
+      "region_or_context": "Jerusalém pós-exílio (recriação)",
+      "narrative_mode": "ficcao_contextual",
+      "learning_goal": "Retorno, memória e reconstrução",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "return_decree",
+          "description": "Conhecer a referência ao decreto",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "organize",
+          "target_id": "rebuild_supplies",
+          "description": "Organizar suprimentos em atividade fictícia",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "altar_restored",
+          "description": "Conhecer a reconstituição do altar",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_033_a_reconstrucao_dos_muros",
+      "title": "A reconstrução dos muros",
+      "testament": "AT",
+      "book": "Neemias",
+      "reference": "2–6",
+      "region_or_context": "Jerusalém pós-exílio (recriação)",
+      "narrative_mode": "ficcao_contextual",
+      "learning_goal": "Colaboração, oposição e perseverança",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "wall_plan",
+          "description": "Examinar um plano didático das muralhas",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "organize",
+          "target_id": "work_shifts",
+          "description": "Organizar equipes fictícias de demonstração",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "walls_finished",
+          "description": "Acompanhar a conclusão relatada",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_034_ester_e_a_coragem",
+      "title": "Ester e a coragem",
+      "testament": "AT",
+      "book": "Ester",
+      "reference": "4–8",
+      "region_or_context": "Susã (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Coragem e responsabilidade",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "susa_court",
+          "description": "Conhecer a ambientação palaciana",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "esther_story",
+          "description": "Organizar os acontecimentos políticos narrados",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "esther_intercedes",
+          "description": "Acompanhar a intervenção de Ester",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_035_jo_e_as_perguntas_dificeis",
+      "title": "Jó e as perguntas difíceis",
+      "testament": "AT",
+      "book": "Jó",
+      "reference": "1–2; 38–42",
+      "region_or_context": "Espaço literário sobre Jó",
+      "narrative_mode": "exploracao_educativa",
+      "learning_goal": "Sofrimento e limites do conhecimento humano",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "job_context",
+          "description": "Conhecer a estrutura literária do livro",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "job_discourses",
+          "description": "Ordenar vozes e capítulos principais",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "job_questions",
+          "description": "Refletir sobre as perguntas centrais sem simplificações",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_036_o_senhor_e_meu_pastor",
+      "title": "O Senhor é meu pastor",
+      "testament": "AT",
+      "book": "Salmos",
+      "reference": "23",
+      "region_or_context": "Paisagem poética interativa",
+      "narrative_mode": "poesia_interativa",
+      "learning_goal": "Imagens de cuidado e confiança",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "psalm23_landscape",
+          "description": "Explorar uma paisagem literária simbólica",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "psalm23_metaphors",
+          "description": "Relacionar metáforas ao texto",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "psalm23_meaning",
+          "description": "Registrar descoberta literária",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_037_cantico_de_peregrinacao",
+      "title": "Cântico de peregrinação",
+      "testament": "AT",
+      "book": "Salmos",
+      "reference": "121",
+      "region_or_context": "Caminho poético de peregrinos",
+      "narrative_mode": "poesia_interativa",
+      "learning_goal": "Socorro e confiança",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "pilgrim_road",
+          "description": "Percorrer a paisagem poética",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "mountain_metaphor",
+          "description": "Examinar a imagem dos montes",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "psalm121",
+          "description": "Consultar o salmo e sua linguagem",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_038_os_caminhos_da_sabedoria",
+      "title": "Os caminhos da sabedoria",
+      "testament": "AT",
+      "book": "Provérbios",
+      "reference": "3:1–12",
+      "region_or_context": "Aldeia didática fictícia",
+      "narrative_mode": "ensino_aplicado",
+      "learning_goal": "Prudência e confiança",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "talk_npc",
+          "target_id": "fictional_mentor",
+          "description": "Conversar com um mentor fictício",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "wisdom_choices",
+          "description": "Avaliar decisões em uma situação ilustrativa",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "proverbs3",
+          "description": "Relacionar escolhas ao texto",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_039_tempo_para_cada_coisa",
+      "title": "Tempo para cada coisa",
+      "testament": "AT",
+      "book": "Eclesiastes",
+      "reference": "3:1–8",
+      "region_or_context": "Jardim alegórico",
+      "narrative_mode": "poesia_interativa",
+      "learning_goal": "Tempo e ciclos da vida",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "season_garden",
+          "description": "Explorar espaços representando estações",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "time_symbols",
+          "description": "Identificar pares literários do texto",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "eccl3",
+          "description": "Desbloquear a explicação do poema",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_040_a_visao_de_isaias",
+      "title": "A visão de Isaías",
+      "testament": "AT",
+      "book": "Isaías",
+      "reference": "6:1–8",
+      "region_or_context": "Representação literária da visão",
+      "narrative_mode": "visao_simbolica",
+      "learning_goal": "Santidade e vocação profética",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "vision_context",
+          "description": "Consultar o contexto do capítulo",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "observe_scene",
+          "target_id": "isaiah_vision",
+          "description": "Assistir a adaptação claramente identificada como visão",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "isaiah_call",
+          "description": "Conhecer a resposta de Isaías",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_041_o_oleiro_e_o_barro",
+      "title": "O oleiro e o barro",
+      "testament": "AT",
+      "book": "Jeremias",
+      "reference": "18:1–10",
+      "region_or_context": "Oficina de oleiro (recriação)",
+      "narrative_mode": "ensino_aplicado",
+      "learning_goal": "Metáfora profética do oleiro",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "potter_house",
+          "description": "Conhecer uma oficina",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "pottery_work",
+          "description": "Examinar a prática do oleiro",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "jeremiah18",
+          "description": "Ler o sentido da mensagem profética",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_042_o_vale_de_ossos_secos",
+      "title": "O vale de ossos secos",
+      "testament": "AT",
+      "book": "Ezequiel",
+      "reference": "37:1–14",
+      "region_or_context": "Representação visionária",
+      "narrative_mode": "visao_simbolica",
+      "learning_goal": "Esperança e restauração em uma visão",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "ezekiel_exile",
+          "description": "Conhecer contexto do exílio",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "observe_scene",
+          "target_id": "dry_bones_vision",
+          "description": "Acompanhar adaptação identificada como visão",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "ezekiel37",
+          "description": "Examinar a explicação dada no texto",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_043_daniel_na_babilonia",
+      "title": "Daniel na Babilônia",
+      "testament": "AT",
+      "book": "Daniel",
+      "reference": "1:1–21",
+      "region_or_context": "Babilônia (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Identidade e fidelidade no exílio",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "babylon_court",
+          "description": "Conhecer um contexto de corte",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "food_choice_context",
+          "description": "Examinar a questão alimentar no texto",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "daniel_decision",
+          "description": "Conhecer a decisão de Daniel",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_044_daniel_na_cova_dos_leoes",
+      "title": "Daniel na cova dos leões",
+      "testament": "AT",
+      "book": "Daniel",
+      "reference": "6:1–28",
+      "region_or_context": "Babilônia/Pérsia (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Perseverança e oração",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "assemble_clues",
+          "target_id": "decree_daniel",
+          "description": "Examinar o decreto contra a oração",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "visit_area",
+          "target_id": "court_context",
+          "description": "Conhecer o cenário de corte",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "daniel_lions",
+          "description": "Acompanhar o episódio sem resgatar Daniel",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_045_jonas_e_ninive",
+      "title": "Jonas e Nínive",
+      "testament": "AT",
+      "book": "Jonas",
+      "reference": "1–4",
+      "region_or_context": "Nínive (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Misericórdia e arrependimento",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "nineveh_market",
+          "description": "Explorar Nínive em reconstrução artística",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "jonah_route",
+          "description": "Organizar a sequência narrativa",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "jonah_mercy",
+          "description": "Conhecer a pergunta final do livro",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_046_o_que_e_praticar_justica",
+      "title": "O que é praticar justiça?",
+      "testament": "AT",
+      "book": "Miqueias",
+      "reference": "6:6–8",
+      "region_or_context": "Aldeia didática fictícia",
+      "narrative_mode": "ensino_aplicado",
+      "learning_goal": "Justiça, misericórdia e humildade",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "talk_npc",
+          "target_id": "fictional_merchant",
+          "description": "Conhecer um dilema ético fictício",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "help_npc",
+          "target_id": "fictional_vulnerable",
+          "description": "Praticar ajuda em atividade ilustrativa",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "micah6",
+          "description": "Relacionar o gesto ao texto",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_047_a_visita_dos_magos",
+      "title": "A visita dos magos",
+      "testament": "NT",
+      "book": "Mateus",
+      "reference": "2:1–12",
+      "region_or_context": "Belém (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "A visita e homenagem narradas por Mateus",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "magi_route",
+          "description": "Conhecer o contexto da viagem",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "visit_area",
+          "target_id": "bethlehem_context",
+          "description": "Explorar Belém da representação",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "magi_visit",
+          "description": "Acompanhar a visita sem inventar número exato de magos",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_048_o_nascimento_de_jesus",
+      "title": "O nascimento de Jesus",
+      "testament": "NT",
+      "book": "Lucas",
+      "reference": "2:1–20",
+      "region_or_context": "Belém (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Nascimento de Jesus e anúncio aos pastores",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "bethlehem_village",
+          "description": "Explorar o cenário",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "talk_npc",
+          "target_id": "fictional_shepherd_bethlehem",
+          "description": "Conhecer o pastoreio na região",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "birth_account",
+          "description": "Acompanhar o relato sem inserir o jogador como personagem registrado",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_049_joao_batista_no_jordao",
+      "title": "João Batista no Jordão",
+      "testament": "NT",
+      "book": "Mateus",
+      "reference": "3:1–17",
+      "region_or_context": "Margens do Jordão",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Arrependimento e batismo de Jesus",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "jordan_bank",
+          "description": "Explorar o local reconstruído",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "talk_npc",
+          "target_id": "fictional_listener",
+          "description": "Conversar sobre o ministério de João",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "jesus_baptism",
+          "description": "Acompanhar o batismo sem substituir João",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_050_jesus_no_deserto",
+      "title": "Jesus no deserto",
+      "testament": "NT",
+      "book": "Mateus",
+      "reference": "4:1–11",
+      "region_or_context": "Deserto (representação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Tentação e uso das Escrituras",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "scripture_references",
+          "description": "Localizar referências citadas no relato",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "temptation_sequence",
+          "description": "Ordenar a sequência do texto",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "temptation_account",
+          "description": "Conhecer a narrativa sem acrescentar o jogador ao confronto",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_051_a_pesca_e_o_chamado",
+      "title": "A pesca e o chamado",
+      "testament": "NT",
+      "book": "Lucas",
+      "reference": "5:1–11",
+      "region_or_context": "Lago de Genesaré",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Vocação dos primeiros discípulos",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "fishing_nets",
+          "description": "Conhecer redes de pesca",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "talk_npc",
+          "target_id": "fictional_fisherman",
+          "description": "Conversar sobre a atividade pesqueira",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "disciples_called",
+          "description": "Acompanhar o chamado",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_052_bem_aventurancas",
+      "title": "Bem-aventuranças",
+      "testament": "NT",
+      "book": "Mateus",
+      "reference": "5:1–12",
+      "region_or_context": "Monte (recriação contextual)",
+      "narrative_mode": "ensino_aplicado",
+      "learning_goal": "Ensinos do Sermão do Monte",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "mountain_path",
+          "description": "Chegar ao espaço de ensino",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "journal_reflection",
+          "target_id": "beatitudes",
+          "description": "Conhecer os ensinamentos por tópicos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "assemble_clues",
+          "target_id": "beatitudes_context",
+          "description": "Relacionar termos ao contexto sem reduzir a um quiz",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_053_a_tempestade_acalmada",
+      "title": "A tempestade acalmada",
+      "testament": "NT",
+      "book": "Marcos",
+      "reference": "4:35–41",
+      "region_or_context": "Mar da Galileia (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Medo, autoridade e confiança",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "boat_details",
+          "description": "Conhecer embarcações do período",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "observe_scene",
+          "target_id": "storm_crossing",
+          "description": "Acompanhar a tempestade",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "storm_meaning",
+          "description": "Desbloquear o contexto de Marcos 4",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_054_o_bom_samaritano",
+      "title": "O bom samaritano",
+      "testament": "NT",
+      "book": "Lucas",
+      "reference": "10:25–37",
+      "region_or_context": "Estrada de parábola",
+      "narrative_mode": "parabola_interativa",
+      "learning_goal": "Compaixão e responsabilidade pelo próximo",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "parable_road",
+          "description": "Explorar um cenário explicitamente ilustrativo",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "help_npc",
+          "target_id": "parable_wounded",
+          "description": "Participar de adaptação de cuidado ao ferido",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "parable_neighbor",
+          "description": "Distinguir ensino da parábola e fato histórico",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_055_o_filho_prodigo",
+      "title": "O filho pródigo",
+      "testament": "NT",
+      "book": "Lucas",
+      "reference": "15:11–32",
+      "region_or_context": "Casa de parábola",
+      "narrative_mode": "parabola_interativa",
+      "learning_goal": "Arrependimento e acolhimento",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "assemble_clues",
+          "target_id": "prodigal_events",
+          "description": "Organizar episódios da parábola",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "observe_scene",
+          "target_id": "father_welcomes",
+          "description": "Conhecer o reencontro descrito",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "prodigal_message",
+          "description": "Examinar o contraste entre as atitudes dos filhos",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_056_a_mulher_samaritana",
+      "title": "A mulher samaritana",
+      "testament": "NT",
+      "book": "João",
+      "reference": "4:1–42",
+      "region_or_context": "Sicar — poço de Jacó (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Diálogo, barreiras sociais e água viva",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "jacobs_well_area",
+          "description": "Conhecer o local da narrativa",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "samaritan_context",
+          "description": "Ler contexto de judeus e samaritanos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "jesus_samaritan_woman",
+          "description": "Acompanhar o encontro sem substituir participantes",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_057_a_multiplicacao_dos_paes",
+      "title": "A multiplicação dos pães",
+      "testament": "NT",
+      "book": "João",
+      "reference": "6:1–15",
+      "region_or_context": "Margem do mar da Galileia",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Provisão e sinal narrado por João",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "hillside_crowd",
+          "description": "Explorar a região da multidão",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "bread_fish_context",
+          "description": "Conhecer objetos e alimentos do relato",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "feeding_crowd",
+          "description": "Acompanhar o sinal realizado por Jesus",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_058_a_cura_do_cego_de_nascenca",
+      "title": "A cura do cego de nascença",
+      "testament": "NT",
+      "book": "João",
+      "reference": "9:1–41",
+      "region_or_context": "Jerusalém (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Cura, testemunho e controvérsia",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "jerusalem_streets",
+          "description": "Conhecer o contexto urbano",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "healing_testimonies",
+          "description": "Ordenar os diferentes testemunhos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "blind_man_healed",
+          "description": "Acompanhar a cura sem atribuir o ato ao jogador",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_059_lazaro",
+      "title": "Lázaro",
+      "testament": "NT",
+      "book": "João",
+      "reference": "11:1–44",
+      "region_or_context": "Betânia (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Ressurreição de Lázaro e esperança",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "bethany_village",
+          "description": "Conhecer Betânia",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "talk_npc",
+          "target_id": "fictional_neighbor_bethany",
+          "description": "Ouvir um contexto fictício sinalizado",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "lazarus_raised",
+          "description": "Acompanhar o acontecimento sem realizar o milagre",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_060_zaqueu",
+      "title": "Zaqueu",
+      "testament": "NT",
+      "book": "Lucas",
+      "reference": "19:1–10",
+      "region_or_context": "Jericó — século I (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Arrependimento e mudança de atitude",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "tax_context",
+          "description": "Conhecer o contexto da cobrança de impostos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "visit_area",
+          "target_id": "sycamore_location",
+          "description": "Explorar a rua representada",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "zacchaeus_meets_jesus",
+          "description": "Acompanhar o encontro",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_061_entrada_em_jerusalem",
+      "title": "Entrada em Jerusalém",
+      "testament": "NT",
+      "book": "Mateus",
+      "reference": "21:1–11",
+      "region_or_context": "Jerusalém — século I",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Entrada de Jesus e expectativas messiânicas",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "jerusalem_approach",
+          "description": "Explorar o caminho",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "festival_context",
+          "description": "Conhecer o contexto das festas",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "entry_jerusalem",
+          "description": "Acompanhar o relato",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_062_a_ultima_ceia",
+      "title": "A última ceia",
+      "testament": "NT",
+      "book": "Lucas",
+      "reference": "22:7–20",
+      "region_or_context": "Jerusalém — século I",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Páscoa e significado da ceia",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "passover_context_nt",
+          "description": "Conhecer a Páscoa na época",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "supper_events",
+          "description": "Ordenar o texto narrativo",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "last_supper",
+          "description": "Acompanhar a ceia sem introduzir um novo apóstolo",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_063_crucificacao_e_sepultamento",
+      "title": "Crucificação e sepultamento",
+      "testament": "NT",
+      "book": "João",
+      "reference": "19:16–42",
+      "region_or_context": "Jerusalém — século I",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Relato da crucificação e sepultamento",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "jerusalem_passion",
+          "description": "Conhecer o contexto geográfico",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "journal_reflection",
+          "target_id": "john19_context",
+          "description": "Consultar a narrativa com sensibilidade",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "passion_sequence",
+          "description": "Assistir a apresentação respeitosa sem minigame violento",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_064_o_tumulo_vazio",
+      "title": "O túmulo vazio",
+      "testament": "NT",
+      "book": "João",
+      "reference": "20:1–18",
+      "region_or_context": "Jerusalém — século I",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Ressurreição e testemunho de Maria Madalena",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "garden_tomb_context",
+          "description": "Explorar cenário representativo",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "john20_sequence",
+          "description": "Organizar os testemunhos narrados",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "mary_encounter",
+          "description": "Acompanhar o encontro sem substituir Maria",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_065_no_caminho_de_emaus",
+      "title": "No caminho de Emaús",
+      "testament": "NT",
+      "book": "Lucas",
+      "reference": "24:13–35",
+      "region_or_context": "Estrada de Emaús (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Reconhecimento e interpretação das Escrituras",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "emmaus_route",
+          "description": "Examinar uma rota geográfica aproximada",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "emmaus_dialogue",
+          "description": "Organizar os momentos do relato",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "emmaus_recognition",
+          "description": "Acompanhar a revelação sem inserir um terceiro viajante como fato",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_066_pentecostes",
+      "title": "Pentecostes",
+      "testament": "NT",
+      "book": "Atos",
+      "reference": "2:1–41",
+      "region_or_context": "Jerusalém — século I",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Espírito Santo e início da proclamação pública",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "jerusalem_feast",
+          "description": "Explorar cenário de festa",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "language_diversity",
+          "description": "Conhecer povos e línguas citados",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "pentecost_account",
+          "description": "Acompanhar o relato e a pregação de Pedro",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_067_filipe_e_o_etiope",
+      "title": "Filipe e o etíope",
+      "testament": "NT",
+      "book": "Atos",
+      "reference": "8:26–40",
+      "region_or_context": "Estrada para Gaza (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Leitura das Escrituras e explicação da passagem",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "desert_road",
+          "description": "Explorar o contexto da estrada",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "isaiah_scroll",
+          "description": "Conhecer a referência a Isaías",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "philip_eunuch",
+          "description": "Acompanhar o encontro sem substituir Filipe",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_068_a_conversao_de_saulo",
+      "title": "A conversão de Saulo",
+      "testament": "NT",
+      "book": "Atos",
+      "reference": "9:1–19",
+      "region_or_context": "Estrada de Damasco (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Mudança de vida e vocação",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "damascus_map",
+          "description": "Conhecer o contexto geográfico",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "saul_sequence",
+          "description": "Organizar a sequência dos eventos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "saul_encounter",
+          "description": "Acompanhar a narrativa sem atribuir a visão ao jogador",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_069_paulo_e_silas_em_filipos",
+      "title": "Paulo e Silas em Filipos",
+      "testament": "NT",
+      "book": "Atos",
+      "reference": "16:16–40",
+      "region_or_context": "Filipos (recriação)",
+      "narrative_mode": "observacao_contextual",
+      "learning_goal": "Prisão, terremoto e resposta do carcereiro",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "philippi_streets",
+          "description": "Explorar Filipos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "roman_prison_context",
+          "description": "Conhecer estrutura jurídica e prisional",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "observe_scene",
+          "target_id": "jailer_account",
+          "description": "Acompanhar os eventos sem libertar Paulo manualmente",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_070_os_bereanos",
+      "title": "Os bereanos",
+      "testament": "NT",
+      "book": "Atos",
+      "reference": "17:10–15",
+      "region_or_context": "Bereia (recriação)",
+      "narrative_mode": "ensino_aplicado",
+      "learning_goal": "Conferência cuidadosa das Escrituras",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "talk_npc",
+          "target_id": "fictional_reader_berea",
+          "description": "Conversar com um leitor fictício",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "scripture_study",
+          "description": "Aprender uma mecânica de consulta às referências",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "berean_method",
+          "description": "Registrar a descoberta sobre exame das Escrituras",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_071_o_amor_em_pratica",
+      "title": "O amor em prática",
+      "testament": "NT",
+      "book": "Romanos",
+      "reference": "12:9–21",
+      "region_or_context": "Comunidade didática fictícia",
+      "narrative_mode": "ensino_aplicado",
+      "learning_goal": "Princípios de vida comunitária",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "talk_npc",
+          "target_id": "fictional_community_member",
+          "description": "Conhecer um conflito cotidiano fictício",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "help_npc",
+          "target_id": "reconciliation_demo",
+          "description": "Participar de uma situação ilustrativa de ajuda",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "romans12",
+          "description": "Relacionar os princípios ao texto",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_072_um_corpo_muitos_membros",
+      "title": "Um corpo, muitos membros",
+      "testament": "NT",
+      "book": "1 Coríntios",
+      "reference": "12:12–27",
+      "region_or_context": "Oficina didática fictícia",
+      "narrative_mode": "ensino_aplicado",
+      "learning_goal": "Diversidade e cooperação",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "organize",
+          "target_id": "community_tasks",
+          "description": "Distribuir tarefas em simulação comunitária",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "talk_npc",
+          "target_id": "fictional_coworker",
+          "description": "Conversar sobre papéis diferentes",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "body_metaphor",
+          "description": "Compreender a metáfora apresentada por Paulo",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_073_o_fruto_do_espirito",
+      "title": "O fruto do Espírito",
+      "testament": "NT",
+      "book": "Gálatas",
+      "reference": "5:22–26",
+      "region_or_context": "Jardim alegórico",
+      "narrative_mode": "ensino_aplicado",
+      "learning_goal": "Fruto do Espírito e caráter",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "fruit_garden",
+          "description": "Explorar jardim claramente simbólico",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "fruit_values",
+          "description": "Relacionar os termos do texto",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "galatians5",
+          "description": "Consultar contexto e contraste literário",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_074_a_armadura_de_deus",
+      "title": "A armadura de Deus",
+      "testament": "NT",
+      "book": "Efésios",
+      "reference": "6:10–18",
+      "region_or_context": "Painel alegórico",
+      "narrative_mode": "ensino_aplicado",
+      "learning_goal": "Metáfora sobre perseverança espiritual",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "armor_metaphors",
+          "description": "Examinar os elementos da metáfora",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "armor_text",
+          "description": "Relacionar cada imagem com sua descrição",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "ephesians6",
+          "description": "Conhecer o sentido da passagem sem tratar como armas mágicas",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_075_a_carta_a_filemom",
+      "title": "A carta a Filemom",
+      "testament": "NT",
+      "book": "Filemom",
+      "reference": "1:1–25",
+      "region_or_context": "Cenário de carta apostólica",
+      "narrative_mode": "exploracao_educativa",
+      "learning_goal": "Apelo de Paulo em favor de Onésimo",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "philemon_letter",
+          "description": "Ler resumo fiel da carta",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "assemble_clues",
+          "target_id": "philemon_people",
+          "description": "Identificar as pessoas nomeadas",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "philemon_appeal",
+          "description": "Examinar o argumento e contexto da carta",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_076_fe_e_obras",
+      "title": "Fé e obras",
+      "testament": "NT",
+      "book": "Tiago",
+      "reference": "2:14–26",
+      "region_or_context": "Comunidade didática fictícia",
+      "narrative_mode": "ensino_aplicado",
+      "learning_goal": "Fé e ações concretas",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "talk_npc",
+          "target_id": "fictional_neighbor_james",
+          "description": "Conhecer necessidade comunitária fictícia",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "help_npc",
+          "target_id": "james_practical_help",
+          "description": "Participar de ajuda contextual",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "james2",
+          "description": "Examinar o argumento do texto",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_077_memorial_da_fe",
+      "title": "Memorial da fé",
+      "testament": "NT",
+      "book": "Hebreus",
+      "reference": "11:1–40",
+      "region_or_context": "Galeria bíblica temática",
+      "narrative_mode": "exploracao_educativa",
+      "learning_goal": "Personagens e exemplos recapitulados em Hebreus",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "visit_area",
+          "target_id": "faith_gallery",
+          "description": "Explorar painéis narrativos",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "inspect_object",
+          "target_id": "faith_characters",
+          "description": "Relacionar pessoas e referências",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "hebrews11",
+          "description": "Conhecer a função da recapitulação na carta",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    },
+    {
+      "id": "ep_078_novos_ceus_e_nova_terra",
+      "title": "Novos céus e nova terra",
+      "testament": "NT",
+      "book": "Apocalipse",
+      "reference": "21:1–22:5",
+      "region_or_context": "Visão artística explicitamente simbólica",
+      "narrative_mode": "visao_simbolica",
+      "learning_goal": "Esperança e imagens escatológicas",
+      "objectives": [
+        {
+          "id": "obj_01",
+          "event_type": "inspect_object",
+          "target_id": "revelation_genre",
+          "description": "Conhecer linguagem apocalíptica",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_02",
+          "event_type": "visit_area",
+          "target_id": "new_creation_art",
+          "description": "Explorar representação artística sinalizada como visão",
+          "implementation_state": "not_checked"
+        },
+        {
+          "id": "obj_03",
+          "event_type": "journal_reflection",
+          "target_id": "revelation_end",
+          "description": "Consultar imagens e interpretações sem impor cronologia única",
+          "implementation_state": "not_checked"
+        }
+      ],
+      "source_validation": "pending_independent_review",
+      "implementation_status": "idea_only",
+      "assets_status": "not_assessed",
+      "chronology": "not_established",
+      "publication_status": "draft"
+    }
+  ]
+}

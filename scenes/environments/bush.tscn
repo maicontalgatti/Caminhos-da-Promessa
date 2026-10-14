@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/shaders/sway_material.tres" id="1_y77dr"]
+[ext_resource type="Texture2D" path="res://assets/environments/bush.png" id="2_prksu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3c81"]
+size = Vector2(12, 4)
+
+[node name="Bush" type="StaticBody2D" unique_id=441560642]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=672315433]
+material = ExtResource("1_y77dr")
+texture = ExtResource("2_prksu")
+centered = false
+offset = Vector2(-10, -14)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=573561436]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_g3c81")

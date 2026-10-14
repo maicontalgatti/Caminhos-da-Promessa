@@ -1,0 +1,88 @@
+{
+	"_comment": "Itens do inventário. Categorias: material, common, supply, quest (compartimento de essenciais, não descartável), collectible. Nada de moedas cunhadas, ferro comum, vidro, papel ou alimentos do Novo Mundo na época dos patriarcas. Ícones provisórios gerados por tools/art_gen/generate_art.gd.",
+	"items": [
+		{
+			"id": "plant_fiber",
+			"name": "Fibras vegetais",
+			"category": "material",
+			"description": "Fibras de plantas da beira da estrada, boas para trançar cordas e amarrar cargas.",
+			"history_note": "Cordas e cestos de fibras vegetais eram feitos à mão em todo o antigo Oriente Próximo.",
+			"icon": "res://assets/items/plant_fiber.png",
+			"max_stack": 10,
+			"no_discard": true,
+			"classification": "historical_context"
+		},
+		{
+			"id": "dry_wood",
+			"name": "Lenha seca",
+			"category": "material",
+			"description": "Galhos secos recolhidos do chão; servem para acender uma fogueira de acampamento.",
+			"history_note": "Viajantes e pastores dependiam de lenha recolhida pelo caminho para cozinhar e se aquecer.",
+			"icon": "res://assets/items/dry_wood.png",
+			"max_stack": 10,
+			"no_discard": true,
+			"classification": "historical_context"
+		},
+		{
+			"id": "water_skin",
+			"name": "Odre de couro",
+			"category": "common",
+			"description": "Recipiente de couro de cabra para levar água na viagem.",
+			"history_note": "Odres de pele aparecem em vários relatos bíblicos, como o de Hagar (Agar) em Gênesis 21:14.",
+			"icon": "res://assets/items/water_skin.png",
+			"max_stack": 1,
+			"classification": "historical_context"
+		},
+		{
+			"id": "rope",
+			"name": "Corda de fibras",
+			"category": "common",
+			"description": "Corda trançada à mão, útil para prender cargas e tendas.",
+			"icon": "res://assets/items/rope.png",
+			"max_stack": 3,
+			"classification": "historical_context"
+		},
+		{
+			"id": "barley_bread",
+			"name": "Pão de cevada",
+			"category": "supply",
+			"description": "Pão redondo e achatado de cevada, alimento simples de viagem.",
+			"history_note": "A cevada era um cereal comum e barato na região.",
+			"icon": "res://assets/items/barley_bread.png",
+			"max_stack": 5,
+			"use_text": "Você guarda o pão para a viagem. (O jogo não tem fome nem cansaço: os suprimentos servem para ajudar quem precisa.)",
+			"classification": "historical_context"
+		},
+		{
+			"id": "dried_figs",
+			"name": "Figos secos",
+			"category": "supply",
+			"description": "Figos secos ao sol, leves e duráveis para levar na estrada.",
+			"history_note": "Bolos de figos (figos prensados) aparecem entre as provisões levadas por Abigail em 1 Samuel 25:18.",
+			"icon": "res://assets/items/dried_figs.png",
+			"max_stack": 10,
+			"use_text": "Figos doces e secos. Você os guarda para dividir com alguém no caminho.",
+			"classification": "historical_context"
+		},
+		{
+			"id": "provisions_basket",
+			"name": "Cesto de provisões",
+			"category": "quest",
+			"essential": true,
+			"description": "Cesto com pão e figos que o pastor Rafi separou para ajudar uma família recém-chegada.",
+			"icon": "res://assets/items/provisions_basket.png",
+			"max_stack": 1,
+			"classification": "plausible_fiction"
+		},
+		{
+			"id": "wool_cloth",
+			"name": "Tecido de lã",
+			"category": "common",
+			"description": "Pano de lã de ovelha tecido em tear simples.",
+			"history_note": "A lã das ovelhas era fiada e tecida em casa; era um bem valioso para troca.",
+			"icon": "res://assets/items/wool_cloth.png",
+			"max_stack": 3,
+			"classification": "historical_context"
+		}
+	]
+}

@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/rock_big.png" id="1_pkme4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ggxu"]
+size = Vector2(16, 6)
+
+[node name="RockBig" type="StaticBody2D" unique_id=294260546]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=662033810]
+texture = ExtResource("1_pkme4")
+centered = false
+offset = Vector2(-11, -15)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1443570343]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_4ggxu")

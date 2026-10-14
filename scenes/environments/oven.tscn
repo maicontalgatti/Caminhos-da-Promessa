@@ -1,0 +1,46 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/oven.png" id="1_yccnm"]
+[ext_resource type="Script" path="res://scripts/interaction/interactable.gd" id="2_dvepa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38l2m"]
+size = Vector2(14, 5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4et7"]
+radius = 12.0
+
+[sub_resource type="Gradient" id="Gradient_n2dd7"]
+colors = PackedColorArray(0.86, 0.82, 0.76, 0.7, 0.86, 0.82, 0.76, 0)
+
+[node name="Oven" type="StaticBody2D" unique_id=362678118]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1392791975]
+texture = ExtResource("1_yccnm")
+centered = false
+offset = Vector2(-10, -16)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=747793983]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_38l2m")
+
+[node name="Interactable" type="Area2D" parent="." unique_id=23812092]
+position = Vector2(0, -6)
+script = ExtResource("2_dvepa")
+dialogue_id = "oven_examine"
+prompt_offset = Vector2(0, -16)
+
+[node name="Shape" type="CollisionShape2D" parent="Interactable" unique_id=1134814628]
+shape = SubResource("CircleShape2D_g4et7")
+
+[node name="Particles" type="CPUParticles2D" parent="." unique_id=1430361887]
+position = Vector2(0, -12)
+amount = 5
+lifetime = 3.0
+direction = Vector2(0, -1)
+spread = 12.0
+gravity = Vector2(2, -5)
+initial_velocity_min = 4.0
+initial_velocity_max = 7.0
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_n2dd7")

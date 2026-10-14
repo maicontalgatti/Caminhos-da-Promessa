@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/cistern.png" id="1_880n1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xstxc"]
+size = Vector2(24, 9)
+
+[node name="Cistern" type="StaticBody2D" unique_id=1137741369]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=513761888]
+texture = ExtResource("1_880n1")
+centered = false
+offset = Vector2(-16, -19)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2112433902]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_xstxc")

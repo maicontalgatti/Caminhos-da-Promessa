@@ -1,0 +1,90 @@
+{
+	"_comment": "Colecionáveis (aba MINHAS DESCOBERTAS). Nem todo colecionável é um artefato autêntico: os objetos da estrada são criados para o jogo e ilustram costumes. Nada aqui pertence à caravana que levou José (Gn 37:28).",
+	"sets": [
+		{"id": "caravan_records", "title": "Registros da caravana", "region": "caravan_road"},
+		{"id": "dothan_fields", "title": "Pastos de Dotã", "region": "dothan"},
+		{"id": "road_stories", "title": "Histórias da estrada", "region": "caravan_road"}
+	],
+	"collectibles": [
+		{
+			"id": "cr_tracks",
+			"set": "caravan_records",
+			"title": "Rastros de animais de carga",
+			"category": "cultural",
+			"region": "caravan_road",
+			"classification": "historical_context",
+			"summary": "Marcas de cascos na terra seca mostram por onde passavam os animais carregados. Jumentos estavam entre os animais de carga mais comuns em Canaã.",
+			"references": []
+		},
+		{
+			"id": "cr_marker",
+			"set": "caravan_records",
+			"title": "Monte de pedras no caminho",
+			"category": "geographic",
+			"region": "caravan_road",
+			"classification": "historical_context",
+			"summary": "Montes de pedras podiam marcar um limite, um acordo ou, talvez, o rumo de um caminho (este último uso é menos documentado). Em Gênesis 31:45-48, Jacó ergue uma coluna e seus parentes juntam um monte de pedras, testemunho do acordo com Labão.",
+			"references": ["Gen 31:45-48"]
+		},
+		{
+			"id": "cr_campfire",
+			"set": "caravan_records",
+			"title": "Fogueira de acampamento",
+			"category": "cultural",
+			"region": "caravan_road",
+			"classification": "historical_context",
+			"summary": "Viajantes paravam ao entardecer para cozinhar e descansar os animais, e seguiam de manhã cedo.",
+			"references": []
+		},
+		{
+			"id": "cr_bundle",
+			"set": "caravan_records",
+			"title": "Fardos de resina",
+			"category": "object",
+			"region": "caravan_road",
+			"classification": "plausible_fiction",
+			"summary": "Fardos criados para o jogo, de uma caravana qualquer. Gênesis 37:25 cita especiarias, bálsamo e mirra, resinas perfumadas de identificação debatida, entre as cargas de uma caravana que descia de Gileade para o Egito.",
+			"references": ["Gen 37:25"]
+		},
+		{
+			"id": "cr_jar",
+			"set": "caravan_records",
+			"title": "Jarro de viagem",
+			"category": "object",
+			"region": "caravan_road",
+			"classification": "plausible_fiction",
+			"summary": "Jarros de barro e odres de couro guardavam a água da viagem. Este jarro é criado para o jogo.",
+			"references": []
+		},
+		{
+			"id": "dothan_overlook",
+			"set": "dothan_fields",
+			"title": "O vale de Dotã",
+			"category": "geographic",
+			"region": "dothan",
+			"classification": "historical_context",
+			"summary": "Dotã costuma ser identificada com Tel Dotã, ao norte de Siquém, junto a um vale de pastagens. Gênesis 37:17 cita Dotã no relato de José.",
+			"references": ["Gen 37:17"]
+		},
+		{
+			"id": "dothan_cistern",
+			"set": "dothan_fields",
+			"title": "Cisterna na rocha",
+			"category": "object",
+			"region": "dothan",
+			"classification": "plausible_fiction",
+			"summary": "Uma cisterna comum de pastores, criada para o jogo; não é a cisterna do relato de José (Gn 37:24). Cisternas escavadas na rocha guardavam a água das chuvas de inverno para os meses secos.",
+			"references": []
+		},
+		{
+			"id": "road_hospitality",
+			"set": "road_stories",
+			"title": "Não pegar mais do que precisa",
+			"category": "secret",
+			"region": "caravan_road",
+			"classification": "plausible_fiction",
+			"summary": "Você recusou a recompensa extra de Malik, e ele lhe deu um conselho de viagem. Um registro da sua passagem pela estrada.",
+			"references": []
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"episode": "ep_006_a_importancia_dos_pocos",
+	"title": "A importância dos poços",
+	"references": [
+		"Gen 26:18-22"
+	],
+	"chapter_ranges": [],
+	"narrative_mode": "ficcao_contextual",
+	"region": "canaan_village",
+	"created": "2026-10-14",
+	"gates": {
+		"0_selection": "done",
+		"1_research": "pending",
+		"2_design": "pending",
+		"3_review": "pending",
+		"4_implementation": "pending",
+		"5_audio": "pending",
+		"6_qa": "pending",
+		"7_publication": "pending"
+	},
+	"agents": [],
+	"costs": []
+}

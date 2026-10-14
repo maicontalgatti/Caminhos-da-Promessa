@@ -1,0 +1,12 @@
+{
+	"episode": "ep_006_a_importancia_dos_pocos",
+	"overall": "passed",
+	"_comment": "Resultados de execuções reais do coordenador (agente de IA). Teste humano jogando: não executado (KI-02).",
+	"runs": [
+		{"date": "2026-10-14", "command": "tests/test_runner.tscn", "result": "passed", "detail": "561 passaram, 0 falharam (inclui fluxo real de canaan_wells, alvos no mapa, pistas e diário)"},
+		{"date": "2026-10-14", "command": "tests/flow_smoke.gd", "result": "passed", "detail": "17 passaram, 0 falharam"},
+		{"date": "2026-10-14", "command": "tools/validate_content.gd", "result": "passed", "detail": "sem erros de dados; conteúdo aguardando verificação humana"},
+		{"date": "2026-10-14", "command": "tools/factory.gd -- check", "result": "passed", "detail": "0 erros em 78 episódios"},
+		{"date": "", "command": "sessão de jogo humana", "result": "not_run", "detail": "KI-02"}
+	]
+}

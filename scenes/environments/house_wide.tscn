@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/house_wide.png" id="1_eqmfo"]
+[ext_resource type="Script" path="res://scripts/interaction/interactable.gd" id="2_no0mf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fv4yo"]
+size = Vector2(76, 26)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jl1u3"]
+
+[node name="HouseWide" type="StaticBody2D" unique_id=426980770]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1075639090]
+texture = ExtResource("1_eqmfo")
+centered = false
+offset = Vector2(-40, -81)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=675314418]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_fv4yo")
+
+[node name="Interactable" type="Area2D" parent="." unique_id=865240969]
+position = Vector2(0, -4)
+script = ExtResource("2_no0mf")
+kind = 5
+dialogue_id = "house_door"
+prompt_offset = Vector2(0, -30)
+
+[node name="Shape" type="CollisionShape2D" parent="Interactable" unique_id=1283591018]
+shape = SubResource("CircleShape2D_jl1u3")

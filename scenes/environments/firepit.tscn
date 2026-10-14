@@ -1,0 +1,46 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/firepit.png" id="1_8pdbm"]
+[ext_resource type="Script" path="res://scripts/interaction/interactable.gd" id="2_lxaxy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_js72c"]
+size = Vector2(12, 4)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tq7g5"]
+radius = 12.0
+
+[sub_resource type="Gradient" id="Gradient_qa6f2"]
+colors = PackedColorArray(1, 0.827451, 0.41960785, 1, 0.88, 0.44, 0.18, 0)
+
+[node name="Firepit" type="StaticBody2D" unique_id=1963005693]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=303976654]
+texture = ExtResource("1_8pdbm")
+centered = false
+offset = Vector2(-8, -10)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=207713268]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_js72c")
+
+[node name="Interactable" type="Area2D" parent="." unique_id=1606341429]
+position = Vector2(0, -4)
+script = ExtResource("2_lxaxy")
+dialogue_id = "firepit_examine"
+prompt_offset = Vector2(0, -12)
+
+[node name="Shape" type="CollisionShape2D" parent="Interactable" unique_id=879954171]
+shape = SubResource("CircleShape2D_tq7g5")
+
+[node name="Particles" type="CPUParticles2D" parent="." unique_id=413113780]
+position = Vector2(0, -5)
+lifetime = 0.6
+emission_shape = 3
+emission_rect_extents = Vector2(2.5, 0.5)
+direction = Vector2(0, -1)
+spread = 20.0
+gravity = Vector2(0, -18)
+initial_velocity_min = 3.0
+initial_velocity_max = 7.0
+color_ramp = SubResource("Gradient_qa6f2")

@@ -1,0 +1,240 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" path="res://assets/ui/menu_bg.png" id="2_bg"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 22.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.956863, 0.894118, 0.756863, 1)
+theme_override_colors/font_outline_color = Color(0.168627, 0.113725, 0.0784314, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 26
+text = "Caminhos da Promessa"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 54.0
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.956863, 0.894118, 0.756863, 1)
+theme_override_colors/font_outline_color = Color(0.168627, 0.113725, 0.0784314, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 9
+text = "Uma jornada pelas terras e histórias da Bíblia"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -38.0
+offset_right = 55.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 3
+
+[node name="NewGame" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Novo jogo"
+
+[node name="Continue" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Continuar"
+
+[node name="Settings" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Configurações"
+
+[node name="Credits" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Créditos"
+
+[node name="Quit" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Sair"
+
+[node name="Message" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -40.0
+offset_right = 150.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.956863, 0.894118, 0.756863, 1)
+theme_override_colors/font_outline_color = Color(0.168627, 0.113725, 0.0784314, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+
+[node name="Version" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -12.0
+offset_right = -4.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.956863, 0.894118, 0.756863, 1)
+theme_override_colors/font_outline_color = Color(0.168627, 0.113725, 0.0784314, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 6
+text = "v0.1.0 - protótipo"
+horizontal_alignment = 2
+
+[node name="ConfirmPanel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -30.0
+offset_right = 110.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="ConfirmPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Label" type="Label" parent="ConfirmPanel/VBox"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Iniciar um novo jogo substituirá o progresso salvo. Deseja continuar?"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBox" type="HBoxContainer" parent="ConfirmPanel/VBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 8
+
+[node name="Yes" type="Button" parent="ConfirmPanel/VBox/HBox"]
+layout_mode = 2
+text = "Começar do zero"
+
+[node name="No" type="Button" parent="ConfirmPanel/VBox/HBox"]
+layout_mode = 2
+text = "Cancelar"
+
+[node name="SettingsPanel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -118.0
+offset_right = 125.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="SettingsPanel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="SettingsPanel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Configurações"
+horizontal_alignment = 1
+
+[node name="Fullscreen" type="CheckButton" parent="SettingsPanel/VBox"]
+layout_mode = 2
+text = "Tela cheia"
+
+[node name="Back" type="Button" parent="SettingsPanel/VBox"]
+layout_mode = 2
+text = "Voltar"
+
+[node name="CreditsPanel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -70.0
+offset_right = 130.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="CreditsPanel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="CreditsPanel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Créditos"
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="CreditsPanel/VBox"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Caminhos da Promessa - protótipo
+
+Arte provisória gerada proceduralmente para este projeto (será substituída por sprites definitivos).
+Fontes: Pixelify Sans e Lora, SIL Open Font License 1.1.
+Feito com Godot Engine (licença MIT).
+
+Personagens da aldeia e o viajante são fictícios."
+autowrap_mode = 3
+
+[node name="Back" type="Button" parent="CreditsPanel/VBox"]
+layout_mode = 2
+text = "Voltar"

@@ -1,0 +1,283 @@
+{
+	"_comment": "Descobertas das Escrituras. presentation: card (janela contextual no 1º desbloqueio) | toast (aviso discreto). Seções: biblical_text (o que o texto diz), historical (contexto histórico), chronology (cronologia), interpretation (interpretações), fiction (criação do jogo). Resumos próprios; nenhuma citação longa de tradução protegida.",
+	"discoveries": [
+		{
+			"id": "shepherding_water",
+			"title": "Pastoreio nos tempos bíblicos",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "Rebanhos de ovelhas e cabras precisavam de pasto e de água todos os dias. Pastores conduziam os animais entre pastagens, poços e fontes, e o acesso à água organizava a rotina de famílias inteiras.",
+			"bible_note": "Gênesis 29:2-3 descreve rebanhos reunidos em volta de um poço no campo, com a boca coberta por uma grande pedra.",
+			"references": ["Gen 29:2-3", "Gen 29:8", "Gen 37:12-17", "1Sam 17:34-35", "Luke 2:8"],
+			"sections": [
+				{"kind": "historical", "title": "Água e pastagem", "text": "No clima do Levante, as chuvas se concentram no inverno. No verão seco, os pastores dependiam de poços, cisternas e fontes, e muitas vezes percorriam longas distâncias em busca de pasto."},
+				{"kind": "biblical_text", "title": "Um poço no campo", "text": "Gênesis 29:2-3 mostra três rebanhos deitados junto a um poço coberto por uma grande pedra; era ali que os rebanhos se reuniam para a pedra ser removida. Os pastores dizem a Jacó que esperam todos os rebanhos se juntarem antes de dar de beber às ovelhas (Gn 29:8)."},
+				{"kind": "biblical_text", "title": "Pastores em outras passagens", "text": "Os irmãos de José levam o rebanho do pai para longe, até Siquém e Dotã (Gn 37:12-17). Davi conta a Saul que defendia as ovelhas de leões e ursos (1Sm 17:34-35). Lucas fala de pastores que vigiavam o rebanho à noite perto de Belém (Lc 2:8)."},
+				{"kind": "chronology", "title": "Épocas diferentes", "text": "Essas passagens não acontecem ao mesmo tempo: José pertence à época dos patriarcas, Davi viveu por volta do século X a.C., e os pastores de Lucas estão na época do nascimento de Jesus, sob domínio romano. O pastoreio atravessa toda a história bíblica."}
+			],
+			"related": {"people": ["joseph", "david"], "places": ["shechem", "dothan", "bethlehem"], "events": ["joseph_sold", "david_shepherd", "shepherds_bethlehem"], "stories": ["gen_037_joseph_sold"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências conferidas pelo agente de IA; aguarda revisão humana."}
+		},
+		{
+			"id": "wells_antiquity",
+			"title": "Poços na Antiguidade",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "Em regiões onde a água era essencial para a sobrevivência de pessoas e rebanhos, o acesso aos poços tinha grande importância. Cavar um poço exigia muito trabalho. Nos relatos de Gênesis, cavar um poço aparece ligado ao direito de usá-lo (Gn 21:30), e os poços recebem nomes.",
+			"bible_note": "Gênesis 26:18-22 relata acontecimentos relacionados a poços e disputas por água nos dias de Isaque.",
+			"references": ["Gen 26:18-22", "Gen 21:25-31", "John 4:5-7"],
+			"sections": [
+				{"kind": "historical", "title": "Poços, cisternas e fontes", "text": "Fontes eram água que brotava naturalmente; poços eram escavados até alcançar água do subsolo; cisternas guardavam a água da chuva. Em terras de chuva sazonal, um poço confiável podia definir onde uma família ou aldeia se fixava. Cisternas escavadas existem desde cedo; o uso amplo de cisternas rebocadas costuma ser associado à Idade do Ferro (tema debatido)."},
+				{"kind": "historical", "title": "Água sob os vales secos", "text": "No sul, a região do Neguebe é semiárida, e os leitos dos vales só correm depois das chuvas de inverno. Sob esses leitos costuma haver água subterrânea pouco funda, que podia ser alcançada cavando — algo que combina com poços cavados num vale."},
+				{"kind": "biblical_text", "title": "Disputas por poços", "text": "Abraão reclama com Abimeleque de um poço que os servos de Abimeleque haviam tomado à força, e os dois fazem um acordo em Berseba (Gn 21:25-31). Mais tarde, Isaque reabre os poços cavados nos dias de Abraão (Gn 26:18) e cava outros; os pastores de Gerar disputam dois desses poços novos (Gn 26:19-21)."},
+				{"kind": "chronology", "title": "Um poço muitos séculos depois", "text": "O evangelho de João menciona o poço de Jacó em Sicar, na Samaria, onde Jesus, cansado da viagem, se senta e conversa com uma mulher samaritana (Jo 4:5-7). É outra época, mas mostra como um poço podia ser lembrado por gerações."}
+			],
+			"related": {"people": ["abraham", "isaac", "abimelech"], "places": ["gerar", "beersheba"], "events": ["abraham_abimelech_well", "isaac_wells"], "stories": ["gen_026_isaac_wells"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Revisado pela fábrica de missões (ep_006): achados B5-B7 e H4/H6 aplicados. Aguarda revisão humana."}
+		},
+		{
+			"id": "pottery_jars",
+			"title": "Jarros, cântaros e água guardada",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "patriarchs",
+			"summary": "Jarros de barro guardavam água, azeite, grãos e vinho. Buscar água na fonte ou no poço com um cântaro era tarefa diária em muitas casas.",
+			"bible_note": "Gênesis 24:15-20 mostra Rebeca indo à fonte com o cântaro no ombro e dando de beber ao servo de Abraão e aos camelos.",
+			"references": ["Gen 24:15-20", "Jer 18:1-6"],
+			"sections": [
+				{"kind": "historical", "title": "O ofício do oleiro", "text": "A cerâmica é um dos vestígios mais comuns nas escavações do Levante. O formato dos jarros muda com o tempo, e por isso ajuda arqueólogos a datar camadas de ocupação."},
+				{"kind": "biblical_text", "title": "Rebeca junto à fonte", "text": "Na época dos patriarcas, Rebeca desce à fonte, enche o cântaro e tira água também para os camelos do servo de Abraão (Gn 24:15-20)."},
+				{"kind": "chronology", "title": "O oleiro de Jeremias", "text": "Séculos depois, no tempo do profeta Jeremias, a imagem do oleiro trabalhando o barro na roda é usada como mensagem para a 'casa de Israel' (Jr 18:1-6). É outra época e outro contexto."}
+			],
+			"related": {"people": ["rebekah", "isaac"], "places": [], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências conferidas pelo agente de IA; aguarda revisão humana."}
+		},
+		{
+			"id": "isaac_wells",
+			"title": "Os poços de Isaque: Eseque, Sitna e Reobote",
+			"classification": "recorded_event",
+			"presentation": "toast",
+			"era_id": "patriarchs",
+			"summary": "Em Gênesis 26, Isaque reabre os poços cavados nos dias de Abraão e cava outros. Os pastores de Gerar disputam dois dos novos; o terceiro, aberto sem contenda, recebe o nome de Reobote.",
+			"bible_note": "Gênesis 26:18-22.",
+			"references": ["Gen 26:12-22", "Gen 26:23-33", "Gen 25:7-8", "Gen 21:25-31"],
+			"sections": [
+				{"kind": "biblical_text", "title": "Antes dos poços", "text": "Isaque prospera em Gerar, e o texto atribui isso à bênção do SENHOR. Os filisteus, como o relato os chama, sentem inveja; eles tinham entulhado com terra os poços cavados pelos servos de Abraão. Abimeleque pede que Isaque se afaste, e ele acampa no vale de Gerar (Gn 26:12-17)."},
+				{"kind": "biblical_text", "title": "Os poços reabertos", "text": "Isaque cava de novo os poços do tempo de Abraão, entulhados depois da morte dele, e lhes dá os mesmos nomes que o pai tinha dado (v. 18). São poços antigos, diferentes dos três que vêm a seguir."},
+				{"kind": "biblical_text", "title": "Três poços novos", "text": "Os servos de Isaque cavam no vale e encontram água corrente (v. 19). Os pastores de Gerar dizem que a água é deles, e o poço recebe o nome Eseque; o próprio texto liga o nome à contenda (v. 20). Há disputa também pelo seguinte, chamado Sitna (v. 21). Isaque sai dali e cava outro, sem disputa, e o chama Reobote, dizendo que o SENHOR lhes abriu espaço e que seriam frutíferos na terra (v. 22)."},
+				{"kind": "interpretation", "title": "Nota lexical: o sentido dos nomes", "text": "Eseque e Reobote são explicados no próprio relato (v. 20 e 22); notas de traduções costumam verter os nomes como 'contenda' e 'lugares amplos'. Para Sitna, o versículo não dá explicação: o sentido 'oposição' ou 'hostilidade' vem de léxicos e notas de tradução, não do texto. 'Água corrente' (v. 19) traduz uma expressão hebraica que, ao pé da letra, é 'água viva': água de fonte ou de lençol, que se renova."},
+				{"kind": "historical", "title": "Onde ficava Gerar?", "text": "A localização de Gerar é debatida. A proposta mais aceita hoje é Tel Haror, junto ao vale chamado Nahal Gerar, no oeste do Neguebe, onde foi escavada uma cidade fortificada da Idade do Bronze Médio; uma proposta mais antiga é Tell Jemmeh. Nenhuma é definitiva. Eseque e Sitna não têm local identificado, e a ligação tradicional de Reobote com ruínas do Neguebe é incerta."},
+				{"kind": "biblical_text", "title": "Depois", "text": "Isaque sobe a Berseba. Ali os servos dele cavam um poço, Abimeleque vem fazer um acordo de paz com ele e, no mesmo dia, os servos contam que encontraram água (Gn 26:23-33). Não é um dos três poços do vale. Se tem relação com o poço que Abraão cavou em Berseba (Gn 21:30-31), o texto não diz."},
+				{"kind": "historical", "title": "Berseba hoje", "text": "O sítio de Tel Berseba costuma ser identificado com a Berseba bíblica, mas a cidade escavada ali, inclusive um poço, é da Idade do Ferro, muito posterior à época atribuída aos patriarcas; não se encontraram ali camadas da Idade do Bronze Médio. Não há como apontar ali o poço de Abraão ou de Isaque."},
+				{"kind": "chronology", "title": "Sem data", "text": "O texto só situa o entulhamento dos poços depois da morte de Abraão (Gn 26:18; 25:7-8). A época dos patriarcas não tem datação segura: propostas a situam no II milênio a.C., mais comumente na Idade do Bronze Médio, e há estudiosos que veem os relatos como compostos bem depois."},
+				{"kind": "interpretation", "title": "Filisteus nos dias dos patriarcas?", "text": "Os filisteus conhecidos pela arqueologia se estabelecem na costa por volta do século XII a.C. Por isso, a menção a filisteus em Gerar é discutida: alguns estudiosos a entendem como atualização do nome por um narrador posterior, outros como referência a grupos anteriores vindos do litoral. O jogo apresenta a questão como debatida."}
+			],
+			"related": {"people": ["isaac", "abraham", "abimelech"], "places": ["gerar", "beersheba"], "events": ["isaac_wells"], "stories": ["gen_026_isaac_wells"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Revisado pela fábrica de missões (ep_006): achados B1, B3, B4 e H3 aplicados. Conferir em léxico hebraico os sentidos dos nomes; fontes arqueológicas a confirmar. Aguarda revisão humana."}
+		},
+		{
+			"id": "tents_goat_hair",
+			"title": "Tendas de pelo de cabra",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "patriarchs",
+			"summary": "Famílias que se deslocavam com os rebanhos viviam em tendas de tecido de pelo de cabra, fáceis de desmontar e de transportar.",
+			"bible_note": "Gênesis 25:27 descreve Jacó como homem que habitava em tendas.",
+			"references": ["Gen 25:27", "Exod 26:7", "Heb 11:9"],
+			"sections": [
+				{"kind": "historical", "title": "Uma casa que viaja", "text": "O tecido de pelo de cabra é resistente; quando molhado pela chuva, as fibras incham e o tecido fica mais fechado. Tendas assim são usadas por pastores da região até tempos recentes."},
+				{"kind": "biblical_text", "title": "No texto", "text": "Jacó é descrito como homem que vivia em tendas (Gn 25:27). Na construção do tabernáculo, no deserto, há cortinas de pelo de cabra (Êx 26:7). A carta aos Hebreus lembra que Abraão viveu em tendas com Isaque e Jacó (Hb 11:9)."},
+				{"kind": "chronology", "title": "Épocas diferentes", "text": "Hebreus foi escrita no século I d.C. e olha para trás, para os patriarcas; o tabernáculo pertence à época do Êxodo."}
+			],
+			"related": {"people": ["jacob", "esau", "abraham"], "places": [], "events": [], "stories": ["gen_025_jacob_tents"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências conferidas pelo agente de IA; aguarda revisão humana."}
+		},
+		{
+			"id": "bread_ovens",
+			"title": "Pão e fornos de barro",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "patriarchs",
+			"summary": "O pão era a base da alimentação. A massa era assada em fornos de barro, sobre pedras quentes ou em chapas, quase sempre perto da casa ou num pátio comum.",
+			"bible_note": "Em Gênesis 18:6, Abraão pede a Sara que prepare pães para os visitantes.",
+			"references": ["Gen 18:6", "Lev 26:26"],
+			"sections": [
+				{"kind": "historical", "title": "O forno da aldeia", "text": "Fornos de barro em forma de cúpula ou cilindro aparecem em escavações de casas antigas do Levante. A massa era colada nas paredes quentes ou assada sobre brasas."},
+				{"kind": "biblical_text", "title": "No texto", "text": "Abraão pede pães feitos às pressas para receber três visitantes (Gn 18:6). Em Levítico 26:26, a imagem de dez mulheres assando pão num só forno descreve um tempo de escassez."}
+			],
+			"related": {"people": ["abraham"], "places": [], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências conferidas pelo agente de IA; aguarda revisão humana."}
+		},
+		{
+			"id": "caravans_trade",
+			"title": "Caravanas e rotas de comércio",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "patriarchs",
+			"summary": "Caravanas de jumentos ligavam regiões distantes, levando especiarias, resinas, tecidos e notícias. Canaã ficava no caminho entre a Mesopotâmia e o Egito.",
+			"bible_note": "Gênesis 37:25 menciona uma caravana com especiarias, bálsamo e mirra a caminho do Egito.",
+			"references": ["Gen 37:25"],
+			"sections": [
+				{"kind": "historical", "title": "Uma terra de passagem", "text": "Por sua posição entre grandes civilizações, Canaã era atravessada por rotas comerciais. Produtos como resinas aromáticas tinham alto valor. O jumento era o animal de carga mais comum; o uso de camelos nessa época é debatido."},
+				{"kind": "biblical_text", "title": "Uma caravana em Gênesis", "text": "Gênesis 37:25 menciona uma caravana vinda de Gileade, com especiarias, bálsamo e mirra, a caminho do Egito. As plantas exatas dessas resinas são debatidas. O que acontece nesse ponto do relato fica para outro momento da história."}
+			],
+			"related": {"people": ["joseph"], "places": ["dothan", "egypt"], "events": [], "stories": ["gen_037_joseph_sold"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências conferidas pelo agente de IA; aguarda revisão humana."}
+		},
+		{
+			"id": "fruits_of_the_land",
+			"title": "Os frutos da terra",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "exodus",
+			"summary": "Trigo, cevada, uvas, figos, romãs e azeitonas estavam entre os principais produtos da agricultura de Canaã.",
+			"bible_note": "Deuteronômio 8:7-8 descreve a terra como lugar de trigo, cevada, vides, figueiras, romãzeiras, oliveiras e mel.",
+			"references": ["Deut 8:7-8", "Num 13:23"],
+			"sections": [
+				{"kind": "historical", "title": "Agricultura mediterrânea", "text": "Cereais no inverno, frutas no fim do verão e azeitonas no outono: o ano agrícola acompanhava as chuvas e organizava festas e trabalhos."},
+				{"kind": "biblical_text", "title": "No texto", "text": "Os espiões enviados por Moisés trazem do vale de Escol um cacho de uvas, romãs e figos (Nm 13:23). Deuteronômio descreve a terra por seus produtos (Dt 8:7-8)."},
+				{"kind": "chronology", "title": "Época", "text": "Esses textos estão ligados ao Êxodo, depois da época dos patriarcas; a aldeia do jogo mostra produtos que já eram cultivados na região."}
+			],
+			"related": {"people": [], "places": ["canaan"], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências conferidas pelo agente de IA; aguarda revisão humana."}
+		},
+		{
+			"id": "wool_dyes",
+			"title": "Lã, linho e tecidos tingidos",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "patriarchs",
+			"summary": "Fiar e tecer eram trabalhos domésticos importantes. Tecidos tingidos de azul, púrpura ou carmesim exigiam corantes caros e muito trabalho.",
+			"bible_note": "Êxodo 35:25 fala de mulheres hábeis que fiavam fios azuis, de púrpura e de carmesim.",
+			"references": ["Exod 35:25", "Prov 31:13", "Prov 31:19"],
+			"sections": [
+				{"kind": "historical", "title": "Do rebanho ao tecido", "text": "A lã das ovelhas e o linho cultivado eram fiados à mão com fuso e roca. Corantes vinham de plantas, insetos e moluscos marinhos."},
+				{"kind": "biblical_text", "title": "No texto", "text": "Mulheres fiam fios coloridos para o tabernáculo (Êx 35:25). Provérbios 31 descreve a mulher que busca lã e linho e trabalha com a roca (Pv 31:13, 19)."}
+			],
+			"related": {"people": [], "places": [], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências conferidas pelo agente de IA; aguarda revisão humana."}
+		},
+		{
+			"id": "sheep_goats",
+			"title": "Ovelhas e cabras",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "patriarchs",
+			"summary": "Ovelhas e cabras davam leite, lã, pelo, couro e carne. A riqueza de uma família pastoril era medida, em boa parte, pelo tamanho do rebanho.",
+			"bible_note": "Gênesis 4:2 apresenta Abel como pastor de ovelhas.",
+			"references": ["Gen 4:2", "Gen 31:19", "1Sam 25:2"],
+			"sections": [
+				{"kind": "historical", "title": "Um rebanho misto", "text": "Rebanhos costumavam misturar ovelhas e cabras: as ovelhas pastam em campos abertos, as cabras alcançam arbustos em encostas."},
+				{"kind": "biblical_text", "title": "No texto", "text": "Abel é pastor de ovelhas (Gn 4:2). Labão sai para tosquiar as ovelhas (Gn 31:19). Nabal, em Carmelo, tem três mil ovelhas e mil cabras (1Sm 25:2)."}
+			],
+			"related": {"people": [], "places": [], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências conferidas pelo agente de IA; aguarda revisão humana."}
+		},
+		{
+			"id": "boundary_markers",
+			"title": "Marcos de divisa",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "exodus",
+			"summary": "Pedras marcavam os limites dos campos de cada família. Mover um marco era uma forma de tomar a terra do vizinho.",
+			"bible_note": "Deuteronômio 19:14 proíbe mudar o marco de divisa do próximo.",
+			"references": ["Deut 19:14", "Prov 22:28"],
+			"sections": [
+				{"kind": "historical", "title": "Terra e herança", "text": "Numa sociedade agrícola, a terra sustentava a família por gerações. Marcos de divisa protegiam essa herança."},
+				{"kind": "biblical_text", "title": "No texto", "text": "A lei proíbe deslocar o marco do vizinho (Dt 19:14), e Provérbios repete o conselho de não remover os marcos antigos (Pv 22:28)."}
+			],
+			"related": {"people": [], "places": [], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências conferidas pelo agente de IA; aguarda revisão humana."}
+		},
+		{
+			"id": "land_of_canaan",
+			"title": "A terra de Canaã",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "patriarchs",
+			"summary": "Canaã é o nome antigo da terra entre o Jordão e o Mediterrâneo, o cenário principal das narrativas dos patriarcas.",
+			"bible_note": "Gênesis 12:5-6 narra a chegada de Abrão à terra de Canaã.",
+			"references": ["Gen 12:5-6", "Gen 17:8"],
+			"sections": [
+				{"kind": "historical", "title": "Geografia", "text": "Colinas, vales férteis, o deserto do Neguebe ao sul e o vale do Jordão a leste. As chuvas vêm no inverno, e os verões são secos."},
+				{"kind": "biblical_text", "title": "No texto", "text": "Abrão parte de Harã com sua família e chega a Canaã, passando por Siquém (Gn 12:5-6). A terra é prometida à sua descendência (Gn 17:8)."},
+				{"kind": "fiction", "title": "A aldeia do jogo", "text": "A aldeia que você explora é fictícia, criada para mostrar o cotidiano da região. Não é um lugar descrito na Bíblia."}
+			],
+			"related": {"people": ["abraham"], "places": ["canaan", "canaan_village"], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências conferidas pelo agente de IA; aguarda revisão humana."}
+		},
+		{
+			"id": "dothan_valley",
+			"title": "Dotã e seus pastos",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "Dotã aparece em Gênesis 37:17 como o lugar onde José encontrou os irmãos, que tinham ido para lá com o rebanho. O lugar costuma ser identificado com Tel Dotã, uma colina ao norte de Siquém, junto a um vale de pastagens.",
+			"bible_note": "Gênesis 37:17: José foi atrás dos irmãos e os encontrou em Dotã.",
+			"references": ["Gen 37:12-17", "2Kgs 6:13"],
+			"sections": [
+				{"kind": "biblical_text", "title": "No relato de José", "text": "Os irmãos de José tinham levado o rebanho do pai para Siquém. Um homem que encontrou José no campo disse tê-los ouvido falar em ir a Dotã, e José os encontrou lá (Gn 37:12-17)."},
+				{"kind": "historical", "title": "Tel Dotã", "text": "A identificação de Dotã com Tel Dotã, uma colina ao norte de Siquém, é amplamente aceita. Escavações no local mostram que ele foi habitado em muitas épocas antigas; como era o lugar nos dias de José, não se sabe. O vale ao redor tem terra boa para pasto e fica numa passagem natural entre a serra e as planícies do norte."},
+				{"kind": "chronology", "title": "Dotã em outra época", "text": "Séculos depois, no tempo do profeta Eliseu, Dotã aparece de novo: o rei da Síria é informado de que Eliseu está em Dotã (2Rs 6:13). É outra época e outro relato."},
+				{"kind": "fiction", "title": "Os pastos do jogo", "text": "Os campos, as tendas, Rafi e as famílias de pastores são criações do jogo, inspiradas na região. A cisterna do mapa é uma cisterna comum de pastores, não a do relato de José."}
+			],
+			"related": {"people": ["joseph"], "places": ["dothan", "shechem"], "events": [], "stories": ["gen_037_joseph_sold"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências conferidas no arquivo oficial da BPM pelo agente de IA. Afirmações arqueológicas aguardam o revisor histórico e revisão humana."}
+		},
+		{
+			"id": "ancient_travel",
+			"title": "Viajar na Antiguidade",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "Viajar a pé exigia levar água, pão e alimentos que não estragassem, como frutas secas, e planejar as paradas onde houvesse poço ou fonte. A troca de mercadorias era comum; ainda não havia moedas cunhadas.",
+			"bible_note": "Gênesis 21:14 conta que Abraão deu pão e um odre de água a Hagar (Agar) antes de ela partir.",
+			"references": ["Gen 21:14", "Gen 23:16", "1Sam 25:18", "Josh 9:4-5", "Gen 42:25"],
+			"sections": [
+				{"kind": "historical", "title": "Odres e provisões", "text": "Odres eram feitos de couro, geralmente de cabra, e guardavam água, leite ou vinho. Pão, grão tostado, passas e figos secos aguentavam vários dias de caminho."},
+				{"kind": "biblical_text", "title": "Provisões nos relatos", "text": "Abraão dá pão e um odre de água a Hagar (Gn 21:14). Abigail leva pães, odres de vinho, grão tostado, passas e bolos de figos a Davi (1Sm 25:18). Os gibeonitas fingem ter feito uma longa viagem, com odres rompidos e pão seco e mofado (Js 9:4-5). José manda dar comida para o caminho aos irmãos (Gn 42:25)."},
+				{"kind": "chronology", "title": "Épocas diferentes", "text": "Hagar e José pertencem à época dos patriarcas; os gibeonitas, à época de Josué, depois do Êxodo; Abigail, à época de Davi."},
+				{"kind": "historical", "title": "Troca, não moeda", "text": "Moedas cunhadas só surgem muitos séculos depois da época dos patriarcas. Antes, trocavam-se mercadorias e serviços; às vezes se pesava prata (Abraão pesa a prata segundo o peso corrente entre os mercadores, Gn 23:16)."},
+				{"kind": "fiction", "title": "Na estrada do jogo", "text": "Malik e as trocas com ele são criações do jogo. O nome \"Caminho das Caravanas\" também foi criado para o jogo: não sabemos como os antigos chamavam esta estrada."}
+			],
+			"related": {"people": ["abraham", "joseph", "david"], "places": [], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências conferidas no arquivo oficial da BPM pelo agente de IA. Contexto histórico aguarda o revisor histórico e revisão humana."}
+		},
+		{
+			"id": "sharing_in_need",
+			"title": "Quando falta para todos",
+			"classification": "devotional_educational",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "As duas famílias de Dotã e a decisão sobre o cesto são criações do jogo, e nenhum desfecho é apresentado como a resposta da Bíblia. Mas o tema de recursos limitados entre pastores também aparece nos relatos dos patriarcas.",
+			"bible_note": "Gênesis 13:5-9: quando a terra não sustentava os rebanhos de Abrão e Ló, Abrão procurou evitar a contenda entre os pastores.",
+			"references": ["Gen 13:5-9", "Prov 3:27-28"],
+			"sections": [
+				{"kind": "fiction", "title": "Uma escolha do jogo", "text": "Talia, Oren e Rafi são personagens fictícios. A decisão que você tomou muda apenas a história deles no jogo e não tem relação com o relato de José."},
+				{"kind": "biblical_text", "title": "Abrão e Ló", "text": "Os rebanhos de Abrão e Ló eram tantos que a terra não sustentava os dois juntos, e houve contenda entre os pastores. Abrão propôs que não houvesse briga, pois eram parentes, e deixou Ló escolher para que lado ir (Gn 13:5-9). A solução do relato foi a separação, não a partilha de provisões."},
+				{"kind": "chronology", "title": "Textos de outras épocas", "text": "O relato de Abrão e Ló é da época de Abrão, antes de José. Séculos depois, o livro de Provérbios (época da monarquia ou posterior; datação debatida) diria para não negar o bem a quem ele é devido, quando se pode fazê-lo, e não mandar o próximo voltar amanhã quando se tem o que ele precisa (Pv 3:27-28). Os pastores do jogo, na época dos patriarcas, não conheciam esse texto."}
+			],
+			"related": {"people": ["abraham"], "places": [], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências e contexto conferidos no arquivo oficial da BPM pelo agente de IA (pesquisa research_missions_v04.md, seção B). Aguarda revisão humana: decidir se a analogia com Gn 13 serve."}
+		},
+		{
+			"id": "joseph_search",
+			"title": "José procura os irmãos",
+			"classification": "recorded_event",
+			"presentation": "toast",
+			"era_id": "patriarchs",
+			"summary": "Israel (Jacó) envia José para ver se está tudo bem com os irmãos e com o rebanho. Perto de Siquém, um homem o encontra vagando pelo campo e diz tê-los ouvido falar em ir a Dotã; José os encontra lá.",
+			"bible_note": "Gênesis 37:12-17.",
+			"references": ["Gen 37:12-17"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que o texto diz", "text": "Os irmãos apascentam o rebanho do pai em Siquém (v. 12). Israel envia José, que responde 'Eis-me aqui', para ver se está tudo bem e trazer notícias; José sai do vale de Hebrom e chega a Siquém (v. 13-14). Um homem o encontra vagando pelo campo, e José pergunta onde os irmãos estão apascentando. O homem diz tê-los ouvido falar em ir a Dotã, e José os encontra lá (v. 15-17)."},
+				{"kind": "interpretation", "title": "O que o texto não diz", "text": "O relato não diz quem era o homem do campo, nem quanto durou a viagem. Tradições posteriores identificam o homem de várias formas; o jogo não decide."},
+				{"kind": "fiction", "title": "O viajante", "text": "O seu personagem não encontra José, não o acompanha e não é o homem do campo. O caminho até Dotã é uma viagem própria, por motivos do jogo."}
+			],
+			"related": {"people": ["joseph", "jacob"], "places": ["shechem", "dothan"], "events": [], "stories": ["gen_037_joseph_sold"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumo próprio conferido com Gn 37:12-17 no arquivo oficial da BPM pelo agente de IA. Aguarda revisão humana."}
+		}
+	]
+}

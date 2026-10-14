@@ -1,0 +1,145 @@
+{
+	"_comment": "Lugares do diário. identification: established (identificação amplamente aceita) | probable | debated | fictional. Resumos escritos para o jogo.",
+	"places": [
+		{
+			"id": "canaan",
+			"name": "Canaã",
+			"kind": "região",
+			"identification": "established",
+			"eras": ["patriarchs", "exodus", "judges"],
+			"references": ["Gen 12:5-6", "Gen 17:8", "Num 34:2"],
+			"description": "Nome antigo da terra entre o rio Jordão e o mar Mediterrâneo. Nas narrativas dos patriarcas, é a terra para onde Abraão segue e onde vivem seus descendentes. Região de colinas, vales e chuvas concentradas no inverno, com verões secos.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "canaan_village",
+			"name": "Aldeia em Canaã (fictícia)",
+			"kind": "aldeia",
+			"identification": "fictional",
+			"eras": ["patriarchs"],
+			"references": [],
+			"description": "Aldeia criada para o jogo, inspirada no cotidiano das comunidades antigas de Canaã: casas de pedra e barro, tendas, poço, forno, olival e rebanhos. Não é um lugar descrito na Bíblia.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Conteúdo fictício identificado como tal."}
+		},
+		{
+			"id": "gerar",
+			"name": "Gerar",
+			"kind": "cidade",
+			"identification": "probable",
+			"eras": ["patriarchs"],
+			"references": ["Gen 20:1", "Gen 26:1", "Gen 26:17-22"],
+			"description": "Cidade no sul de Canaã, ligada a Abraão e a Isaque. Em Gênesis 26, Isaque vive ali e cava poços no vale de Gerar. A localização é muitas vezes associada a Tel Haror, no oeste do Neguebe, mas a identificação não é definitiva.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "beersheba",
+			"name": "Berseba",
+			"kind": "cidade",
+			"identification": "probable",
+			"eras": ["patriarchs", "divided_kingdom"],
+			"references": ["Gen 21:31", "Gen 26:23", "Gen 26:32-33"],
+			"description": "Lugar no Neguebe ligado a poços e a acordos de Abraão e de Isaque com Abimeleque. O nome é explicado no texto a partir de um juramento e de um poço. O sítio antigo de Tel Berseba é a identificação mais comum para a cidade de épocas posteriores.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "shechem",
+			"name": "Siquém",
+			"kind": "cidade",
+			"identification": "established",
+			"eras": ["patriarchs", "judges"],
+			"references": ["Gen 12:6", "Gen 33:18", "Gen 37:12-14"],
+			"description": "Cidade na região montanhosa central, entre os montes Ebal e Gerizim. Abraão passa por ali, Jacó acampa perto da cidade, e os irmãos de José apascentam o rebanho na região. Identificada com Tell Balata, perto da atual Nablus.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "dothan",
+			"name": "Dotã",
+			"kind": "cidade",
+			"identification": "established",
+			"eras": ["patriarchs", "divided_kingdom"],
+			"references": ["Gen 37:17", "2Kgs 6:13"],
+			"description": "Lugar ao norte de Siquém, perto de passagens usadas por viajantes. Ali José encontra os irmãos (Gn 37:17). Identificação amplamente aceita: Tell Dothan.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "egypt",
+			"name": "Egito",
+			"kind": "país",
+			"identification": "established",
+			"eras": ["patriarchs", "exodus"],
+			"references": ["Gen 12:10", "Gen 37:28", "Exod 1:11"],
+			"description": "Grande civilização às margens do Nilo. Nas narrativas bíblicas é destino de quem foge da fome, lugar onde José é levado e de onde Israel sai no Êxodo.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "jordan_river",
+			"name": "Rio Jordão",
+			"kind": "rio",
+			"identification": "established",
+			"eras": ["patriarchs", "exodus", "jesus_ministry"],
+			"references": ["Gen 13:10", "Josh 3:17", "Matt 3:13"],
+			"description": "Rio que desce do norte até o mar Morto. Aparece desde as narrativas de Ló até a travessia de Israel com Josué e o batismo de Jesus por João.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "jerusalem",
+			"name": "Jerusalém",
+			"kind": "cidade",
+			"identification": "established",
+			"eras": ["united_monarchy", "divided_kingdom", "persian", "roman_judea"],
+			"references": ["2Sam 5:6-7", "2Kgs 25:8-10", "Luke 19:41"],
+			"description": "Conquistada por Davi e escolhida como capital, depois sede do Templo. Foi destruída pelos babilônios, reconstruída no período persa e destruída novamente pelos romanos em 70 d.C.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "bethlehem",
+			"name": "Belém",
+			"kind": "cidade",
+			"identification": "established",
+			"eras": ["judges", "united_monarchy", "roman_judea"],
+			"references": ["Ruth 1:1", "1Sam 16:1", "Luke 2:4"],
+			"description": "Pequena cidade da Judeia ao sul de Jerusalém. Cenário do livro de Rute, terra de Davi e, segundo os evangelhos, lugar do nascimento de Jesus.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "nazareth",
+			"name": "Nazaré",
+			"kind": "aldeia",
+			"identification": "established",
+			"eras": ["roman_judea", "jesus_ministry"],
+			"references": ["Luke 1:26", "Matt 2:23", "Luke 4:16"],
+			"description": "Aldeia da Galileia onde Jesus cresceu. Não é mencionada no Antigo Testamento.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "galilee",
+			"name": "Galileia",
+			"kind": "região",
+			"identification": "established",
+			"eras": ["roman_judea", "jesus_ministry"],
+			"references": ["Matt 4:23", "Mark 1:14"],
+			"description": "Região do norte, ao redor do mar da Galileia, onde se concentra boa parte do ministério de Jesus segundo os evangelhos.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "babylon",
+			"name": "Babilônia",
+			"kind": "cidade",
+			"identification": "established",
+			"eras": ["babylonian_exile", "persian"],
+			"references": ["2Kgs 24:15", "Dan 1:1"],
+			"description": "Capital do império babilônico, às margens do Eufrates, no atual Iraque. Para lá foram levados exilados de Judá.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "nineveh",
+			"name": "Nínive",
+			"kind": "cidade",
+			"identification": "established",
+			"eras": ["divided_kingdom"],
+			"references": ["Jonah 1:2", "Jonah 3:3", "Nah 1:1"],
+			"description": "Grande cidade da Assíria, à beira do rio Tigre, perto da atual Mossul. Destino da mensagem de Jonas e tema do livro de Naum.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		}
+	]
+}

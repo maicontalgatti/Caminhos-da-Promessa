@@ -1,0 +1,78 @@
+{
+	"_comment": "Mapa das Escrituras: experiências jogáveis agrupadas por época. O jogador não caminha entre épocas; a passagem é narrativa e identificada. status 'planned' = em planejamento (aparece, mas não é jogável). Sem datas exatas para cronologias debatidas.",
+	"eras": [
+		{"id": "patriarchs", "label": "Patriarcas", "chronology_era": "patriarchs"},
+		{"id": "exodus", "label": "Êxodo", "chronology_era": "exodus"},
+		{"id": "judges", "label": "Juízes", "chronology_era": "judges"},
+		{"id": "first_century", "label": "Século I", "chronology_era": "roman_judea"}
+	],
+	"experiences": [
+		{
+			"id": "isaac_wells",
+			"era": "patriarchs",
+			"title": "Os poços de Isaque",
+			"references": ["Gen 26:18-22"],
+			"place": "Aldeia em Canaã",
+			"status": "available",
+			"completed_by": "canaan_wells",
+			"active_with_quest": true,
+			"summary": "Na aldeia, a vida gira em torno do poço. O diário do viajante traz o relato de Isaque reabrindo os poços de seu pai."
+		},
+		{
+			"id": "joseph_dothan",
+			"era": "patriarchs",
+			"title": "José em Dotã",
+			"references": ["Gen 37:12-17"],
+			"place": "Aldeia em Canaã, Caminho das Caravanas e Dotã",
+			"status": "available",
+			"requires": {"quest_completed": "canaan_wells"},
+			"locked_text": "Explore primeiro \"Os poços de Isaque\" para abrir esta experiência.",
+			"completed_by": "joseph_dothan_road",
+			"summary": "Os irmãos de José levaram o rebanho para pastos distantes. Siga o caminho que leva até Dotã.",
+			"passage": {
+				"title": "OUTRO MOMENTO DA HISTÓRIA",
+				"lines": [
+					"Dos poços de Isaque (Gênesis 26) para os dias de José (Gênesis 37): José é neto de Isaque, e o relato de Gênesis 37 acontece décadas depois, na geração dos netos. Não é a mesma semana, e o texto não diz diretamente quanto tempo separa os dois relatos.",
+					"Gênesis 37:12 conta que os irmãos de José levaram o rebanho do pai para pastar em Siquém. Você seguirá por conta própria um caminho para o norte, até os pastos de Dotã, sem cruzar com José nem mudar o que o relato conta.",
+					"O viajante é um personagem fictício: o Mapa das Escrituras o leva de um relato a outro como quem vira as páginas de um livro, sem que ele envelheça. A aldeia e seus moradores também são fictícios: servem de cenário típico em mais de um momento."
+				]
+			}
+		},
+		{
+			"id": "joseph_egypt",
+			"era": "patriarchs",
+			"title": "José no Egito",
+			"references": ["Gen 39:1-6"],
+			"place": "Caminho para o Egito · Egito de José",
+			"status": "planned",
+			"summary": "Em planejamento: a rota das caravanas até o Egito e a casa de Potifar."
+		},
+		{
+			"id": "exodus_sea",
+			"era": "exodus",
+			"title": "A travessia do mar",
+			"references": ["Exod 14:21-22"],
+			"place": "Junto ao mar",
+			"status": "planned",
+			"summary": "Em planejamento."
+		},
+		{
+			"id": "ruth_bethlehem",
+			"era": "judges",
+			"title": "Rute em Belém",
+			"references": ["Ruth 2:1-3"],
+			"place": "Belém · Campos de Boaz",
+			"status": "planned",
+			"summary": "Em planejamento: a chegada de Noemi e Rute a Belém e a respiga nos campos de Boaz."
+		},
+		{
+			"id": "shepherds_bethlehem",
+			"era": "first_century",
+			"title": "Os pastores de Belém",
+			"references": ["Luke 2:8-12"],
+			"place": "Campos de Belém",
+			"status": "planned",
+			"summary": "Em planejamento."
+		}
+	]
+}

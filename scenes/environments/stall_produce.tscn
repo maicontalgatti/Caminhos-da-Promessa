@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/stall_produce.png" id="1_7vyxy"]
+[ext_resource type="Script" path="res://scripts/interaction/interactable.gd" id="2_1obya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmjb1"]
+size = Vector2(40, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jgd5q"]
+radius = 12.0
+
+[node name="StallProduce" type="StaticBody2D" unique_id=928236629]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1529094793]
+texture = ExtResource("1_7vyxy")
+centered = false
+offset = Vector2(-22, -38)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1954983133]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_qmjb1")
+
+[node name="Interactable" type="Area2D" parent="." unique_id=1208532452]
+position = Vector2(4, -2)
+script = ExtResource("2_1obya")
+dialogue_id = "stall_produce_examine"
+prompt_offset = Vector2(0, -38)
+
+[node name="Shape" type="CollisionShape2D" parent="Interactable" unique_id=1669932404]
+shape = SubResource("CircleShape2D_jgd5q")

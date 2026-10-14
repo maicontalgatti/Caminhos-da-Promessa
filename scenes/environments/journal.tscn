@@ -1,0 +1,47 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/journal.png" id="1_j4fpg"]
+[ext_resource type="Script" path="res://scripts/interaction/interactable.gd" id="2_j4ib7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hswrf"]
+size = Vector2(12, 4)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_427da"]
+radius = 12.0
+
+[sub_resource type="Gradient" id="Gradient_u171a"]
+colors = PackedColorArray(1, 0.9529412, 0.76862746, 1, 0.79, 0.64, 0.15, 0)
+
+[node name="Journal" type="StaticBody2D" unique_id=1747553664]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1345828210]
+texture = ExtResource("1_j4fpg")
+centered = false
+offset = Vector2(-8, -11)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2033450060]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_hswrf")
+
+[node name="Interactable" type="Area2D" parent="." unique_id=406766174]
+position = Vector2(0, -4)
+script = ExtResource("2_j4ib7")
+kind = 2
+dialogue_id = "journal_intro"
+prompt_text = "Ler diário"
+prompt_offset = Vector2(0, -12)
+
+[node name="Shape" type="CollisionShape2D" parent="Interactable" unique_id=1045669032]
+shape = SubResource("CircleShape2D_427da")
+
+[node name="Particles" type="CPUParticles2D" parent="." unique_id=1299237982]
+position = Vector2(0, -6)
+amount = 3
+lifetime = 1.4
+emission_shape = 3
+emission_rect_extents = Vector2(5, 2)
+direction = Vector2(0, -1)
+gravity = Vector2(0, -4)
+initial_velocity_max = 2.0
+color_ramp = SubResource("Gradient_u171a")

@@ -1,0 +1,5924 @@
+{
+	"_comment": "Catálogo de produção da fábrica de missões. Gerado por tools/factory.gd a partir do catálogo-semente; o campo status só muda por 'factory set-status' (gates). Nada aqui é conteúdo publicado.",
+	"seed": "res://production/catalog/seed_catalog_v0.1.json",
+	"statuses": [
+		"idea",
+		"researched",
+		"designed",
+		"awaiting_biblical_review",
+		"awaiting_historical_review",
+		"approved_for_implementation",
+		"implemented",
+		"tested",
+		"published",
+		"blocked"
+	],
+	"episodes": [
+		{
+			"id": "ep_001_a_criacao_e_o_cuidado",
+			"title": "A criação e o cuidado",
+			"testament": "AT",
+			"book_name": "Gênesis",
+			"book": "Gen",
+			"reference_raw": "1–2",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Gen",
+					"from": 1.0,
+					"to": 2.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "exploracao_educativa",
+			"learning_goal": "Criação, dignidade e responsabilidade humana",
+			"region_or_context": "Painel narrativo: criação",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "creation_gallery",
+					"description": "Percorrer o painel artístico da criação",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "creation_elements",
+					"description": "Identificar elementos retratados no texto",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "creation_stewardship",
+					"description": "Desbloquear o estudo sobre cuidado e responsabilidade",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_001_a_criacao_e_o_cuidado",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_002_noe_e_a_arca",
+			"title": "Noé e a arca",
+			"testament": "AT",
+			"book_name": "Gênesis",
+			"book": "Gen",
+			"reference_raw": "6–9",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Gen",
+					"from": 6.0,
+					"to": 9.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Juízo, aliança e o sinal do arco-íris",
+			"region_or_context": "Mundo de Noé (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "talk_npc",
+					"target_id": "fictional_carpenter",
+					"description": "Conhecer uma oficina fictícia de construção",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "ark_plan",
+					"description": "Explorar informações textuais sobre a arca",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "rainbow_covenant",
+					"description": "Presenciar uma representação do sinal da aliança",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_002_noe_e_a_arca",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_003_a_torre_de_babel",
+			"title": "A torre de Babel",
+			"testament": "AT",
+			"book_name": "Gênesis",
+			"book": "Gen",
+			"reference_raw": "11:1–9",
+			"references": [
+				"Gen 11:1-9"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Dispersão, línguas e limites da soberba",
+			"region_or_context": "Sinar (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "babel_settlement",
+					"description": "Explorar o assentamento",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "construction_site",
+					"description": "Conhecer o projeto da torre",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "languages_divided",
+					"description": "Acompanhar a mudança de línguas sem alterar o desfecho",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_003_a_torre_de_babel",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_004_o_chamado_de_abrao",
+			"title": "O chamado de Abrão",
+			"testament": "AT",
+			"book_name": "Gênesis",
+			"book": "Gen",
+			"reference_raw": "12:1–9",
+			"references": [
+				"Gen 12:1-9"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Chamado, jornada e promessa",
+			"region_or_context": "Caminhos de Canaã",
+			"region": "canaan_village",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "travel_route",
+					"description": "Analisar a rota da jornada",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "talk_npc",
+					"target_id": "fictional_traveler",
+					"description": "Conversar sobre deslocamentos antigos",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "abram_departure",
+					"description": "Conhecer o relato da partida de Abrão",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_004_o_chamado_de_abrao",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"observe_scene"
+				],
+				"region_exists": true,
+				"new_map_needed": false,
+				"difficulty": "low"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_005_a_hospitalidade_de_abraao",
+			"title": "A hospitalidade de Abraão",
+			"testament": "AT",
+			"book_name": "Gênesis",
+			"book": "Gen",
+			"reference_raw": "18:1–15",
+			"references": [
+				"Gen 18:1-15"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Hospitalidade e promessa",
+			"region_or_context": "Carvalhais de Manre (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "encampment",
+					"description": "Explorar o acampamento",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "hospitality_items",
+					"description": "Examinar costumes de acolhimento",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "abraham_visitors",
+					"description": "Acompanhar o relato dos visitantes sem substituí-los",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_005_a_hospitalidade_de_abraao",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_006_a_importancia_dos_pocos",
+			"title": "A importância dos poços",
+			"testament": "AT",
+			"book_name": "Gênesis",
+			"book": "Gen",
+			"reference_raw": "26:18–22",
+			"references": [
+				"Gen 26:18-22"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ficcao_contextual",
+			"learning_goal": "Água, conflitos e convivência",
+			"region_or_context": "Canaã — aldeia fictícia",
+			"region": "canaan_village",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "talk_npc",
+					"target_id": "adina",
+					"description": "Conversar com Adina sobre a água",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "village_well",
+					"description": "Examinar o poço e a descoberta bíblica",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "talk_npc",
+					"target_id": "ezer",
+					"description": "Conversar com Ezer sobre os conflitos por poços",
+					"target_state": "placeholder",
+					"support": "data_only"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_006_a_importancia_dos_pocos",
+			"estimate": {
+				"mechanics": "data_only",
+				"events_needing_work": [],
+				"region_exists": true,
+				"new_map_needed": false,
+				"difficulty": "low"
+			},
+			"status": "tested",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				},
+				{
+					"status": "researched",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Pesquisas bíblica e histórica de agentes (pending_review)"
+				},
+				{
+					"status": "designed",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "design.md + quest.proposal.json do quest-designer"
+				},
+				{
+					"status": "awaiting_biblical_review",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Propostas de diálogo e descobertas do dialogue-writer"
+				},
+				{
+					"status": "awaiting_historical_review",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Revisão bíblica independente: ok_for_human_review, 10 menores"
+				},
+				{
+					"status": "approved_for_implementation",
+					"date": "2026-10-14",
+					"by": "orquestrador",
+					"note": "vereditos biblico e historico ok_for_human_review apos reconferencia"
+				},
+				{
+					"status": "implemented",
+					"date": "2026-10-14",
+					"by": "orquestrador",
+					"note": "conteudo integrado em data/ no ciclo da fabrica"
+				},
+				{
+					"status": "tested",
+					"date": "2026-10-14",
+					"by": "orquestrador",
+					"note": ""
+				}
+			],
+			"game": {
+				"quest_id": "canaan_wells",
+				"dialogues": [
+					"journal_intro",
+					"well_examine",
+					"adina_talk",
+					"ari_talk",
+					"ezer_talk"
+				],
+				"presentations": [
+					"gen_026_wells"
+				],
+				"discoveries": [
+					"shepherding_water",
+					"wells_antiquity",
+					"pottery_jars",
+					"isaac_wells"
+				]
+			},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_007_o_sonho_de_jaco",
+			"title": "O sonho de Jacó",
+			"testament": "AT",
+			"book_name": "Gênesis",
+			"book": "Gen",
+			"reference_raw": "28:10–22",
+			"references": [
+				"Gen 28:10-22"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "A experiência de Jacó e a promessa",
+			"region_or_context": "Betel (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "travel_stone",
+					"description": "Investigar a paisagem da viagem",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "observe_scene",
+					"target_id": "jacob_dream",
+					"description": "Assistir à representação do sonho de Jacó",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "jacob_promise",
+					"description": "Desbloquear o contexto do relato",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_007_o_sonho_de_jaco",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"observe_scene",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_008_jose_e_seus_irmaos",
+			"title": "José e seus irmãos",
+			"testament": "AT",
+			"book_name": "Gênesis",
+			"book": "Gen",
+			"reference_raw": "37:12–36",
+			"references": [
+				"Gen 37:12-36"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Inveja, sofrimento e trajetória de José",
+			"region_or_context": "Região de Dotã (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "dothan_fields",
+					"description": "Conhecer os campos de pastoreio",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "trade_caravan",
+					"description": "Investigar comércio e caravanas",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "joseph_sold",
+					"description": "Acompanhar o relato sem libertar José ou mudar a venda",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_008_jose_e_seus_irmaos",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_009_jose_na_casa_de_potifar",
+			"title": "José na casa de Potifar",
+			"testament": "AT",
+			"book_name": "Gênesis",
+			"book": "Gen",
+			"reference_raw": "39:1–23",
+			"references": [
+				"Gen 39:1-23"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Integridade diante da injustiça",
+			"region_or_context": "Egito (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "egyptian_house",
+					"description": "Explorar um ambiente doméstico contextual",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "household_records",
+					"description": "Conhecer funções administrativas antigas",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "joseph_imprisoned",
+					"description": "Acompanhar a prisão sem alterar o relato",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_009_jose_na_casa_de_potifar",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_010_os_sonhos_na_prisao",
+			"title": "Os sonhos na prisão",
+			"testament": "AT",
+			"book_name": "Gênesis",
+			"book": "Gen",
+			"reference_raw": "40:1–23",
+			"references": [
+				"Gen 40:1-23"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Sonhos, memória e espera",
+			"region_or_context": "Prisão egípcia (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "talk_npc",
+					"target_id": "fictional_guard",
+					"description": "Conhecer as condições de prisão na recriação",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "dream_records",
+					"description": "Investigar os sonhos relatados",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "joseph_interprets",
+					"description": "Conhecer as interpretações dadas por José",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_010_os_sonhos_na_prisao",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_011_jose_e_o_tempo_de_fartura",
+			"title": "José e o tempo de fartura",
+			"testament": "AT",
+			"book_name": "Gênesis",
+			"book": "Gen",
+			"reference_raw": "41:1–57",
+			"references": [
+				"Gen 41:1-57"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ficcao_contextual",
+			"learning_goal": "Prudência, administração e preparação",
+			"region_or_context": "Egito — armazéns",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "grain_store",
+					"description": "Conhecer armazenagem de grãos",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "organize",
+					"target_id": "supplies_demo",
+					"description": "Organizar um estoque fictício de demonstração",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "joseph_governor",
+					"description": "Conhecer a ascensão de José no relato",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_011_jose_e_o_tempo_de_fartura",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"organize",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_012_a_reconciliacao_da_familia",
+			"title": "A reconciliação da família",
+			"testament": "AT",
+			"book_name": "Gênesis",
+			"book": "Gen",
+			"reference_raw": "42–45",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Gen",
+					"from": 42.0,
+					"to": 45.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Reconciliação e perdão",
+			"region_or_context": "Egito (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "grain_market",
+					"description": "Explorar a busca de alimento",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "brothers_journey",
+					"description": "Organizar os acontecimentos da jornada",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "joseph_reveals",
+					"description": "Acompanhar o reencontro sem substituir personagens",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_012_a_reconciliacao_da_familia",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"assemble_clues",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_013_moises_e_o_cesto",
+			"title": "Moisés e o cesto",
+			"testament": "AT",
+			"book_name": "Êxodo",
+			"book": "Exod",
+			"reference_raw": "2:1–10",
+			"references": [
+				"Exod 2:1-10"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Proteção e contexto do nascimento de Moisés",
+			"region_or_context": "Margens do Nilo (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "nile_bank",
+					"description": "Explorar as margens do Nilo",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "reed_basket",
+					"description": "Conhecer materiais empregados em cestos",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "moses_found",
+					"description": "Acompanhar o relato da filha de Faraó",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_013_moises_e_o_cesto",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_014_a_sarca_ardente",
+			"title": "A sarça ardente",
+			"testament": "AT",
+			"book_name": "Êxodo",
+			"book": "Exod",
+			"reference_raw": "3:1–12",
+			"references": [
+				"Exod 3:1-12"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Vocação de Moisés e santidade",
+			"region_or_context": "Monte Horebe (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "horeb_trail",
+					"description": "Explorar o caminho de pastoreio",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "shepherd_staff",
+					"description": "Conhecer o cajado e o trabalho pastoral",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "burning_bush",
+					"description": "Assistir à representação com reverência, sem assumir o papel de Deus",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_014_a_sarca_ardente",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_015_a_primeira_pascoa",
+			"title": "A primeira Páscoa",
+			"testament": "AT",
+			"book_name": "Êxodo",
+			"book": "Exod",
+			"reference_raw": "12:1–28",
+			"references": [
+				"Exod 12:1-28"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "exploracao_educativa",
+			"learning_goal": "Libertação e significado da Páscoa no Êxodo",
+			"region_or_context": "Egito — casas (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "passover_symbols",
+					"description": "Examinar símbolos da instrução bíblica",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "passover_sequence",
+					"description": "Organizar a sequência textual dos acontecimentos",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "exodus_passover",
+					"description": "Consultar Êxodo 12 no diário",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_015_a_primeira_pascoa",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_016_a_travessia_do_mar",
+			"title": "A travessia do mar",
+			"testament": "AT",
+			"book_name": "Êxodo",
+			"book": "Exod",
+			"reference_raw": "14:1–31",
+			"references": [
+				"Exod 14:1-31"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Libertação e travessia",
+			"region_or_context": "Caminho do Êxodo (representação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "shore_encampment",
+					"description": "Explorar o acampamento",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "talk_npc",
+					"target_id": "fictional_traveler_exodus",
+					"description": "Conhecer o contexto do deslocamento",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "sea_parted",
+					"description": "Acompanhar a abertura do mar atribuída a Deus",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_016_a_travessia_do_mar",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_017_o_mana_no_deserto",
+			"title": "O maná no deserto",
+			"testament": "AT",
+			"book_name": "Êxodo",
+			"book": "Exod",
+			"reference_raw": "16:1–36",
+			"references": [
+				"Exod 16:1-36"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ficcao_contextual",
+			"learning_goal": "Provisão e orientações sobre o maná",
+			"region_or_context": "Deserto do Êxodo (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "talk_npc",
+					"target_id": "fictional_family",
+					"description": "Ouvir as necessidades de uma família fictícia",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "manna_reference",
+					"description": "Examinar a passagem sobre coleta e armazenamento",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "assemble_clues",
+					"target_id": "manna_guidelines",
+					"description": "Relacionar instruções com o relato",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_017_o_mana_no_deserto",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_018_o_sinai_e_os_mandamentos",
+			"title": "O Sinai e os mandamentos",
+			"testament": "AT",
+			"book_name": "Êxodo",
+			"book": "Exod",
+			"reference_raw": "19–20",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Exod",
+					"from": 19.0,
+					"to": 20.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Aliança e mandamentos",
+			"region_or_context": "Sinai (representação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "sinai_camp",
+					"description": "Explorar o acampamento",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "camp_boundaries",
+					"description": "Conhecer as instruções e limites do texto",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "ten_commandments",
+					"description": "Consultar o conteúdo de Êxodo 20",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_018_o_sinai_e_os_mandamentos",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_019_a_construcao_do_tabernaculo",
+			"title": "A construção do tabernáculo",
+			"testament": "AT",
+			"book_name": "Êxodo",
+			"book": "Exod",
+			"reference_raw": "35–40",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Exod",
+					"from": 35.0,
+					"to": 40.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "ficcao_contextual",
+			"learning_goal": "Contribuições, artesanato e culto",
+			"region_or_context": "Acampamento de Israel (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "tabernacle_materials",
+					"description": "Investigar materiais descritos",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "organize",
+					"target_id": "craft_inventory",
+					"description": "Montar um inventário didático",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "tabernacle_completion",
+					"description": "Conhecer a conclusão relatada",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_019_a_construcao_do_tabernaculo",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"organize",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_020_justica_no_cotidiano",
+			"title": "Justiça no cotidiano",
+			"testament": "AT",
+			"book_name": "Levítico",
+			"book": "Lev",
+			"reference_raw": "19:9–18",
+			"references": [
+				"Lev 19:9-18"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ensino_aplicado",
+			"learning_goal": "Responsabilidade social e cuidado com o próximo",
+			"region_or_context": "Aldeia didática (fictícia)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "talk_npc",
+					"target_id": "fictional_farmer",
+					"description": "Conversar sobre a colheita",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "help_npc",
+					"target_id": "fictional_neighbor",
+					"description": "Participar de uma situação ilustrativa de ajuda",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "leviticus_ethics",
+					"description": "Ler o contexto de Levítico 19",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_020_justica_no_cotidiano",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"help_npc",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_021_os_espias_em_canaa",
+			"title": "Os espias em Canaã",
+			"testament": "AT",
+			"book_name": "Números",
+			"book": "Num",
+			"reference_raw": "13–14",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Num",
+					"from": 13.0,
+					"to": 14.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Medo, confiança e consequências",
+			"region_or_context": "Acampamento de Israel (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "canaan_map",
+					"description": "Explorar o mapa regional aproximado",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "spies_reports",
+					"description": "Comparar os relatos dos espias",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "community_response",
+					"description": "Acompanhar a reação da comunidade",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_021_os_espias_em_canaa",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_022_o_ensino_entre_geracoes",
+			"title": "O ensino entre gerações",
+			"testament": "AT",
+			"book_name": "Deuteronômio",
+			"book": "Deut",
+			"reference_raw": "6:4–9",
+			"references": [
+				"Deut 6:4-9"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ensino_aplicado",
+			"learning_goal": "Memória, ensino e fidelidade",
+			"region_or_context": "Tenda familiar didática",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "talk_npc",
+					"target_id": "fictional_family_teacher",
+					"description": "Conversar com um educador fictício",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "family_teaching",
+					"description": "Examinar objetos de ensino contextual",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "deut_shema",
+					"description": "Consultar a passagem e seu contexto",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_022_o_ensino_entre_geracoes",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_023_jerico",
+			"title": "Jericó",
+			"testament": "AT",
+			"book_name": "Josué",
+			"book": "Josh",
+			"reference_raw": "6:1–27",
+			"references": [
+				"Josh 6:1-27"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Relato da conquista e seu contexto",
+			"region_or_context": "Jericó (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "jericho_perimeter",
+					"description": "Explorar um perímetro contextual",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "jericho_city",
+					"description": "Ler o contexto da cidade",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "jericho_event",
+					"description": "Acompanhar o relato sem reescrever a conquista",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_023_jerico",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_024_o_chamado_de_gideao",
+			"title": "O chamado de Gideão",
+			"testament": "AT",
+			"book_name": "Juízes",
+			"book": "Judg",
+			"reference_raw": "6–7",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Judg",
+					"from": 6.0,
+					"to": 7.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Insegurança, chamado e confiança",
+			"region_or_context": "Ofra e arredores (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "gideon_village",
+					"description": "Explorar o ambiente de Gideão",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "gideon_events",
+					"description": "Organizar a sequência do relato",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "gideon_victory",
+					"description": "Acompanhar o desfecho sem substituir Gideão",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_024_o_chamado_de_gideao",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"assemble_clues",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_025_rute_noemi_e_boaz",
+			"title": "Rute, Noemi e Boaz",
+			"testament": "AT",
+			"book_name": "Rute",
+			"book": "Ruth",
+			"reference_raw": "1–4",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Ruth",
+					"from": 1.0,
+					"to": 4.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "ficcao_contextual",
+			"learning_goal": "Lealdade, acolhimento e provisão",
+			"region_or_context": "Belém (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "talk_npc",
+					"target_id": "fictional_harvester",
+					"description": "Conhecer costumes da colheita",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "collect_item",
+					"target_id": "demonstration_ears",
+					"description": "Realizar recolhimento didático em área fictícia",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "ruth_boaz",
+					"description": "Conhecer os principais encontros do relato",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_025_rute_noemi_e_boaz",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"collect_item",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_026_o_chamado_de_samuel",
+			"title": "O chamado de Samuel",
+			"testament": "AT",
+			"book_name": "1 Samuel",
+			"book": "1Sam",
+			"reference_raw": "3:1–21",
+			"references": [
+				"1Sam 3:1-21"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Ouvir, discernir e responder",
+			"region_or_context": "Siló (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "shiloh_courtyard",
+					"description": "Explorar o contexto de Siló",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "lamp_context",
+					"description": "Conhecer objetos do serviço religioso",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "samuel_call",
+					"description": "Acompanhar a chamada de Samuel sem falar em nome de Deus",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_026_o_chamado_de_samuel",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_027_davi_e_golias",
+			"title": "Davi e Golias",
+			"testament": "AT",
+			"book_name": "1 Samuel",
+			"book": "1Sam",
+			"reference_raw": "17:1–58",
+			"references": [
+				"1Sam 17:1-58"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Coragem e confiança",
+			"region_or_context": "Vale de Elá (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "elah_camp",
+					"description": "Visitar o contexto dos acampamentos",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "shepherd_tools",
+					"description": "Examinar equipamentos associados ao pastoreio",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "david_goliath",
+					"description": "Presenciar o confronto sem tomar o lugar de Davi",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_027_davi_e_golias",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_028_davi_e_mefibosete",
+			"title": "Davi e Mefibosete",
+			"testament": "AT",
+			"book_name": "2 Samuel",
+			"book": "2Sam",
+			"reference_raw": "9:1–13",
+			"references": [
+				"2Sam 9:1-13"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Bondade, memória e compromisso",
+			"region_or_context": "Jerusalém (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "royal_household",
+					"description": "Conhecer a organização de uma casa real",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "saul_family",
+					"description": "Examinar a relação entre Davi e a família de Saul",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "mephibosheth_meeting",
+					"description": "Acompanhar o encontro",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_028_davi_e_mefibosete",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_029_a_construcao_do_templo",
+			"title": "A construção do templo",
+			"testament": "AT",
+			"book_name": "1 Reis",
+			"book": "1Kgs",
+			"reference_raw": "6–8",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "1Kgs",
+					"from": 6.0,
+					"to": 8.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "exploracao_educativa",
+			"learning_goal": "O templo e a dedicação",
+			"region_or_context": "Jerusalém — período monárquico",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "temple_plan",
+					"description": "Explorar representações condicionadas ao texto",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "temple_components",
+					"description": "Relacionar elementos descritos",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "temple_dedication",
+					"description": "Acompanhar a dedicação no relato",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_029_a_construcao_do_templo",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_030_elias_no_carmelo",
+			"title": "Elias no Carmelo",
+			"testament": "AT",
+			"book_name": "1 Reis",
+			"book": "1Kgs",
+			"reference_raw": "18:20–46",
+			"references": [
+				"1Kgs 18:20-46"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Confronto profético e fidelidade",
+			"region_or_context": "Monte Carmelo (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "carmel_site",
+					"description": "Explorar o ambiente do Carmelo",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "carmel_sequence",
+					"description": "Organizar os eventos descritos",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "carmel_event",
+					"description": "Acompanhar a narrativa sem intervir no resultado",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_030_elias_no_carmelo",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"assemble_clues",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_031_naama_e_eliseu",
+			"title": "Naamã e Eliseu",
+			"testament": "AT",
+			"book_name": "2 Reis",
+			"book": "2Kgs",
+			"reference_raw": "5:1–19",
+			"references": [
+				"2Kgs 5:1-19"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Humildade e obediência",
+			"region_or_context": "Samaria e rio Jordão (representação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "naaman_route",
+					"description": "Conhecer a viagem de Naamã",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "elisha_instructions",
+					"description": "Identificar as instruções enviadas por Eliseu",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "naaman_healed",
+					"description": "Acompanhar a cura sem substituir Eliseu",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_031_naama_e_eliseu",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_032_o_retorno_e_o_altar",
+			"title": "O retorno e o altar",
+			"testament": "AT",
+			"book_name": "Esdras",
+			"book": "Ezra",
+			"reference_raw": "1–3",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Ezra",
+					"from": 1.0,
+					"to": 3.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "ficcao_contextual",
+			"learning_goal": "Retorno, memória e reconstrução",
+			"region_or_context": "Jerusalém pós-exílio (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "return_decree",
+					"description": "Conhecer a referência ao decreto",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "organize",
+					"target_id": "rebuild_supplies",
+					"description": "Organizar suprimentos em atividade fictícia",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "altar_restored",
+					"description": "Conhecer a reconstituição do altar",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_032_o_retorno_e_o_altar",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"organize",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_033_a_reconstrucao_dos_muros",
+			"title": "A reconstrução dos muros",
+			"testament": "AT",
+			"book_name": "Neemias",
+			"book": "Neh",
+			"reference_raw": "2–6",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Neh",
+					"from": 2.0,
+					"to": 6.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "ficcao_contextual",
+			"learning_goal": "Colaboração, oposição e perseverança",
+			"region_or_context": "Jerusalém pós-exílio (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "wall_plan",
+					"description": "Examinar um plano didático das muralhas",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "organize",
+					"target_id": "work_shifts",
+					"description": "Organizar equipes fictícias de demonstração",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "walls_finished",
+					"description": "Acompanhar a conclusão relatada",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_033_a_reconstrucao_dos_muros",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"organize",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_034_ester_e_a_coragem",
+			"title": "Ester e a coragem",
+			"testament": "AT",
+			"book_name": "Ester",
+			"book": "Esth",
+			"reference_raw": "4–8",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Esth",
+					"from": 4.0,
+					"to": 8.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Coragem e responsabilidade",
+			"region_or_context": "Susã (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "susa_court",
+					"description": "Conhecer a ambientação palaciana",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "esther_story",
+					"description": "Organizar os acontecimentos políticos narrados",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "esther_intercedes",
+					"description": "Acompanhar a intervenção de Ester",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_034_ester_e_a_coragem",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"assemble_clues",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_035_jo_e_as_perguntas_dificeis",
+			"title": "Jó e as perguntas difíceis",
+			"testament": "AT",
+			"book_name": "Jó",
+			"book": "Job",
+			"reference_raw": "1–2; 38–42",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Job",
+					"from": 1.0,
+					"to": 2.0
+				},
+				{
+					"book": "Job",
+					"from": 38.0,
+					"to": 42.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "exploracao_educativa",
+			"learning_goal": "Sofrimento e limites do conhecimento humano",
+			"region_or_context": "Espaço literário sobre Jó",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "job_context",
+					"description": "Conhecer a estrutura literária do livro",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "job_discourses",
+					"description": "Ordenar vozes e capítulos principais",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "job_questions",
+					"description": "Refletir sobre as perguntas centrais sem simplificações",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_035_jo_e_as_perguntas_dificeis",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_036_o_senhor_e_meu_pastor",
+			"title": "O Senhor é meu pastor",
+			"testament": "AT",
+			"book_name": "Salmos",
+			"book": "Ps",
+			"reference_raw": "23",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Ps",
+					"from": 23.0,
+					"to": 23.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "poesia_interativa",
+			"learning_goal": "Imagens de cuidado e confiança",
+			"region_or_context": "Paisagem poética interativa",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "psalm23_landscape",
+					"description": "Explorar uma paisagem literária simbólica",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "psalm23_metaphors",
+					"description": "Relacionar metáforas ao texto",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "psalm23_meaning",
+					"description": "Registrar descoberta literária",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_036_o_senhor_e_meu_pastor",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_037_cantico_de_peregrinacao",
+			"title": "Cântico de peregrinação",
+			"testament": "AT",
+			"book_name": "Salmos",
+			"book": "Ps",
+			"reference_raw": "121",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Ps",
+					"from": 121.0,
+					"to": 121.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "poesia_interativa",
+			"learning_goal": "Socorro e confiança",
+			"region_or_context": "Caminho poético de peregrinos",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "pilgrim_road",
+					"description": "Percorrer a paisagem poética",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "mountain_metaphor",
+					"description": "Examinar a imagem dos montes",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "psalm121",
+					"description": "Consultar o salmo e sua linguagem",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_037_cantico_de_peregrinacao",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_038_os_caminhos_da_sabedoria",
+			"title": "Os caminhos da sabedoria",
+			"testament": "AT",
+			"book_name": "Provérbios",
+			"book": "Prov",
+			"reference_raw": "3:1–12",
+			"references": [
+				"Prov 3:1-12"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ensino_aplicado",
+			"learning_goal": "Prudência e confiança",
+			"region_or_context": "Aldeia didática fictícia",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "talk_npc",
+					"target_id": "fictional_mentor",
+					"description": "Conversar com um mentor fictício",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "wisdom_choices",
+					"description": "Avaliar decisões em uma situação ilustrativa",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "proverbs3",
+					"description": "Relacionar escolhas ao texto",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_038_os_caminhos_da_sabedoria",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_039_tempo_para_cada_coisa",
+			"title": "Tempo para cada coisa",
+			"testament": "AT",
+			"book_name": "Eclesiastes",
+			"book": "Eccl",
+			"reference_raw": "3:1–8",
+			"references": [
+				"Eccl 3:1-8"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "poesia_interativa",
+			"learning_goal": "Tempo e ciclos da vida",
+			"region_or_context": "Jardim alegórico",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "season_garden",
+					"description": "Explorar espaços representando estações",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "time_symbols",
+					"description": "Identificar pares literários do texto",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "eccl3",
+					"description": "Desbloquear a explicação do poema",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_039_tempo_para_cada_coisa",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_040_a_visao_de_isaias",
+			"title": "A visão de Isaías",
+			"testament": "AT",
+			"book_name": "Isaías",
+			"book": "Isa",
+			"reference_raw": "6:1–8",
+			"references": [
+				"Isa 6:1-8"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "visao_simbolica",
+			"learning_goal": "Santidade e vocação profética",
+			"region_or_context": "Representação literária da visão",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "vision_context",
+					"description": "Consultar o contexto do capítulo",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "observe_scene",
+					"target_id": "isaiah_vision",
+					"description": "Assistir a adaptação claramente identificada como visão",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "isaiah_call",
+					"description": "Conhecer a resposta de Isaías",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_040_a_visao_de_isaias",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"observe_scene",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_041_o_oleiro_e_o_barro",
+			"title": "O oleiro e o barro",
+			"testament": "AT",
+			"book_name": "Jeremias",
+			"book": "Jer",
+			"reference_raw": "18:1–10",
+			"references": [
+				"Jer 18:1-10"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ensino_aplicado",
+			"learning_goal": "Metáfora profética do oleiro",
+			"region_or_context": "Oficina de oleiro (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "potter_house",
+					"description": "Conhecer uma oficina",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "pottery_work",
+					"description": "Examinar a prática do oleiro",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "jeremiah18",
+					"description": "Ler o sentido da mensagem profética",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_041_o_oleiro_e_o_barro",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_042_o_vale_de_ossos_secos",
+			"title": "O vale de ossos secos",
+			"testament": "AT",
+			"book_name": "Ezequiel",
+			"book": "Ezek",
+			"reference_raw": "37:1–14",
+			"references": [
+				"Ezek 37:1-14"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "visao_simbolica",
+			"learning_goal": "Esperança e restauração em uma visão",
+			"region_or_context": "Representação visionária",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "ezekiel_exile",
+					"description": "Conhecer contexto do exílio",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "observe_scene",
+					"target_id": "dry_bones_vision",
+					"description": "Acompanhar adaptação identificada como visão",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "ezekiel37",
+					"description": "Examinar a explicação dada no texto",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_042_o_vale_de_ossos_secos",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"observe_scene",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_043_daniel_na_babilonia",
+			"title": "Daniel na Babilônia",
+			"testament": "AT",
+			"book_name": "Daniel",
+			"book": "Dan",
+			"reference_raw": "1:1–21",
+			"references": [
+				"Dan 1:1-21"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Identidade e fidelidade no exílio",
+			"region_or_context": "Babilônia (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "babylon_court",
+					"description": "Conhecer um contexto de corte",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "food_choice_context",
+					"description": "Examinar a questão alimentar no texto",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "daniel_decision",
+					"description": "Conhecer a decisão de Daniel",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_043_daniel_na_babilonia",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_044_daniel_na_cova_dos_leoes",
+			"title": "Daniel na cova dos leões",
+			"testament": "AT",
+			"book_name": "Daniel",
+			"book": "Dan",
+			"reference_raw": "6:1–28",
+			"references": [
+				"Dan 6:1-28"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Perseverança e oração",
+			"region_or_context": "Babilônia/Pérsia (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "assemble_clues",
+					"target_id": "decree_daniel",
+					"description": "Examinar o decreto contra a oração",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "visit_area",
+					"target_id": "court_context",
+					"description": "Conhecer o cenário de corte",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "daniel_lions",
+					"description": "Acompanhar o episódio sem resgatar Daniel",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_044_daniel_na_cova_dos_leoes",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"assemble_clues",
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_045_jonas_e_ninive",
+			"title": "Jonas e Nínive",
+			"testament": "AT",
+			"book_name": "Jonas",
+			"book": "Jonah",
+			"reference_raw": "1–4",
+			"references": [],
+			"chapter_ranges": [
+				{
+					"book": "Jonah",
+					"from": 1.0,
+					"to": 4.0
+				}
+			],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Misericórdia e arrependimento",
+			"region_or_context": "Nínive (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "nineveh_market",
+					"description": "Explorar Nínive em reconstrução artística",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "jonah_route",
+					"description": "Organizar a sequência narrativa",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "jonah_mercy",
+					"description": "Conhecer a pergunta final do livro",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_045_jonas_e_ninive",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"assemble_clues",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_046_o_que_e_praticar_justica",
+			"title": "O que é praticar justiça?",
+			"testament": "AT",
+			"book_name": "Miqueias",
+			"book": "Mic",
+			"reference_raw": "6:6–8",
+			"references": [
+				"Mic 6:6-8"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ensino_aplicado",
+			"learning_goal": "Justiça, misericórdia e humildade",
+			"region_or_context": "Aldeia didática fictícia",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "talk_npc",
+					"target_id": "fictional_merchant",
+					"description": "Conhecer um dilema ético fictício",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "help_npc",
+					"target_id": "fictional_vulnerable",
+					"description": "Praticar ajuda em atividade ilustrativa",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "micah6",
+					"description": "Relacionar o gesto ao texto",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_046_o_que_e_praticar_justica",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"help_npc",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_047_a_visita_dos_magos",
+			"title": "A visita dos magos",
+			"testament": "NT",
+			"book_name": "Mateus",
+			"book": "Matt",
+			"reference_raw": "2:1–12",
+			"references": [
+				"Matt 2:1-12"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "A visita e homenagem narradas por Mateus",
+			"region_or_context": "Belém (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "magi_route",
+					"description": "Conhecer o contexto da viagem",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "visit_area",
+					"target_id": "bethlehem_context",
+					"description": "Explorar Belém da representação",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "magi_visit",
+					"description": "Acompanhar a visita sem inventar número exato de magos",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_047_a_visita_dos_magos",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_048_o_nascimento_de_jesus",
+			"title": "O nascimento de Jesus",
+			"testament": "NT",
+			"book_name": "Lucas",
+			"book": "Luke",
+			"reference_raw": "2:1–20",
+			"references": [
+				"Luke 2:1-20"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Nascimento de Jesus e anúncio aos pastores",
+			"region_or_context": "Belém (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "bethlehem_village",
+					"description": "Explorar o cenário",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "talk_npc",
+					"target_id": "fictional_shepherd_bethlehem",
+					"description": "Conhecer o pastoreio na região",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "birth_account",
+					"description": "Acompanhar o relato sem inserir o jogador como personagem registrado",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_048_o_nascimento_de_jesus",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_049_joao_batista_no_jordao",
+			"title": "João Batista no Jordão",
+			"testament": "NT",
+			"book_name": "Mateus",
+			"book": "Matt",
+			"reference_raw": "3:1–17",
+			"references": [
+				"Matt 3:1-17"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Arrependimento e batismo de Jesus",
+			"region_or_context": "Margens do Jordão",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "jordan_bank",
+					"description": "Explorar o local reconstruído",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "talk_npc",
+					"target_id": "fictional_listener",
+					"description": "Conversar sobre o ministério de João",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "jesus_baptism",
+					"description": "Acompanhar o batismo sem substituir João",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_049_joao_batista_no_jordao",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_050_jesus_no_deserto",
+			"title": "Jesus no deserto",
+			"testament": "NT",
+			"book_name": "Mateus",
+			"book": "Matt",
+			"reference_raw": "4:1–11",
+			"references": [
+				"Matt 4:1-11"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Tentação e uso das Escrituras",
+			"region_or_context": "Deserto (representação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "scripture_references",
+					"description": "Localizar referências citadas no relato",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "temptation_sequence",
+					"description": "Ordenar a sequência do texto",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "temptation_account",
+					"description": "Conhecer a narrativa sem acrescentar o jogador ao confronto",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_050_jesus_no_deserto",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_051_a_pesca_e_o_chamado",
+			"title": "A pesca e o chamado",
+			"testament": "NT",
+			"book_name": "Lucas",
+			"book": "Luke",
+			"reference_raw": "5:1–11",
+			"references": [
+				"Luke 5:1-11"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Vocação dos primeiros discípulos",
+			"region_or_context": "Lago de Genesaré",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "fishing_nets",
+					"description": "Conhecer redes de pesca",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "talk_npc",
+					"target_id": "fictional_fisherman",
+					"description": "Conversar sobre a atividade pesqueira",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "disciples_called",
+					"description": "Acompanhar o chamado",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_051_a_pesca_e_o_chamado",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_052_bem_aventurancas",
+			"title": "Bem-aventuranças",
+			"testament": "NT",
+			"book_name": "Mateus",
+			"book": "Matt",
+			"reference_raw": "5:1–12",
+			"references": [
+				"Matt 5:1-12"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ensino_aplicado",
+			"learning_goal": "Ensinos do Sermão do Monte",
+			"region_or_context": "Monte (recriação contextual)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "mountain_path",
+					"description": "Chegar ao espaço de ensino",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "journal_reflection",
+					"target_id": "beatitudes",
+					"description": "Conhecer os ensinamentos por tópicos",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "assemble_clues",
+					"target_id": "beatitudes_context",
+					"description": "Relacionar termos ao contexto sem reduzir a um quiz",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_052_bem_aventurancas",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"journal_reflection",
+					"assemble_clues"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_053_a_tempestade_acalmada",
+			"title": "A tempestade acalmada",
+			"testament": "NT",
+			"book_name": "Marcos",
+			"book": "Mark",
+			"reference_raw": "4:35–41",
+			"references": [
+				"Mark 4:35-41"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Medo, autoridade e confiança",
+			"region_or_context": "Mar da Galileia (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "boat_details",
+					"description": "Conhecer embarcações do período",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "observe_scene",
+					"target_id": "storm_crossing",
+					"description": "Acompanhar a tempestade",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "storm_meaning",
+					"description": "Desbloquear o contexto de Marcos 4",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_053_a_tempestade_acalmada",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"observe_scene",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_054_o_bom_samaritano",
+			"title": "O bom samaritano",
+			"testament": "NT",
+			"book_name": "Lucas",
+			"book": "Luke",
+			"reference_raw": "10:25–37",
+			"references": [
+				"Luke 10:25-37"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "parabola_interativa",
+			"learning_goal": "Compaixão e responsabilidade pelo próximo",
+			"region_or_context": "Estrada de parábola",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "parable_road",
+					"description": "Explorar um cenário explicitamente ilustrativo",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "help_npc",
+					"target_id": "parable_wounded",
+					"description": "Participar de adaptação de cuidado ao ferido",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "parable_neighbor",
+					"description": "Distinguir ensino da parábola e fato histórico",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_054_o_bom_samaritano",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"help_npc",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_055_o_filho_prodigo",
+			"title": "O filho pródigo",
+			"testament": "NT",
+			"book_name": "Lucas",
+			"book": "Luke",
+			"reference_raw": "15:11–32",
+			"references": [
+				"Luke 15:11-32"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "parabola_interativa",
+			"learning_goal": "Arrependimento e acolhimento",
+			"region_or_context": "Casa de parábola",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "assemble_clues",
+					"target_id": "prodigal_events",
+					"description": "Organizar episódios da parábola",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "observe_scene",
+					"target_id": "father_welcomes",
+					"description": "Conhecer o reencontro descrito",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "prodigal_message",
+					"description": "Examinar o contraste entre as atitudes dos filhos",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_055_o_filho_prodigo",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues",
+					"observe_scene",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_056_a_mulher_samaritana",
+			"title": "A mulher samaritana",
+			"testament": "NT",
+			"book_name": "João",
+			"book": "John",
+			"reference_raw": "4:1–42",
+			"references": [
+				"John 4:1-42"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Diálogo, barreiras sociais e água viva",
+			"region_or_context": "Sicar — poço de Jacó (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "jacobs_well_area",
+					"description": "Conhecer o local da narrativa",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "samaritan_context",
+					"description": "Ler contexto de judeus e samaritanos",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "jesus_samaritan_woman",
+					"description": "Acompanhar o encontro sem substituir participantes",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_056_a_mulher_samaritana",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_057_a_multiplicacao_dos_paes",
+			"title": "A multiplicação dos pães",
+			"testament": "NT",
+			"book_name": "João",
+			"book": "John",
+			"reference_raw": "6:1–15",
+			"references": [
+				"John 6:1-15"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Provisão e sinal narrado por João",
+			"region_or_context": "Margem do mar da Galileia",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "hillside_crowd",
+					"description": "Explorar a região da multidão",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "bread_fish_context",
+					"description": "Conhecer objetos e alimentos do relato",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "feeding_crowd",
+					"description": "Acompanhar o sinal realizado por Jesus",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_057_a_multiplicacao_dos_paes",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_058_a_cura_do_cego_de_nascenca",
+			"title": "A cura do cego de nascença",
+			"testament": "NT",
+			"book_name": "João",
+			"book": "John",
+			"reference_raw": "9:1–41",
+			"references": [
+				"John 9:1-41"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Cura, testemunho e controvérsia",
+			"region_or_context": "Jerusalém (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "jerusalem_streets",
+					"description": "Conhecer o contexto urbano",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "healing_testimonies",
+					"description": "Ordenar os diferentes testemunhos",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "blind_man_healed",
+					"description": "Acompanhar a cura sem atribuir o ato ao jogador",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_058_a_cura_do_cego_de_nascenca",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"assemble_clues",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_059_lazaro",
+			"title": "Lázaro",
+			"testament": "NT",
+			"book_name": "João",
+			"book": "John",
+			"reference_raw": "11:1–44",
+			"references": [
+				"John 11:1-44"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Ressurreição de Lázaro e esperança",
+			"region_or_context": "Betânia (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "bethany_village",
+					"description": "Conhecer Betânia",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "talk_npc",
+					"target_id": "fictional_neighbor_bethany",
+					"description": "Ouvir um contexto fictício sinalizado",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "lazarus_raised",
+					"description": "Acompanhar o acontecimento sem realizar o milagre",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_059_lazaro",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_060_zaqueu",
+			"title": "Zaqueu",
+			"testament": "NT",
+			"book_name": "Lucas",
+			"book": "Luke",
+			"reference_raw": "19:1–10",
+			"references": [
+				"Luke 19:1-10"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Arrependimento e mudança de atitude",
+			"region_or_context": "Jericó — século I (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "tax_context",
+					"description": "Conhecer o contexto da cobrança de impostos",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "visit_area",
+					"target_id": "sycamore_location",
+					"description": "Explorar a rua representada",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "zacchaeus_meets_jesus",
+					"description": "Acompanhar o encontro",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_060_zaqueu",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_061_entrada_em_jerusalem",
+			"title": "Entrada em Jerusalém",
+			"testament": "NT",
+			"book_name": "Mateus",
+			"book": "Matt",
+			"reference_raw": "21:1–11",
+			"references": [
+				"Matt 21:1-11"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Entrada de Jesus e expectativas messiânicas",
+			"region_or_context": "Jerusalém — século I",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "jerusalem_approach",
+					"description": "Explorar o caminho",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "festival_context",
+					"description": "Conhecer o contexto das festas",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "entry_jerusalem",
+					"description": "Acompanhar o relato",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_061_entrada_em_jerusalem",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_062_a_ultima_ceia",
+			"title": "A última ceia",
+			"testament": "NT",
+			"book_name": "Lucas",
+			"book": "Luke",
+			"reference_raw": "22:7–20",
+			"references": [
+				"Luke 22:7-20"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Páscoa e significado da ceia",
+			"region_or_context": "Jerusalém — século I",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "passover_context_nt",
+					"description": "Conhecer a Páscoa na época",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "supper_events",
+					"description": "Ordenar o texto narrativo",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "last_supper",
+					"description": "Acompanhar a ceia sem introduzir um novo apóstolo",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_062_a_ultima_ceia",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_063_crucificacao_e_sepultamento",
+			"title": "Crucificação e sepultamento",
+			"testament": "NT",
+			"book_name": "João",
+			"book": "John",
+			"reference_raw": "19:16–42",
+			"references": [
+				"John 19:16-42"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Relato da crucificação e sepultamento",
+			"region_or_context": "Jerusalém — século I",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "jerusalem_passion",
+					"description": "Conhecer o contexto geográfico",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "journal_reflection",
+					"target_id": "john19_context",
+					"description": "Consultar a narrativa com sensibilidade",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "passion_sequence",
+					"description": "Assistir a apresentação respeitosa sem minigame violento",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_063_crucificacao_e_sepultamento",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"journal_reflection",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_064_o_tumulo_vazio",
+			"title": "O túmulo vazio",
+			"testament": "NT",
+			"book_name": "João",
+			"book": "John",
+			"reference_raw": "20:1–18",
+			"references": [
+				"John 20:1-18"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Ressurreição e testemunho de Maria Madalena",
+			"region_or_context": "Jerusalém — século I",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "garden_tomb_context",
+					"description": "Explorar cenário representativo",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "john20_sequence",
+					"description": "Organizar os testemunhos narrados",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "mary_encounter",
+					"description": "Acompanhar o encontro sem substituir Maria",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_064_o_tumulo_vazio",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"assemble_clues",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_065_no_caminho_de_emaus",
+			"title": "No caminho de Emaús",
+			"testament": "NT",
+			"book_name": "Lucas",
+			"book": "Luke",
+			"reference_raw": "24:13–35",
+			"references": [
+				"Luke 24:13-35"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Reconhecimento e interpretação das Escrituras",
+			"region_or_context": "Estrada de Emaús (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "emmaus_route",
+					"description": "Examinar uma rota geográfica aproximada",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "emmaus_dialogue",
+					"description": "Organizar os momentos do relato",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "emmaus_recognition",
+					"description": "Acompanhar a revelação sem inserir um terceiro viajante como fato",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_065_no_caminho_de_emaus",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_066_pentecostes",
+			"title": "Pentecostes",
+			"testament": "NT",
+			"book_name": "Atos",
+			"book": "Acts",
+			"reference_raw": "2:1–41",
+			"references": [
+				"Acts 2:1-41"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Espírito Santo e início da proclamação pública",
+			"region_or_context": "Jerusalém — século I",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "jerusalem_feast",
+					"description": "Explorar cenário de festa",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "language_diversity",
+					"description": "Conhecer povos e línguas citados",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "pentecost_account",
+					"description": "Acompanhar o relato e a pregação de Pedro",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_066_pentecostes",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_067_filipe_e_o_etiope",
+			"title": "Filipe e o etíope",
+			"testament": "NT",
+			"book_name": "Atos",
+			"book": "Acts",
+			"reference_raw": "8:26–40",
+			"references": [
+				"Acts 8:26-40"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Leitura das Escrituras e explicação da passagem",
+			"region_or_context": "Estrada para Gaza (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "desert_road",
+					"description": "Explorar o contexto da estrada",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "isaiah_scroll",
+					"description": "Conhecer a referência a Isaías",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "philip_eunuch",
+					"description": "Acompanhar o encontro sem substituir Filipe",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_067_filipe_e_o_etiope",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok_with_notes",
+				"problems": [],
+				"notes": [
+					"Acts 8:37 não consta nesta tradução (provável variante textual; o trecho existe)"
+				],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_068_a_conversao_de_saulo",
+			"title": "A conversão de Saulo",
+			"testament": "NT",
+			"book_name": "Atos",
+			"book": "Acts",
+			"reference_raw": "9:1–19",
+			"references": [
+				"Acts 9:1-19"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Mudança de vida e vocação",
+			"region_or_context": "Estrada de Damasco (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "damascus_map",
+					"description": "Conhecer o contexto geográfico",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "saul_sequence",
+					"description": "Organizar a sequência dos eventos",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "saul_encounter",
+					"description": "Acompanhar a narrativa sem atribuir a visão ao jogador",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_068_a_conversao_de_saulo",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_069_paulo_e_silas_em_filipos",
+			"title": "Paulo e Silas em Filipos",
+			"testament": "NT",
+			"book_name": "Atos",
+			"book": "Acts",
+			"reference_raw": "16:16–40",
+			"references": [
+				"Acts 16:16-40"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "observacao_contextual",
+			"learning_goal": "Prisão, terremoto e resposta do carcereiro",
+			"region_or_context": "Filipos (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "philippi_streets",
+					"description": "Explorar Filipos",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "roman_prison_context",
+					"description": "Conhecer estrutura jurídica e prisional",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "observe_scene",
+					"target_id": "jailer_account",
+					"description": "Acompanhar os eventos sem libertar Paulo manualmente",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_069_paulo_e_silas_em_filipos",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"observe_scene"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_070_os_bereanos",
+			"title": "Os bereanos",
+			"testament": "NT",
+			"book_name": "Atos",
+			"book": "Acts",
+			"reference_raw": "17:10–15",
+			"references": [
+				"Acts 17:10-15"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ensino_aplicado",
+			"learning_goal": "Conferência cuidadosa das Escrituras",
+			"region_or_context": "Bereia (recriação)",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "talk_npc",
+					"target_id": "fictional_reader_berea",
+					"description": "Conversar com um leitor fictício",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "scripture_study",
+					"description": "Aprender uma mecânica de consulta às referências",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "berean_method",
+					"description": "Registrar a descoberta sobre exame das Escrituras",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_070_os_bereanos",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_071_o_amor_em_pratica",
+			"title": "O amor em prática",
+			"testament": "NT",
+			"book_name": "Romanos",
+			"book": "Rom",
+			"reference_raw": "12:9–21",
+			"references": [
+				"Rom 12:9-21"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ensino_aplicado",
+			"learning_goal": "Princípios de vida comunitária",
+			"region_or_context": "Comunidade didática fictícia",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "talk_npc",
+					"target_id": "fictional_community_member",
+					"description": "Conhecer um conflito cotidiano fictício",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "help_npc",
+					"target_id": "reconciliation_demo",
+					"description": "Participar de uma situação ilustrativa de ajuda",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "romans12",
+					"description": "Relacionar os princípios ao texto",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_071_o_amor_em_pratica",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"help_npc",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_072_um_corpo_muitos_membros",
+			"title": "Um corpo, muitos membros",
+			"testament": "NT",
+			"book_name": "1 Coríntios",
+			"book": "1Cor",
+			"reference_raw": "12:12–27",
+			"references": [
+				"1Cor 12:12-27"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ensino_aplicado",
+			"learning_goal": "Diversidade e cooperação",
+			"region_or_context": "Oficina didática fictícia",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "organize",
+					"target_id": "community_tasks",
+					"description": "Distribuir tarefas em simulação comunitária",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "talk_npc",
+					"target_id": "fictional_coworker",
+					"description": "Conversar sobre papéis diferentes",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "body_metaphor",
+					"description": "Compreender a metáfora apresentada por Paulo",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_072_um_corpo_muitos_membros",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"organize",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_073_o_fruto_do_espirito",
+			"title": "O fruto do Espírito",
+			"testament": "NT",
+			"book_name": "Gálatas",
+			"book": "Gal",
+			"reference_raw": "5:22–26",
+			"references": [
+				"Gal 5:22-26"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ensino_aplicado",
+			"learning_goal": "Fruto do Espírito e caráter",
+			"region_or_context": "Jardim alegórico",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "fruit_garden",
+					"description": "Explorar jardim claramente simbólico",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "fruit_values",
+					"description": "Relacionar os termos do texto",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "galatians5",
+					"description": "Consultar contexto e contraste literário",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_073_o_fruto_do_espirito",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"assemble_clues",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_074_a_armadura_de_deus",
+			"title": "A armadura de Deus",
+			"testament": "NT",
+			"book_name": "Efésios",
+			"book": "Eph",
+			"reference_raw": "6:10–18",
+			"references": [
+				"Eph 6:10-18"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ensino_aplicado",
+			"learning_goal": "Metáfora sobre perseverança espiritual",
+			"region_or_context": "Painel alegórico",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "armor_metaphors",
+					"description": "Examinar os elementos da metáfora",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "armor_text",
+					"description": "Relacionar cada imagem com sua descrição",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "ephesians6",
+					"description": "Conhecer o sentido da passagem sem tratar como armas mágicas",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_074_a_armadura_de_deus",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_075_a_carta_a_filemom",
+			"title": "A carta a Filemom",
+			"testament": "NT",
+			"book_name": "Filemom",
+			"book": "Phlm",
+			"reference_raw": "1:1–25",
+			"references": [
+				"Phlm 1:1-25"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "exploracao_educativa",
+			"learning_goal": "Apelo de Paulo em favor de Onésimo",
+			"region_or_context": "Cenário de carta apostólica",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "philemon_letter",
+					"description": "Ler resumo fiel da carta",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "assemble_clues",
+					"target_id": "philemon_people",
+					"description": "Identificar as pessoas nomeadas",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "philemon_appeal",
+					"description": "Examinar o argumento e contexto da carta",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_075_a_carta_a_filemom",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"assemble_clues",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_076_fe_e_obras",
+			"title": "Fé e obras",
+			"testament": "NT",
+			"book_name": "Tiago",
+			"book": "Jas",
+			"reference_raw": "2:14–26",
+			"references": [
+				"Jas 2:14-26"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "ensino_aplicado",
+			"learning_goal": "Fé e ações concretas",
+			"region_or_context": "Comunidade didática fictícia",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "talk_npc",
+					"target_id": "fictional_neighbor_james",
+					"description": "Conhecer necessidade comunitária fictícia",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "help_npc",
+					"target_id": "james_practical_help",
+					"description": "Participar de ajuda contextual",
+					"target_state": "placeholder",
+					"support": "partial"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "james2",
+					"description": "Examinar o argumento do texto",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_076_fe_e_obras",
+			"estimate": {
+				"mechanics": "partial",
+				"events_needing_work": [
+					"help_npc",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "medium"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_077_memorial_da_fe",
+			"title": "Memorial da fé",
+			"testament": "NT",
+			"book_name": "Hebreus",
+			"book": "Heb",
+			"reference_raw": "11:1–40",
+			"references": [
+				"Heb 11:1-40"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "exploracao_educativa",
+			"learning_goal": "Personagens e exemplos recapitulados em Hebreus",
+			"region_or_context": "Galeria bíblica temática",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "visit_area",
+					"target_id": "faith_gallery",
+					"description": "Explorar painéis narrativos",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "inspect_object",
+					"target_id": "faith_characters",
+					"description": "Relacionar pessoas e referências",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "hebrews11",
+					"description": "Conhecer a função da recapitulação na carta",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_077_memorial_da_fe",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		},
+		{
+			"id": "ep_078_novos_ceus_e_nova_terra",
+			"title": "Novos céus e nova terra",
+			"testament": "NT",
+			"book_name": "Apocalipse",
+			"book": "Rev",
+			"reference_raw": "21:1–22:5",
+			"references": [
+				"Rev 21:1-22:5"
+			],
+			"chapter_ranges": [],
+			"reference_parse_errors": [],
+			"narrative_mode": "visao_simbolica",
+			"learning_goal": "Esperança e imagens escatológicas",
+			"region_or_context": "Visão artística explicitamente simbólica",
+			"region": "",
+			"seed_objectives": [
+				{
+					"id": "obj_01",
+					"event_type": "inspect_object",
+					"target_id": "revelation_genre",
+					"description": "Conhecer linguagem apocalíptica",
+					"target_state": "placeholder",
+					"support": "data_only"
+				},
+				{
+					"id": "obj_02",
+					"event_type": "visit_area",
+					"target_id": "new_creation_art",
+					"description": "Explorar representação artística sinalizada como visão",
+					"target_state": "placeholder",
+					"support": "needs_code"
+				},
+				{
+					"id": "obj_03",
+					"event_type": "journal_reflection",
+					"target_id": "revelation_end",
+					"description": "Consultar imagens e interpretações sem impor cronologia única",
+					"target_state": "placeholder",
+					"support": "partial"
+				}
+			],
+			"chronology_confidence": "not_established",
+			"source_validation": "pending_independent_review",
+			"package": "production/episodes/ep_078_novos_ceus_e_nova_terra",
+			"estimate": {
+				"mechanics": "needs_code",
+				"events_needing_work": [
+					"visit_area",
+					"journal_reflection"
+				],
+				"region_exists": false,
+				"new_map_needed": true,
+				"difficulty": "high"
+			},
+			"status": "idea",
+			"status_history": [
+				{
+					"status": "idea",
+					"date": "2026-10-14",
+					"by": "factory import-seed",
+					"note": "Importado do catálogo-semente; não implementado nem validado."
+				}
+			],
+			"game": {},
+			"reference_check": {
+				"status": "ok",
+				"problems": [],
+				"notes": [],
+				"count_unknown": [],
+				"source": "texto oficial",
+				"date": "2026-10-14"
+			}
+		}
+	]
+}

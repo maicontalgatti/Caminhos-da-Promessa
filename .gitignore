@@ -1,0 +1,46 @@
+# Godot (cache de importação; recriado com --import). Os arquivos *.import ficam versionados.
+.godot/
+*.translation
+/build/
+
+# Builds exportados e logs de build (gerados por tools/build_windows.ps1).
+# export_presets.cfg continua versionado de propósito (não guarda credenciais).
+/dist/
+/CaminhosDaPromessa.exe
+*.pck
+
+# Binário local do Godot, templates baixados e cache (tools/godot)
+tools/godot/
+
+# Cursor: subagentes (.cursor/agents/) e regras (.cursor/rules/) são versionados.
+# Configurações particulares da máquina e de MCP ficam fora.
+.cursor/mcp.json
+.cursor/*.local.*
+.cursor/environment.json
+.cursor/chats/
+.cursor/projects/
+.vscode/
+.idea/
+
+# Credenciais e configurações privadas
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+export_credentials.cfg
+
+# Temporários, logs e backups locais
+*.tmp
+*.temp
+*.bak
+*.orig
+*.log
+*~
+
+# Sistema
+Thumbs.db
+Desktop.ini
+.DS_Store

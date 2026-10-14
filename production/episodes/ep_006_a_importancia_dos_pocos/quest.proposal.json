@@ -1,0 +1,103 @@
+{
+	"_comment": "Missão-piloto. Moradores e aldeia são fictícios; o relato bíblico é apresentado à parte, como resumo com referência. Proposta ep_006 (quest-designer): preserva todos os ids da missão atual e acrescenta o objetivo listen_ari.",
+	"quests": [
+		{
+			"id": "canaan_wells",
+			"title": "A importância dos poços",
+			"description": "Descubra por que os poços eram tão importantes para as comunidades de Canaã e conheça o relato de Gênesis 26:18-22.",
+			"type": "context_exploration",
+			"classification": "plausible_fiction",
+			"classification_note": "Interação fictícia contextualizada: a aldeia e seus moradores foram criados para o jogo; o relato bíblico é apresentado separadamente.",
+			"region": "canaan_village",
+			"place_id": "canaan",
+			"era_id": "patriarchs",
+			"references": ["Gen 26:18-22"],
+			"theme": "Os poços e a importância da água",
+			"people": ["isaac"],
+			"fictional_characters": ["adina", "ezer", "ari"],
+			"intro": "Você chegou a uma aldeia fictícia inspirada no cotidiano das comunidades antigas de Canaã. Descubra por que os poços eram tão importantes.",
+			"start": {"event": "prologue_finished", "id": "new_game"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "meet_adina",
+					"text": "Converse com Adina, a pastora.",
+					"detail": "Ela cuida das ovelhas no curral, ao sul do poço.",
+					"complete_on": {"event": "custom", "id": "wells_adina_water"},
+					"targets": [{"type": "npc", "id": "adina"}],
+					"hints": [
+						"Os moradores parecem preocupados com a água.",
+						"Talvez seja interessante conversar com Adina, a pastora que cuida das ovelhas ao sul do poço.",
+						"Converse com Adina, perto do curral ao sul da praça do poço."
+					],
+					"log": "Adina contou que sem água não há rebanho, nem pão, nem aldeia, e sugeriu começar pelo poço da praça."
+				},
+				{
+					"id": "examine_well",
+					"text": "Examine o poço no centro da praça.",
+					"detail": "Adina disse que todos dependem dele.",
+					"complete_on": {"event": "dialogue_finished", "id": "well_examine"},
+					"targets": [{"type": "dialogue", "id": "well_examine"}],
+					"hints": [
+						"A praça da aldeia gira em torno de uma coisa.",
+						"O poço de pedra fica no centro da praça, perto de onde você chegou.",
+						"Vá até o poço no centro da praça e examine-o (E)."
+					],
+					"log": "Você examinou o poço: a corda gasta mostra quantas pessoas e animais dependem dele."
+				},
+				{
+					"id": "listen_ari",
+					"text": "Pergunte a Ari sobre o poço.",
+					"detail": "O menino que brinca na praça conhece as histórias do avô.",
+					"complete_on": {"event": "dialogue_finished", "id": "ari_talk"},
+					"targets": [{"type": "npc", "id": "ari"}],
+					"hints": [
+						"Um poço também tem história. Quem cresceu em volta dele talvez saiba contar.",
+						"Ari, um menino da aldeia, costuma correr pela praça, perto do poço.",
+						"Converse com Ari, a poucos passos a oeste do poço."
+					],
+					"log": "Ari contou que, quando o poço secou, a aldeia inteira cavou mais fundo para a água voltar."
+				},
+				{
+					"id": "talk_ezer",
+					"text": "Converse com Ezer, o oleiro.",
+					"detail": "Quem guarda a água da aldeia sabe o quanto ela vale.",
+					"complete_on": {"event": "custom", "id": "wells_ezer_disputes"},
+					"targets": [{"type": "npc", "id": "ezer"}],
+					"hints": [
+						"Água precisa ser guardada em algum lugar.",
+						"O oleiro Ezer trabalha perto das casas, ao norte da praça.",
+						"Siga a viela ao norte do poço e converse com Ezer, ao lado dos jarros."
+					],
+					"log": "Ezer contou que, em anos de seca, pastores de famílias diferentes disputavam poços, e lembrou que Gênesis 26 registra disputas assim."
+				},
+				{
+					"id": "read_story",
+					"text": "Leia o diário de viagem sobre a pedra, ao lado do poço.",
+					"detail": "Nele está o relato de Gênesis 26:18-22.",
+					"complete_on": {"event": "presentation_finished", "id": "gen_026_wells"},
+					"targets": [{"type": "dialogue", "id": "journal_intro"}],
+					"hints": [
+						"Você trouxe anotações de viagem.",
+						"Seu diário de viagem está sobre a pedra, perto do poço, onde você chegou.",
+						"Leia o diário de viagem, ao lado do poço, para conhecer o relato."
+					],
+					"log": "Você leu Gênesis 26:18-22: Isaque reabriu os poços de Abraão e cavou outros; Eseque e Sitna foram disputados, Reobote não."
+				}
+			],
+			"discoveries": ["shepherding_water", "wells_antiquity", "pottery_jars", "isaac_wells"],
+			"completion": {
+				"title": "História explorada",
+				"references": ["Gen 26:18-22"],
+				"summary": [
+					"Poços, fontes e cisternas eram vitais para pessoas e rebanhos numa terra de chuvas sazonais; manter um poço era trabalho de todos.",
+					"Gênesis 26 narra que Isaque reabriu os poços cavados nos dias de Abraão e cavou outros, e que os pastores de Gerar disputaram dois deles.",
+					"Os nomes Eseque, Sitna e Reobote acompanham o relato: depois de duas disputas, Isaque saiu dali e cavou um poço sem contenda (Gn 26:22)."
+				],
+				"unlock": [],
+				"next": "Fim da primeira missão desta versão do jogo. Novas missões virão nas próximas versões; enquanto isso, a aldeia continua aberta: outros moradores e objetos também têm algo a ensinar."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Estrutura e referências conferidas pelo agente de IA; aguarda revisão humana."}
+		}
+	]
+}

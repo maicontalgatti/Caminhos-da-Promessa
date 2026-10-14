@@ -1,0 +1,122 @@
+{
+	"_comment": "Missão secundária totalmente fictícia (plausible_fiction): duas famílias de pastores em Dotã, sem relação com o relato de José. Três desfechos locais e persistentes (escolha dothan_families = talia | oren | shared). Referências só em nota do diário (descoberta sharing_in_need), nunca na boca dos NPCs. Pesquisa: research_missions_v04.md, seção B.",
+	"quests": [
+		{
+			"id": "dothan_families",
+			"title": "Duas famílias, uma decisão",
+			"category": "side",
+			"description": "Rafi juntou um cesto de provisões, mas há duas famílias precisando de ajuda. Escute as duas e decida.",
+			"type": "assist",
+			"classification": "plausible_fiction",
+			"classification_note": "Rafi, Talia, Oren e suas famílias são criados para o jogo. Nenhum desfecho é apresentado como a resposta bíblica correta; a nota do diário traz textos de outras épocas, identificados.",
+			"region": "dothan",
+			"place_id": "dothan",
+			"era_id": "patriarchs",
+			"references": ["Gen 13:5-9"],
+			"theme": "Recursos limitados e escolhas difíceis",
+			"people": [],
+			"fictional_characters": ["rafi", "talia", "oren"],
+			"intro": "Nos pastos de Dotã, duas famílias de pastores passam necessidade. Rafi tem um só cesto de provisões.",
+			"start": {"event": "custom", "id": "families_rafi_basket"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "talk_rafi",
+					"type": "receive_item",
+					"text": "Receba o cesto de provisões de Rafi.",
+					"complete_on": {"event": "item_received", "id": "provisions_basket"},
+					"targets": [{"type": "npc", "id": "rafi"}],
+					"hints": [
+						"O pastor idoso queria ajudar alguém.",
+						"Rafi está no meio dos pastos de Dotã.",
+						"Converse com Rafi para receber o cesto."
+					],
+					"log": "Rafi lhe confiou um cesto de provisões e pediu que você escutasse as duas famílias."
+				},
+				{
+					"id": "hear_talia",
+					"type": "talk_to_npc",
+					"text": "Escute Talia.",
+					"complete_on": {"event": "custom", "id": "families_talia_need"},
+					"targets": [{"type": "npc", "id": "talia"}],
+					"hints": [
+						"Uma das famílias está perto das tendas.",
+						"Talia está a oeste de Rafi, perto das tendas.",
+						"Converse com Talia, a oeste de Rafi."
+					],
+					"log": "Talia contou que a comida da família acabou e que as crianças comeram o último pão."
+				},
+				{
+					"id": "hear_oren",
+					"type": "talk_to_npc",
+					"text": "Escute Oren.",
+					"complete_on": {"event": "custom", "id": "families_oren_need"},
+					"targets": [{"type": "npc", "id": "oren"}],
+					"hints": [
+						"A outra família cuida de um rebanho.",
+						"Oren está logo ao norte de Rafi.",
+						"Converse com Oren, ao norte de Rafi."
+					],
+					"log": "Oren contou que o odre dele rachou e que precisa de água para levar o rebanho a um pasto distante."
+				},
+				{
+					"id": "decide",
+					"type": "make_choice",
+					"text": "Decida o que fazer com o cesto.",
+					"detail": "Fale com Talia ou com Oren com o cesto na bolsa.",
+					"complete_on": {"event": "choice_made", "id": "dothan_families"},
+					"targets": [{"type": "npc", "id": "talia"}, {"type": "npc", "id": "oren"}],
+					"hints": [
+						"As duas famílias precisam de coisas diferentes.",
+						"Talia precisa de comida; Oren precisa de água para a viagem. Algo que você carrega talvez ajude.",
+						"Converse com Talia ou com Oren e escolha. Se tiver um odre de água, Oren aceita o odre."
+					],
+					"log": "Você decidiu o destino do cesto."
+				},
+				{
+					"id": "deliver",
+					"type": "give_item",
+					"text": "Entregue o cesto.",
+					"complete_on": {"event": "item_delivered", "id": "provisions_basket"},
+					"targets": [{"type": "npc", "id": "talia"}],
+					"hints": [
+						"O cesto ainda está com você.",
+						"Você combinou com Oren levar o cesto para Talia.",
+						"Converse com Talia para entregar o cesto."
+					],
+					"log": "O cesto chegou a quem você escolheu."
+				},
+				{
+					"id": "return_rafi",
+					"type": "talk_to_npc",
+					"text": "Conte a Rafi o que você decidiu.",
+					"complete_on": {"event": "custom", "id": "families_rafi_after"},
+					"targets": [{"type": "npc", "id": "rafi"}],
+					"hints": [
+						"Rafi pediu notícias.",
+						"Rafi continua no meio dos pastos.",
+						"Converse com Rafi."
+					],
+					"log": "Você contou a Rafi o que decidiu."
+				}
+			],
+			"rewards": {"flags": ["helped_shepherd"]},
+			"discoveries": ["sharing_in_need"],
+			"completion": {
+				"title": "Uma decisão tomada",
+				"references": ["Gen 13:5-9", "Prov 3:27-28"],
+				"summary": [
+					"As famílias de Dotã são criações do jogo, e a sua escolha muda só a história delas."
+				],
+				"variants": [
+					{"if": {"choice": "dothan_families", "option": "talia"}, "summary": ["Você entregou o cesto à família de Talia: as crianças tiveram comida. Oren seguiu viagem sem o odre novo.", "As famílias de Dotã são criações do jogo, e a sua escolha muda só a história delas."]},
+					{"if": {"choice": "dothan_families", "option": "oren"}, "summary": ["Você entregou o cesto à família de Oren, que pôde trocá-lo por água para a viagem. Rafi foi procurar ajuda para Talia entre os vizinhos.", "As famílias de Dotã são criações do jogo, e a sua escolha muda só a história delas."]},
+					{"if": {"choice": "dothan_families", "option": "shared"}, "summary": ["Você deu o seu odre de água a Oren e levou o cesto a Talia: cada família recebeu o que mais lhe faltava.", "As famílias de Dotã são criações do jogo, e a sua escolha muda só a história delas."]}
+				],
+				"unlock": [],
+				"next": "No diário, a descoberta \"Quando falta para todos\" traz textos bíblicos de épocas diferentes sobre o tema."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Ficção identificada; referências da nota do diário conferidas no arquivo oficial da BPM pelo agente de IA. Aguarda revisão humana (decidir se a analogia com Gn 13 serve e se os desfechos ficam equivalentes)."}
+		}
+	]
+}

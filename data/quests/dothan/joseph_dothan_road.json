@@ -1,0 +1,170 @@
+{
+	"_comment": "Missão principal da v0.4. O viajante fictício faz uma viagem própria até Dotã, espelhando a geografia de Gn 37:12-17, sem encontrar José, sem acompanhá-lo e sem ser o homem de Gn 37:15. Pesquisa: production/episodes/ep_008_jose_e_seus_irmaos/research_missions_v04.md.",
+	"quests": [
+		{
+			"id": "joseph_dothan_road",
+			"title": "O caminho para Dotã",
+			"category": "main",
+			"description": "Siga a estrada das caravanas até os pastos de Dotã e conheça o relato de Gênesis 37:12-17, em que José procura os irmãos.",
+			"type": "journey",
+			"classification": "plausible_fiction",
+			"classification_note": "Viagem fictícia contextualizada: o viajante, Adina, Malik e os caminhos são criados para o jogo; o relato bíblico é apresentado à parte, com o texto da tradução carregada.",
+			"region": "canaan_village",
+			"place_id": "dothan",
+			"era_id": "patriarchs",
+			"references": ["Gen 37:12-17"],
+			"theme": "Pastos distantes e a busca de José por seus irmãos",
+			"people": ["joseph", "jacob"],
+			"fictional_characters": ["adina", "malik"],
+			"intro": "Gênesis 37 conta que os irmãos de José levaram o rebanho do pai para longe. O Mapa das Escrituras leva você a esse outro momento da história, décadas depois dos poços de Isaque.",
+			"start": {"event": "quest_completed", "id": "canaan_wells"},
+			"prerequisites": {"quests_completed": ["canaan_wells"], "flags": []},
+			"objectives": [
+				{
+					"id": "open_map",
+					"type": "wait_for_event",
+					"region": "",
+					"text": "Abra o Mapa das Escrituras (M) e escolha \"José em Dotã\".",
+					"detail": "O mapa mostra as experiências de cada época.",
+					"complete_on": {"event": "experience_started", "id": "joseph_dothan"},
+					"targets": [{"type": "ui", "id": "scripture_map"}],
+					"hints": [
+						"Seu diário guarda mais de um relato.",
+						"O Mapa das Escrituras abre com a tecla M ou com o botão \"M mapa\" no canto da tela.",
+						"Pressione M, selecione \"José em Dotã\" na coluna Patriarcas e escolha \"Iniciar esta experiência\"."
+					],
+					"log": "Você abriu o Mapa das Escrituras na página de Gênesis 37: outro momento da história, décadas depois dos poços de Isaque."
+				},
+				{
+					"id": "adina_context",
+					"type": "talk_to_npc",
+					"text": "Pergunte a Adina sobre pastos distantes.",
+					"detail": "Quem cuida de rebanhos sabe para onde os pastores vão.",
+					"complete_on": {"event": "custom", "id": "dothan_adina_pastures"},
+					"targets": [{"type": "npc", "id": "adina"}],
+					"hints": [
+						"Quem conhece os caminhos dos rebanhos?",
+						"Adina, a pastora, cuida das ovelhas perto do curral, ao sul do poço.",
+						"Converse com Adina, perto do curral ao sul da praça do poço."
+					],
+					"log": "Adina contou que, quando o pasto acaba, os rapazes levam as ovelhas para longe, e indicou a estrada a leste da aldeia."
+				},
+				{
+					"id": "village_exit",
+					"type": "reach_location",
+					"text": "Vá até a saída leste da aldeia.",
+					"detail": "A estrada das caravanas começa ali.",
+					"complete_on": {"event": "location_reached", "id": "canaan_east_gate"},
+					"targets": [{"type": "area", "id": "canaan_east_gate"}],
+					"hints": [
+						"Adina falou de uma estrada.",
+						"A estrada sai da aldeia pelo lado leste.",
+						"Caminhe para o leste até o fim da aldeia, onde começa a estrada."
+					],
+					"log": "Você chegou à saída leste da aldeia."
+				},
+				{
+					"id": "caravan_road",
+					"type": "visit_region",
+					"text": "Siga pela estrada até o Caminho das Caravanas.",
+					"detail": "Uma estrada de terra entre colinas.",
+					"complete_on": {"event": "region_entered", "id": "caravan_road"},
+					"targets": [{"type": "region", "id": "caravan_road"}],
+					"hints": [
+						"O caminho continua além da aldeia.",
+						"A passagem fica na borda leste da aldeia.",
+						"Atravesse a saída leste da aldeia para chegar ao Caminho das Caravanas."
+					],
+					"log": "Você deixou a aldeia e entrou no Caminho das Caravanas."
+				},
+				{
+					"id": "lookout",
+					"type": "reach_location",
+					"region": "caravan_road",
+					"text": "Explore a estrada até o trecho alto.",
+					"detail": "Do alto, dá para ver o caminho adiante.",
+					"complete_on": {"event": "location_reached", "id": "caravan_lookout"},
+					"targets": [{"type": "area", "id": "caravan_lookout", "region": "caravan_road"}],
+					"hints": [
+						"Estradas antigas seguiam o relevo.",
+						"O trecho alto da estrada fica no meio do caminho, ao norte da trilha.",
+						"Siga a estrada para o leste e suba até o trecho alto, perto da tenda de Malik."
+					],
+					"log": "Do trecho alto, você viu a estrada seguir para o leste entre as colinas."
+				},
+				{
+					"id": "meet_traveler",
+					"type": "talk_to_npc",
+					"region": "caravan_road",
+					"text": "Converse com o mercador à beira da estrada.",
+					"detail": "Quem acampa na estrada ouve notícias de todos os lados.",
+					"complete_on": {"event": "custom", "id": "road_malik_news"},
+					"targets": [{"type": "npc", "id": "malik", "region": "caravan_road"}],
+					"hints": [
+						"Alguém acampou à sombra, perto da estrada.",
+						"Um mercador chamado Malik está acampado no meio do caminho.",
+						"Converse com Malik, junto à tenda no trecho alto da estrada."
+					],
+					"log": "Malik contou que por ali passam caravanas com resinas e perfumes, descendo para o Egito."
+				},
+				{
+					"id": "reach_dothan",
+					"type": "visit_region",
+					"text": "Chegue aos pastos de Dotã.",
+					"detail": "Malik disse que os pastos ficam a leste.",
+					"complete_on": {"event": "region_entered", "id": "dothan"},
+					"targets": [{"type": "region", "id": "dothan"}],
+					"hints": [
+						"A estrada continua para o leste.",
+						"Os pastos de Dotã ficam no fim do Caminho das Caravanas, a leste.",
+						"Siga a estrada até a borda leste do Caminho das Caravanas."
+					],
+					"log": "Você chegou aos pastos de Dotã."
+				},
+				{
+					"id": "overlook",
+					"type": "discover_information",
+					"region": "dothan",
+					"text": "Observe o vale de Dotã do alto da pedra.",
+					"detail": "Uma pedra alta perto da entrada do vale.",
+					"complete_on": {"event": "discovery", "id": "dothan_valley"},
+					"targets": [{"type": "examinable", "id": "dothan_overlook", "region": "dothan"}],
+					"hints": [
+						"Um lugar alto ajuda a entender uma região.",
+						"Há uma pedra alta perto de onde a estrada chega a Dotã.",
+						"Examine a pedra alta a oeste de Dotã, logo depois da entrada."
+					],
+					"log": "Do alto da pedra, você viu o vale de Dotã, com rebanhos pastando ao longe."
+				},
+				{
+					"id": "read_story",
+					"type": "read_scripture",
+					"region": "dothan",
+					"text": "Leia no diário o relato de Gênesis 37:12-17.",
+					"detail": "José procura os irmãos, de Siquém até Dotã.",
+					"complete_on": {"event": "presentation_finished", "id": "gen_037_search"},
+					"targets": [{"type": "examinable", "id": "dothan_overlook", "region": "dothan"}],
+					"hints": [
+						"O diário tem os trechos deste relato.",
+						"Examine de novo a pedra alta, ou abra o diário (J) e escolha \"Ler o relato bíblico\".",
+						"Abra o diário (J), vá à missão \"O caminho para Dotã\" e leia o relato até o fim."
+					],
+					"log": "Você leu Gênesis 37:12-17: José foi enviado por Israel para ver os irmãos, perguntou por eles no campo perto de Siquém e os encontrou em Dotã."
+				}
+			],
+			"discoveries": ["caravans_trade", "dothan_valley", "joseph_search"],
+			"completion": {
+				"title": "Caminho percorrido",
+				"references": ["Gen 37:12-17"],
+				"summary": [
+					"Rebanhos eram levados para pastos distantes quando o capim acabava perto de casa, e quem ficava esperava notícias.",
+					"Gênesis 37:12-17 conta que Israel enviou José para ver os irmãos; perto de Siquém, um homem o encontrou vagando pelo campo e, por informação dele, José os encontrou em Dotã.",
+					"O texto não diz quem era o homem do campo nem quanto durou a viagem."
+				],
+				"unlock": [],
+				"next": "O que acontece em Dotã continua em Gênesis 37:18-36. Essa parte da jornada está em planejamento e virá numa próxima versão."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências e restrições conferidas pelo agente de IA com base em research_missions_v04.md; aguarda revisão humana."}
+		}
+	]
+}

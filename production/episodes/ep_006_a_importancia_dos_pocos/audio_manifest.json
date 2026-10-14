@@ -1,0 +1,926 @@
+{
+	"_comment": "Gerado por tools/factory.gd audio-manifest. Não edite text/line_id/hash à mão: mude o texto no jogo e gere de novo. emotion, pronunciation e target_seconds são do audio-producer.",
+	"episode": "ep_006_a_importancia_dos_pocos",
+	"language": "pt-BR",
+	"generated": "2026-10-14",
+	"provider": "none",
+	"budget_approved": false,
+	"subtitles": "sempre: a caixa de diálogo mostra o texto de toda fala",
+	"total_characters": 5827,
+	"lines": [
+		{
+			"line_id": "journal_intro/n1",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Sobre a pedra está o seu diário de viagem.",
+			"hash": "e818fa3a50929f7c8852ff195f8678a8779bd32420f7675a4e5224ba30be2fdf",
+			"file": "res://assets/audio/voice/journal_intro__n1.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "journal_intro/n2",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Você é um viajante, um personagem criado para este jogo, de passagem por uma pequena aldeia em Canaã.",
+			"hash": "d80e28f4dae6cb43c765cff4aac2b3efec6c3a68435e5921b0d896ea299fe014",
+			"file": "res://assets/audio/voice/journal_intro__n2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "journal_intro/n3",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Explore com calma, converse com os moradores e observe como se vivia nesta terra.",
+			"hash": "485a26196d11a939718ec06407b19b53c6bfca737d306d8f705f8c9a19886354",
+			"file": "res://assets/audio/voice/journal_intro__n3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "journal_intro/n4",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "WASD ou setas para andar, Shift para correr, E ou Espaço para interagir. H pede uma pista, J abre o diário e Esc pausa e salva.",
+			"hash": "2ba35ff0048fffadbc53b62a735590309b8e21d43e70f120737f989f79d18c6c",
+			"file": "res://assets/audio/voice/journal_intro__n4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "journal_intro/story",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Entre as anotações do diário, você encontra trechos de Gênesis 26 sobre os poços de Isaque.",
+			"hash": "a13b012f0a6a60e9ad1a7df91ce0b815eefbd01f80e7b11010e0152968cf3ecb",
+			"file": "res://assets/audio/voice/journal_intro__story.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "journal_intro/again",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Você folheia o diário. As descobertas desta viagem estão anotadas nele (tecla J).",
+			"hash": "12eddc56b2be2277aa3f74f8a7bc7e2fd1269e44bf88c1a101fcbe49bae5e0b6",
+			"file": "res://assets/audio/voice/journal_intro__again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "well_examine/n1",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Um poço de pedra. Lá embaixo, a água reflete um pedaço do céu.",
+			"hash": "49d2bafcd47abc86fdbd7dfd2947ce2f23bee9c42bed9dd809d587d3e586854b",
+			"file": "res://assets/audio/voice/well_examine__n1.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "well_examine/n2",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "A corda está gasta de tanto uso. Pessoas, ovelhas e cabras da aldeia dependem desta água.",
+			"hash": "da284d46b4754c9cdc4512d984f3d57612c767865444044359ee7b8f5a59c582",
+			"file": "res://assets/audio/voice/well_examine__n2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/greet",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Paz, viajante! Cuidado para não assustar as ovelhas, elas acabaram de se acalmar.",
+			"hash": "b99da470422654e137ed8bbdfb857b68b6a2fd13d2de1e6dcecfb697f58fc2b0",
+			"file": "res://assets/audio/voice/adina_talk__greet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/water",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Paz, viajante! Chegou num dia corrido: as ovelhas precisam beber antes de o sol esquentar.",
+			"hash": "769fcad39e1cd7443ab3aa60f4130814c702826cd5d18b93e44358beb4ac4f2d",
+			"file": "res://assets/audio/voice/adina_talk__water.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/water2",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Sem água não há rebanho, nem pão, nem aldeia. Por isso a gente cuida tanto do poço.",
+			"hash": "22c0161c2a8aec478b6b32088c746fb6a94f79f7ada9d7ea51b15c1dfaab3a02",
+			"file": "res://assets/audio/voice/adina_talk__water2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/water3",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Se quiser entender a nossa vida, comece pelo poço da praça. Todo mundo passa por ele.",
+			"hash": "a18b70c0f768e0b778fbef5371688a92b5d5816b4121ae9562966f2776118e2b",
+			"file": "res://assets/audio/voice/adina_talk__water3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/ask",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Você parece vir de longe. Precisa de alguma coisa?",
+			"hash": "5168964b3e5bf559dcea37fb4dbd5c2d42fbf4c1aceb43ee24f620ea28d99d49",
+			"file": "res://assets/audio/voice/adina_talk__ask.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/flock",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Desde menina. De manhã levo as ovelhas ao pasto; à tarde, de volta ao curral, contando uma por uma.",
+			"hash": "65609c402709ac420676b6f41cedd36e0f1835bd5cde8c353b2058f087ccb3b3",
+			"file": "res://assets/audio/voice/adina_talk__flock.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/flock2",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Pastores às vezes vão bem longe atrás de bons pastos, e passam dias sem voltar para casa.",
+			"hash": "467b8496edf94cd4f10e173b29753b865b93a761c85b835a63fe0cb2a8e25abc",
+			"file": "res://assets/audio/voice/adina_talk__flock2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 11.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/hills",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Mais aldeias, poços e estradas por onde passam caravanas. Um dia você verá com seus próprios olhos.",
+			"hash": "15d915fdfafb557a00b341c2992db97ac922b88d02937c754fac9d2971fb0270",
+			"file": "res://assets/audio/voice/adina_talk__hills.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/bye",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Vá em paz. E feche a porteira se passar pelo curral!",
+			"hash": "beb13aee3e8a212a90c9e848a0557a3a2774ab97a7a73ce333250ddb8d9d0655",
+			"file": "res://assets/audio/voice/adina_talk__bye.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/again",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "As ovelhas reconhecem a minha voz. Se eu chamar, elas vêm.",
+			"hash": "096819e918ab24f8e0c8d9e18f5c7a009cf60e3411546c655af76b282cae4f35",
+			"file": "res://assets/audio/voice/adina_talk__again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/pastures",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Quando o pasto perto das tendas acaba, os rapazes levam as ovelhas para longe. Às vezes passam muitos dias fora, e quem fica em casa só espera notícias.",
+			"hash": "a01c84975aa4fec9bacec601e2357ca6ca8979c8c981befe6961f886db35942b",
+			"file": "res://assets/audio/voice/adina_talk__pastures.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 11.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/pastures2",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Vai procurar os pastos distantes? Saia pela estrada a leste da aldeia; ela vira para o norte entre as colinas. Por ali passam viajantes e mercadores.",
+			"hash": "24cc15543d7e9a5cbe9e1fba421b4894af1dc4dceeb222c2bfa72cb0903df658",
+			"file": "res://assets/audio/voice/adina_talk__pastures2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ari_talk/greet",
+			"speaker": "ari",
+			"voice_profile": "ari_v1",
+			"kind": "fictional_dialogue",
+			"text": "Você é de onde? Nunca vi essas roupas por aqui!",
+			"hash": "d2ec73eae02e746ec49fc8a2da6bbefa5459c2bb50043ce62c0ae1de5bf2073b",
+			"file": "res://assets/audio/voice/ari_talk__greet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ari_talk/n2",
+			"speaker": "ari",
+			"voice_profile": "ari_v1",
+			"kind": "fictional_dialogue",
+			"text": "Meu avô diz que antigamente o poço secou e todo mundo teve que cavar mais fundo. Eu ajudei a carregar as pedras... bom, as pequenas.",
+			"hash": "05c19051e94784bd3aaefb17b08b2bb834ded054a9ba12db9c14f11f7bbf7abc",
+			"file": "res://assets/audio/voice/ari_talk__n2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ari_talk/well",
+			"speaker": "ari",
+			"voice_profile": "ari_v1",
+			"kind": "fictional_dialogue",
+			"text": "Veio ver o poço? Eu sei uma história dele! Foi o meu avô que contou.",
+			"hash": "1a7ef7ba323c32bbbdfe86131011e035fe6b625eee69b6f0084f1342c9724f41",
+			"file": "res://assets/audio/voice/ari_talk__well.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ari_talk/well2",
+			"speaker": "ari",
+			"voice_profile": "ari_v1",
+			"kind": "fictional_dialogue",
+			"text": "Uma vez o poço secou. Não tinha água pra ninguém, nem pras ovelhas. Aí todo mundo cavou mais fundo, até a água voltar.",
+			"hash": "6ccef413eae8105693561871880616570c9948948b40b9cb0d839d36e1dc97f8",
+			"file": "res://assets/audio/voice/ari_talk__well2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ari_talk/well3",
+			"speaker": "ari",
+			"voice_profile": "ari_v1",
+			"kind": "fictional_dialogue",
+			"text": "Eu ajudei a carregar as pedras... bom, as pequenas. O vovô diz que poço é que nem rebanho: precisa de cuidado todo dia.",
+			"hash": "8ff4df0dbfce626d9fd0c9770886ecf6866faacfbcacc8444efa9b190b10bd68",
+			"file": "res://assets/audio/voice/ari_talk__well3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ari_talk/share",
+			"speaker": "ari",
+			"voice_profile": "ari_v1",
+			"kind": "fictional_dialogue",
+			"text": "Ele também conta que cada família queria o poço só pra ela. Aí os mais velhos sentaram e combinaram a vez de cada uma tirar água.",
+			"hash": "97a07ea09eaef530f69216e30e14dfcc43edf1b9cb0853f40baaa60f647da874",
+			"file": "res://assets/audio/voice/ari_talk__share.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ari_talk/again",
+			"speaker": "ari",
+			"voice_profile": "ari_v1",
+			"kind": "fictional_dialogue",
+			"text": "Aposto que você não me alcança! ...Tá bom, hoje não, estou cansado.",
+			"hash": "056179e8423bfeb170648cd8ca0a46daa16a9cced5f418918e809a527a3c8290",
+			"file": "res://assets/audio/voice/ari_talk__again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ezer_talk/greet",
+			"speaker": "ezer",
+			"voice_profile": "ezer_v1",
+			"kind": "fictional_dialogue",
+			"text": "Ah, um rosto novo. Desculpe as mãos sujas de barro.",
+			"hash": "111f87698d896d4497c01e84ee259259f980d544f1069c31041136a51386d32b",
+			"file": "res://assets/audio/voice/ezer_talk__greet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ezer_talk/n2",
+			"speaker": "ezer",
+			"voice_profile": "ezer_v1",
+			"kind": "fictional_dialogue",
+			"text": "Cada jarro começa como um punhado de terra. O barro precisa ser amassado, moldado, secar ao sol e depois ir ao forno.",
+			"hash": "082d910d2b09c3ce749bfe0545e5fb0fa78bf6c45d46913684fac498c3794fda",
+			"file": "res://assets/audio/voice/ezer_talk__n2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ezer_talk/use",
+			"speaker": "ezer",
+			"voice_profile": "ezer_v1",
+			"kind": "fictional_dialogue",
+			"text": "Água, azeite, grãos, vinho... Sem jarros, uma casa não guarda nada para o inverno.",
+			"hash": "84ad8478fe1188e8047a1ea45b71f097f552991d3fab17d3b2172d1ae3dfc580",
+			"file": "res://assets/audio/voice/ezer_talk__use.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ezer_talk/disputes",
+			"speaker": "ezer",
+			"voice_profile": "ezer_v1",
+			"kind": "fictional_dialogue",
+			"text": "Veio por causa do poço? Água é assunto sério por aqui, viajante.",
+			"hash": "4c6ed422b99b3ab23c80b858669e657a8c03f412fb2d98722751910dfe94df0a",
+			"file": "res://assets/audio/voice/ezer_talk__disputes.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ezer_talk/disputes2",
+			"speaker": "ezer",
+			"voice_profile": "ezer_v1",
+			"kind": "fictional_dialogue",
+			"text": "Meu pai contava que, em anos de seca, pastores de famílias diferentes chegavam a brigar por um poço. Cada um dizia que a água era sua.",
+			"hash": "c7856f3d30ce09f3ae9d6600c4489c38e8eec4433823477dabf43c521c02264d",
+			"file": "res://assets/audio/voice/ezer_talk__disputes2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ezer_talk/disputes3",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Gênesis 26 registra disputas assim entre os pastores de Isaque e os de Gerar:)",
+			"hash": "8cc1cc642035156563f306736ca2be0657414554de6674fab8b693e996afadbf",
+			"file": "res://assets/audio/voice/ezer_talk__disputes3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ezer_talk/disputes3b",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Os pastores de Gerar discutiram com os pastores de Isaque, dizendo: “A água é nossa.” Por isso ele chamou o nome do poço de Eseque, porque contenderam com ele. Cavaram outro poço, e também discutiram por causa dele. Por isso ele o chamou de Sitna.",
+			"hash": "2fa3167fde5c410cb548f1ce22212ebe223fb43625636d8340b09eb09f63a289",
+			"file": "res://assets/audio/voice/ezer_talk__disputes3b.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 11.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Gen 26:20-21",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "ezer_talk/disputes3c",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(O relato completo está no diário de viagem, sobre a pedra ao lado do poço.)",
+			"hash": "c29d7cf10da9244f1bc826a8f67961b4bad22567e953a6b43c73b526549927c2",
+			"file": "res://assets/audio/voice/ezer_talk__disputes3c.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ezer_talk/disputes4",
+			"speaker": "ezer",
+			"voice_profile": "ezer_v1",
+			"kind": "fictional_dialogue",
+			"text": "Por isso guardo água nestes jarros. Um bom jarro não deixa perder uma gota.",
+			"hash": "5c56a9031c824d7df5e442bdcfeb7d176fd6f2a57d6aa0a2fecef1d0ccb284be",
+			"file": "res://assets/audio/voice/ezer_talk__disputes4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ezer_talk/again",
+			"speaker": "ezer",
+			"voice_profile": "ezer_v1",
+			"kind": "fictional_dialogue",
+			"text": "Paciência, viajante. O barro ensina que pressa não faz um bom jarro.",
+			"hash": "6d3e403073e9c9b04605c1565cc688793a4fa0c05931aac03013db7015d92698",
+			"file": "res://assets/audio/voice/ezer_talk__again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "gen_026_wells/1_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Isaque semeou naquela terra e colheu, no mesmo ano, cem vezes mais do que plantou. O SENHOR o abençoou. O homem engrandeceu, e cresceu mais e mais até se tornar muito poderoso. Ele possuía rebanhos de ovelhas, rebanhos de gado e muitos servos. Os filisteus o invejavam.",
+			"hash": "a01708450e73fb2825301aed9e556ab6475d28e4910f73c2f74bfef346d105a4",
+			"file": "res://assets/audio/voice/gen_026_wells__1_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 19.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Gen 26:12-14",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "gen_026_wells/1_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Isaque, filho de Abraão, vivia na região de Gerar, no sul de Canaã (oeste do Neguebe); o local exato da cidade é debatido. Rebanhos grandes precisam de muita água.",
+			"hash": "d4b145c3d86108e483d7f2929439f7203ed8a5dc9ec2840f5f56b31a8fad8bfe",
+			"file": "res://assets/audio/voice/gen_026_wells__1_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "gen_026_wells/2_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Ora, todos os poços que os servos de seu pai haviam cavado nos dias de Abraão, seu pai, os filisteus haviam entulhado e enchido de terra. Abimeleque disse a Isaque: “Vá embora do nosso meio, pois você é muito mais poderoso do que nós.” Isaque partiu dali, acampou no vale de Gerar e habitou lá.",
+			"hash": "e8a7e4aef6d0c995b7950cd3eb082c5ec2580a2b90d8786a2c6484d68f3cd486",
+			"file": "res://assets/audio/voice/gen_026_wells__2_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 21.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Gen 26:15-17",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "gen_026_wells/2_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Os poços tinham sido cavados pelos servos de Abraão. Sem água, os rebanhos não podem ficar num lugar.",
+			"hash": "e9a735ee934fe2ab83bead07016dcf1cf20b037f5995dcc10837d9cb97dd681f",
+			"file": "res://assets/audio/voice/gen_026_wells__2_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "gen_026_wells/3_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Isaque cavou novamente os poços de água que haviam sido cavados nos dias de Abraão, seu pai, pois os filisteus os haviam entulhado após a morte de Abraão. Ele lhes deu os mesmos nomes pelos quais seu pai os havia chamado.",
+			"hash": "78f8f727f431f1544d0358397f6b5dab027bf532a4f76195851a2c294512c4e2",
+			"file": "res://assets/audio/voice/gen_026_wells__3_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 16.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Gen 26:18",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "gen_026_wells/3_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Estes são poços antigos, reabertos. Ao dar a eles os mesmos nomes que Abraão tinha dado, Isaque retoma o que o pai deixou. Os três poços seguintes são novos.",
+			"hash": "3ee2978e8bbe05f6cb05be086a47dc18869bbf70a6de4326fed58e472f83144c",
+			"file": "res://assets/audio/voice/gen_026_wells__3_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "gen_026_wells/4_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Os servos de Isaque cavaram no vale e encontraram ali um poço de água corrente. Os pastores de Gerar discutiram com os pastores de Isaque, dizendo: “A água é nossa.” Por isso ele chamou o nome do poço de Eseque, porque contenderam com ele.",
+			"hash": "f92f229143f239d08cac34c48219a60ea4cdb40ed3d21c6f80cca87fa938eb0f",
+			"file": "res://assets/audio/voice/gen_026_wells__4_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 17.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Gen 26:19-20",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "gen_026_wells/4_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O próprio texto liga o nome Eseque à contenda. 'Água corrente' é, ao pé da letra, 'água viva': água de fonte ou de lençol, muito valiosa numa terra seca.",
+			"hash": "201c8442027e043cfb148e81a1e2d0e28e706231b05238d81300b58a5c672a84",
+			"file": "res://assets/audio/voice/gen_026_wells__4_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "gen_026_wells/5_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Cavaram outro poço, e também discutiram por causa dele. Por isso ele o chamou de Sitna.",
+			"hash": "685b99859919028945d87b032068bea7eacb3af7d4411411fd05ce1be90b2ccd",
+			"file": "res://assets/audio/voice/gen_026_wells__5_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Gen 26:21",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "gen_026_wells/5_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O versículo não explica o nome Sitna. Notas de traduções o ligam a 'oposição' ou 'hostilidade' (nota lexical, não parte do texto).",
+			"hash": "7d397e8cfbe762682a585b56383ecd97c95ba4af94cada6e70bc71a7cbde2e4b",
+			"file": "res://assets/audio/voice/gen_026_wells__5_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "gen_026_wells/6_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Ele partiu daquele lugar e cavou outro poço. Não discutiram por causa desse. Por isso ele o chamou de Reobote. Ele disse: “Porque agora o SENHOR abriu espaço para nós, e seremos frutíferos na terra.”",
+			"hash": "55e00661f0585b12283b0d8e1aeef5d6a203149afdf3d04fb9c7f4098458092b",
+			"file": "res://assets/audio/voice/gen_026_wells__6_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 14.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Gen 26:22",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "gen_026_wells/6_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O texto explica Reobote: o SENHOR lhes abriu espaço. O nome costuma ser traduzido por 'lugares amplos'. Os nomes acompanham a história: duas disputas e, por fim, espaço.",
+			"hash": "4ce0ea6f113e9bdb96549f580d66da535295b13768a7fad7932f15e5c96f677b",
+			"file": "res://assets/audio/voice/gen_026_wells__6_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "gen_026_wells/7_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Os trechos foram tirados de Gênesis 26; leia o capítulo inteiro numa Bíblia para conhecer o relato completo. As notas são do jogo. Adina, Ezer, Ari e a aldeia são criações do jogo e não fazem parte deste relato.",
+			"hash": "b98ff814a8d1067a7efa38203f410913e64f64ecb277e819753a83c890d82192",
+			"file": "res://assets/audio/voice/gen_026_wells__7_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 14.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		}
+	]
+}

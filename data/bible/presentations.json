@@ -1,0 +1,40 @@
+{
+	"_comment": "Apresentações interativas de passagens bíblicas. Cada passo pode ter \"scripture\": a referência cujo texto é mostrado na íntegra, vindo de data/bible/texts/<tradução>.json (gerado por tools/import_scripture.gd; nunca digitado à mão). \"text\" é uma nota própria do jogo (contexto, sentido dos nomes); sem \"scripture\", ou sem a tradução carregada, \"text\" é o resumo mostrado. \"credit\": true mostra o crédito da tradução. Falas de personagens bíblicos fora das citações só em discurso indireto.",
+	"presentations": [
+		{
+			"id": "gen_026_wells",
+			"title": "Os poços de Isaque",
+			"reference": "Gen 26:18-22",
+			"classification": "recorded_event",
+			"story_id": "gen_026_isaac_wells",
+			"unlock": ["isaac_wells"],
+			"steps": [
+				{"heading": "Isaque em Gerar", "reference": "Gen 26:12-14", "scripture": "Gen 26:12-14", "text": "Isaque, filho de Abraão, vivia na região de Gerar, no sul de Canaã (oeste do Neguebe); o local exato da cidade é debatido. Rebanhos grandes precisam de muita água."},
+				{"heading": "Os poços entulhados", "reference": "Gen 26:15-17", "scripture": "Gen 26:15-17", "text": "Os poços tinham sido cavados pelos servos de Abraão. Sem água, os rebanhos não podem ficar num lugar."},
+				{"heading": "Os poços de Abraão", "reference": "Gen 26:18", "scripture": "Gen 26:18", "text": "Estes são poços antigos, reabertos. Ao dar a eles os mesmos nomes que Abraão tinha dado, Isaque retoma o que o pai deixou. Os três poços seguintes são novos."},
+				{"heading": "Eseque: contenda", "reference": "Gen 26:19-20", "scripture": "Gen 26:19-20", "text": "O próprio texto liga o nome Eseque à contenda. 'Água corrente' é, ao pé da letra, 'água viva': água de fonte ou de lençol, muito valiosa numa terra seca."},
+				{"heading": "Sitna", "reference": "Gen 26:21", "scripture": "Gen 26:21", "text": "O versículo não explica o nome Sitna. Notas de traduções o ligam a 'oposição' ou 'hostilidade' (nota lexical, não parte do texto)."},
+				{"heading": "Reobote: espaço", "reference": "Gen 26:22", "scripture": "Gen 26:22", "text": "O texto explica Reobote: o SENHOR lhes abriu espaço. O nome costuma ser traduzido por 'lugares amplos'. Os nomes acompanham a história: duas disputas e, por fim, espaço."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "Os trechos foram tirados de Gênesis 26; leia o capítulo inteiro numa Bíblia para conhecer o relato completo. As notas são do jogo. Adina, Ezer, Ari e a aldeia são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Trechos citados da tradução carregada (texto importado do arquivo oficial); notas próprias do jogo conferidas pelo agente de IA. Aguarda revisão humana."}
+		},
+		{
+			"id": "gen_037_search",
+			"title": "José procura os irmãos",
+			"reference": "Gen 37:12-17",
+			"classification": "recorded_event",
+			"story_id": "gen_037_joseph_sold",
+			"unlock": ["joseph_search"],
+			"steps": [
+				{"heading": "Longe de casa", "reference": "Gen 37:12", "scripture": "Gen 37:12", "text": "Os irmãos estão longe de casa, cuidando do rebanho da família."},
+				{"heading": "Eis-me aqui", "reference": "Gen 37:13-14", "scripture": "Gen 37:13-14", "text": "Israel é outro nome de Jacó. José parte do vale de Hebrom com um pedido do pai: ver se está tudo bem e trazer notícias."},
+				{"heading": "Um homem no campo", "reference": "Gen 37:15", "scripture": "Gen 37:15", "text": "O texto não diz quem era esse homem."},
+				{"heading": "A pergunta de José", "reference": "Gen 37:16", "scripture": "Gen 37:16", "text": "O texto dá a entender que José não encontrou os irmãos onde esperava; ele pergunta por eles para continuar a busca."},
+				{"heading": "Dotã", "reference": "Gen 37:17", "scripture": "Gen 37:17", "text": "O caminho continua de Siquém para Dotã."},
+				{"heading": "Sobre esta apresentação", "reference": "", "credit": true, "text": "O que acontece em Dotã continua em Gênesis 37:18-36, em outro capítulo desta jornada. As notas são do jogo. O viajante, Malik, Rafi e as famílias de pastores são criações do jogo e não fazem parte deste relato."}
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Trechos citados da tradução carregada (BPM, importada do arquivo oficial). Notas do jogo seguem research_missions_v04.md (A.2). Aguarda revisão humana."}
+		}
+	]
+}

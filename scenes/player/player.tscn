@@ -1,0 +1,67 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_player"]
+[ext_resource type="Script" path="res://scripts/world/character_sprite.gd" id="2_sprite"]
+[ext_resource type="Texture2D" path="res://assets/characters/player.png" id="3_tex"]
+[ext_resource type="Script" path="res://scripts/interaction/interaction_detector.gd" id="4_detector"]
+[ext_resource type="Texture2D" path="res://assets/ui/prompt_bubble.png" id="5_bubble"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(8, 5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_detect"]
+radius = 15.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
+motion_mode = 1
+script = ExtResource("1_player")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_tex")
+centered = false
+offset = Vector2(-12, -31)
+hframes = 6
+vframes = 4
+script = ExtResource("2_sprite")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_body")
+
+[node name="InteractionDetector" type="Area2D" parent="."]
+position = Vector2(0, -6)
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+script = ExtResource("4_detector")
+
+[node name="Shape" type="CollisionShape2D" parent="InteractionDetector"]
+shape = SubResource("CircleShape2D_detect")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -12)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="InteractPrompt" type="Node2D" parent="."]
+visible = false
+z_index = 50
+top_level = true
+
+[node name="Bubble" type="Sprite2D" parent="InteractPrompt"]
+texture = ExtResource("5_bubble")
+offset = Vector2(0, -6)
+
+[node name="Label" type="Label" parent="InteractPrompt"]
+offset_left = -40.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 11.0
+theme_override_colors/font_color = Color(0.956863, 0.894118, 0.756863, 1)
+theme_override_colors/font_outline_color = Color(0.168627, 0.113725, 0.0784314, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 7
+text = "Interagir"
+horizontal_alignment = 1

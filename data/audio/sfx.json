@@ -1,0 +1,160 @@
+{
+	"_comment": "Manifesto de efeitos sonoros. O código usa só os ids; os arquivos ficam em assets/audio/<path>_<n>.wav (n = 1..variants). Campos: bus (Music, SFX, UI, Ambience, Voice), volume_db, pitch (variação aleatória ± fração), jitter_db (variação de volume ±dB), cooldown (s mínimos entre duas reproduções), max (instâncias simultâneas), priority (0-100; som mais importante rouba a voz de um menos importante), supersedes (sons de interface que este interrompe se começaram há instantes). source: procedural = gerado por tools/audio/generate_sfx.gd. Como adicionar sons: docs/audio.md.",
+	"sounds": {
+		"footstep_dirt": {"path": "footsteps/dirt/footstep_dirt", "variants": 5, "bus": "SFX", "volume_db": -15.0, "pitch": 0.06, "jitter_db": 1.5, "cooldown": 0.12, "max": 2, "priority": 10, "source": "procedural"},
+		"footstep_grass": {"path": "footsteps/grass/footstep_grass", "variants": 5, "bus": "SFX", "volume_db": -16.0, "pitch": 0.06, "jitter_db": 1.5, "cooldown": 0.12, "max": 2, "priority": 10, "source": "procedural"},
+		"footstep_stone": {"path": "footsteps/stone/footstep_stone", "variants": 5, "bus": "SFX", "volume_db": -14.0, "pitch": 0.05, "jitter_db": 1.5, "cooldown": 0.12, "max": 2, "priority": 10, "source": "procedural"},
+		"footstep_sand": {"path": "footsteps/sand/footstep_sand", "variants": 4, "bus": "SFX", "volume_db": -16.0, "pitch": 0.06, "jitter_db": 1.5, "cooldown": 0.12, "max": 2, "priority": 10, "source": "procedural", "status": "sem superfície nos mapas atuais"},
+		"footstep_wood": {"path": "footsteps/wood/footstep_wood", "variants": 4, "bus": "SFX", "volume_db": -16.0, "pitch": 0.05, "jitter_db": 1.5, "cooldown": 0.12, "max": 2, "priority": 10, "source": "procedural", "status": "sem superfície nos mapas atuais"},
+		"footstep_water": {"path": "footsteps/water/footstep_water", "variants": 4, "bus": "SFX", "volume_db": -15.0, "pitch": 0.06, "jitter_db": 1.5, "cooldown": 0.12, "max": 2, "priority": 10, "source": "procedural", "status": "sem superfície nos mapas atuais"},
+
+		"ui_click": {"path": "ui/ui_click", "variants": 3, "bus": "UI", "volume_db": -12.0, "pitch": 0.03, "jitter_db": 1.0, "cooldown": 0.05, "max": 2, "priority": 40, "source": "procedural"},
+		"ui_hover": {"path": "ui/ui_hover", "variants": 2, "bus": "UI", "volume_db": -27.0, "pitch": 0.03, "cooldown": 0.07, "max": 1, "priority": 5, "source": "procedural"},
+		"ui_focus": {"path": "ui/ui_focus", "variants": 2, "bus": "UI", "volume_db": -21.0, "pitch": 0.03, "cooldown": 0.05, "max": 1, "priority": 15, "source": "procedural"},
+		"ui_confirm": {"path": "ui/ui_confirm", "variants": 1, "bus": "UI", "volume_db": -12.0, "cooldown": 0.1, "max": 1, "priority": 50, "supersedes": ["ui_click"], "source": "procedural"},
+		"ui_cancel": {"path": "ui/ui_cancel", "variants": 1, "bus": "UI", "volume_db": -15.0, "cooldown": 0.1, "max": 1, "priority": 45, "supersedes": ["ui_click"], "source": "procedural"},
+		"ui_denied": {"path": "ui/ui_denied", "variants": 1, "bus": "UI", "volume_db": -13.0, "cooldown": 0.2, "max": 1, "priority": 45, "supersedes": ["ui_click"], "source": "procedural"},
+		"menu_open": {"path": "ui/menu_open", "variants": 1, "bus": "UI", "volume_db": -11.0, "pitch": 0.03, "cooldown": 0.1, "max": 1, "priority": 50, "supersedes": ["ui_click"], "source": "procedural"},
+		"menu_close": {"path": "ui/menu_close", "variants": 1, "bus": "UI", "volume_db": -13.0, "pitch": 0.03, "cooldown": 0.1, "max": 1, "priority": 50, "supersedes": ["ui_click"], "source": "procedural"},
+		"journal_open": {"path": "ui/journal_open", "variants": 1, "bus": "UI", "volume_db": -9.0, "pitch": 0.03, "cooldown": 0.15, "max": 1, "priority": 55, "supersedes": ["ui_click"], "source": "procedural"},
+		"journal_close": {"path": "ui/journal_close", "variants": 1, "bus": "UI", "volume_db": -11.0, "pitch": 0.03, "cooldown": 0.15, "max": 1, "priority": 55, "supersedes": ["ui_click"], "source": "procedural"},
+		"page_turn": {"path": "ui/page_turn", "variants": 3, "bus": "UI", "volume_db": -13.0, "pitch": 0.05, "jitter_db": 1.0, "cooldown": 0.08, "max": 1, "priority": 45, "supersedes": ["ui_click"], "source": "procedural"},
+		"map_open": {"path": "ui/map_open", "variants": 1, "bus": "UI", "volume_db": -9.0, "pitch": 0.03, "cooldown": 0.15, "max": 1, "priority": 55, "supersedes": ["ui_click"], "source": "procedural"},
+		"map_close": {"path": "ui/map_close", "variants": 1, "bus": "UI", "volume_db": -11.0, "pitch": 0.03, "cooldown": 0.15, "max": 1, "priority": 55, "supersedes": ["ui_click"], "source": "procedural"},
+		"save": {"path": "ui/save", "variants": 1, "bus": "UI", "volume_db": -13.0, "cooldown": 0.5, "max": 1, "priority": 60, "supersedes": ["ui_click"], "source": "procedural"},
+
+		"dialogue_open": {"path": "dialogue/dialogue_open", "variants": 2, "bus": "UI", "volume_db": -16.0, "pitch": 0.03, "cooldown": 0.2, "max": 1, "priority": 35, "source": "procedural"},
+		"dialogue_advance": {"path": "dialogue/dialogue_advance", "variants": 3, "bus": "UI", "volume_db": -21.0, "pitch": 0.04, "cooldown": 0.06, "max": 1, "priority": 20, "source": "procedural"},
+		"dialogue_choice": {"path": "dialogue/dialogue_choice", "variants": 1, "bus": "UI", "volume_db": -14.0, "pitch": 0.02, "cooldown": 0.1, "max": 1, "priority": 40, "supersedes": ["ui_click", "dialogue_advance"], "source": "procedural"},
+		"dialogue_close": {"path": "dialogue/dialogue_close", "variants": 1, "bus": "UI", "volume_db": -18.0, "pitch": 0.03, "cooldown": 0.2, "max": 1, "priority": 30, "source": "procedural"},
+		"decision": {"path": "dialogue/decision", "variants": 1, "bus": "SFX", "volume_db": -11.0, "cooldown": 0.5, "max": 1, "priority": 65, "supersedes": ["dialogue_choice", "ui_click"], "source": "procedural"},
+		"text_blip": {"path": "dialogue/text_blip", "variants": 3, "bus": "UI", "volume_db": -30.0, "pitch": 0.03, "cooldown": 0.08, "max": 1, "priority": 2, "source": "procedural"},
+
+		"interact_wood": {"path": "interactions/interact_wood", "variants": 2, "bus": "SFX", "volume_db": -12.0, "pitch": 0.04, "cooldown": 0.2, "max": 1, "priority": 45, "source": "procedural"},
+		"interact_stone": {"path": "interactions/interact_stone", "variants": 2, "bus": "SFX", "volume_db": -10.0, "pitch": 0.04, "cooldown": 0.2, "max": 1, "priority": 45, "source": "procedural"},
+		"interact_ceramic": {"path": "interactions/interact_ceramic", "variants": 2, "bus": "SFX", "volume_db": -13.0, "pitch": 0.03, "cooldown": 0.2, "max": 1, "priority": 45, "source": "procedural"},
+		"interact_metal": {"path": "interactions/interact_metal", "variants": 1, "bus": "SFX", "volume_db": -16.0, "pitch": 0.02, "cooldown": 0.3, "max": 1, "priority": 45, "source": "procedural", "status": "sem objeto de metal nos mapas atuais"},
+		"interact_cloth": {"path": "interactions/interact_cloth", "variants": 2, "bus": "SFX", "volume_db": -11.0, "pitch": 0.05, "cooldown": 0.2, "max": 1, "priority": 45, "source": "procedural"},
+		"interact_parchment": {"path": "interactions/interact_parchment", "variants": 2, "bus": "SFX", "volume_db": -11.0, "pitch": 0.04, "cooldown": 0.2, "max": 1, "priority": 45, "source": "procedural"},
+		"interact_water_well": {"path": "interactions/interact_water_well", "variants": 1, "bus": "SFX", "volume_db": -10.0, "pitch": 0.03, "cooldown": 0.4, "max": 1, "priority": 45, "source": "procedural"},
+		"interact_water_cistern": {"path": "interactions/interact_water_cistern", "variants": 1, "bus": "SFX", "volume_db": -10.0, "pitch": 0.03, "cooldown": 0.4, "max": 1, "priority": 45, "source": "procedural"},
+		"interact_door": {"path": "interactions/interact_door", "variants": 1, "bus": "SFX", "volume_db": -10.0, "pitch": 0.04, "cooldown": 0.4, "max": 1, "priority": 45, "source": "procedural"},
+		"interact_dirt": {"path": "interactions/interact_dirt", "variants": 2, "bus": "SFX", "volume_db": -12.0, "pitch": 0.05, "cooldown": 0.2, "max": 1, "priority": 45, "source": "procedural"},
+		"interact_fire": {"path": "interactions/interact_fire", "variants": 1, "bus": "SFX", "volume_db": -9.0, "pitch": 0.04, "cooldown": 0.3, "max": 1, "priority": 45, "source": "procedural"},
+		"interact_generic": {"path": "interactions/interact_generic", "variants": 2, "bus": "SFX", "volume_db": -14.0, "pitch": 0.05, "cooldown": 0.2, "max": 1, "priority": 40, "source": "procedural"},
+
+		"bag_open": {"path": "inventory/bag_open", "variants": 1, "bus": "UI", "volume_db": -10.0, "pitch": 0.03, "cooldown": 0.15, "max": 1, "priority": 55, "supersedes": ["ui_click"], "source": "procedural"},
+		"bag_close": {"path": "inventory/bag_close", "variants": 1, "bus": "UI", "volume_db": -12.0, "pitch": 0.03, "cooldown": 0.15, "max": 1, "priority": 55, "supersedes": ["ui_click"], "source": "procedural"},
+		"item_pickup": {"path": "inventory/item_pickup", "variants": 2, "bus": "SFX", "volume_db": -11.0, "pitch": 0.03, "cooldown": 0.1, "max": 2, "priority": 50, "source": "procedural"},
+		"item_wood": {"path": "inventory/item_wood", "variants": 2, "bus": "SFX", "volume_db": -9.0, "pitch": 0.05, "cooldown": 0.1, "max": 2, "priority": 50, "source": "procedural"},
+		"item_fiber": {"path": "inventory/item_fiber", "variants": 2, "bus": "SFX", "volume_db": -10.0, "pitch": 0.05, "cooldown": 0.1, "max": 2, "priority": 50, "source": "procedural"},
+		"item_water": {"path": "inventory/item_water", "variants": 1, "bus": "SFX", "volume_db": -10.0, "pitch": 0.04, "cooldown": 0.1, "max": 2, "priority": 50, "source": "procedural"},
+		"item_food": {"path": "inventory/item_food", "variants": 1, "bus": "SFX", "volume_db": -10.0, "pitch": 0.04, "cooldown": 0.1, "max": 2, "priority": 50, "source": "procedural"},
+		"item_cloth": {"path": "inventory/item_cloth", "variants": 1, "bus": "SFX", "volume_db": -11.0, "pitch": 0.05, "cooldown": 0.1, "max": 2, "priority": 50, "source": "procedural"},
+		"item_rope": {"path": "inventory/item_rope", "variants": 1, "bus": "SFX", "volume_db": -10.0, "pitch": 0.05, "cooldown": 0.1, "max": 2, "priority": 50, "source": "procedural"},
+		"item_give": {"path": "inventory/item_give", "variants": 1, "bus": "SFX", "volume_db": -9.0, "cooldown": 0.2, "max": 1, "priority": 55, "source": "procedural"},
+		"item_receive": {"path": "inventory/item_receive", "variants": 1, "bus": "SFX", "volume_db": -9.0, "cooldown": 0.2, "max": 1, "priority": 55, "source": "procedural"},
+		"item_discard": {"path": "inventory/item_discard", "variants": 1, "bus": "SFX", "volume_db": -11.0, "pitch": 0.04, "cooldown": 0.2, "max": 1, "priority": 45, "supersedes": ["ui_click"], "source": "procedural"},
+		"reward": {"path": "inventory/reward", "variants": 1, "bus": "SFX", "volume_db": -9.0, "cooldown": 0.5, "max": 1, "priority": 70, "source": "procedural"},
+		"collectible": {"path": "inventory/collectible", "variants": 1, "bus": "SFX", "volume_db": -10.0, "cooldown": 0.3, "max": 1, "priority": 65, "source": "procedural"},
+		"collection_complete": {"path": "inventory/collection_complete", "variants": 1, "bus": "SFX", "volume_db": -8.0, "cooldown": 1.0, "max": 1, "priority": 85, "source": "procedural"},
+
+		"quest_start": {"path": "quests/quest_start", "variants": 1, "bus": "SFX", "volume_db": -9.0, "cooldown": 0.5, "max": 1, "priority": 75, "source": "procedural"},
+		"objective_update": {"path": "quests/objective_update", "variants": 1, "bus": "SFX", "volume_db": -15.0, "cooldown": 0.5, "max": 1, "priority": 30, "source": "procedural"},
+		"objective_complete": {"path": "quests/objective_complete", "variants": 1, "bus": "SFX", "volume_db": -10.0, "cooldown": 0.4, "max": 1, "priority": 70, "source": "procedural"},
+		"quest_complete": {"path": "quests/quest_complete", "variants": 1, "bus": "SFX", "volume_db": -7.0, "cooldown": 1.0, "max": 1, "priority": 95, "source": "procedural"},
+		"region_new": {"path": "quests/region_new", "variants": 1, "bus": "SFX", "volume_db": -10.0, "cooldown": 1.0, "max": 1, "priority": 60, "source": "procedural"},
+		"travel": {"path": "quests/travel", "variants": 1, "bus": "SFX", "volume_db": -13.0, "cooldown": 0.5, "max": 1, "priority": 50, "source": "procedural"},
+		"discovery": {"path": "discoveries/discovery", "variants": 1, "bus": "SFX", "volume_db": -10.0, "cooldown": 0.6, "max": 1, "priority": 68, "source": "procedural"},
+
+		"amb_wind_canaan": {"path": "ambience/canaan/amb_wind_canaan", "variants": 1, "bus": "Ambience", "volume_db": -9.0, "loop": true, "source": "procedural"},
+		"amb_wind_road": {"path": "ambience/caravan_road/amb_wind_road", "variants": 1, "bus": "Ambience", "volume_db": -8.0, "loop": true, "source": "procedural"},
+		"amb_wind_dothan": {"path": "ambience/dothan/amb_wind_dothan", "variants": 1, "bus": "Ambience", "volume_db": -9.0, "loop": true, "source": "procedural"},
+		"amb_water_well": {"path": "ambience/canaan/amb_water_well", "variants": 1, "bus": "Ambience", "volume_db": -6.0, "loop": true, "source": "procedural"},
+		"amb_water_cistern": {"path": "ambience/dothan/amb_water_cistern", "variants": 1, "bus": "Ambience", "volume_db": -6.0, "loop": true, "source": "procedural"},
+		"amb_bird": {"path": "ambience/common/amb_bird", "variants": 6, "bus": "Ambience", "volume_db": -21.0, "pitch": 0.08, "jitter_db": 3.0, "max": 2, "priority": 8, "source": "procedural"},
+		"amb_sheep": {"path": "ambience/common/amb_sheep", "variants": 4, "bus": "Ambience", "volume_db": -22.0, "pitch": 0.06, "jitter_db": 3.0, "max": 1, "priority": 8, "source": "procedural"},
+		"amb_goat": {"path": "ambience/common/amb_goat", "variants": 2, "bus": "Ambience", "volume_db": -24.0, "pitch": 0.05, "jitter_db": 2.0, "max": 1, "priority": 8, "source": "procedural"},
+		"amb_village_grind": {"path": "ambience/canaan/amb_village_grind", "variants": 2, "bus": "Ambience", "volume_db": -27.0, "pitch": 0.05, "jitter_db": 2.0, "max": 1, "priority": 6, "source": "procedural"},
+		"amb_village_knock": {"path": "ambience/canaan/amb_village_knock", "variants": 2, "bus": "Ambience", "volume_db": -26.0, "pitch": 0.05, "jitter_db": 2.0, "max": 1, "priority": 6, "source": "procedural"},
+		"amb_hooves": {"path": "ambience/caravan_road/amb_hooves", "variants": 2, "bus": "Ambience", "volume_db": -21.0, "pitch": 0.05, "jitter_db": 2.0, "max": 1, "priority": 8, "source": "procedural"},
+		"amb_bells": {"path": "ambience/caravan_road/amb_bells", "variants": 2, "bus": "Ambience", "volume_db": -27.0, "pitch": 0.04, "jitter_db": 2.0, "max": 1, "priority": 6, "source": "procedural"},
+		"amb_cargo_creak": {"path": "ambience/caravan_road/amb_cargo_creak", "variants": 2, "bus": "Ambience", "volume_db": -24.0, "pitch": 0.06, "jitter_db": 2.0, "max": 1, "priority": 6, "source": "procedural"},
+		"amb_insects": {"path": "ambience/dothan/amb_insects", "variants": 2, "bus": "Ambience", "volume_db": -28.0, "pitch": 0.06, "jitter_db": 2.0, "max": 1, "priority": 5, "source": "procedural"}
+	},
+
+	"surfaces": {
+		"_comment": "Camadas de TileMapLayer -> superfície dos passos, da camada de cima para a de baixo. A primeira camada com tile na posição dos pés decide. Mapas novos podem declarar \"surface_layers\" na região para sobrescrever.",
+		"layers": [["Plaza", "stone"], ["Paths", "dirt"], ["DryGrass", "grass"], ["Ground", "grass"]],
+		"default": "dirt",
+		"sounds": {"dirt": "footstep_dirt", "grass": "footstep_grass", "stone": "footstep_stone", "sand": "footstep_sand", "wood": "footstep_wood", "water": "footstep_water"},
+		"run": {"pitch_scale": 1.07, "volume_db": 2.5}
+	},
+
+	"interactions": {
+		"_comment": "Som ao interagir, pelo id do diálogo do objeto; sem entrada, vale o padrão do tipo (kinds). Conversas (TALK) usam dialogue_open.",
+		"by_dialogue": {
+			"well_examine": "interact_water_well",
+			"dothan_cistern": "interact_water_cistern",
+			"boundary_stone": "interact_stone",
+			"cr_marker": "interact_stone",
+			"dothan_overlook": "interact_stone",
+			"firepit_examine": "interact_fire",
+			"cr_campfire": "interact_fire",
+			"oven_examine": "interact_ceramic",
+			"pots_examine": "interact_ceramic",
+			"cr_jar": "interact_ceramic",
+			"stall_produce_examine": "interact_wood",
+			"stall_textiles_examine": "interact_cloth",
+			"tent_examine": "interact_cloth",
+			"cr_bundle": "interact_cloth",
+			"cr_tracks": "interact_dirt",
+			"journal_intro": "interact_parchment",
+			"house_door": "interact_door"
+		},
+		"kinds": {"TALK": "dialogue_open", "EXAMINE": "interact_generic", "READ": "interact_parchment", "OPEN": "interact_wood", "DOOR": "interact_door", "COLLECT": ""}
+	},
+
+	"items": {
+		"_comment": "Som de coleta/recebimento por item; sem entrada usa item_pickup.",
+		"plant_fiber": "item_fiber",
+		"dry_wood": "item_wood",
+		"water_skin": "item_water",
+		"rope": "item_rope",
+		"barley_bread": "item_food",
+		"dried_figs": "item_food",
+		"provisions_basket": "item_food",
+		"wool_cloth": "item_cloth"
+	},
+
+	"ambience": {
+		"_comment": "Por região: bed = laço contínuo (troca com fade), layers = sons ocasionais em volta do ouvinte (intervalo em s, spread em px), emitters = laços presos a um ponto do mapa (somem quando o mapa é descarregado).",
+		"canaan_village": {
+			"bed": "amb_wind_canaan",
+			"layers": [
+				{"sounds": ["amb_bird"], "interval": [5.0, 14.0], "spread": 220},
+				{"sounds": ["amb_sheep", "amb_goat"], "interval": [14.0, 32.0], "spread": 260},
+				{"sounds": ["amb_village_grind", "amb_village_knock"], "interval": [18.0, 40.0], "spread": 200}
+			],
+			"emitters": [{"sound": "amb_water_well", "x": 480, "y": 344, "max_distance": 150}]
+		},
+		"caravan_road": {
+			"bed": "amb_wind_road",
+			"layers": [
+				{"sounds": ["amb_hooves"], "interval": [16.0, 34.0], "spread": 260},
+				{"sounds": ["amb_bells", "amb_cargo_creak"], "interval": [12.0, 28.0], "spread": 240},
+				{"sounds": ["amb_bird"], "interval": [12.0, 30.0], "spread": 240}
+			],
+			"emitters": []
+		},
+		"dothan": {
+			"bed": "amb_wind_dothan",
+			"layers": [
+				{"sounds": ["amb_sheep", "amb_goat"], "interval": [7.0, 18.0], "spread": 260},
+				{"sounds": ["amb_insects"], "interval": [9.0, 22.0], "spread": 200},
+				{"sounds": ["amb_bird"], "interval": [10.0, 24.0], "spread": 240}
+			],
+			"emitters": [{"sound": "amb_water_cistern", "x": 790, "y": 240, "max_distance": 130}]
+		}
+	}
+}

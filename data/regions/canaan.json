@@ -1,0 +1,40 @@
+{
+	"regions": [
+		{
+			"id": "canaan_village",
+			"display_name": "Aldeia em Canaã",
+			"area_label": "Região de Canaã",
+			"subtitle": "Época dos patriarcas (datação aproximada e debatida)",
+			"biome": "canaa",
+			"map_scene": "res://scenes/maps/canaan_village.tscn",
+			"classification": "plausible_fiction",
+			"notes": "Aldeia fictícia na região histórica de Canaã. Arquitetura (casas de pedra e barro com teto plano), tendas de pelo de cabra, poço, forno de barro, olival e criação de ovelhas são elementos plausíveis para a Idade do Bronze no Levante; detalhes específicos são aproximações criativas.",
+			"related_stories": ["gen_037_joseph_sold", "gen_026_isaac_wells"],
+			"context": {
+				"place_id": "canaan",
+				"era_id": "patriarchs",
+				"references": ["Gen 26:18-22"],
+				"theme": "Os poços e a importância da água",
+				"discoveries_on_enter": ["land_of_canaan"]
+			},
+			"entries": {
+				"default": {"x": 480, "y": 388, "facing": "down"},
+				"from_caravan_road": {"x": 912, "y": 336, "facing": "left"}
+			},
+			"exits": [
+				{
+					"id": "east_road",
+					"rect": [946, 312, 14, 48],
+					"to": "caravan_road",
+					"entry": "from_canaan",
+					"label": "Caminho das Caravanas (saída leste)",
+					"requires": {"any": [{"flag": "experience:joseph_dothan"}, {"flag": "region_unlocked:caravan_road"}]},
+					"locked_text": "A estrada leste leva ao Caminho das Caravanas. Quando uma nova experiência estiver disponível, abra o Mapa das Escrituras (M)."
+				}
+			],
+			"areas": [
+				{"id": "canaan_east_gate", "rect": [864, 304, 64, 64], "label": "Saída leste da aldeia"}
+			]
+		}
+	]
+}

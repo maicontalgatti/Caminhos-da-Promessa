@@ -1,0 +1,58 @@
+{
+	"_comment": "Proposta ep_006 (dialogue-writer, IA, pending_review). Só as descobertas alteradas: wells_antiquity e isaac_wells. shepherding_water e pottery_jars ficam como estão. Ids, classification e references preservados; verification continua pending_review sem revisor. presentation_notes descreve ajustes sugeridos em gen_026_wells (a apresentação não foi reescrita).",
+	"discoveries": [
+		{
+			"id": "wells_antiquity",
+			"title": "Poços na Antiguidade",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "Em regiões onde a água era essencial para a sobrevivência de pessoas e rebanhos, o acesso aos poços tinha grande importância. Cavar um poço exigia muito trabalho, e cavar ou dar nome a um poço podia servir como reivindicação do direito de usá-lo.",
+			"bible_note": "Gênesis 26:18-22 relata acontecimentos relacionados a poços e disputas por água nos dias de Isaque.",
+			"references": ["Gen 26:18-22", "Gen 21:25-31", "John 4:5-6"],
+			"sections": [
+				{"kind": "historical", "title": "Poços, cisternas e fontes", "text": "Fontes eram água que brotava naturalmente; poços eram escavados até alcançar água do subsolo; cisternas guardavam a água da chuva. Em terras de chuva sazonal, um poço confiável podia definir onde uma família ou aldeia se fixava. O uso amplo de cisternas rebocadas costuma ser associado a épocas mais tardias (Idade do Ferro)."},
+				{"kind": "historical", "title": "Água sob os vales secos", "text": "No sul, a região do Neguebe é semiárida, e os leitos dos vales só correm depois das chuvas de inverno. Sob esses leitos costuma haver água subterrânea pouco funda, que podia ser alcançada cavando — algo que combina com poços cavados num vale."},
+				{"kind": "biblical_text", "title": "Disputas por poços", "text": "Abraão reclama com Abimeleque de um poço que os servos dele haviam tomado, e os dois fazem um acordo em Berseba (Gn 21:25-31). Mais tarde, Isaque reabre os poços cavados nos dias de Abraão (Gn 26:18) e cava outros; os pastores de Gerar disputam dois desses poços novos (Gn 26:19-21)."},
+				{"kind": "chronology", "title": "Um poço muitos séculos depois", "text": "O evangelho de João menciona o poço de Jacó em Sicar, na Samaria, onde Jesus conversa com uma mulher samaritana (Jo 4:5-6). É outra época, mas mostra como um poço podia ser lembrado por gerações."}
+			],
+			"related": {"people": ["abraham", "isaac", "abimelech"], "places": ["gerar", "beersheba"], "events": ["abraham_abimelech_well", "isaac_wells"], "stories": ["gen_026_isaac_wells"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Referências conferidas pelo agente de IA; texto revisado para ep_006 (reivindicação de poços como prática atestada no texto bíblico, não regra geral; poços reabertos × novos; Neguebe e cisternas conforme research_historical.md). Aguarda revisão humana."}
+		},
+		{
+			"id": "isaac_wells",
+			"title": "Os poços de Isaque: Eseque, Sitna e Reobote",
+			"classification": "recorded_event",
+			"presentation": "toast",
+			"era_id": "patriarchs",
+			"summary": "Em Gênesis 26, Isaque reabre os poços cavados nos dias de Abraão e cava outros. Os pastores de Gerar disputam dois dos novos; o terceiro, aberto sem contenda, recebe o nome de Reobote.",
+			"bible_note": "Gênesis 26:18-22.",
+			"references": ["Gen 26:12-22", "Gen 26:23-33"],
+			"sections": [
+				{"kind": "biblical_text", "title": "Antes dos poços", "text": "Isaque prospera em Gerar, e o texto atribui isso à bênção do SENHOR. Os filisteus, como o relato os chama, sentem inveja; eles tinham entulhado com terra os poços cavados pelos servos de Abraão. Abimeleque pede que Isaque se afaste, e ele acampa no vale de Gerar (Gn 26:12-17)."},
+				{"kind": "biblical_text", "title": "Os poços reabertos", "text": "Isaque cava de novo os poços do tempo de Abraão, entulhados depois da morte dele, e lhes dá os mesmos nomes que o pai tinha dado (v. 18). São poços antigos, diferentes dos três que vêm a seguir."},
+				{"kind": "biblical_text", "title": "Três poços novos", "text": "Os servos de Isaque cavam no vale e encontram água corrente (v. 19). Os pastores de Gerar dizem que a água é deles, e o poço recebe o nome Eseque; o próprio texto liga o nome à contenda (v. 20). Há disputa também pelo seguinte, chamado Sitna (v. 21). Isaque sai dali e cava outro, sem disputa, e o chama Reobote, dizendo que o SENHOR lhes deu espaço na terra (v. 22)."},
+				{"kind": "interpretation", "title": "Nota lexical: o sentido dos nomes", "text": "Eseque e Reobote são explicados no próprio relato (v. 20 e 22); notas de traduções costumam verter os nomes como 'contenda' e 'lugares amplos'. Para Sitna, o versículo não dá explicação: o sentido 'oposição' ou 'hostilidade' vem de léxicos e notas de tradução, não do texto. 'Água corrente' (v. 19) traduz uma expressão hebraica que, ao pé da letra, é 'água viva': água de fonte ou de lençol, que se renova."},
+				{"kind": "historical", "title": "Onde ficava Gerar?", "text": "A localização de Gerar é debatida. A proposta mais aceita hoje é Tel Haror, junto ao vale chamado Nahal Gerar, no oeste do Neguebe, onde foi escavada uma cidade fortificada da Idade do Bronze Médio; uma proposta mais antiga é Tell Jemmeh. Nenhuma é definitiva. Eseque e Sitna não têm local identificado, e a ligação tradicional de Reobote com ruínas do Neguebe é incerta."},
+				{"kind": "biblical_text", "title": "Depois", "text": "Isaque sobe a Berseba e seus servos cavam ali um poço. Abimeleque vem fazer um acordo de paz com ele; no mesmo dia, os servos contam que encontraram água (Gn 26:23-33). É outro poço, distinto dos reabertos e dos três do vale."},
+				{"kind": "historical", "title": "Berseba hoje", "text": "O sítio de Tel Berseba costuma ser identificado com a Berseba bíblica, mas o que foi escavado ali, inclusive um poço, é da Idade do Ferro, muito posterior à época atribuída aos patriarcas. Não há como apontar ali o poço de Abraão ou de Isaque."},
+				{"kind": "chronology", "title": "Sem data", "text": "O texto só situa o entulhamento dos poços depois da morte de Abraão (Gn 26:18; 25:7-8). A época dos patriarcas não tem datação segura: propostas a situam no II milênio a.C., mais comumente na Idade do Bronze Médio, e há estudiosos que veem os relatos como compostos bem depois."},
+				{"kind": "interpretation", "title": "Filisteus nos dias dos patriarcas?", "text": "Os filisteus conhecidos pela arqueologia se estabelecem na costa por volta do século XII a.C. Por isso, a menção a filisteus em Gerar é discutida: alguns estudiosos a entendem como atualização do nome por um narrador posterior, outros como referência a grupos anteriores vindos do litoral. O jogo apresenta a questão como debatida."}
+			],
+			"related": {"people": ["isaac", "abraham", "abimelech"], "places": ["gerar", "beersheba"], "events": ["isaac_wells"], "stories": ["gen_026_isaac_wells"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Texto revisado para ep_006 pelo agente de IA (dialogue-writer). Conferir em léxico hebraico os sentidos de Eseque, Sitna e Reobote; localização de Gerar (Tel Haror provável, não definitiva) e datação de Tel Berseba conforme research_historical.md, fontes a confirmar. Aguarda revisão humana."}
+		}
+	],
+	"presentation_notes": {
+		"presentation_id": "gen_026_wells",
+		"rewrite": false,
+		"changes": [
+			{"step": "Isaque em Gerar", "field": "text", "current": "Isaque, filho de Abraão, vivia na região de Gerar, no sul de Canaã. Rebanhos grandes precisam de muita água.", "proposed": "Isaque, filho de Abraão, vivia na região de Gerar, cuja localização exata é debatida. Rebanhos grandes precisam de muita água.", "why": "Evitar afirmar localização como fato (research_historical.md: Tel Haror provável, não definitivo)."},
+			{"step": "Os poços de Abraão", "field": "text", "current": "Ao dar aos poços os mesmos nomes que Abraão tinha dado, Isaque retoma o que o pai deixou.", "proposed": "Estes são poços antigos, reabertos. Ao dar a eles os mesmos nomes que Abraão tinha dado, Isaque retoma o que o pai deixou. Os três poços seguintes são novos.", "why": "Distinguir poços reabertos (26:18) dos três novos (26:19-22)."},
+			{"step": "Eseque: contenda", "field": "text", "current": "O nome Eseque lembra a ideia de 'contenda', 'disputa'. 'Água corrente' é água que brota de uma fonte, muito valiosa numa terra seca.", "proposed": "O próprio texto liga o nome Eseque à contenda. 'Água corrente' é, ao pé da letra, 'água viva': água de fonte ou de lençol, muito valiosa numa terra seca.", "why": "Marcar que a explicação de Eseque vem do versículo."},
+			{"step": "Sitna: inimizade", "field": "heading + text", "current": "heading 'Sitna: inimizade'; text 'O nome Sitna é ligado a 'inimizade' ou 'oposição'.'", "proposed": "heading 'Sitna'; text 'O versículo não explica o nome Sitna. Notas de traduções o ligam a 'oposição' ou 'hostilidade' (nota lexical, não parte do texto).'", "why": "Sitna não é explicado no texto; o sentido é inferência lexical (research_biblical.md, seção 8)."},
+			{"step": "Reobote: espaço", "field": "text", "current": "Reobote quer dizer 'lugares amplos'. Os três nomes contam a história: contenda, inimizade e, por fim, espaço.", "proposed": "O texto explica Reobote: agora havia espaço para eles. O nome costuma ser traduzido por 'lugares amplos'. Os nomes acompanham a história: duas disputas e, por fim, espaço.", "why": "Não apresentar o sentido lexical de Sitna como parte da 'história contada pelos nomes'."},
+			{"step": "Sobre esta apresentação", "field": "text", "current": "... Adina, Ezer e a aldeia são criações do jogo e não fazem parte deste relato.", "proposed": "... Adina, Ezer, Ari e a aldeia são criações do jogo e não fazem parte deste relato.", "why": "Ari passa a ser personagem da missão (objetivo listen_ari)."}
+		]
+	}
+}

@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/shaders/sway_material.tres" id="1_y781w"]
+[ext_resource type="Texture2D" path="res://assets/environments/tree_olive.png" id="2_5wg4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl40h"]
+size = Vector2(10, 5)
+
+[node name="TreeOlive" type="StaticBody2D" unique_id=1055353331]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1276500710]
+material = ExtResource("1_y781w")
+texture = ExtResource("2_5wg4x")
+centered = false
+offset = Vector2(-24, -53)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2039185625]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_fl40h")

@@ -1,0 +1,20 @@
+{
+	"episode": "ep_011_jose_e_o_tempo_de_fartura",
+	"biblical": {
+		"verdict": "pending",
+		"reviewer_agent": "",
+		"date": ""
+	},
+	"historical": {
+		"verdict": "pending",
+		"reviewer_agent": "",
+		"date": ""
+	},
+	"findings": [],
+	"human": {
+		"approved_by": "",
+		"date": "",
+		"notes": ""
+	},
+	"_comment": "Veredito de agente nunca é 'verified'. Só uma pessoa preenche human.approved_by."
+}

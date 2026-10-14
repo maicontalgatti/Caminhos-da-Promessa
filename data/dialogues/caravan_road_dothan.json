@@ -1,0 +1,181 @@
+{
+	"_comment": "Diálogos do Caminho das Caravanas e de Dotã. Falas de personagens fictícios são ficção do jogo e nunca testemunham o relato (ninguém viu José, os irmãos ou o homem de Gn 37:15). Referências bíblicas só em notas do narrador. Pesquisa: production/episodes/ep_008_jose_e_seus_irmaos/research_missions_v04.md.",
+	"dialogues": [
+		{
+			"id": "malik_talk",
+			"start": "greet",
+			"start_if": [
+				{"if": {"all": [{"objective": "road_supplies/deliver"}, {"has_item": "plant_fiber", "count": 3}, {"has_item": "dry_wood", "count": 2}]}, "node": "delivery"},
+				{"objective": "road_supplies/reward", "node": "reward"},
+				{"if": {"all": [{"objective": "road_supplies/travel_info"}, {"choice": "supplies_extra"}]}, "node": "extra"},
+				{"objective": "road_supplies/travel_info", "node": "travel_info"},
+				{"flag": "met_malik", "node": "hub"}
+			],
+			"nodes": {
+				"greet": {"speaker": "malik", "text": "Paz, caminhante! Sente-se um pouco à sombra. Por esta estrada passa de tudo.", "next": "news", "set_flags": ["met_malik"]},
+				"news": {"speaker": "malik", "text": "Por esta estrada passam caravanas com cargas de resinas e perfumes, descendo para o Egito. A gente para onde há água e pasto para os animais.", "next": "news2", "event": "road_malik_news", "unlock": ["caravans_trade"]},
+				"news2": {"speaker": "malik", "text": "No fim desta estrada, depois das colinas, ficam os pastos de Dotã. Bom capim, dizem os pastores.", "next": "hub"},
+				"hub": {"speaker": "malik", "text": "Em que posso ajudar?", "choices": [
+					{"text": "Você precisa de alguma coisa?", "next": "request", "if": {"not": {"quest_started": "road_supplies"}}},
+					{"text": "Ainda estou juntando a fibra e a lenha.", "next": "remind", "if": {"any": [{"objective": "road_supplies/talk_malik"}, {"objective": "road_supplies/find_resources"}, {"objective": "road_supplies/collect"}, {"objective": "road_supplies/deliver"}]}},
+					{"text": "Trocar 2 lenhas secas por um odre de água.", "next": "barter", "if": {"all": [{"quest_completed": "road_supplies"}, {"has_item": "dry_wood", "count": 2}, {"lacks_item": "water_skin"}]}, "take": [{"item": "dry_wood", "qty": 2}], "give": [{"item": "water_skin", "qty": 1}], "repeatable": true},
+					{"text": "Que caravanas são essas?", "next": "news"},
+					{"text": "Até mais, Malik.", "next": "bye"}
+				]},
+				"request": {"speaker": "malik", "text": "Para dizer a verdade, preciso. Minhas cordas estão gastas e a lenha acabou.", "next": "request2"},
+				"request2": {"speaker": "malik", "text": "Se você me trouxer três feixes de fibra para trançar e duas braçadas de lenha seca, eu pago em mercadoria. Aqui na estrada a gente troca uma coisa por outra.", "next": "request3", "event": "supplies_malik_request"},
+				"request3": {"speaker": "malik", "text": "A fibra cresce em touceiras à beira do caminho. Lenha seca você acha embaixo das árvores. Pressione E para coletar.", "next": "end"},
+				"remind": {"speaker": "malik", "text": "Três feixes de fibra e duas braçadas de lenha seca. Olhe na beira do caminho e embaixo das árvores.", "next": "end"},
+				"delivery": {"speaker": "malik", "text": "Fibra e lenha! Era exatamente disso que eu precisava.", "next": "reward", "take": [{"item": "plant_fiber", "qty": 3}, {"item": "dry_wood", "qty": 2}], "event": "supplies_delivered", "set_flags": ["met_malik"]},
+				"reward": {"speaker": "malik", "text": "Tome este odre de couro: guarda água para a viagem. E figos secos para o caminho.", "next": "extra", "give": [{"item": "water_skin", "qty": 1}, {"item": "dried_figs", "qty": 2}]},
+				"extra": {"speaker": "malik", "text": "Ainda tenho um pedaço de pano de lã. Quer levar também?", "choices": [
+					{"text": "Aceitar o pano de lã.", "next": "accepted", "give": [{"item": "wool_cloth", "qty": 1}], "decision": {"id": "supplies_extra", "option": "accepted"}, "flags": {"accepted_reward": true}},
+					{"text": "Não, obrigado. O odre e os figos já bastam.", "next": "declined", "decision": {"id": "supplies_extra", "option": "declined"}, "flags": {"accepted_reward": false}, "grant_collectible": "road_hospitality"}
+				]},
+				"accepted": {"speaker": "malik", "text": "Leve, leve! Pano bom serve para muita coisa na estrada.", "next": "travel_info"},
+				"declined": {"speaker": "malik", "text": "Você é dos que não pegam mais do que precisam. Então leve ao menos um conselho.", "next": "travel_info"},
+				"travel_info": {"speaker": "malik", "text": "Quem viaja a pé leva água, pão e fruta seca, que não estraga. E planeja as paradas onde há poço ou fonte.", "next": "travel_info2", "unlock": ["ancient_travel"]},
+				"travel_info2": {"speaker": "malik", "text": "Se um dia precisar de outro odre, volte com duas braçadas de lenha seca e a gente troca.", "next": "end", "event": "supplies_travel_info"},
+				"barter": {"speaker": "malik", "text": "Negócio feito. Que a água não lhe falte no caminho.", "next": "end"},
+				"bye": {"speaker": "malik", "text": "Vá em paz, e cuidado com o sol do meio-dia.", "next": "end"}
+			}
+		},
+		{
+			"id": "cr_tracks",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Marcas de cascos e de patas na terra seca, seguindo para o leste. Muitos animais passaram por aqui carregados.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Jumentos estavam entre os animais de carga mais comuns em Canaã. Rastros como estes mostram por onde as caravanas costumavam passar.", "next": "end", "grant_collectible": "cr_tracks"}
+			}
+		},
+		{
+			"id": "cr_marker",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um monte de pedras empilhadas à beira da estrada, sem nenhuma inscrição. Talvez marque um limite, um acordo ou o rumo do caminho.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "(Em Gênesis 31:45-48, Jacó ergue uma coluna e seus parentes juntam um monte de pedras, testemunho do acordo com Labão. Era outro uso das pedras empilhadas.)", "next": "end", "grant_collectible": "cr_marker"}
+			}
+		},
+		{
+			"id": "cr_campfire",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Cinzas frias num círculo de pedras. Alguém acampou aqui há poucos dias.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Quem viajava parava ao entardecer para cozinhar, descansar os animais e seguir de manhã cedo.", "next": "end", "grant_collectible": "cr_campfire"}
+			}
+		},
+		{
+			"id": "cr_bundle",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Fardos amarrados com corda, deixados à sombra. Um deles tem um cheiro forte e adocicado de resina.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "(Gênesis 37:25 cita especiarias, bálsamo e mirra entre as cargas de uma caravana que descia para o Egito. Estes fardos são criados para o jogo.)", "next": "end", "grant_collectible": "cr_bundle"}
+			}
+		},
+		{
+			"id": "cr_jar",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um jarro de barro com a boca tampada por um pano amarrado. Lá dentro, um resto de água ainda fresca.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Jarros e odres guardavam a água da viagem. O barro ajudava a manter a água fresca.", "next": "end", "grant_collectible": "cr_jar"}
+			}
+		},
+		{
+			"id": "dothan_overlook",
+			"start": "n1",
+			"start_if": [{"objective": "joseph_dothan_road/overlook", "node": "first"}, {"objective": "joseph_dothan_road/read_story", "node": "read"}],
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Do alto da pedra, o vale se abre em campos verdes e encostas suaves. Rebanhos pastam ao longe.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "(Gênesis 37:17 cita Dotã como o lugar onde José encontrou os irmãos; o texto dá a entender que o rebanho pastava por ali.)", "next": "end", "unlock": ["dothan_valley"], "grant_collectible": "dothan_overlook"},
+				"first": {"speaker": "narrator", "text": "Do alto da pedra, o vale se abre em campos verdes e encostas suaves. Rebanhos pastam ao longe.", "next": "first2"},
+				"first2": {"speaker": "narrator", "text": "(Gênesis 37:17 cita Dotã como o lugar onde José encontrou os irmãos; o texto dá a entender que o rebanho pastava por ali.)", "next": "read", "unlock": ["dothan_valley"], "grant_collectible": "dothan_overlook"},
+				"read": {"speaker": "narrator", "text": "Você abre o diário de viagem nos trechos de Gênesis 37 sobre a busca de José.", "next": "end", "action": {"presentation": "gen_037_search"}}
+			}
+		},
+		{
+			"id": "dothan_cistern",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Uma cisterna escavada na rocha, com a boca protegida por pedras. Lá no fundo brilha a água das chuvas de inverno, guardada para os meses secos.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "(Uma cisterna comum de pastores, criada para o jogo. Não é a cisterna do relato de José, em Gênesis 37:24.)", "next": "end", "unlock": ["wells_antiquity"], "grant_collectible": "dothan_cistern"}
+			}
+		},
+		{
+			"id": "rafi_talk",
+			"start": "greet",
+			"start_if": [
+				{"if": {"all": [{"objective": "dothan_families/return_rafi"}, {"choice": "dothan_families", "option": "talia"}]}, "node": "after_talia"},
+				{"if": {"all": [{"objective": "dothan_families/return_rafi"}, {"choice": "dothan_families", "option": "oren"}]}, "node": "after_oren"},
+				{"if": {"all": [{"objective": "dothan_families/return_rafi"}, {"choice": "dothan_families", "option": "shared"}]}, "node": "after_shared"},
+				{"if": {"all": [{"flag": "met_rafi"}, {"not": {"quest_started": "dothan_families"}}]}, "node": "basket"},
+				{"objective": "dothan_families/deliver", "node": "deliver_talia"},
+				{"if": {"quest_active": "dothan_families"}, "node": "waiting"},
+				{"flag": "met_rafi", "node": "again"}
+			],
+			"nodes": {
+				"greet": {"speaker": "rafi", "text": "Paz, viajante. Veio pela estrada do oeste? Poucos chegam a pé até aqui.", "next": "pasture", "set_flags": ["met_rafi"]},
+				"pasture": {"speaker": "rafi", "text": "Os campos de Dotã têm bom pasto. Pastores de lugares distantes às vezes trazem os rebanhos para cá quando o capim fica fraco por lá.", "next": "basket"},
+				"basket": {"speaker": "rafi", "text": "Duas famílias acamparam aqui perto nestes dias. Juntei um cesto de provisões para ajudar, mas só tenho um.", "next": "basket2"},
+				"basket2": {"speaker": "rafi", "text": "Minhas pernas já não me levam de tenda em tenda. Leve o cesto e escute as duas: Talia, perto das tendas a oeste, e Oren, logo ao norte daqui.", "next": "basket3", "give": [{"item": "provisions_basket", "qty": 1}], "event": "families_rafi_basket"},
+				"basket3": {"speaker": "rafi", "text": "Depois, você decide o que fazer com ele. Volte e me conte.", "next": "end"},
+				"waiting": {"speaker": "rafi", "text": "Já falou com Talia e com Oren? O cesto é seu para decidir.", "next": "end"},
+				"deliver_talia": {"speaker": "rafi", "text": "O seu odre ficou com Oren? Então o cesto vai para Talia. Leve até ela, perto das tendas a oeste.", "next": "end"},
+				"after_talia": {"speaker": "rafi", "text": "O cesto foi para Talia? As crianças vão comer bem esta semana. Oren é teimoso, vai dar um jeito de achar água no caminho.", "next": "after_end"},
+				"after_oren": {"speaker": "rafi", "text": "O cesto foi para Oren? Com ele, Oren troca por água e chega ao pasto distante. Vou ver com os vizinhos o que se consegue para Talia.", "next": "after_end"},
+				"after_shared": {"speaker": "rafi", "text": "O cesto para Talia e o seu odre para Oren? Você deu do que era seu. Ninguém ficou de mãos vazias.", "next": "after_end"},
+				"after_end": {"speaker": "rafi", "text": "Não existe escolha fácil quando falta para todos. Obrigado por ter escutado as duas famílias.", "next": "end", "event": "families_rafi_after", "unlock": ["sharing_in_need"]},
+				"again": {"speaker": "rafi", "text": "O vento muda à tarde. É quando as ovelhas ficam mais calmas.", "next": "end"}
+			}
+		},
+		{
+			"id": "talia_talk",
+			"start": "greet",
+			"start_if": [
+				{"if": {"all": [{"choice": "dothan_families", "option": "shared"}, {"has_item": "provisions_basket"}]}, "node": "shared_delivery"},
+				{"if": {"all": [{"flag": "heard_talia"}, {"has_item": "provisions_basket"}, {"choice": "dothan_families"}]}, "node": "offer"},
+				{"if": {"choice": "dothan_families", "option": "talia"}, "node": "thanks_again"},
+				{"flag": "heard_talia", "node": "again"}
+			],
+			"nodes": {
+				"greet": {"speaker": "talia", "text": "Paz. Desculpe a bagunça, estamos levando o rebanho para outro pasto.", "next": "need", "set_flags": ["heard_talia"]},
+				"need": {"speaker": "talia", "text": "O que trouxemos de comida está no fim. As crianças comeram o último pão ontem, e ainda faltam dias até voltarmos.", "next": "need2", "flags": {"talia_needs_food": true}},
+				"need2": {"speaker": "talia", "text": "O rebanho está bem. Somos nós que precisamos de alguma coisa para comer.", "next": "end", "event": "families_talia_need"},
+				"offer": {"speaker": "talia", "text": "Esse cesto... é do velho Rafi, não é?", "choices": [
+					{"text": "Entregar o cesto à família de Talia.", "next": "thanks", "if": {"flag": "heard_oren"}, "take": [{"item": "provisions_basket", "qty": 1}], "decision": {"id": "dothan_families", "option": "talia"}, "flags": {"family_received_supplies": true}},
+					{"text": "Antes, quero ouvir a outra família.", "next": "end", "if": {"not": {"flag": "heard_oren"}}},
+					{"text": "Vou pensar mais um pouco.", "next": "end", "if": {"flag": "heard_oren"}}
+				]},
+				"thanks": {"speaker": "talia", "text": "Pão, figos, grão tostado... Obrigada, viajante. Hoje as crianças dormem de barriga cheia.", "next": "end", "event": "families_delivered"},
+				"shared_delivery": {"speaker": "talia", "text": "Rafi mandou o cesto para nós? E você ainda deu o seu odre a Oren?", "next": "shared_delivery2", "take": [{"item": "provisions_basket", "qty": 1}], "flags": {"family_received_supplies": true}},
+				"shared_delivery2": {"speaker": "talia", "text": "Então ninguém ficou de mãos vazias hoje. Obrigada, viajante.", "next": "end", "event": "families_delivered"},
+				"thanks_again": {"speaker": "talia", "text": "As crianças ainda falam do cesto. Que o seu caminho seja bom.", "next": "end"},
+				"again": {"speaker": "talia", "text": "Vamos esperar mais um pouco antes de seguir. O rebanho precisa descansar.", "next": "end"}
+			}
+		},
+		{
+			"id": "oren_talk",
+			"start": "greet",
+			"start_if": [
+				{"if": {"all": [{"flag": "heard_oren"}, {"has_item": "provisions_basket"}, {"choice": "dothan_families"}]}, "node": "offer"},
+				{"if": {"choice": "dothan_families", "option": "oren"}, "node": "thanks_again"},
+				{"if": {"choice": "dothan_families", "option": "shared"}, "node": "shared_again"},
+				{"flag": "heard_oren", "node": "again"}
+			],
+			"nodes": {
+				"greet": {"speaker": "oren", "text": "Paz, viajante. Amanhã cedo levo o rebanho para um pasto mais distante, e o caminho é seco.", "next": "need", "set_flags": ["heard_oren"]},
+				"need": {"speaker": "oren", "text": "O meu odre rachou. Sem água para a viagem, não sei como vou chegar lá com as ovelhas.", "next": "end", "flags": {"oren_needs_water": true}, "event": "families_oren_need"},
+				"offer": {"speaker": "oren", "text": "Esse é o cesto do Rafi? Ele disse que alguém viria.", "choices": [
+					{"text": "Entregar o cesto à família de Oren.", "next": "thanks", "if": {"flag": "heard_talia"}, "take": [{"item": "provisions_basket", "qty": 1}], "decision": {"id": "dothan_families", "option": "oren"}, "flags": {"family_received_supplies": true}},
+					{"text": "Dar o meu odre de água a Oren e levar o cesto para Talia.", "next": "shared", "if": {"all": [{"flag": "heard_talia"}, {"has_item": "water_skin"}]}, "take": [{"item": "water_skin", "qty": 1}], "decision": {"id": "dothan_families", "option": "shared"}},
+					{"text": "Antes, quero ouvir a outra família.", "next": "end", "if": {"not": {"flag": "heard_talia"}}},
+					{"text": "Vou pensar mais um pouco.", "next": "end", "if": {"flag": "heard_talia"}}
+				]},
+				"thanks": {"speaker": "oren", "text": "Com isto dá para trocar por água no caminho e ainda comer. Obrigado, viajante.", "next": "end", "event": "families_delivered"},
+				"shared": {"speaker": "oren", "text": "Um odre inteiro! Com isto eu chego ao pasto. Leve o cesto para Talia, as crianças dela precisam mais.", "next": "end"},
+				"thanks_again": {"speaker": "oren", "text": "Amanhã partimos. Graças a você, partimos tranquilos.", "next": "end"},
+				"shared_again": {"speaker": "oren", "text": "O odre não vaza nem uma gota. Que bom negócio você me fez, e sem pedir nada.", "next": "end"},
+				"again": {"speaker": "oren", "text": "Sem água, ovelha não anda. E pastor também não.", "next": "end"}
+			}
+		}
+	]
+}

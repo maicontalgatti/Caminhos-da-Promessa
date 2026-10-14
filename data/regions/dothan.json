@@ -1,0 +1,47 @@
+{
+	"regions": [
+		{
+			"id": "dothan",
+			"display_name": "Pastos de Dotã",
+			"area_label": "Região de Canaã",
+			"subtitle": "Época dos patriarcas (datação aproximada e debatida)",
+			"biome": "canaa",
+			"map_scene": "res://scenes/maps/dothan.tscn",
+			"classification": "plausible_fiction",
+			"notes": "Campos de pastoreio fictícios inspirados em Gênesis 37:17. Dotã costuma ser identificada com Tell Dothan, ao norte de Siquém (identificação provável). Pastores, famílias e acampamento são criados para o jogo; a cisterna é contexto e não é apresentada como a cisterna do relato.",
+			"related_stories": ["gen_037_joseph_sold"],
+			"context": {
+				"place_id": "dothan",
+				"era_id": "patriarchs",
+				"references": ["Gen 37:17"],
+				"theme": "Pastos distantes e a busca de José por seus irmãos",
+				"discoveries_on_enter": []
+			},
+			"entries": {
+				"default": {"x": 24, "y": 304, "facing": "right"},
+				"from_caravan_road": {"x": 24, "y": 304, "facing": "right"}
+			},
+			"exits": [
+				{"id": "west_road", "rect": [0, 284, 12, 40], "to": "caravan_road", "entry": "from_dothan", "label": "Caminho das Caravanas (oeste)"}
+			],
+			"areas": [],
+			"npcs": [
+				{"id": "rafi", "character": "rafi", "x": 440, "y": 160},
+				{"id": "talia", "character": "talia", "x": 250, "y": 130},
+				{"id": "oren", "character": "oren", "x": 480, "y": 130},
+				{"id": "sheep_d1", "character": "sheep", "x": 540, "y": 420},
+				{"id": "sheep_d2", "character": "sheep", "x": 590, "y": 440},
+				{"id": "sheep_d3", "character": "sheep", "x": 600, "y": 400},
+				{"id": "sheep_d4", "character": "sheep", "x": 520, "y": 460}
+			],
+			"examinables": [
+				{"id": "dothan_overlook", "x": 140, "y": 262, "prop": "boundary_stone", "dialogue": "dothan_overlook", "prompt": "Observar o vale", "center_y": -6, "prompt_y": -24},
+				{"id": "dothan_cistern", "x": 790, "y": 240, "prop": "cistern", "dialogue": "dothan_cistern", "prompt": "Examinar a cisterna", "radius": 16, "prompt_y": -22}
+			],
+			"pickups": [
+				{"id": "wood_d1", "item": "dry_wood", "x": 600, "y": 200},
+				{"id": "fiber_d1", "item": "plant_fiber", "x": 300, "y": 420}
+			]
+		}
+	]
+}

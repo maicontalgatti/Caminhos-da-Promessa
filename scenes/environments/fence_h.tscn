@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/fence_h.png" id="1_6yp3t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2a5vq"]
+size = Vector2(16, 4)
+
+[node name="FenceH" type="StaticBody2D" unique_id=302259162]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=664112763]
+texture = ExtResource("1_6yp3t")
+centered = false
+offset = Vector2(-8, -15)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=466762272]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_2a5vq")

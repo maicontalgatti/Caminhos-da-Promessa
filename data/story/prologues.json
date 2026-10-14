@@ -1,0 +1,23 @@
+{
+	"_comment": "Aberturas cinematográficas. Tipos de passo: title (tela escura), reveal (mostra o cenário), place (cartão de lugar e época), text (caixa de texto), objective (primeiro objetivo). 'camera': well | player.",
+	"prologues": [
+		{
+			"id": "new_game",
+			"steps": [
+				{"type": "title", "title": "CAMINHOS DA PROMESSA", "lines": [
+					"As Escrituras contam histórias de famílias, povos, reis, profetas e pessoas comuns que viveram acontecimentos extraordinários.",
+					"Agora você poderá explorar os lugares, conhecer os personagens e descobrir os contextos dessas histórias."
+				]},
+				{"type": "reveal", "camera": "well"},
+				{"type": "place", "camera": "well", "title": "Região de Canaã", "subtitle": "Período dos patriarcas — cronologia aproximada e debatida"},
+				{"type": "text", "camera": "well", "lines": ["Em uma terra onde rebanhos, caminhos e fontes de água faziam parte da vida cotidiana, os poços tinham grande importância para as comunidades."]},
+				{"type": "text", "camera": "well", "reference": "Gen 26:18-22", "lines": ["Em Gênesis 26, encontramos relatos sobre poços, disputas e a jornada de Isaque."]},
+				{"type": "text", "camera": "player", "lines": [
+					"Sua primeira experiência começa em uma aldeia fictícia, inspirada nesse contexto.",
+					"Você é um viajante criado para o jogo: observa, conversa e aprende, sem mudar o que as Escrituras registram."
+				]},
+				{"type": "objective", "camera": "player", "title": "Sua jornada", "lines": ["Explore a aldeia. Conheça seus moradores e descubra a importância da água nesse período.", "A seta dourada mostra para onde ir. H dá uma pista."]}
+			]
+		}
+	]
+}

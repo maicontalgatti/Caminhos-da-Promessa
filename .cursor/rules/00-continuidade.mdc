@@ -1,0 +1,16 @@
+---
+description: Continuidade do projeto - ler AGENTS.md e a AI Wiki antes de alterar o projeto
+alwaysApply: true
+---
+
+# Caminhos da Promessa — continuidade
+
+Antes de realizar alterações no projeto, consulte o índice da AI Wiki e o estado atual do desenvolvimento.
+Leia a documentação específica dos sistemas envolvidos na tarefa. Não presuma que o contexto da
+conversa contém todas as decisões anteriores.
+
+- Entrada: `AGENTS.md` → `docs/ai-wiki/README.md` → `docs/ai-wiki/CURRENT_STATE.md` → `docs/ai-wiki/HANDOFF.md`.
+- Chat novo, troca de modelo ou contexto resumido: siga "RECUPERAÇÃO DE CONTEXTO" em `docs/ai-wiki/README.md`.
+- Documentação orienta; código e testes verificam. Divergências vão para `docs/ai-wiki/KNOWN_ISSUES.md`.
+- Nunca declare um teste como aprovado sem executá-lo. Nada de comandos Git destrutivos nem commits sem pedido.
+- Ao encerrar a tarefa: atualize `docs/ai-wiki/HANDOFF.md` (e o que a política de manutenção pedir) e rode `tools/check_wiki.ps1`.

@@ -1,0 +1,60 @@
+{
+	"episode": "ep_008_jose_e_seus_irmaos",
+	"_comment": "Veredito de agente nunca é 'verified'. Só uma pessoa preenche human.approved_by. status dos achados: open | resolved | deferred (com nota). Escopo deste ciclo: missões v0.4 (Gn 37:12-17 e secundárias), não o episódio inteiro (Gn 37:18-36 em planejamento).",
+	"biblical": {
+		"verdict": "needs_changes",
+		"reviewer_agent": "biblical-verifier (subagente 7cbbcf23-5a3e-4a54-ab3e-0145126bf154)",
+		"date": "2026-10-14",
+		"scope": "joseph_dothan_road, road_supplies, dothan_families, caravan_records; caravan_road_dothan.json (diálogos e colecionáveis); adina_talk e boundary_stone; descobertas dothan_valley, ancient_travel, sharing_in_need, joseph_search; gen_037_search; experiences.json",
+		"limits": "Gênesis conferido contra o VPL oficial; Pv 3:27-28, 2Rs 6:13, 1Sm 25:18 e Js 9:4-5 conferidos só contra bpm.json pelo verificador (o coordenador depois localizou Pv 3:27, 2Rs 6:13 e 1Sm 25:18 no VPL). Exibição no jogo não executada.",
+		"recheck": {"date": "2026-10-14", "verdict": "ok_for_human_review", "scope": "B1–B12 e textos corrigidos; Pv 3:27-28, 2Rs 6:13, 1Sm 25:18, Js 9:4-5 e Gn 23:16 conferidos com o VPL (idênticos)", "result": "B1–B6 e B8–B12 resolvidos; B7 adiado para decisão humana. Achados novos N1–N3 aplicados pelo coordenador. Não é aprovação: aprovação só humana."}
+	},
+	"historical": {
+		"verdict": "pending",
+		"reviewer_agent": "historical-reviewer (subagentes 0fcff58e-b11a-4214-99e4-8190f622934d e 6ef889a5-b4d6-4ac8-a370-f9fbc6bc1aa9)",
+		"date": "2026-10-14",
+		"scope": "Pesquisa (não revisão do conteúdo integrado): research_historical.md (missões v0.4) e research_historical_maps.md (mapas de Dotã e da estrada).",
+		"limits": "Trabalhou de memória: fontes arqueológicas 'a confirmar'; referências bíblicas de apoio marcadas (conferir). Não revisou arte nem executou testes.",
+		"first_pass": "Pesquisa sem bloqueios para os mapas. Alertas aplicados: jumentos na caravana fictícia, sem moedas nem ferro, nome da estrada identificado como do jogo, cisterna afastada do relato, Dotã sem 'rota de caravanas' como fato, camelos só no texto bíblico."
+	},
+	"findings": [
+		{"id": "B1", "source": "biblical", "severity": "medium", "status": "resolved", "where": "canaan_village.json adina_talk / flock2", "problem": "Boato sobre os filhos de Jacó: impossível na época de Gn 26 e vetado na de Gn 37.", "fix": "Fala reduzida a uma generalização sobre pastores."},
+		{"id": "B2", "source": "biblical", "severity": "medium", "status": "resolved", "where": "experiences.json joseph_dothan / passage", "problem": "Aldeia e Adina iguais em Gn 26 e Gn 37, décadas depois.", "fix": "Passagem diz que a aldeia e seus moradores são fictícios e servem de cenário típico em mais de um momento."},
+		{"id": "B3", "source": "biblical", "severity": "medium", "status": "resolved", "where": "dothan_cistern (diálogo, colecionável) e dothan_valley / fiction", "problem": "Cisterna colecionável em Dotã pode ser associada à de José.", "fix": "Texto explícito: não é a cisterna do relato (Gn 37:24); a cisterna tem água."},
+		{"id": "B4", "source": "biblical", "severity": "low", "status": "resolved", "where": "experiences.json passage; joseph_dothan_road intro e log", "problem": "'uma geração depois' subestima a distância.", "fix": "'décadas depois, na geração dos netos'; 'o texto não diz diretamente quanto tempo'."},
+		{"id": "B5", "source": "biblical", "severity": "medium", "status": "resolved", "where": "sharing_in_need / cronologia", "problem": "Paráfrase de Pv 3:27 deslocava 'a quem é devido' para caridade.", "fix": "'não negar o bem a quem ele é devido, quando se pode fazê-lo'."},
+		{"id": "B6", "source": "biblical", "severity": "low", "status": "resolved", "where": "sharing_in_need / cronologia", "problem": "'provérbio de Israel' ambíguo; datação de Provérbios.", "fix": "'o livro de Provérbios (época da monarquia ou posterior; datação debatida)'."},
+		{"id": "B7", "source": "biblical", "severity": "low", "status": "deferred", "where": "sharing_in_need e dothan_families.references", "problem": "Gn 13 sem marca de época; missão fictícia lista Gn 13:5-9.", "fix": "Época marcada na descoberta ('época de Abrão, antes de José'). Manter ou tirar Gn 13:5-9 das referências da missão: decisão humana."},
+		{"id": "B8", "source": "biblical", "severity": "low", "status": "resolved", "where": "discoveries.json caravans_trade", "problem": "Seção narrava a venda (Gn 37:28) antes do episódio existir.", "fix": "Seção 'Uma caravana em Gênesis' só com Gn 37:25; Gen 37:28 retirado das referências."},
+		{"id": "B9", "source": "biblical", "severity": "low", "status": "resolved", "where": "cr_marker (diálogo e colecionável)", "problem": "Quem ergue a coluna e o monte; monte não era marco de estrada.", "fix": "Jacó ergue a coluna, os parentes juntam o monte, testemunho do acordo; 'era outro uso das pedras'."},
+		{"id": "B10", "source": "biblical", "severity": "low", "status": "resolved", "where": "dothan_overlook, dothan_valley, gen_037_search, joseph_dothan_road, joseph_search", "problem": "Inferências como texto explícito ('não os achou em Siquém', 'apascentavam em Dotã').", "fix": "'o texto dá a entender'; 'perto de Siquém, um homem o encontra vagando pelo campo'."},
+		{"id": "B11", "source": "biblical", "severity": "low", "status": "resolved", "where": "adina_talk/pastures2, malik_talk/news2", "problem": "Direções contraditórias (norte × leste).", "fix": "'Leste' só para a saída do mapa; Adina diz que a estrada vira para o norte; Malik diz 'no fim desta estrada'."},
+		{"id": "B12", "source": "biblical", "severity": "info", "status": "resolved", "where": "classificação", "problem": "Coerente; caravan_records usa historical_context com nota.", "fix": "Nenhuma."},
+		{"id": "N1", "source": "biblical", "severity": "low", "status": "resolved", "where": "places.json dothan / description", "problem": "'Ali José encontra os irmãos e é vendido' sem Gn 37:28 nas referências; antecipa a venda.", "fix": "'Ali José encontra os irmãos (Gn 37:17)'. identification 'established' já aparece como 'amplamente aceita'."},
+		{"id": "N2", "source": "biblical", "severity": "info", "status": "resolved", "where": "ancient_travel / Troca, não moeda", "problem": "'balança' é inferência de Gn 23:16.", "fix": "'Abraão pesa a prata segundo o peso corrente entre os mercadores'."},
+		{"id": "N3", "source": "biblical", "severity": "info", "status": "resolved", "where": "caravans_trade, dothan_valley, joseph_search / related.events", "problem": "Diário mostra 'joseph_sold' como acontecimento relacionado, antecipando a venda.", "fix": "Vínculo retirado das três descobertas (o vínculo com a história gen_037_joseph_sold continua)."},
+		{"id": "H1", "source": "historical", "severity": "medium", "status": "resolved", "where": "caravans_trade", "problem": "Caravanas 'de camelos e jumentos' como fato da época.", "fix": "Caravanas de jumentos; uso de camelos nessa época marcado como debatido."},
+		{"id": "H2", "source": "historical", "severity": "minor", "status": "resolved", "where": "places.json dothan", "problem": "'junto a uma rota de caravanas' é inferência.", "fix": "'perto de passagens usadas por viajantes'; 'Identificação amplamente aceita: Tell Dothan'."},
+		{"id": "H3", "source": "historical", "severity": "minor", "status": "resolved", "where": "ancient_travel / fiction", "problem": "'Caminho das Caravanas' precisa ser identificado como nome do jogo.", "fix": "Frase acrescentada."},
+		{"id": "H4", "source": "historical", "severity": "minor", "status": "resolved", "where": "cr_marker, cr_bundle, dothan_valley", "problem": "Monte de pedras como sinalização é menos documentado; resinas de identificação debatida; arqueologia de Tel Dotã genérica.", "fix": "Textos com 'talvez', 'identificação debatida' e 'como era nos dias de José, não se sabe'."},
+		{"id": "H5", "source": "historical", "severity": "info", "status": "open", "where": "ancient_travel", "problem": "Prata pesada perto da cena da venda (Gn 37:28) pode soar como alusão.", "fix": "Ancorado em Gn 23:16 (Abraão). Revisor humano decide o posicionamento."},
+		{"id": "Q1", "source": "qa", "severity": "medium", "status": "resolved", "where": "malik_talk", "problem": "Salvar no meio da cadeia de Malik (janela fechada) travava road_supplies.", "fix": "start_if para os objetivos reward e travel_info (com ou sem escolha do pano); lembrete só nos objetivos de coleta. Teste test_supplies_resume."},
+		{"id": "Q2", "source": "qa", "severity": "medium", "status": "resolved", "where": "items.json plant_fiber/dry_wood; malik travel_info2; road_supplies.completion", "problem": "Material descartável e limitado travava a missão; 'sempre há troca' prometia troca ilimitada.", "fix": "no_discard nos dois materiais; textos sem promessa de troca ilimitada. 4 lenhas no mundo cobrem a missão e uma troca."},
+		{"id": "Q3", "source": "qa", "severity": "medium", "status": "resolved", "where": "dothan_overlook", "problem": "Com read_story atual, examinar a pedra não reabria o relato.", "fix": "start_if read_story -> nó read. Teste em test_main_quest_flow."},
+		{"id": "Q4", "source": "qa", "severity": "low", "status": "resolved", "where": "rafi_talk", "problem": "Rafi perguntava pelas famílias depois da decisão de repartir.", "fix": "Nó deliver_talia no objetivo deliver. Teste em test_families_outcomes."},
+		{"id": "Q5", "source": "qa", "severity": "low", "status": "deferred", "where": "QuestManager.reset_quest (painel F3)", "problem": "Reiniciar não apaga flags given: dos diálogos nem o evento de início.", "fix": "Limitação da ferramenta de debug, registrada em KNOWN_ISSUES (KI-15)."},
+		{"id": "Q6", "source": "qa", "severity": "low", "status": "resolved", "where": "objective_guide.gd", "problem": "Seta marcava registros já encontrados.", "fix": "Em objetivos de coleção, alvos já encontrados são ignorados; o guia se atualiza ao encontrar um colecionável. Teste em test_pickups_and_screens."}
+	],
+	"qa": {
+		"verdict": "needs_changes",
+		"reviewer_agent": "quest-qa (subagente bab55406-1eb5-4857-aead-d018e4e20f08)",
+		"date": "2026-10-14",
+		"limits": "Análise estática: o QA não conseguiu executar testes (terminal bloqueado). Testes executados depois pelo coordenador: test_runner 561/0, flow_smoke 17/0, factory check 0 erros.",
+		"recheck": {"date": "", "verdict": "pending"}
+	},
+	"human": {
+		"approved_by": "",
+		"date": "",
+		"notes": ""
+	}
+}

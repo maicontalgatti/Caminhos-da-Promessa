@@ -1,0 +1,52 @@
+{
+	"_comment": "Perfis de voz por personagem (speaker dos diálogos). Descrevem a voz desejada; não apontam para nenhuma voz de pessoa real. provider_voice só é preenchido quando um provedor for autorizado e o orçamento aprovado (ver docs/mission_factory.md). O hash das falas usa profile_id: trocar o perfil invalida o áudio gerado.",
+	"language": "pt-BR",
+	"profiles": {
+		"narrator": {
+			"profile_id": "narrator_v1",
+			"description": "Narrador adulto, calmo, ritmo de leitura em voz alta; leitura reverente e sem dramatização nos textos bíblicos.",
+			"gender": "neutral",
+			"age": "adult",
+			"style": "calm",
+			"provider_voice": {}
+		},
+		"player": {
+			"profile_id": "player_v1",
+			"description": "Viajante fictício; o jogador não tem voz gravada (falas só em texto).",
+			"voiced": false,
+			"provider_voice": {}
+		},
+		"adina": {
+			"profile_id": "adina_v1",
+			"description": "Jovem pastora, voz clara e prática, fala ao ar livre.",
+			"gender": "female",
+			"age": "young_adult",
+			"style": "warm",
+			"provider_voice": {}
+		},
+		"ezer": {
+			"profile_id": "ezer_v1",
+			"description": "Oleiro idoso, voz grave e pausada, tom de quem ensina.",
+			"gender": "male",
+			"age": "elderly",
+			"style": "slow",
+			"provider_voice": {}
+		},
+		"yaron": {
+			"profile_id": "yaron_v1",
+			"description": "Mercador adulto, animado, conta novidades das caravanas.",
+			"gender": "male",
+			"age": "adult",
+			"style": "lively",
+			"provider_voice": {}
+		},
+		"ari": {
+			"profile_id": "ari_v1",
+			"description": "Menino curioso. Voz infantil exige cuidado: usar só voz sintética genérica licenciada, nunca clonar voz de criança real.",
+			"gender": "male",
+			"age": "child",
+			"style": "curious",
+			"provider_voice": {}
+		}
+	}
+}

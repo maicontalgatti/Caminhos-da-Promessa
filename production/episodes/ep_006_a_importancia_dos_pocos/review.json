@@ -1,0 +1,50 @@
+{
+	"episode": "ep_006_a_importancia_dos_pocos",
+	"_comment": "Veredito de agente nunca é 'verified'. Só uma pessoa preenche human.approved_by. status dos achados: open | resolved | deferred (com nota).",
+	"biblical": {
+		"verdict": "ok_for_human_review",
+		"reviewer_agent": "biblical-verifier (subagente 93cb02c6-9a52-482e-b336-b7d0347ef740)",
+		"date": "2026-10-14",
+		"scope": "quest.proposal.json + quest.patch.md, dialogues.proposal.json, discoveries.proposal.json (com presentation_notes), e conteúdo atual de journal_intro, well_examine, adina_talk, ezer_talk, shepherding_water, pottery_jars, gen_026_wells",
+		"limits": "Sentidos lexicais hebraicos não conferidos (sem léxico no repositório); afirmações arqueológicas fora do escopo; fidelidade da BPM ao original não verificada; exibição no jogo não executada.",
+		"recheck": {"date": "2026-10-14", "verdict": "ok_for_human_review", "scope": "arquivos integrados em data/", "result": "B1-B10 e B12 resolvidos; B11 e B13 adiados para decisão humana; 198 versículos de bpm.json idênticos ao VPL oficial; nenhum achado novo além de N1/N2 (info)."}
+	},
+	"historical": {
+		"verdict": "ok_for_human_review",
+		"reviewer_agent": "historical-reviewer (subagente a4bb25dc-7333-41a5-8f7a-83a76123fb85)",
+		"date": "2026-10-14",
+		"scope": "research_historical.md, propostas e conteúdo integrado em data/ (canaan_village.json, discoveries.json, presentations.json gen_026_wells, canaan_wells.json)",
+		"limits": "Trabalhou de memória: fontes arqueológicas 'a confirmar'. Não revisou arte, mapa nem referências bíblicas. Não executou testes.",
+		"first_pass": "needs_changes (H1 grave: citação de Gênesis atribuída ao oleiro fictício Ezer)",
+		"recheck": {"date": "2026-10-14", "verdict": "ok_for_human_review", "scope": "arquivos integrados em data/", "result": "H1-H8 resolvidos; H9-H11 adiados (informativos); H12 editorial aberto; N1 (Tel Berseba) aguarda confirmação humana em fonte."}
+	},
+	"findings": [
+		{"id": "B1", "source": "biblical", "severity": "minor", "status": "resolved", "where": "discoveries.proposal.json isaac_wells / Depois", "problem": "Afirma que o poço de Berseba é distinto dos reabertos; o texto não diz se tem relação com o poço de Abraão (Gn 21:30-31).", "fix": "Dizer que é um poço cavado pelos servos de Isaque (v. 25, 32), não um dos três do vale; relação com Gn 21:30-31 não é dita. Acrescentar Gen 21:25-31 nas referências."},
+		{"id": "B2", "source": "biblical", "severity": "minor", "status": "resolved", "where": "presentation_notes / Reobote", "problem": "Proposta omite o SENHOR como quem abriu espaço (Gn 26:22).", "fix": "'O texto explica Reobote: o SENHOR lhes abriu espaço.'"},
+		{"id": "B3", "source": "biblical", "severity": "minor", "status": "resolved", "where": "discoveries.proposal.json isaac_wells / Três poços novos", "problem": "Funde as orações de Gn 26:22 ('espaço na terra').", "fix": "'o SENHOR lhes abriu espaço e que seriam frutíferos na terra (v. 22)'."},
+		{"id": "B4", "source": "biblical", "severity": "minor", "status": "resolved", "where": "discoveries.proposal.json isaac_wells / Sem data", "problem": "Cita Gn 25:7-8 sem estar em references.", "fix": "Acrescentar Gen 25:7-8."},
+		{"id": "B5", "source": "biblical", "severity": "minor", "status": "resolved", "where": "discoveries.proposal.json wells_antiquity / summary", "problem": "Nomear poço como reivindicação é inferência, não marcada.", "fix": "Cavar como prova de direito (cf. Gn 21:30); dar nome 'talvez' tivesse esse papel."},
+		{"id": "B6", "source": "biblical", "severity": "minor", "status": "resolved", "where": "discoveries.proposal.json wells_antiquity / Disputas por poços", "problem": "'os servos dele' ambíguo.", "fix": "'os servos de Abimeleque haviam tomado à força' (Gn 21:25)."},
+		{"id": "B7", "source": "biblical", "severity": "minor", "status": "resolved", "where": "discoveries.proposal.json wells_antiquity / Um poço muitos séculos depois", "problem": "Conversa com a samaritana começa em Jo 4:7, não em 4:5-6.", "fix": "Referência John 4:5-7."},
+		{"id": "B8", "source": "biblical", "severity": "minor", "status": "resolved", "where": "data/dialogues/canaan_village.json ezer_talk / disputes3b", "problem": "scripture Gen 26:20 mas o texto substituto cita 26:20-21.", "fix": "scripture Gen 26:20-21 (2 versículos, dentro do limite de 3)."},
+		{"id": "B9", "source": "biblical", "severity": "minor", "status": "resolved", "where": "quest.proposal.json talk_ezer / log", "problem": "Atribui a Ezer a citação de Gênesis feita pelo narrador.", "fix": "'Ezer contou que, em anos de seca, pastores de famílias diferentes disputavam poços. Gênesis 26 registra disputas assim.'"},
+		{"id": "B10", "source": "biblical", "severity": "minor", "status": "resolved", "where": "data/bible/discoveries.json shepherding_water e pottery_jars", "problem": "Espera dos rebanhos está em Gn 29:8 (não 2-3); Jr 18:1-6 fala à 'casa de Israel', não a Judá.", "fix": "Referência Gen 29:2-3 + Gen 29:8; 'mensagem para a casa de Israel (Jr 18:6)'."},
+		{"id": "B11", "source": "biblical", "severity": "info", "status": "deferred", "where": "adina_talk / flock2; journal_intro / story", "problem": "Aldeia situada na época de José enquanto o diário traz Gênesis 26; o diário com 'trechos de Gênesis' é recurso do jogo.", "fix": "Decisão do revisor humano; recurso já identificado como do jogo no prólogo e na apresentação."},
+		{"id": "B12", "source": "biblical", "severity": "info", "status": "resolved", "where": "quest.proposal.json listen_ari", "problem": "complete_on ainda dialogue_finished:ari_talk.", "fix": "Aplicar quest.patch.md: custom:wells_ari_well."},
+		{"id": "B13", "source": "biblical", "severity": "info", "status": "resolved", "where": "presentation_notes / Os poços entulhados", "problem": "Nota do jogo, não do texto.", "fix": "Aceitável: o passo final já avisa que as notas são do jogo."},
+		{"id": "H1", "source": "historical", "severity": "major", "status": "resolved", "where": "data/quests/canaan/canaan_wells.json talk_ezer / log", "problem": "Citação de Gênesis atribuída ao oleiro fictício.", "fix": "Menção a Gn 26:20-21 entre parênteses, fora da fala de Ezer."},
+		{"id": "H2", "source": "historical", "severity": "minor", "status": "resolved", "where": "data/dialogues/canaan_village.json ezer_talk / n2", "problem": "Usos da água incompletos.", "fix": "Inclui 'ir ao forno'."},
+		{"id": "H3", "source": "historical", "severity": "minor", "status": "resolved", "where": "data/bible/discoveries.json isaac_wells / Berseba hoje", "problem": "Afirmação absoluta.", "fix": "Fala da cidade e do poço da Idade do Ferro."},
+		{"id": "H4", "source": "historical", "severity": "minor", "status": "resolved", "where": "data/bible/discoveries.json wells_antiquity / summary", "problem": "Reivindicação de poços como fato geral.", "fix": "'nos relatos de Gênesis' (Gn 21:30)."},
+		{"id": "H5", "source": "historical", "severity": "minor", "status": "resolved", "where": "canaan_wells.json completion.summary[0]", "problem": "Generalização.", "fix": "'na aldeia, manter o poço era trabalho de todos'."},
+		{"id": "H6", "source": "historical", "severity": "minor", "status": "resolved", "where": "discoveries.json wells_antiquity / cisternas", "problem": "Cisternas rebocadas.", "fix": "Tema marcado como debatido."},
+		{"id": "H7", "source": "historical", "severity": "minor", "status": "resolved", "where": "presentations.json gen_026_wells / Isaque em Gerar", "problem": "Localização.", "fix": "'oeste do Neguebe; o local exato da cidade é debatido'."},
+		{"id": "H8", "source": "historical", "severity": "minor", "status": "resolved", "where": "presentations.json gen_026_wells / Eseque", "problem": "'Água viva'.", "fix": "Água de fonte ou de lençol."},
+		{"id": "H9", "source": "historical", "severity": "info", "status": "deferred", "where": "canaan_village.json journal_intro / story", "problem": "Diário com 'trechos de Gênesis 26' é anacronismo.", "fix": "Aceitável como recurso de interface do viajante fictício (mesma decisão humana de B11)."},
+		{"id": "H10", "source": "historical", "severity": "info", "status": "deferred", "where": "canaan_village.json adina_talk / flock2", "problem": "Aldeia na época de Gn 37.", "fix": "Nenhum texto a liga a Gerar nem a torna contemporânea dos poços de Isaque."},
+		{"id": "H11", "source": "historical", "severity": "info", "status": "deferred", "where": "canaan_village.json ezer_talk / disputes4; adina_talk / bye", "problem": "Expressões coloquiais.", "fix": "Falas fictícias aceitáveis."},
+		{"id": "H12", "source": "historical", "severity": "info", "status": "open", "where": "canaan_village.json ezer_talk / disputes3 e disputes3b", "problem": "Duas falas do narrador quase redundantes.", "fix": "Editorial: o roteirista pode enxugar."},
+		{"id": "N1", "source": "historical", "severity": "info", "status": "open", "where": "data/bible/discoveries.json isaac_wells / Berseba hoje", "problem": "'Não se encontraram ali camadas da Idade do Bronze Médio' com confiança média.", "fix": "Revisor humano confirma em fonte; senão encerrar a frase em 'muito posterior à época atribuída aos patriarcas'."}
+	],
+	"human": {"approved_by": "", "date": "", "notes": ""}
+}

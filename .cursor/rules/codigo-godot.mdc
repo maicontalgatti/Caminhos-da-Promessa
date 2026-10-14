@@ -1,0 +1,16 @@
+---
+description: Convenções de código GDScript/Godot do projeto
+globs: **/*.gd,**/*.tscn,project.godot,export_presets.cfg
+alwaysApply: false
+---
+
+# Código Godot
+
+Antes de alterar, consulte `docs/ai-wiki/ARCHITECTURE_MAP.md` (sistema → arquivos) e `docs/ai-wiki/DEVELOPMENT_RULES.md`.
+
+- Não reescreva sistemas que funcionam; estenda (ADR-013 em `docs/ai-wiki/DECISIONS.md`).
+- Declare tipos ao ler de `Dictionary`/`Variant` (a inferência `:=` gera erro de parse neste projeto).
+- UI modal: `GameState.block_ui(dono)` / `unblock_ui(dono)`. A fonte não tem todos os glifos: veja a lista em `docs/ai-wiki/DEVELOPMENT_RULES.md`.
+- Mudou o save? Incremente `SAVE_VERSION`, migre e teste.
+- `scenes/maps/canaan_village.tscn` é gerado: depois de editá-lo, só `tools/build_all.ps1 -PropsOnly`.
+- Rode os testes de `docs/ai-wiki/TESTING.md` e informe os resultados reais.

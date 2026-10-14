@@ -1,0 +1,49 @@
+{
+	"_comment": "Personagens fictícios do Caminho das Caravanas e de Dotã. Nenhum é personagem bíblico: não testemunham, não encontram nem comentam José, seus irmãos ou o homem de Gn 37:15.",
+	"characters": [
+		{
+			"id": "malik",
+			"display_name": "Malik",
+			"role": "Mercador de estrada",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Mercador fictício que acampa à beira da estrada e troca mercadorias com quem passa. Não faz parte das caravanas do relato de Gênesis 37.",
+			"dialogue_id": "malik_talk",
+			"sprite": {"sheet": "res://assets/characters/malik.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1}
+		},
+		{
+			"id": "rafi",
+			"display_name": "Rafi",
+			"role": "Pastor idoso",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Pastor fictício que conhece os pastos de Dotã há muitos anos.",
+			"dialogue_id": "rafi_talk",
+			"sprite": {"sheet": "res://assets/characters/rafi.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1}
+		},
+		{
+			"id": "talia",
+			"display_name": "Talia",
+			"role": "Pastora, mãe de família",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Mãe de uma família fictícia de pastores acampada em Dotã; as provisões da família estão acabando.",
+			"dialogue_id": "talia_talk",
+			"sprite": {"sheet": "res://assets/characters/talia.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "wander", "speed": 14, "wander_radius": 20}
+		},
+		{
+			"id": "oren",
+			"display_name": "Oren",
+			"role": "Pastor, pai de família",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Pai de outra família fictícia de pastores em Dotã; precisa levar água ao rebanho até um pasto mais distante.",
+			"dialogue_id": "oren_talk",
+			"sprite": {"sheet": "res://assets/characters/oren.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": -1, "facing_y": 0}
+		}
+	]
+}

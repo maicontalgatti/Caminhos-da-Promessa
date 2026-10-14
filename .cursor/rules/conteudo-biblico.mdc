@@ -1,0 +1,16 @@
+---
+description: Regras de fidelidade bíblica ao editar dados narrativos, diálogos, missões e catálogo
+globs: data/**/*.json
+alwaysApply: false
+---
+
+# Conteúdo narrativo e bíblico
+
+Este arquivo contém conteúdo narrativo. Siga `docs/ai-wiki/BIBLICAL_RULES.md` integralmente. Em resumo:
+
+- Não invente versículos, datas, lugares nem falas de personagens bíblicos.
+- Toda referência precisa bater com `data/bible/books.json` e `data/bible/verse_counts.json`.
+- Texto de versículo só via `tools/import_scripture.gd` (arquivo oficial) em `data/bible/texts/`; nunca digite versículos nem edite esse arquivo à mão. Referência nova → rode o importador de novo.
+- Classifique o conteúdo; ficção sempre identificada; o jogador não altera os relatos.
+- Conteúdo escrito por IA fica em `pending_review` com `reviewer` vazio. Nunca marque `reference_checked`/`approved`.
+- Depois de editar, rode `tools/validate_content.gd` e a suíte de testes (`docs/ai-wiki/TESTING.md`).

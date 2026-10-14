@@ -1,0 +1,129 @@
+{
+	"_comment": "Missão secundária fictícia: troca de recursos com um mercador de estrada. Escambo, sem moeda cunhada.",
+	"quests": [
+		{
+			"id": "road_supplies",
+			"title": "Suprimentos para a viagem",
+			"category": "side",
+			"description": "Ajude Malik, um mercador de estrada, a juntar fibra vegetal e lenha seca, e aprenda como se viajava na Antiguidade.",
+			"type": "assist",
+			"classification": "plausible_fiction",
+			"classification_note": "Malik e as trocas são criados para o jogo; o contexto de viagens antigas vem de relatos bíblicos indicados na descoberta.",
+			"region": "caravan_road",
+			"place_id": "canaan",
+			"era_id": "patriarchs",
+			"references": ["Gen 21:14", "Gen 37:25"],
+			"theme": "Viagens, provisões e trocas",
+			"people": [],
+			"fictional_characters": ["malik"],
+			"intro": "Na estrada, quase tudo se resolve com troca. Malik precisa de cordas novas e de lenha para o fogo.",
+			"start": {"event": "custom", "id": "supplies_malik_request"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "talk_malik",
+					"type": "talk_to_npc",
+					"text": "Converse com Malik sobre o que ele precisa.",
+					"complete_on": {"event": "custom", "id": "supplies_malik_request"},
+					"targets": [{"type": "npc", "id": "malik"}],
+					"hints": [
+						"O mercador parece precisar de alguma coisa.",
+						"Malik está acampado no trecho alto da estrada.",
+						"Converse com Malik e pergunte se ele precisa de algo."
+					],
+					"log": "Malik pediu três feixes de fibra vegetal e duas braçadas de lenha seca, em troca de mercadoria."
+				},
+				{
+					"id": "find_resources",
+					"type": "collect_item",
+					"text": "Encontre os dois tipos de recurso: fibra vegetal e lenha seca.",
+					"detail": "Fibra em touceiras à beira do caminho; lenha embaixo das árvores.",
+					"complete_on": {"event": "condition", "id": "found_both", "condition": {"all": [{"has_item": "plant_fiber"}, {"has_item": "dry_wood"}]}},
+					"targets": [
+						{"type": "pickup", "id": "fiber_1"}, {"type": "pickup", "id": "fiber_2"}, {"type": "pickup", "id": "fiber_3"}, {"type": "pickup", "id": "fiber_4"},
+						{"type": "pickup", "id": "wood_1"}, {"type": "pickup", "id": "wood_2"}, {"type": "pickup", "id": "wood_3"}
+					],
+					"hints": [
+						"Olhe com atenção para a beira do caminho.",
+						"Touceiras de fibra e galhos secos brilham levemente no chão.",
+						"Aproxime-se de um item brilhando no chão e pressione E para coletar."
+					],
+					"log": "Você encontrou fibra vegetal e lenha seca na estrada."
+				},
+				{
+					"id": "collect",
+					"type": "collect_item",
+					"text": "Junte 3 feixes de fibra e 2 braçadas de lenha seca.",
+					"detail": "Abra a bolsa (I) para conferir.",
+					"complete_on": {"event": "condition", "id": "collected_all", "condition": {"all": [{"has_item": "plant_fiber", "count": 3}, {"has_item": "dry_wood", "count": 2}]}},
+					"targets": [
+						{"type": "pickup", "id": "fiber_1"}, {"type": "pickup", "id": "fiber_2"}, {"type": "pickup", "id": "fiber_3"}, {"type": "pickup", "id": "fiber_4"},
+						{"type": "pickup", "id": "wood_1"}, {"type": "pickup", "id": "wood_2"}, {"type": "pickup", "id": "wood_3"}
+					],
+					"hints": [
+						"Ainda falta um pouco.",
+						"Há fibra e lenha espalhadas por toda a estrada, e também em Dotã.",
+						"Colete itens até ter 3 fibras e 2 lenhas na bolsa (I)."
+					],
+					"log": "Você juntou a fibra e a lenha que Malik pediu."
+				},
+				{
+					"id": "deliver",
+					"type": "deliver_item",
+					"text": "Entregue a fibra e a lenha a Malik.",
+					"complete_on": {"event": "item_delivered", "id": "plant_fiber"},
+					"targets": [{"type": "npc", "id": "malik"}],
+					"hints": [
+						"Malik está esperando.",
+						"Volte à tenda de Malik, no trecho alto da estrada.",
+						"Converse com Malik com a fibra e a lenha na bolsa."
+					],
+					"log": "Você entregou a fibra e a lenha a Malik."
+				},
+				{
+					"id": "reward",
+					"type": "receive_item",
+					"text": "Receba a troca de Malik.",
+					"complete_on": {"event": "item_received", "id": "water_skin"},
+					"targets": [{"type": "npc", "id": "malik"}],
+					"hints": [
+						"Troca justa tem dois lados.",
+						"Malik ainda está falando com você.",
+						"Continue a conversa com Malik."
+					],
+					"log": "Malik lhe deu um odre de couro e figos secos."
+				},
+				{
+					"id": "travel_info",
+					"type": "discover_information",
+					"text": "Ouça o conselho de viagem de Malik.",
+					"complete_on": {"event": "discovery", "id": "ancient_travel"},
+					"targets": [{"type": "npc", "id": "malik"}],
+					"hints": [
+						"Quem vive na estrada sabe como viajar.",
+						"Malik tem um conselho para quem viaja a pé.",
+						"Continue a conversa com Malik até o fim."
+					],
+					"log": "Malik explicou o que se levava numa viagem a pé: água, pão e fruta seca, com paradas onde houvesse poço."
+				}
+			],
+			"rewards": {"flags": ["merchant_trust"]},
+			"discoveries": ["ancient_travel"],
+			"completion": {
+				"title": "Troca feita",
+				"references": ["Gen 21:14"],
+				"summary": [
+					"Na estrada, mercadorias eram trocadas por outras mercadorias; moedas cunhadas só surgiriam muitos séculos depois.",
+					"Odres de couro, pão e frutas secas eram provisões comuns de viagem; Gênesis 21:14 conta que Abraão deu pão e um odre de água a Hagar."
+				],
+				"variants": [
+					{"if": {"choice": "supplies_extra", "option": "accepted"}, "next": "Você aceitou o pano de lã de Malik. Se precisar de outro odre, ele troca por 2 lenhas secas."},
+					{"if": {"choice": "supplies_extra", "option": "declined"}, "next": "Você recusou a recompensa extra, e Malik guardou um conselho para você (registrado em Minhas descobertas). Se precisar de outro odre, ele troca por 2 lenhas secas."}
+				],
+				"unlock": [],
+				"next": "Se você ficar sem odre, Malik troca outro por 2 lenhas secas."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Ficção identificada; referências conferidas no arquivo oficial da BPM pelo agente de IA; contexto histórico aguarda o revisor histórico e revisão humana."}
+		}
+	]
+}
