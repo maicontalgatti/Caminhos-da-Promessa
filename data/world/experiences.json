@@ -4,7 +4,7 @@
 		{"id": "patriarchs", "label": "Patriarcas", "chronology_era": "patriarchs"},
 		{"id": "exodus", "label": "Êxodo", "chronology_era": "exodus"},
 		{"id": "judges", "label": "Juízes", "chronology_era": "judges"},
-		{"id": "first_century", "label": "Século I", "chronology_era": "roman_judea"}
+		{"id": "first_century", "label": "Nos dias de Herodes", "chronology_era": "roman_judea"}
 	],
 	"experiences": [
 		{
@@ -45,37 +45,110 @@
 			"id": "joseph_egypt",
 			"era": "patriarchs",
 			"title": "José no Egito",
-			"references": ["Gen 39:1-6"],
-			"place": "Caminho para o Egito · Egito de José",
-			"status": "planned",
-			"summary": "Em planejamento: a rota das caravanas até o Egito e a casa de Potifar."
+			"references": ["Gen 37:25-28", "Gen 37:36", "Gen 39:1-6"],
+			"place": "Dotã · Egito de José",
+			"status": "available",
+			"requires": {"quest_completed": "joseph_dothan_road"},
+			"locked_text": "Explore primeiro \"José em Dotã\" para abrir esta experiência.",
+			"completed_by": "joseph_potiphar_house",
+			"summary": "Do alto de uma encosta em Dotã, veja de longe a caravana que desce para o Egito. Depois, em outro momento da história, visite uma casa de um oficial egípcio, como aquela onde José serviu.",
+			"travel": {"region": "dothan", "entry": "default"},
+			"passage": {
+				"title": "OUTRO MOMENTO DA HISTÓRIA",
+				"lines": [
+					"Gênesis 37 continua em Dotã. Depois que José encontra os irmãos (Gênesis 37:17), o relato segue até a passagem de uma caravana que desce para o Egito (37:25). Você volta ao vale por conta própria e vai observar de longe, do alto de uma encosta.",
+					"O viajante não fala com José nem com os irmãos, não se aproxima e não muda o que o relato conta. A cena é vista de longe, sem mostrar violência, e pode ser pulada.",
+					"O viajante é um personagem fictício. Os pastores de Dotã também são criações do jogo."
+				]
+			},
+			"stages": [
+				{
+					"id": "dothan",
+					"travel": {"region": "dothan", "entry": "default"}
+				},
+				{
+					"id": "egypt_house",
+					"if": {"quest_completed": "joseph_caravan_watch"},
+					"travel": {"region": "egypt_house", "entry": "from_passage"},
+					"passage": {
+						"title": "OUTRO MOMENTO DA HISTÓRIA",
+						"lines": [
+							"A caravana levou José para o Egito (Gênesis 37:28, 36). O viajante não a seguiu: o Mapa das Escrituras o leva a outro momento da história, como quem vira a página.",
+							"O texto não diz quanto durou a viagem nem quanto tempo José estava na casa de Potifar quando foi posto como administrador (Gênesis 39:1-4). O diário traz Gênesis 39:1-6; a história de José continua nos capítulos seguintes.",
+							"A casa que você vai visitar é fictícia: uma casa de um oficial egípcio, como aquela onde José serviu, e não a casa de Potifar. Gênesis 39 não diz em que cidade ficava a casa de Potifar, e o Faraó não é nomeado. José e Potifar não aparecem; os servos são criações do jogo."
+						]
+					}
+				}
+			]
 		},
 		{
 			"id": "exodus_sea",
 			"era": "exodus",
 			"title": "A travessia do mar",
-			"references": ["Exod 14:21-22"],
-			"place": "Junto ao mar",
-			"status": "planned",
-			"summary": "Em planejamento."
+			"references": ["Exod 14:19-31"],
+			"place": "Junto ao mar (localização debatida)",
+			"status": "available",
+			"requires": {"quest_completed": "joseph_potiphar_house"},
+			"locked_text": "Explore primeiro \"José no Egito\" para abrir esta experiência.",
+			"completed_by": "exodus_sea_crossing",
+			"summary": "Uma tarde num acampamento junto ao mar, com famílias que saíram do Egito. À noite, você acompanha de longe o que Êxodo 14 relata.",
+			"travel": {
+				"region": "sea_camp",
+				"entry": "arrival",
+				"entry_if": [
+					{"if": {"event": "scene_finished", "id": "exodus_sea_crossing"}, "entry": "far_shore_dawn"}
+				]
+			},
+			"passage": {
+				"title": "OUTRO MOMENTO DA HISTÓRIA",
+				"lines": [
+					"Dos dias de José (Gênesis 37–50) para a saída do Egito (Êxodo 12–14): gerações separam os dois relatos; quanto tempo exatamente é debatido. Êxodo 1:6-8 conta que José e toda aquela geração morreram e que surgiu no Egito um novo rei que não conhecera José. A data da saída do Egito é debatida, e o jogo não indica um ano.",
+					"Êxodo 14 conta que o povo de Israel acampou junto ao mar. Você passará a tarde nesse acampamento, ajudando as famílias no que for preciso; o lugar exato do mar é debatido. O viajante não guia ninguém nem muda o que o relato conta: à noite, apenas acompanhará de longe o que o texto descreve.",
+					"O viajante é um personagem fictício: o Mapa das Escrituras o leva de um relato a outro como quem vira as páginas de um livro. As famílias do acampamento também são criadas para o jogo."
+				]
+			}
 		},
 		{
 			"id": "ruth_bethlehem",
 			"era": "judges",
 			"title": "Rute em Belém",
-			"references": ["Ruth 2:1-3"],
+			"references": ["Ruth 1:19-22", "Ruth 2:1-23"],
 			"place": "Belém · Campos de Boaz",
-			"status": "planned",
-			"summary": "Em planejamento: a chegada de Noemi e Rute a Belém e a respiga nos campos de Boaz."
+			"status": "available",
+			"requires": {"quest_completed": "exodus_sea_crossing"},
+			"locked_text": "Explore primeiro as experiências anteriores para abrir esta.",
+			"completed_by": "ruth_gleaning",
+			"travel": {"region": "bethlehem_fields", "entry": "from_scripture_map"},
+			"summary": "É o começo da colheita da cevada em Belém. Ajude num campo da aldeia e veja de longe a respiga de Rute na parte do campo que era de Boaz.",
+			"passage": {
+				"title": "OUTRO MOMENTO DA HISTÓRIA",
+				"lines": [
+					"Da travessia do mar, no Êxodo, para o tempo dos juízes (Rute 1:1), bem depois da entrada na terra de Canaã. O texto não dá ano para a história de Rute, e as datas do período dos juízes são aproximadas.",
+					"Rute 1 conta que Noemi voltou de Moabe a Belém com a nora Rute, no começo da colheita da cevada (Rute 1:19-22). Você chega aos campos de Belém nesses dias, como viajante de passagem, e ajuda numa colheita sem mudar o que o relato conta.",
+					"O viajante, Ilan, Tova e os ceifeiros do campo de Ilan são fictícios. Rute, Noemi e Boaz não conversam com você: o que eles dizem e fazem está no texto bíblico, que você vê de longe e lê no diário."
+				]
+			}
 		},
 		{
 			"id": "shepherds_bethlehem",
 			"era": "first_century",
 			"title": "Os pastores de Belém",
-			"references": ["Luke 2:8-12"],
+			"references": ["Luke 2:8-20"],
 			"place": "Campos de Belém",
-			"status": "planned",
-			"summary": "Em planejamento."
+			"status": "available",
+			"requires": {"quest_completed": "ruth_gleaning"},
+			"locked_text": "Explore primeiro \"Rute em Belém\" para abrir esta experiência.",
+			"completed_by": "shepherds_night",
+			"travel": {"region": "bethlehem_night", "entry": "from_scripture_map"},
+			"summary": "Uma noite com pastores nos campos perto de Belém. Ajude a recolher o rebanho e a manter o fogo e, na vigília, acompanhe de longe o que Lucas 2 relata.",
+			"passage": {
+				"title": "OUTRO MOMENTO DA HISTÓRIA",
+				"lines": [
+					"De Rute a Lucas: muitos séculos depois, Belém continua uma pequena aldeia da Judeia, a \"cidade de Davi\" (Lucas 2:4). Agora a Judeia é governada por Herodes, rei aliado de Roma, no tempo do imperador Augusto (Lucas 2:1); Lucas situa estes relatos nos dias de Herodes (Lucas 1:5). A data exata é debatida, e o jogo não mostra ano.",
+					"Lucas 2:1-7 conta que José subiu de Nazaré a Belém para se registrar, com Maria, e que ali ela deu à luz o filho e o deitou numa manjedoura. Você chega aos campos perto de Belém ao entardecer e ajuda pastores no fim do dia, sem mudar nada do que o relato conta.",
+					"O viajante, Tamir e Shai são personagens criados para o jogo. Os pastores do relato aparecem como representação (o texto não diz quantos eram), e ninguém do relato conversa com você. O que o texto conta, você verá de longe e poderá ler no diário."
+				]
+			}
 		}
 	]
 }

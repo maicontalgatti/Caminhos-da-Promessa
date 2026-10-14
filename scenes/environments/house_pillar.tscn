@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/house_pillar.png" id="1_xmaci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpc06"]
+size = Vector2(72, 18)
+
+[node name="HousePillar" type="StaticBody2D" unique_id=452430195]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1473523368]
+texture = ExtResource("1_xmaci")
+centered = false
+offset = Vector2(-38, -57)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=326431055]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_rpc06")

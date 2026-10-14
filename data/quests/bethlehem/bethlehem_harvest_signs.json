@@ -1,0 +1,77 @@
+{
+	"_comment": "Experiência \"Rute em Belém\" (ep_025). Integrado de production/episodes/ep_025_rute_noemi_e_boaz/quest.proposal.json; aguarda revisão humana.",
+	"quests": [
+		{
+			"id": "bethlehem_harvest_signs",
+			"title": "Sinais da colheita",
+			"category": "exploration",
+			"description": "Examine os objetos e lugares da colheita nos campos de Belém.",
+			"type": "investigation",
+			"classification": "historical_context",
+			"classification_note": "Foice, jarro, marcos, eira, abrigo e porta ilustram a vida de uma aldeia do planalto na época dos juízes (Ferro I). Os objetos do mapa são criados para o jogo; o abrigo de ramos é hipótese.",
+			"region": "bethlehem_fields",
+			"place_id": "bethlehem",
+			"era_id": "judges",
+			"references": ["Ruth 2:3", "Deut 19:14"],
+			"theme": "Ferramentas, limites e lugares da colheita",
+			"people": [],
+			"fictional_characters": [],
+			"intro": "Uma aldeia em tempo de colheita deixa sinais por toda parte. Registre o que encontrar em Minhas descobertas.",
+			"start": {"event": "region_entered", "id": "bethlehem_fields"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "first_sign",
+					"type": "discover_information",
+					"text": "Encontre um primeiro sinal da colheita.",
+					"complete_on": {"event": "collection", "id": "bethlehem_harvest", "count": 1},
+					"targets": [{"type": "examinable", "id": "bf_sickle"}, {"type": "examinable", "id": "bf_pithos"}, {"type": "examinable", "id": "bf_parcel_marker"}, {"type": "examinable", "id": "bf_threshing_floor"}, {"type": "examinable", "id": "bf_shelter"}, {"type": "examinable", "id": "bf_gate"}],
+					"hints": [
+						"Ferramentas de trabalho contam como se vivia.",
+						"Uma foice ficou encostada na beira do campo de Ilan.",
+						"Examine a foice deixada perto de Ilan, na borda norte do campo."
+					],
+					"log": "Você começou a registrar os sinais da colheita."
+				},
+				{
+					"id": "three_signs",
+					"type": "discover_information",
+					"text": "Reúna 3 sinais da colheita.",
+					"complete_on": {"event": "collection", "id": "bethlehem_harvest", "count": 3},
+					"targets": [{"type": "examinable", "id": "bf_sickle"}, {"type": "examinable", "id": "bf_pithos"}, {"type": "examinable", "id": "bf_parcel_marker"}, {"type": "examinable", "id": "bf_threshing_floor"}, {"type": "examinable", "id": "bf_shelter"}, {"type": "examinable", "id": "bf_gate"}],
+					"hints": [
+						"Os campos não têm cercas, mas têm limites.",
+						"Procure os marcos de pedra entre os campos, o jarro grande perto da aldeia e a eira no alto, a leste.",
+						"Examine os objetos marcados pela seta: marco, jarro, eira, abrigo, porta."
+					],
+					"log": "Você reuniu três sinais da colheita."
+				},
+				{
+					"id": "all_signs",
+					"type": "discover_information",
+					"text": "Complete os 6 sinais da colheita.",
+					"complete_on": {"event": "collection_completed", "id": "bethlehem_harvest"},
+					"targets": [{"type": "examinable", "id": "bf_sickle"}, {"type": "examinable", "id": "bf_pithos"}, {"type": "examinable", "id": "bf_parcel_marker"}, {"type": "examinable", "id": "bf_threshing_floor"}, {"type": "examinable", "id": "bf_shelter"}, {"type": "examinable", "id": "bf_gate"}],
+					"hints": [
+						"Falta pouco.",
+						"A porta da aldeia fica no alto, ao norte; o abrigo de ramos, no campo vizinho, a leste.",
+						"Abra o diário (J), aba Descobertas, para ver quais sinais faltam."
+					],
+					"log": "Você completou os sinais da colheita."
+				}
+			],
+			"discoveries": ["boundary_markers"],
+			"completion": {
+				"title": "Sinais registrados",
+				"references": ["Ruth 2:3", "Deut 19:14"],
+				"summary": [
+					"Foices com lâminas de pedra, jarros grandes, marcos entre os campos e a eira mostram como uma aldeia do planalto vivia da colheita.",
+					"Rute 2:3 fala da \"parte do campo\" que era de Boaz: campos vizinhos de donos diferentes, separados por marcos, não por cercas."
+				],
+				"unlock": [],
+				"next": "Os sinais ficam em Minhas descobertas (J, aba Descobertas)."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA). Contexto histórico segue research_historical.md do ep_025; aguarda revisão humana."}
+		}
+	]
+}

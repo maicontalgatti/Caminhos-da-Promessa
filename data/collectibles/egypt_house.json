@@ -1,0 +1,62 @@
+{
+	"_comment": "Coleção da casa egípcia (ep_009). Os objetos do mapa são recriações do jogo.",
+	"sets": [
+		{
+			"id": "egypt_house_life",
+			"title": "A vida na casa egípcia",
+			"region": "egypt_house"
+		}
+	],
+	"collectibles": [
+		{
+			"id": "eh_pool",
+			"set": "egypt_house_life",
+			"title": "Tanque com lótus",
+			"category": "cultural",
+			"region": "egypt_house",
+			"classification": "historical_context",
+			"summary": "Jardins com tanque, lótus e árvores de sombra aparecem em modelos e pinturas de casas egípcias ricas. O tanque do mapa é uma recriação do jogo.",
+			"references": []
+		},
+		{
+			"id": "eh_oven",
+			"set": "egypt_house_life",
+			"title": "Forno e moldes de pão",
+			"category": "object",
+			"region": "egypt_house",
+			"classification": "historical_context",
+			"summary": "Pão e cerveja eram a base da comida no Egito. O grão era moído à mão e o pão, assado em moldes de barro. O forno do mapa é uma recriação do jogo.",
+			"references": []
+		},
+		{
+			"id": "eh_loom",
+			"set": "egypt_house_life",
+			"title": "Tear de chão",
+			"category": "object",
+			"region": "egypt_house",
+			"classification": "historical_context",
+			"summary": "Os egípcios vestiam sobretudo linho, tecido em teares horizontais rentes ao chão; o tear vertical aparece mais tarde. O tear do mapa é uma recriação do jogo.",
+			"references": []
+		},
+		{
+			"id": "eh_jars",
+			"set": "egypt_house_life",
+			"title": "Jarros selados",
+			"category": "object",
+			"region": "egypt_house",
+			"classification": "historical_context",
+			"summary": "Jarros de barro com tampa selada guardavam grão, óleo e cerveja; um selo partido mostrava que o jarro tinha sido aberto. Recriação do jogo.",
+			"references": []
+		},
+		{
+			"id": "eh_shaduf",
+			"set": "egypt_house_life",
+			"title": "Balancim do canal",
+			"category": "cultural",
+			"region": "egypt_house",
+			"classification": "historical_context",
+			"summary": "O balancim (shaduf) erguia água do canal com um balde e um contrapeso. Aparece em pinturas egípcias de época mais tardia; se já era usado nos dias de José, não se sabe.",
+			"references": []
+		}
+	]
+}

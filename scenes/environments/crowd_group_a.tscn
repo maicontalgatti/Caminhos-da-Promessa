@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/crowd_group_a.png" id="1_ge44p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ds80o"]
+size = Vector2(48, 6)
+
+[node name="CrowdGroupA" type="StaticBody2D" unique_id=345772779]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1652659821]
+texture = ExtResource("1_ge44p")
+centered = false
+offset = Vector2(-28, -38)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=30114582]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_ds80o")

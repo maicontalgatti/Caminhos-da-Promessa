@@ -724,7 +724,7 @@
 				"new_map_needed": true,
 				"difficulty": "high"
 			},
-			"status": "approved_for_implementation",
+			"status": "tested",
 			"status_history": [
 				{
 					"status": "idea",
@@ -761,9 +761,32 @@
 					"date": "2026-10-14",
 					"by": "coordenador",
 					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "implemented",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Integrado em data/ (missões, diálogos, cenas, regiões, mapas); suíte 1481/1481."
+				},
+				{
+					"status": "tested",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Suíte 1482/1482, fluxo 17/17, validação e fábrica sem erros; QA sem bloqueadores (test_report.json). Sem sessão humana."
 				}
 			],
-			"game": {},
+			"game": {
+				"quest_id": "joseph_potiphar_house",
+				"dialogues": [
+					"ipi_talk",
+					"meryt_talk",
+					"senbi_talk"
+				],
+				"presentations": [
+					"gen_037_caravan"
+				],
+				"discoveries": []
+			},
 			"reference_check": {
 				"status": "ok",
 				"problems": [],
@@ -1276,7 +1299,7 @@
 				"new_map_needed": true,
 				"difficulty": "high"
 			},
-			"status": "approved_for_implementation",
+			"status": "tested",
 			"status_history": [
 				{
 					"status": "idea",
@@ -1313,9 +1336,35 @@
 					"date": "2026-10-14",
 					"by": "coordenador",
 					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "implemented",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Integrado em data/ (missões, diálogos, cenas, regiões, mapas); suíte 1481/1481."
+				},
+				{
+					"status": "tested",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Suíte 1482/1482, fluxo 17/17, validação e fábrica sem erros; QA sem bloqueadores (test_report.json). Sem sessão humana."
 				}
 			],
-			"game": {},
+			"game": {
+				"quest_id": "exodus_sea_crossing",
+				"dialogues": [
+					"sea_tzvi_talk",
+					"sea_shira_talk",
+					"sea_beni_talk",
+					"sea_dror_talk",
+					"sea_nava_talk",
+					"sea_meret_talk"
+				],
+				"presentations": [
+					"exod_014_sea"
+				],
+				"discoveries": []
+			},
 			"reference_check": {
 				"status": "ok",
 				"problems": [],
@@ -1991,7 +2040,7 @@
 				"new_map_needed": true,
 				"difficulty": "high"
 			},
-			"status": "approved_for_implementation",
+			"status": "tested",
 			"status_history": [
 				{
 					"status": "idea",
@@ -2028,9 +2077,32 @@
 					"date": "2026-10-14",
 					"by": "coordenador",
 					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "implemented",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Integrado em data/ (missões, diálogos, cenas, regiões, mapas); suíte 1481/1481."
+				},
+				{
+					"status": "tested",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Suíte 1482/1482, fluxo 17/17, validação e fábrica sem erros; QA sem bloqueadores (test_report.json). Sem sessão humana."
 				}
 			],
-			"game": {},
+			"game": {
+				"quest_id": "ruth_gleaning",
+				"dialogues": [
+					"bf_ilan_talk",
+					"bf_tova_talk",
+					"bf_tova_home_talk"
+				],
+				"presentations": [
+					"ruth_002_gleaning"
+				],
+				"discoveries": []
+			},
 			"reference_check": {
 				"status": "ok",
 				"problems": [],
@@ -3764,7 +3836,7 @@
 				"new_map_needed": true,
 				"difficulty": "high"
 			},
-			"status": "approved_for_implementation",
+			"status": "tested",
 			"status_history": [
 				{
 					"status": "idea",
@@ -3801,9 +3873,32 @@
 					"date": "2026-10-14",
 					"by": "coordenador",
 					"note": "Ciclo quatro experiências; vereditos em review.json (ok_for_human_review); aprovação humana pendente."
+				},
+				{
+					"status": "implemented",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Integrado em data/ (missões, diálogos, cenas, regiões, mapas); suíte 1481/1481."
+				},
+				{
+					"status": "tested",
+					"date": "2026-10-14",
+					"by": "coordenador",
+					"note": "Suíte 1482/1482, fluxo 17/17, validação e fábrica sem erros; QA sem bloqueadores (test_report.json). Sem sessão humana."
 				}
 			],
-			"game": {},
+			"game": {
+				"quest_id": "shepherds_night",
+				"dialogues": [
+					"bn_tamir_talk",
+					"bn_shai_talk",
+					"bn_rep_shepherds"
+				],
+				"presentations": [
+					"luke_002_shepherds"
+				],
+				"discoveries": []
+			},
 			"reference_check": {
 				"status": "ok",
 				"problems": [],

@@ -1,0 +1,75 @@
+{
+	"regions": [
+		{
+			"id": "egypt_house",
+			"display_name": "Casa de um oficial egípcio",
+			"area_label": "Egito de José",
+			"subtitle": "Época dos patriarcas (datação aproximada e debatida)",
+			"biome": "egito",
+			"map_scene": "res://scenes/maps/egypt_house.tscn",
+			"classification": "plausible_fiction",
+			"notes": "Propriedade fictícia inspirada nas grandes casas egípcias do II milênio a.C. (casas de Amarna e Kahun, modelos de Meketre): muro de tijolo de barro, casa com pórtico de colunas de madeira, jardim com tanque, depósito, celeiros, eira, curral, campos irrigados e canal. A casa é genérica: uma casa de um oficial egípcio, como aquela onde José serviu (Gn 39:1-6), e não a casa de Potifar. Gênesis 39:1 não diz em que cidade ficava a casa de Potifar, sob qual Faraó nem em qual dinastia; o mapa não identifica nenhum deles. Servos e objetos são criados para o jogo.",
+			"related_stories": [],
+			"context": {
+				"place_id": "egypt",
+				"era_id": "patriarchs",
+				"references": ["Gen 39:1-6"],
+				"theme": "José servindo numa casa estrangeira; o SENHOR estava com José",
+				"discoveries_on_enter": ["egypt_black_land"]
+			},
+			"surface_layers": [["Floors", "dirt"], ["Paths", "dirt"], ["Water", "water"], ["Green", "grass"], ["Soil", "dirt"], ["Ground", "sand"]],
+			"entries": {
+				"default": {"x": 40, "y": 496, "facing": "right"},
+				"from_passage": {"x": 40, "y": 496, "facing": "right"}
+			},
+			"exits": [
+				{
+					"id": "west_road",
+					"rect": [0, 476, 12, 40],
+					"to": "dothan",
+					"entry": "default",
+					"label": "Mapa das Escrituras: voltar a Canaã",
+					"passage": {
+						"title": "OUTRO MOMENTO DA HISTÓRIA",
+						"lines": [
+							"Pelo Mapa das Escrituras, você volta ao vale de Dotã, em Canaã. O viajante não refaz a viagem da caravana: a passagem é narrativa, como quem volta algumas páginas.",
+							"A casa egípcia continua no Mapa das Escrituras, em \"José no Egito\", para quando quiser revisitá-la."
+						]
+					}
+				}
+			],
+			"areas": [
+				{"id": "eh_courtyard", "rect": [320, 272, 272, 144], "label": "Pátio da casa"},
+				{"id": "eh_gate", "rect": [352, 432, 64, 48], "label": "Portão da propriedade"}
+			],
+				"npcs": [
+					{"id": "egypt_ipi", "character": "egypt_ipi", "x": 436, "y": 470},
+					{"id": "egypt_meryt", "character": "egypt_meryt", "x": 600, "y": 280},
+					{"id": "egypt_senbi", "character": "egypt_senbi", "x": 780, "y": 392},
+					{"id": "cattle_1", "character": "egypt_cattle", "x": 930, "y": 340},
+					{"id": "cattle_2", "character": "egypt_cattle", "x": 968, "y": 392},
+					{"id": "donkey_1", "character": "egypt_donkey", "x": 920, "y": 410},
+					{"id": "goose_1", "character": "egypt_goose", "x": 200, "y": 236},
+					{"id": "goose_2", "character": "egypt_goose", "x": 240, "y": 228},
+					{"id": "goose_3", "character": "egypt_goose", "x": 420, "y": 360},
+					{"id": "cat_1", "character": "egypt_cat", "x": 760, "y": 240}
+				],
+				"examinables": [
+					{"id": "eh_records", "x": 640, "y": 232, "prop": "scribe_table", "dialogue": "eh_records", "prompt": "Examinar a mesa do escriba", "prompt_y": -22},
+					{"id": "eh_granary", "x": 800, "y": 210, "prop": "granary_silos", "dialogue": "eh_granary", "prompt": "Examinar os silos", "radius": 18, "center_y": -6, "prompt_y": -34},
+					{"id": "eh_field", "x": 640, "y": 470, "prop": "flax_bundles", "dialogue": "eh_field", "prompt": "Observar o campo", "prompt_y": -20},
+					{"id": "eh_journal", "x": 264, "y": 232, "prop": "journal", "kind": "read", "dialogue": "eh_journal", "prompt": "Ler o diário de viagem", "prompt_y": -16},
+					{"id": "eh_pool", "x": 216, "y": 200, "prop": "garden_pool", "dialogue": "eh_pool", "prompt": "Examinar o tanque", "radius": 20, "prompt_y": -18},
+					{"id": "eh_oven", "x": 176, "y": 352, "prop": "egypt_oven", "dialogue": "eh_oven", "prompt": "Examinar o forno", "prompt_y": -22},
+					{"id": "eh_loom", "x": 360, "y": 392, "prop": "floor_loom", "dialogue": "eh_loom", "prompt": "Examinar o tear", "prompt_y": -16},
+					{"id": "eh_jars", "x": 608, "y": 160, "prop": "storage_jars", "dialogue": "eh_jars", "prompt": "Examinar os jarros", "prompt_y": -22},
+					{"id": "eh_shaduf", "x": 720, "y": 600, "prop": "shaduf", "dialogue": "eh_shaduf", "prompt": "Examinar o balancim", "center_y": -6, "prompt_y": -30}
+				],
+				"pickups": [
+					{"id": "eh_sack_1", "item": "barley_sack", "x": 764, "y": 372, "visible_if": {"objective": "egypt_granary_sacks/gather_sacks"}},
+					{"id": "eh_sack_2", "item": "barley_sack", "x": 804, "y": 404, "visible_if": {"objective": "egypt_granary_sacks/gather_sacks"}},
+					{"id": "eh_sack_3", "item": "barley_sack", "x": 840, "y": 366, "visible_if": {"objective": "egypt_granary_sacks/gather_sacks"}}
+				]
+		}
+	]
+}

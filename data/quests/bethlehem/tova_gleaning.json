@@ -1,0 +1,99 @@
+{
+	"_comment": "Experiência \"Rute em Belém\" (ep_025). Integrado de production/episodes/ep_025_rute_noemi_e_boaz/quest.proposal.json; aguarda revisão humana.",
+	"quests": [
+		{
+			"id": "tova_gleaning",
+			"title": "O que fica no campo",
+			"category": "side",
+			"description": "Tova, uma viúva da aldeia, respiga atrás dos ceifeiros de Ilan. Ajude-a a bater as espigas e a levar a cevada para casa.",
+			"type": "assist",
+			"classification": "plausible_fiction",
+			"classification_note": "Tova e a casa dela são criadas para o jogo; não representam Noemi nem Rute. O costume de respigar e de bater as espigas é contexto histórico (Deuteronômio 24:19; Rute 2:17).",
+			"region": "bethlehem_fields",
+			"place_id": "bethlehem",
+			"era_id": "judges",
+			"references": ["Deut 24:19", "Ruth 2:17"],
+			"theme": "Respigar: o que a lei deixava para quem não tinha campo",
+			"people": [],
+			"fictional_characters": ["bf_tova", "bf_ilan"],
+			"intro": "Atrás dos ceifeiros de Ilan, uma senhora recolhe as espigas que ficaram no chão.",
+			"start": {"event": "custom", "id": "ruth_tova_hello"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "meet_tova",
+					"type": "talk_to_npc",
+					"text": "Converse com a senhora que respiga.",
+					"complete_on": {"event": "custom", "id": "ruth_tova_hello"},
+					"targets": [{"type": "npc", "id": "bf_tova"}],
+					"hints": [
+						"Alguém recolhe o que os ceifeiros deixam para trás.",
+						"Tova respiga na borda sul do campo de Ilan.",
+						"Converse com Tova, na borda sul do campo de Ilan."
+					],
+					"log": "Tova contou que é viúva e que respiga nos campos da aldeia durante a colheita."
+				},
+				{
+					"id": "forgotten_sheaf",
+					"type": "make_choice",
+					"text": "Veja o feixe esquecido no campo.",
+					"detail": "Tova falou de um feixe que ficou para trás.",
+					"complete_on": {"event": "choice_made", "id": "ruth_forgotten_sheaf"},
+					"targets": [{"type": "examinable", "id": "bf_forgotten_sheaf"}],
+					"hints": [
+						"Nem tudo o que fica no campo foi esquecido por acaso.",
+						"O feixe esquecido está entre as fileiras ceifadas, perto do canto do campo.",
+						"Examine o feixe solto no meio do campo de Ilan e decida o que fazer."
+					],
+					"log": "Você encontrou um feixe esquecido no campo e decidiu o que fazer com ele."
+				},
+				{
+					"id": "beat_ears",
+					"type": "interact_with_object",
+					"text": "Ajude Tova a bater as espigas.",
+					"detail": "Com uma vara, os grãos se soltam da palha.",
+					"complete_on": {"event": "custom", "id": "ruth_tova_beaten"},
+					"targets": [{"type": "examinable", "id": "bf_beating_stone"}],
+					"hints": [
+						"Espiga respigada ainda não é grão.",
+						"Tova deixou a vara de bater junto a uma pedra lisa, ao sul do campo.",
+						"Examine a pedra lisa com a vara, ao sul do campo de Ilan."
+					],
+					"log": "Você bateu as espigas com a vara, como Tova mostrou, e o grão se soltou da palha."
+				},
+				{
+					"id": "carry_home",
+					"type": "deliver_item",
+					"text": "Leve a cevada de Tova até a casa dela.",
+					"detail": "Tova mora junto ao muro da aldeia, perto da porta.",
+					"complete_on": {"event": "item_delivered", "id": "tova_grain"},
+					"targets": [{"type": "npc", "id": "bf_tova_home"}],
+					"hints": [
+						"Grão no campo não alimenta ninguém em casa.",
+						"A casa de Tova fica ao norte, junto ao muro, a oeste da porta da aldeia.",
+						"Suba o caminho até a porta da aldeia e converse com Tova, diante da casa dela."
+					],
+					"log": "Você levou a cevada de Tova até a casa dela, junto ao muro da aldeia."
+				}
+			],
+			"rewards": {"flags": ["helped_gleaner"]},
+			"discoveries": ["harvest_meal"],
+			"completion": {
+				"title": "Espigas recolhidas",
+				"references": ["Deut 24:19", "Ruth 2:17"],
+				"summary": [
+					"Quem não tinha campo podia recolher o que ficava para trás na colheita; Deuteronômio 24:19 manda não voltar para buscar o feixe esquecido.",
+					"Rute 2:17 conta que Rute bateu o que respigou até a tarde. Tova e a casa dela são criações do jogo."
+				],
+				"variants": [
+					{"if": {"choice": "ruth_forgotten_sheaf", "option": "left"}, "next": "Você deixou o feixe esquecido onde estava, e Tova o encontrou ao passar."},
+					{"if": {"choice": "ruth_forgotten_sheaf", "option": "told_tova"}, "next": "Você mostrou a Tova onde estava o feixe esquecido."},
+					{"if": {"choice": "ruth_forgotten_sheaf", "option": "asked_ilan"}, "next": "Você perguntou a Ilan pelo feixe, e ele pediu que ficasse no campo."}
+				],
+				"unlock": [],
+				"next": "No diário, a descoberta \"Comida de colheita\" fala do pão e do grão tostado de Rute 2:14."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA). Decisão do criador (2026-10-14): manter Tova, sem paralelos explícitos com Noemi nas falas (Tova mora em Belém desde menina, não tem nora nem viagem). Deut 24 falta em verse_counts.json."}
+		}
+	]
+}

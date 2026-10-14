@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/sheaf.png" id="1_a8rw3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f118t"]
+size = Vector2(8, 3)
+
+[node name="Sheaf" type="StaticBody2D" unique_id=1701690846]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2090799304]
+texture = ExtResource("1_a8rw3")
+centered = false
+offset = Vector2(-7, -16)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1076172785]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_f118t")

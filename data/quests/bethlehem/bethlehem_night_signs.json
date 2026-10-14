@@ -1,0 +1,77 @@
+{
+	"_comment": "Experiência \"Os pastores de Belém\" (ep_048). Integrado de production/episodes/ep_048_o_nascimento_de_jesus/quest.proposal.json; aguarda revisão humana.",
+	"quests": [
+		{
+			"id": "bethlehem_night_signs",
+			"title": "Sinais da vigília",
+			"category": "exploration",
+			"description": "Examine os objetos do posto de vigia e o horizonte dos campos de Belém.",
+			"type": "investigation",
+			"classification": "historical_context",
+			"classification_note": "Cajado, funda, manto, lamparina e terraços de pedra seca ilustram o pastoreio e a Judeia nos dias de Herodes. Os objetos do mapa são criados para o jogo.",
+			"region": "bethlehem_night",
+			"place_id": "bethlehem",
+			"era_id": "roman_judea",
+			"references": ["1Sam 17:40", "Luke 2:8"],
+			"theme": "O equipamento do pastor e a paisagem de Belém",
+			"people": [],
+			"fictional_characters": [],
+			"intro": "O posto de vigia guarda o que os pastores usam toda noite. Registre o que encontrar em Minhas descobertas.",
+			"start": {"event": "region_entered", "id": "bethlehem_night"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "first_sign",
+					"type": "discover_information",
+					"text": "Encontre um primeiro sinal da vigília.",
+					"complete_on": {"event": "collection", "id": "bethlehem_night", "count": 1},
+					"targets": [{"type": "examinable", "id": "bn_staff"}, {"type": "examinable", "id": "bn_sling"}, {"type": "examinable", "id": "bn_cloak_bed"}, {"type": "examinable", "id": "bn_oil_lamp"}, {"type": "examinable", "id": "bn_terraces"}],
+					"hints": [
+						"Todo pastor deixa as ferramentas por perto.",
+						"Há um cajado encostado no abrigo de rocha do posto de vigia.",
+						"Examine o cajado ao lado do abrigo de rocha, junto a Tamir."
+					],
+					"log": "Você começou a registrar os sinais da vigília."
+				},
+				{
+					"id": "three_signs",
+					"type": "discover_information",
+					"text": "Reúna 3 sinais da vigília.",
+					"complete_on": {"event": "collection", "id": "bethlehem_night", "count": 3},
+					"targets": [{"type": "examinable", "id": "bn_staff"}, {"type": "examinable", "id": "bn_sling"}, {"type": "examinable", "id": "bn_cloak_bed"}, {"type": "examinable", "id": "bn_oil_lamp"}, {"type": "examinable", "id": "bn_terraces"}],
+					"hints": [
+						"A noite inteira cabe num pequeno abrigo.",
+						"Procure a funda, o manto estendido e um nicho na rocha com uma luz pequena.",
+						"Examine os objetos marcados pela seta ao redor do abrigo de rocha."
+					],
+					"log": "Você reuniu três sinais da vigília."
+				},
+				{
+					"id": "all_signs",
+					"type": "discover_information",
+					"text": "Complete os 5 sinais da vigília.",
+					"complete_on": {"event": "collection_completed", "id": "bethlehem_night"},
+					"targets": [{"type": "examinable", "id": "bn_staff"}, {"type": "examinable", "id": "bn_sling"}, {"type": "examinable", "id": "bn_cloak_bed"}, {"type": "examinable", "id": "bn_oil_lamp"}, {"type": "examinable", "id": "bn_terraces"}],
+					"hints": [
+						"Nem todo sinal está junto ao fogo: a própria encosta conta algo.",
+						"Nos terraços perto da entrada, onde uma das ovelhas se perdeu, há muros de pedra seca.",
+						"Abra o diário (J), aba Descobertas, para ver quais sinais faltam."
+					],
+					"log": "Você completou os sinais da vigília."
+				}
+			],
+			"discoveries": [],
+			"completion": {
+				"title": "Sinais registrados",
+				"references": ["1Sam 17:40", "Luke 2:8"],
+				"summary": [
+					"Cajado, funda, manto de lã e lamparina de barro mostram como pastores passavam a noite no campo; os terraços de pedra mostram como se aproveitavam as encostas.",
+					"Os objetos do posto de vigia são criações do jogo baseadas no contexto histórico."
+				],
+				"unlock": [],
+				"next": "Os sinais ficam em Minhas descobertas (J, aba Descobertas)."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA). Contexto segue research_historical.md do ep_048. Heródio fora (decisão do coordenador): bn_herodium_view trocado por bn_terraces; textos do roteirista (IA) em dialogues.proposal.json e collectibles.proposal.json."}
+		}
+	]
+}

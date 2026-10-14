@@ -67,8 +67,8 @@
 			"kind": "país",
 			"identification": "established",
 			"eras": ["patriarchs", "exodus"],
-			"references": ["Gen 12:10", "Gen 37:28", "Exod 1:11"],
-			"description": "Grande civilização às margens do Nilo. Nas narrativas bíblicas é destino de quem foge da fome, lugar onde José é levado e de onde Israel sai no Êxodo.",
+			"references": ["Gen 12:10", "Gen 37:28", "Gen 39:1", "Exod 1:11"],
+			"description": "Grande civilização às margens do Nilo, cercada de deserto. Nas narrativas bíblicas é destino de quem foge da fome, lugar para onde José é levado e onde serve na casa de Potifar, e de onde Israel sai no Êxodo. O Faraó dos relatos de José não é nomeado.",
 			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
 		},
 		{
@@ -97,8 +97,8 @@
 			"kind": "cidade",
 			"identification": "established",
 			"eras": ["judges", "united_monarchy", "roman_judea"],
-			"references": ["Ruth 1:1", "1Sam 16:1", "Luke 2:4"],
-			"description": "Pequena cidade da Judeia ao sul de Jerusalém. Cenário do livro de Rute, terra de Davi e, segundo os evangelhos, lugar do nascimento de Jesus.",
+			"references": ["Ruth 1:1", "Ruth 1:19", "1Sam 16:1", "Luke 2:4"],
+			"description": "Pequena cidade nas colinas de Judá, a cerca de 8 a 9 km ao sul de Jerusalém. Cenário do livro de Rute, terra de Davi e, segundo os evangelhos, lugar do nascimento de Jesus. Da Belém do tempo dos juízes quase não restam vestígios: a cidade atual está por cima.",
 			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
 		},
 		{
@@ -140,6 +140,46 @@
 			"references": ["Jonah 1:2", "Jonah 3:3", "Nah 1:1"],
 			"description": "Grande cidade da Assíria, à beira do rio Tigre, perto da atual Mossul. Destino da mensagem de Jonas e tema do livro de Naum.",
 			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "gilead",
+			"name": "Gileade",
+			"kind": "região",
+			"identification": "established",
+			"eras": ["patriarchs", "exodus", "judges"],
+			"references": ["Gen 31:21", "Gen 37:25"],
+			"description": "Região montanhosa a leste do rio Jordão. Em Gênesis 37:25, uma caravana vinda de Gileade desce para o Egito com especiarias, bálsamo e mirra. Os limites exatos da região variam de época para época.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Identificação da região (leste do Jordão) amplamente aceita; limites aproximados. Aguarda revisor histórico."}
+		},
+		{
+			"id": "egypt_house",
+			"name": "Casa de um oficial egípcio (fictícia)",
+			"kind": "propriedade",
+			"identification": "fictional",
+			"eras": ["patriarchs"],
+			"references": [],
+			"description": "Propriedade fictícia, criada para o jogo: uma casa de um oficial egípcio, como aquela onde José serviu (Gn 39:1-6), e não a casa de Potifar. Inspirada nas grandes casas egípcias do II milênio a.C.: muro de tijolo de barro, casa com pórtico, jardim com tanque, depósito, celeiros, eira, curral, campos irrigados e canal. O mapa não identifica cidade, Faraó nem dinastia.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Conteúdo fictício identificado como tal (decisão E9-02 do coordenador: casa genérica). 'kind: propriedade' é novo; se o validador restringir os tipos, usar 'aldeia' ou acrescentar o tipo."}
+		},
+		{
+			"id": "exodus_sea",
+			"name": "O mar (localização debatida)",
+			"kind": "mar",
+			"identification": "debated",
+			"eras": ["exodus"],
+			"references": ["Exod 13:18", "Exod 14:2", "Exod 14:21-22", "Exod 15:4"],
+			"description": "O mar atravessado pelos israelitas depois da saída do Egito. Êxodo 14 o chama só de \"o mar\"; em outras passagens o nome hebraico é yam suf, traduzido como \"Mar Vermelho\" ou \"mar de juncos\". A localização é debatida: há propostas no golfo de Suez, no de Ácaba e em lagos e lagunas entre o Egito e o Sinai. Pi-Hairote, Migdol e Baal-Zefom (Êx 14:2) também não têm identificação segura.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Sem coordenadas nem marco no mapa. Propostas de localização segundo research_historical.md (não verificadas). Aguarda revisão humana."}
+		},
+		{
+			"id": "bethlehem_fields",
+			"name": "Campos de Belém",
+			"kind": "campos",
+			"identification": "debated",
+			"eras": ["judges"],
+			"references": ["Ruth 2:3", "Ruth 2:4", "Ruth 2:23"],
+			"description": "Campos de cevada e trigo nos vales e encostas em volta de Belém. Rute 2 conta que Boaz veio de Belém ao campo, então os campos ficavam fora da aldeia, a pé. Onde ficava a parte do campo de Boaz é desconhecido: a tradição que o mostra em Beit Sahur, a leste, é bem posterior. Os campos do jogo são uma recriação.",
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Geografia segundo research_historical.md do ep_025. Escrito pelo roteirista (IA). Aguarda revisão humana."}
 		}
 	]
 }

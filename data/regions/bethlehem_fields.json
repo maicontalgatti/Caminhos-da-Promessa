@@ -1,0 +1,64 @@
+{
+	"regions": [
+		{
+			"id": "bethlehem_fields",
+			"display_name": "Belém · Campos de Boaz",
+			"area_label": "Belém de Judá",
+			"subtitle": "Época dos juízes (datação aproximada)",
+			"biome": "judah_hills",
+			"map_scene": "res://scenes/maps/bethlehem_fields.tscn",
+			"classification": "plausible_fiction",
+			"notes": "Campos de cevada fictícios na encosta abaixo de Belém, na época dos juízes (Ferro I). Belém é identificada com segurança; a forma da aldeia no Ferro I quase não deixou restos e é reconstruída por analogia com aldeias do planalto (hipótese). O campo de Ilan, Ilan, Tova e os ceifeiros são criados para o jogo. A 'parte do campo que era de Boaz' (Rt 2:3) é representada como campo vizinho separado por marcos de pedra; sua localização real é desconhecida (a tradição de Beit Sahur é posterior e sem prova). A porta da aldeia é só cenário.",
+			"related_stories": ["ruth_002_gleaning"],
+			"context": {
+				"place_id": "bethlehem",
+				"era_id": "judges",
+				"references": ["Ruth 1:22", "Ruth 2:3"],
+				"theme": "A colheita da cevada e a lei da respiga",
+				"discoveries_on_enter": ["bethlehem_judges"]
+			},
+			"surface_layers": [["Plaza", "stone"], ["Threshing", "dirt"], ["Village", "dirt"], ["Paths", "dirt"], ["Barley", "grass"], ["Stubble", "grass"], ["DryGrass", "grass"], ["Ground", "grass"]],
+			"entries": {
+				"default": {"x": 24, "y": 296, "facing": "right"},
+				"from_scripture_map": {"x": 24, "y": 296, "facing": "right"}
+			},
+			"exits": [],
+			"areas": [
+				{"id": "bf_ilan_field", "rect": [96, 336, 320, 208], "label": "Campo de Ilan"},
+				{"id": "bf_boaz_field", "rect": [480, 336, 416, 240], "label": "A parte do campo que era de Boaz"},
+				{"id": "bf_village_gate", "rect": [464, 64, 96, 56], "label": "Porta da aldeia"}
+			],
+				"npcs": [
+					{"id": "bf_ilan", "character": "bf_ilan", "x": 296, "y": 328},
+					{"id": "bf_tova", "character": "bf_tova", "x": 200, "y": 528, "visible_if": {"all": [{"not": {"objective": "tova_gleaning/carry_home"}}, {"not": {"quest_completed": "tova_gleaning"}}]}},
+					{"id": "bf_tova_home", "character": "bf_tova_home", "x": 424, "y": 128, "visible_if": {"any": [{"objective": "tova_gleaning/carry_home"}, {"quest_completed": "tova_gleaning"}]}},
+					{"id": "bf_reaper_w1", "character": "bf_reaper", "x": 176, "y": 400},
+					{"id": "bf_reaper_e1", "character": "bf_reaper", "x": 608, "y": 408},
+					{"id": "bf_reaper_e2", "character": "bf_reaper", "x": 688, "y": 432}
+				],
+				"examinables": [
+					{"id": "bf_boundary_view", "x": 464, "y": 344, "prop": "rock_big", "dialogue": "bf_boundary_view", "prompt": "Observar o campo vizinho", "prompt_y": -24},
+					{"id": "bf_forgotten_sheaf", "x": 344, "y": 472, "prop": "sheaf", "dialogue": "bf_forgotten_sheaf", "prompt": "Examinar o feixe", "prompt_y": -18, "visible_if": {"all": [{"quest_active": "tova_gleaning"}, {"not": {"choice": "ruth_forgotten_sheaf"}}]}},
+					{"id": "bf_beating_stone", "x": 152, "y": 568, "prop": "rock_small", "dialogue": "bf_beating_stone", "prompt": "Bater as espigas", "prompt_y": -18},
+					{"id": "bf_corner_returned", "x": 392, "y": 520, "prop": "sheaf", "dialogue": "bf_corner_returned", "prompt": "Examinar o canto do campo", "prompt_y": -18, "visible_if": {"flag": "corner_returned"}},
+					{"id": "bf_sickle", "x": 232, "y": 330, "marker": "sparkle", "dialogue": "bf_sickle", "prompt": "Examinar a foice", "radius": 12},
+					{"id": "bf_pithos", "x": 624, "y": 104, "prop": "pithos", "dialogue": "bf_pithos", "prompt": "Examinar o jarro", "prompt_y": -24},
+					{"id": "bf_parcel_marker", "x": 448, "y": 440, "prop": "boundary_stone", "dialogue": "bf_parcel_marker", "prompt": "Examinar o marco", "center_y": -6, "prompt_y": -24},
+					{"id": "bf_threshing_floor", "x": 880, "y": 196, "prop": "grain_heap", "dialogue": "bf_threshing_floor", "prompt": "Examinar a eira", "prompt_y": -20},
+					{"id": "bf_shelter", "x": 800, "y": 360, "prop": "branch_shelter", "dialogue": "bf_shelter", "prompt": "Examinar o abrigo", "prompt_y": -30},
+					{"id": "bf_gate", "x": 512, "y": 88, "prop": "village_gate", "dialogue": "bf_gate", "prompt": "Examinar a porta", "prompt_y": -36},
+					{"id": "bf_road_west", "x": 40, "y": 272, "prop": "boundary_stone", "dialogue": "bf_road_west", "prompt": "Examinar a estrada", "center_y": -6, "prompt_y": -24}
+				],
+				"pickups": [
+					{"id": "bf_sheaf_1", "item": "barley_sheaf", "x": 144, "y": 360, "visible_if": {"objective": "ruth_gleaning/harvest"}},
+					{"id": "bf_sheaf_2", "item": "barley_sheaf", "x": 208, "y": 376, "visible_if": {"objective": "ruth_gleaning/harvest"}},
+					{"id": "bf_sheaf_3", "item": "barley_sheaf", "x": 272, "y": 360, "visible_if": {"objective": "ruth_gleaning/harvest"}},
+					{"id": "bf_sheaf_4", "item": "barley_sheaf", "x": 160, "y": 448, "visible_if": {"objective": "ruth_gleaning/harvest"}},
+					{"id": "bf_sheaf_5", "item": "barley_sheaf", "x": 240, "y": 464, "visible_if": {"objective": "ruth_gleaning/harvest"}},
+					{"id": "bf_sheaf_6", "item": "barley_sheaf", "x": 320, "y": 416, "visible_if": {"objective": "ruth_gleaning/harvest"}},
+					{"id": "bf_corner_1", "item": "corner_sheaf", "x": 384, "y": 512, "visible_if": {"objective": "ruth_gleaning/harvest"}},
+					{"id": "bf_corner_2", "item": "corner_sheaf", "x": 400, "y": 532, "visible_if": {"objective": "ruth_gleaning/harvest"}}
+				]
+		}
+	]
+}

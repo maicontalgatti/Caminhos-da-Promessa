@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/stone_bench.png" id="1_gkbjd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyhek"]
+size = Vector2(22, 4)
+
+[node name="StoneBench" type="StaticBody2D" unique_id=775321659]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2061180909]
+texture = ExtResource("1_gkbjd")
+centered = false
+offset = Vector2(-13, -10)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1689585974]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_eyhek")

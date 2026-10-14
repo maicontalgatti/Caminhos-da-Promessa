@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/reed_fence_v.png" id="1_jmb34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ev20d"]
+size = Vector2(4, 16)
+
+[node name="ReedFenceV" type="StaticBody2D" unique_id=1867865051]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1508983816]
+texture = ExtResource("1_jmb34")
+centered = false
+offset = Vector2(-8, -15)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1347495490]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_ev20d")

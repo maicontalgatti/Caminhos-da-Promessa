@@ -52,7 +52,7 @@
 			"places": ["canaan", "shechem"],
 			"references": ["Gen 25:27", "Gen 32:28", "Gen 37:3"],
 			"summary": "Filho de Isaque e Rebeca, irmão gêmeo de Esaú. Descrito como homem que habitava em tendas. Recebe o nome Israel, e seus doze filhos dão nome às tribos.",
-			"relations": [{"person": "isaac", "label": "filho de"}, {"person": "esau", "label": "irmão de"}, {"person": "joseph", "label": "pai de"}],
+			"relations": [{"person": "isaac", "label": "filho de"}, {"person": "esau", "label": "irmão de"}, {"person": "joseph", "label": "pai de"}, {"person": "judah", "label": "pai de"}, {"person": "reuben", "label": "pai de"}],
 			"moments": ["Habitava em tendas (Gn 25:27)", "Recebe o nome Israel (Gn 32:28)", "Prefere José entre os filhos (Gn 37:3)"],
 			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
 		},
@@ -74,8 +74,8 @@
 			"places": ["shechem", "dothan", "egypt"],
 			"references": ["Gen 37:2-36", "Gen 39:1-6", "Gen 41:39-41"],
 			"summary": "Filho de Jacó. Vendido pelos irmãos a uma caravana, é levado ao Egito, passa pela prisão e chega a governar o país sob o faraó.",
-			"relations": [{"person": "jacob", "label": "filho de"}],
-			"moments": ["Vendido em Dotã (Gn 37:17-28)", "Na casa de Potifar (Gn 39:1-6)", "Governador do Egito (Gn 41:39-41)"],
+			"relations": [{"person": "jacob", "label": "filho de"}, {"person": "judah", "label": "irmão de"}, {"person": "reuben", "label": "irmão de"}],
+			"moments": ["Vendido em Dotã e levado ao Egito (Gn 37:17-28, 36)", "Na casa de Potifar (Gn 39:1-6)", "Governador do Egito (Gn 41:39-41)"],
 			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
 		},
 		{
@@ -88,6 +88,169 @@
 			"relations": [],
 			"moments": ["Ungido por Samuel (1Sm 16:11-13)", "Fala do cuidado com o rebanho (1Sm 17:34-35)", "Rei e conquista de Jerusalém (2Sm 5:3-7)"],
 			"verification": {"status": "pending_review", "reviewer": "", "notes": ""}
+		},
+		{
+			"id": "potiphar",
+			"name": "Potifar",
+			"era_id": "patriarchs",
+			"places": ["egypt"],
+			"references": ["Gen 37:36", "Gen 39:1-6"],
+			"summary": "Egípcio, oficial do Faraó e capitão da guarda. Compra José no Egito, percebe que o SENHOR estava com ele e o põe como administrador de tudo o que tinha. O texto não diz em que cidade morava nem a qual Faraó servia.",
+			"relations": [],
+			"moments": [
+				"Compra José no Egito (Gn 37:36; 39:1)",
+				"Põe José como administrador da casa (Gn 39:4-6)"
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Sem fala, aparência ou caráter além do texto. Sentido exato de 'oficial' e 'capitão da guarda' a conferir em léxico (FB §11.6); a ficha usa só a forma da tradução. A continuação do capítulo (Gn 39:7-23) não está resumida aqui, de propósito (fora do escopo de ep_009)."}
+		},
+		{
+			"id": "judah",
+			"name": "Judá",
+			"era_id": "patriarchs",
+			"places": ["dothan"],
+			"references": ["Gen 29:35", "Gen 37:26-27"],
+			"summary": "Filho de Jacó e Lia, irmão de José. Em Dotã, propõe aos irmãos vender José aos ismaelitas em vez de matá-lo, e eles concordam.",
+			"relations": [{"person": "jacob", "label": "filho de"}, {"person": "joseph", "label": "irmão de"}],
+			"moments": [
+				"Nascimento (Gn 29:35)",
+				"Propõe vender José (Gn 37:26-27)"
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Registra só a proposta, sem julgar Judá. O restante da história de Judá (Gn 38; 43-44; 49) fica para outras experiências."}
+		},
+		{
+			"id": "reuben",
+			"name": "Rúben",
+			"era_id": "patriarchs",
+			"places": ["dothan"],
+			"references": ["Gen 29:32", "Gen 37:21-22", "Gen 37:29-30"],
+			"summary": "Filho mais velho de Jacó e Lia. Em Dotã, convence os irmãos a não matar José e a pô-lo numa cisterna, com a intenção de devolvê-lo ao pai; quando volta à cisterna, José já não está lá.",
+			"relations": [{"person": "jacob", "label": "filho de"}, {"person": "joseph", "label": "irmão de"}],
+			"moments": [
+				"Nascimento (Gn 29:32)",
+				"Propõe a cisterna (Gn 37:21-22)",
+				"Não encontra José na cisterna (Gn 37:29-30)"
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Citado só na nota final da apresentação gen_037_caravan. O texto não diz onde Rúben estava durante a venda; a ficha não afirma nada sobre isso."}
+		},
+		{
+			"id": "moses",
+			"name": "Moisés",
+			"era_id": "exodus",
+			"places": ["egypt", "exodus_sea"],
+			"references": ["Exod 2:10", "Exod 3:10", "Exod 14:21", "Exod 14:31"],
+			"summary": "Adotado pela filha do faraó, que lhe deu o nome (Êx 2:10). Deus o envia ao faraó para tirar do Egito os filhos de Israel. Junto ao mar, estende a mão sobre as águas; o texto atribui ao SENHOR a abertura do mar.",
+			"relations": [{"person": "miriam", "label": "irmão de"}],
+			"moments": [
+				"Adotado pela filha do faraó, que lhe dá o nome (Êx 2:10)",
+				"Enviado ao faraó (Êx 3:10)",
+				"Estende a mão sobre o mar (Êx 14:21)",
+				"O povo crê no SENHOR e em Moisés (Êx 14:31)"
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "No jogo, Moisés aparece só como silhueta distante na cena dirigida, sem falas; Êx 14:13-14 aparece por citação da tradução carregada ou por resumo identificado. Aguarda revisão humana."}
+		},
+		{
+			"id": "miriam",
+			"name": "Miriã",
+			"era_id": "exodus",
+			"places": ["exodus_sea"],
+			"references": ["Exod 15:20-21", "Num 26:59"],
+			"summary": "Profetisa, irmã de Arão e de Moisés. Depois da travessia do mar, pega um tamborim, e as mulheres saem atrás dela com tamborins e danças.",
+			"relations": [{"person": "moses", "label": "irmã de"}],
+			"moments": [
+				"Tamborins e danças depois da travessia (Êx 15:20-21)",
+				"Citada entre os filhos de Anrão e Joquebede (Nm 26:59)"
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "A irmã do menino em Êx 2:4 não é nomeada no texto; a identificação com Miriã é tradicional e fica fora da ficha. Aguarda revisão humana."}
+		},
+		{
+			"id": "ruth",
+			"name": "Rute",
+			"era_id": "judges",
+			"places": ["bethlehem"],
+			"references": ["Ruth 1:4", "Ruth 1:14-18", "Ruth 1:22", "Ruth 2:2-3", "Ruth 2:17-18"],
+			"summary": "Mulher moabita, nora de Noemi. Viúva, fica com a sogra e declara que o povo e o Deus de Noemi serão os seus. Em Belém, respiga nos campos, na parte que era de Boaz, e leva a cevada à sogra (Rt 2:18).",
+			"relations": [{"person": "naomi", "label": "nora de"}],
+			"moments": [
+				"Fica com a sogra (Rt 1:14-18)",
+				"Chega a Belém no começo da colheita (Rt 1:22)",
+				"Respiga no campo de Boaz (Rt 2:2-17)"
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "No jogo, Rute aparece só como figura distante na cena dirigida, sem falas; o que diz está no texto citado. O livro continua nos capítulos 3 e 4 (fora desta experiência). Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "naomi",
+			"name": "Noemi",
+			"era_id": "judges",
+			"places": ["bethlehem"],
+			"references": ["Ruth 1:1-5", "Ruth 1:19-21", "Ruth 2:19-20"],
+			"summary": "Mulher de Belém, casada com Elimeleque. Por causa de uma fome, vai para Moabe com a família; lá perde o marido e os dois filhos. Volta a Belém com a nora Rute e pede para ser chamada Mara. Reconhece Boaz como parente próximo da família.",
+			"relations": [{"person": "ruth", "label": "sogra de"}],
+			"moments": [
+				"Vai para Moabe com a família (Rt 1:1-5)",
+				"Volta a Belém e pede o nome Mara (Rt 1:19-21)",
+				"Reconhece Boaz como resgatador (Rt 2:19-20)"
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Noemi não aparece no mapa nem na cena; só no texto citado e no diário. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "boaz",
+			"name": "Boaz",
+			"era_id": "judges",
+			"places": ["bethlehem", "bethlehem_fields"],
+			"references": ["Ruth 2:1", "Ruth 2:4", "Ruth 2:8-16", "Ruth 2:20"],
+			"summary": "Homem de Belém, da família de Elimeleque, marido de Noemi, descrito como muito rico. Em Rute 2, saúda os ceifeiros em nome do SENHOR, deixa Rute respigar no campo dele, a chama para a refeição dos ceifeiros e manda deixar espigas para ela. Noemi o reconhece como resgatador.",
+			"relations": [{"person": "naomi", "label": "parente do marido de"}],
+			"moments": [
+				"Apresentado pelo narrador (Rt 2:1)",
+				"Saúda os ceifeiros (Rt 2:4)",
+				"Acolhe Rute no campo (Rt 2:8-16)",
+				"Chamado de resgatador por Noemi (Rt 2:20)"
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "No jogo, Boaz aparece só como figura distante na cena dirigida, sem falas. Momentos dos capítulos 3 e 4 ficam para outra experiência. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "jesus",
+			"name": "Jesus",
+			"era_id": "roman_judea",
+			"places": ["bethlehem", "nazareth"],
+			"references": ["Luke 2:7", "Luke 2:11", "Luke 2:21", "Luke 4:16"],
+			"summary": "Segundo Lucas, nasce em Belém e é deitado numa manjedoura (Lc 2:7). O anjo o anuncia aos pastores como Salvador, Cristo, o Senhor (Lc 2:11). Recebe o nome Jesus no oitavo dia (Lc 2:21) e cresce em Nazaré (Lc 4:16).",
+			"relations": [{"person": "mary_mother_of_jesus", "label": "filho de"}],
+			"moments": [
+				"Nascimento em Belém (Lc 2:6-7)",
+				"Anunciado aos pastores (Lc 2:10-12)",
+				"Recebe o nome no oitavo dia (Lc 2:21)"
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Ficha mínima, só com o que Lucas 2 e 4:16 dizem. Nesta experiência, Jesus não aparece em tela. Aguarda revisão humana."}
+		},
+		{
+			"id": "mary_mother_of_jesus",
+			"name": "Maria, mãe de Jesus",
+			"era_id": "roman_judea",
+			"places": ["nazareth", "bethlehem"],
+			"references": ["Luke 1:26-27", "Luke 2:5-7", "Luke 2:19"],
+			"summary": "Jovem de Nazaré, prometida em casamento a José (Lc 1:26-27). Vai com ele a Belém, onde dá à luz o filho primogênito e o deita numa manjedoura (Lc 2:5-7). Lucas diz que ela guardava o que acontecia e meditava no coração (Lc 2:19).",
+			"relations": [{"person": "jesus", "label": "mãe de"}, {"person": "joseph_of_nazareth", "label": "prometida a"}],
+			"moments": [
+				"Em Belém, dá à luz (Lc 2:6-7)",
+				"Os pastores a encontram com José e o bebê (Lc 2:16)",
+				"Guardava tudo no coração (Lc 2:19)"
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Nenhuma fala de Maria é registrada em Lucas 2:1-20; o jogo não a mostra nem lhe dá falas ou pensamentos. Aguarda revisão humana."}
+		},
+		{
+			"id": "joseph_of_nazareth",
+			"name": "José, de Nazaré",
+			"era_id": "roman_judea",
+			"places": ["nazareth", "bethlehem"],
+			"references": ["Luke 1:27", "Luke 2:4-5", "Luke 2:16"],
+			"summary": "Da casa e família de Davi. Sobe de Nazaré a Belém para se registrar, com Maria (Lc 2:4-5). Está com ela quando os pastores chegam (Lc 2:16).",
+			"relations": [{"person": "mary_mother_of_jesus", "label": "noivo de"}],
+			"moments": [
+				"Viagem de Nazaré a Belém (Lc 2:4-5)",
+				"Os pastores o encontram com Maria e o bebê (Lc 2:16)"
+			],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Não confundir com José, filho de Jacó (id joseph). Nenhuma fala dele em Lucas 2:1-20. Aguarda revisão humana."}
 		}
 	]
 }

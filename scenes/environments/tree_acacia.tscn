@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/shaders/sway_material.tres" id="1_70xyw"]
+[ext_resource type="Texture2D" path="res://assets/environments/tree_acacia.png" id="2_jxb72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21pq6"]
+size = Vector2(6, 4)
+
+[node name="TreeAcacia" type="StaticBody2D" unique_id=1016139901]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1702374479]
+material = ExtResource("1_70xyw")
+texture = ExtResource("2_jxb72")
+centered = false
+offset = Vector2(-26, -44)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=948081507]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_21pq6")

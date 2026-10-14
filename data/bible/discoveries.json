@@ -278,6 +278,469 @@
 			],
 			"related": {"people": ["joseph", "jacob"], "places": ["shechem", "dothan"], "events": [], "stories": ["gen_037_joseph_sold"]},
 			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumo próprio conferido com Gn 37:12-17 no arquivo oficial da BPM pelo agente de IA. Aguarda revisão humana."}
+		},
+		{
+			"id": "caravan_to_egypt",
+			"title": "A caravana para o Egito",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "Uma caravana vinda de Gileade descia para o Egito com especiarias, bálsamo e mirra. José foi vendido por vinte peças de prata e levado para o Egito, onde foi vendido a Potifar.",
+			"bible_note": "Gênesis 37:25-28 e 37:36.",
+			"references": ["Gen 37:25-28", "Gen 37:36"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que o texto diz", "text": "Enquanto os irmãos comem, aparece uma caravana de ismaelitas vinda de Gileade, com camelos carregados de especiarias, bálsamo e mirra, a caminho do Egito (Gn 37:25). Judá propõe vender José em vez de matá-lo, e os irmãos concordam (v. 26-27). José é tirado da cisterna e vendido por vinte peças de prata, e os mercadores o levam para o Egito (v. 28). Lá, ele é vendido a Potifar, oficial do Faraó e capitão da guarda (v. 36)."},
+				{"kind": "interpretation", "title": "Ismaelitas e midianitas", "text": "O relato chama os mercadores de ismaelitas (v. 25, 27-28) e de midianitas (v. 28, 36), e o versículo 28 não deixa claro quem tirou José da cisterna. Há explicações diferentes: nomes usados para o mesmo tipo de mercadores, dois grupos envolvidos, ou tradições reunidas no texto. O jogo não escolhe entre elas."},
+				{"kind": "historical", "title": "Prata pesada, não moedas", "text": "Na época dos patriarcas não havia moedas cunhadas: a prata era pesada na balança. As vinte peças de prata eram, portanto, uma quantidade de metal, não moedas."},
+				{"kind": "historical", "title": "Camelos e resinas", "text": "O texto cita camelos na caravana. Quando o camelo passou a ser comum nas caravanas da região é debatido: muitos estudiosos datam o uso amplo de séculos depois, outros apontam indícios mais antigos. As plantas exatas do bálsamo e da mirra citados também são discutidas. O Egito importava resinas para perfumes, remédios e embalsamamento."},
+				{"kind": "fiction", "title": "Da encosta", "text": "O viajante viu a caravana de longe, do alto de uma encosta criada para o jogo, e não se aproximou. Ele é um personagem fictício e não muda o que o relato conta. O número de animais e de pessoas na cena é uma escolha do jogo."}
+			],
+			"related": {"people": ["joseph", "judah", "potiphar"], "places": ["dothan", "gilead", "egypt"], "events": ["joseph_sold"], "stories": ["gen_037_joseph_sold"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumo próprio conferido com Gn 37:25-28, 36 no arquivo oficial da BPM pelo agente roteirista (IA). Camelos: debate registrado em research_historical.md §8 (revisor histórico). Aguarda verificador bíblico e revisão humana."}
+		},
+		{
+			"id": "egyptian_household",
+			"title": "Uma grande casa egípcia",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "Grandes casas egípcias eram também lugares de trabalho, com depósitos, celeiros, oficinas, gado e campos. Um administrador cuidava dos bens, e escribas anotavam o que entrava e o que saía.",
+			"bible_note": "Gênesis 39:4 conta que Potifar pôs José como administrador da casa e entregou tudo o que tinha aos seus cuidados.",
+			"references": ["Gen 39:4"],
+			"sections": [
+				{"kind": "historical", "title": "Quem trabalhava na casa", "text": "Documentos egípcios citam o administrador ou superintendente da casa, escribas, porteiros, padeiros, cervejeiros, tecelãs, lavradores e vaqueiros. Os registros anotavam grão recebido, rações distribuídas, gado contado e listas de servos."},
+				{"kind": "historical", "title": "Papiro, paleta e selos", "text": "O escriba usava rolos de papiro, pranchetas de madeira, uma paleta com tinta preta e vermelha e pincéis de junco. Jarros, sacos e portas de depósito eram fechados com selos de argila. Na administração se usava uma escrita cursiva, mais rápida que os hieróglifos dos monumentos."},
+				{"kind": "historical", "title": "Servos estrangeiros", "text": "Um papiro egípcio do fim do Reino Médio (o Papiro Brooklyn) lista dezenas de servos com nomes semitas numa mesma casa. Isso mostra que estrangeiros serviam em casas egípcias; não diz nada sobre José."},
+				{"kind": "chronology", "title": "Que época?", "text": "O texto não diz em que época, sob qual Faraó nem em que cidade ficava a casa de Potifar. As propostas de datação variam muito, e o jogo não escolhe uma: a casa fictícia do mapa mistura traços comuns às grandes casas do II milênio a.C."},
+				{"kind": "fiction", "title": "A casa do jogo", "text": "A propriedade é uma casa de um oficial egípcio criada para o jogo, como aquela onde José serviu, e não a casa de Potifar. A mesa do escriba e os registros também são recriações. Nenhum registro do mapa é de José: o texto não diz que ele escrevia ou fazia contas. Ipi, Meryt e Senbi são personagens fictícios."}
+			],
+			"related": {"people": ["joseph", "potiphar"], "places": ["egypt", "egypt_house"], "events": [], "stories": ["gen_039_joseph_potiphar"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Contexto a partir de research_historical.md §3 e §7 (Papiro Brooklyn 35.1446; cargo imy-r pr). Aguarda revisor histórico e revisão humana."}
+		},
+		{
+			"id": "nile_agriculture",
+			"title": "O campo junto ao Nilo",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "No Egito quase não chove: a vida dependia da faixa de terra escura e fértil ao longo do Nilo. Além dela começava o deserto. Cevada, trigo e linho cresciam em campos irrigados por canais e diques.",
+			"bible_note": "Gênesis 39:5 diz que a bênção do SENHOR estava sobre tudo o que Potifar tinha, na casa e no campo.",
+			"references": ["Gen 39:5"],
+			"sections": [
+				{"kind": "historical", "title": "Terra negra, terra vermelha", "text": "Os egípcios chamavam o próprio país de 'terra negra', pela cor do solo fértil deixado pela cheia do rio, e o deserto ao redor de 'terra vermelha'. A passagem de uma para a outra é nítida: do campo verde à areia."},
+				{"kind": "historical", "title": "Três estações", "text": "O ano agrícola tinha três estações: a cheia, quando o rio cobria os campos; a semeadura e o crescimento; e a colheita. Os nomes egípcios eram akhet, peret e shemu."},
+				{"kind": "historical", "title": "Cevada, trigo e linho", "text": "Cevada e trigo emmer davam o pão e a cerveja do dia a dia. O linho era cultivado para tecido. Depois da colheita, o grão era debulhado na eira, medido, ensacado e anotado antes de ir para os silos."},
+				{"kind": "historical", "title": "Canais e balancim", "text": "Diques de terra separavam os campos, e canais levavam a água. O balancim (shaduf), uma vara com balde e contrapeso, aparece em pinturas egípcias de época mais tardia; se já era usado nos dias de José, não se sabe."},
+				{"kind": "fiction", "title": "O campo do jogo", "text": "O campo, o canal e a colheita de Senbi são criações do jogo, numa casa fictícia, e não mostram a bênção de Gênesis 39:5. A ajuda do viajante na colheita não tem relação com José nem com a bênção descrita em Gênesis 39:5."}
+			],
+			"related": {"people": ["joseph", "potiphar"], "places": ["egypt", "egypt_house"], "events": [], "stories": ["gen_039_joseph_potiphar"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Contexto a partir de research_historical.md §2.2 e §4 (shaduf como hipótese). Aguarda revisor histórico e revisão humana."}
+		},
+		{
+			"id": "joseph_steward",
+			"title": "José na casa de Potifar",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "patriarchs",
+			"summary": "No Egito, José é comprado por Potifar, oficial do Faraó. O SENHOR estava com José, e Potifar o põe como administrador de tudo o que tinha. O texto diz que o SENHOR abençoou a casa do egípcio por causa de José.",
+			"bible_note": "Gênesis 39:1-6.",
+			"references": ["Gen 39:1-6"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que o texto diz", "text": "Potifar, oficial do Faraó e capitão da guarda, compra José dos ismaelitas (Gn 39:1). O SENHOR estava com José, e ele prospera na casa do seu senhor egípcio (v. 2). Potifar percebe que o SENHOR estava com José; José ganha o seu favor, passa a servi-lo e é posto como administrador da casa (v. 3-4). Desde então, o SENHOR abençoa a casa do egípcio por causa de José, na casa e no campo, e Potifar deixa tudo nas mãos dele, menos a própria comida (v. 5-6)."},
+				{"kind": "chronology", "title": "Quanto tempo?", "text": "No início de Gênesis 37, José tem dezessete anos (Gn 37:2). O texto não diz quanto durou a viagem ao Egito nem quanto tempo José estava na casa quando foi posto como administrador."},
+				{"kind": "interpretation", "title": "O que o texto não diz", "text": "O relato não diz como Potifar percebeu que o SENHOR estava com José, em que cidade ficava a casa nem quem era o Faraó. Também não explica por que a comida ficava fora dos cuidados de José; há leituras diferentes, e o jogo não escolhe."},
+				{"kind": "interpretation", "title": "Uma leitura devocional", "text": "Muitos leitores notam que o narrador repete que o SENHOR estava com José, longe da família e servindo a um senhor estrangeiro. Essa leitura não torna boa a venda de José; o texto não a chama assim. Também não ensina que sofrer traz riqueza. (Reflexão do jogo, não parte do texto.)"},
+				{"kind": "fiction", "title": "A casa do jogo", "text": "José e Potifar não aparecem no mapa. A casa que o viajante visita é fictícia: uma casa de um oficial egípcio, como aquela onde José serviu, e não a casa de Potifar. Ipi, Meryt e Senbi são personagens fictícios, e o viajante não encontra José."}
+			],
+			"related": {"people": ["joseph", "potiphar"], "places": ["egypt", "egypt_house"], "events": [], "stories": ["gen_039_joseph_potiphar"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumo próprio conferido com Gn 39:1-6 e Gn 37:2 no arquivo oficial da BPM pelo agente roteirista (IA). Seção devocional identificada como leitura. story_id gen_039_joseph_potiphar ainda não existe (ver presentations.proposal.json). Aguarda verificador bíblico e revisão humana."}
+		},
+		{
+			"id": "egypt_black_land",
+			"title": "O Egito de José",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "patriarchs",
+			"summary": "O Egito era uma faixa verde ao longo do Nilo, cercada de deserto. O texto não diz em que cidade José viveu nem quem era o Faraó. A casa deste mapa é fictícia, como aquela onde José serviu (Gn 39:1-6), e não a casa de Potifar.",
+			"bible_note": "Gênesis 39:1 conta que José foi levado para o Egito e comprado por Potifar.",
+			"references": ["Gen 37:36", "Gen 39:1"],
+			"sections": [
+				{"kind": "historical", "title": "Uma faixa fértil", "text": "Quase toda a vida do Egito se concentrava junto ao Nilo e ao delta, onde a água chegava. Fora dali, o deserto."},
+				{"kind": "chronology", "title": "Sem data e sem lugar", "text": "Gênesis não nomeia o Faraó nem a cidade da casa de Potifar. A época de José é debatida, e o jogo não mostra data, dinastia nem pirâmides."},
+				{"kind": "fiction", "title": "Outro momento da história", "text": "O viajante chegou aqui pelo Mapa das Escrituras, não com a caravana. A propriedade, uma casa de um oficial egípcio como a de Potifar, e os seus servos são criações do jogo."}
+			],
+			"related": {"people": ["joseph", "potiphar"], "places": ["egypt", "egypt_house"], "events": [], "stories": ["gen_039_joseph_potiphar"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumo próprio pelo agente roteirista (IA). Aguarda revisor histórico e revisão humana."}
+		},
+		{
+			"id": "exodus_departure",
+			"title": "Quem saiu do Egito",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "exodus",
+			"summary": "Êxodo 12:37-38 conta que os israelitas partiram de Ramessés para Sucote, com as crianças, e que uma multidão mista subiu com eles, levando ovelhas, bois e muitos animais.",
+			"bible_note": "Êxodo 12:37-38.",
+			"references": ["Exod 12:37-38", "Exod 13:20"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que o texto diz", "text": "Os filhos de Israel viajam de Ramessés a Sucote; o texto fala em cerca de seiscentos mil homens a pé, além das crianças (Êx 12:37). Uma multidão mista sobe com eles, com ovelhas, bois e muitíssimos animais (Êx 12:38). Depois partem de Sucote e acampam em Etã, na beira do deserto (Êx 13:20)."},
+				{"kind": "interpretation", "title": "Quantos eram?", "text": "O número é discutido. Alguns leem a palavra hebraica traduzida por \"mil\" ('elef) no sentido comum; outros a entendem como \"clã\" ou \"unidade\", o que daria um grupo bem menor. O jogo mostra um povo numeroso, sem contar ninguém."},
+				{"kind": "historical", "title": "Multidão mista", "text": "O texto não diz quem formava a multidão mista. Há quem pense em egípcios e em outros estrangeiros que viviam no Delta do Nilo; é hipótese. As paradas Sucote e Etã não têm localização segura."},
+				{"kind": "chronology", "title": "Sem data", "text": "A Bíblia não dá um ano para a saída do Egito, e as propostas dos estudiosos divergem. Por isso o jogo não mostra data."},
+				{"kind": "fiction", "title": "No acampamento do jogo", "text": "Tzvi, Meret e as famílias do acampamento são personagens criados para o jogo. Meret, com roupa de estilo egípcio, ilustra a multidão mista sem que o jogo afirme quem ela era."}
+			],
+			"related": {"people": ["moses"], "places": ["egypt", "exodus_sea"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM (arquivo oficial). Leitura de 'elef e composição da multidão mista são hipóteses (research_biblical.md §6). Aguarda revisão humana."}
+		},
+		{
+			"id": "pillar_cloud_fire",
+			"title": "A coluna de nuvem e de fogo",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "exodus",
+			"summary": "Êxodo 13:21-22 conta que o SENHOR ia adiante do povo numa coluna de nuvem de dia e numa coluna de fogo de noite. Junto ao mar, a coluna passou para trás do povo, entre os dois acampamentos (Êx 14:19-20).",
+			"bible_note": "Êxodo 13:21-22; 14:19-20.",
+			"references": ["Exod 13:21-22", "Exod 14:19-20"],
+			"sections": [
+				{"kind": "biblical_text", "title": "Adiante do povo", "text": "O SENHOR ia adiante do povo: de dia numa coluna de nuvem, para guiar o caminho, e de noite numa coluna de fogo, para iluminar, de modo que podiam caminhar de dia e de noite. A coluna não se afastava de diante do povo (Êx 13:21-22)."},
+				{"kind": "biblical_text", "title": "Entre os acampamentos", "text": "Na noite junto ao mar, o anjo de Deus, que ia à frente do acampamento de Israel, passou para trás, e a coluna de nuvem também. Ela ficou entre o acampamento do Egito e o de Israel, e um não se aproximou do outro a noite toda (Êx 14:19-20)."},
+				{"kind": "interpretation", "title": "O que o texto não descreve", "text": "Êxodo 14:20 fala de nuvem e escuridão e de uma luz que iluminava a noite; para quem era a escuridão e para quem era a luz, as traduções e os intérpretes divergem. Explicações naturais para a coluna também são interpretações, não o que o texto afirma."},
+				{"kind": "fiction", "title": "No jogo", "text": "A coluna aparece de forma sóbria, sem rosto nem figura. O anjo não é desenhado, porque o texto não o descreve. O jogador não interage com a coluna nem a usa como guia."}
+			],
+			"related": {"people": ["moses"], "places": ["exodus_sea"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM. Exige Exod 13 em verse_counts.json. Aguarda revisão humana."}
+		},
+		{
+			"id": "joseph_bones",
+			"title": "Os ossos de José",
+			"classification": "recorded_event",
+			"presentation": "toast",
+			"era_id": "exodus",
+			"summary": "Na saída do Egito, Moisés levou consigo os ossos de José, cumprindo o juramento que José tinha pedido aos filhos de Israel antes de morrer (Êx 13:19; Gn 50:24-25).",
+			"bible_note": "Êxodo 13:19; Gênesis 50:24-25.",
+			"references": ["Exod 13:19", "Gen 50:24-25", "Exod 1:6-8"],
+			"sections": [
+				{"kind": "biblical_text", "title": "Um juramento antigo", "text": "No fim de Gênesis, José diz aos irmãos que Deus certamente os visitaria e os faria subir para a terra que jurou a Abraão, a Isaque e a Jacó, e faz os filhos de Israel jurarem que levariam seus ossos (Gn 50:24-25). Êxodo 13:19 conta que Moisés levou os ossos de José na saída do Egito."},
+				{"kind": "chronology", "title": "Gerações depois", "text": "Gerações separam a morte de José e a saída do Egito: Êxodo 1:6-8 diz que José e toda aquela geração morreram e que surgiu no Egito um novo rei que não conhecia José. Quanto tempo exatamente é debatido."},
+				{"kind": "fiction", "title": "No jogo", "text": "Tzvi conta isso como algo que se sabe entre as famílias. O jogo não mostra os ossos nem como eram levados."}
+			],
+			"related": {"people": ["joseph", "moses"], "places": ["egypt"], "events": [], "stories": ["gen_037_joseph_sold", "exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM. Exige Exod 13 e Gen 50 em verse_counts.json. Aguarda revisão humana."}
+		},
+		{
+			"id": "unleavened_bread_road",
+			"title": "Pão sem fermento na estrada",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "exodus",
+			"summary": "O povo saiu do Egito com a massa ainda sem fermento e as amassadeiras amarradas nas roupas, sobre os ombros. No caminho, assaram bolos sem fermento (Êx 12:34, 39).",
+			"bible_note": "Êxodo 12:34, 39.",
+			"references": ["Exod 12:34", "Exod 12:39"],
+			"sections": [
+				{"kind": "biblical_text", "title": "No texto", "text": "O povo levou a massa antes que fermentasse, com as amassadeiras amarradas nas roupas, sobre os ombros (Êx 12:34). Com essa massa assaram bolos sem fermento, porque tinham sido expulsos do Egito, não puderam esperar e não haviam preparado provisões (Êx 12:39)."},
+				{"kind": "historical", "title": "Pão de viagem", "text": "Pão achatado podia ser assado sobre pedras quentes, nas brasas ou numa chapa de barro. A amassadeira era uma tigela rasa, de barro ou de madeira. Numa costa desértica a lenha é escassa: galhos de arbusto e esterco seco alimentavam fogueiras pequenas."},
+				{"kind": "fiction", "title": "No jogo", "text": "Shira, a pedra de assar e a busca por galhos secos são criações do jogo."}
+			],
+			"related": {"people": [], "places": ["egypt"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM; contexto de research_historical.md (Comida e preparo). Exige Exod 12 em verse_counts.json. Aguarda revisão humana."}
+		},
+		{
+			"id": "sea_pursuit",
+			"title": "Os carros do Egito",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "exodus",
+			"summary": "Êxodo 14 conta que o rei do Egito e seus servos mudaram de ideia e que ele saiu atrás do povo com carros e exército, alcançando-o acampado junto ao mar. Os israelitas ficaram com muito medo (Êx 14:5-10).",
+			"bible_note": "Êxodo 14:5-10.",
+			"references": ["Exod 14:5-10"],
+			"sections": [
+				{"kind": "biblical_text", "title": "A perseguição", "text": "Ao saber que o povo tinha fugido, o rei e seus servos se perguntam por que deixaram Israel ir (Êx 14:5). Ele prepara o seu carro e leva o exército: seiscentos carros escolhidos e todos os carros do Egito, com capitães (v. 6-7). Os egípcios alcançam o povo acampado junto ao mar, perto de Pi-Hairote (v. 9). Ao vê-los, os israelitas têm muito medo e clamam ao SENHOR (v. 10)."},
+				{"kind": "biblical_text", "title": "O coração do faraó", "text": "O texto diz que o SENHOR endureceu o coração do faraó, e que ele perseguiu os filhos de Israel (Êx 14:4, 8)."},
+				{"kind": "interpretation", "title": "Como entender o endurecimento", "text": "Como entender esse endurecimento (soberania de Deus, responsabilidade humana ou as duas coisas) é discutido pelos intérpretes. O jogo registra o que o texto diz, sem escolher uma leitura."},
+				{"kind": "historical", "title": "Carros de guerra", "text": "No Novo Império egípcio (uma das épocas propostas para o Êxodo; datação debatida), o carro de guerra era leve, com caixa aberta para duas pessoas e puxado por dois cavalos. Hipótese: \"cavaleiros\" (Êx 14:9) pode indicar as tripulações dos carros, já que cavalaria montada em formação não é típica do exército egípcio desse período."},
+				{"kind": "chronology", "title": "Um faraó sem nome", "text": "O texto não dá o nome do faraó, e a data do Êxodo é debatida. Por isso o jogo não identifica nenhum rei egípcio."},
+				{"kind": "fiction", "title": "No jogo", "text": "Os carros aparecem só como poeira e pontos distantes no horizonte. Nenhum soldado aparece de perto."}
+			],
+			"related": {"people": ["moses"], "places": ["egypt", "exodus_sea"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM. Contexto dos carros segundo research_historical.md (confiança alta para o carro leve; 'cavaleiros' é hipótese). Aguarda revisão humana."}
+		},
+		{
+			"id": "yam_suf_debate",
+			"title": "Que mar era esse?",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "exodus",
+			"summary": "Em Êxodo 14, o texto diz apenas \"o mar\". Em outras passagens, o mar é chamado em hebraico de yam suf, que a tradução carregada verte como \"Mar Vermelho\". Onde ele ficava é debatido.",
+			"bible_note": "Êxodo 13:18; 14:2; 15:4.",
+			"references": ["Exod 13:18", "Exod 14:2", "Exod 15:4"],
+			"sections": [
+				{"kind": "biblical_text", "title": "Os nomes no texto", "text": "Êxodo 13:18 diz que Deus fez o povo dar a volta pelo caminho do deserto, perto do yam suf; Êxodo 15:4 usa o mesmo nome ao falar dos carros do faraó. Em Êxodo 14, o acampamento é situado diante de Pi-Hairote, entre Migdol e o mar, diante de Baal-Zefom (Êx 14:2)."},
+				{"kind": "interpretation", "title": "Juncos ou Mar Vermelho?", "text": "Muitos entendem yam suf como \"mar de juncos\" ou \"de caniços\"; outros defendem que o nome indica o Mar Vermelho, no golfo de Suez ou no de Ácaba. Há também propostas de lagos entre o Egito e o Sinai e de uma laguna na costa do Mediterrâneo. Nenhuma é consenso."},
+				{"kind": "historical", "title": "Os lugares de Êxodo 14:2", "text": "Pi-Hairote, Migdol e Baal-Zefom não têm identificação segura. Migdol parece significar \"torre\" ou \"fortaleza\", e havia mais de um lugar com esse nome na fronteira do Egito."},
+				{"kind": "fiction", "title": "O mar do jogo", "text": "O mapa mostra uma costa desértica genérica, com juncos na água rasa e tamareiras, sem marcos que apontem um lugar real. No jogo, o lugar se chama só \"o mar\"."}
+			],
+			"related": {"people": [], "places": ["exodus_sea", "egypt"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Propostas de localização segundo research_historical.md (Hoffmeier, Batto, Eissfeldt; não verificadas). Exige Exod 13 e Exod 15 em verse_counts.json. Aguarda revisão humana."}
+		},
+		{
+			"id": "sea_crossing",
+			"title": "A travessia do mar",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "exodus",
+			"summary": "Êxodo 14:21-22 relata que Moisés estendeu a mão sobre o mar e que o SENHOR fez o mar recuar com um forte vento oriental durante toda a noite. Os israelitas entraram pelo meio do mar em terra seca, com as águas como muro à direita e à esquerda.",
+			"bible_note": "Êxodo 14:19-22, 29.",
+			"references": ["Exod 14:19-22", "Exod 14:23-31", "Heb 11:29"],
+			"sections": [
+				{"kind": "biblical_text", "title": "A noite", "text": "A coluna passa para trás do povo e fica entre os dois acampamentos a noite toda (Êx 14:19-20). Moisés estende a mão sobre o mar, e o SENHOR faz o mar recuar com um forte vento oriental durante toda a noite; o mar vira terra seca, e as águas se dividem (v. 21). Os israelitas entram pelo meio do mar em terra seca, com as águas como muro à direita e à esquerda (v. 22)."},
+				{"kind": "biblical_text", "title": "Ao amanhecer", "text": "Os egípcios entram atrás, e na vigília da manhã o exército é lançado em confusão (Êx 14:23-25). Ao amanhecer, as águas voltam e cobrem os carros, os cavaleiros e todo o exército que tinha entrado no mar (v. 27-28). O texto conclui que assim o SENHOR salvou Israel naquele dia, e que o povo temeu ao SENHOR e creu nele e em Moisés, seu servo (v. 30-31)."},
+				{"kind": "interpretation", "title": "O muro e o vento", "text": "Há quem leia o \"muro\" das águas ao pé da letra e quem o entenda como imagem; há também explicações que buscam no vento um fenômeno natural. São interpretações. O texto atribui o acontecimento ao SENHOR, que age por meio do vento."},
+				{"kind": "interpretation", "title": "E o faraó?", "text": "Êxodo 14 diz que o exército e os carros do faraó foram cobertos pelas águas, mas não diz que o próprio rei morreu. O jogo não afirma isso."},
+				{"kind": "chronology", "title": "Uma noite", "text": "O texto marca o tempo por partes do dia: a noite inteira de vento (v. 21), a vigília da manhã (v. 24) e o amanhecer (v. 27). Não informa a data nem quantas horas levou a travessia. Muitos séculos depois, a carta aos Hebreus lembra a travessia como um ato de fé (Hb 11:29)."},
+				{"kind": "fiction", "title": "A cena do jogo", "text": "A cena é uma representação artística. A altura das águas, a largura do caminho e o número de pessoas foram escolhidos pelo jogo. O viajante apenas acompanha: não abre nada, não guia ninguém e não aparece no relato bíblico. A volta das águas não é mostrada."}
+			],
+			"related": {"people": ["moses"], "places": ["exodus_sea", "egypt"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM. Desfecho (14:27-28, 30) só narrado, sem imagem, conforme four_experiences_decisions.md. Aguarda revisão humana."}
+		},
+		{
+			"id": "fear_and_trust",
+			"title": "Medo e confiança",
+			"classification": "devotional_educational",
+			"presentation": "card",
+			"era_id": "exodus",
+			"summary": "Junto ao mar, o povo passou do medo (Êx 14:10-12) à confiança (Êx 14:31). No meio do medo, Moisés disse ao povo que não temesse e ficasse firme (Êx 14:13-14).",
+			"bible_note": "Êxodo 14:10-14, 31.",
+			"references": ["Exod 14:10-14", "Exod 14:31"],
+			"sections": [
+				{"kind": "biblical_text", "title": "Medo", "text": "Quando veem os egípcios se aproximando, os israelitas têm muito medo e clamam ao SENHOR. Depois perguntam a Moisés por que os tirou do Egito para morrer no deserto e dizem que teria sido melhor continuar servindo aos egípcios (Êx 14:10-12)."},
+				{"kind": "biblical_text", "title": "Uma palavra no meio do medo", "text": "Moisés diz ao povo que não tenha medo, que fique firme e veja a salvação que o SENHOR faria naquele dia, e que o SENHOR lutaria por eles enquanto eles ficariam quietos (Êx 14:13-14)."},
+				{"kind": "biblical_text", "title": "Depois", "text": "Diante do que o SENHOR fez, o povo temeu ao SENHOR e creu no SENHOR e em Moisés, seu servo (Êx 14:31)."},
+				{"kind": "interpretation", "title": "Uma leitura", "text": "Muitos leitores veem neste capítulo um retrato de como a confiança pode nascer no meio do medo, e não só depois dele. É uma leitura devocional: o texto narra o que aconteceu, sem transformar o episódio numa regra."},
+				{"kind": "fiction", "title": "No jogo", "text": "Tzvi, Nava e as famílias são personagens do jogo. O que dizem é ficção e não substitui o relato. O resumo das palavras de Moisés na voz de Tzvi vem sempre seguido da referência."}
+			],
+			"related": {"people": ["moses"], "places": ["exodus_sea"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM; leitura devocional identificada como interpretação. Aguarda revisão humana."}
+		},
+		{
+			"id": "miriam_song",
+			"title": "O cântico e os tamborins",
+			"classification": "recorded_event",
+			"presentation": "toast",
+			"era_id": "exodus",
+			"summary": "Depois da travessia, Moisés e os israelitas cantaram um cântico ao SENHOR (Êx 15:1). Miriã, a profetisa, irmã de Arão, pegou um tamborim, e as mulheres saíram atrás dela com tamborins e danças (Êx 15:20-21).",
+			"bible_note": "Êxodo 15:1, 20-21.",
+			"references": ["Exod 15:1", "Exod 15:20-21"],
+			"sections": [
+				{"kind": "biblical_text", "title": "No texto", "text": "Êxodo 15 começa com o cântico de Moisés e dos filhos de Israel ao SENHOR (Êx 15:1-18). Depois, Miriã, a profetisa, irmã de Arão, pega um tamborim; todas as mulheres saem atrás dela com tamborins e danças, e ela lhes responde com um refrão (Êx 15:20-21)."},
+				{"kind": "interpretation", "title": "Poesia e narrativa", "text": "O capítulo 15 celebra o mesmo acontecimento em linguagem poética, com imagens próprias. Por isso essas imagens não devem ser lidas como detalhes a mais da cena narrada no capítulo 14."},
+				{"kind": "historical", "title": "Tamborins", "text": "Tamborins de mão, com pele esticada num aro, aparecem em representações antigas do Egito e do Levante, muitas vezes nas mãos de mulheres, em festas e celebrações."},
+				{"kind": "fiction", "title": "No jogo", "text": "No acampamento, os tamborins são só ouvidos ao longe. Nenhuma letra é cantada, e Miriã não aparece em cena."}
+			],
+			"related": {"people": ["miriam", "moses"], "places": ["exodus_sea"], "events": [], "stories": ["exod_014_red_sea"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com a BPM. Contexto dos tamborins é afirmação geral a confirmar pelo revisor histórico. Exige Exod 15 em verse_counts.json. Aguarda revisão humana."}
+		},
+		{
+			"id": "bethlehem_judges",
+			"title": "Belém no tempo dos juízes",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "judges",
+			"summary": "Belém era uma pequena aldeia nas colinas de Judá, cercada de campos, oliveiras e encostas de pedra. O livro de Rute se passa no tempo dos juízes, sem dizer o ano nem qual juiz governava.",
+			"bible_note": "Rute 1:1 situa a história no tempo dos juízes; Rute 1:22, no começo da colheita da cevada.",
+			"references": ["Ruth 1:1", "Ruth 1:22"],
+			"sections": [
+				{"kind": "biblical_text", "title": "No texto", "text": "Uma família de Belém de Judá vai para Moabe por causa de uma fome (Rt 1:1). Anos depois, Noemi volta a Belém com a nora Rute, no começo da colheita da cevada (Rt 1:19-22)."},
+				{"kind": "historical", "title": "Uma aldeia das colinas", "text": "Nessa época, as colinas de Judá tinham pequenas aldeias agrícolas, sem palácios. Muitas casas tinham paredes de pedra bruta, pilares por dentro e teto plano de vigas e barro. Grandes jarros com borda em colarinho guardavam grão, azeite e água."},
+				{"kind": "historical", "title": "Pouco se encontrou", "text": "A cidade moderna cobre a Belém antiga, e quase não restam vestígios desse período. Tamanho, muro e porta da aldeia são reconstruídos por comparação com aldeias escavadas da mesma época, como Giloh, ali perto (hipótese)."},
+				{"kind": "chronology", "title": "Sem ano", "text": "O texto não dá ano para a história de Rute. O tempo dos juízes costuma ser associado ao Ferro I, por volta dos séculos XII e XI a.C., datas aproximadas e debatidas. O jogo não atribui ano a esta história."},
+				{"kind": "fiction", "title": "No jogo", "text": "A aldeia do mapa, as casas, a porta e os campos são uma recriação do jogo. O campo de Ilan e os moradores são fictícios; a porta aparece só como cenário."}
+			],
+			"related": {"people": ["naomi", "ruth"], "places": ["bethlehem"], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Contexto segundo research_historical.md do ep_025 (Ferro I, Giloh, casa de pilares, jarro de borda em colarinho); fontes a confirmar. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "barley_harvest",
+			"title": "A colheita da cevada",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "judges",
+			"summary": "A cevada amadurecia primeiro, na primavera; o trigo vinha algumas semanas depois. Ceifeiros cortavam os colmos com a foice, outros amarravam os feixes, e os feixes iam para a eira.",
+			"bible_note": "Rute 1:22 e 2:23 falam da colheita da cevada e da do trigo.",
+			"references": ["Ruth 1:22", "Ruth 2:23"],
+			"sections": [
+				{"kind": "historical", "title": "Da foice à eira", "text": "As foices tinham cabo curvo de madeira e pequenas lâminas de sílex encaixadas; ferramentas de ferro ainda eram raras nas aldeias das colinas. Na eira, um chão batido num lugar com vento, os feixes eram debulhados por bois ou por uma prancha com lascas de pedra, e o vento separava a palha do grão."},
+				{"kind": "chronology", "title": "A estação", "text": "No clima atual da região, a cevada é colhida por volta de abril e maio, e o trigo, de maio a junho. O Calendário de Gezer, uma inscrição de cerca do século X a.C., cita um mês da colheita da cevada. Os meses exatos no tempo de Rute são aproximados."},
+				{"kind": "biblical_text", "title": "No texto", "text": "Noemi e Rute chegam a Belém no começo da colheita da cevada (Rt 1:22). Rute respiga até o fim das colheitas da cevada e do trigo (Rt 2:23)."}
+			],
+			"related": {"people": ["ruth", "naomi"], "places": ["bethlehem", "bethlehem_fields"], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Calendário agrícola e ferramentas segundo research_historical.md (Borowski 1987; Rosen 1997); publicação do Calendário de Gezer a confirmar. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "gleaning_law",
+			"title": "A lei da respiga",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "judges",
+			"summary": "A lei de Israel mandava deixar o canto do campo e as espigas caídas para o pobre e o estrangeiro (Lv 19:9-10; 23:22), e não voltar para buscar o feixe esquecido, que ficava para o estrangeiro, o órfão e a viúva (Dt 24:19).",
+			"bible_note": "Levítico 19:9-10 e 23:22; Deuteronômio 24:19.",
+			"references": ["Lev 19:9-10", "Lev 23:22", "Deut 24:19"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que a lei pede", "text": "Levítico 19:9-10 manda não ceifar até o canto do campo nem recolher as espigas caídas, e faz o mesmo pedido para a vinha: isso fica para o pobre e o estrangeiro. Levítico 23:22 repete a lei no meio do calendário das festas. Deuteronômio 24:19 acrescenta o feixe esquecido no campo, deixado para o estrangeiro, o órfão e a viúva."},
+				{"kind": "historical", "title": "Respigar", "text": "Respigar era andar atrás dos ceifeiros recolhendo o que ficava no chão. Para quem não tinha terra, podia ser o jeito de guardar grão para o resto do ano. Os campos não eram cercados: marcos de pedra separavam as partes de cada família. Como e quando essas leis eram praticadas no tempo dos juízes não se sabe."},
+				{"kind": "interpretation", "title": "Rute e a lei", "text": "O livro de Rute não cita essas leis. Muitos leitores ligam a respiga de Rute, estrangeira e viúva, a elas, e veem na ordem de Boaz de deixar cair espigas de propósito (Rt 2:15-16) uma generosidade além do que a lei pedia. Essa ligação é feita pelo leitor, não pelo texto."},
+				{"kind": "fiction", "title": "No jogo", "text": "Ilan, o campo dele, o canto de cevada em pé e o feixe esquecido são criações do jogo para mostrar o costume."}
+			],
+			"related": {"people": ["ruth", "boaz"], "places": ["bethlehem_fields"], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumos de Lv 19:9-10, Lv 23:22 e Dt 24:19 feitos sobre a BPM pela ficha bíblica do ep_025; Lev 19, Lev 23 e Deut 24 ainda faltam em verse_counts.json. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "ruth_gleaning",
+			"title": "Rute respiga no campo de Boaz",
+			"classification": "recorded_event",
+			"presentation": "toast",
+			"era_id": "judges",
+			"summary": "Em Rute 1:19-2:23, Noemi volta a Belém com a nora Rute no começo da colheita da cevada. Rute respiga na parte do campo que era de Boaz, parente da família de Noemi, e volta para casa com a cevada que juntou.",
+			"bible_note": "Rute 1:19-22 e Rute 2:1-23.",
+			"references": ["Ruth 1:19-22", "Ruth 2:1-23"],
+			"sections": [
+				{"kind": "biblical_text", "title": "A chegada", "text": "Quando Noemi e Rute chegam, a cidade se agita, e as mulheres perguntam se aquela é Noemi. Ela pede para ser chamada Mara: diz que partiu cheia e que o SENHOR a trouxe de volta vazia (Rt 1:21). As duas chegam no começo da colheita da cevada (Rt 1:19-22)."},
+				{"kind": "biblical_text", "title": "No campo de Boaz", "text": "O narrador apresenta Boaz, parente do marido de Noemi. Rute pede para ir respigar e chega à parte do campo que era dele. Boaz saúda os ceifeiros em nome do SENHOR, pergunta quem é a jovem, diz a ela que fique no seu campo, a chama para a refeição dos ceifeiros e manda os jovens deixarem espigas para ela (Rt 2:1-16)."},
+				{"kind": "biblical_text", "title": "De volta para casa", "text": "À tarde, Rute bate o que respigou e leva a cevada à cidade. Noemi abençoa quem a ajudou e, ao ouvir o nome de Boaz, diz que ele é parente próximo, um dos resgatadores da família. Rute respiga até o fim das colheitas da cevada e do trigo (Rt 2:17-23)."},
+				{"kind": "interpretation", "title": "\"Por acaso\"", "text": "O texto diz que Rute chegou \"por acaso\" ao campo de Boaz (Rt 2:3). Muitos leitores veem nisso uma providência discreta de Deus, que o narrador não explica. É uma interpretação, não uma afirmação do texto."},
+				{"kind": "chronology", "title": "Quando", "text": "O texto não dá ano. Sabe-se só a estação: do começo da colheita da cevada até o fim da do trigo (Rt 1:22; 2:23). O que significa ser \"resgatador\" aparece nos capítulos 3 e 4, fora desta experiência."},
+				{"kind": "fiction", "title": "O viajante", "text": "O viajante assiste de longe, do campo vizinho. Ilan, Tova e o campo deles são criações do jogo. Rute, Noemi e Boaz não falam com o viajante: o que eles dizem está só no texto bíblico."}
+			],
+			"related": {"people": ["ruth", "naomi", "boaz"], "places": ["bethlehem", "bethlehem_fields"], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumo próprio de Rt 1:19-2:23 conferido com a paráfrase da ficha bíblica do ep_025 (falas atribuídas a quem as diz no texto). Liberada pela apresentação ruth_002_gleaning. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "harvest_meal",
+			"title": "Comida de colheita",
+			"classification": "historical_context",
+			"presentation": "toast",
+			"era_id": "judges",
+			"summary": "Na colheita, comia-se no próprio campo: pão, grão tostado no fogo e um líquido azedo em que se molhava o pão. A água ficava em vasilhas na beira do campo.",
+			"bible_note": "Rute 2:14 cita pão, \"vinagre\" e grão tostado na refeição dos ceifeiros.",
+			"references": ["Ruth 2:14", "Ruth 2:9", "Lev 23:14"],
+			"sections": [
+				{"kind": "historical", "title": "Comida de campo", "text": "O grão tostado era feito com espigas ainda verdes ou com grãos postos no fogo: comida simples e típica do tempo da colheita. O \"vinagre\" de Rute 2:14 era provavelmente vinho azedo ou outra bebida ácida, em que se molhava o pão."},
+				{"kind": "biblical_text", "title": "No texto", "text": "Boaz chama Rute para comer com os ceifeiros; ela come, fica satisfeita e ainda sobra (Rt 2:14). Antes, ele a autoriza a beber da água que os jovens tiravam (Rt 2:9). Levítico 23:14 cita o grão tostado entre o que não se comia da nova colheita antes da oferta das primícias."},
+				{"kind": "fiction", "title": "No jogo", "text": "O grão tostado que Tova oferece é um gesto da história do jogo; não vira item."}
+			],
+			"related": {"people": ["ruth", "boaz"], "places": ["bethlehem_fields"], "events": [], "stories": []},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Sentido do 'vinagre' segundo research_historical.md (hipótese comum, conferir em léxico). Lev 23 falta em verse_counts.json. Escrito pelo roteirista (IA). Aguarda revisão humana."}
+		},
+		{
+			"id": "bethlehem_first_century",
+			"title": "Belém nos dias de Herodes",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "roman_judea",
+			"summary": "Belém era uma pequena aldeia da Judeia, que Lucas chama de \"cidade de Davi\" (Lc 2:4). A Judeia era governada por Herodes, rei aliado de Roma, no tempo do imperador Augusto (Lc 2:1). A data exata é debatida.",
+			"bible_note": "Lucas 1:5; 2:1-4.",
+			"references": ["Luke 1:5", "Luke 2:1-4", "1Sam 16:1", "Matt 2:1"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que o texto diz", "text": "Lucas situa estes relatos nos dias de Herodes (Lc 1:5; cf. Mt 2:1) e conta que saiu uma ordem de César Augusto para recensear todo o mundo (Lc 2:1). José, da casa e família de Davi, sobe de Nazaré, na Galileia, a Belém, na Judeia (Lc 2:4). Séculos antes, Jessé, pai de Davi, é chamado de belemita (1Sm 16:1)."},
+				{"kind": "historical", "title": "A aldeia", "text": "Casas de pedra calcária com teto plano, agrupadas em volta de pátios, com portas baixas e janelas pequenas. À noite, só lamparinas de barro. Perto da aldeia, oliveiras e vinhas nos terraços; nas encostas que descem para o deserto, pastoreio de ovelhas e cabras. A Belém dessa época tem poucos restos escavados, e a forma da aldeia no jogo é uma reconstrução por analogia com outras aldeias da época."},
+				{"kind": "chronology", "title": "Sem ano", "text": "O texto não dá um ano. Lucas situa estes relatos nos dias de Herodes (Lc 1:5; cf. Mt 2:1) e liga o nascimento a um recenseamento feito quando Quirino governava a Síria (Lc 2:2). Conciliar essas indicações com outras fontes antigas é discutido, e há várias propostas. Por isso o jogo não mostra ano. Dia e estação também não são dados no texto; 25 de dezembro é uma data litúrgica posterior."},
+				{"kind": "fiction", "title": "No jogo", "text": "Os campos, o posto de vigia, Tamir, Shai e o rebanho deles são criações do jogo. Onde exatamente ficavam os campos dos pastores é desconhecido; o \"Campo dos Pastores\" mostrado hoje perto de Belém é tradição posterior."}
+			],
+			"related": {"people": ["david", "joseph_of_nazareth", "mary_mother_of_jesus"], "places": ["bethlehem", "nazareth"], "events": ["shepherds_bethlehem", "david_shepherd"], "stories": ["luke_002_shepherds"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com research_biblical.md e bpm.json (Luke 2:4). Contexto da aldeia segundo research_historical.md (hipóteses marcadas). Datação: certainty 'debated', sem ano; divergência com chronology.json (shepherds_bethlehem: -6 a -4, approximate) a registrar em KNOWN_ISSUES. Revisão H01/H02/V14 aplicada. Aguarda revisão humana."}
+		},
+		{
+			"id": "night_shepherding",
+			"title": "A vigília do rebanho",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "roman_judea",
+			"summary": "À noite, o rebanho ficava num aprisco de pedra com uma só abertura, e os pastores se revezavam junto ao fogo. Lucas 2:8 fala de pastores que ficavam no campo perto de Belém e vigiavam o rebanho durante a noite.",
+			"bible_note": "Lucas 2:8.",
+			"references": ["Luke 2:8", "1Sam 17:34-35"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que o texto diz", "text": "Na mesma região de Belém, havia pastores que ficavam no campo e vigiavam o rebanho durante a noite (Lc 2:8). O texto não diz quantos eram, nem seus nomes ou idades."},
+				{"kind": "historical", "title": "Aprisco e fogo", "text": "Segundo relatos de pastores da região (costume posterior, usado aqui como analogia), o aprisco era um cercado de pedra seca, da altura do joelho à cintura, com galhos espinhosos no topo e uma abertura estreita, onde o pastor podia se deitar. Às vezes se encostava numa gruta ou num paredão. Os pastores se revezavam junto a uma fogueira de gravetos e arbustos, porque a lenha era escassa."},
+				{"kind": "historical", "title": "Predadores e rebanho", "text": "O fogo e a vigília afastavam ladrões e predadores, como lobos, chacais e hienas. Séculos antes, Davi fala de leão e urso (1Sm 17:34-35). Os rebanhos costumavam ser mistos: ovelhas de cauda gorda e cabras escuras."},
+				{"kind": "interpretation", "title": "Pastores desprezados?", "text": "Diz-se muitas vezes que os pastores eram desprezados ou considerados impuros na época. Essa ideia vem sobretudo de textos rabínicos posteriores e é discutida pelos estudiosos. Lucas não diz isso."},
+				{"kind": "fiction", "title": "No jogo", "text": "Tamir, Shai, o posto de vigia, as tarefas e os turnos são criações do jogo, baseadas no contexto histórico."}
+			],
+			"related": {"people": ["david"], "places": ["bethlehem"], "events": ["shepherds_bethlehem", "david_shepherd"], "stories": ["luke_002_shepherds"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Contexto segundo research_historical.md (Cotidiano; Aprisco e campo). Tese dos pastores desprezados tratada como interpretação (research_biblical.md, risco 10). Aguarda revisão humana."}
+		},
+		{
+			"id": "glory_around_shepherds",
+			"title": "A glória ao redor dos pastores",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "roman_judea",
+			"summary": "Lucas 2:9-14 relata que um anjo do Senhor apareceu a pastores no campo, que a glória do Senhor brilhou ao redor deles e que o anjo anunciou o nascimento de um Salvador na cidade de Davi. Depois, uma multidão do exército celestial louvou a Deus.",
+			"bible_note": "Lucas 2:8-15.",
+			"references": ["Luke 2:8-15", "Luke 1:26"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O anúncio", "text": "Um anjo do Senhor aparece aos pastores, a glória do Senhor brilha ao redor deles, e eles ficam com muito medo (Lc 2:9). O anjo diz que não tenham medo: traz uma boa notícia de grande alegria para todo o povo. Naquele dia, na cidade de Davi, tinha nascido um Salvador, que é Cristo, o Senhor. O sinal: um bebê envolto em faixas de pano, deitado numa manjedoura (Lc 2:10-12)."},
+				{"kind": "biblical_text", "title": "Louvando e dizendo", "text": "De repente, uma multidão do exército celestial aparece com o anjo, louvando a Deus e dizendo palavras de glória a Deus e paz na terra (Lc 2:13-14). O texto diz \"louvando… e dizendo\", não \"cantando\". Depois, os anjos se afastam em direção ao céu (Lc 2:15)."},
+				{"kind": "biblical_text", "title": "O que o texto não descreve", "text": "O anjo não é nomeado neste trecho (Gabriel aparece antes, em Lc 1:26), e sua aparência não é descrita. A única descrição visual é a glória que brilha ao redor dos pastores. O número de anjos também não é dito."},
+				{"kind": "interpretation", "title": "Duas formas do versículo 14", "text": "Os manuscritos antigos trazem duas formas do fim de Lucas 2:14. A tradução carregada segue uma delas; muitas traduções seguem a outra, que fala de paz para as pessoas a quem Deus concede o seu favor. O jogo não escolhe entre elas."},
+				{"kind": "fiction", "title": "A cena do jogo", "text": "A cena é uma representação. O jogo mostra só luz: nenhuma figura de anjo, asa ou rosto, e luzes pequenas no céu para a multidão. Os três pastores representam os do relato. O viajante fica à margem, fora da luz, e Tamir dorme: nenhum personagem do jogo recebe o anúncio."}
+			],
+			"related": {"people": ["jesus"], "places": ["bethlehem"], "events": ["shepherds_bethlehem"], "stories": ["luke_002_shepherds"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com bpm.json (Luke 2:8-15). Nota da variante de 2:14 curta e só no diário, conforme decisão do coordenador; conhecimento geral de crítica textual, a confirmar na revisão humana. Aguarda revisão humana."}
+		},
+		{
+			"id": "manger_katalyma",
+			"title": "A manjedoura e a \"hospedaria\"",
+			"classification": "historical_context",
+			"presentation": "card",
+			"era_id": "roman_judea",
+			"summary": "Lucas 2:7 diz que Maria deitou o bebê numa manjedoura, porque não havia lugar para eles na \"hospedaria\". Que lugar era esse é debatido, e o texto não fala de estábulo nem de animais.",
+			"bible_note": "Lucas 2:7, 12, 16.",
+			"references": ["Luke 2:7", "Luke 2:12", "Luke 2:16", "Luke 10:34"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O que o texto diz", "text": "Maria dá à luz o filho primogênito, envolve-o em faixas de pano e o deita numa manjedoura, porque não havia lugar para eles na hospedaria (Lc 2:7). A manjedoura volta no sinal dado aos pastores (Lc 2:12) e quando eles chegam (Lc 2:16). O texto não fala de estábulo, gruta, boi, jumento nem de alguém que recusou o casal."},
+				{"kind": "historical", "title": "A manjedoura", "text": "Manjedoura é o cocho onde se põe comida para os animais. Cochos de pedra calcária são bem conhecidos na região; também podiam ser de madeira. O texto não diz o material."},
+				{"kind": "interpretation", "title": "Três leituras", "text": "A palavra grega traduzida por \"hospedaria\" é katalyma, que também pode significar \"sala de hóspedes\" (outra passagem de Lucas costuma ser comparada; referência a importar). Para a hospedaria da parábola do samaritano, Lucas usa outra palavra (Lc 10:34). Por isso há três leituras principais: um quarto de hóspedes cheio numa casa de família, com o bebê na área dos animais; um abrigo de viajantes com pátio; ou uma gruta usada como estábulo, tradição atestada a partir do século II. Nenhuma é comprovada."},
+				{"kind": "historical", "title": "Boi e jumento", "text": "O boi e o jumento junto à manjedoura vêm de uma leitura cristã posterior de um versículo de Isaías, não de Lucas."},
+				{"kind": "fiction", "title": "No jogo", "text": "A casa de pedra encostada na rocha, com uma abertura para animais, é uma composição compatível com mais de uma leitura. Ela é vista só de fora: o jogo não mostra o interior, Maria, José nem o bebê. Não há estalajadeiro, estábulo de madeira nem estrela."}
+			],
+			"related": {"people": ["jesus", "mary_mother_of_jesus", "joseph_of_nazareth"], "places": ["bethlehem"], "events": ["shepherds_bethlehem"], "stories": ["luke_002_shepherds"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Leituras segundo research_biblical.md §6 e research_historical.md (Bailey, Carlson, Justino, Orígenes; não verificados nesta sessão). Luke 22:11 e Isa 1:3 não citados como referência: capítulos ausentes de verse_counts.json. Aguarda revisão humana."}
+		},
+		{
+			"id": "shepherds_told",
+			"title": "O que os pastores contaram",
+			"classification": "recorded_event",
+			"presentation": "card",
+			"era_id": "roman_judea",
+			"summary": "Os pastores foram depressa a Belém, encontraram Maria, José e o bebê deitado na manjedoura e contaram o que lhes fora dito sobre o menino. Todos os que ouviram ficaram admirados, e os pastores voltaram louvando a Deus (Lc 2:15-20).",
+			"bible_note": "Lucas 2:15-20.",
+			"references": ["Luke 2:15-20", "Luke 2:21", "Luke 2:51"],
+			"sections": [
+				{"kind": "biblical_text", "title": "A ida", "text": "Os pastores combinam entre si ir a Belém ver o que tinha acontecido (Lc 2:15). Vão depressa e encontram Maria, José e o bebê deitado na manjedoura (Lc 2:16). O texto não diz se deixaram o rebanho, com quem, nem como acharam o lugar."},
+				{"kind": "biblical_text", "title": "Contaram", "text": "Depois de ver o menino, os pastores contam o que lhes tinha sido dito a respeito dele, e todos os que ouvem ficam admirados (Lc 2:17-18). O texto não diz quem eram esses ouvintes."},
+				{"kind": "biblical_text", "title": "Maria guardava", "text": "Lucas diz que Maria guardava tudo isso e meditava no coração (Lc 2:19), e repete a nota mais adiante (Lc 2:51). Nenhuma fala dela é registrada neste trecho."},
+				{"kind": "biblical_text", "title": "A volta", "text": "Os pastores voltam glorificando e louvando a Deus por tudo o que tinham ouvido e visto, como lhes fora dito (Lc 2:20)."},
+				{"kind": "chronology", "title": "Na mesma noite?", "text": "O texto diz que foram depressa, mas não fixa horas. O nome Jesus é dado no oitavo dia (Lc 2:21), fora desta experiência."},
+				{"kind": "fiction", "title": "No jogo", "text": "O viajante vê tudo de longe e não entra na casa. Tamir, que dormia, só repete o que ouviu na volta dos vizinhos. Tamir é fictício; Lucas 2:17-18 não diz quem ouviu. Tamir, Shai e o viajante são personagens do jogo e não fazem parte do relato."}
+			],
+			"related": {"people": ["jesus", "mary_mother_of_jesus", "joseph_of_nazareth"], "places": ["bethlehem"], "events": ["shepherds_bethlehem"], "stories": ["luke_002_shepherds"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com bpm.json (Luke 2:15-20). Aguarda revisão humana."}
+		},
+		{
+			"id": "david_shepherd_bethlehem",
+			"title": "Davi, pastor em Belém",
+			"classification": "recorded_event",
+			"presentation": "toast",
+			"era_id": "united_monarchy",
+			"summary": "Muitos séculos antes de Lucas 2, Davi, filho caçula de Jessé, de Belém, cuidava das ovelhas da família (1Sm 16:11; 17:15). Lucas chama Belém de \"cidade de Davi\" (Lc 2:4).",
+			"bible_note": "1 Samuel 16:11; 17:15, 34-35.",
+			"references": ["1Sam 16:11", "1Sam 17:15", "1Sam 17:34-35", "Luke 2:4", "Luke 1:32"],
+			"sections": [
+				{"kind": "biblical_text", "title": "O caçula no pasto", "text": "Quando Samuel vai à casa de Jessé, o filho mais novo não está: está cuidando das ovelhas (1Sm 16:11). Mais tarde, Davi vai e volta de junto de Saul para apascentar as ovelhas do pai em Belém (1Sm 17:15). Diante de Saul, ele conta como defendia o rebanho de leões e ursos (1Sm 17:34-35)."},
+				{"kind": "chronology", "title": "Outra época", "text": "Davi viveu muitos séculos antes do nascimento de Jesus, na época da monarquia unida. São dois momentos diferentes da história de Belém."},
+				{"kind": "interpretation", "title": "A cidade de Davi", "text": "Lucas liga o nascimento em Belém à casa de Davi (Lc 2:4) e, antes, ao trono de Davi (Lc 1:32). Muitos leitores veem nisso a esperança de um rei da família de Davi. É uma leitura teológica do texto."},
+				{"kind": "fiction", "title": "No jogo", "text": "Shai repete o que se conta em Belém. A ronda do aprisco e Shai são criações do jogo."}
+			],
+			"related": {"people": ["david"], "places": ["bethlehem"], "events": ["david_shepherd", "shepherds_bethlehem"], "stories": ["luke_002_shepherds"]},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Paráfrase conferida pelo agente de IA com bpm.json (1Sam 16:11, 17:34-35) e research_biblical.md (1Sam 17:15). Aguarda revisão humana."}
 		}
 	]
 }

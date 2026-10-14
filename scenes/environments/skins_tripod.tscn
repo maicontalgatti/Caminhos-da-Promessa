@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/skins_tripod.png" id="1_vwdxf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5lhy"]
+size = Vector2(12, 4)
+
+[node name="SkinsTripod" type="StaticBody2D" unique_id=253920387]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=26829223]
+texture = ExtResource("1_vwdxf")
+centered = false
+offset = Vector2(-10, -28)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2131993095]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_h5lhy")

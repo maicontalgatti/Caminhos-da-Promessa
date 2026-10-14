@@ -106,6 +106,10 @@ func test_data() -> void:
 	check(not SceneDatabase.validate(bad).is_empty(), "validador exige params.to em water_walls")
 	bad.steps = [{"type": "voar"}]
 	check(not SceneDatabase.validate(bad).is_empty(), "validador recusa tipo de passo desconhecido")
+	bad.steps = [{"type": "caption", "text": "a", "kind": "context"}, {"type": "sfx", "id": "ui_click"}, {"type": "caption", "scripture": "Gen 26:20", "wait": true}]
+	check(not SceneDatabase.validate(bad).is_empty(), "validador recusa legenda substituída antes de ser lida")
+	bad.steps = [{"type": "caption", "text": "a", "kind": "context"}, {"type": "wait", "time": 1}, {"type": "caption", "scripture": "Gen 26:20"}]
+	check(SceneDatabase.validate(bad).is_empty(), "legenda sem wait seguida de espera é aceita %s" % [SceneDatabase.validate(bad)])
 	bad = _base_scene()
 	bad.erase("verification")
 	check(not SceneDatabase.validate(bad).is_empty(), "validador exige o bloco verification")
@@ -157,7 +161,9 @@ func test_experiences() -> void:
 	check(WorldManager.experience_destination("isaac_wells") == {"region": "canaan_village", "entry": "default"}, "Os poços de Isaque têm destino na aldeia (voltar a Canaã)")
 	check(WorldManager.experience_destination("joseph_dothan") == {"region": "canaan_village", "entry": "default"}, "José em Dotã tem destino na aldeia")
 	check(WorldManager.experience_regions("joseph_dothan").size() == 3, "José em Dotã abrange aldeia, Caminho e Dotã")
-	check(WorldManager.experience_destination("ruth_bethlehem").is_empty() and WorldManager.start_experience("ruth_bethlehem") != "", "experiência em planejamento continua sem destino e não jogável")
+	WorldManager.experiences["test_planned"] = {"id": "test_planned", "era": "judges", "title": "Teste em planejamento", "status": "planned", "references": ["Ruth 2:1-3"]}
+	check(WorldManager.experience_destination("test_planned").is_empty() and WorldManager.start_experience("test_planned") != "", "experiência em planejamento continua sem destino e não jogável")
+	WorldManager.experiences.erase("test_planned")
 	var tr := {"region": "dothan", "entry": "default", "entry_if": [{"if": {"flag": "t_alt"}, "entry": "from_caravan_road"}]}
 	check(WorldManager.resolve_travel(tr).entry == "default", "entry_if: sem condição, vale a entrada padrão")
 	GameState.set_flag("t_alt", true)
@@ -330,8 +336,12 @@ func test_scripture_map_and_passage() -> void:
 	var sm: ScriptureMap = game.scripture_map
 	sm.open()
 	await wait(2)
-	sm.select("ruth_bethlehem")
+	WorldManager.experiences["test_planned"] = {"id": "test_planned", "era": "judges", "title": "Teste em planejamento", "status": "planned", "references": ["Ruth 2:1-3"]}
+	sm.select("test_planned")
 	check(not sm._action.visible, "experiência em planejamento: sem botão")
+	WorldManager.experiences.erase("test_planned")
+	sm.select("ruth_bethlehem")
+	check(not sm._action.visible, "experiência bloqueada (Rute antes da travessia do mar): sem botão")
 	sm.select("isaac_wells")
 	check(sm._action.visible and sm._action.text == "Revisitar", "experiência explorada mostra Revisitar")
 	sm.select("joseph_dothan")

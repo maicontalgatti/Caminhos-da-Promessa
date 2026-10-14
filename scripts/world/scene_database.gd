@@ -93,6 +93,7 @@ static func validate(s: Dictionary) -> PackedStringArray:
 	var actors := {}
 	for i in steps.size():
 		out.append_array(_validate_step("%s, passo %d" % [id, i + 1], steps[i], actors))
+	out.append_array(_overlapping_captions(id, steps))
 	var on_end: Variant = s.get("on_end", {})
 	if not (on_end is Dictionary):
 		out.append("%s: \"on_end\" deve ser um objeto" % id)
@@ -105,6 +106,25 @@ static func validate(s: Dictionary) -> PackedStringArray:
 				out.append("%s: on_end.%s deve ser uma lista de ids" % [id, k])
 		if on_end.has("player_to"):
 			out.append_array(_validate_player_to(id + " (on_end.player_to)", on_end.player_to))
+	return out
+
+
+## Uma legenda sem "wait" é substituída pela próxima legenda se nenhum passo
+## esperar entre as duas: a primeira nunca seria lida.
+static func _overlapping_captions(id: String, steps: Array) -> PackedStringArray:
+	var out := PackedStringArray()
+	var open := -1
+	for i in steps.size():
+		var st: Variant = steps[i]
+		if not (st is Dictionary):
+			continue
+		var type := String(st.get("type", ""))
+		if type == "caption" and open >= 0:
+			out.append("%s, passo %d: legenda substituída pela do passo %d antes de ser lida (use \"wait\": true)" % [id, open + 1, i + 1])
+		if type == "wait" or bool(st.get("wait", false)):
+			open = -1
+		elif type == "caption":
+			open = i
 	return out
 
 

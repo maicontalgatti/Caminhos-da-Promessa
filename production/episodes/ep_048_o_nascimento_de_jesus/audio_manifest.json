@@ -1,0 +1,1354 @@
+{
+	"_comment": "Gerado por tools/factory.gd audio-manifest. Não edite text/line_id/hash à mão: mude o texto no jogo e gere de novo. emotion, pronunciation e target_seconds são do audio-producer.",
+	"episode": "ep_048_o_nascimento_de_jesus",
+	"language": "pt-BR",
+	"generated": "2026-10-14",
+	"provider": "none",
+	"budget_approved": false,
+	"subtitles": "sempre: a caixa de diálogo mostra o texto de toda fala",
+	"total_characters": 8145,
+	"lines": [
+		{
+			"line_id": "bn_tamir_talk/hello",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Paz, viajante. Chegou na hora em que o sol se põe sobre Belém. Sente-se, se quiser.",
+			"hash": "b8aca303863f7668113570ddc6871e2d109adcc6a80aaeb544b9b19a884cafbc",
+			"file": "res://assets/audio/voice/bn_tamir_talk__hello.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/hello2",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Só não posso parar agora. Quatro animais do meu rebanho se afastaram pastando, e todos precisam entrar no aprisco antes da noite.",
+			"hash": "c9e4c08b131789ce0771fc2b994ee8218a39bc3ac18824ed23d2c8179512d38a",
+			"file": "res://assets/audio/voice/bn_tamir_talk__hello2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/hello3",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "O aprisco é aquele muro de pedra lá embaixo, com galhos de espinho por cima. De noite, só se entra pela abertura do portão.",
+			"hash": "430f1ccc04974729edb0e468badd71bd343d19a0bb5b857c1e9c46611c45a4de",
+			"file": "res://assets/audio/voice/bn_tamir_talk__hello3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/hello4",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Junto ao portão, os vizinhos vigiam o rebanho deles. Cada um cuida do seu rebanho.",
+			"hash": "df054b6a156f05fca6df72b352488c864c38c0ff824b2c0981497ecbe5db3e6d",
+			"file": "res://assets/audio/voice/bn_tamir_talk__hello4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/hello5",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Daqui de cima eu vejo as desgarradas: uma nos terraços, perto do caminho por onde você chegou; uma nos espinhos, encosta abaixo; a cabra nas rochas; e outra perto da boca da gruta.",
+			"hash": "c9ac4f70c59dbe795736d54fd904aa1dfe81e6708b0698143eb6109468d69439",
+			"file": "res://assets/audio/voice/bn_tamir_talk__hello5.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 13.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/flock_waiting",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Ainda falta trazer algumas. Siga o balido: nos terraços perto da entrada, nos espinhos encosta abaixo, nas rochas e na boca da gruta.",
+			"hash": "c0374a06fc2c0f8a56f1a9c4201e749c0a1c0d8afdc76f1879bf1a4e087ae179",
+			"file": "res://assets/audio/voice/bn_tamir_talk__flock_waiting.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/wood_ask",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Todas no aprisco. Obrigado, viajante. Agora, o fogo.",
+			"hash": "cc1e7990e53b124aa047d1aae0d5a293daa6c716e4995eb20ab8b384bf44eb4d",
+			"file": "res://assets/audio/voice/bn_tamir_talk__wood_ask.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/wood_ask2",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Lenha aqui é pouca: só galhos secos dos arbustos de espinho. Traga três, e o fogo aguenta até o meu turno.",
+			"hash": "4091498816b618c0b6fa7acc0f5ab12981cc7f3a8f904ae5ab8191a23451cce0",
+			"file": "res://assets/audio/voice/bn_tamir_talk__wood_ask2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/wood_waiting",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Três galhos secos bastam. Procure junto aos arbustos espalhados pela encosta.",
+			"hash": "7838549fbf9ae5db7963c689d053b2f34ff041b4279358c0f5ba8eb542be40a4",
+			"file": "res://assets/audio/voice/bn_tamir_talk__wood_waiting.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/deliver",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Galhos secos e bem escolhidos. Agora, sim.",
+			"hash": "1f116c5e4dd731afe5836f95dfb39f244addbf3db9ec4fdc388b01e5e79479f9",
+			"file": "res://assets/audio/voice/bn_tamir_talk__deliver.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/deliver2",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Tamir sopra as brasas, e o fogo pega. O sol some atrás da crista de Belém, e a noite cai sobre os campos.",
+			"hash": "bf4c7c1a3df1144fa0e99ac64e3ead0a4b7f422a4332b5e5c492697be89a3734",
+			"file": "res://assets/audio/voice/bn_tamir_talk__deliver2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/deliver3",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Vamos dividir a noite. Eu durmo primeiro; você fica de vigia.",
+			"hash": "e76283796336ca7c12cf7256ed5d48a7ff808ac4f21a2446e99a3255320e65b2",
+			"file": "res://assets/audio/voice/bn_tamir_talk__deliver3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/deliver4",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Sente-se na pedra ao lado do fogo. Dali se vê o aprisco inteiro e o fogo dos vizinhos. Se algum animal rondar o muro, me acorde.",
+			"hash": "1bf4259e3f07f8b8957e6763122da0ca207087fb0e96bbfe4f994b3a6fad771a",
+			"file": "res://assets/audio/voice/bn_tamir_talk__deliver4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/deliver5",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Tamir se enrola no manto, perto do fogo, e fecha os olhos.",
+			"hash": "367ae7f4a3f99d87668111e043a7076b92e5f63ae355912329a9054e52a8b838",
+			"file": "res://assets/audio/voice/bn_tamir_talk__deliver5.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/asleep",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Tamir dorme enrolado no manto, perto do fogo. A vigília agora é sua.",
+			"hash": "d5ee1d7854798895b7a5ffa4e0dda9c773f853c3a321a299abc4b24c67248c1e",
+			"file": "res://assets/audio/voice/bn_tamir_talk__asleep.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/asleep_late",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Tamir continua dormindo, enrolado no manto. Lá em cima, o caminho de Belém sobe no escuro.",
+			"hash": "4728a51d5c17d5074ad43cb3e7d32b09bf1a66684d5cd56b014745485c17df06",
+			"file": "res://assets/audio/voice/bn_tamir_talk__asleep_late.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/after",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Ainda acordado, viajante? Eu também. Acordei com vozes no caminho.",
+			"hash": "75ec16f0c2af8f094302160884cac6df473a4aed7192ef8418e09c9502580e93",
+			"file": "res://assets/audio/voice/bn_tamir_talk__after.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/after2",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Eram os vizinhos do portão, voltando de Belém. Vinham louvando a Deus.",
+			"hash": "20c8e73ecf33e2546dab7e443b1d4748ac6bb07f1a758e11c8034ec3af4e7b34",
+			"file": "res://assets/audio/voice/bn_tamir_talk__after2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/after3",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Pararam junto ao fogo e contaram o que lhes tinha sido dito a respeito de um menino que eles viram em Belém.",
+			"hash": "92483000ad68a682bb70b87eaf5247a7fb46c7c7871a82a1698c7477afdc7f26",
+			"file": "res://assets/audio/voice/bn_tamir_talk__after3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/after4",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Eu não vi nada disso. Só ouvi. E fiquei admirado. Não sei dizer mais do que isso.",
+			"hash": "84f7bb8c6f9f8711ce827f7564ac1ff957c87bb345b98e01591a6d81df3e00bf",
+			"file": "res://assets/audio/voice/bn_tamir_talk__after4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/after5",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Resumo do jogo, na voz de Tamir. Tamir é fictício; Lucas 2:17-18 não diz quem ouviu. O texto conta o que os pastores fizeram:)",
+			"hash": "07e3f89d067ba7d5ee3fe234394398707b2a2c38436a1b48eceb244c2cfb9514",
+			"file": "res://assets/audio/voice/bn_tamir_talk__after5.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/after6",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Quando o viram, contaram a todos o que lhes havia sido dito a respeito daquele menino. Todos os que ouviram ficaram admirados com o que os pastores lhes contaram.",
+			"hash": "7c355d6a21e63b33ac7a854413a96e1520367ca703d8bfb5e23f732494f8477f",
+			"file": "res://assets/audio/voice/bn_tamir_talk__after6.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 11.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Luke 2:17-18",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "bn_tamir_talk/after7",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Os pastores voltaram, glorificando e louvando a Deus por todas as coisas que tinham ouvido e visto, exatamente como lhes havia sido dito.",
+			"hash": "80fc325a830638c9e8a252fb86a94c74efcac1654825fc7e82750bdfb7548cfd",
+			"file": "res://assets/audio/voice/bn_tamir_talk__after7.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Luke 2:20",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "bn_tamir_talk/after_choice",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "A noite ainda não acabou. Fique um pouco junto ao fogo.",
+			"hash": "214ac53373ee5a1dc494dbee7694f1e7d726471ac5a051b78cb85b8734c72fa8",
+			"file": "res://assets/audio/voice/bn_tamir_talk__after_choice.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/read",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Você abre o diário de viagem nos trechos de Lucas 2.",
+			"hash": "33aacdd4bc0ad62f07a59d42ff84e91771083d7716977abadc62e8213163eaca",
+			"file": "res://assets/audio/voice/bn_tamir_talk__read.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/bye",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "Descanse, viajante. Amanhã cedo as ovelhas saem de novo para o pasto.",
+			"hash": "53eb7fabcc6f87c0fa6a6fbce1eb7266c6d7d5f731ab6348c721e7e7ad01a73d",
+			"file": "res://assets/audio/voice/bn_tamir_talk__bye.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/after_again",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "O fogo ainda está aceso. O rebanho dorme.",
+			"hash": "d23fc0d73a67cd71ad7b0546501bb6dd68279e7fe228e35bad153c4de1cc6260",
+			"file": "res://assets/audio/voice/bn_tamir_talk__after_again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_tamir_talk/again",
+			"speaker": "bn_tamir",
+			"voice_profile": "bn_tamir",
+			"kind": "fictional_dialogue",
+			"text": "O vento da encosta esfria depressa quando o sol se vai. Fique perto do fogo, viajante.",
+			"hash": "75ff62daf6c1018ae251e12b9d0faa56f25f9b1eb7b08b94e6a81a3e854d2dd5",
+			"file": "res://assets/audio/voice/bn_tamir_talk__again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/greet",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Paz, viajante. Eu sou Shai; trabalho com Tamir no rebanho.",
+			"hash": "abe7a58389d150425a077698c64c6569da51783b8c48bae7190e0ad2e6437247",
+			"file": "res://assets/audio/voice/bn_shai_talk__greet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/greet2",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Quando o sol baixa, as ovelhas se escondem onde ainda tem capim: entre as pedras, nos espinhos, até na boca da gruta.",
+			"hash": "c4c310484fe5253c8ffc14d275f3e3cee3f047daa01de28c1e28655ee8e2076c",
+			"file": "res://assets/audio/voice/bn_shai_talk__greet2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/again",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Tamir conta as ovelhas duas vezes, toda noite. E ainda assim confere de manhã.",
+			"hash": "449e57a58ab9c8674c02300f7b761049635ba3b08c77e54faa601996135926e4",
+			"file": "res://assets/audio/voice/bn_shai_talk__again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/round",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Antes de dormir, eu dou a volta no muro do aprisco. Hoje tem trabalho.",
+			"hash": "d597d109fef61959fc3fbb6e101a809980a1726f454ec937f17c537280e66794",
+			"file": "res://assets/audio/voice/bn_shai_talk__round.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/round2",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Uma pedra soltou do muro, do lado do posto de vigia; uns galhos de espinho caíram do outro lado; e ouvi barulho nas rochas, encosta abaixo.",
+			"hash": "4105d1bf14c64c5c56d50bc736434d0219a66cdf32e8d4b5a4e441c0f24c778e",
+			"file": "res://assets/audio/voice/bn_shai_talk__round2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/round_accept",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Ótimo. Eu fico aqui na parte de dentro. Depois me conte o que encontrou.",
+			"hash": "e1f7315968a498dea8b908a38ae34243984de3cc50041bc7748d66a602744ee5",
+			"file": "res://assets/audio/voice/bn_shai_talk__round_accept.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/round_decline",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Tudo bem. O muro não sai daqui.",
+			"hash": "c60019ca1f8fb72e79f4be753e64e19ff34802d35a6eb3b0592f2d7fe4724445",
+			"file": "res://assets/audio/voice/bn_shai_talk__round_decline.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 2.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/round_waiting",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "A pedra solta fica do lado do posto de vigia, os galhos caídos do outro lado do muro, e o barulho veio das rochas, encosta abaixo.",
+			"hash": "4081622bb22cfeead256a1e6236b07fbf5e7fa281a32b630392cb6f59cdc5a1a",
+			"file": "res://assets/audio/voice/bn_shai_talk__round_waiting.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/round_done",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Pedra no lugar, espinhos no muro e o chacal longe do fogo. Agora o rebanho dorme em paz.",
+			"hash": "955f722be31e2d7b2ebd0293e15310fdfc215c33db99eea29af1f78c92084a1b",
+			"file": "res://assets/audio/voice/bn_shai_talk__round_done.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/round_done2",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Contam em Belém que o jovem Davi também cuidava das ovelhas do pai por estes lados, e que defendia o rebanho até de leão e de urso.",
+			"hash": "94fd41814b3213e84b7dfb7dcf8a1fd13ab596aea9531b32a7975ce67aa1f95c",
+			"file": "res://assets/audio/voice/bn_shai_talk__round_done2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/round_done3",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Shai repete o que se conta em Belém. 1 Samuel 16:11 e 17:15 dizem que Davi cuidava das ovelhas do pai; em 17:34-35, ele conta a Saul:)",
+			"hash": "872602aead004196825d9d8504705b0d4c341fb396a388e076cd5ed8983fe173",
+			"file": "res://assets/audio/voice/bn_shai_talk__round_done3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/round_done4",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Mas Davi disse a Saul: “O seu servo estava apascentando as ovelhas de seu pai; e quando vinha um leão ou um urso e levava uma ovelha do rebanho, eu ia atrás dele, o atacava e resgatava a ovelha da sua boca. Quando ele se voltava contra mim, eu o agarrava pela barba, o feria e o matava.",
+			"hash": "7f626c5a0e9e9449aad9cf2f039ab26cdab90925f6cbe208d704e449322d3cbb",
+			"file": "res://assets/audio/voice/bn_shai_talk__round_done4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 20.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "1Sam 17:34-35",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "bn_shai_talk/after_scene",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Viajante! Os vizinhos do portão subiram o caminho de Belém, quase correndo.",
+			"hash": "89468c795a21c35240146d151aa9418cf8964cb0032b7aa23131e9f0734c0afc",
+			"file": "res://assets/audio/voice/bn_shai_talk__after_scene.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/after_scene2",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Eu estava aqui embaixo, do outro lado do muro, e só vi quando eles já subiam. Não disseram nada.",
+			"hash": "a3097e13777d1db316ad6b68e911d319ebbd919b14fa991a7c169252a528a5cb",
+			"file": "res://assets/audio/voice/bn_shai_talk__after_scene2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/after_scene3",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Nunca vi pastor sair assim no meio da noite. Depois eles contam.",
+			"hash": "69d096029dbacce7ebddf5957baa4e6fa3b06c47689cac8a20d8f9d0ae178e49",
+			"file": "res://assets/audio/voice/bn_shai_talk__after_scene3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/after_house",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Ouviu? Os vizinhos voltaram pelo caminho, louvando a Deus.",
+			"hash": "4b0654b60e200fc83998c97ae57ae8608406949f99ef2c3157f6219123f3a9f5",
+			"file": "res://assets/audio/voice/bn_shai_talk__after_house.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/after_house2",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "Tamir acordou com as vozes. Ele está de pé, junto ao fogo.",
+			"hash": "e63d6336179562fe6ae370a9bc4f198a0678738aa1d06bc8a48ee17aa4b760d2",
+			"file": "res://assets/audio/voice/bn_shai_talk__after_house2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_shai_talk/night_again",
+			"speaker": "bn_shai",
+			"voice_profile": "bn_shai",
+			"kind": "fictional_dialogue",
+			"text": "O rebanho está deitado. Eu fico perto do muro até a minha vez de dormir.",
+			"hash": "7d20372a58cb89615d60ed279cb3bb83b0c5580bec6fe8bb9eb4fbf321a9c397",
+			"file": "res://assets/audio/voice/bn_shai_talk__night_again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_rep_shepherds/n1",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Três pastores vigiam o próprio rebanho em volta do fogo, junto ao portão do aprisco.",
+			"hash": "d48812aaf6e565315cc78ee9fdcf115043ece4a9ddcc04fb4bfe31a1f52b1f40",
+			"file": "res://assets/audio/voice/bn_rep_shepherds__n1.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_rep_shepherds/n2",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Representação dos pastores de Lucas 2:8. O texto não diz quantos eram, nem seus nomes ou idades.)",
+			"hash": "ba62b3a7e9c1360042ff34fd80a03efe764a0a5920ab47345f8c14392d32ba70",
+			"file": "res://assets/audio/voice/bn_rep_shepherds__n2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_rep_shepherds/returned",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Os pastores estão de volta ao fogo do portão.",
+			"hash": "260a55faeae052e3b23fc7728ddf390a18b868b5319e5dae6cc702e3bb980ad1",
+			"file": "res://assets/audio/voice/bn_rep_shepherds__returned.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bn_rep_shepherds/returned2",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Os pastores voltaram, glorificando e louvando a Deus por todas as coisas que tinham ouvido e visto, exatamente como lhes havia sido dito.",
+			"hash": "80fc325a830638c9e8a252fb86a94c74efcac1654825fc7e82750bdfb7548cfd",
+			"file": "res://assets/audio/voice/bn_rep_shepherds__returned2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Luke 2:20",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "luke_002_shepherds/1_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Lucas conta que saiu uma ordem de César Augusto para recensear todo o mundo, no tempo em que Quirino governava a Síria, e que cada um ia se registrar na sua cidade (Lc 2:1-3). A data desse recenseamento é debatida, e o jogo não mostra ano.",
+			"hash": "b7541ed022896bebdb925712bad55e70e8721eebd2e1c76f2214a10051e3140a",
+			"file": "res://assets/audio/voice/luke_002_shepherds__1_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 17.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "luke_002_shepherds/2_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "José também subiu da Galileia, da cidade de Nazaré, para a Judeia, à cidade de Davi, chamada Belém, por ser ele da casa e família de Davi,",
+			"hash": "1863af05ddd07fedbb949caef964c645dae7562981c78205f7b5ccc4a30a2570",
+			"file": "res://assets/audio/voice/luke_002_shepherds__2_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Luke 2:4",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "luke_002_shepherds/2_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Nazaré fica na Galileia, ao norte; Belém, na Judeia, ao sul de Jerusalém. São alguns dias de viagem, e o texto não diz como fizeram o caminho.",
+			"hash": "993e60843bd41aafa5b39f5af8323685173f669a2e1b1df47a04e1ddcb1f4a65",
+			"file": "res://assets/audio/voice/luke_002_shepherds__2_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "luke_002_shepherds/3_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "José vai se registrar com Maria, que estava grávida. Em Belém, ela dá à luz o filho primogênito, envolve-o em faixas de pano e o deita numa manjedoura, porque não havia lugar para eles na \"hospedaria\" (Lc 2:5-7). A palavra grega, katalyma, pode indicar um quarto de hóspedes numa casa ou um abrigo de viajantes; uma tradição do século II fala de uma gruta. O lugar é debatido.",
+			"hash": "3176238ce4a2b50b66b044c1ece9442ab47a910c74a7ae471555d3e87335a906",
+			"file": "res://assets/audio/voice/luke_002_shepherds__3_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 27.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "luke_002_shepherds/4_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Havia pastores na mesma região, que permaneciam no campo e vigiavam o seu rebanho durante a noite.",
+			"hash": "cde1e333de02ee4e9cfb84adb35ebc2008697e300dff53812e0b11a3c226fd84",
+			"file": "res://assets/audio/voice/luke_002_shepherds__4_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Luke 2:8",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "luke_002_shepherds/4_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O texto não diz quantos pastores eram, nem seus nomes ou idades.",
+			"hash": "ca79847b76712b4993a531b51a87ba2b0c0b8ed4e857943543743c9df4935e2b",
+			"file": "res://assets/audio/voice/luke_002_shepherds__4_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "luke_002_shepherds/5_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Eis que um anjo do Senhor apareceu a eles, e a glória do Senhor brilhou ao redor deles, e ficaram aterrorizados.",
+			"hash": "a145fa56295c5e0a37c80902448f68052f7424c5f926823474508388ea40040c",
+			"file": "res://assets/audio/voice/luke_002_shepherds__5_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Luke 2:9",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "luke_002_shepherds/5_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "A única descrição visual é a glória que brilha ao redor dos pastores. O anjo não é nomeado nem descrito.",
+			"hash": "1a3bcf9d7d607a587d599cd91ece7cb5d0dada51610c7def6f93468aa18599b7",
+			"file": "res://assets/audio/voice/luke_002_shepherds__5_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "luke_002_shepherds/6_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "O anjo lhes disse: “Não tenham medo, pois eis que lhes trago uma boa notícia de grande alegria, que será para todo o povo. Pois hoje lhes nasceu, na cidade de Davi, um Salvador, que é Cristo o Senhor. Este será o sinal para vocês: encontrarão um bebê envolto em faixas de pano, deitado em uma manjedoura.”",
+			"hash": "29fd689c683558ac05665e5e02417f702b4cac9af3695109c9b6856cbb31fb7e",
+			"file": "res://assets/audio/voice/luke_002_shepherds__6_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 22.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Luke 2:10-12",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "luke_002_shepherds/6_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "\"Cidade de Davi\" é Belém, terra de Davi. O sinal dado aos pastores é simples: um bebê em faixas, deitado numa manjedoura.",
+			"hash": "037c31c226c787d57718684911ea6cfcb8df4046583a473046766e9b077c808c",
+			"file": "res://assets/audio/voice/luke_002_shepherds__6_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "luke_002_shepherds/7_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "De repente, apareceu com o anjo uma multidão do exército celestial, louvando a Deus e dizendo: “Glória a Deus nas maiores alturas, e paz na terra, boa vontade para com os homens.”",
+			"hash": "9fcf77ecb8e7acfa7d24b8a8a4cc855218f5ad82d3910e60e2ac39e93dab6255",
+			"file": "res://assets/audio/voice/luke_002_shepherds__7_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 13.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Luke 2:13-14",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "luke_002_shepherds/7_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O texto diz \"louvando… e dizendo\", não \"cantando\". Os manuscritos antigos trazem duas formas do fim do versículo 14: a tradução carregada segue uma; muitas traduções seguem a outra, que fala de paz para as pessoas a quem Deus concede o seu favor.",
+			"hash": "32a7dc55358fad9e5214a08d6be551b1cffcf18f2b8b82cf6fff65af09e80319",
+			"file": "res://assets/audio/voice/luke_002_shepherds__7_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 17.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "luke_002_shepherds/8_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Quando os anjos se afastaram deles em direção ao céu, os pastores disseram uns aos outros: “Vamos agora a Belém e vejamos isso que aconteceu, o que o Senhor nos deu a conhecer.”",
+			"hash": "3d1624b5b5dd4d830c536d1de9761cb0d31557308be6e0b1a2133c40cd48fb36",
+			"file": "res://assets/audio/voice/luke_002_shepherds__8_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 12.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Luke 2:15",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "luke_002_shepherds/8_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "A decisão é de todos juntos: o texto não destaca nenhum pastor.",
+			"hash": "69a61a483cf164cc10bf39c737f8281c2b591055fea6364e76a648cbfbecb7ae",
+			"file": "res://assets/audio/voice/luke_002_shepherds__8_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "luke_002_shepherds/9_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Eles foram apressadamente e encontraram Maria e José, e o bebê deitado na manjedoura.",
+			"hash": "05598f8776675ac4f0ca532c97f2a4368b82a16a207c0cd4d6be31551ade9f50",
+			"file": "res://assets/audio/voice/luke_002_shepherds__9_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Luke 2:16",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "luke_002_shepherds/9_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O texto não diz como acharam o lugar, nem se deixaram alguém com o rebanho.",
+			"hash": "751320d8d6835db07228fec83f735c780f9d6b54492d02f6b1f243ad3146b0f6",
+			"file": "res://assets/audio/voice/luke_002_shepherds__9_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "luke_002_shepherds/10_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Quando o viram, contaram a todos o que lhes havia sido dito a respeito daquele menino. Todos os que ouviram ficaram admirados com o que os pastores lhes contaram.",
+			"hash": "7c355d6a21e63b33ac7a854413a96e1520367ca703d8bfb5e23f732494f8477f",
+			"file": "res://assets/audio/voice/luke_002_shepherds__10_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 11.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Luke 2:17-18",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "luke_002_shepherds/10_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O texto não diz quem eram os que ouviram e ficaram admirados.",
+			"hash": "0c83832efb29571d3e1633e181eb938231ec1a4c79277ff0c39e7356a40be29e",
+			"file": "res://assets/audio/voice/luke_002_shepherds__10_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "luke_002_shepherds/11_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Mas Maria guardava todas essas palavras, meditando nelas em seu coração.",
+			"hash": "09c870ce1c101ae87b1a7fb11db7d3361039b8145e20448d393027d09bf01d39",
+			"file": "res://assets/audio/voice/luke_002_shepherds__11_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Luke 2:19",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "luke_002_shepherds/11_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Lucas repete esta nota sobre Maria mais adiante, em Lucas 2:51.",
+			"hash": "cad07eea1d3aec7417c48ab3d29e93dbcfdf3c903ce498c4a2b4e7f5738405d4",
+			"file": "res://assets/audio/voice/luke_002_shepherds__11_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "luke_002_shepherds/12_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Os pastores voltaram, glorificando e louvando a Deus por todas as coisas que tinham ouvido e visto, exatamente como lhes havia sido dito.",
+			"hash": "80fc325a830638c9e8a252fb86a94c74efcac1654825fc7e82750bdfb7548cfd",
+			"file": "res://assets/audio/voice/luke_002_shepherds__12_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Luke 2:20",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "luke_002_shepherds/12_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Oito dias depois, o menino recebe o nome Jesus (Lc 2:21). Essa parte fica fora desta experiência.",
+			"hash": "41f4b530694d4404005735b019b41fee6ddcd693309c8e8e2b7dff98e35c5980",
+			"file": "res://assets/audio/voice/luke_002_shepherds__12_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "luke_002_shepherds/13_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Os trechos foram tirados de Lucas 2; leia o capítulo inteiro numa Bíblia para conhecer o relato completo. As notas são do jogo. O texto não dá a data do nascimento, e o jogo não mostra ano. A luz, os três pastores e a casa são representação. O viajante, Tamir, Shai e o rebanho deles são criações do jogo e não fazem parte deste relato.",
+			"hash": "5d400ccab0930a71ffbfdd628c0bdfe0648a1a671582cf3e61f03e6c7ce5698d",
+			"file": "res://assets/audio/voice/luke_002_shepherds__13_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 24.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		}
+	]
+}

@@ -1,0 +1,704 @@
+{
+	"_comment": "Gerado por tools/factory.gd audio-manifest. Não edite text/line_id/hash à mão: mude o texto no jogo e gere de novo. emotion, pronunciation e target_seconds são do audio-producer.",
+	"episode": "ep_009_jose_na_casa_de_potifar",
+	"language": "pt-BR",
+	"generated": "2026-10-14",
+	"provider": "none",
+	"budget_approved": false,
+	"subtitles": "sempre: a caixa de diálogo mostra o texto de toda fala",
+	"total_characters": 4281,
+	"lines": [
+		{
+			"line_id": "ipi_talk/greet",
+			"speaker": "egypt_ipi",
+			"voice_profile": "egypt_ipi",
+			"kind": "fictional_dialogue",
+			"text": "Um estrangeiro, e a pé! Pare um pouco. Eu cuido deste portão: ninguém entra sem que o velho Ipi saiba.",
+			"hash": "de944d48cf55c01d2c836ca8d0a89c39562bcacf9f2c7893498ef16819f62e1a",
+			"file": "res://assets/audio/voice/ipi_talk__greet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ipi_talk/house",
+			"speaker": "egypt_ipi",
+			"voice_profile": "egypt_ipi",
+			"kind": "fictional_dialogue",
+			"text": "Esta casa é de um oficial do rei. A casa, os celeiros, o gado e os campos até o canal: tudo pertence a ele.",
+			"hash": "a14d50fa7395f9529de6a060ab72cf48db425b5734d2d01c47045ed6a6705071",
+			"file": "res://assets/audio/voice/ipi_talk__house.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ipi_talk/house_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Gênesis chama o rei do Egito de Faraó. Esta casa e o seu dono são criações do jogo: uma casa de um oficial egípcio, como aquela onde José serviu, não a casa de Potifar.)",
+			"hash": "a19f4e1b05e53bcefaddf25f0400db6b245e429ae05847c3f11b7010ef2a96f0",
+			"file": "res://assets/audio/voice/ipi_talk__house_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 12.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ipi_talk/work",
+			"speaker": "egypt_ipi",
+			"voice_profile": "egypt_ipi",
+			"kind": "fictional_dialogue",
+			"text": "Muita gente trabalha aqui: padeiros, tecelãs, lavradores, quem cuida do gado. Meryt guarda o depósito; Senbi está na eira, depois do muro.",
+			"hash": "dcfc946331bc62ea4604962073b5448388944673e3c76971487eb2e5e3a97809",
+			"file": "res://assets/audio/voice/ipi_talk__work.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ipi_talk/work2",
+			"speaker": "egypt_ipi",
+			"voice_profile": "egypt_ipi",
+			"kind": "fictional_dialogue",
+			"text": "Pode entrar e olhar, desde que não atrapalhe ninguém. O pátio fica logo depois do portão.",
+			"hash": "98ced04315f785af98b25c65cd62f5f20aa77bd69281772177f6ef8cd34d790d",
+			"file": "res://assets/audio/voice/ipi_talk__work2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ipi_talk/hub",
+			"speaker": "egypt_ipi",
+			"voice_profile": "egypt_ipi",
+			"kind": "fictional_dialogue",
+			"text": "Ainda por aqui, estrangeiro?",
+			"hash": "10e8a63de4b7e5251a2a59d213285adf3c75ab36d7e296c28650e109ef31e665",
+			"file": "res://assets/audio/voice/ipi_talk__hub.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 2.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ipi_talk/house_again",
+			"speaker": "egypt_ipi",
+			"voice_profile": "egypt_ipi",
+			"kind": "fictional_dialogue",
+			"text": "De um oficial do rei. Eu só cuido do portão; dos negócios da casa, sei pouco.",
+			"hash": "c063e6ec6e19219cc673618b6da5dabcbcaef30606b78f6ea24cb24fbaeccd78",
+			"file": "res://assets/audio/voice/ipi_talk__house_again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ipi_talk/bye",
+			"speaker": "egypt_ipi",
+			"voice_profile": "egypt_ipi",
+			"kind": "fictional_dialogue",
+			"text": "Vá em paz. E não deixe os gansos entrarem na cozinha.",
+			"hash": "cdf1d22d5ec91ef2199a56f676eddb3743584fadcf2389a18eb5f85b32a1dfcc",
+			"file": "res://assets/audio/voice/ipi_talk__bye.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "meryt_talk/greet",
+			"speaker": "egypt_meryt",
+			"voice_profile": "egypt_meryt",
+			"kind": "fictional_dialogue",
+			"text": "Ipi deixou você passar? Então pode olhar. Só não mexa nos jarros, por favor.",
+			"hash": "eba399e719bf840c815fd6ef591ef12ed52ad40a51de02b8bb323a4c03cfd6da",
+			"file": "res://assets/audio/voice/meryt_talk__greet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "meryt_talk/store",
+			"speaker": "egypt_meryt",
+			"voice_profile": "egypt_meryt",
+			"kind": "fictional_dialogue",
+			"text": "Eu cuido do depósito. Cada jarro tem tampa de barro com um selo: se o selo está inteiro, ninguém mexeu no que tem dentro.",
+			"hash": "076f65b76d4eb6d1d0f9bf701f2838f35a69f79ac8d307bee57f903d60379e4d",
+			"file": "res://assets/audio/voice/meryt_talk__store.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "meryt_talk/store2",
+			"speaker": "egypt_meryt",
+			"voice_profile": "egypt_meryt",
+			"kind": "fictional_dialogue",
+			"text": "O grão sai em rações, medido no hekat, a nossa medida de grão. O escriba anota o que entra e o que sai.",
+			"hash": "ef77b180045f2b37163dce4b7af66754b6e00c63e19159c0a44ca291b406ce87",
+			"file": "res://assets/audio/voice/meryt_talk__store2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "meryt_talk/store3",
+			"speaker": "egypt_meryt",
+			"voice_profile": "egypt_meryt",
+			"kind": "fictional_dialogue",
+			"text": "É tempo de colheita, e o grão novo está chegando. Por isso conto tudo duas vezes.",
+			"hash": "c3786dbd2c477f270391f58fb496009eae6c9491ce28671f175c8e4f73a4b00a",
+			"file": "res://assets/audio/voice/meryt_talk__store3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "meryt_talk/hub",
+			"speaker": "egypt_meryt",
+			"voice_profile": "egypt_meryt",
+			"kind": "fictional_dialogue",
+			"text": "Precisa de alguma coisa?",
+			"hash": "29c233823e83c1146c1a268878d77db37cdcb6ebfbb6177b361bfc259363dddf",
+			"file": "res://assets/audio/voice/meryt_talk__hub.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 1.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "meryt_talk/not_yet",
+			"speaker": "egypt_meryt",
+			"voice_profile": "egypt_meryt",
+			"kind": "fictional_dialogue",
+			"text": "A cevada de Senbi? Traga os três sacos de uma vez, que eu confiro e mando anotar.",
+			"hash": "54dc6fc9b46e246b8ba7f3770dabea7e9523cd5107060761a166a170086d6e53",
+			"file": "res://assets/audio/voice/meryt_talk__not_yet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "meryt_talk/delivery",
+			"speaker": "egypt_meryt",
+			"voice_profile": "egypt_meryt",
+			"kind": "fictional_dialogue",
+			"text": "Três sacos da eira de Senbi. Cheios e bem amarrados. Pode pôr ali, junto à parede.",
+			"hash": "57bf2e0da748489792d02c47a16f8efaac29c9ab6c9d92cc95c86d976487528a",
+			"file": "res://assets/audio/voice/meryt_talk__delivery.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "meryt_talk/delivery2",
+			"speaker": "egypt_meryt",
+			"voice_profile": "egypt_meryt",
+			"kind": "fictional_dialogue",
+			"text": "Três sacos de cevada, entregues hoje. Vou mandar anotar. Avise Senbi que chegaram.",
+			"hash": "54e8aea5dfc93b5cdb24441bc47c08458d7006f1a2fac0405d4ea0aac3cfca6e",
+			"file": "res://assets/audio/voice/meryt_talk__delivery2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "meryt_talk/bye",
+			"speaker": "egypt_meryt",
+			"voice_profile": "egypt_meryt",
+			"kind": "fictional_dialogue",
+			"text": "Vá em paz. E feche a porta do depósito se passar por ela.",
+			"hash": "316a321a01a9050520324dea452f69e6c6a285afe10f86ca3eb1689ffc87cabe",
+			"file": "res://assets/audio/voice/meryt_talk__bye.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "senbi_talk/greet",
+			"speaker": "egypt_senbi",
+			"voice_profile": "egypt_senbi",
+			"kind": "fictional_dialogue",
+			"text": "Paz, estrangeiro. Chegou em tempo de colheita: aqui ninguém fica parado.",
+			"hash": "ce1625a70305db384ebb18d50b09f318f4a3612d9d895a25dd9d5309a77949e8",
+			"file": "res://assets/audio/voice/senbi_talk__greet.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "senbi_talk/seasons",
+			"speaker": "egypt_senbi",
+			"voice_profile": "egypt_senbi",
+			"kind": "fictional_dialogue",
+			"text": "O ano aqui tem três tempos: a cheia, quando o rio cobre os campos; a semeadura; e a colheita, quando o sol seca a cevada.",
+			"hash": "90bdeb01fc2bb4ae7387342791d3306cb67146f8e1ecbebbb2f349800bef60ce",
+			"file": "res://assets/audio/voice/senbi_talk__seasons.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "senbi_talk/seasons2",
+			"speaker": "egypt_senbi",
+			"voice_profile": "egypt_senbi",
+			"kind": "fictional_dialogue",
+			"text": "A água deixa a terra escura e boa. Lá longe, onde ela não chega, só há areia.",
+			"hash": "04803f8d9fea3797cb905df4f80d79fa1530cfe191d06de2590f387646f43d34",
+			"file": "res://assets/audio/voice/senbi_talk__seasons2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "senbi_talk/hub",
+			"speaker": "egypt_senbi",
+			"voice_profile": "egypt_senbi",
+			"kind": "fictional_dialogue",
+			"text": "Quer saber mais alguma coisa?",
+			"hash": "5e4e4bfddfff132aac0dea1744d027ea254abfed9d48c0e04def45bf8931b254",
+			"file": "res://assets/audio/voice/senbi_talk__hub.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 2.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "senbi_talk/crops",
+			"speaker": "egypt_senbi",
+			"voice_profile": "egypt_senbi",
+			"kind": "fictional_dialogue",
+			"text": "Cevada e trigo, para o pão e a cerveja. E linho, para os panos: a gente arranca o linho com raiz e deixa secar em feixes.",
+			"hash": "91ae2d63c0dd2e21ecba5c390ce2d15d87b38e4bbe9d7196e76e1015122462d9",
+			"file": "res://assets/audio/voice/senbi_talk__crops.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "senbi_talk/request",
+			"speaker": "egypt_senbi",
+			"voice_profile": "egypt_senbi",
+			"kind": "fictional_dialogue",
+			"text": "Preciso, sim. Debulhei a cevada e enchi três sacos, mas ainda tenho a palha para juntar.",
+			"hash": "8b784c60fb39281c84e858a7bc60fb2a101fba04e2a660e042846c34e28921dd",
+			"file": "res://assets/audio/voice/senbi_talk__request.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "senbi_talk/request2",
+			"speaker": "egypt_senbi",
+			"voice_profile": "egypt_senbi",
+			"kind": "fictional_dialogue",
+			"text": "Leve os sacos até Meryt, no depósito, antes do fim do dia. Ela confere e manda anotar. Estão aqui, em volta da eira.",
+			"hash": "c022ec4269ad8f4973935f5ac82a38612239ce265a680a23cd628d8440b285bf",
+			"file": "res://assets/audio/voice/senbi_talk__request2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "senbi_talk/remind",
+			"speaker": "egypt_senbi",
+			"voice_profile": "egypt_senbi",
+			"kind": "fictional_dialogue",
+			"text": "Os três sacos estão em volta da eira. Meryt fica na porta do depósito, a leste do pátio.",
+			"hash": "a17d4936057d3ef5a40edec120bbb439ce64874136735a9a8b57934fcbbfdf46",
+			"file": "res://assets/audio/voice/senbi_talk__remind.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "senbi_talk/thanks",
+			"speaker": "egypt_senbi",
+			"voice_profile": "egypt_senbi",
+			"kind": "fictional_dialogue",
+			"text": "Meryt recebeu os três? Então a cevada está guardada antes de escurecer.",
+			"hash": "b71aba3d7c19db3d1888a506ce80ea1213be76c77ba9da2f6652d54086b61b4e",
+			"file": "res://assets/audio/voice/senbi_talk__thanks.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "senbi_talk/thanks2",
+			"speaker": "egypt_senbi",
+			"voice_profile": "egypt_senbi",
+			"kind": "fictional_dialogue",
+			"text": "Obrigado, estrangeiro. Amanhã cedo é a vez do linho.",
+			"hash": "5155ffc1335a3c42b462d2a0600e00fa4fe9c3e65096e29aa38b23f9d8e9c343",
+			"file": "res://assets/audio/voice/senbi_talk__thanks2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "senbi_talk/again",
+			"speaker": "egypt_senbi",
+			"voice_profile": "egypt_senbi",
+			"kind": "fictional_dialogue",
+			"text": "Ainda há água no fundo do canal. Dá para regar a horta mais alguns dias, até a cheia voltar.",
+			"hash": "82a306d4d22bfd1d80442673d6fb51b9a4b45bc94e14b1880f76bd5ccd609f44",
+			"file": "res://assets/audio/voice/senbi_talk__again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "senbi_talk/bye",
+			"speaker": "egypt_senbi",
+			"voice_profile": "egypt_senbi",
+			"kind": "fictional_dialogue",
+			"text": "Vá em paz. Cuidado com os diques, que a terra cede.",
+			"hash": "56640247c917845d3ca7dacb2e080c97913b9f5d39c00d61769f1866543a6bfe",
+			"file": "res://assets/audio/voice/senbi_talk__bye.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "gen_037_caravan/1_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Eles se sentaram para comer pão, e levantaram os olhos e olharam, e viram uma caravana de ismaelitas vindo de Gileade, com seus camelos carregando especiarias, bálsamo e mirra, descendo para levá-los ao Egito.",
+			"hash": "93d194c141dd2f4a35d8729229e78ae3233300fd9be761aafe044041c8fbdfb0",
+			"file": "res://assets/audio/voice/gen_037_caravan__1_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 15.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Gen 37:25",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "gen_037_caravan/1_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Gileade fica a leste do rio Jordão. Resinas perfumadas como estas eram levadas ao Egito; as plantas exatas são debatidas. O texto não diz quantas pessoas nem quantos animais havia na caravana.",
+			"hash": "b6a623c673d21d904700eeb35b82c2b5d56d8865ae48cba67a3987cd7041d4e5",
+			"file": "res://assets/audio/voice/gen_037_caravan__1_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 13.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "gen_037_caravan/2_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Judá disse a seus irmãos: “Que proveito haverá se matarmos nosso irmão e ocultarmos o seu sangue? Venham, e vamos vendê-lo aos ismaelitas, e não deixemos que a nossa mão esteja sobre ele; pois ele é nosso irmão, nossa carne.” Seus irmãos o ouviram.",
+			"hash": "d7a0f8c6cca8443136e42fe18811567d21bc803d169914badc0c5c9e6ff4539a",
+			"file": "res://assets/audio/voice/gen_037_caravan__2_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 17.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Gen 37:26-27",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "gen_037_caravan/2_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Judá é um dos irmãos de José. O texto registra a proposta dele e o acordo dos irmãos, sem comentário do narrador.",
+			"hash": "61b50fed389fd8c3078f12800ebdae0faf63720f35d12647b05c014dec5f1655",
+			"file": "res://assets/audio/voice/gen_037_caravan__2_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "gen_037_caravan/3_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Passavam por ali mercadores midianitas, e eles puxaram e tiraram José da cisterna, e venderam José aos ismaelitas por vinte peças de prata. Os mercadores levaram José para o Egito.",
+			"hash": "e096e9fd48cb9280095b12ad339209411d204afd76917fb03fdeea07ed5620fe",
+			"file": "res://assets/audio/voice/gen_037_caravan__3_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 13.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Gen 37:28",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "gen_037_caravan/3_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "A prata era pesada, não contada em moedas: moedas cunhadas só surgem muitos séculos depois. O versículo fala de midianitas e de ismaelitas e não deixa claro quem tirou José da cisterna. O jogo não decide.",
+			"hash": "ba177030b0874ec96274a2fc36bf68e16348fcae77d9056877b678be20157b37",
+			"file": "res://assets/audio/voice/gen_037_caravan__3_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 14.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "gen_037_caravan/4_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Os midianitas o venderam no Egito a Potifar, um oficial do Faraó, o capitão da guarda.",
+			"hash": "f29e0933c927d6dc479c485be41f8ba837e0bcc75f8620ed62cce556d5b3f014",
+			"file": "res://assets/audio/voice/gen_037_caravan__4_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Gen 37:36",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "gen_037_caravan/4_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Potifar volta a aparecer em Gênesis 39. O texto não diz o nome do Faraó nem em que cidade José foi vendido.",
+			"hash": "c7eed33613a45f6cf2c1021d3ac708063f1023b61558b50afe299c1b4604de7f",
+			"file": "res://assets/audio/voice/gen_037_caravan__4_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "gen_037_caravan/5_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Esta apresentação mostra Gênesis 37:25-28 e 37:36. Resumo do jogo, sem citação: antes, os irmãos planejam matar José, e Rúben os convence a pô-lo numa cisterna (Gn 37:18-24); entre os versículos 28 e 36, Rúben volta e não o encontra, e Jacó, ao reconhecer a túnica de José que os filhos levam a seu pai, chora o filho como morto (Gn 37:29-35). Leia o capítulo inteiro numa Bíblia. As notas são do jogo. O viajante, Malik, Rafi, Talia e Oren são criações do jogo e não fazem parte deste relato.",
+			"hash": "8f52d5a9a92ddfd423c021439963285ce42f8649f2ef1224fe410c0e377956df",
+			"file": "res://assets/audio/voice/gen_037_caravan__5_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 35.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		}
+	]
+}

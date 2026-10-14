@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/fold_wall_v.png" id="1_ui6rg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3lwl"]
+size = Vector2(8, 16)
+
+[node name="FoldWallV" type="StaticBody2D" unique_id=1685179251]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=283984907]
+texture = ExtResource("1_ui6rg")
+centered = false
+offset = Vector2(-8, -25)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1493554477]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_m3lwl")

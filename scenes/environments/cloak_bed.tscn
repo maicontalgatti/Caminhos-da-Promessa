@@ -1,0 +1,11 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/cloak_bed.png" id="1_ir4aa"]
+
+[node name="CloakBed" type="StaticBody2D" unique_id=956980755]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2119440526]
+texture = ExtResource("1_ir4aa")
+centered = false
+offset = Vector2(-13, -9)

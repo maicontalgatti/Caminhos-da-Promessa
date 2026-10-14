@@ -1,0 +1,91 @@
+{
+	"_comment": "Experiência \"José no Egito\" (ep_009). Integrado de production/episodes/ep_009_jose_na_casa_de_potifar/quest.proposal.json; aguarda revisão humana.",
+	"quests": [
+		{
+			"id": "egypt_granary_sacks",
+			"title": "Sacos para o celeiro",
+			"category": "side",
+			"description": "Senbi precisa levar a cevada da eira ao depósito antes do fim do dia. Ajude e entregue os sacos a Meryt.",
+			"type": "assist",
+			"classification": "plausible_fiction",
+			"classification_note": "Senbi, Meryt e a tarefa são criados para o jogo, numa casa fictícia. Gênesis 39:2 é citado só como contexto (uma casa egípcia onde José serviu); a ajuda do viajante não tem relação com José nem com a bênção de Gênesis 39:5.",
+			"region": "egypt_house",
+			"place_id": "egypt",
+			"era_id": "patriarchs",
+			"references": ["Gen 39:2"],
+			"theme": "Trabalho de colheita numa grande casa egípcia",
+			"people": [],
+			"fictional_characters": ["egypt_senbi", "egypt_meryt"],
+			"intro": "Na eira, Senbi terminou de debulhar a cevada. Os sacos precisam chegar ao depósito.",
+			"start": {"event": "custom", "id": "egypt_senbi_harvest"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "talk_senbi",
+					"type": "talk_to_npc",
+					"text": "Ouça o pedido de Senbi, na eira.",
+					"complete_on": {"event": "custom", "id": "egypt_senbi_harvest"},
+					"targets": [{"type": "npc", "id": "egypt_senbi"}],
+					"hints": [
+						"O lavrador parecia apressado.",
+						"Senbi está na eira, a leste do muro, perto dos celeiros.",
+						"Converse com Senbi, na eira a leste."
+					],
+					"log": "Senbi pediu ajuda para levar a cevada da eira ao depósito."
+				},
+				{
+					"id": "gather_sacks",
+					"type": "collect_item",
+					"text": "Recolha 3 sacos de cevada na eira.",
+					"complete_on": {"event": "inventory", "id": "barley_sack", "count": 3},
+					"targets": [{"type": "pickup", "id": "eh_sack_1"}, {"type": "pickup", "id": "eh_sack_2"}, {"type": "pickup", "id": "eh_sack_3"}],
+					"hints": [
+						"A cevada já está ensacada.",
+						"Os sacos estão em volta da eira.",
+						"Pegue os três sacos marcados em volta da eira."
+					],
+					"log": "Você recolheu os três sacos de cevada."
+				},
+				{
+					"id": "deliver_meryt",
+					"type": "deliver_item",
+					"text": "Entregue os sacos a Meryt, no depósito.",
+					"complete_on": {"event": "item_delivered", "id": "barley_sack"},
+					"targets": [{"type": "npc", "id": "egypt_meryt"}],
+					"hints": [
+						"Quem guarda o depósito confere o que entra.",
+						"Meryt fica na porta do depósito, a leste do pátio.",
+						"Converse com Meryt, na porta do depósito, com os sacos na bolsa."
+					],
+					"log": "Meryt conferiu os sacos e anotou a entrega."
+				},
+				{
+					"id": "back_to_senbi",
+					"type": "talk_to_npc",
+					"text": "Conte a Senbi que os sacos chegaram.",
+					"complete_on": {"event": "custom", "id": "egypt_senbi_thanks"},
+					"targets": [{"type": "npc", "id": "egypt_senbi"}],
+					"hints": [
+						"Senbi esperava notícias.",
+						"Senbi continua na eira.",
+						"Converse com Senbi."
+					],
+					"log": "Senbi agradeceu: a cevada estava guardada antes do fim do dia."
+				}
+			],
+			"rewards": {"flags": ["helped_egypt_harvest"]},
+			"discoveries": ["nile_agriculture"],
+			"completion": {
+				"title": "Cevada guardada",
+				"references": [],
+				"summary": [
+					"Grão era medido, ensacado e anotado antes de entrar no depósito de uma grande casa egípcia.",
+					"Senbi e Meryt são criações do jogo; a sua ajuda muda só a história deles."
+				],
+				"unlock": [],
+				"next": "No diário, a descoberta \"O campo junto ao Nilo\" fala das estações e das colheitas no Egito."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Ficção identificada, sem referência bíblica. Item novo barley_sack (categoria quest). Aguarda revisor histórico e revisão humana."}
+		}
+	]
+}

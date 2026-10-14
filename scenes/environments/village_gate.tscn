@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/village_gate.png" id="1_3mmx8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyyma"]
+size = Vector2(60, 12)
+
+[node name="VillageGate" type="StaticBody2D" unique_id=209627964]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=739284763]
+texture = ExtResource("1_3mmx8")
+centered = false
+offset = Vector2(-32, -55)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1612978581]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_vyyma")

@@ -1,0 +1,123 @@
+{
+	"_comment": "Experiência \"A travessia do mar\" (ep_016). Integrado de production/episodes/ep_016_a_travessia_do_mar/quest.proposal.json; alvos de NPC usam o id do personagem (as variantes por estado são NPCs da região). Aguarda revisão humana.",
+	"quests": [
+		{
+			"id": "exodus_sea_crossing",
+			"title": "A travessia do mar",
+			"category": "main",
+			"description": "Passe uma tarde num acampamento junto ao mar, ajude as famílias nas tarefas do dia e, à noite, acompanhe de longe o que Êxodo 14 relata.",
+			"type": "story_witness",
+			"classification": "plausible_fiction",
+			"classification_note": "O acampamento, as famílias (Tzvi, Shira, Beni, Dror, Nava, Meret) e as tarefas são criados para o jogo. O relato de Êxodo 14 aparece numa cena dirigida, que o jogador só assiste, com o texto da tradução carregada; o viajante não guia, não causa nem muda nada.",
+			"region": "sea_camp",
+			"place_id": "exodus_sea",
+			"era_id": "exodus",
+			"references": ["Exod 14:1-31", "Exod 13:21-22", "Exod 12:37-38"],
+			"theme": "Libertação e travessia: medo, espera e confiança",
+			"people": ["moses"],
+			"fictional_characters": ["sea_tzvi", "sea_shira", "sea_beni", "sea_dror", "sea_nava", "sea_meret"],
+			"intro": "Êxodo 14 conta que o povo de Israel acampou junto ao mar depois de sair do Egito. O Mapa das Escrituras leva você a uma tarde nesse acampamento, gerações depois dos dias de José.",
+			"start": {"event": "experience_started", "id": "exodus_sea"},
+			"prerequisites": {"quests_completed": ["joseph_potiphar_house"], "flags": []},
+			"objectives": [
+				{
+					"id": "shore_encampment",
+					"type": "reach_location",
+					"text": "Explore o acampamento junto ao mar.",
+					"detail": "Tendas, rebanhos e famílias até onde a vista alcança.",
+					"complete_on": {"event": "location_reached", "id": "shore_encampment"},
+					"targets": [{"type": "area", "id": "shore_encampment"}],
+					"hints": [
+						"Muita gente parou aqui antes do anoitecer.",
+						"As tendas se concentram ao redor de uma fogueira no meio do acampamento.",
+						"Da chegada, siga entre as tendas até a fogueira grande, no meio do acampamento."
+					],
+					"log": "Você chegou a um acampamento junto ao mar: tendas, rebanhos e famílias até onde a vista alcança."
+				},
+				{
+					"id": "camp_elder",
+					"type": "talk_to_npc",
+					"text": "Converse com Tzvi, o mais velho junto à fogueira.",
+					"detail": "Quem viveu mais sabe de onde o povo veio.",
+					"complete_on": {"event": "custom", "id": "sea_tzvi_context"},
+					"targets": [{"type": "npc", "id": "sea_tzvi"}],
+					"hints": [
+						"Os mais velhos costumam saber de onde o povo veio.",
+						"Um homem idoso está sentado junto à fogueira central.",
+						"Converse com Tzvi, ao lado da fogueira no centro do acampamento."
+					],
+					"log": "Tzvi contou que saíram do Egito e que uma coluna de nuvem vai adiante do povo."
+				},
+				{
+					"id": "bread_fire",
+					"type": "give_item",
+					"text": "Ajude Shira com o fogo do pão.",
+					"detail": "Ainda é pão sem fermento, como o da saída, e há pouco com que fazer fogo.",
+					"complete_on": {"event": "custom", "id": "sea_shira_bread"},
+					"targets": [{"type": "npc", "id": "sea_shira"}, {"type": "pickup", "id": "brushwood_1"}],
+					"hints": [
+						"Há massa para assar e pouco com que fazer fogo.",
+						"Shira, junto à pedra de assar, precisa de galhos secos; há arbustos secos pelo acampamento.",
+						"Pegue dois feixes de galhos secos e leve a Shira, na fogueira pequena com a pedra de assar."
+					],
+					"log": "Você levou galhos a Shira, e o pão sem fermento foi assado na pedra quente."
+				},
+				{
+					"id": "watch_dust",
+					"type": "discover_information",
+					"text": "Suba a elevação junto às cristas e observe o horizonte.",
+					"detail": "Alguém viu algo estranho do lado de onde o povo veio.",
+					"complete_on": {"event": "discovery", "id": "sea_pursuit"},
+					"targets": [{"type": "examinable", "id": "sea_dust_view"}],
+					"hints": [
+						"Alguém comentou ter visto algo estranho do lado do Egito.",
+						"Há uma elevação junto às cristas, na borda do acampamento oposta ao mar, de onde se vê o caminho por onde o povo veio.",
+						"Suba a elevação junto às cristas e examine a rocha para observar o horizonte."
+					],
+					"log": "Do alto, você viu uma faixa de poeira no horizonte, vindo do lado do Egito."
+				},
+				{
+					"id": "sea_parted",
+					"type": "observe_scene",
+					"text": "Ao anoitecer, junte-se às famílias na beira da água.",
+					"detail": "Fale com Tzvi perto da água. O que acontece depois você apenas acompanha.",
+					"complete_on": {"event": "scene_finished", "id": "exodus_sea_crossing"},
+					"targets": [{"type": "npc", "id": "sea_tzvi"}],
+					"hints": [
+						"As famílias não ficam nas tendas esta noite.",
+						"Tzvi foi para a beira da água, na frente do acampamento.",
+						"Converse com Tzvi na beira da água e escolha ficar com as famílias."
+					],
+					"log": "Naquela noite, você acompanhou de longe o que Êxodo 14:19-22 relata."
+				},
+				{
+					"id": "dawn_shore",
+					"type": "talk_to_npc",
+					"text": "Ao amanhecer, procure a família de Shira.",
+					"detail": "Do outro lado do mar, as famílias recomeçam o dia.",
+					"complete_on": {"event": "custom", "id": "sea_shira_dawn"},
+					"targets": [{"type": "npc", "id": "sea_shira"}],
+					"hints": [
+						"Do outro lado, as famílias recomeçam o dia.",
+						"Shira e Beni estão perto dos abrigos novos, ao lado da praia.",
+						"Converse com Shira, entre os abrigos novos, perto de onde você amanheceu."
+					],
+					"log": "Ao amanhecer, do outro lado do mar, as famílias olhavam a água em silêncio. Ao longe, tamborins."
+				}
+			],
+			"discoveries": ["exodus_departure", "pillar_cloud_fire", "joseph_bones", "unleavened_bread_road", "sea_pursuit", "sea_crossing", "fear_and_trust", "miriam_song"],
+			"completion": {
+				"title": "Do outro lado do mar",
+				"references": ["Exod 14:21-22", "Exod 14:27-28", "Exod 14:30-31"],
+				"summary": [
+					"Êxodo 14:21-22 relata que o SENHOR fez o mar recuar com um forte vento oriental durante a noite toda e que Israel passou em terra seca, com as águas como muro dos dois lados.",
+					"O texto também relata que as águas voltaram ao amanhecer sobre o exército que tinha entrado atrás (Êxodo 14:27-28) e que o povo temeu ao SENHOR e creu (Êxodo 14:30-31).",
+					"As famílias e o acampamento são criações do jogo. O lugar exato do mar e a data da travessia são debatidos."
+				],
+				"unlock": [],
+				"next": "A caminhada pelo deserto continua a partir de Êxodo 15:22; essa parte não faz parte desta experiência. No Mapa das Escrituras (M), a próxima experiência liberada é \"Rute em Belém\"."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta do agente de IA com base em research_biblical.md, research_historical.md e four_experiences_decisions.md. Exige importação BPM dos versículos citados além de 14:21-22 e revisão humana (ver design.md §13)."}
+		}
+	]
+}

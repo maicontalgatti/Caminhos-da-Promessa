@@ -176,6 +176,23 @@
 				"shared_again": {"speaker": "oren", "text": "O odre não vaza nem uma gota. Que bom negócio você me fez, e sem pedir nada.", "next": "end"},
 				"again": {"speaker": "oren", "text": "Sem água, ovelha não anda. E pastor também não.", "next": "end"}
 			}
+		},
+		{
+			"id": "dothan_ridge_view",
+			"start": "view",
+			"start_if": [
+				{"objective": "joseph_caravan_watch/watch_caravan", "node": "watch"},
+				{"objective": "joseph_caravan_watch/read_caravan_story", "node": "read"},
+				{"quest_completed": "joseph_caravan_watch", "node": "after"}
+			],
+			"nodes": {
+				"view": {"speaker": "narrator", "text": "Do alto da encosta se vê o vale inteiro: os pastos, as tendas dos pastores e, na borda sul, uma estrada que segue para o oeste.", "next": "end"},
+				"watch": {"speaker": "narrator", "text": "Do alto da encosta se vê o vale inteiro. Lá embaixo, na borda sul, alguma coisa se move na estrada.", "next": "watch2"},
+				"watch2": {"speaker": "narrator", "text": "Você fica onde está e observa de longe. (Esc pula a cena.)", "next": "end", "action": {"scene": "joseph_caravan_departs"}},
+				"read": {"speaker": "narrator", "text": "A caravana sumiu no horizonte. Você abre o diário de viagem nos trechos de Gênesis 37 sobre o que aconteceu em Dotã.", "next": "end", "action": {"presentation": "gen_037_caravan"}},
+				"after": {"speaker": "narrator", "text": "A estrada da borda sul está vazia. Só o vento levanta um pouco de poeira.", "choices": [{"text": "Reler no diário o relato de Gênesis 37.", "next": "reread"}, {"text": "Descer da encosta.", "next": "end"}]},
+				"reread": {"speaker": "narrator", "text": "Você abre de novo o diário de viagem em Gênesis 37.", "next": "end", "action": {"presentation": "gen_037_caravan"}}
+			}
 		}
 	]
 }

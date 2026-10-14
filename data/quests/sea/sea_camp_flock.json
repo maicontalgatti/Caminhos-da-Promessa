@@ -1,0 +1,68 @@
+{
+	"_comment": "Experiência \"A travessia do mar\" (ep_016). Integrado de production/episodes/ep_016_a_travessia_do_mar/quest.proposal.json; alvos de NPC usam o id do personagem (as variantes por estado são NPCs da região). Aguarda revisão humana.",
+	"quests": [
+		{
+			"id": "sea_camp_flock",
+			"title": "Animais desgarrados",
+			"category": "side",
+			"description": "O vento espalhou parte do rebanho de Dror. Encontre os animais antes do anoitecer.",
+			"type": "assist",
+			"classification": "plausible_fiction",
+			"classification_note": "Dror e seu rebanho são criados para o jogo. Êxodo 12:38 registra que rebanhos saíram com o povo; a tarefa não tem relação com o resultado da travessia.",
+			"region": "sea_camp",
+			"place_id": "exodus_sea",
+			"era_id": "exodus",
+			"references": ["Exod 12:38"],
+			"theme": "Rebanhos na saída do Egito",
+			"people": [],
+			"fictional_characters": ["sea_dror"],
+			"intro": "Dror cuida de ovelhas e cabras. Três animais se afastaram do rebanho com o vento da tarde.",
+			"start": {"event": "custom", "id": "sea_dror_flock"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "find_strays",
+					"type": "wait_for_event",
+					"text": "Encontre os três animais que se afastaram do rebanho.",
+					"detail": "Siga os balidos pelo acampamento.",
+					"complete_on": {"event": "condition", "id": "sea_strays_found", "condition": {"any": [{"all": [{"flag": "sea_stray_1"}, {"flag": "sea_stray_2"}, {"flag": "sea_stray_3"}]}, {"event": "scene_finished", "id": "exodus_sea_crossing"}]}},
+					"targets": [{"type": "examinable", "id": "sea_stray_1"}, {"type": "examinable", "id": "sea_stray_2"}, {"type": "examinable", "id": "sea_stray_3"}],
+					"hints": [
+						"Ovelhas fogem do vento para lugares abrigados.",
+						"Escute perto das pedras grandes, atrás da crista junto à elevação e entre os juncos da beira.",
+						"Procure os brilhos: nas pedras grandes, atrás da crista junto à elevação e nos juncos perto das tamareiras."
+					],
+					"log": "Os animais desgarrados voltaram ao rebanho de Dror."
+				},
+				{
+					"id": "return_dror",
+					"type": "talk_to_npc",
+					"text": "Conte a Dror.",
+					"complete_on": {"event": "custom", "id": "sea_dror_after"},
+					"targets": [{"type": "npc", "id": "sea_dror"}],
+					"hints": [
+						"Dror quer saber dos animais.",
+						"Dror fica junto ao rebanho, entre a fogueira central e as tamareiras.",
+						"Converse com Dror, junto ao rebanho."
+					],
+					"log": "Você falou com Dror sobre os animais."
+				}
+			],
+			"discoveries": [],
+			"completion": {
+				"title": "Rebanho reunido",
+				"references": ["Exod 12:38"],
+				"summary": [
+					"Dror e seu rebanho são criações do jogo."
+				],
+				"variants": [
+					{"if": {"all": [{"flag": "sea_stray_1"}, {"flag": "sea_stray_2"}, {"flag": "sea_stray_3"}]}, "summary": ["Você encontrou os três animais antes do anoitecer, e Dror os juntou ao rebanho.", "Dror e seu rebanho são criações do jogo."]},
+					{"if": {"event": "scene_finished", "id": "exodus_sea_crossing"}, "summary": ["Na pressa da noite, vizinhos juntaram os animais que faltavam ao rebanho de Dror.", "Dror e seu rebanho são criações do jogo."]}
+				],
+				"unlock": [],
+				"next": ""
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Ficção identificada. O desfecho automático no amanhecer evita trava (a margem do acampamento fica inacessível depois da cena). Aguarda revisão humana."}
+		}
+	]
+}

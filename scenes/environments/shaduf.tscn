@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/shaduf.png" id="1_liqw7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhtl4"]
+size = Vector2(6, 4)
+
+[node name="Shaduf" type="StaticBody2D" unique_id=1017647803]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=868417434]
+texture = ExtResource("1_liqw7")
+centered = false
+offset = Vector2(-12, -50)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=883403609]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_qhtl4")

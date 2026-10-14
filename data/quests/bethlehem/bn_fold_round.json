@@ -1,0 +1,66 @@
+{
+	"_comment": "Experiência \"Os pastores de Belém\" (ep_048). Integrado de production/episodes/ep_048_o_nascimento_de_jesus/quest.proposal.json; aguarda revisão humana.",
+	"quests": [
+		{
+			"id": "bn_fold_round",
+			"title": "A ronda do aprisco",
+			"category": "side",
+			"description": "Antes de dormir, Shai dá a volta no muro do aprisco. Ajude-o a conferir a pedra solta, os espinhos e o barulho nas rochas.",
+			"type": "assist",
+			"classification": "plausible_fiction",
+			"classification_note": "Shai, o aprisco e a ronda são criados para o jogo. Muros de pedra seca com galhos espinhosos, fogo e vigília contra predadores são contexto histórico do pastoreio na região; a lembrança de Davi é referência bíblica.",
+			"region": "bethlehem_night",
+			"place_id": "bethlehem",
+			"era_id": "roman_judea",
+			"references": ["1Sam 16:11", "1Sam 17:15", "1Sam 17:34-35"],
+			"theme": "A vigília do rebanho à noite",
+			"people": ["david"],
+			"fictional_characters": ["bn_shai", "bn_tamir"],
+			"intro": "Com o fogo aceso, Shai pega o cajado para a última volta no aprisco.",
+			"start": {"event": "custom", "id": "bn_shai_round"},
+			"prerequisites": {"quests_completed": [], "flags": []},
+			"objectives": [
+				{
+					"id": "walk_round",
+					"type": "wait_for_event",
+					"text": "Dê a volta no aprisco e confira os três pontos que Shai indicou.",
+					"detail": "Uma brecha no muro, espinhos caídos e um barulho nas rochas.",
+					"complete_on": {"event": "condition", "id": "bn_round_checked", "condition": {"all": [{"flag": "bn_round_gap"}, {"flag": "bn_round_thorns"}, {"flag": "bn_round_noise"}]}},
+					"targets": [{"type": "examinable", "id": "bn_round_gap"}, {"type": "examinable", "id": "bn_round_thorns"}, {"type": "examinable", "id": "bn_round_noise"}],
+					"hints": [
+						"Um muro baixo só protege se não tiver brechas.",
+						"Shai falou do muro do lado do posto de vigia, do outro lado do muro e das rochas encosta abaixo.",
+						"Examine a pedra solta (muro do lado do posto), os galhos caídos (outro lado do muro) e as rochas encosta abaixo."
+					],
+					"log": "Você recolocou uma pedra solta, repôs galhos espinhosos no muro e viu um chacal se afastar do fogo."
+				},
+				{
+					"id": "report_shai",
+					"type": "talk_to_npc",
+					"text": "Conte a Shai o que encontrou.",
+					"complete_on": {"event": "custom", "id": "bn_shai_round_done"},
+					"targets": [{"type": "npc", "id": "bn_shai"}],
+					"hints": [
+						"Shai espera notícias da ronda.",
+						"Shai está junto ao muro do aprisco, do lado oposto ao posto de vigia.",
+						"Converse com Shai, no muro do aprisco, do lado oposto ao posto de vigia."
+					],
+					"log": "Shai agradeceu e lembrou que, segundo as Escrituras, Davi também pastoreou ovelhas em Belém e as defendia."
+				}
+			],
+			"rewards": {"flags": ["helped_fold_round"]},
+			"discoveries": ["david_shepherd_bethlehem"],
+			"completion": {
+				"title": "O muro conferido",
+				"references": ["1Sam 17:34-35"],
+				"summary": [
+					"Apriscos de pedra seca com galhos espinhosos no topo e uma só abertura protegiam o rebanho à noite; o fogo e a vigília afastavam ladrões e predadores.",
+					"1 Samuel 16:11 e 17:15 contam que Davi cuidava das ovelhas da família em Belém, e em 17:34-35 ele conta a Saul como defendia o rebanho. Shai e a ronda são criações do jogo."
+				],
+				"unlock": [],
+				"next": "No diário, a descoberta \"Davi, pastor em Belém\" liga o pastoreio de Belém à \"cidade de Davi\" de Lucas 2:4."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta de design (IA). 1Sam 16 e 17 estão em verse_counts.json. Aguarda roteirista e revisão humana."}
+		}
+	]
+}

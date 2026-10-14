@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/grain_heap.png" id="1_u8ic6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bo13"]
+size = Vector2(30, 6)
+
+[node name="GrainHeap" type="StaticBody2D" unique_id=1221353302]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2127534396]
+texture = ExtResource("1_u8ic6")
+centered = false
+offset = Vector2(-17, -15)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=479030510]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_5bo13")

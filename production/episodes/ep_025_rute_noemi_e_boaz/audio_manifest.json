@@ -1,0 +1,1120 @@
+{
+	"_comment": "Gerado por tools/factory.gd audio-manifest. Não edite text/line_id/hash à mão: mude o texto no jogo e gere de novo. emotion, pronunciation e target_seconds são do audio-producer.",
+	"episode": "ep_025_rute_noemi_e_boaz",
+	"language": "pt-BR",
+	"generated": "2026-10-14",
+	"provider": "none",
+	"budget_approved": false,
+	"subtitles": "sempre: a caixa de diálogo mostra o texto de toda fala",
+	"total_characters": 9805,
+	"lines": [
+		{
+			"line_id": "bf_ilan_talk/welcome",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "Paz, viajante! Chegou em boa hora: a cevada amadureceu, e começamos a ceifar hoje cedo.",
+			"hash": "bb78fb06f5709c999f1a1a2ce8b61577ed35539efa2fec847585c7c0029b5c83",
+			"file": "res://assets/audio/voice/bf_ilan_talk__welcome.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/welcome2",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "Primeiro vem a cevada; o trigo ainda precisa de umas semanas de sol. Até lá, todo braço ajuda.",
+			"hash": "cd1e5c1f0d5db6b36361da145283ca079cc5f43a9439cb4485bf44b9b6396be5",
+			"file": "res://assets/audio/voice/bf_ilan_talk__welcome2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/news",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "E a cidade anda agitada. Noemi voltou de Moabe depois de anos fora, e trouxe a nora, uma moabita. Não se fala de outra coisa no poço.",
+			"hash": "c93a5992244b8c359afbe7a4518a283112ccb6636167ce7ef1c39edb7a1f47ef",
+			"file": "res://assets/audio/voice/bf_ilan_talk__news.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/news_ref",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "(Rute 1:19-22 conta a chegada de Noemi e Rute a Belém, no começo da colheita da cevada. O texto está no diário.)",
+			"hash": "428d6702c03d9b7decd2a5727533f0b51c9d87e5bebbe30ef6dc0f1729a8681f",
+			"file": "res://assets/audio/voice/bf_ilan_talk__news_ref.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/request",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "Se quiser ajudar, junte os feixes amarrados nas fileiras já ceifadas e traga para mim. Quatro já fazem diferença.",
+			"hash": "37ce677905ab3f44a5795b425764f36541a5b86060f5fe3037466e107a9bde7c",
+			"file": "res://assets/audio/voice/bf_ilan_talk__request.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/request2",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "Lá embaixo, no canto do campo, a cevada ainda está de pé. Os feixes prontos estão nas fileiras. Pressione E perto de um feixe para pegá-lo.",
+			"hash": "a05776c073d68942cba8974d8d4d171a94c3dad79d66a49b5736c21d8126d95e",
+			"file": "res://assets/audio/voice/bf_ilan_talk__request2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/waiting",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "Os feixes amarrados estão nas fileiras ceifadas. Quatro já ajudam; o jumento leva o resto para a eira.",
+			"hash": "789040e92459ecb8405827b15fba32e95119470f7e3eb0b7c16a842f1f132d63",
+			"file": "res://assets/audio/voice/bf_ilan_talk__waiting.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/delivery_corner",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "Quatro feixes, que bom! E estes dois... vieram do canto lá de baixo, não foi?",
+			"hash": "8f64af39caf73a553de51b743aaf71d4794304c646a330bfdc4bfe34d0e601ea",
+			"file": "res://assets/audio/voice/bf_ilan_talk__delivery_corner.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/delivery_corner_one",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "Quatro feixes, que bom! E este outro... veio do canto lá de baixo, não foi?",
+			"hash": "d59405e7a6e9306216678996097cf44f42486fbe66bcdd03c280a801109e789d",
+			"file": "res://assets/audio/voice/bf_ilan_talk__delivery_corner_one.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/corner2",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "Não se preocupe, você não tinha como saber. Aqui a gente não ceifa o canto do campo.",
+			"hash": "d497910d98377e30936fc80de3ed6956cf5b579c0da08f57d8e6abe5abc1e35c",
+			"file": "res://assets/audio/voice/bf_ilan_talk__corner2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/corner3",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "O canto e as espigas que caem ficam para quem não tem campo: o pobre, o estrangeiro. Vou pôr esses feixes de volta lá, para quem vier respigar.",
+			"hash": "8e05ed128ae9be65737f6ab184cfda81a3514e1acd0cd831bd701804cc76f4db",
+			"file": "res://assets/audio/voice/bf_ilan_talk__corner3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/delivery_left",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "Quatro feixes, que bom! O canto lá embaixo continua de pé, do jeito que fica todo ano.",
+			"hash": "0e1810e7f2f3bb6bc4bbf152be65772c49fdc330d4afdc503659e9489990acaa",
+			"file": "res://assets/audio/voice/bf_ilan_talk__delivery_left.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/left2",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "A gente não ceifa o canto do campo, nem volta para catar o que cai. Isso fica para quem não tem campo: o pobre, o estrangeiro.",
+			"hash": "d5619af0493143dc6e80e42c9be525e2733553742fc83316aa8e724cc3d2b810",
+			"file": "res://assets/audio/voice/bf_ilan_talk__left2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/law_ref",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "“‘Quando vocês fizerem a colheita da sua terra, não devem colher totalmente até os cantos do seu campo. Vocês não devem recolher as espigas caídas da sua colheita. Vocês devem deixá-las para o pobre e para o estrangeiro. Eu sou o SENHOR, o seu Deus.’”",
+			"hash": "4ebbf6ed540d1765ddff1bbe47f73df96c4eac272d67727465e386e707e3bbff",
+			"file": "res://assets/audio/voice/bf_ilan_talk__law_ref.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 18.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Lev 23:22",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "bf_ilan_talk/point_field",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "Depois dos marcos de pedra, o campo é de Boaz. Hoje tem uma moça respigando lá, atrás dos ceifeiros. Do terebinto dá para ver tudo.",
+			"hash": "4338ac42749c4d34bd5e09a93ea5901adc1a6d627c4974ca8681edec598cca23",
+			"file": "res://assets/audio/voice/bf_ilan_talk__point_field.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/after_scene",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "A lei pede o canto e o que cai. Tem dono de campo que deixa mais do que isso, e tem quem deixe só o mínimo. Cada um responde pelo seu campo.",
+			"hash": "4f5d385c70abc05f1072a143118645731f6f036f5337f67494b54402f143e59b",
+			"file": "res://assets/audio/voice/bf_ilan_talk__after_scene.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/asked_ilan",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "Um feixe inteiro ficou no meio do campo? Então ele já não é meu.",
+			"hash": "03fc34630512dbfe15dbbcfda70daceba4f373c4a07546c0afac50547af8fc00",
+			"file": "res://assets/audio/voice/bf_ilan_talk__asked_ilan.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/asked2",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "Quem esquece um feixe na colheita não volta para buscá-lo. Fica para o estrangeiro, o órfão e a viúva. Deixe lá; Tova passa por ali.",
+			"hash": "84c649d74e3d4059a1df14b57db55b5d978d96a539a44825472c830958c8ac7d",
+			"file": "res://assets/audio/voice/bf_ilan_talk__asked2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_ilan_talk/asked_ref",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Quando você fizer a colheita no seu campo e esquecer um feixe no campo, não voltará para buscá-lo. Será para o estrangeiro, para o órfão e para a viúva, para que o SENHOR, seu Deus, o abençoe em toda a obra das suas mãos.",
+			"hash": "76d2315e620af100e54920f8dd8e79ae442255961f41761fb4dba4a3a28db0e7",
+			"file": "res://assets/audio/voice/bf_ilan_talk__asked_ref.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 16.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Deut 24:19",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "bf_ilan_talk/idle",
+			"speaker": "bf_ilan",
+			"voice_profile": "bf_ilan",
+			"kind": "fictional_dialogue",
+			"text": "A cevada não espera. Amanhã cedo começamos o outro lado do campo.",
+			"hash": "56d0711614aaaa749d78d8390bfa68dd2240fddb2aebcc62fe7fbde42ff1839b",
+			"file": "res://assets/audio/voice/bf_ilan_talk__idle.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_talk/hello",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "Paz, viajante. Não repare na demora: estas costas já não dobram como antes.",
+			"hash": "37d33cc3ed00f7d266aecf3443342110d5407f772b9c4c260d1c5202c9e98c9b",
+			"file": "res://assets/audio/voice/bf_tova_talk__hello.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_talk/hello2",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "Sou viúva e moro em Belém desde menina. Na colheita, ando atrás dos ceifeiros e junto o que cai no chão.",
+			"hash": "9e68a6266e9e663c9fbd8871e99553abbd23fca30a5be7d4bdc60794e50ac906",
+			"file": "res://assets/audio/voice/bf_tova_talk__hello2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_talk/hello3",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "Espiga por espiga, o cesto enche. É assim que a gente guarda grão para os meses sem colheita.",
+			"hash": "d1b8bd85b450548df217714409bc5f3fbf95dca788a2dde426c2ff1fc22d4f20",
+			"file": "res://assets/audio/voice/bf_tova_talk__hello3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_talk/hello4",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "Hoje cedo vi um feixe inteiro caído no meio do campo, perto do canto. Meus olhos já não acham nada de longe.",
+			"hash": "93539b3cb73562fd65e8fae947e482567f164a17ac2c4ea3b1f63cf63f57ee2d",
+			"file": "res://assets/audio/voice/bf_tova_talk__hello4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_talk/waiting",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "O feixe estava entre as fileiras ceifadas, perto do canto. Ou será que já foi embora?",
+			"hash": "413af1a86cf5b51ee8214460b4e372a1c32bb2910f534ba3b6702db94ddb3d5e",
+			"file": "res://assets/audio/voice/bf_tova_talk__waiting.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_talk/beat_told",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "Obrigada por me mostrar o feixe. Com ele, o cesto já pesa.",
+			"hash": "3ab180978249c5f90a3483086b2cde42bb8ee3ddae19706aab3d9732454fe996",
+			"file": "res://assets/audio/voice/bf_tova_talk__beat_told.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_talk/beat_left",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "Achei um feixe inteiro no caminho! Ninguém voltou para buscar. Hoje o cesto pesa.",
+			"hash": "2fbf2a2395dff1f6a07fa612265a98655b3d9a21dbb237ea83b95aaa5670b590",
+			"file": "res://assets/audio/voice/bf_tova_talk__beat_left.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_talk/beat_asked",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "Ilan disse para deixar o feixe no campo? Já passei por lá e peguei. Obrigada por perguntar.",
+			"hash": "a0be8ce5288a92a4a0ff726be22d2f40ef4dea0df68bfe53ac86ea5f1cf821db",
+			"file": "res://assets/audio/voice/bf_tova_talk__beat_asked.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_talk/beat_hint",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "Espiga ainda não é grão. Deixei a vara e o pano junto à pedra lisa, ao sul. Você me ajuda a bater?",
+			"hash": "838ba458e994c5188bbb9f6718056894b68c25e7eaeffbdc0e5b952a368945a9",
+			"file": "res://assets/audio/voice/bf_tova_talk__beat_hint.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_talk/again",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "O sol está alto. Ainda dá para encher mais um pouco o cesto antes da tarde.",
+			"hash": "6a85f8f9f2f90d14ec8ea62dcb2f8ff4d13da892d7591ee9697a73f3ebf298ae",
+			"file": "res://assets/audio/voice/bf_tova_talk__again.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_home_talk/delivery",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "Você trouxe tudo! Ponha aqui, junto ao jarro, na sombra.",
+			"hash": "6c6d935714a7a87602939048a2ba272822e94cff587b5e5a9b9bb5254cb09a23",
+			"file": "res://assets/audio/voice/bf_tova_home_talk__delivery.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_home_talk/delivery2",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "Com isto e com o que eu juntar até o fim da colheita, esta casa tem pão por um bom tempo.",
+			"hash": "02080913e5a7ddc2a16220976d1750e2a58d021132839c72a162c9eae40e6ac0",
+			"file": "res://assets/audio/voice/bf_tova_home_talk__delivery2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_home_talk/delivery3",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "Tome um punhado de grão tostado, ainda morno. Na colheita, é o que se come no campo.",
+			"hash": "6bbdcfa9d87d692dd9e1fc3baf64f9b962ca491d7d461e7cbd0c8fba705beb89",
+			"file": "res://assets/audio/voice/bf_tova_home_talk__delivery3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_home_talk/delivery4",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Você come o grão tostado ali mesmo, sentado no banco de pedra, enquanto o sol desce sobre os campos.",
+			"hash": "b6b6d370ad06e4d7dbc8fc474116cb9c64a31527baea18d492914332fb941695",
+			"file": "res://assets/audio/voice/bf_tova_home_talk__delivery4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "bf_tova_home_talk/idle",
+			"speaker": "bf_tova",
+			"voice_profile": "bf_tova",
+			"kind": "fictional_dialogue",
+			"text": "Volte quando quiser. Em tempo de colheita, sempre tem grão tostado nesta casa.",
+			"hash": "df3270cc5dee59f976fea4b0c6cc1d8707060e052fbb5468e4f80078089f5bd5",
+			"file": "res://assets/audio/voice/bf_tova_home_talk__idle.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ruth_002_gleaning/1_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Assim, as duas caminharam até chegarem a Belém. Quando chegaram a Belém, toda a cidade se comoveu por causa delas, e as mulheres perguntavam: “É esta Noemi?”",
+			"hash": "04dd9e48ed70fd06f029c19a521a0cd3a4497adb4dd0f3ed6e91e3c8e7527970",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__1_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 11.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Ruth 1:19",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "ruth_002_gleaning/1_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Noemi tinha saído de Belém com o marido e os dois filhos por causa de uma fome; em Moabe ficou viúva e perdeu os filhos (Rute 1:1-5). Agora volta com Rute, a nora moabita.",
+			"hash": "38cd22721a3942e3ba70e09a2b620b37a75a53c96e4e648217f3f4fa4ba4b58e",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__1_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 12.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ruth_002_gleaning/2_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Ela lhes respondeu: “Não me chamem de Noemi. Chamem-me de Mara, pois o Todo-Poderoso me tratou com muita amargura. Eu parti cheia, e o SENHOR me trouxe de volta vazia. Por que me chamam de Noemi, já que o SENHOR testemunhou contra mim, e o Todo-Poderoso me afligiu?”",
+			"hash": "4116fd7a3f2cd8d9c1763761159854a6d41c57ef749752abde2437ab8b186499",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__2_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 19.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Ruth 1:20-21",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "ruth_002_gleaning/2_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O próprio texto liga o nome Mara à amargura. Que Noemi signifique algo como \"agradável\" é nota lexical, não parte do versículo.",
+			"hash": "7c773ff17b93297d24a7408903f6093beb6c6a661d5081b20b0a403f5a0d7c7a",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__2_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ruth_002_gleaning/3_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Assim Noemi voltou, e com ela Rute, a moabita, a sua nora, que voltou das terras de Moabe. Elas chegaram a Belém no início da colheita da cevada.",
+			"hash": "d521ba177d3c71230794c28511110ec4589c306d76f92ee9c7bd83db42fd9c75",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__3_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Ruth 1:22",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "ruth_002_gleaning/3_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "A cevada amadurece antes do trigo, na primavera. O mês exato no tempo de Rute é aproximado.",
+			"hash": "4c0907adf28e2c78b31d40a3729c46a8dade78a9108dd5d060746035e8653931",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__3_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ruth_002_gleaning/4_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Noemi tinha um parente de seu marido, um homem muito rico, da família de Elimeleque, e o seu nome era Boaz.",
+			"hash": "b770de8e18e393c16fc78c3a031b501dde977bc8a2756734af3401d7b22d9fce",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__4_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Ruth 2:1",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "ruth_002_gleaning/4_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O narrador apresenta Boaz antes de Rute chegar ao campo dele. A expressão traduzida por \"muito rico\" também pode ter o sentido de valor ou força (nuance discutida).",
+			"hash": "ae566805b9d7a3fa9d57f5e00474d1328bd17f43c8f9179f931b415150a63219",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__4_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 11.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ruth_002_gleaning/5_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Rute, a moabita, disse a Noemi: “Deixe-me ir ao campo, e apanhar espigas atrás daquele a cujos olhos eu encontrar favor.” Ela lhe disse: “Vá, minha filha.” Ela foi, chegou e começou a apanhar espigas no campo atrás dos ceifeiros; e por acaso ela chegou à parte do campo que pertencia a Boaz, que era da família de Elimeleque.",
+			"hash": "59a4059c205c1f6dc7d0093536edc57c138e50dd71f78728e6a65a4680e72ada",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__5_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 23.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Ruth 2:2-3",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "ruth_002_gleaning/5_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Respigar era recolher o que ficava no chão depois dos ceifeiros. Ver uma providência discreta no \"por acaso\" do versículo 3 é uma leitura comum, mas é interpretação.",
+			"hash": "31d8f2bf6eee5c0671726cf3019cd76057d773a7604357ab0557bff7fc122a72",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__5_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 12.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ruth_002_gleaning/6_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Eis que Boaz veio de Belém e disse aos ceifeiros: “Que o SENHOR esteja com vocês.” Eles lhe responderam: “Que o SENHOR o abençoe.” Então Boaz perguntou ao seu servo que estava encarregado dos ceifeiros: “De quem é esta jovem?” O servo que estava encarregado dos ceifeiros respondeu: “É a jovem moabita que voltou com Noemi das terras de Moabe. Ela disse: ‘Por favor, deixe-me apanhar e juntar espigas entre os feixes, atrás dos ceifeiros.’ Assim ela veio e tem continuado desde a manhã até agora, exceto por um pouco de descanso no abrigo.”",
+			"hash": "0b61eb7f121a525b220fdd582a34d9ba5c625ba17eb3bf1e48ad22a34f0f2068",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__6_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 38.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Ruth 2:4-7",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "ruth_002_gleaning/6_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Boaz e os ceifeiros se saúdam em nome do SENHOR. O versículo 7 tem um trecho difícil no hebraico, e as traduções variam.",
+			"hash": "31b6078a27161f5a5334d16f91408c9dc751813a4ecf0ed59dd9a15f5aed4b8d",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__6_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ruth_002_gleaning/7_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Então Boaz disse a Rute: “Ouça, minha filha. Não vá apanhar espigas em outro campo, nem saia daqui, mas fique aqui, perto das minhas servas. Mantenha os seus olhos no campo em que eles estão ceifando e vá atrás delas. Não ordenei aos jovens que não toquem em você? Quando tiver sede, vá às vasilhas e beba da água que os jovens tiraram.” Então ela se prostrou com o rosto em terra, e lhe disse: “Por que encontrei favor aos seus olhos, para que se importe comigo, visto que sou estrangeira?” Boaz lhe respondeu: “Contaram-me tudo o que você tem feito pela sua sogra desde a morte de seu marido, e como você deixou o seu pai, a sua mãe e a terra do seu nascimento, e veio para um povo que antes não conhecia. Que o SENHOR recompense o seu trabalho, e que lhe seja dada uma recompensa completa da parte do SENHOR, o Deus de Israel, sob cujas asas você veio buscar refúgio.” Então ela disse: “Que eu encontre favor aos seus olhos, meu senhor, porque o senhor me consolou e porque falou com bondade à sua serva, embora eu não seja nem como uma de suas servas.”",
+			"hash": "a2bbd97d7bd7e05879ac2766dad5f899b5a4e6ded19c6e7a8580b74d03e10f56",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__7_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 75.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Ruth 2:8-13",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "ruth_002_gleaning/7_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Rute, estrangeira, pergunta por que recebe esse favor; Boaz fala do que ela fez pela sogra. As \"asas\" do versículo 12 são uma imagem de refúgio.",
+			"hash": "5652347eb77ef0f14d10576e19821d816223c663c37562cac497fd467fdd72a3",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__7_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ruth_002_gleaning/8_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Na hora da refeição, Boaz lhe disse: “Venha cá, coma um pouco de pão e molhe o seu pedaço no vinagre.” Ela se sentou ao lado dos ceifeiros, e ele lhe ofereceu grãos tostados. Ela comeu, ficou satisfeita e ainda sobrou.",
+			"hash": "a2bc5f1293d2565d0fe8a22f35df28b49b1d3faca20d05fa7607b8bc1b8c67fc",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__8_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 15.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Ruth 2:14",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "ruth_002_gleaning/8_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Pão, grão tostado e um líquido azedo para molhar o pão eram comida comum de colheita. O texto não diz onde nem a que hora foi a refeição dos ceifeiros.",
+			"hash": "1262f82eb5b8c5a6ad7aff8ba4faf813313e715620bc090f145db42732ed13f5",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__8_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 11.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ruth_002_gleaning/9_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Quando ela se levantou para apanhar espigas, Boaz deu ordens aos seus jovens, dizendo: “Deixem-na apanhar espigas até mesmo entre os feixes, e não a repreendam. Tirem também algumas espigas dos feixes para ela, e deixem-nas cair. Deixem-na apanhar, e não a repreendam.”",
+			"hash": "8032a0568c5dbcbdba777c25376b83ca7baee6a1c56f35b1be84207afbc33cd4",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__9_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 19.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Ruth 2:15-16",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "ruth_002_gleaning/9_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "A lei pedia que se deixassem o canto do campo e o que caía para o pobre e o estrangeiro (Levítico 19:9-10; 23:22). Aqui Boaz manda deixar cair espigas de propósito. O livro de Rute não cita a lei; a comparação é do leitor.",
+			"hash": "728329f2867d2ae328a4eee0362a6a928a19a4759c8d04b040bb27e09544bd96",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__9_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 16.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ruth_002_gleaning/10_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Assim ela apanhou espigas no campo até a tarde; e debulhou o que havia apanhado, e deu quase um efa de cevada. Ela o pegou e foi para a cidade. Então a sua sogra viu o que ela havia apanhado; e ela trouxe e lhe deu o que havia sobrado depois de ter comido o suficiente.",
+			"hash": "86dab6a9a0845013836979dcd0142da51e9defd2429a387449909bf8a922101d",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__10_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 19.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Ruth 2:17-18",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "ruth_002_gleaning/10_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O efa era uma medida de grãos secos. Os estudiosos estimam o volume de formas diferentes, e o jogo não dá número.",
+			"hash": "8be59da522df4e81e7b57a86660602469da23a0000c423b69a0fbb465e4e2493",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__10_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ruth_002_gleaning/11_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "A sua sogra lhe perguntou: “Onde você apanhou espigas hoje? Onde você trabalhou? Bendito seja aquele que se importou com você.” Ela contou à sua sogra com quem havia trabalhado: “O nome do homem com quem trabalhei hoje é Boaz.” Noemi disse à sua nora: “Que ele seja abençoado pelo SENHOR, que não retirou a sua bondade dos vivos e dos mortos.” E Noemi lhe acrescentou: “O homem é nosso parente próximo, um dos nossos resgatadores.”",
+			"hash": "30a0a29970e6c46d4fe57de4e769e31ee66a6648b2f40940c4bc415e4377b6d5",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__11_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 31.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Ruth 2:19-20",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "ruth_002_gleaning/11_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Noemi diz que Boaz é parente próximo, um dos que podiam \"resgatar\" a família. O que isso significa aparece nos capítulos 3 e 4, fora desta experiência.",
+			"hash": "147829707946e2d5a6847fc4d84c5d35e8f345fcd57d00a8e965a567453a8594",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__11_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 11.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ruth_002_gleaning/12_scripture",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "scripture",
+			"text": "Rute, a moabita, disse: “Ele também me disse: ‘Você deve ficar perto dos meus jovens até que eles terminem toda a minha colheita.’” Noemi disse a Rute, sua nora: “É bom, minha filha, que você saia com as servas dele, para que não a incomodem em outro campo.” Assim, ela ficou perto das servas de Boaz, apanhando espigas até o fim da colheita da cevada e da colheita do trigo; e ela continuou morando com a sua sogra.",
+			"hash": "1365bc912f76c59f8f0a7ac97eb18aeed9e0b93afaaae1c5526327947a1f9608",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__12_scripture.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 29.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			},
+			"scripture": "Ruth 2:21-23",
+			"translation": "bpm"
+		},
+		{
+			"line_id": "ruth_002_gleaning/12_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "A colheita do trigo vinha algumas semanas depois da cevada. Rute continua morando com a sogra.",
+			"hash": "7b6692010cd25b176a4cbc5292cee35c5b3cbbcc483fedceda9f86440d1faae4",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__12_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ruth_002_gleaning/13_note",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Os trechos foram tirados de Rute 1 e 2; leia o livro inteiro numa Bíblia para conhecer o relato completo. As notas são do jogo. O viajante, Ilan, Tova, o campo de Ilan e os moradores do mapa são criações do jogo e não fazem parte deste relato.",
+			"hash": "1b08bbbf223ddf4345b1056a43dbbd21c0d2cade6343dff8642c3b6cec31da42",
+			"file": "res://assets/audio/voice/ruth_002_gleaning__13_note.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 17.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		}
+	]
+}

@@ -1,0 +1,81 @@
+{
+	"_comment": "Experiência \"José no Egito\" (ep_009). Integrado de production/episodes/ep_009_jose_na_casa_de_potifar/quest.proposal.json; aguarda revisão humana.",
+	"quests": [
+		{
+			"id": "joseph_caravan_watch",
+			"title": "A caravana para o Egito",
+			"category": "main",
+			"description": "Do alto de uma encosta em Dotã, observe de longe a caravana que desce para o Egito e leia o relato de Gênesis 37:25-28 e 37:36.",
+			"type": "story_witness",
+			"classification": "plausible_fiction",
+			"classification_note": "O viajante e o ponto de observação são criados para o jogo. A caravana vista de longe é uma representação de Gênesis 37:25-28; as legendas trazem o texto da tradução carregada. O viajante não interfere no relato.",
+			"region": "dothan",
+			"place_id": "dothan",
+			"era_id": "patriarchs",
+			"references": ["Gen 37:25-28", "Gen 37:36"],
+			"theme": "José vendido e levado para o Egito",
+			"people": ["joseph"],
+			"fictional_characters": [],
+			"intro": "Gênesis 37 continua em Dotã. O Mapa das Escrituras leva você de volta ao vale, onde uma caravana passa a caminho do Egito. Você vai observar de longe, sem interferir.",
+			"start": {"event": "experience_started", "id": "joseph_egypt"},
+			"prerequisites": {"quests_completed": ["joseph_dothan_road"], "flags": []},
+			"objectives": [
+				{
+					"id": "climb_ridge",
+					"type": "reach_location",
+					"text": "Suba à encosta alta a oeste do vale.",
+					"detail": "De lá se vê o vale inteiro.",
+					"complete_on": {"event": "location_reached", "id": "dothan_ridge"},
+					"targets": [{"type": "area", "id": "dothan_ridge"}],
+					"hints": [
+						"De um lugar alto se vê o vale inteiro.",
+						"Há uma encosta ao norte da entrada oeste de Dotã, acima da pedra do mirante.",
+						"Da entrada oeste, caminhe para o norte até a pedra grande na encosta."
+					],
+					"log": "Da encosta, você vê o vale inteiro e a borda sul, por onde passa uma estrada."
+				},
+				{
+					"id": "watch_caravan",
+					"type": "observe_scene",
+					"text": "Observe a estrada do vale.",
+					"detail": "Algo se move ao longe.",
+					"complete_on": {"event": "scene_finished", "id": "joseph_caravan_departs"},
+					"targets": [{"type": "examinable", "id": "dothan_ridge_view"}],
+					"hints": [
+						"Algo se move ao longe, na borda do vale.",
+						"Da pedra grande da encosta se vê a borda sul do vale.",
+						"Examine a pedra grande na encosta (E) e observe até o fim. Esc pula a cena."
+					],
+					"log": "De longe, você viu uma caravana com camelos carregados atravessar o vale para o oeste. Você não se aproximou."
+				},
+				{
+					"id": "read_caravan_story",
+					"type": "read_scripture",
+					"text": "Leia no diário o relato de Gênesis 37:25-28 e 37:36.",
+					"detail": "O que aconteceu em Dotã naquele dia.",
+					"complete_on": {"event": "presentation_finished", "id": "gen_037_caravan"},
+					"targets": [{"type": "examinable", "id": "dothan_ridge_view"}],
+					"hints": [
+						"O diário guarda o relato desse dia.",
+						"Examine de novo a pedra grande, ou abra o diário (J) e escolha \"Ler o relato bíblico\".",
+						"Abra o diário (J), vá à missão \"A caravana para o Egito\" e leia o relato até o fim."
+					],
+					"log": "Você leu Gênesis 37:25-28 e 37:36: José foi vendido e levado para o Egito."
+				}
+			],
+			"discoveries": ["caravan_to_egypt", "caravans_trade"],
+			"completion": {
+				"title": "A caravana se afastou",
+				"references": ["Gen 37:25-28", "Gen 37:36"],
+				"summary": [
+					"Caravanas levavam resinas de Gileade para o Egito; Gênesis 37:25 cita camelos carregados de especiarias, bálsamo e mirra.",
+					"José foi vendido por vinte peças de prata e levado para o Egito (Gênesis 37:28, 36).",
+					"O texto chama os mercadores de ismaelitas e de midianitas; o jogo não escolhe entre as leituras."
+				],
+				"unlock": [],
+				"next": "O relato continua no Egito, em Gênesis 39. Abra o Mapa das Escrituras (M), escolha \"José no Egito\" e \"Continuar\": é outro momento da história, e o viajante não viaja com a caravana."
+			},
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Proposta do agente de design (IA) com base em research_biblical.md e research_historical.md de ep_009. Aguarda verificador bíblico, revisor histórico e revisão humana."}
+		}
+	]
+}

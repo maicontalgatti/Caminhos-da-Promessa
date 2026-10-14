@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/scribe_table.png" id="1_7os6e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x60ql"]
+size = Vector2(26, 6)
+
+[node name="ScribeTable" type="StaticBody2D" unique_id=1934594114]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2137127759]
+texture = ExtResource("1_7os6e")
+centered = false
+offset = Vector2(-15, -18)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1898265162]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_x60ql")

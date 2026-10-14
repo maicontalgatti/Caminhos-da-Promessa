@@ -1,0 +1,50 @@
+{
+	"_comment": "Campos de Belém (ep_025). Ilan, Tova e o ceifeiro são fictícios. Integrado de characters.proposal.json.",
+	"characters": [
+		{
+			"id": "bf_ilan",
+			"display_name": "Ilan",
+			"role": "Pequeno agricultor de Belém",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Agricultor fictício que colhe a cevada num campo pequeno ao lado da parte do campo que era de Boaz. Explica o costume do canto do campo e da respiga. Não conversa com Rute, Noemi ou Boaz e não conta o que só o texto registra.",
+			"dialogue_id": "bf_ilan_talk",
+			"sprite": {"sheet": "res://assets/characters/bf_ilan.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1}
+		},
+		{
+			"id": "bf_tova",
+			"display_name": "Tova",
+			"role": "Viúva que respiga",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Viúva fictícia que mora em Belém desde menina e respiga atrás dos ceifeiros de Ilan na colheita. Não tem relação com Noemi nem com Rute.",
+			"dialogue_id": "bf_tova_talk",
+			"sprite": {"sheet": "res://assets/characters/bf_tova.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "wander", "speed": 10, "wander_radius": 16}
+		},
+		{
+			"id": "bf_tova_home",
+			"display_name": "Tova",
+			"role": "Viúva que respiga",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Tova diante da casa dela, junto ao muro da aldeia, depois da colheita do dia.",
+			"dialogue_id": "bf_tova_home_talk",
+			"sprite": {"sheet": "res://assets/characters/bf_tova.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1}
+		},
+		{
+			"id": "bf_reaper",
+			"display_name": "Ceifeiro",
+			"role": "Ceifeiro",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Ceifeiro fictício, concentrado no trabalho. Não comenta o relato nem as pessoas do campo vizinho.",
+			"dialogue_id": "bf_reaper_work",
+			"prompt": "Observar",
+			"sprite": {"sheet": "res://assets/characters/bf_reaper.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 1, "facing_y": 0}
+		}
+	]
+}

@@ -1,8 +1,48 @@
 {
 	"episode": "ep_025_rute_noemi_e_boaz",
-	"reuse": [],
-	"gaps": [],
-	"environment": [],
-	"generator": [],
-	"map_inventory": []
+	"reuse": [
+		{"path": "res://assets/tilesets/canaan_tiles.png", "use": "relva, relva seca, pedra da praça e caminhos (fonte 0 de lands_tileset.tres)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://assets/tilesets/lands_tiles.png", "use": "piso batido, restolho, cevada em pé e palha (fonte 1; criado em ep_009)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/tree_olive.tscn", "use": "oliveiras", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/tree_oak.tscn", "use": "carvalhos", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/bush.tscn", "use": "arbustos", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/rock_big.tscn", "use": "rochas; examinável bf_boundary_view (etapa B)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/rock_small.tscn", "use": "pedras; examinável bf_beating_stone (etapa B)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/boundary_stone.tscn", "use": "marcos entre os campos (448,360), (448,520), (448,584); examináveis bf_parcel_marker e bf_road_west (etapa B)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/oven.tscn", "use": "forno da aldeia (400,104)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/jar.tscn", "use": "jarros nos campos", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://scenes/environments/basket.tscn", "use": "cesto (128,336)", "license": "CC BY 4.0 (gerado por tools/art_gen)"},
+		{"path": "res://assets/environments/stone_wall_h.png", "use": "muro da aldeia e terraços (criado para ep_048, compartilhado)", "license": "CC BY 4.0 (gerado por tools/art_gen)"}
+	],
+	"gaps": [
+		{"id": "bf_ilan", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "belem_campos", "status": "produced", "notes": "dono do campo vizinho, túnica e manto"},
+		{"id": "bf_tova", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "belem_campos", "status": "produced", "notes": "viúva respigadora com cesto; bf_tova_home usa o mesmo sprite"},
+		{"id": "bf_reaper", "kind": "character", "size": "24x32", "frames": "6x4", "palette": "belem_campos", "status": "produced", "notes": "ceifeiro genérico (foice de lâmina curva, sem ferro destacado)"},
+		{"id": "house_pillar", "kind": "prop", "size": "76x60", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "casa de pilares do Ferro I (hipótese por analogia com aldeias do planalto)"},
+		{"id": "stone_bench", "kind": "prop", "size": "26x12", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "banco de pedra da porta"},
+		{"id": "pithos", "kind": "prop", "size": "14x24", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "jarro de armazenagem de borda com colarinho (examinável bf_pithos)"},
+		{"id": "sheaf", "kind": "prop", "size": "14x18", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "feixe de cevada"},
+		{"id": "branch_shelter", "kind": "prop", "size": "46x38", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "abrigo de ramos dos ceifeiros (examinável bf_shelter)"},
+		{"id": "grain_heap", "kind": "prop", "size": "34x18", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "monte de grão na eira (examinável bf_threshing_floor)"},
+		{"id": "threshing_sledge", "kind": "prop", "size": "28x12", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "trilho de debulha de madeira com pedras"},
+		{"id": "winnowing_fork", "kind": "prop", "size": "26x10", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "forcado de joeirar deitado (sem colisão)"},
+		{"id": "village_gate", "kind": "prop", "size": "64x58", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "porta da aldeia, só cenário (examinável bf_gate)"},
+		{"id": "stone_wall_h/_v", "kind": "prop", "size": "16x24", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "muro de pedra seca"},
+		{"id": "terrace_wall", "kind": "prop", "size": "48x18", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "muro de terraço (usado em ep_048)"},
+		{"id": "barley_sheaf", "kind": "item_icon", "size": "12x12", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "espigas respigadas"},
+		{"id": "corner_sheaf", "kind": "item_icon", "size": "12x12", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "espigas do canto do campo"},
+		{"id": "tova_grain", "kind": "item_icon", "size": "12x12", "frames": 1, "palette": "belem_campos", "status": "produced", "notes": "grão batido de Tova"},
+		{"id": "silhuetas de cena (refeição da colheita)", "kind": "scene_actor", "size": "-", "frames": "-", "palette": "-", "status": "placeholder", "notes": "SceneActor desenha silhuetas por código; nenhuma silhueta PNG foi gerada nesta etapa."}
+	],
+	"environment": [
+		{"region": "bethlehem_fields", "exists": true, "scene": "res://scenes/maps/bethlehem_fields.tscn", "tileset": "res://assets/tilesets/lands_tileset.tres", "notes": "64x40 tiles. Camadas: Ground (relva), DryGrass, Village (piso da aldeia), Stubble (restolho), Barley (cevada em pé), Plaza (pedra), Threshing (eira), Paths, Decor. DaylightTint Color(1.0, 0.98, 0.92)."}
+	],
+	"generator": [
+		{"script": "res://tools/art_gen/art_lands.gd", "run": "godot --headless --path . --script res://tools/art_gen/generate_art.gd -- --v05-only", "origin": "gerado por tools/art_gen", "license": "CC BY 4.0"},
+		{"script": "res://tools/art_gen/build_regions.gd", "run": "godot --headless --path . --script res://tools/art_gen/build_regions.gd -- bethlehem_fields", "origin": "LAYOUTS.bethlehem_fields", "license": "CC BY 4.0"}
+	],
+	"map_inventory": [
+		{"region": "bethlehem_fields", "entries": {"default": [24, 296], "from_scripture_map": [24, 296]}, "exits": {}, "areas": {"bf_ilan_field": [96, 336, 320, 208], "bf_boaz_field": [480, 336, 416, 240], "bf_village_gate": [464, 64, 96, 56]}, "solids_px": [[0, 0, 1024, 84]], "fields_tiles": {"ilan_stubble": [6, 21, 26, 34], "ilan_corner_standing": [23, 31, 26, 34], "boaz_stubble": [30, 21, 43, 36], "boaz_standing": [44, 21, 56, 36], "threshing_disc": [55, 12, 3.2]}, "village_wall_row": 5, "gate_gap_cols": [30, 33], "reserved_px": [[480, 336, 416, 240], [496, 104, 32, 256], [96, 336, 336, 224], [480, 336, 432, 256]], "pending_stage_b": "npcs, examinables, pickups e discoveries_on_enter no campo _stage_b de data/regions/bethlehem_fields.json"}
+	],
+	"notes": "Etapa A (arte e mapa) por godot-implementer (IA), 2026-10-14. Arte vista em tela pelo render de tools/screenshot/map_overview.gd (sem jogar). Restrições respeitadas: sem moedas, sem camelos, sem ferramentas de ferro destacadas; a parte do campo de Boaz é só um campo vizinho com marcos (localização real desconhecida)."
 }

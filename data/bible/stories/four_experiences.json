@@ -1,0 +1,57 @@
+{
+	"_comment": "Histórias das experiências José no Egito, Rute em Belém e Os pastores de Belém. Resumos próprios; aguardam revisão humana.",
+	"stories": [
+		{
+			"id": "gen_039_joseph_potiphar",
+			"title": "José na casa de Potifar",
+			"summary": "Levado ao Egito, José é comprado por Potifar, oficial do faraó. O SENHOR está com José, e Potifar o põe como administrador de tudo o que tinha, na casa e no campo.",
+			"references": [{"book": "Gen", "chapter_start": 39, "verse_start": 1, "chapter_end": 39, "verse_end": 6}],
+			"characters": ["José", "Potifar"],
+			"region": "Egito (cidade não identificada no texto)",
+			"era": {"label": "Época dos patriarcas", "certainty": "approximate_debated"},
+			"literary_category": "narrativa",
+			"content_classification": "recorded_event",
+			"possible_interactions": ["Conhecer uma casa fictícia de um oficial egípcio, como aquela onde José serviu", "Ler o relato no diário"],
+			"possible_activities": ["Tarefas de uma grande casa egípcia sem alterar o relato"],
+			"narrative_relevance": "core",
+			"depends_on": ["gen_037_joseph_sold"],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumo próprio de Gênesis 39:1-6, escrito pelo agente de IA na integração do ep_009. Gênesis 39:7-23 fica fora desta história (ver gen_039_joseph_prison). Aguarda revisão humana."}
+		},
+		{
+			"id": "ruth_002_gleaning",
+			"title": "Rute respiga nos campos de Boaz",
+			"summary": "Noemi volta de Moabe a Belém com a nora Rute no começo da colheita da cevada. Rute respiga atrás dos ceifeiros na parte do campo que era de Boaz, que a acolhe; à tarde, ela leva a cevada à sogra, e Noemi reconhece Boaz como parente próximo.",
+			"references": [
+				{"book": "Ruth", "chapter_start": 1, "verse_start": 19, "chapter_end": 1, "verse_end": 22},
+				{"book": "Ruth", "chapter_start": 2, "verse_start": 1, "chapter_end": 2, "verse_end": 23}
+			],
+			"characters": ["Rute", "Noemi", "Boaz", "Ceifeiros", "Encarregado dos ceifeiros"],
+			"region": "Belém e os campos em volta",
+			"era": {"label": "Tempo dos juízes", "certainty": "approximate_debated"},
+			"literary_category": "narrativa",
+			"content_classification": "recorded_event",
+			"possible_interactions": ["Ajudar numa colheita fictícia perto de Belém", "Observar de longe a respiga de Rute"],
+			"possible_activities": ["Colheita da cevada", "Respiga e debulha com vara"],
+			"narrative_relevance": "core",
+			"depends_on": [],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Resumo próprio de Rute 1:19-2:23, escrito pelo agente de IA na integração do ep_025. Os capítulos 3 e 4 ficam fora. Aguarda revisão humana."}
+		},
+		{
+			"id": "luke_002_shepherds",
+			"title": "Os pastores de Belém",
+			"summary": "Pastores que vigiam o rebanho à noite perto de Belém recebem de um anjo o anúncio do nascimento de um Salvador; vão depressa a Belém, encontram Maria, José e o bebê na manjedoura, contam o que ouviram e voltam louvando a Deus.",
+			"references": [{"book": "Luke", "chapter_start": 2, "verse_start": 8, "chapter_end": 2, "verse_end": 20}],
+			"characters": ["Pastores", "Anjo do Senhor", "Multidão do exército celestial", "Maria", "José", "O bebê"],
+			"region": "Campos perto de Belém (Judeia)",
+			"era": {"label": "Nos dias do rei Herodes (data debatida)", "certainty": "debated"},
+			"literary_category": "evangelho",
+			"content_classification": "recorded_event",
+			"possible_interactions": ["Ajudar pastores fictícios a recolher o rebanho e manter o fogo", "Observar de longe o anúncio e a ida a Belém"],
+			"possible_activities": ["Vigília noturna", "Cena dirigida de reverência (só luz)"],
+			"narrative_relevance": "core",
+			"design_constraints": ["O anjo e a multidão celestial aparecem só como luz; sem figura, asas ou rosto.", "Falas do anjo, da multidão e dos pastores só por citação da tradução carregada ou paráfrase identificada (Lc 2:10-12, 2:14, 2:15).", "Maria, José e o bebê não aparecem em tela e não têm falas nem pensamentos.", "O viajante não recebe o anúncio, não guia os pastores e não entra na casa.", "Sem estrela, magos, neve, estábulo de madeira, estalajadeiro; nenhum ano exibido."],
+			"depends_on": [],
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Variante textual em Lc 2:14 e sentido de katalyma (Lc 2:7) tratados no diário. Aguarda revisão humana."}
+		}
+	]
+}

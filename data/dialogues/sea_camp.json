@@ -1,0 +1,287 @@
+{
+	"_comment": "Acampamento junto ao mar (ep_016, \"A travessia do mar\"). Famílias fictícias; Moisés não fala com o viajante. Integrado de dialogues.proposal.json; aguarda revisão humana.",
+	"dialogues": [
+		{
+			"id": "sea_tzvi_talk",
+			"start": "greet",
+			"start_if": [
+				{"if": {"all": [{"event": "scene_finished", "id": "exodus_sea_crossing"}, {"flag": "sea_tzvi_dawn_seen"}]}, "node": "dawn_again"},
+				{"if": {"event": "scene_finished", "id": "exodus_sea_crossing"}, "node": "dawn"},
+				{"flag": "sea_night", "node": "night_again"},
+				{"if": {"all": [{"flag": "sea_chariots_seen"}, {"objective": "exodus_sea_crossing/sea_parted"}, {"any": [{"quest_active": "sea_camp_flock"}, {"quest_active": "sea_camp_water"}]}]}, "node": "dusk_warn"},
+				{"if": {"all": [{"flag": "sea_chariots_seen"}, {"objective": "exodus_sea_crossing/sea_parted"}]}, "node": "dusk"},
+				{"if": {"all": [{"flag": "sea_chariots_seen"}, {"not": {"event": "custom", "id": "sea_tzvi_context"}}]}, "node": "greet"},
+				{"flag": "sea_chariots_seen", "node": "dusk_wait"},
+				{"if": {"event": "custom", "id": "sea_tzvi_context"}, "node": "again"}
+			],
+			"nodes": {
+				"greet": {"speaker": "sea_tzvi", "text": "Paz, viajante. Sente-se, se quiser. Já não tenho força para armar tendas, mas ainda sei contar o caminho.", "next": "road1", "set_flags": ["sea_met_tzvi"]},
+				"road1": {"speaker": "sea_tzvi", "text": "Saímos do Egito às pressas. De Ramessés fomos a Sucote, depois a Etã, na beira do deserto. E agora, este acampamento junto ao mar.", "next": "road2"},
+				"road2": {"speaker": "narrator", "text": "(Êxodo 12:37 e 13:20 citam essas paradas. Onde ficavam esses lugares é debatido.)", "next": "road3", "unlock": ["exodus_departure"]},
+				"road3": {"speaker": "sea_tzvi", "text": "O caminho da costa era o mais curto, mas não fomos por ele. Dizem que foi para o povo não desanimar se encontrasse guerra e quisesse voltar.", "next": "road4"},
+				"road4": {"speaker": "narrator", "text": "(Êxodo 13:17-18 diz que Deus não os guiou pelo caminho da terra dos filisteus, embora fosse mais perto, e os fez dar a volta pelo deserto.)", "next": "pillar1"},
+				"pillar1": {"speaker": "sea_tzvi", "text": "Está vendo aquela nuvem adiante, sobre a água? Desde que saímos, ela vai à nossa frente. De noite, é fogo.", "next": "pillar2"},
+				"pillar2": {"speaker": "narrator", "text": "(Êxodo 13 fala dessa coluna:)", "next": "pillar3"},
+				"pillar3": {"speaker": "narrator", "scripture": "Exod 13:21-22", "text": "(Êxodo 13:21-22: o SENHOR ia adiante do povo numa coluna de nuvem de dia e numa coluna de fogo de noite.)", "next": "bones1", "unlock": ["pillar_cloud_fire"]},
+				"bones1": {"speaker": "sea_tzvi", "text": "Você conhece a história de José, filho de Jacó? Antes de morrer, ele fez os filhos de Israel jurarem que levariam os seus ossos quando Deus os visitasse.", "next": "bones2"},
+				"bones2": {"speaker": "sea_tzvi", "text": "Moisés trouxe esses ossos com ele. Gerações esperaram por esta viagem.", "next": "bones3"},
+				"bones3": {"speaker": "narrator", "text": "(Êxodo 13:19 registra isso, lembrando o juramento de Gênesis 50:24-25.)", "next": "end", "event": "sea_tzvi_context", "unlock": ["joseph_bones"]},
+				"again": {"speaker": "sea_tzvi", "text": "Descanse um pouco, viajante. A tarde ainda vai longa.", "choices": [{"text": "Como era a vida no Egito?", "next": "egypt1"}, {"text": "Para onde a nuvem está levando o povo?", "next": "where"}, {"text": "Até logo, Tzvi.", "next": "bye"}]},
+				"egypt1": {"speaker": "sea_tzvi", "text": "Desde menino carreguei fardos nas obras do faraó, com feitores em cima de nós. Ainda acordo à noite achando que estou lá.", "next": "egypt2"},
+				"egypt2": {"speaker": "narrator", "text": "(Êxodo 1:11 conta que os egípcios puseram feitores sobre os israelitas e que eles construíram para o faraó as cidades-armazéns de Pitom e Ramsés.)", "next": "again"},
+				"where": {"speaker": "sea_tzvi", "text": "Isso ninguém aqui sabe dizer. A gente só sabe que ela vai na frente, e que a gente vai atrás.", "next": "again"},
+				"bye": {"speaker": "sea_tzvi", "text": "Vá em paz. Se precisar de mim, estou junto ao fogo.", "next": "end"},
+				"dusk_wait": {"speaker": "sea_tzvi", "text": "O sol já está baixo. Se alguém ainda precisa de ajuda no acampamento, vá agora. Shira estava atrás de galhos secos para o fogo.", "next": "end"},
+				"dusk": {"speaker": "sea_tzvi", "text": "Você também viu a poeira, não viu? Ninguém fala de outra coisa. As famílias estão vindo para a beira da água.", "next": "dusk2"},
+				"dusk_warn": {"speaker": "sea_tzvi", "text": "Você também viu a poeira, não viu? Ninguém fala de outra coisa. As famílias estão vindo para a beira da água.", "next": "dusk_warn2"},
+				"dusk_warn2": {"speaker": "narrator", "text": "(Depois desta noite, o acampamento não ficará mais aqui. Se você prometeu ajudar alguém, ainda dá tempo.)", "next": "dusk2"},
+				"dusk2": {"speaker": "sea_tzvi", "text": "Eu vou ficar aqui. Velho não corre, mas também não fica sozinho.", "choices": [{"text": "Ficar aqui com as famílias até a noite.", "next": "night1"}, {"text": "Ainda tenho algo a fazer no acampamento.", "next": "dusk_later"}]},
+				"dusk_later": {"speaker": "sea_tzvi", "text": "Vá, mas não demore. Junto ao mar, o escuro chega depressa.", "next": "end"},
+				"night1": {"speaker": "narrator", "text": "O sol se põe. Famílias inteiras se juntam na beira da água, com crianças, trouxas e animais. Adiante, sobre o mar, a coluna agora brilha como fogo.", "next": "night2", "set_flags": ["sea_night"]},
+				"night2": {"speaker": "sea_tzvi", "text": "Atrás de nós, os carros. Na frente, o mar. Tem gente dizendo que era melhor ter ficado no Egito, servindo.", "next": "night3"},
+				"night3": {"speaker": "narrator", "text": "(Êxodo 14:10-12 conta que o povo ficou com muito medo, clamou ao SENHOR e se queixou a Moisés.)", "next": "night4"},
+				"night4": {"speaker": "sea_tzvi", "text": "Mas corre entre as tendas o que Moisés disse ao povo: que não tivessem medo, que ficassem firmes e vissem a salvação do SENHOR. Que o SENHOR lutaria por eles.", "next": "night5"},
+				"night5": {"speaker": "narrator", "text": "(Esse é um resumo do jogo, na voz de Tzvi. As palavras de Moisés estão em Êxodo 14:13-14:)", "next": "night6"},
+				"night6": {"speaker": "narrator", "scripture": "Exod 14:13-14", "text": "(Êxodo 14:13-14: Moisés diz ao povo que não tenha medo, que fique firme e veja a salvação do SENHOR, e que o SENHOR lutaria por eles.)", "next": "night_choice"},
+				"night_choice": {"speaker": "sea_tzvi", "text": "Não sei o que vai acontecer esta noite. Mas não saio daqui.", "choices": [{"text": "Ficar com as famílias e observar.", "next": "watch"}, {"text": "Ainda não.", "next": "not_yet"}]},
+				"watch": {"speaker": "narrator", "text": "Você fica entre as famílias, perto da água, olhando a coluna de fogo sobre o mar. (Daqui em diante, você só acompanha. Esc pula a cena.)", "next": "end", "unlock": ["fear_and_trust"], "action": {"scene": "exodus_sea_crossing"}},
+				"not_yet": {"speaker": "sea_tzvi", "text": "Fique por perto. Esta noite ninguém dorme.", "next": "end"},
+				"night_again": {"speaker": "sea_tzvi", "text": "Ainda acordado, viajante? Ninguém aqui vai dormir esta noite.", "next": "night_choice"},
+				"dawn": {"speaker": "sea_tzvi", "text": "Andamos a noite toda, com o vento soprando e o chão seco debaixo dos pés.", "next": "dawn2", "set_flags": ["sea_tzvi_dawn_seen"]},
+				"dawn2": {"speaker": "sea_tzvi", "text": "Agora olho para o mar e não encontro palavras. Não é festa o que sinto. É temor. E gratidão por estarmos vivos.", "next": "dawn3"},
+				"dawn3": {"speaker": "narrator", "text": "(Êxodo 14:31 registra o que o povo sentiu naquele dia:)", "next": "dawn4"},
+				"dawn4": {"speaker": "narrator", "scripture": "Exod 14:31", "text": "(Êxodo 14:31: o povo temeu ao SENHOR e creu no SENHOR e em Moisés, seu servo.)", "next": "end"},
+				"dawn_again": {"speaker": "sea_tzvi", "text": "Deixe o velho olhar o mar mais um pouco, viajante.", "next": "end"}
+			}
+		},
+		{
+			"id": "sea_shira_talk",
+			"start": "greet",
+			"start_if": [
+				{"if": {"all": [{"event": "scene_finished", "id": "exodus_sea_crossing"}, {"event": "custom", "id": "sea_shira_dawn"}]}, "node": "dawn_again"},
+				{"if": {"event": "scene_finished", "id": "exodus_sea_crossing"}, "node": "dawn"},
+				{"flag": "sea_night", "node": "night"},
+				{"if": {"all": [{"has_item": "brushwood", "count": 2}, {"not": {"event": "custom", "id": "sea_shira_bread"}}]}, "node": "deliver"},
+				{"if": {"all": [{"flag": "sea_chariots_seen"}, {"event": "custom", "id": "sea_shira_bread"}]}, "node": "dusk"},
+				{"if": {"event": "custom", "id": "sea_shira_bread"}, "node": "after"},
+				{"flag": "sea_met_shira", "node": "waiting"}
+			],
+			"nodes": {
+				"greet": {"speaker": "sea_shira", "text": "Paz! Não repare, estou com as mãos cheias de farinha.", "next": "greet2", "set_flags": ["sea_met_shira"]},
+				"greet2": {"speaker": "sea_shira", "text": "Saímos do Egito tão às pressas que a massa nem teve tempo de fermentar. Trouxemos a amassadeira enrolada no manto, nos ombros.", "next": "greet3"},
+				"greet3": {"speaker": "narrator", "text": "(Êxodo 12:34 e 12:39 contam que o povo levou a massa antes de fermentar e, no caminho, assou bolos sem fermento.)", "next": "greet4", "unlock": ["unleavened_bread_road"]},
+				"greet4": {"speaker": "sea_shira", "text": "O problema é o fogo: aqui na costa quase não há lenha. Você me traria dois feixes de galhos secos? Há arbustos secos espalhados pelo acampamento.", "next": "end", "event": "sea_shira_bread_ask"},
+				"waiting": {"speaker": "sea_shira", "text": "Dois feixes de galhos secos bastam para esquentar a pedra. Procure entre os arbustos do acampamento.", "next": "end"},
+				"deliver": {"speaker": "sea_shira", "text": "Galhos secos! Agora, sim, a pedra vai esquentar.", "next": "deliver2", "take": [{"item": "brushwood", "qty": 2}], "event": "sea_shira_bread", "set_flags": ["sea_met_shira"]},
+				"deliver2": {"speaker": "narrator", "text": "Shira estica a massa com as mãos e a deita sobre a pedra quente. Logo o cheiro de pão se espalha entre as tendas.", "next": "deliver3"},
+				"deliver3": {"speaker": "sea_shira", "text": "Ainda é pão sem fermento, como o da saída. Achatado e simples. Prove um pedaço, viajante.", "next": "end", "unlock": ["unleavened_bread_road"]},
+				"after": {"speaker": "sea_shira", "text": "Beni já comeu dois pedaços. Se eu deixar, ele come o pão da viagem inteira.", "next": "end"},
+				"dusk": {"speaker": "sea_shira", "text": "Você viu a poeira do lado do Egito? Estou juntando as nossas coisas. Se for preciso andar, quero as crianças perto de mim.", "next": "end"},
+				"night": {"speaker": "sea_shira", "text": "Beni não quer largar a minha mão. Eu também não quero largar a dele.", "next": "end"},
+				"dawn": {"speaker": "sea_shira", "text": "Ah, viajante. Que bom ver você aqui, deste lado.", "next": "dawn2"},
+				"dawn2": {"speaker": "sea_shira", "text": "Não consigo parar de olhar para a água. Ontem à noite andamos no meio dela. Hoje ela está de volta ao seu lugar.", "next": "dawn3"},
+				"dawn3": {"speaker": "narrator", "text": "Ao longe, entre as tendas, ouvem-se tamborins. Shira fica em silêncio, escutando.", "next": "dawn4"},
+				"dawn4": {"speaker": "narrator", "text": "(Êxodo 15:20-21 fala de Miriã, a profetisa, e de tamborins depois da travessia.)", "next": "dawn5", "unlock": ["miriam_song"]},
+				"dawn5": {"speaker": "sea_shira", "text": "Depois desta noite, eu também tenho muito a agradecer.", "next": "end", "event": "sea_shira_dawn"},
+				"dawn_again": {"speaker": "sea_shira", "text": "Beni pegou no sono no meu colo. Foi uma noite longa para todos nós.", "next": "end"}
+			}
+		},
+		{
+			"id": "sea_beni_talk",
+			"start": "greet",
+			"start_if": [
+				{"if": {"event": "scene_finished", "id": "exodus_sea_crossing"}, "node": "dawn"},
+				{"flag": "sea_night", "node": "night"},
+				{"flag": "sea_chariots_seen", "node": "dusk"},
+				{"flag": "sea_met_beni", "node": "again"}
+			],
+			"nodes": {
+				"greet": {"speaker": "sea_beni", "text": "Você viu a nuvem? Ela anda na nossa frente o tempo todo! Por que ela faz isso?", "set_flags": ["sea_met_beni"], "choices": [{"text": "Não sei. O que os mais velhos dizem?", "next": "elders"}, {"text": "Você tem medo dela?", "next": "fear"}]},
+				"elders": {"speaker": "sea_beni", "text": "O velho Tzvi diz que é o SENHOR que vai na frente, mostrando o caminho. E de noite ela vira fogo, pra gente não andar no escuro.", "next": "elders2"},
+				"elders2": {"speaker": "narrator", "text": "(Êxodo 13:21-22 diz que o SENHOR ia adiante do povo na coluna de nuvem e de fogo. O texto não explica mais do que isso.)", "next": "end"},
+				"fear": {"speaker": "sea_beni", "text": "Medo, não. Mas eu não chego perto. E a mamãe também não deixa.", "next": "end"},
+				"again": {"speaker": "sea_beni", "text": "A mamãe disse que hoje o pão não vai ter fermento. Eu nem ligo. Pão é pão!", "next": "end"},
+				"dusk": {"speaker": "sea_beni", "text": "Por que todo mundo está olhando para o lado de onde viemos? É chuva? ...Não é chuva, né?", "next": "end"},
+				"night": {"speaker": "sea_beni", "text": "Eu não estou com medo. ...Só um pouquinho. Você fica aqui com a gente?", "next": "end"},
+				"dawn": {"speaker": "sea_beni", "text": "A gente andou no meio do mar, e o chão estava seco! A água ficava dos dois lados.", "next": "dawn2"},
+				"dawn2": {"speaker": "sea_beni", "text": "Agora todo mundo está quieto, olhando a água. Eu também.", "next": "end"}
+			}
+		},
+		{
+			"id": "sea_dror_talk",
+			"start": "greet",
+			"start_if": [
+				{"if": {"all": [{"objective": "sea_camp_flock/return_dror"}, {"flag": "sea_stray_1"}, {"flag": "sea_stray_2"}, {"flag": "sea_stray_3"}]}, "node": "after_found"},
+				{"objective": "sea_camp_flock/return_dror", "node": "after_neighbors"},
+				{"if": {"event": "scene_finished", "id": "exodus_sea_crossing"}, "node": "dawn"},
+				{"if": {"all": [{"flag": "sea_night"}, {"quest_active": "sea_camp_flock"}]}, "node": "night_flock"},
+				{"flag": "sea_night", "node": "night"},
+				{"if": {"quest_active": "sea_camp_flock"}, "node": "waiting"},
+				{"if": {"quest_completed": "sea_camp_flock"}, "node": "thanks_again"},
+				{"flag": "sea_met_dror", "node": "again"}
+			],
+			"nodes": {
+				"greet": {"speaker": "sea_dror", "text": "Paz, viajante. Você não viu uma ovelha ou uma cabra perdida por aí? O vento da tarde espalhou parte do meu rebanho.", "next": "greet2", "set_flags": ["sea_met_dror"]},
+				"greet2": {"speaker": "sea_dror", "text": "São três ao todo. Quando venta, os animais procuram abrigo: atrás das pedras, das cristas, no meio dos juncos.", "choices": [{"text": "Eu ajudo a procurar.", "next": "accept"}, {"text": "Agora não posso.", "next": "decline"}]},
+				"again": {"speaker": "sea_dror", "text": "Ainda faltam três animais. Quer me ajudar a procurar?", "choices": [{"text": "Eu ajudo a procurar.", "next": "accept"}, {"text": "Agora não posso.", "next": "decline"}]},
+				"accept": {"speaker": "sea_dror", "text": "Obrigado! Siga o balido. Eu fico aqui para os outros não se espalharem.", "next": "end", "event": "sea_dror_flock"},
+				"decline": {"speaker": "sea_dror", "text": "Tudo bem. Se mudar de ideia, estou aqui com o rebanho.", "next": "end"},
+				"waiting": {"speaker": "sea_dror", "text": "Ouviu algum balido? Olhe atrás das pedras grandes, atrás da crista junto à elevação e no meio dos juncos da beira.", "next": "end"},
+				"after_found": {"speaker": "sea_dror", "text": "Os três! Você achou todos. Já estão junto com os outros.", "next": "after_found2"},
+				"after_found2": {"speaker": "sea_dror", "text": "Saímos do Egito com tudo o que tínhamos: ovelhas, cabras, bois. Cada animal conta.", "next": "after_note"},
+				"after_neighbors": {"speaker": "sea_dror", "text": "Na pressa da noite, os vizinhos trouxeram os animais que faltavam. Estão todos aqui. Obrigado por ter procurado, viajante.", "next": "after_note"},
+				"after_note": {"speaker": "narrator", "text": "(Êxodo 12:38 registra que ovelhas, bois e muitíssimos animais saíram do Egito com o povo.)", "next": "end", "event": "sea_dror_after"},
+				"thanks_again": {"speaker": "sea_dror", "text": "O rebanho está inteiro. Agora é esperar o que a noite traz.", "next": "end"},
+				"night_flock": {"speaker": "sea_dror", "text": "Não deu para achar todos antes do escuro. Os vizinhos prometeram ajudar. Agora, fique perto da água.", "next": "end"},
+				"night": {"speaker": "sea_dror", "text": "Os animais estão inquietos esta noite. Fico perto deles.", "next": "end"},
+				"dawn": {"speaker": "sea_dror", "text": "Contei os animais duas vezes. Estão todos aqui. E nós também.", "next": "end"}
+			}
+		},
+		{
+			"id": "sea_nava_talk",
+			"start": "greet",
+			"start_if": [
+				{"if": {"all": [{"has_item": "full_water_skins"}, {"quest_active": "sea_camp_water"}]}, "node": "deliver"},
+				{"if": {"all": [{"event": "scene_finished", "id": "exodus_sea_crossing"}, {"objective": "sea_camp_water/deliver_water"}]}, "node": "dawn_no_water"},
+				{"if": {"event": "scene_finished", "id": "exodus_sea_crossing"}, "node": "dawn"},
+				{"flag": "sea_night", "node": "night"},
+				{"if": {"all": [{"flag": "sea_chariots_seen"}, {"flag": "sea_met_nava"}]}, "node": "dusk"},
+				{"if": {"quest_active": "sea_camp_water"}, "node": "waiting"},
+				{"if": {"quest_completed": "sea_camp_water"}, "node": "after"},
+				{"flag": "sea_met_nava", "node": "again"}
+			],
+			"nodes": {
+				"greet": {"speaker": "sea_nava", "text": "Ai, meus joelhos... Paz, viajante. Os odres da minha família estão vazios, e eu já não aguento ir e voltar da fonte.", "next": "greet2", "set_flags": ["sea_met_nava"]},
+				"greet2": {"speaker": "sea_nava", "text": "Do mar não adianta tirar: a água é salgada. Mas junto às tamareiras, perto dos juncos, brota uma água que dá para beber.", "choices": [{"text": "Eu encho os odres para você.", "next": "accept", "if": {"not": {"quest_started": "sea_camp_water"}}}, {"text": "Agora não posso.", "next": "decline"}]},
+				"again": {"speaker": "sea_nava", "text": "Ainda por aqui? Os odres vazios ficaram perto da fonte, junto às tamareiras.", "choices": [{"text": "Eu encho os odres para você.", "next": "accept", "if": {"not": {"quest_started": "sea_camp_water"}}}, {"text": "Agora não posso.", "next": "decline"}]},
+				"accept": {"speaker": "sea_nava", "text": "Deus lhe pague. Deixei os odres vazios lá, ao lado da fonte, hoje cedo. Encha e traga para mim.", "next": "end", "event": "sea_nava_water"},
+				"decline": {"speaker": "sea_nava", "text": "Vá em paz. Alguém da família há de ir.", "next": "end"},
+				"waiting": {"speaker": "sea_nava", "text": "A fonte fica entre as duas tamareiras, do outro lado do rebanho. Os odres estão lá.", "next": "end"},
+				"deliver": {"speaker": "sea_nava", "text": "Cheios! E a água está boa, só um pouco salobra.", "next": "deliver2", "take": [{"item": "full_water_skins", "qty": 1}], "set_flags": ["sea_water_delivered"], "event": "sea_nava_water_done"},
+				"deliver2": {"speaker": "sea_nava", "text": "Hoje a minha família não passa sede. Obrigada, viajante.", "next": "end"},
+				"after": {"speaker": "sea_nava", "text": "Os odres estão pendurados no tripé, cheios. Que alívio.", "next": "end"},
+				"dusk": {"speaker": "sea_nava", "text": "Você viu a poeira? São os carros do Egito. Há quem diga que teria sido melhor ficar lá, servindo, do que morrer no deserto.", "next": "dusk2"},
+				"dusk2": {"speaker": "narrator", "text": "(Êxodo 14:10-12 registra o medo do povo e essa queixa feita a Moisés. Nava, personagem do jogo, repete o que se ouve nas tendas.)", "next": "dusk3"},
+				"dusk3": {"speaker": "sea_nava", "text": "Eu não penso assim. Mas medo eu tenho, isso eu tenho.", "next": "end"},
+				"night": {"speaker": "sea_nava", "text": "Meus netos estão todos aqui, perto de mim. É o que importa esta noite.", "next": "end"},
+				"dawn_no_water": {"speaker": "sea_nava", "text": "Na pressa da noite, outra família dividiu a água conosco. Ninguém passou sede.", "next": "end", "event": "sea_nava_water_done"},
+				"dawn": {"speaker": "sea_nava", "text": "Atravessei o mar com estes joelhos velhos. Eu, que reclamava de ir até a fonte.", "next": "end"}
+			}
+		},
+		{
+			"id": "sea_meret_talk",
+			"start": "greet",
+			"start_if": [
+				{"if": {"event": "scene_finished", "id": "exodus_sea_crossing"}, "node": "dawn"},
+				{"if": {"all": [{"flag": "sea_chariots_seen"}, {"flag": "sea_met_meret"}]}, "node": "dusk"},
+				{"flag": "sea_met_meret", "node": "again"}
+			],
+			"nodes": {
+				"greet": {"speaker": "sea_meret", "text": "Você reparou na minha roupa, não foi? Todo mundo repara. Eu não nasci entre as famílias de Israel.", "next": "greet2", "set_flags": ["sea_met_meret"]},
+				"greet2": {"speaker": "sea_meret", "text": "Quando eles partiram, eu vim junto. Os motivos são meus. Aqui, ninguém me mandou embora.", "next": "greet3"},
+				"greet3": {"speaker": "narrator", "text": "(Êxodo 12:38 diz que uma multidão mista subiu com os israelitas, mas não diz quem eram. Meret é uma personagem criada para o jogo.)", "next": "end", "unlock": ["exodus_departure"]},
+				"again": {"speaker": "sea_meret", "text": "Tanta gente, tantos animais... e todos indo para o mesmo lado.", "next": "end"},
+				"dusk": {"speaker": "sea_meret", "text": "A poeira não sai do horizonte. Fico perto das tendas, com os outros.", "next": "end"},
+				"dawn": {"speaker": "sea_meret", "text": "Estou viva. E os que vieram comigo também. Hoje isso basta.", "next": "dawn2"},
+				"dawn2": {"speaker": "sea_meret", "text": "Do resto, prefiro guardar silêncio.", "next": "end"}
+			}
+		},
+		{
+			"id": "sea_dust_view",
+			"start": "n1",
+			"start_if": [
+				{"flag": "sea_chariots_seen", "node": "again"}
+			],
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Do alto da elevação, você olha pelo vão entre as cristas. Lá longe, do lado por onde o povo veio, sobe uma faixa de poeira.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Pontos escuros se movem dentro dela. De vez em quando, algo brilha ao sol. São carros.", "next": "n3", "set_flags": ["sea_chariots_seen"]},
+				"n3": {"speaker": "narrator", "text": "(Êxodo 14 conta que o rei do Egito saiu atrás do povo com carros e exército:)", "next": "n4"},
+				"n4": {"speaker": "narrator", "scripture": "Exod 14:9-10", "text": "(Êxodo 14:9-10: os egípcios alcançaram o povo acampado junto ao mar, e os israelitas ficaram com muito medo e clamaram ao SENHOR.)", "next": "end", "unlock": ["sea_pursuit"]},
+				"again": {"speaker": "narrator", "text": "A faixa de poeira continua no horizonte, do lado do Egito.", "next": "end"}
+			}
+		},
+		{
+			"id": "sea_bundle",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Uma trouxa de manto amarrada com corda. Pela abertura aparece a borda de uma amassadeira, a tigela rasa onde se sova a massa.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "(Êxodo 12:34 conta que o povo levou a massa antes de fermentar, com as amassadeiras amarradas nas roupas, sobre os ombros.)", "next": "end", "unlock": ["unleavened_bread_road"]}
+			}
+		},
+		{
+			"id": "sea_shelter",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um abrigo baixo de pano esticado sobre varas, inclinado contra o vento. Fácil de armar e de desmontar.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "(O nome Sucote, uma das paradas citadas em Êxodo 12:37, costuma ser ligado à palavra hebraica para \"cabanas\". É uma hipótese.)", "next": "n3"},
+				"n3": {"speaker": "narrator", "text": "(Levítico 23:42-43 liga a festa das cabanas aos abrigos temporários da saída do Egito. Este abrigo é uma reconstrução do jogo.)", "next": "end"}
+			}
+		},
+		{
+			"id": "sea_reeds",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Touceiras de juncos crescem na água rasa e se curvam com o vento.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "(Em hebraico, este mar é chamado yam suf. Muitos traduzem \"mar de juncos\"; a tradução carregada diz \"Mar Vermelho\". Onde ele ficava é debatido.)", "next": "end", "unlock": ["yam_suf_debate"]}
+			}
+		},
+		{
+			"id": "sea_seep",
+			"start": "n1",
+			"start_if": [
+				{"if": {"all": [{"quest_active": "sea_camp_water"}, {"lacks_item": "full_water_skins"}, {"not_flag": "sea_water_delivered"}]}, "node": "fill"}
+			],
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Entre as duas tamareiras, a água brota devagar numa poça rasa. Tem um gosto levemente salgado, mas dá para beber.", "next": "end"},
+				"fill": {"speaker": "narrator", "text": "Os odres de Nava estão aqui, ao lado da poça. Você os enche com paciência, um de cada vez.", "next": "fill2", "give": [{"item": "full_water_skins", "qty": 1}]},
+				"fill2": {"speaker": "narrator", "text": "(A fonte junto às tamareiras é uma criação do jogo.)", "next": "end"}
+			}
+		},
+		{
+			"id": "sea_stray_1",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um balido fraco vem de trás das rochas. Uma ovelha se encolheu ali, fugindo do vento.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Você a conduz de volta, devagar, até o rebanho de Dror.", "next": "end", "set_flags": ["sea_stray_1"]}
+			}
+		},
+		{
+			"id": "sea_stray_2",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Atrás da crista, uma cabra mastiga um arbusto seco, sem pressa nenhuma.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Com um pouco de paciência, ela aceita voltar para o rebanho de Dror.", "next": "end", "set_flags": ["sea_stray_2"]}
+			}
+		},
+		{
+			"id": "sea_stray_3",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Entre os juncos, uma ovelha atolou as patas na beira molhada e bale assustada.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Você a ajuda a sair e a leva de volta ao rebanho de Dror.", "next": "end", "set_flags": ["sea_stray_3"]}
+			}
+		},
+		{
+			"id": "sea_far_view",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "O mar está calmo. A margem de onde o povo saiu ontem à noite é só uma linha distante.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Você abre o diário de viagem nos trechos de Êxodo 14.", "next": "end", "action": {"presentation": "exod_014_sea"}}
+			}
+		},
+		{
+			"id": "goat_examine",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "A cabra estica o pescoço atrás das folhas de um arbusto e mastiga sem pressa.", "next": "end", "unlock": ["sheep_goats"]}
+			}
+		},
+		{
+			"id": "donkey_examine",
+			"start": "n1",
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "O jumento carrega cestos dos dois lados e espera, paciente, abanando as orelhas. Era o animal de carga mais comum da região.", "next": "end"}
+			}
+		}
+	]
+}
