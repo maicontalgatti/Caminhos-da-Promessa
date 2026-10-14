@@ -77,3 +77,16 @@ Num chat novo, com qualquer ferramenta de IA: use o prompt de [START_WITH_AI.md]
 
 ## Registro da publicação
 Preenchido depois do envio (o hash de um commit não pode constar nele mesmo).
+- **Repositório:** https://github.com/maicontalgatti/Caminhos-da-Promessa, dono `maicontalgatti`, branch `main`.
+- **Commit publicado:** `573bdf3` ("chore: prepare repository for public collaboration"), push normal `7243bcd..573bdf3`, sem force. O `gh` da conta dona recebeu a permissão `workflow` (exigida para enviar `.github/workflows/`) por login no navegador feito pelo criador.
+- **CI:** execução 38621957345 do workflow "Testes" no commit `573bdf3`: **Realizado e aprovado** em 55 s no Linux. Godot conferido por SHA-512; suíte 665/665, fluxo 17/17, validação sem erros, fábrica 0 erros em 78 episódios, áudio 131 arquivos e 0 problemas.
+- **Clone limpo do commit `573bdf3`** (pasta temporária, Godot portátil): **Realizado e aprovado**. 763 arquivos, segundo `--import` sem erros, suíte 665/665; só `default_bus_layout.tres` aparece modificado (KI-18).
+- **Visibilidade:** mudada para **PUBLIC** depois da checagem; conferida pela API autenticada e pela API anônima (`private=false`, licença detectada MIT).
+- **Acesso sem login** (HTTP 200): página do repositório, `README.md`, `START_WITH_AI.md`, `AGENTS.md`, `docs/ai-wiki/README.md`, `CURRENT_STATE.md`, `HANDOFF.md`, `LICENSE`, `LICENSE-ASSETS.md`, `CONTRIBUTING.md`.
+- **Proteções configuradas:**
+  - ruleset "Proteger main" (ativo): bloqueia exclusão e force push; exige pull request com 1 aprovação e o check `godot-tests`; o papel de administrador pode contornar (o criador mantém o projeto sozinho);
+  - Actions: permissão padrão do `GITHUB_TOKEN` somente leitura, Actions não aprovam PRs, workflows de colaboradores externos exigem aprovação;
+  - varredura de segredos e proteção de push ativas (0 alertas na primeira consulta); relato privado de vulnerabilidades ativo; alertas do Dependabot ativos.
+- **Limitações do plano gratuito:** com o repositório privado, rulesets e proteção de branch não estavam disponíveis (HTTP 403); foram aplicados logo depois de torná-lo público.
+- **Também feito:** descrição e tópicos do repositório; rótulos `biblical-content` e `dependencies` usados pelos modelos.
+- **Este registro** entrou por pull request (fluxo novo), esperou o check de testes e foi integrado pelo agente com o contorno de administrador da conta dona, a pedido do criador (não há segundo revisor no projeto).

@@ -76,6 +76,10 @@ Sem áudio gravado: efeitos e ambiente existem desde a v0.5, mas são procedurai
 - **Situação:** no clone limpo do checkpoint, o primeiro `--import` trocou `load_steps=2 format=3` por `format=3 uid="uid://..."` no cabeçalho do arquivo. É cosmético e o jogo funciona igual, mas o arquivo aparece modificado no `git status` do clone.
 - **Ação:** se incomodar, versionar o cabeçalho com `uid` gerado por um clone (o mesmo `uid` passa a valer em todas as máquinas). Não commitar sem conferir que só o cabeçalho mudou.
 
+### KI-19 — Histórico público cita o nome de outra conta do GitHub da máquina do criador (baixa)
+- **Situação:** o `HANDOFF.md` dos commits `218cb73` e `7243bcd` menciona o nome de uma segunda conta do `gh` configurada na máquina do criador. Não é credencial nem segredo (nomes de conta do GitHub são públicos); foi removido da versão atual antes da publicação.
+- **Ação:** apagar do histórico exigiria reescrevê-lo e fazer force push, o que só pode ser feito com autorização explícita do criador. Até lá, nada a fazer.
+
 ## Divergências documentação × código encontradas na auditoria de 2026-10-14
 | Onde | Divergência | Situação |
 |---|---|---|
