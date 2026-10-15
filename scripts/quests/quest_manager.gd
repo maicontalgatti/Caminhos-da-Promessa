@@ -27,7 +27,9 @@ func _ready() -> void:
 	db.load_dir()
 	for e in db.errors:
 		push_error("QuestManager: " + e)
-	GameState.state_replaced.connect(func(): context_changed.emit())
+	GameState.state_replaced.connect(func():
+		realign_objectives()
+		context_changed.emit())
 	if OS.is_debug_build() and FileAccess.file_exists(DEBUG_BOOT_PATH):
 		_debug_boot.call_deferred()
 
@@ -299,6 +301,50 @@ func missing_requirements(quest_id: String) -> PackedStringArray:
 	return out
 
 
+## Mantém o progresso quando a lista de objetivos de uma missão muda entre
+## versões. O save guarda o índice do objetivo atual e também
+## o id dele (desde a mudança da missão dos poços): se o id ainda existe, o índice é corrigido para a posição nova.
+## Saves sem id só são realinhados quando o histórico registra um objetivo que
+## não existe mais; aí o jogador volta ao primeiro objetivo atual ainda não
+## registrado no histórico (os já cumpridos avançam de novo por evaluate()).
+func realign_objectives() -> void:
+	for qid in GameState.quests:
+		var s: Dictionary = GameState.quests[qid]
+		if String(s.get("status", "")) != "active":
+			continue
+		var q := db.get_quest(String(qid))
+		if q.is_empty():
+			continue
+		var ids: Array = []
+		for o in q.get("objectives", []):
+			ids.append(String(o.id))
+		var oid := String(s.get("objective_id", ""))
+		if oid != "" and ids.has(oid):
+			s.objective = ids.find(oid)
+			continue
+		var logged := {}
+		var stale := false
+		for e in GameState.history:
+			if e is Dictionary and String(e.get("kind", "")) == "objective":
+				var parts := String(e.get("id", "")).split("/")
+				if parts.size() == 2 and parts[0] == String(qid):
+					logged[parts[1]] = true
+					stale = stale or not ids.has(parts[1])
+		if oid == "" and not stale:
+			s.objective_id = _objective_id_at(String(qid), int(s.get("objective", 0)))
+			continue
+		var i := 0
+		while i < ids.size() and logged.has(ids[i]):
+			i += 1
+		s.objective = i
+		s.objective_id = _objective_id_at(String(qid), i)
+
+
+func _objective_id_at(quest_id: String, index: int) -> String:
+	var objs: Array = db.get_quest(quest_id).get("objectives", [])
+	return String(objs[index].id) if index >= 0 and index < objs.size() else ""
+
+
 # --- Interno -----------------------------------------------------------------
 
 func _can_start(quest_id: String) -> bool:
@@ -321,7 +367,8 @@ func _trigger_met(t: Dictionary) -> bool:
 
 func _start(quest_id: String) -> void:
 	GameState.quests[quest_id] = {"status": "active", "objective": 0, "hints": {},
-		"started": GameState.play_time, "completed": 0.0, "objective_started": GameState.play_time}
+		"started": GameState.play_time, "completed": 0.0, "objective_started": GameState.play_time,
+		"objective_id": _objective_id_at(quest_id, 0)}
 	GameState.add_log("quest_started", quest_id)
 	quest_started.emit(quest_id)
 	objective_changed.emit(quest_id)
@@ -333,6 +380,7 @@ func _advance(quest_id: String) -> void:
 	var s: Dictionary = GameState.quests[quest_id]
 	s.objective = int(s.objective) + 1
 	s.objective_started = GameState.play_time
+	s.objective_id = _objective_id_at(quest_id, int(s.objective))
 	if not obj.is_empty():
 		GameState.add_log("objective", "%s/%s" % [quest_id, obj.id])
 		for d in obj.get("unlock", []):

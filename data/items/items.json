@@ -1,5 +1,5 @@
 {
-	"_comment": "Itens do inventário. Categorias: material, common, supply, quest (compartimento de essenciais, não descartável), collectible. Nada de moedas cunhadas, ferro comum, vidro, papel ou alimentos do Novo Mundo na época dos patriarcas. Ícones provisórios gerados por tools/art_gen/generate_art.gd.",
+	"_comment": "Itens do inventário. Categorias: material, common, supply, trade (mercadorias para vender na feira), quest (compartimento de essenciais, não descartável), collectible. Nada de moedas cunhadas, ferro comum, vidro, papel ou alimentos do Novo Mundo na época dos patriarcas. Ícones provisórios gerados por tools/art_gen/generate_art.gd.",
 	"items": [
 		{
 			"id": "plant_fiber",
@@ -148,6 +148,109 @@
 			"icon": "res://assets/items/water_skin.png",
 			"max_stack": 1,
 			"classification": "plausible_fiction"
+		},
+		{
+			"id": "clay_jar",
+			"name": "Cântaro vazio",
+			"category": "quest",
+			"essential": true,
+			"description": "Um cântaro de barro que Ezer deixou secando ao sol. Serve para tirar água do poço.",
+			"history_note": "Cântaros de barro eram levados no ombro ou na cabeça entre o poço e a casa; Gênesis 24:15 descreve Rebeca com o cântaro no ombro.",
+			"icon": "res://assets/items/clay_jar.png",
+			"max_stack": 1,
+			"classification": "plausible_fiction"
+		},
+		{
+			"id": "clay_jar_full",
+			"name": "Cântaro com água",
+			"category": "quest",
+			"essential": true,
+			"description": "O cântaro de Ezer, cheio de água do poço da praça. Pesado: leve com cuidado até o bebedouro do curral.",
+			"history_note": "Tirar água era trabalho diário; para um rebanho, eram precisas muitas viagens entre o poço e o bebedouro.",
+			"icon": "res://assets/items/clay_jar_full.png",
+			"max_stack": 1,
+			"classification": "plausible_fiction"
+		},
+		{
+			"id": "sheep_cheese",
+			"name": "Queijo de ovelha",
+			"category": "supply",
+			"description": "Queijo branco e firme que Adina fez com o leite do rebanho, embrulhado num pano limpo.",
+			"history_note": "Pastores aproveitavam o leite de ovelhas e cabras também na forma de coalhada e queijo, que se conservavam melhor que o leite fresco.",
+			"icon": "res://assets/items/sheep_cheese.png",
+			"max_stack": 3,
+			"use_text": "Você guarda o queijo para a viagem. (O jogo não tem fome nem cansaço: os suprimentos servem para ajudar quem precisa.)",
+			"classification": "plausible_fiction"
+		},
+		{
+			"id": "wool_tuft",
+			"name": "Tufo de lã",
+			"category": "trade",
+			"description": "Lã crua que ficou presa nos espinheiros por onde o rebanho passa. Junte alguns e troque na feira.",
+			"history_note": "A lã era fiada e tecida em casa; até restos de lã tinham valor de troca entre pastores e tecelões.",
+			"icon": "res://assets/items/wool_tuft.png",
+			"max_stack": 10,
+			"classification": "historical_context"
+		},
+		{
+			"id": "almonds",
+			"name": "Amêndoas",
+			"category": "trade",
+			"description": "Amêndoas secas, recolhidas debaixo das amendoeiras.",
+			"history_note": "Gênesis 43:11 cita amêndoas entre os melhores produtos da terra de Canaã levados como presente ao Egito.",
+			"icon": "res://assets/items/almonds.png",
+			"max_stack": 10,
+			"classification": "historical_context"
+		},
+		{
+			"id": "flint_stone",
+			"name": "Lasca de sílex",
+			"category": "trade",
+			"description": "Uma lasca afiada de sílex, boa para fazer lâminas de foice e facas.",
+			"history_note": "Lâminas de sílex continuaram em uso para cortar cereais e couro mesmo depois da chegada do bronze.",
+			"icon": "res://assets/items/flint_stone.png",
+			"max_stack": 10,
+			"classification": "historical_context"
+		},
+		{
+			"id": "wild_herbs",
+			"name": "Ervas silvestres",
+			"category": "trade",
+			"description": "Um maço de ervas do campo, de cheiro forte, para temperar a comida.",
+			"history_note": "Ervas colhidas no campo temperavam a comida e serviam em remédios caseiros; não há registro de quais eram vendidas em cada lugar.",
+			"icon": "res://assets/items/wild_herbs.png",
+			"max_stack": 10,
+			"classification": "plausible_fiction"
+		},
+		{
+			"id": "papyrus_stalks",
+			"name": "Hastes de papiro",
+			"category": "trade",
+			"description": "Hastes verdes de papiro cortadas na beira da água.",
+			"history_note": "O papiro crescia nos brejos do Nilo; com as hastes faziam-se cordas, esteiras, cestos e sandálias.",
+			"icon": "res://assets/items/papyrus_stalks.png",
+			"max_stack": 10,
+			"classification": "historical_context"
+		},
+		{
+			"id": "dates",
+			"name": "Tâmaras",
+			"category": "trade",
+			"description": "Tâmaras doces e escuras, que secam bem e viajam longe.",
+			"history_note": "A tamareira era cultivada no Egito e nos oásis do deserto; o fruto seco era alimento de viagem.",
+			"icon": "res://assets/items/dates.png",
+			"max_stack": 10,
+			"classification": "historical_context"
+		},
+		{
+			"id": "sea_shell",
+			"name": "Concha",
+			"category": "trade",
+			"description": "Uma concha clara, lisa por dentro, achada na areia.",
+			"history_note": "Conchas eram usadas como enfeites e contas desde tempos muito antigos.",
+			"icon": "res://assets/items/sea_shell.png",
+			"max_stack": 10,
+			"classification": "historical_context"
 		}
 	]
 }

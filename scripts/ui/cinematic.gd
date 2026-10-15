@@ -68,6 +68,7 @@ func _begin(k: String, id: String, steps: Array) -> void:
 	_index = -1
 	visible = true
 	GameState.block_ui("cinematic")
+	AudioManager.music.enter_context(self, "%s:%s" % [k, id])
 	_hide_all()
 	_next()
 
@@ -137,6 +138,7 @@ func _finish(skipped: bool) -> void:
 	_hide_all()
 	_release_camera()
 	GameState.unblock_ui("cinematic")
+	AudioManager.music.exit_context(self)
 	finished.emit(kind, content_id, skipped)
 
 

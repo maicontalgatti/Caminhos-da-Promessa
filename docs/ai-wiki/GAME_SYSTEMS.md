@@ -17,6 +17,7 @@ Arquivos e interfaces em [ARCHITECTURE_MAP.md](ARCHITECTURE_MAP.md).
 | Luz por estado | `lighting` da região: primeira regra verdadeira define a tinta; muda ao entrar e quando flags mudam | automático | quests, ADR-028 |
 | Passagem de saída | saída com `passage` mostra o cartão antes de atravessar | automático | quests, ADR-028 |
 | Bolsa (I) | 12 espaços + essenciais; coleta no mapa sem duplicar; entregar, receber e trocar em diálogo; descartar (exceto protegidos) | automático + capturas | ADR-023, quests |
+| Feira do viajante | mercadores no mapa (Yaron, Ozi, Nefer, Liora): "Quero negociar" abre Vender/Comprar; mercadorias reaparecem a cada visita; prata pesada (sem moedas); roupa, cabeça, cajado e jumento aparecem no viajante; jumento acelera a caminhada | automático + capturas (sem jogo humano, KI-23) | ADR-030 |
 | Colecionáveis | conjuntos (ex.: registros da caravana); aba "Descobertas" do diário | automático + capturas | quests |
 | Escolhas | decisões persistentes (`choice:<id>`) com desfechos de missão por variante | automático | quests, ADR-022 |
 | Missões e objetivos | principal, secundária e exploração; missão acompanhada; avançam por eventos; objetivos retroativos; H revela 3 pistas progressivas; lembrete após 150 s; seta para a saída quando o alvo está em outra região | automático | quests |

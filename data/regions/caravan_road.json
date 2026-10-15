@@ -30,7 +30,8 @@
 				{"id": "caravan_lookout", "rect": [448, 160, 96, 80], "label": "Trecho alto da estrada"}
 			],
 			"npcs": [
-				{"id": "malik", "character": "malik", "x": 446, "y": 236}
+				{"id": "malik", "character": "malik", "x": 446, "y": 236},
+				{"id": "ozi", "character": "ozi", "x": 196, "y": 244}
 			],
 			"examinables": [
 				{"id": "cr_tracks", "x": 600, "y": 208, "dialogue": "cr_tracks", "prompt": "Examinar o rastro", "marker": "sparkle", "radius": 12},
@@ -46,7 +47,11 @@
 				{"id": "fiber_4", "item": "plant_fiber", "x": 760, "y": 250},
 				{"id": "wood_1", "item": "dry_wood", "x": 300, "y": 150},
 				{"id": "wood_2", "item": "dry_wood", "x": 690, "y": 345},
-				{"id": "wood_3", "item": "dry_wood", "x": 930, "y": 262}
+				{"id": "wood_3", "item": "dry_wood", "x": 930, "y": 262},
+				{"id": "tr_cr_flint_1", "item": "flint_stone", "x": 440, "y": 330, "renewable": true},
+				{"id": "tr_cr_flint_2", "item": "flint_stone", "x": 800, "y": 150, "renewable": true},
+				{"id": "tr_cr_almonds_1", "item": "almonds", "x": 150, "y": 215, "renewable": true},
+				{"id": "tr_cr_wool_1", "item": "wool_tuft", "x": 620, "y": 380, "renewable": true}
 			]
 		}
 	]

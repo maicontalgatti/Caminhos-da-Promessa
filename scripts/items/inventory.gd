@@ -15,11 +15,12 @@ signal moved(item_id: String, delta: int, source: String)
 
 const ITEMS_DIR := "res://data/items"
 const BAG_SLOTS := 12
-const CATEGORIES := ["material", "common", "supply", "quest", "collectible"]
+const CATEGORIES := ["material", "common", "supply", "trade", "quest", "collectible"]
 const CATEGORY_LABELS := {
 	"material": "Materiais",
 	"common": "Objetos comuns",
 	"supply": "Suprimentos",
+	"trade": "Mercadorias",
 	"quest": "Itens de missão",
 	"collectible": "Colecionáveis",
 }

@@ -95,6 +95,7 @@
 		"_comment": "Som ao interagir, pelo id do diálogo do objeto; sem entrada, vale o padrão do tipo (kinds). Conversas (TALK) usam dialogue_open.",
 		"by_dialogue": {
 			"well_examine": "interact_water_well",
+			"canaan_trough": "interact_water_cistern",
 			"dothan_cistern": "interact_water_cistern",
 			"boundary_stone": "interact_stone",
 			"cr_marker": "interact_stone",
@@ -175,7 +176,17 @@
 		"corner_sheaf": "item_fiber",
 		"tova_grain": "item_food",
 		"barley_sack": "item_food",
-		"brushwood": "item_wood"
+		"brushwood": "item_wood",
+		"clay_jar": "item_pickup",
+		"clay_jar_full": "item_water",
+		"sheep_cheese": "item_food",
+		"wool_tuft": "item_cloth",
+		"almonds": "item_food",
+		"dates": "item_food",
+		"wild_herbs": "item_fiber",
+		"papyrus_stalks": "item_fiber",
+		"flint_stone": "item_pickup",
+		"sea_shell": "item_pickup"
 	},
 
 	"ambience": {

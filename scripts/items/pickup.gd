@@ -1,14 +1,16 @@
 class_name Pickup
 extends Node2D
 ## Item no chão definido em "pickups" da região: {id, item, qty?, x, y,
-## visible_if?}. "E — Coletar" adiciona à bolsa, marca o objeto como coletado
-## (por id estável, salvo com a partida) e avisa a missão. Com a bolsa cheia,
-## o item fica no chão.
+## visible_if?, renewable?}. "E — Coletar" adiciona à bolsa, marca o objeto
+## como coletado (por id estável, salvo com a partida) e avisa a missão. Com a
+## bolsa cheia, o item fica no chão. renewable: só some até a próxima visita à
+## região (mercadorias para a feira; sem quantidade parcial salva).
 
 var region_id := ""
 var pickup_id := ""
 var item_id := ""
 var qty := 1
+var renewable := false
 var interactable: Interactable
 var _taken := false
 
@@ -18,8 +20,11 @@ func setup(region: String, d: Dictionary) -> void:
 	pickup_id = String(d.get("id", ""))
 	item_id = String(d.get("item", ""))
 	qty = maxi(int(d.get("qty", 1)), 1)
+	renewable = bool(d.get("renewable", false))
+	if renewable:
+		qty = 1
 	var left: Variant = GameState.world.get(WorldManager.world_key(region, pickup_id))
-	if left is int or left is float:
+	if not renewable and (left is int or left is float):
 		qty = clampi(int(left), 1, qty)
 	name = "Pickup_" + pickup_id.to_pascal_case()
 
@@ -68,7 +73,7 @@ static func sparkle() -> CPUParticles2D:
 
 ## Coleta; retorna quantas unidades entraram na bolsa.
 func collect() -> int:
-	if _taken or WorldManager.is_picked(region_id, pickup_id):
+	if _taken or WorldManager.is_picked(region_id, pickup_id) or WorldManager.is_picked_this_visit(region_id, pickup_id):
 		return 0
 	var n := Inventory.add(item_id, qty, "pickup")
 	if n <= 0:
@@ -82,7 +87,10 @@ func collect() -> int:
 		return n
 	_taken = true
 	interactable.enabled = false
-	WorldManager.mark_picked(region_id, pickup_id)
+	if renewable:
+		WorldManager.mark_picked_this_visit(region_id, pickup_id)
+	else:
+		WorldManager.mark_picked(region_id, pickup_id)
 	get_tree().call_group("hud", "show_toast", "+%d %s" % [n, Inventory.display_name(item_id)])
 	var t := create_tween()
 	t.set_parallel(true)

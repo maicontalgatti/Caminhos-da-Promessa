@@ -6,7 +6,8 @@ extends VBoxContainer
 ## Som de teste ao ajustar cada categoria (sem som: categoria ainda sem conteúdo).
 const PREVIEW := {"Master": "ui_confirm", "SFX": "item_pickup", "UI": "ui_click", "Ambience": "amb_bird"}
 const PREVIEW_INTERVAL := 0.25
-const EMPTY_NOTE := {"Music": "sem música ainda", "Voice": "sem vozes gravadas"}
+const EMPTY_NOTE := {"Voice": "sem vozes gravadas"}
+const NOTE := {"Music": "hinos e temas instrumentais, baixos, que mudam conforme o momento da história"}
 
 var _sliders := {}
 var _values := {}
@@ -42,8 +43,8 @@ func _add_row(bus: String) -> void:
 	row.add_theme_constant_override("separation", 3)
 	var l := UiStyle.label(String(Settings.AUDIO_LABELS.get(bus, bus)), 7)
 	l.custom_minimum_size.x = 52
-	if EMPTY_NOTE.has(bus):
-		l.tooltip_text = String(EMPTY_NOTE[bus])
+	if EMPTY_NOTE.has(bus) or NOTE.has(bus):
+		l.tooltip_text = String(EMPTY_NOTE.get(bus, NOTE.get(bus, "")))
 		l.mouse_filter = Control.MOUSE_FILTER_PASS
 	row.add_child(l)
 	var s := HSlider.new()

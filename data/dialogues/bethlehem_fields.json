@@ -190,6 +190,24 @@
 			"nodes": {
 				"n1": {"speaker": "narrator", "text": "A estrada desce para o oeste, entre as colinas. Para ir a outro momento da história, abra o Mapa das Escrituras (M).", "next": "end"}
 			}
+		},
+		{
+			"id": "liora_talk",
+			"start": "greet",
+			"start_if": [
+				{"flag": "met_liora", "node": "again"}
+			],
+			"nodes": {
+				"greet": {"speaker": "liora", "text": "Bom dia! Vendo panos e cajados para quem trabalha no campo, e compro ervas e amêndoas para levar à aldeia.", "next": "hub", "set_flags": ["met_liora"]},
+				"hub": {"speaker": "liora", "text": "Quer ver a minha esteira?", "choices": [{"text": "Quero negociar.", "next": "trade"}, {"text": "Que ervas dá para achar por aqui?", "next": "lore"}, {"text": "Como funcionam as trocas aqui?", "next": "silver"}, {"text": "Até mais.", "next": "bye"}]},
+				"trade": {"speaker": "liora", "text": "Deixe-me ver o que você colheu.", "next": "end", "action": {"market": "liora"}},
+				"lore": {"speaker": "liora", "text": "Na beira dos campos e das pedras cresce muita erva de cheiro. Seco, amarro em maços e vendo para temperar o pão e a panela.", "next": "lore2"},
+				"silver": {"speaker": "liora", "text": "Você me traz o que achou pelo caminho, eu peso a prata na balança e pago. Depois, com a prata, leva o que quiser da minha esteira.", "next": "silver_note"},
+				"silver_note": {"speaker": "narrator", "text": "(Nesta época não havia moedas cunhadas: a prata era pesada em balanças. No jogo, a prata é uma medida simplificada, e os valores não são preços históricos.)", "next": "hub"},
+				"bye": {"speaker": "liora", "text": "Vá em paz, e cuidado com o sol da colheita.", "next": "end"},
+				"lore2": {"speaker": "narrator", "text": "(Liora é uma personagem do jogo; o texto bíblico não diz quais ervas se vendiam em Belém.)", "next": "hub"},
+				"again": {"speaker": "liora", "text": "Voltou para a minha esteira? Fique à vontade.", "next": "hub"}
+			}
 		}
 	]
 }

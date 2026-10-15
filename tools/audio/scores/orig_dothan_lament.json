@@ -1,0 +1,18 @@
+{
+	"_comment": "Lamento em Dotã: tema próprio (Mi frígio), gerado por regras.",
+	"bpm": 60,
+	"lead": "flute",
+	"drum": "",
+	"generate": {
+		"root": 64,
+		"mode": "phrygian",
+		"progression": [
+			0,
+			1,
+			0,
+			6
+		]
+	},
+	"arp_step": 1.0,
+	"intro_beats": 8
+}

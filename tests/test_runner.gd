@@ -52,7 +52,8 @@ func _run_all() -> void:
 	_test_quest_data()
 	_test_quest_targets_in_map()
 	_test_quest_flow()
-	_test_old_save_listen_ari()
+	_test_old_save_wells()
+	_test_wells_water_save_load()
 	_test_journal_content()
 	_test_quest_editor_model()
 	print("\n[fábrica de missões]")
@@ -77,6 +78,7 @@ func _run_all() -> void:
 	wt.test_main_quest_flow()
 	await wt.test_travel()
 	await wt.test_pickups_and_screens()
+	await wt.test_market_in_game()
 	print("\n[cenas dirigidas, luz por estado e experiências]")
 	var st_script: GDScript = load("res://tests/scene_tests.gd")
 	check(st_script != null and st_script.can_instantiate(), "tests/scene_tests.gd compila")
@@ -110,6 +112,18 @@ func _run_all() -> void:
 		await at.test_dialogue_and_interaction()
 		await at.test_settings()
 		await at.test_in_game()
+	print("\n[música temática]")
+	var mt_script: GDScript = load("res://tests/music_tests.gd")
+	check(mt_script != null and mt_script.can_instantiate(), "tests/music_tests.gd compila")
+	if mt_script != null and mt_script.can_instantiate():
+		var mt = mt_script.new(self)
+		mt.test_manifest()
+		mt.test_rules_reject()
+		mt.test_resolution()
+		mt.test_themes_and_shuffle()
+		mt.test_playback()
+		mt.test_ducking()
+		await mt.test_screens_in_game()
 	print("\n[gameplay]")
 	await _test_gameplay()
 	print("\n[menu]")
@@ -308,6 +322,8 @@ func _test_factory() -> void:
 		if String(it.dialogue_id) != "":
 			dialogs[String(it.dialogue_id)] = true
 	map.free()
+	for e in GameData.get_region("canaan_village").get("examinables", []):
+		dialogs[String(e.get("dialogue", ""))] = true
 	check(t.error == "" and t.npc.keys().size() == npcs.size() and npcs.keys().all(func(k): return t.npc.has(k)),
 		"fábrica: NPCs do mapa lidos do .tscn = instanciados %s" % [t.npc.keys()])
 	check(t.dialogue.keys().size() == dialogs.size() and dialogs.keys().all(func(k): return t.dialogue.has(k)),
@@ -350,21 +366,82 @@ func _test_factory() -> void:
 	check(DialogueManager.voice_path(parts[0], parts[1]) == "", "jogo: sem gravação, a fala fica só em texto")
 
 
-## Saves da versão com 4 objetivos guardam o índice do objetivo; listen_ari entrou na posição 2.
-func _test_old_save_listen_ari() -> void:
+## Saves antigos guardam só o índice do objetivo. Depois da v0.6.0 a missão dos poços
+## perdeu "examinar o poço", "ouvir Ari" e "conversar com Ezer" (virou "devolver
+## o cântaro"); o histórico do save realinha o progresso (realign_objectives).
+func _test_old_save_wells() -> void:
 	var qid := "canaan_wells"
+	var load_with := func(objective: int, logged: Array, objective_id: String) -> void:
+		GameState.new_game()
+		var d := GameState.to_dict()
+		d.flags[QuestManager.event_flag("prologue_finished", "new_game")] = true
+		for e in [["custom", "wells_adina_water"], ["dialogue_finished", "well_examine"], ["custom", "wells_ari_well"], ["custom", "wells_ezer_disputes"]]:
+			if logged.size() > 3 or e[1] != "wells_ezer_disputes":
+				d.flags[QuestManager.event_flag(e[0], e[1])] = true
+		var st := {"status": "active", "objective": objective, "hints": {}, "started": 0.0, "completed": 0.0, "objective_started": 0.0}
+		if objective_id != "":
+			st["objective_id"] = objective_id
+		d.quests = {qid: st}
+		d.log = logged.map(func(o): return {"kind": "objective", "id": qid + "/" + o, "t": 0.0})
+		var clean := SaveManager.sanitize_game_data(d)
+		GameState.from_dict(clean.data)
+		QuestManager.evaluate()
+	load_with.call(4, ["meet_adina", "examine_well", "listen_ari", "talk_ezer"], "")
+	check(QuestManager.current_objective(qid).get("id") == "take_jar", "save da v0.6.0 parado no relato passa pela tarefa da água")
+	check(String(GameState.quests[qid].get("objective_id")) == "take_jar", "realinhamento grava o id do objetivo")
+	for e in [["item_collected", "clay_jar"], ["custom", "wells_trough_full"], ["custom", "wells_adina_thanks"], ["custom", "wells_jar_returned"]]:
+		QuestManager.record_event(e[0], e[1])
+	check(QuestManager.current_objective(qid).get("id") == "read_story", "depois da água e do cântaro, o save antigo volta ao relato")
+	load_with.call(2, ["meet_adina", "examine_well"], "")
+	check(QuestManager.current_objective(qid).get("id") == "take_jar", "save da v0.6.0 parado em Ari vai ao cântaro, não ao bebedouro")
+	load_with.call(1, ["meet_adina"], "")
+	check(QuestManager.current_objective(qid).get("id") == "take_jar" and int(GameState.quests[qid].objective) == 1, "save sem objetivo removido no histórico mantém o índice")
+	load_with.call(0, ["meet_adina", "take_jar"], "water_trough")
+	check(QuestManager.current_objective(qid).get("id") == "water_trough", "id salvo do objetivo prevalece sobre o índice")
 	GameState.new_game()
-	for e in [["prologue_finished", "new_game"], ["custom", "wells_adina_water"], ["dialogue_finished", "well_examine"], ["custom", "wells_ezer_disputes"]]:
-		GameState.set_flag(QuestManager.event_flag(e[0], e[1]), true)
-	GameState.quests[qid] = {"status": "active", "objective": 3, "objective_started": 0.0}
-	QuestManager.evaluate()
-	check(QuestManager.current_objective(qid).get("id") == "read_story", "save antigo parado no relato continua no relato")
+
+
+## Salvar e carregar no meio das viagens de água; recusar a recompensa de Adina.
+func _test_wells_water_save_load() -> void:
+	var qid := "canaan_wells"
+	var run := func(did: String, pick: int) -> void:
+		DialogueManager.start(did)
+		var g := 0
+		while DialogueManager.is_active() and g < 20:
+			if DialogueManager.current_choices().is_empty():
+				DialogueManager.advance()
+			else:
+				DialogueManager.choose(pick)
+			g += 1
+	var roundtrip := func() -> void:
+		var clean := SaveManager.sanitize_game_data(GameState.to_dict())
+		GameState.new_game()
+		GameState.from_dict(clean.data)
+		QuestManager.evaluate()
 	GameState.new_game()
-	for e in [["prologue_finished", "new_game"], ["custom", "wells_adina_water"], ["dialogue_finished", "well_examine"]]:
-		GameState.set_flag(QuestManager.event_flag(e[0], e[1]), true)
-	GameState.quests[qid] = {"status": "active", "objective": 2, "objective_started": 0.0}
-	QuestManager.evaluate()
-	check(QuestManager.current_objective(qid).get("id") == "listen_ari", "save antigo parado em Ezer pede antes ouvir Ari")
+	QuestManager.current_region_id = "canaan_village"
+	QuestManager.record_event("prologue_finished", "new_game")
+	QuestManager.record_event("custom", "wells_adina_water")
+	Inventory.add("clay_jar", 1, "pickup")
+	run.call("well_examine", 0)
+	run.call("canaan_trough", 0)
+	run.call("well_examine", 0)
+	check(GameState.get_flag("wells_trough_1") == true and Inventory.count("clay_jar_full") == 1, "uma viagem feita e o cântaro cheio de novo")
+	roundtrip.call()
+	check(QuestManager.current_objective(qid).get("id") == "water_trough", "carregar no meio das viagens mantém o objetivo")
+	check(Inventory.count("clay_jar_full") == 1 and Inventory.count("clay_jar") == 0, "carregar mantém o cântaro cheio")
+	check(GameState.get_flag("wells_trough_1") == true and not GameState.get_flag("wells_trough_2"), "carregar mantém o nível do bebedouro")
+	run.call("canaan_trough", 0)
+	run.call("well_examine", 0)
+	run.call("canaan_trough", 0)
+	check(GameState.get_flag("wells_trough_full") == true and QuestManager.current_objective(qid).get("id") == "thank_adina", "duas viagens depois de carregar enchem o bebedouro")
+	run.call("adina_talk", 1)
+	check(Inventory.count("sheep_cheese") == 0 and Inventory.count("clay_jar") == 1, "recusar a recompensa: sem queijo, cântaro ainda com o jogador")
+	check(QuestManager.current_objective(qid).get("id") == "return_jar", "recusar também agradece e segue para Ezer")
+	roundtrip.call()
+	check(QuestManager.current_objective(qid).get("id") == "return_jar" and Inventory.count("clay_jar") == 1, "carregar antes de devolver o cântaro")
+	run.call("ezer_talk", 0)
+	check(Inventory.count("clay_jar") == 0 and QuestManager.current_objective(qid).get("id") == "read_story", "Ezer recebe o cântaro; falta o relato")
 	GameState.new_game()
 
 
@@ -414,7 +491,7 @@ func _test_quest_flow() -> void:
 	check(QuestManager.status(qid) == "", "missão não começa antes do prólogo")
 	check(QuestManager.get_context().source == "region", "sem missão, contexto vem da região")
 	# Feito fora de ordem, antes de a missão existir:
-	QuestManager.record_event("custom", "wells_ezer_disputes")
+	QuestManager.record_event("custom", "wells_ari_well")
 	QuestManager.record_event("prologue_finished", "new_game")
 	check(QuestManager.status(qid) == "active", "fim do prólogo inicia a missão")
 	check(QuestManager.current_objective(qid).id == "meet_adina", "primeiro objetivo: Adina")
@@ -426,31 +503,72 @@ func _test_quest_flow() -> void:
 	check(QuestManager.hint_level(qid) == 3, "pistas param no nível 3")
 	check(QuestManager.hint_text(qid, 1) == QuestManager.current_objective(qid).hints[0], "pista 1 é a mais sutil")
 
-	# Diálogo condicionado ao objetivo emite o evento da missão.
+	# Diálogo condicionado ao objetivo: Adina pede ajuda com o bebedouro.
 	check(DialogueManager.start("adina_talk"), "conversa com Adina inicia")
+	var adina_lines: Array = []
 	var guard := 0
-	while DialogueManager.current_choices().is_empty() and DialogueManager.is_active() and guard < 10:
+	while DialogueManager.is_active() and DialogueManager.current_choices().is_empty() and guard < 10:
+		adina_lines.append(String(DialogueManager._node.get("text", "")))
 		DialogueManager.advance()
 		guard += 1
-	check(DialogueManager.current_choices().size() == 3, "Adina chega às escolhas")
-	DialogueManager.choose(2)
-	DialogueManager.advance()
-	check(not DialogueManager.is_active(), "conversa termina")
-	check(Discoveries.is_unlocked("shepherding_water"), "descoberta liberada pelo diálogo")
-	check(QuestManager.current_objective(qid).id == "examine_well", "conversa com Adina avança o objetivo")
-	check(QuestManager.hint_level(qid) == 0, "pistas zeram no novo objetivo")
-
-	DialogueManager.start("well_examine")
+	check(adina_lines.size() == 3 and String(adina_lines[2]).contains("ajudaria"), "Adina pede ajuda para encher o bebedouro")
+	check(DialogueManager.current_choices().size() == 3, "o jogador responde ao pedido de Adina")
+	DialogueManager.choose(0)
 	while DialogueManager.is_active():
 		DialogueManager.advance()
-	check(QuestManager.current_objective(qid).id == "listen_ari", "depois do poço: ouvir Ari")
+	check(Discoveries.is_unlocked("shepherding_water"), "descoberta liberada pelo diálogo")
+	check(QuestManager.current_objective(qid).id == "take_jar", "pedido de Adina leva direto ao cântaro")
+	check(QuestManager.hint_level(qid) == 0, "pistas zeram no novo objetivo")
 	check(DialogueManager.start("ari_talk"), "conversa com Ari inicia")
 	var ari_nodes: Array = []
 	while DialogueManager.is_active():
 		ari_nodes.append(DialogueManager._node.get("text", ""))
 		DialogueManager.advance()
-	check(ari_nodes.size() == 4 and String(ari_nodes[0]).contains("história"), "objetivo ativo leva Ari à lembrança do poço (%d falas)" % ari_nodes.size())
-	check(QuestManager.current_objective(qid).id == "read_story", "Ari conclui; objetivo já cumprido (Ezer) avança sozinho")
+	check(ari_nodes.size() == 4 and String(ari_nodes[0]).contains("história"), "com a missão ativa, Ari conta a lembrança do poço (%d falas)" % ari_nodes.size())
+	check(QuestManager.current_objective(qid).id == "take_jar", "Ari é opcional: não muda o objetivo")
+	check(DialogueManager.start("ezer_talk") and String(DialogueManager._node.get("text", "")).contains("cântaro"), "Ezer indica o cântaro para o bebedouro")
+	while DialogueManager.is_active():
+		DialogueManager.advance()
+
+	# Tarefa da água: cântaro, três viagens entre o poço e o bebedouro, Adina.
+	var run := func(did: String) -> void:
+		DialogueManager.start(did)
+		var g := 0
+		while DialogueManager.is_active() and g < 20:
+			DialogueManager.advance()
+			g += 1
+	Inventory.add("clay_jar", 1, "pickup")
+	check(QuestManager.current_objective(qid).id == "water_trough", "pegar o cântaro avança para o bebedouro")
+	run.call("canaan_trough")
+	check(Inventory.count("clay_jar") == 1 and not GameState.get_flag("wells_trough_1"), "cântaro vazio não enche o bebedouro")
+	for trip in 3:
+		run.call("well_examine")
+		check(Inventory.count("clay_jar_full") == 1 and Inventory.count("clay_jar") == 0, "viagem %d: o poço enche o cântaro" % (trip + 1))
+		run.call("well_examine")
+		check(Inventory.count("clay_jar_full") == 1, "viagem %d: cântaro cheio não é enchido de novo" % (trip + 1))
+		run.call("canaan_trough")
+		check(Inventory.count("clay_jar_full") == 0 and Inventory.count("clay_jar") == 1, "viagem %d: a água vai para o bebedouro" % (trip + 1))
+	check(GameState.get_flag("wells_trough_full") == true, "três viagens enchem o bebedouro")
+	check(QuestManager.current_objective(qid).id == "thank_adina", "bebedouro cheio: falar com Adina")
+	run.call("well_examine")
+	check(Inventory.count("clay_jar_full") == 0, "com o bebedouro cheio, o poço não enche mais o cântaro")
+	var wool_before := Inventory.count("wool_cloth")
+	DialogueManager.start("adina_talk")
+	var ga := 0
+	while DialogueManager.is_active() and ga < 20:
+		if DialogueManager.current_choices().is_empty():
+			DialogueManager.advance()
+		else:
+			check(DialogueManager.current_choices().size() == 2, "Adina oferece o queijo, que pode ser recusado")
+			DialogueManager.choose(0)
+		ga += 1
+	check(Inventory.count("sheep_cheese") == 1 and Inventory.count("clay_jar") == 1 and Inventory.count("wool_cloth") == wool_before, "Adina dá o queijo; o cântaro fica para devolver a Ezer")
+	check(QuestManager.current_objective(qid).id == "return_jar", "depois do agradecimento: devolver o cântaro")
+	run.call("adina_talk")
+	check(Inventory.count("sheep_cheese") == 1, "a recompensa de Adina não se repete")
+	run.call("ezer_talk")
+	check(Inventory.count("clay_jar") == 0 and Discoveries.is_unlocked("pottery_jars"), "Ezer recebe o cântaro e fala das disputas por poços")
+	check(QuestManager.current_objective(qid).id == "read_story", "depois do cântaro: o relato")
 	check(DialogueManager.start("journal_intro"), "diário de viagem abre")
 	var actions: Array = []
 	var cb := func(a): actions.append(a)
@@ -791,10 +909,11 @@ func _test_gameplay() -> void:
 	var cine2 = game2.get_node("Cinematic")
 	var hud2 = game2.get_node("HUD")
 	check(not cine2.is_playing(), "carregar não repete o prólogo")
-	check(QuestManager.current_objective("canaan_wells").get("id") == "examine_well", "objetivo restaurado após carregar")
-	QuestManager.record_event("dialogue_finished", "well_examine")
-	QuestManager.record_event("custom", "wells_ari_well")
-	QuestManager.record_event("custom", "wells_ezer_disputes")
+	check(QuestManager.current_objective("canaan_wells").get("id") == "take_jar", "objetivo restaurado após carregar")
+	QuestManager.record_event("custom", "wells_jar_returned")
+	QuestManager.record_event("item_collected", "clay_jar")
+	QuestManager.record_event("custom", "wells_trough_full")
+	QuestManager.record_event("custom", "wells_adina_thanks")
 	check(QuestManager.current_objective("canaan_wells").get("id") == "read_story", "objetivo final: o relato")
 	await _close_cards(hud2)
 	var guide2: ObjectiveGuide = game2.get_node("MapContainer/CanaanVillage/ObjectiveGuide")

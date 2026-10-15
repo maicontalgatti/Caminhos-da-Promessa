@@ -1,0 +1,18 @@
+{
+	"_comment": "Caminho no meio do mar: tema próprio (Ré mixolídio), gerado por regras.",
+	"bpm": 86,
+	"lead": "flute",
+	"drum": "x.xx",
+	"generate": {
+		"root": 62,
+		"mode": "mixolydian",
+		"progression": [
+			0,
+			6,
+			3,
+			0
+		]
+	},
+	"arp_step": 1.0,
+	"intro_beats": 8
+}

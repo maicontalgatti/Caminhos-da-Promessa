@@ -77,6 +77,9 @@ const PROPS := {
 	"fold_wall_v": {"origin": Vector2(8, 25), "col": Rect2(-4, -16, 8, 16)},
 	"cave_mouth": {"origin": Vector2(26, 38), "col": Rect2(-24, -16, 48, 14)},
 	"thorn_bush": {"origin": Vector2(11, 14), "col": Rect2(-7, -3, 14, 4), "sway": true},
+	# Aldeia em Canaã (missão dos poços): bebedouro de pedra vazio e cheio
+	"water_trough": {"origin": Vector2(15, 12), "col": Rect2(-13, -6, 26, 6)},
+	"water_trough_full": {"origin": Vector2(15, 12), "col": Rect2(-13, -6, 26, 6)},
 }
 
 ## Muros por segmento de 16 px (h = horizontal, v = vertical).
@@ -451,6 +454,8 @@ func _props() -> void:
 	_oil_lamp_niche().save(ENV + "oil_lamp_niche.png")
 	_cave_mouth().save(ENV + "cave_mouth.png")
 	_thorn_bush().save(ENV + "thorn_bush.png")
+	_water_trough(false).save(ENV + "water_trough.png")
+	_water_trough(true).save(ENV + "water_trough_full.png")
 
 
 ## Segmento de muro de 16 px. O horizontal mostra o topo e a face; o vertical,
@@ -1074,6 +1079,26 @@ func _stone_bench():
 	return cv
 
 
+## Bebedouro escavado num bloco de pedra, junto ao curral.
+func _water_trough(full: bool):
+	var cv = PC.new(30, 14)
+	cv.rect(1, 4, 28, 8, Color("#9c8a72"))
+	cv.rect(1, 4, 28, 1, Color("#c8bca4"))
+	cv.rect(1, 9, 28, 3, Color("#7f7360"))
+	cv.rect(3, 5, 24, 4, Color("#5e5244"))
+	if full:
+		cv.rect(3, 5, 24, 4, Color("#3f7f9c"))
+		cv.rect(4, 5, 22, 1, Color("#7fb8cc"))
+		cv.px(9, 7, Color("#a8d4e0"))
+		cv.px(19, 6, Color("#a8d4e0"))
+	else:
+		cv.rect(3, 8, 24, 1, Color("#4a4036"))
+		cv.px(14, 8, Color("#3f7f9c"))
+	cv.outline(INK)
+	cv.shadow(15, 12.5, 14, 1.5)
+	return cv
+
+
 ## Jarro de armazenagem de borda em colarinho (típico do Ferro I).
 func _pithos():
 	var cv = PC.new(14, 24)
@@ -1513,3 +1538,31 @@ func _item_icons() -> void:
 	cv.rect(5, 4, 1, 5, Color("#c2a878"))
 	cv.outline(INK)
 	cv.save(ITEMS + "brushwood.png")
+	# Cântaro de barro (vazio e cheio)
+	for full in [false, true]:
+		cv = PC.new(12, 12)
+		var clay := Color("#c2956a")
+		cv.ellipse(6, 7.5, 4, 3.5, clay.darkened(0.2))
+		cv.ellipse(5.5, 7, 3.5, 3, clay)
+		cv.rect(4, 2, 4, 2, clay.darkened(0.08))
+		cv.rect(3, 1, 6, 1, clay.lightened(0.15))
+		cv.px(9, 5, clay.darkened(0.25))
+		cv.px(9, 6, clay.darkened(0.25))
+		if full:
+			cv.rect(4, 1, 4, 1, Color("#3f7f9c"))
+			cv.px(5, 1, Color("#a8d4e0"))
+		else:
+			cv.rect(4, 1, 4, 1, Color("#4a3426"))
+		cv.px(4, 6, clay.lightened(0.2))
+		cv.outline(INK)
+		cv.save(ITEMS + ("clay_jar_full.png" if full else "clay_jar.png"))
+	# Queijo de ovelha (recompensa de Adina): dois queijos sobre um pano
+	cv = PC.new(12, 12)
+	cv.rect(1, 8, 10, 3, Color("#d8ccb4"))
+	cv.rect(1, 8, 10, 1, Color("#efe4cc"))
+	for c in [Vector2(4, 6.5), Vector2(8, 7)]:
+		cv.ellipse(c.x, c.y, 2.6, 2.2, Color("#d9cfa8"))
+		cv.ellipse(c.x - 0.4, c.y - 0.5, 1.8, 1.4, Color("#f2ead0"))
+	cv.px(8, 6, Color("#bfb38a"))
+	cv.outline(INK)
+	cv.save(ITEMS + "sheep_cheese.png")

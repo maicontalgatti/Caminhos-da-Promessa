@@ -34,7 +34,8 @@
 					{"id": "bf_tova_home", "character": "bf_tova_home", "x": 424, "y": 128, "visible_if": {"any": [{"objective": "tova_gleaning/carry_home"}, {"quest_completed": "tova_gleaning"}]}},
 					{"id": "bf_reaper_w1", "character": "bf_reaper", "x": 176, "y": 400},
 					{"id": "bf_reaper_e1", "character": "bf_reaper", "x": 608, "y": 408},
-					{"id": "bf_reaper_e2", "character": "bf_reaper", "x": 688, "y": 432}
+					{"id": "bf_reaper_e2", "character": "bf_reaper", "x": 688, "y": 432},
+					{"id": "liora", "character": "liora", "x": 160, "y": 272}
 				],
 				"examinables": [
 					{"id": "bf_boundary_view", "x": 464, "y": 344, "prop": "rock_big", "dialogue": "bf_boundary_view", "prompt": "Observar o campo vizinho", "prompt_y": -24},
@@ -57,7 +58,11 @@
 					{"id": "bf_sheaf_5", "item": "barley_sheaf", "x": 240, "y": 464, "visible_if": {"objective": "ruth_gleaning/harvest"}},
 					{"id": "bf_sheaf_6", "item": "barley_sheaf", "x": 320, "y": 416, "visible_if": {"objective": "ruth_gleaning/harvest"}},
 					{"id": "bf_corner_1", "item": "corner_sheaf", "x": 384, "y": 512, "visible_if": {"objective": "ruth_gleaning/harvest"}},
-					{"id": "bf_corner_2", "item": "corner_sheaf", "x": 400, "y": 532, "visible_if": {"objective": "ruth_gleaning/harvest"}}
+					{"id": "bf_corner_2", "item": "corner_sheaf", "x": 400, "y": 532, "visible_if": {"objective": "ruth_gleaning/harvest"}},
+					{"id": "tr_bf_herbs_1", "item": "wild_herbs", "x": 250, "y": 232, "renewable": true},
+					{"id": "tr_bf_herbs_2", "item": "wild_herbs", "x": 660, "y": 262, "renewable": true},
+					{"id": "tr_bf_herbs_3", "item": "wild_herbs", "x": 300, "y": 130, "renewable": true},
+					{"id": "tr_bf_almonds_1", "item": "almonds", "x": 175, "y": 175, "renewable": true}
 				]
 		}
 	]

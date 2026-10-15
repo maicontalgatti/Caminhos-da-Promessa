@@ -44,6 +44,17 @@
 			"dialogue_id": "oren_talk",
 			"sprite": {"sheet": "res://assets/characters/oren.png", "hframes": 6, "vframes": 4, "directions": 4},
 			"behavior": {"type": "idle", "facing_x": -1, "facing_y": 0}
+		},
+		{
+			"id": "ozi",
+			"display_name": "Ozi",
+			"role": "Mercador de caravana",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Mercador fictício que acompanha as caravanas da estrada. Compra o que o caminho dá e vende jumentos, panos e cajados. Não viu José nem os irmãos.",
+			"dialogue_id": "ozi_talk",
+			"sprite": {"sheet": "res://assets/characters/ozi.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1}
 		}
 	]
 }

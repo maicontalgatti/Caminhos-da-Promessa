@@ -1,7 +1,8 @@
 class_name Player
 extends CharacterBody2D
 ## Personagem do jogador: movimento em 8 direções, corrida opcional,
-## animação em 4 direções e interação universal.
+## animação em 4 direções, interação universal e a aparência comprada na feira
+## (PlayerGear).
 
 @export var walk_speed := 72.0
 @export var run_speed := 118.0
@@ -14,6 +15,7 @@ var facing := Vector2.DOWN
 ## Velocidade efetivamente percorrida no último quadro de física.
 var real_speed := 0.0
 var _interact_cooldown := 0.0
+var gear: PlayerGear
 
 @onready var sprite: CharacterSprite = $Sprite
 @onready var detector: InteractionDetector = $InteractionDetector
@@ -29,6 +31,8 @@ func _ready() -> void:
 	detector.focus_changed.connect(_on_focus_changed)
 	sprite.step.connect(_on_step)
 	prompt.hide()
+	gear = PlayerGear.new(self)
+	add_child(gear)
 
 
 func _physics_process(delta: float) -> void:
@@ -37,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	if not is_blocked():
 		input = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var running := Input.is_action_pressed("run")
-	var speed := run_speed if running else walk_speed
+	var speed := (run_speed if running else walk_speed) * speed_multiplier()
 	var rate := acceleration if input != Vector2.ZERO else friction
 	velocity = velocity.move_toward(input * speed, rate * delta)
 	var before := global_position
@@ -58,6 +62,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func is_blocked() -> bool:
 	return DialogueManager.is_active() or GameState.is_ui_blocked()
+
+
+## Animal de transporte comprado na feira deixa a caminhada mais rápida.
+func speed_multiplier() -> float:
+	return Market.speed_multiplier()
 
 
 func face(direction: Vector2) -> void:

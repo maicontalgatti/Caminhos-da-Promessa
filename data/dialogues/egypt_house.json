@@ -169,6 +169,24 @@
 			"nodes": {
 				"n1": {"speaker": "narrator", "text": "Um gato se espreguiça junto aos silos. Perto do grão, sempre aparecem ratos, e os gatos davam conta deles.", "next": "end"}
 			}
+		},
+		{
+			"id": "nefer_talk",
+			"start": "greet",
+			"start_if": [
+				{"flag": "met_nefer", "node": "again"}
+			],
+			"nodes": {
+				"greet": {"speaker": "nefer", "text": "Cestos, esteiras e o linho mais fino que você vai ver. Troco por papiro, tâmaras e o que mais você trouxer.", "next": "hub", "set_flags": ["met_nefer"]},
+				"hub": {"speaker": "nefer", "text": "Gosta de alguma coisa? Pode pegar e olhar.", "choices": [{"text": "Quero negociar.", "next": "trade"}, {"text": "Como se faz o linho?", "next": "lore"}, {"text": "Como funcionam as trocas aqui?", "next": "silver"}, {"text": "Até mais.", "next": "bye"}]},
+				"trade": {"speaker": "nefer", "text": "Mostre o que você tem. Aqui tudo se troca.", "next": "end", "action": {"market": "nefer"}},
+				"lore": {"speaker": "nefer", "text": "Arrancamos o linho, deixamos de molho, batemos as fibras e fiamos. Dá trabalho de muitas mãos, por isso o pano é caro.", "next": "lore2"},
+				"silver": {"speaker": "nefer", "text": "Você me traz o que achou pelo caminho, eu peso a prata na balança e pago. Depois, com a prata, leva o que quiser da minha esteira.", "next": "silver_note"},
+				"silver_note": {"speaker": "narrator", "text": "(Nesta época não havia moedas cunhadas: a prata era pesada em balanças. No jogo, a prata é uma medida simplificada, e os valores não são preços históricos.)", "next": "hub"},
+				"bye": {"speaker": "nefer", "text": "Que o sol não castigue a sua viagem.", "next": "end"},
+				"lore2": {"speaker": "narrator", "text": "(O Egito era famoso pelo linho; roupas de linho branco aparecem nas pinturas egípcias. Nefer é uma personagem do jogo.)", "next": "hub"},
+				"again": {"speaker": "nefer", "text": "Voltou! Ainda tenho linho guardado para você.", "next": "hub"}
+			}
 		}
 	]
 }

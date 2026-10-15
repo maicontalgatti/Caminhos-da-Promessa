@@ -5,7 +5,7 @@ Resumo do **presente**. Histórico em [CHANGELOG.md](CHANGELOG.md) e [docs/imple
 ## Identificação
 - **Projeto:** Caminhos da Promessa
 - **Versão:** 0.6.0 (`project.godot` → `config/version`)
-- **Última atualização:** 2026-10-14
+- **Última atualização:** 2026-10-15
 - **Commit de referência:** o merge do PR #2 (quatro experiências) na branch protegida `main` (detalhes no [HANDOFF.md](HANDOFF.md)); anteriores: publicação `4ed82ca`, checkpoint `218cb73`
 - **Repositório:** público, https://github.com/maicontalgatti/Caminhos-da-Promessa
 - **Licenças:** código MIT; arte, sons e textos próprios CC BY 4.0; fontes OFL; texto bíblico BPM em domínio público ([docs/legal/ASSET_LICENSES.md](../legal/ASSET_LICENSES.md))
@@ -16,7 +16,7 @@ Resumo do **presente**. Histórico em [CHANGELOG.md](CHANGELOG.md) e [docs/imple
 
 ## Funcionalidades concluídas e verificadas
 "Verificado" = coberto por teste automatizado executado e aprovado. Última execução em 2026-10-14, no build da v0.6.0 (18:25; detalhes em [HANDOFF.md](HANDOFF.md); houve falhas intermitentes em builds anteriores, KI-17):
-- `tests/test_runner.tscn`: 1482/1482;
+- `tests/test_runner.tscn`: 1535/1535 (2026-10-15, missão dos poços revista; Godot Linux headless);
 - `tools/audio/audit_audio.gd`: 131 arquivos, 0 problemas;
 - `tests/flow_smoke.gd`: 17/17;
 - `tools/validate_content.gd`: sem erros de dados;
@@ -31,7 +31,7 @@ Nenhuma foi validada por sessão de jogo humana ainda.
 | 4 moradores + 3 ovelhas com comportamento; interação universal | `scripts/npc/`, `scripts/interaction/` | testes |
 | Diálogos com escolhas, flags e efeitos | `scripts/dialogue/` | testes |
 | Prólogo cinematográfico (pular, rever pela pausa, não repete ao carregar) | `scripts/ui/cinematic.gd` | testes + fluxo |
-| Missão "A importância dos poços" (Gênesis 26:18-22), 4 objetivos (Adina, poço, Ezer, relato), pistas em 3 níveis, conclusão retroativa | `data/quests/canaan/canaan_wells.json` | testes |
+| Missão "A importância dos poços" (Gênesis 26:18-22), 6 objetivos: Adina pede ajuda, cântaro, 3 viagens poço ↔ bebedouro, agradecimento com escolha (queijo de ovelha), devolver o cântaro a Ezer, relato; Ari opcional; pistas em 3 níveis, conclusão retroativa; saves antigos realinhados (`objective_id`) | `data/quests/canaan/canaan_wells.json` | testes |
 | Seta de objetivo no mapa (marcador sobre o alvo ou seta na borda) | `scripts/world/objective_guide.gd` | testes + capturas |
 | HUD: contexto bíblico, rastreador de objetivo, avisos, cartões de descoberta e de conclusão | `scripts/ui/hud.gd` | testes + capturas |
 | Apresentação de Gn 26 em 7 passos com o texto dos versículos e notas do jogo | `scripts/ui/cinematic.gd`, `data/bible/presentations.json` | testes + capturas |
@@ -44,6 +44,7 @@ Nenhuma foi validada por sessão de jogo humana ainda.
 | Várias regiões na mesma cena: Aldeia em Canaã, Caminho das Caravanas (64×34) e Pastos de Dotã (64×40); saídas com condição, escurecimento, título da região, volta ao mapa anterior | `scripts/world/world_manager.gd`, `game_map.gd`, `data/regions/` | testes + capturas |
 | Mapa das Escrituras (M) por épocas, cartão "OUTRO MOMENTO DA HISTÓRIA", experiências planejadas visíveis e não jogáveis; atlas de lugares dentro dele | `scripts/ui/scripture_map.gd`, `data/world/experiences.json` | testes + capturas |
 | Bolsa (I) com 12 espaços e essenciais, coleta no mapa sem duplicação, entrega e troca em diálogo | `scripts/items/`, `scripts/ui/inventory_screen.gd` | testes + capturas |
+| Feira do viajante (ADR-030): mercadores Yaron, Ozi, Nefer e Liora abrem Vender/Comprar pela fala; 7 mercadorias renováveis em 6 regiões; prata pesada abstrata; 12 peças em 4 espaços (roupa, cabeça, cajado, locomoção) com camadas no viajante e jumento que o segue e acelera | `scripts/items/market.gd`, `scripts/ui/market_screen.gd`, `scripts/player/player_gear.gd`, `data/market/` | testes (`world_tests.gd`: `test_market`, `test_market_in_game`) + capturas (`docs/images/market_*.png`); sem jogo humano (KI-23) |
 | Colecionáveis em conjuntos e aba "Descobertas" do diário | `scripts/items/collectibles.gd`, `data/collectibles/` | testes + capturas |
 | Condições compostas e escolhas com consequência persistente | `scripts/core/conditions.gd`, `dialogue_manager.gd` | testes |
 | Categorias de missão (principal, secundária, exploração), missão acompanhada, 15 tipos de objetivo, recompensas uma vez, desfechos por variante | `scripts/quests/` | testes |
@@ -56,6 +57,7 @@ Nenhuma foi validada por sessão de jogo humana ainda.
 | Exe Windows único com autoteste (`-- --self-test`), que confere também regiões, mapas, itens, colecionáveis, missões, cenas dirigidas e todos os arquivos de som | `tools/build_windows.ps1` | build da v0.6.0 em 2026-10-14 (ver HANDOFF) |
 
 ## Implementado, mas sem verificação completa
+- Música temática (`scripts/core/music_director.gd`, `data/audio/music.json`, ADR-029): coberta por `tests/music_tests.gd`, mas as 9 faixas são provisórias e ninguém as ouviu; melodias dos hinos transcritas de memória (KI-22).
 - Cenas dirigidas e as quatro experiências novas: vistas só em capturas automáticas; nenhuma pessoa jogou (KI-02, KI-20). Efeitos e sons de ambiente por estado da região (`_ambient_*_proposed`) não são suportados ainda.
 - Painel de debug F3 (só build de debug): na v0.2.0 foi conferido que ele carrega via "Testar missão" e que fica **fora** do exe (autoteste); não há teste automatizado das ações dele, e o uso manual não foi verificado.
 - Plugin "Editor de missões" (`addons/quest_editor/`): modelo de dados testado; **interface gráfica no editor não testada** com mouse.
@@ -69,19 +71,20 @@ Nenhuma foi validada por sessão de jogo humana ainda.
 - Escolha da tradução definitiva: o criador pediu NVI; falta permissão da Biblica (KI-06, ADR-016).
 
 ## Planejado (não implementado)
-Ciclo dia/noite livre (hoje só luz por estado da região), clima, música, vozes e sons gravados (os atuais são procedurais); efeitos e sons de ambiente por estado; interiores; rotinas de NPC; objetivo de acompanhar NPC (`escort_npc`);
+Ciclo dia/noite livre (hoje só luz por estado da região), clima, música gravada (hoje faixas provisórias geradas por código, KI-22), vozes e sons gravados (os atuais são procedurais); efeitos e sons de ambiente por estado; interiores; rotinas de NPC; objetivo de acompanhar NPC (`escort_npc`);
 continuação de José (Gn 39:7-41), deserto após o mar (Êx 15:22 em diante), Rute 3–4; personalização do viajante; gamepad; múltiplos saves (KI-13).
 Fonte: [docs/roadmap.md](../roadmap.md) e [docs/game_design.md](../game_design.md).
 
 ## Problemas conhecidos (resumo)
 Nenhum teste de jogo humano (KI-02); conteúdo bíblico sem revisão humana (KI-03);
 `build_all.ps1` sobrescreve o mapa (KI-04); tradução bíblica provisória, NVI sem permissão (KI-06); partes da expansão pendentes (KI-13);
-afirmações históricas da estrada e de Dotã aguardam revisão humana (KI-14); efeitos sonoros procedurais sem escuta humana (KI-16); falha intermitente da suíte em observação (KI-17); cenas dirigidas vistas só em capturas automáticas (KI-20); decisões provisórias das quatro experiências aguardam o criador (KI-21). Lista completa em [KNOWN_ISSUES.md](KNOWN_ISSUES.md).
+afirmações históricas da estrada e de Dotã aguardam revisão humana (KI-14); feira sem revisão nem teste de equilíbrio (KI-23); efeitos sonoros procedurais sem escuta humana (KI-16); falha intermitente da suíte em observação (KI-17); cenas dirigidas vistas só em capturas automáticas (KI-20); decisões provisórias das quatro experiências aguardam o criador (KI-21). Lista completa em [KNOWN_ISSUES.md](KNOWN_ISSUES.md).
 
 ## Próximos passos
 1. Repositório público e pronto para colaboração ([CONTRIBUTING.md](../../CONTRIBUTING.md), [START_WITH_AI.md](../../START_WITH_AI.md)). Mudanças entram por pull request revisado.
 2. Criador: jogar a v0.6.0 (release no GitHub) do começo ao fim da cadeia — Canaã, Dotã, José no Egito, travessia do mar, Rute, pastores — conferindo as cenas dirigidas, e **ouvir os sons** na ordem de [docs/audio.md](../audio.md#escuta-humana-necessária).
 2a. Criador: decidir os itens `open_for_human` dos `review.json` de ep_009, ep_016, ep_025 e ep_048 (KI-21).
+2b. Criador: jogar a feira (Yaron em Canaã, Ozi na estrada, Nefer no Egito, Liora em Belém), ajustar preços em `data/market/market.json` e revisar falas e notas novas (KI-23).
 3. Criador: revisar o conteúdo novo e decidir os pontos abertos do `review.json` do ep_008 (Gn 13 na missão das famílias, fibras, hospitalidade, prata pesada).
 4. Criador: decidir a tradução (NVI com permissão da Biblica, ou manter uma livre; KI-06).
 5. Próximo conteúdo pela fábrica: a continuação de José (Gn 39:7-41) ou outra experiência do catálogo.

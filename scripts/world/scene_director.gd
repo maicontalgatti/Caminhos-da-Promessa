@@ -100,6 +100,7 @@ func play_data(scene: Dictionary, map: GameMap) -> bool:
 	_ui.visible = true
 	_hint.text = "%s   E: avançar legenda%s" % [String(scene.get("title", "")), "   Esc: pular" if scene.get("skippable", true) else ""]
 	_hide_caption()
+	AudioManager.music.enter_context(self, "scene:" + scene_id)
 	scene_started.emit(scene_id)
 	_run(_token)
 	return true
@@ -354,6 +355,7 @@ func _finish(skipped: bool) -> void:
 		Discoveries.unlock(String(d))
 	GameState.add_log("scene", id)
 	GameState.unblock_ui(BLOCKER)
+	AudioManager.music.exit_context(self)
 	if is_instance_valid(_map):
 		_map.lighting_locked = false
 	QuestManager.record_event("scene_finished", id)

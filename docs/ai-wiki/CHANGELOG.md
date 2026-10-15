@@ -3,6 +3,23 @@
 Resumo por versão/entrega. Detalhes, problemas corrigidos e o que não foi verificado estão em
 [docs/implementation_log.md](../implementation_log.md).
 
+## 2026-10-15 — Feira do viajante (sem versão nova; trabalho local, sem commit)
+- Mercadorias renováveis (`trade`: lã, amêndoas, sílex, ervas, papiro, tâmaras, conchas) em Canaã, estrada, Dotã, Egito, Belém e no acampamento do mar; reaparecem a cada visita.
+- Mercadores no mapa: Yaron ganhou "Quero negociar"; novos Ozi (estrada), Nefer (Egito) e Liora (Belém). Ação de diálogo `{"market": id}` abre a feira (abas Vender e Comprar).
+- 12 peças em 4 espaços com camadas geradas sobre o jogador e jumentos que o seguem (+15% e +30% de velocidade). Prata pesada abstrata em flags (save v3). ADR-030, KI-23.
+- Substitui o protótipo local anterior (feira pela bolsa, desenho por retângulos). Testes 1637/1637, fluxo 17/17, validação, fábrica e áudio sem erros.
+
+## 2026-10-15 — Música temática (sem commit)
+- Louvores instrumentais que mudam conforme o momento: `MusicDirector` (filho do `AudioManager`) lê `data/audio/music.json` e escolhe a lista por cena > apresentação/prólogo > Mapa das Escrituras > missão principal > região > menu; séries por tema (`theme:<tema>`), sorteio sem repetir, silêncio de 20–40 s entre faixas, fade nas trocas, volume baixo e redução em diálogos e marcos. ADR-029.
+- 9 faixas provisórias geradas por `tools/audio/generate_music.gd` a partir de `tools/audio/scores/`: Old Hundredth, Noite Feliz, Amazing Grace, Hino da Alegria e 5 temas próprios (melodias de memória, sem escuta humana: KI-22). Antioch saiu do catálogo por transcrição insegura.
+- `tools/validate_content.gd` confere licença das melodias (domínio público, faixas cantadas, licenciadas) e momentos; autoteste do exe confere as faixas.
+- Testes: `tests/music_tests.gd` (49 verificações).
+
+## 2026-10-15 — Missão dos poços com tarefa da água (sem commit)
+- "A importância dos poços": Adina pede ajuda logo na primeira conversa; cântaro de Ezer, três viagens entre o poço e o bebedouro, agradecimento com escolha (queijo de ovelha, item novo `sheep_cheese`), devolver o cântaro a Ezer (disputas por poços, Gn 26:20-21), relato de Gn 26:18-22. "Examinar o poço" e "ouvir Ari" deixaram de ser obrigatórios.
+- Save: missões gravam `objective_id`; `QuestManager.realign_objectives()` corrige saves antigos quando objetivos mudam.
+- Testes 1535/1535 (novos testes de save antigo e de save no meio das viagens), fluxo 17/17, validação, fábrica e áudio sem erros.
+
 ## 2026-10-14 — v0.6.0: quatro experiências do Mapa das Escrituras (PR #2)
 - Episódios ep_009 ("José no Egito": caravana vista de longe em Dotã, Gn 37:25-28 e 36; casa egípcia como a de Potifar, Gn 39:1-6), ep_016 ("A travessia do mar", Êx 13:17–14:31), ep_025 ("Rute em Belém", Rt 1:19–2:23) e ep_048 ("Os pastores de Belém", Lc 2:8-20), pelo processo da fábrica: pesquisa bíblica e histórica, design, roteiro, revisões independentes (`ok_for_human_review`), integração, QA (`test_report.json`); estados `tested`.
 - Regiões novas `egypt_house`, `sea_camp`, `bethlehem_fields`, `bethlehem_night` (arte e mapas pelos geradores de `tools/art_gen`), encosta de observação em Dotã; 13 missões, 5 cenas dirigidas, personagens fictícios, 25 descobertas, 5 apresentações, histórias, itens e colecionáveis; experiências encadeadas no Mapa M; época "Nos dias de Herodes".

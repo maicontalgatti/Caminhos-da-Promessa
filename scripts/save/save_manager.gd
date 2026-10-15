@@ -216,6 +216,8 @@ static func _sanitize_quests(q: Variant) -> Dictionary:
 			"started": float(s.get("started", 0.0)) if _is_finite_number(s.get("started")) else 0.0,
 			"completed": float(s.get("completed", 0.0)) if _is_finite_number(s.get("completed")) else 0.0,
 			"objective_started": float(s.get("objective_started", 0.0)) if _is_finite_number(s.get("objective_started")) else 0.0,
+
+			"objective_id": _clean_id(s.get("objective_id", "")),
 		}
 	return out
 

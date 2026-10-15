@@ -20,10 +20,14 @@ var experiences: Dictionary = {}
 var experience_order: Array[String] = []
 var eras_order: Array = []
 var errors := PackedStringArray()
+## Itens renováveis ("renewable": true) coletados nesta visita; não vão para o
+## save e se esvaziam a cada viagem ou partida carregada, então reaparecem.
+var _visit_picks: Dictionary = {}
 
 
 func _ready() -> void:
 	reload()
+	GameState.state_replaced.connect(func(): _visit_picks.clear())
 
 
 func reload() -> void:
@@ -120,6 +124,7 @@ func travel(region_id: String, entry_id: String) -> String:
 	if not is_region_unlocked(region_id):
 		GameState.set_flag("region_unlocked:" + region_id, true)
 		QuestManager.record_event("region_unlocked", region_id)
+	_visit_picks.clear()
 	GameState.current_region = region_id
 	GameState.current_map = scene
 	GameState.entry_id = entry_id
@@ -149,6 +154,14 @@ func is_picked(region_id: String, object_id: String) -> bool:
 
 func mark_picked(region_id: String, object_id: String) -> void:
 	GameState.world[world_key(region_id, object_id)] = true
+
+
+func is_picked_this_visit(region_id: String, object_id: String) -> bool:
+	return _visit_picks.has(world_key(region_id, object_id))
+
+
+func mark_picked_this_visit(region_id: String, object_id: String) -> void:
+	_visit_picks[world_key(region_id, object_id)] = true
 
 
 # --- Mapa das Escrituras ------------------------------------------------------

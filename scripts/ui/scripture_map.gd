@@ -53,6 +53,7 @@ func open(focus: String = "") -> void:
 	visible = true
 	get_tree().paused = true
 	GameState.block_ui("scripture_map")
+	AudioManager.music.enter_context(self, "context:scripture_map")
 	_show_main()
 	refresh()
 	if focus != "":
@@ -66,6 +67,7 @@ func close() -> void:
 	visible = false
 	get_tree().paused = false
 	GameState.unblock_ui("scripture_map")
+	AudioManager.music.exit_context(self)
 	closed.emit()
 
 
@@ -158,6 +160,7 @@ func open_passage(p: Dictionary, subtitle: String, on_confirm: Callable) -> void
 	visible = true
 	get_tree().paused = true
 	GameState.block_ui("scripture_map")
+	AudioManager.music.enter_context(self, "context:scripture_map")
 	_passage_for = ""
 	_passage_action = on_confirm
 	_fill_passage(p, subtitle)

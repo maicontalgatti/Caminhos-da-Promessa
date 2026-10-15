@@ -193,6 +193,24 @@
 				"after": {"speaker": "narrator", "text": "A estrada da borda sul está vazia. Só o vento levanta um pouco de poeira.", "choices": [{"text": "Reler no diário o relato de Gênesis 37.", "next": "reread"}, {"text": "Descer da encosta.", "next": "end"}]},
 				"reread": {"speaker": "narrator", "text": "Você abre de novo o diário de viagem em Gênesis 37.", "next": "end", "action": {"presentation": "gen_037_caravan"}}
 			}
+		},
+		{
+			"id": "ozi_talk",
+			"start": "greet",
+			"start_if": [
+				{"flag": "met_ozi", "node": "again"}
+			],
+			"nodes": {
+				"greet": {"speaker": "ozi", "text": "Ozi, das caravanas. Compro o que o caminho dá: sílex, amêndoas, lã. E vendo o que as caravanas trazem de longe.", "next": "hub", "set_flags": ["met_ozi"]},
+				"hub": {"speaker": "ozi", "text": "Os fardos estão abertos. Vai querer alguma coisa?", "choices": [{"text": "Quero negociar.", "next": "trade"}, {"text": "Que animais você vende?", "next": "lore"}, {"text": "Como funcionam as trocas aqui?", "next": "silver"}, {"text": "Até mais.", "next": "bye"}]},
+				"trade": {"speaker": "ozi", "text": "Vamos ver o que tem nessa bolsa.", "next": "end", "action": {"market": "ozi"}},
+				"lore": {"speaker": "ozi", "text": "Jumentos. São eles que carregam os fardos de aldeia em aldeia; aguentam sol, pedra e pouco capim.", "next": "lore2"},
+				"silver": {"speaker": "ozi", "text": "Você me traz o que achou pelo caminho, eu peso a prata na balança e pago. Depois, com a prata, leva o que quiser da minha esteira.", "next": "silver_note"},
+				"silver_note": {"speaker": "narrator", "text": "(Nesta época não havia moedas cunhadas: a prata era pesada em balanças. No jogo, a prata é uma medida simplificada, e os valores não são preços históricos.)", "next": "hub"},
+				"bye": {"speaker": "ozi", "text": "Boa estrada. E encha o odre antes de seguir.", "next": "end"},
+				"lore2": {"speaker": "narrator", "text": "(Jumentos eram os animais de carga mais comuns em Canaã nessa época. Ozi e os seus animais são criações do jogo.)", "next": "hub"},
+				"again": {"speaker": "ozi", "text": "De volta à estrada? Os fardos continuam abertos.", "next": "hub"}
+			}
 		}
 	]
 }

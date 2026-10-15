@@ -34,6 +34,19 @@
 			],
 			"areas": [
 				{"id": "canaan_east_gate", "rect": [864, 304, 64, 64], "label": "Saída leste da aldeia"}
+			],
+			"examinables": [
+				{"id": "canaan_trough", "dialogue": "canaan_trough", "prop": "water_trough", "x": 440, "y": 512, "prompt": "Bebedouro", "radius": 16, "center_y": -6, "prompt_y": -22,
+					"visible_if": {"all": [{"not_flag": "wells_trough_full"}, {"not": {"quest_completed": "canaan_wells"}}]}},
+				{"id": "canaan_trough_full", "dialogue": "canaan_trough", "prop": "water_trough_full", "x": 440, "y": 512, "prompt": "Bebedouro", "radius": 16, "center_y": -6, "prompt_y": -22,
+					"visible_if": {"any": [{"flag": "wells_trough_full"}, {"quest_completed": "canaan_wells"}]}}
+			],
+			"pickups": [
+				{"id": "canaan_ezer_jar", "item": "clay_jar", "x": 640, "y": 176, "visible_if": {"quest_active": "canaan_wells"}},
+				{"id": "tr_cv_wool_1", "item": "wool_tuft", "x": 384, "y": 520, "renewable": true},
+				{"id": "tr_cv_wool_2", "item": "wool_tuft", "x": 600, "y": 528, "renewable": true},
+				{"id": "tr_cv_almonds_1", "item": "almonds", "x": 120, "y": 280, "renewable": true},
+				{"id": "tr_cv_almonds_2", "item": "almonds", "x": 704, "y": 248, "renewable": true}
 			]
 		}
 	]
