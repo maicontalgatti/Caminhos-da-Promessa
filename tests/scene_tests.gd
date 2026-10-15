@@ -249,7 +249,7 @@ func test_play_and_skip() -> void:
 	check(world.find_children("Actor_*", "SceneActor", false, false).is_empty() and game.map.get_node_or_null("SceneFx") == null, "figurantes e efeitos removidos no fim")
 	check(GameState.inventory == bag_before, "cena não dá item")
 	await wait(80)
-	check(not game.map.lighting_locked and game.map.lighting.color.is_equal_approx(Color.WHITE), "luz volta à regra da região (sem lighting = sem tinta)")
+	check(not game.map.lighting_locked and game.map.lighting.color.is_equal_approx(game.map.lighting_tint()), "luz volta ao ciclo/regra da região")
 	check(not game.play_scene("test_scene_full"), "cena concluída não repete")
 
 	# Esc pula para o estado final.
@@ -262,7 +262,7 @@ func test_play_and_skip() -> void:
 	check(not game.get_node("PauseMenu").visible, "Esc da cena não abre a pausa")
 	check(GameState.get_flag("test_long_flag") == true and QuestManager.has_event("scene_finished", "test_scene_long"), "pular aplica on_end e registra scene_finished")
 	check(_player().global_position.distance_to(Vector2(320, 304)) < 1.0, "pular leva o jogador à posição final")
-	check(game.map.lighting.color.is_equal_approx(Color.WHITE), "pular desfaz a tinta da cena na hora")
+	check(game.map.lighting.color.is_equal_approx(game.map.lighting_tint()), "pular desfaz a tinta da cena na hora")
 	check(not GameState.is_ui_blocked(), "pular devolve o controle")
 
 	# Salvar, carregar: a cena concluída não volta a tocar.
@@ -289,7 +289,7 @@ func test_lighting() -> void:
 	reg["lighting"] = [{"if": {"flag": "test_night"}, "tint": "#203040"}, {"if": {"flag": "test_dusk"}, "tint": "#e9b98e"}]
 	var game: Node = await _start_game_in("dothan", "default")
 	var map: GameMap = game.map
-	check(map.lighting == null, "sem regra valendo, nenhuma tinta")
+	check(map.lighting != null and map.lighting.color.is_equal_approx(WorldClock.tint()), "sem regra de lighting, vale o ciclo do dia")
 	GameState.set_flag("test_dusk", true)
 	await wait(70)
 	check(map.lighting != null and map.lighting.color.is_equal_approx(Color("#e9b98e")), "flag muda a luz do mapa")
@@ -308,7 +308,7 @@ func test_lighting() -> void:
 	GameState.set_flag("test_night", false)
 	GameState.set_flag("test_dusk", false)
 	await wait(70)
-	check(map.lighting.color.is_equal_approx(Color.WHITE), "sem regra valendo, a luz volta ao normal")
+	check(map.lighting.color.is_equal_approx(WorldClock.tint()), "sem regra valendo, a luz volta ao ciclo do dia")
 	await _close(game)
 	GameState.new_game()
 	GameData.reload()

@@ -20,14 +20,15 @@ var experiences: Dictionary = {}
 var experience_order: Array[String] = []
 var eras_order: Array = []
 var errors := PackedStringArray()
-## Itens renováveis ("renewable": true) coletados nesta visita; não vão para o
-## save e se esvaziam a cada viagem ou partida carregada, então reaparecem.
-var _visit_picks: Dictionary = {}
+## Tempo de jogo em que a visita atual à região começou (viagem ou partida
+## carregada). Um renovável só volta se o seu momento de volta (renew_key, no
+## save) já tinha passado nesse instante: nunca surge no meio de uma visita.
+var _visit_started := 0.0
 
 
 func _ready() -> void:
 	reload()
-	GameState.state_replaced.connect(func(): _visit_picks.clear())
+	GameState.state_replaced.connect(func(): _visit_started = GameState.play_time)
 
 
 func reload() -> void:
@@ -124,7 +125,7 @@ func travel(region_id: String, entry_id: String) -> String:
 	if not is_region_unlocked(region_id):
 		GameState.set_flag("region_unlocked:" + region_id, true)
 		QuestManager.record_event("region_unlocked", region_id)
-	_visit_picks.clear()
+	_visit_started = GameState.play_time
 	GameState.current_region = region_id
 	GameState.current_map = scene
 	GameState.entry_id = entry_id
@@ -156,12 +157,20 @@ func mark_picked(region_id: String, object_id: String) -> void:
 	GameState.world[world_key(region_id, object_id)] = true
 
 
-func is_picked_this_visit(region_id: String, object_id: String) -> bool:
-	return _visit_picks.has(world_key(region_id, object_id))
+func renew_key(region_id: String, object_id: String) -> String:
+	return "renew/" + world_key(region_id, object_id)
 
 
-func mark_picked_this_visit(region_id: String, object_id: String) -> void:
-	_visit_picks[world_key(region_id, object_id)] = true
+## Renovável coletado que ainda não pode voltar nesta visita.
+func is_renewing(region_id: String, object_id: String) -> bool:
+	var at: Variant = GameState.world.get(renew_key(region_id, object_id))
+	return (at is float or at is int) and float(at) > _visit_started
+
+
+## Marca a coleta de um renovável: some e volta numa visita que comece depois
+## de `seconds` de jogo.
+func mark_renewing(region_id: String, object_id: String, seconds: float) -> void:
+	GameState.world[renew_key(region_id, object_id)] = maxf(GameState.play_time + seconds, _visit_started + 0.001)
 
 
 # --- Mapa das Escrituras ------------------------------------------------------

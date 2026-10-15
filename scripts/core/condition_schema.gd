@@ -4,8 +4,9 @@ extends RefCounted
 ## Validação estrutural das condições (ver Conditions). Sem dependência de
 ## autoloads, para rodar também nas ferramentas de linha de comando e no editor.
 
+const DAY_PHASES := ["morning", "day", "evening", "night"]
 const KEYS := ["flag", "value", "not_flag", "objective", "quest_completed", "quest_active", "quest_started",
-	"discovery", "event", "id", "has_item", "count", "lacks_item", "choice", "option",
+	"discovery", "event", "id", "has_item", "count", "lacks_item", "has_silver", "day_phase", "choice", "option",
 	"collectibles", "collectible", "region", "all", "any", "not",
 	# chaves de quem usa a condição (não são avaliadas)
 	"node", "text", "next", "set_flags", "locked_text"]
@@ -36,6 +37,8 @@ static func validate(cond: Variant, owner: String) -> PackedStringArray:
 		out.append_array(validate(cond.not, owner))
 	if cond.has("choice") and not (cond.choice is String and String(cond.choice) != ""):
 		out.append("%s: condição \"choice\" exige o id da escolha" % owner)
+	if cond.has("day_phase") and not (String(cond.day_phase) in DAY_PHASES):
+		out.append("%s: \"day_phase\" deve ser morning, day, evening ou night" % owner)
 	return out
 
 

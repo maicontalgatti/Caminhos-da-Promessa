@@ -1,0 +1,191 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/world/game_map.gd" id="1_5mtv2"]
+[ext_resource type="TileSet" path="res://assets/tilesets/canaan_tileset.tres" id="2_y0uch"]
+[ext_resource type="PackedScene" path="res://scenes/environments/sacks.tscn" id="3_x3nxa"]
+[ext_resource type="Texture2D" path="res://assets/environments/sacks.png" id="4_m61ey"]
+[ext_resource type="PackedScene" path="res://scenes/environments/basket.tscn" id="5_ud3fp"]
+[ext_resource type="Texture2D" path="res://assets/environments/basket.png" id="6_ne86o"]
+[ext_resource type="PackedScene" path="res://scenes/environments/firewood.tscn" id="7_v53pn"]
+[ext_resource type="Texture2D" path="res://assets/environments/firewood.png" id="8_4m67h"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="9_qyf4c"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="10_vtqjn"]
+[ext_resource type="Texture2D" path="res://assets/characters/player.png" id="11_dy0vn"]
+[ext_resource type="Script" path="res://scripts/world/character_sprite.gd" id="12_otsk3"]
+[ext_resource type="Script" path="res://scripts/interaction/interaction_detector.gd" id="13_81260"]
+[ext_resource type="Texture2D" path="res://assets/ui/prompt_bubble.png" id="14_737xx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7a0v"]
+size = Vector2(256, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdge5"]
+size = Vector2(32, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o82pl"]
+size = Vector2(32, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdu0l"]
+size = Vector2(80, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3rvd"]
+size = Vector2(80, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ws055"]
+size = Vector2(14, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eum6s"]
+size = Vector2(10, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35wi8"]
+size = Vector2(14, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(8, 5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_detect"]
+radius = 15.0
+
+[node name="CanaanTent" type="Node2D" unique_id=351106191]
+script = ExtResource("1_5mtv2")
+region_id = "canaan_tent"
+map_size_tiles = Vector2i(16, 12)
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1507796939]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAOAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAPAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAABAAsAAAAAAAAAAAACAAsAAAAAAAAAAAADAAsAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAsAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAsAAAAAAAAAAAAMAAsAAAAAAAAAAAANAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAAPAAsAAAAAAAAAAAA=")
+tile_set = ExtResource("2_y0uch")
+
+[node name="Floors" type="TileMapLayer" parent="." unique_id=1207773156]
+tile_map_data = PackedByteArray("AAACAAIAAAABAAAAAAADAAIAAAABAAAAAAAEAAIAAAABAAAAAAAFAAIAAAABAAAAAAAGAAIAAAABAAAAAAAHAAIAAAABAAAAAAAIAAIAAAABAAAAAAAJAAIAAAABAAAAAAAKAAIAAAABAAAAAAALAAIAAAABAAAAAAAMAAIAAAABAAAAAAANAAIAAAABAAAAAAACAAMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAJAAMAAAABAAAAAAAKAAMAAAABAAAAAAALAAMAAAABAAAAAAAMAAMAAAABAAAAAAANAAMAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAAEAAQAAAABAAAAAAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAAHAAQAAAABAAAAAAAIAAQAAAABAAAAAAAJAAQAAAABAAAAAAAKAAQAAAABAAAAAAALAAQAAAABAAAAAAAMAAQAAAABAAAAAAANAAQAAAABAAAAAAACAAUAAAABAAAAAAADAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAHAAUAAAABAAAAAAAIAAUAAAABAAAAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAABAAAAAAANAAUAAAABAAAAAAACAAYAAAABAAAAAAADAAYAAAABAAAAAAAEAAYAAAABAAAAAAAFAAYAAAABAAAAAAAGAAYAAAABAAAAAAAHAAYAAAABAAAAAAAIAAYAAAABAAAAAAAJAAYAAAABAAAAAAAKAAYAAAABAAAAAAALAAYAAAABAAAAAAAMAAYAAAABAAAAAAANAAYAAAABAAAAAAACAAcAAAABAAAAAAADAAcAAAABAAAAAAAEAAcAAAABAAAAAAAFAAcAAAABAAAAAAAGAAcAAAABAAAAAAAHAAcAAAABAAAAAAAIAAcAAAABAAAAAAAJAAcAAAABAAAAAAAKAAcAAAABAAAAAAALAAcAAAABAAAAAAAMAAcAAAABAAAAAAANAAcAAAABAAAAAAACAAgAAAABAAAAAAADAAgAAAABAAAAAAAEAAgAAAABAAAAAAAFAAgAAAABAAAAAAAGAAgAAAABAAAAAAAHAAgAAAABAAAAAAAIAAgAAAABAAAAAAAJAAgAAAABAAAAAAAKAAgAAAABAAAAAAALAAgAAAABAAAAAAAMAAgAAAABAAAAAAANAAgAAAABAAAAAAACAAkAAAABAAAAAAADAAkAAAABAAAAAAAEAAkAAAABAAAAAAAFAAkAAAABAAAAAAAGAAkAAAABAAAAAAAHAAkAAAABAAAAAAAIAAkAAAABAAAAAAAJAAkAAAABAAAAAAAKAAkAAAABAAAAAAALAAkAAAABAAAAAAAMAAkAAAABAAAAAAANAAkAAAABAAAAAAA=")
+tile_set = ExtResource("2_y0uch")
+
+[node name="World" type="Node2D" parent="." unique_id=1239559710]
+
+[node name="@StaticBody2D@14" type="StaticBody2D" parent="World" unique_id=1879042103]
+
+[node name="@CollisionShape2D@13" type="CollisionShape2D" parent="World/@StaticBody2D@14" unique_id=1554193748]
+position = Vector2(128, 16)
+shape = SubResource("RectangleShape2D_m7a0v")
+
+[node name="@StaticBody2D@16" type="StaticBody2D" parent="World" unique_id=2001099322]
+
+[node name="@CollisionShape2D@15" type="CollisionShape2D" parent="World/@StaticBody2D@16" unique_id=1946148542]
+position = Vector2(16, 96)
+shape = SubResource("RectangleShape2D_rdge5")
+
+[node name="@StaticBody2D@18" type="StaticBody2D" parent="World" unique_id=1453700986]
+position = Vector2(224, 0)
+
+[node name="@CollisionShape2D@17" type="CollisionShape2D" parent="World/@StaticBody2D@18" unique_id=1621163403]
+position = Vector2(16, 96)
+shape = SubResource("RectangleShape2D_o82pl")
+
+[node name="@StaticBody2D@20" type="StaticBody2D" parent="World" unique_id=639592270]
+position = Vector2(32, 160)
+
+[node name="@CollisionShape2D@19" type="CollisionShape2D" parent="World/@StaticBody2D@20" unique_id=1586812400]
+position = Vector2(40, 16)
+shape = SubResource("RectangleShape2D_qdu0l")
+
+[node name="@StaticBody2D@22" type="StaticBody2D" parent="World" unique_id=766672653]
+position = Vector2(144, 160)
+
+[node name="@CollisionShape2D@21" type="CollisionShape2D" parent="World/@StaticBody2D@22" unique_id=246784763]
+position = Vector2(40, 16)
+shape = SubResource("RectangleShape2D_t3rvd")
+
+[node name="Sacks" type="StaticBody2D" parent="World" unique_id=1897999519 instance=ExtResource("3_x3nxa")]
+position = Vector2(80, 80)
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="World/Sacks" unique_id=305185574]
+texture = ExtResource("4_m61ey")
+centered = false
+offset = Vector2(-9, -12)
+
+[node name="Collision" type="CollisionShape2D" parent="World/Sacks" unique_id=787363650]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_ws055")
+
+[node name="Basket" type="StaticBody2D" parent="World" unique_id=256611044 instance=ExtResource("5_ud3fp")]
+position = Vector2(140, 100)
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="World/Basket" unique_id=257435231]
+texture = ExtResource("6_ne86o")
+centered = false
+offset = Vector2(-7, -9)
+
+[node name="Collision" type="CollisionShape2D" parent="World/Basket" unique_id=1862511989]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_eum6s")
+
+[node name="Firewood" type="StaticBody2D" parent="World" unique_id=2134005830 instance=ExtResource("7_v53pn")]
+position = Vector2(180, 120)
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="World/Firewood" unique_id=1653557900]
+texture = ExtResource("8_4m67h")
+centered = false
+offset = Vector2(-8, -9)
+
+[node name="Collision" type="CollisionShape2D" parent="World/Firewood" unique_id=283971577]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_35wi8")
+
+[node name="PlayerSpawn" type="Marker2D" parent="World" unique_id=1112405673]
+position = Vector2(128, 140)
+
+[node name="Player" type="CharacterBody2D" parent="World" unique_id=1207328498 instance=ExtResource("9_qyf4c")]
+position = Vector2(128, 140)
+collision_layer = 2
+collision_mask = 5
+motion_mode = 1
+script = ExtResource("10_vtqjn")
+
+[node name="Sprite" type="Sprite2D" parent="World/Player" unique_id=772445705]
+texture = ExtResource("11_dy0vn")
+centered = false
+offset = Vector2(-12, -31)
+hframes = 6
+vframes = 4
+script = ExtResource("12_otsk3")
+
+[node name="Collision" type="CollisionShape2D" parent="World/Player" unique_id=391475836]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_body")
+
+[node name="InteractionDetector" type="Area2D" parent="World/Player" unique_id=2056130042]
+position = Vector2(0, -6)
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+script = ExtResource("13_81260")
+
+[node name="Shape" type="CollisionShape2D" parent="World/Player/InteractionDetector" unique_id=2137972983]
+shape = SubResource("CircleShape2D_detect")
+
+[node name="Camera2D" type="Camera2D" parent="World/Player" unique_id=842734635]
+position = Vector2(0, -12)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="InteractPrompt" type="Node2D" parent="World/Player" unique_id=463863951]
+visible = false
+top_level = true
+z_index = 50
+
+[node name="Bubble" type="Sprite2D" parent="World/Player/InteractPrompt" unique_id=480810326]
+texture = ExtResource("14_737xx")
+offset = Vector2(0, -6)
+
+[node name="Label" type="Label" parent="World/Player/InteractPrompt" unique_id=300662029]
+offset_left = -40.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 11.0
+theme_override_font_sizes/font_size = 7
+theme_override_colors/font_color = Color(0.956863, 0.894118, 0.756863, 1)
+theme_override_colors/font_outline_color = Color(0.168627, 0.113725, 0.0784314, 1)
+theme_override_constants/outline_size = 3
+text = "Interagir"
+horizontal_alignment = 1

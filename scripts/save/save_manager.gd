@@ -2,16 +2,75 @@ extends Node
 ## Gravação e leitura de saves em JSON versionado.
 ## Não conhece o GameState: recebe e devolve dicionários já validados,
 ## o que permite testá-lo isoladamente.
+##
+## Três espaços (`user://save_slot_0..2.json`). O save antigo
+## `user://savegame.json` é migrado para o espaço 0 na primeira abertura.
 
 const SAVE_VERSION := 3
 const ID_PATTERN := "^[a-z0-9_:/\\-]{1,96}$"
 const MAX_ITEM_QTY := 999
 const QUEST_STATUSES := ["active", "completed"]
-const DEFAULT_PATH := "user://savegame.json"
+const SLOT_COUNT := 3
+const LEGACY_PATH := "user://savegame.json"
+const DEFAULT_PATH := "user://save_slot_0.json"
 const ALLOWED_FLAG_TYPES := [TYPE_BOOL, TYPE_INT, TYPE_FLOAT, TYPE_STRING]
 
 ## Caminho usado quando nenhum é informado (os testes trocam por um arquivo próprio).
 var save_path := DEFAULT_PATH
+var active_slot := 0
+
+
+func _ready() -> void:
+	migrate_legacy_if_needed()
+	active_slot = clampi(int(Settings.save_slot) if Settings else 0, 0, SLOT_COUNT - 1)
+	if uses_slots(save_path):
+		save_path = slot_path(active_slot)
+
+
+func slot_path(slot: int) -> String:
+	return "user://save_slot_%d.json" % clampi(slot, 0, SLOT_COUNT - 1)
+
+
+## Troca o espaço ativo (gravações e "Continuar" usam este caminho).
+func set_active_slot(slot: int) -> void:
+	active_slot = clampi(slot, 0, SLOT_COUNT - 1)
+	if uses_slots(save_path):
+		save_path = slot_path(active_slot)
+	if Settings and Settings.save_slot != active_slot:
+		Settings.save_slot = active_slot
+		Settings.save_settings()
+
+
+## True quando o caminho atual é um dos espaços (e não um arquivo de teste).
+func uses_slots(path: String = "") -> bool:
+	path = path if path != "" else save_path
+	if path == DEFAULT_PATH or path == LEGACY_PATH:
+		return true
+	for i in SLOT_COUNT:
+		if path == slot_path(i):
+			return true
+	return false
+
+
+## Move o save único antigo para o espaço 0, se ainda não houver espaços.
+func migrate_legacy_if_needed() -> void:
+	if not FileAccess.file_exists(LEGACY_PATH) and not FileAccess.file_exists(LEGACY_PATH + ".bak"):
+		return
+	for i in SLOT_COUNT:
+		if has_save(slot_path(i)):
+			return
+	var dest := slot_path(0)
+	var abs_src := ProjectSettings.globalize_path(LEGACY_PATH)
+	var abs_dst := ProjectSettings.globalize_path(dest)
+	if FileAccess.file_exists(LEGACY_PATH):
+		DirAccess.copy_absolute(abs_src, abs_dst)
+		DirAccess.remove_absolute(abs_src)
+	if FileAccess.file_exists(LEGACY_PATH + ".bak"):
+		DirAccess.copy_absolute(abs_src + ".bak", abs_dst + ".bak")
+		DirAccess.remove_absolute(abs_src + ".bak")
+	for ext in [".tmp"]:
+		if FileAccess.file_exists(LEGACY_PATH + ext):
+			DirAccess.remove_absolute(ProjectSettings.globalize_path(LEGACY_PATH + ext))
 
 
 func has_save(path: String = "") -> bool:
@@ -19,11 +78,63 @@ func has_save(path: String = "") -> bool:
 	return FileAccess.file_exists(path) or FileAccess.file_exists(path + ".bak")
 
 
+func has_any_save() -> bool:
+	if not uses_slots():
+		return has_save()
+	migrate_legacy_if_needed()
+	for i in SLOT_COUNT:
+		if has_save(slot_path(i)):
+			return true
+	return false
+
+
 func delete_save(path: String = "") -> void:
 	path = _resolve(path)
 	for p in [path, path + ".bak", path + ".tmp"]:
 		if FileAccess.file_exists(p):
 			DirAccess.remove_absolute(ProjectSettings.globalize_path(p))
+
+
+## Resumo de um espaço para a tela de escolha: {empty, saved_at, play_time, region, label}.
+func slot_summary(slot: int) -> Dictionary:
+	var path := slot_path(slot)
+	if not has_save(path):
+		return {"empty": true, "slot": slot, "label": "Espaço %d — vazio" % (slot + 1)}
+	var result := load_data(path)
+	if not result.ok:
+		return {"empty": false, "slot": slot, "corrupt": true, "label": "Espaço %d — danificado" % (slot + 1)}
+	var g: Dictionary = result.data
+	var rid := String(g.get("current_region", ""))
+	if rid == "" and GameData:
+		for id in GameData.regions:
+			if String(GameData.regions[id].get("map_scene", "")) == String(g.get("current_map", "")):
+				rid = String(id)
+				break
+	var place := rid
+	if GameData and GameData.regions.has(rid):
+		place = String(GameData.regions[rid].get("display_name", rid))
+	var mins := int(float(g.get("play_time", 0.0)) / 60.0)
+	var time_txt := "%d min" % mins if mins < 60 else "%dh %02d min" % [mins / 60, mins % 60]
+	var when := ""
+	# saved_at fica no envelope; relemos o arquivo só para a data.
+	var raw := _peek_saved_at(path)
+	when = raw if raw != "" else ""
+	var label := "Espaço %d — %s · %s" % [slot + 1, place if place != "" else "Em viagem", time_txt]
+	if when != "":
+		label += "\n%s" % when
+	return {"empty": false, "slot": slot, "corrupt": false, "play_time": float(g.get("play_time", 0.0)),
+		"region": rid, "place": place, "saved_at": when, "label": label}
+
+
+func _peek_saved_at(path: String) -> String:
+	if not FileAccess.file_exists(path):
+		path = path + ".bak"
+	if not FileAccess.file_exists(path):
+		return ""
+	var json := JSON.new()
+	if json.parse(FileAccess.get_file_as_string(path)) != OK or not (json.data is Dictionary):
+		return ""
+	return String(json.data.get("saved_at", ""))
 
 
 ## Grava em arquivo temporário e só então substitui o save anterior,

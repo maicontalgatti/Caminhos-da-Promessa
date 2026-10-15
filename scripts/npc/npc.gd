@@ -1,8 +1,8 @@
 class_name NPC
 extends CharacterBody2D
 ## Personagem não jogável configurado por data/characters/*.json.
-## Comportamentos atuais: "idle" (parado, olha em volta) e "wander"
-## (passeia num raio ao redor de casa). Rotinas por horário virão depois.
+## Comportamentos: "idle" e "wander". Com "schedule.night": "home"|"hidden",
+## à noite o NPC volta para casa ou some (rotina simples por horário).
 
 @export var character_id: String = ""
 
@@ -19,6 +19,8 @@ var _wait := 0.0
 var _walking := false
 var _stuck_time := 0.0
 var _talking := false
+var _day_behavior := "idle"
+var _base_visible := true
 
 @onready var sprite: CharacterSprite = $Sprite
 @onready var interactable: Interactable = $Interactable
@@ -38,6 +40,7 @@ func _ready() -> void:
 		sprite.configure(load(sheet_path), int(spr.get("hframes", 6)), int(spr.get("vframes", 4)), int(spr.get("directions", 4)))
 	var beh: Dictionary = data.get("behavior", {})
 	behavior = String(beh.get("type", "idle"))
+	_day_behavior = behavior
 	speed = float(beh.get("speed", speed))
 	wander_radius = float(beh.get("wander_radius", wander_radius))
 	facing = Vector2(beh.get("facing_x", 0.0), beh.get("facing_y", 1.0))
@@ -46,9 +49,48 @@ func _ready() -> void:
 	interactable.prompt_text = String(data.get("prompt", ""))
 	interactable.interacted.connect(_on_interacted)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+	GameState.flag_changed.connect(_on_flag_changed)
+	_apply_schedule()
+
+
+func _exit_tree() -> void:
+	if GameState.flag_changed.is_connected(_on_flag_changed):
+		GameState.flag_changed.disconnect(_on_flag_changed)
+
+
+func _on_flag_changed(flag: String, _value: Variant) -> void:
+	if flag == "day_phase":
+		_apply_schedule()
+
+
+func _apply_schedule() -> void:
+	if data.is_empty():
+		return
+	var sched: Dictionary = data.get("schedule", {})
+	var night_mode := String(sched.get("night", ""))
+	var night := WorldClock.is_night()
+	if night and night_mode == "hidden":
+		visible = false
+		if interactable:
+			interactable.enabled = false
+		velocity = Vector2.ZERO
+		return
+	visible = _base_visible
+	if interactable:
+		interactable.enabled = true
+	if night and night_mode == "home":
+		behavior = "idle"
+		_walking = false
+		if global_position.distance_to(home) > 4.0:
+			global_position = home
+	else:
+		behavior = _day_behavior
 
 
 func _physics_process(delta: float) -> void:
+	if not visible:
+		velocity = Vector2.ZERO
+		return
 	if _talking:
 		velocity = Vector2.ZERO
 	else:

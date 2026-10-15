@@ -53,7 +53,9 @@ func _refresh_layers() -> void:
 		s.centered = base.centered
 		s.offset = base.offset
 		s.frame = base.frame
-		base.add_child(s)
+		s.z_index = base.z_index + 1
+		# Irmão do sprite (não filho): o tom de pele do viajante não tinga a roupa.
+		player.add_child(s)
 		layers.append(s)
 
 
@@ -77,6 +79,11 @@ func _refresh_companion() -> void:
 func _process(_delta: float) -> void:
 	if layers.is_empty() or not is_instance_valid(player):
 		return
-	var f := player.sprite.frame
+	var base := player.sprite
+	var f := base.frame
 	for l in layers:
+		l.position = base.position
+		l.offset = base.offset
+		l.flip_h = base.flip_h
+		l.flip_v = base.flip_v
 		l.frame = f

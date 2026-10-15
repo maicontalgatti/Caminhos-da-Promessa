@@ -46,6 +46,7 @@
 				{"if": {"all": [{"objective": "tova_gleaning/beat_ears"}, {"choice": "ruth_forgotten_sheaf", "option": "asked_ilan"}]}, "node": "beat_asked"},
 				{"objective": "tova_gleaning/beat_ears", "node": "beat_hint"},
 				{"objective": "tova_gleaning/forgotten_sheaf", "node": "waiting"},
+				{"if": {"flag": "tova_helped"}, "node": "helped_again"},
 				{"flag": "met_bf_tova", "node": "again"}
 			],
 			"nodes": {
@@ -58,7 +59,16 @@
 				"beat_left": {"speaker": "bf_tova", "text": "Achei um feixe inteiro no caminho! Ninguém voltou para buscar. Hoje o cesto pesa.", "next": "beat_hint"},
 				"beat_asked": {"speaker": "bf_tova", "text": "Ilan disse para deixar o feixe no campo? Já passei por lá e peguei. Obrigada por perguntar.", "next": "beat_hint"},
 				"beat_hint": {"speaker": "bf_tova", "text": "Espiga ainda não é grão. Deixei a vara e o pano junto à pedra lisa, ao sul. Você me ajuda a bater?", "next": "end"},
-				"again": {"speaker": "bf_tova", "text": "O sol está alto. Ainda dá para encher mais um pouco o cesto antes da tarde.", "next": "end"}
+				"again": {"speaker": "bf_tova", "text": "O sol está alto. Ainda dá para encher mais um pouco o cesto antes da tarde.", "next": "help_hub"},
+				"help_hub": {"speaker": "bf_tova", "text": "Uma viúva às vezes aceita um pedaço de pão ou um pouco de prata, se o viajante tiver de sobra. Não é obrigação.", "choices": [
+					{"text": "Dar um pão de cevada.", "next": "fed", "if": {"all": [{"not_flag": "tova_helped"}, {"has_item": "barley_bread"}]}, "take": [{"item": "barley_bread", "qty": 1}], "flags": {"tova_helped": true}, "unlock": ["sharing_in_need"], "event": "tova_helped"},
+					{"text": "Dar tâmaras.", "next": "fed", "if": {"all": [{"not_flag": "tova_helped"}, {"has_item": "dates"}]}, "take": [{"item": "dates", "qty": 1}], "flags": {"tova_helped": true}, "unlock": ["sharing_in_need"], "event": "tova_helped"},
+					{"text": "Deixar 2 de prata.", "next": "fed_silver", "if": {"all": [{"not_flag": "tova_helped"}, {"has_silver": 2}]}, "spend_silver": 2, "flags": {"tova_helped": true}, "unlock": ["sharing_in_need"], "event": "tova_helped"},
+					{"text": "Desejo uma boa colheita.", "next": "end"}
+				]},
+				"fed": {"speaker": "bf_tova", "text": "Que o Senhor retribua. Com isto, o jarro da casa fica menos vazio.", "next": "end"},
+				"fed_silver": {"speaker": "bf_tova", "text": "Prata... com isto compro azeite. Você deu do que era seu. Obrigada.", "next": "end"},
+				"helped_again": {"speaker": "bf_tova", "text": "Ainda lembro da sua generosidade. Que o seu caminho seja bom.", "next": "end"}
 			}
 		},
 		{
@@ -199,11 +209,18 @@
 			],
 			"nodes": {
 				"greet": {"speaker": "liora", "text": "Bom dia! Vendo panos e cajados para quem trabalha no campo, e compro ervas e amêndoas para levar à aldeia.", "next": "hub", "set_flags": ["met_liora"]},
-				"hub": {"speaker": "liora", "text": "Quer ver a minha esteira?", "choices": [{"text": "Quero negociar.", "next": "trade"}, {"text": "Que ervas dá para achar por aqui?", "next": "lore"}, {"text": "Como funcionam as trocas aqui?", "next": "silver"}, {"text": "Até mais.", "next": "bye"}]},
+				"hub": {"speaker": "liora", "text": "Quer ver a minha esteira?", "choices": [
+					{"text": "Quero negociar.", "next": "trade"},
+					{"text": "Trocar 3 maços de ervas por 2 amêndoas.", "next": "barter_ok", "if": {"has_item": "wild_herbs", "count": 3}, "take": [{"item": "wild_herbs", "qty": 3}], "give": [{"item": "almonds", "qty": 2}], "repeatable": true},
+					{"text": "Que ervas dá para achar por aqui?", "next": "lore"},
+					{"text": "Como funcionam as trocas aqui?", "next": "silver"},
+					{"text": "Até mais.", "next": "bye"}
+				]},
 				"trade": {"speaker": "liora", "text": "Deixe-me ver o que você colheu.", "next": "end", "action": {"market": "liora"}},
+				"barter_ok": {"speaker": "liora", "text": "Ervas boas, amêndoas frescas. Assim a gente se arruma sem pesar prata.", "next": "end"},
 				"lore": {"speaker": "liora", "text": "Na beira dos campos e das pedras cresce muita erva de cheiro. Seco, amarro em maços e vendo para temperar o pão e a panela.", "next": "lore2"},
-				"silver": {"speaker": "liora", "text": "Você me traz o que achou pelo caminho, eu peso a prata na balança e pago. Depois, com a prata, leva o que quiser da minha esteira.", "next": "silver_note"},
-				"silver_note": {"speaker": "narrator", "text": "(Nesta época não havia moedas cunhadas: a prata era pesada em balanças. No jogo, a prata é uma medida simplificada, e os valores não são preços históricos.)", "next": "hub"},
+				"silver": {"speaker": "liora", "text": "Você me traz o que achou pelo caminho, eu peso a prata na balança e pago. Se quiser, também trocamos erva por amêndoa, sem prata.", "next": "silver_note"},
+				"silver_note": {"speaker": "narrator", "text": "(Nesta época não havia moedas cunhadas: a prata era pesada em balanças. Trocas diretas de mercadoria também eram comuns. No jogo, a prata é uma medida simplificada, e os valores não são preços históricos.)", "next": "hub"},
 				"bye": {"speaker": "liora", "text": "Vá em paz, e cuidado com o sol da colheita.", "next": "end"},
 				"lore2": {"speaker": "narrator", "text": "(Liora é uma personagem do jogo; o texto bíblico não diz quais ervas se vendiam em Belém.)", "next": "hub"},
 				"again": {"speaker": "liora", "text": "Voltou para a minha esteira? Fique à vontade.", "next": "hub"}

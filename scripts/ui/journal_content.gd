@@ -5,7 +5,7 @@ extends RefCounted
 ## action?, header?}. Entradas com header = true são títulos de grupo, não
 ## selecionáveis. Separado da interface para poder ser testado sem a tela.
 
-const TABS := ["journey", "scriptures", "characters", "places", "timeline", "discoveries"]
+const TABS := ["journey", "scriptures", "characters", "places", "timeline", "discoveries", "album"]
 const TAB_LABELS := {
 	"journey": "Minha jornada",
 	"scriptures": "Escrituras",
@@ -13,6 +13,7 @@ const TAB_LABELS := {
 	"places": "Lugares",
 	"timeline": "Linha do tempo",
 	"discoveries": "Descobertas",
+	"album": "Álbum",
 }
 const JOURNEY_GROUPS := [["main", "História principal"], ["side", "Secundárias"], ["exploration", "Exploração"]]
 const LOG_SHOWN := 25
@@ -32,7 +33,119 @@ static func build(tab: String) -> Array:
 			return timeline()
 		"discoveries":
 			return my_discoveries()
+		"album":
+			return album()
 	return []
+
+
+## Busca em todas as abas (título, subtítulo e texto sem marcas BBCode).
+static func search(query: String) -> Array:
+	var q := query.strip_edges().to_lower()
+	if q.length() < 2:
+		return []
+	var out: Array = []
+	for tab in TABS:
+		var hits: Array = []
+		for e in build(tab):
+			if e.get("header", false):
+				continue
+			var blob := "%s %s %s" % [e.get("title", ""), e.get("subtitle", ""), _plain(String(e.get("text", "")))]
+			if q in blob.to_lower():
+				hits.append(e)
+		if hits.is_empty():
+			continue
+		out.append(_header("search:" + tab, String(TAB_LABELS.get(tab, tab))))
+		out.append_array(hits)
+	if out.is_empty():
+		out.append({
+			"id": "search:none", "title": "Nada encontrado", "subtitle": query,
+			"tag": "", "text": _h("Nada encontrado") + _muted("Tente outra palavra (nome de pessoa, lugar, missão ou peça)."),
+		})
+	return out
+
+
+static func _plain(bb: String) -> String:
+	var re := RegEx.create_from_string("\\[[^\\]]+\\]")
+	return re.sub(bb, " ", true)
+
+
+# --- Álbum (feira) -----------------------------------------------------------
+
+static func album() -> Array:
+	var out: Array = []
+	var gear: Array = []
+	for id in Market.order:
+		if Market.owned(id):
+			gear.append(id)
+	out.append(_header("gear", "Peças compradas"))
+	if gear.is_empty():
+		out.append({
+			"id": "album:gear_empty", "title": "Ainda sem peças", "subtitle": "Fale com um mercador",
+			"tag": "plausible_fiction",
+			"text": _h("Peças compradas") + _muted("Roupas, panos de cabeça, cajados e jumentos que você comprar na feira aparecem aqui."),
+		})
+	else:
+		for id in gear:
+			out.append(_gear_entry(id))
+	var trades := _seen_trade_ids()
+	out.append(_header("trade", "Mercadorias encontradas"))
+	if trades.is_empty():
+		out.append({
+			"id": "album:trade_empty", "title": "Ainda sem mercadorias", "subtitle": "Recolha pelo caminho",
+			"tag": "plausible_fiction",
+			"text": _h("Mercadorias") + _muted("Lã, amêndoas, sílex e outras mercadorias que você recolher ou vender entram neste álbum."),
+		})
+	else:
+		for id in trades:
+			out.append(_trade_entry(id))
+	return out
+
+
+static func _gear_entry(id: String) -> Dictionary:
+	var g: Dictionary = Market.goods[id]
+	var slot := String(g.get("slot", ""))
+	var eq := Market.equipped(slot) == id
+	var t := _h(String(g.name))
+	t += _sub(String(Market.SLOT_LABELS.get(slot, slot)) + (" · em uso" if eq else " · na bolsa da feira"))
+	t += String(g.get("description", "")) + "\n"
+	if float(g.get("speed", 1.0)) > 1.0:
+		t += "\n" + _muted("Velocidade a pé: +%d%%." % roundi((float(g.speed) - 1.0) * 100.0)) + "\n"
+	t += "\n" + _muted("Preço na feira: %d de prata." % int(g.get("price", 0))) + "\n"
+	return {"id": "gear:" + id, "title": String(g.name), "subtitle": "Em uso" if eq else "Guardada",
+		"tag": "plausible_fiction", "text": t}
+
+
+static func _trade_entry(id: String) -> Dictionary:
+	var name := Inventory.display_name(id)
+	var qty := Inventory.count(id)
+	var value := int(Market.sales.get(id, 0))
+	var t := _h(name)
+	t += _sub("Mercadoria")
+	t += String(Inventory.item(id).get("description", "")) + "\n"
+	if qty > 0:
+		t += "\n" + _muted("Na bolsa agora: %d." % qty) + "\n"
+	if value > 0:
+		t += _muted("A feira paga %d de prata por unidade." % value) + "\n"
+	return {"id": "trade:" + id, "title": name, "subtitle": ("%d na bolsa" % qty) if qty > 0 else "Já encontrada",
+		"tag": "plausible_fiction", "text": t}
+
+
+static func _seen_trade_ids() -> Array[String]:
+	var seen: Dictionary = {}
+	for id in Market.sales:
+		if Inventory.count(String(id)) > 0:
+			seen[String(id)] = true
+	for e in GameState.history:
+		if not (e is Dictionary):
+			continue
+		var id := String(e.get("id", ""))
+		if id != "" and Market.sales.has(id) and String(e.get("kind", "")) in ["item", "market_sell", "market_buy"]:
+			seen[id] = true
+	var out: Array[String] = []
+	for id in Market.sales:
+		if seen.has(String(id)):
+			out.append(String(id))
+	return out
 
 
 static func _header(id: String, title: String) -> Dictionary:

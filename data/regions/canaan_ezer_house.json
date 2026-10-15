@@ -1,0 +1,51 @@
+{
+	"regions": [
+		{
+			"id": "canaan_ezer_house",
+			"display_name": "Casa de Ezer",
+			"area_label": "Aldeia em Canaã",
+			"subtitle": "Interior fictício — oleiro da aldeia",
+			"biome": "canaa",
+			"map_scene": "res://scenes/maps/canaan_ezer_house.tscn",
+			"day_cycle": false,
+			"lighting": [{"tint": "#E8DCC8"}],
+			"classification": "plausible_fiction",
+			"notes": "Interior fictício da casa do oleiro Ezer. Casas de pedra e barro com um único cômodo amplo são plausíveis para aldeias do Levante na Idade do Bronze; o layout, os jarros e a porta única são composição do jogo. Ezer não é personagem bíblico.",
+			"related_stories": ["gen_026_isaac_wells"],
+			"context": {
+				"place_id": "canaan",
+				"era_id": "patriarchs",
+				"references": ["Gen 26:18-22"],
+				"theme": "Ofícios da aldeia: o barro e a água",
+				"discoveries_on_enter": ["pottery_jars"]
+			},
+			"surface_layers": [["Floors", "dirt"], ["Ground", "dirt"]],
+			"entries": {
+				"default": {"x": 160, "y": 180, "facing": "up"},
+				"from_village": {"x": 160, "y": 180, "facing": "up"}
+			},
+			"exits": [
+				{
+					"id": "door_out",
+					"rect": [144, 200, 32, 20],
+					"to": "canaan_village",
+					"entry": "from_ezer_house",
+					"label": "Sair para a aldeia"
+				}
+			],
+			"areas": [],
+			"npcs": [],
+			"examinables": [
+				{
+					"id": "ezer_wheel",
+					"x": 96, "y": 96,
+					"prop": "pots",
+					"kind": "examine",
+					"dialogue": "ezer_house_wheel",
+					"prompt": "Examinar a roda"
+				}
+			],
+			"pickups": []
+		}
+	]
+}

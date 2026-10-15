@@ -488,7 +488,8 @@ func show_region_banner(region: Dictionary) -> void:
 	if region.is_empty():
 		return
 	title.text = String(region.get("display_name", "")).to_upper()
-	subtitle.text = String(region.get("area_label", region.get("subtitle", "")))
+	var area := String(region.get("area_label", region.get("subtitle", "")))
+	subtitle.text = "%s · %s" % [area, WorldClock.phase_label()] if area != "" else WorldClock.phase_label()
 	var era := Bible.era_label(String(region.get("context", {}).get("era_id", "")))
 	refs_label.text = era
 	location.reset_size()

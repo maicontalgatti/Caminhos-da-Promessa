@@ -9,7 +9,7 @@ const QUEST_DIR := "res://data/quests"
 const EVENT_TYPES := ["dialogue_finished", "custom", "presentation_finished", "discovery",
 	"interact", "region_entered", "prologue_finished", "quest_completed", "flag",
 	"item_collected", "item_received", "item_delivered", "choice_made", "experience_started",
-	"location_reached", "collectible_found", "collection_completed", "region_unlocked", "scene_finished",
+	"location_reached", "collectible_found", "collection_completed", "region_unlocked", "scene_finished", "craft_finished",
 	# gatilhos de estado (reavaliados sempre): quantidade na bolsa, progresso de coleção, condição composta
 	"inventory", "collection", "condition"]
 const STATE_EVENTS := ["inventory", "collection", "condition", "flag"]

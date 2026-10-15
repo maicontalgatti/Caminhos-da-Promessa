@@ -15,8 +15,8 @@ extends RefCounted
 ##   }
 ## }
 ## "next": "end" (ou ausente) encerra o diálogo. "action": {"presentation": id}
-## (apresentação em quadros), {"scene": id} (cena dirigida de data/scenes) ou
-## {"market": id} (feira do mercador, data/market) é executada quando o diálogo termina.
+## (apresentação em quadros), {"scene": id} (cena dirigida), {"market": id}
+## (feira) ou {"travel": {"region", "entry"}} (interior/mapa) roda ao terminar.
 
 const END := "end"
 
@@ -60,6 +60,9 @@ static func validate_effects(e: Dictionary, owner: String) -> PackedStringArray:
 		var dec: Variant = e.decision
 		if not (dec is Dictionary) or String(dec.get("id", "")) == "" or String(dec.get("option", "")) == "":
 			out.append("%s: \"decision\" deve ser {id, option}" % owner)
+	if e.has("spend_silver"):
+		if not (e.spend_silver is int or e.spend_silver is float) or int(e.spend_silver) < 1:
+			out.append("%s: \"spend_silver\" deve ser um número ≥ 1" % owner)
 	if e.has("flags") and not (e.flags is Dictionary):
 		out.append("%s: \"flags\" deve ser {flag: valor}" % owner)
 	return out
@@ -81,8 +84,13 @@ static func referenced_items(d: Dictionary) -> Array:
 
 
 static func valid_action(a: Variant) -> bool:
-	return a is Dictionary and a.size() == 1 and (a.get("presentation") is String or a.get("scene") is String
-		or a.get("market") is String)
+	if not (a is Dictionary) or a.size() != 1:
+		return false
+	if a.get("presentation") is String or a.get("scene") is String or a.get("market") is String \
+			or a.get("craft") is String:
+		return true
+	var t: Variant = a.get("travel")
+	return t is Dictionary and String(t.get("region", "")) != "" and String(t.get("entry", "default")) != ""
 
 
 ## Ids de mercadores pedidos por ações de nós ({"market": id}).
@@ -106,6 +114,30 @@ static func referenced_scenes(d: Dictionary) -> Array:
 		for e in [n] + Array(n.get("choices", [])):
 			if e is Dictionary and e.get("action") is Dictionary and e.action.get("scene") is String:
 				out.append(String(e.action.scene))
+	return out
+
+
+## Ids de ofícios pedidos por ações ({"craft": id}).
+static func referenced_crafts(d: Dictionary) -> Array:
+	var out: Array = []
+	for n in d.get("nodes", {}).values():
+		if not (n is Dictionary):
+			continue
+		for e in [n] + Array(n.get("choices", [])):
+			if e is Dictionary and e.get("action") is Dictionary and e.action.get("craft") is String:
+				out.append(String(e.action.craft))
+	return out
+
+
+## Destinos {"travel": {region, entry}} pedidos por nós ou escolhas.
+static func referenced_travels(d: Dictionary) -> Array:
+	var out: Array = []
+	for n in d.get("nodes", {}).values():
+		if not (n is Dictionary):
+			continue
+		for e in [n] + Array(n.get("choices", [])):
+			if e is Dictionary and e.get("action") is Dictionary and e.action.get("travel") is Dictionary:
+				out.append(e.action.travel)
 	return out
 
 
@@ -139,7 +171,7 @@ static func validate(d: Dictionary) -> PackedStringArray:
 		if n.has("scripture") and not (n.scripture is String):
 			out.append("%s/%s: \"scripture\" deve ser uma referência (ex.: \"Gen 26:20\")" % [id, node_id])
 		if n.has("action") and not valid_action(n.action):
-			out.append("%s/%s: \"action\" deve ser {\"presentation\": id}, {\"scene\": id} ou {\"market\": id}" % [id, node_id])
+			out.append("%s/%s: \"action\" inválida (presentation|scene|market|craft|travel)" % [id, node_id])
 		out.append_array(validate_effects(n, "%s/%s" % [id, node_id]))
 		for ch in n.get("choices", []):
 			if not (ch is Dictionary) or not (ch.get("text") is String):
@@ -147,7 +179,7 @@ static func validate(d: Dictionary) -> PackedStringArray:
 				continue
 			out.append_array(validate_effects(ch, "%s/%s (escolha)" % [id, node_id]))
 			if ch.has("action") and not valid_action(ch.action):
-				out.append("%s/%s (escolha): \"action\" deve ser {\"presentation\": id}, {\"scene\": id} ou {\"market\": id}" % [id, node_id])
+				out.append("%s/%s (escolha): \"action\" inválida (presentation|scene|market|craft|travel)" % [id, node_id])
 			if ch.has("if"):
 				out.append_array(ConditionSchema.validate(ch.get("if"), "%s/%s (escolha)" % [id, node_id]))
 			var ch_next := String(ch.get("next", END))

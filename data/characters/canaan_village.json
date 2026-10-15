@@ -10,7 +10,8 @@
 			"description": "Jovem pastora que cuida do pequeno rebanho da aldeia.",
 			"dialogue_id": "adina_talk",
 			"sprite": {"sheet": "res://assets/characters/adina.png", "hframes": 6, "vframes": 4, "directions": 4},
-			"behavior": {"type": "wander", "speed": 22, "wander_radius": 36}
+			"behavior": {"type": "wander", "speed": 22, "wander_radius": 36},
+			"schedule": {"night": "home"}
 		},
 		{
 			"id": "ezer",
@@ -43,7 +44,8 @@
 			"description": "Menino curioso que corre pela praça do poço.",
 			"dialogue_id": "ari_talk",
 			"sprite": {"sheet": "res://assets/characters/ari.png", "hframes": 6, "vframes": 4, "directions": 4},
-			"behavior": {"type": "wander", "speed": 34, "wander_radius": 60}
+			"behavior": {"type": "wander", "speed": 34, "wander_radius": 60},
+			"schedule": {"night": "home"}
 		},
 		{
 			"id": "sheep",

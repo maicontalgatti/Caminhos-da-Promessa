@@ -14,6 +14,8 @@ extends RefCounted
 ##   "quest_completed": id   "quest_active": id   "quest_started": id
 ##   "discovery": id   "event": tipo + "id": id (evento já registrado)
 ##   "has_item": id (+ "count": n)   "lacks_item": id
+##   "has_silver": n                 (prata da feira, ADR-030)
+##   "day_phase": "morning"|"day"|"evening"|"night"  (ciclo dia/noite)
 ##   "choice": id + "option": opção (sem "option": escolha ainda não feita)
 ##   "collectibles": conjunto + "count": n
 ##   "collectible": id   "region": região atual
@@ -69,6 +71,10 @@ static func check(cond: Variant) -> bool:
 	if c.has("has_item") and Inventory.count(String(c.has_item)) < int(c.get("count", 1)):
 		return false
 	if c.has("lacks_item") and Inventory.count(String(c.lacks_item)) > 0:
+		return false
+	if c.has("has_silver") and Market.silver() < int(c.has_silver):
+		return false
+	if c.has("day_phase") and WorldClock.phase() != String(c.day_phase):
 		return false
 	if c.has("choice") and GameState.get_flag(choice_flag(String(c.choice)), "") != String(c.get("option", "")):
 		return false

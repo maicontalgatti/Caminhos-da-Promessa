@@ -193,6 +193,82 @@ func test_travel() -> void:
 	GameState.new_game()
 
 
+func test_day_cycle() -> void:
+	GameState.new_game()
+	check(WorldClock.phase(0.0) == "morning", "jogo começa de manhã")
+	check(WorldClock.phase(WorldClock.DAY_LENGTH * 0.3) == "day", "meio da manhã vira dia")
+	check(WorldClock.phase(WorldClock.DAY_LENGTH * 0.6) == "evening", "fim da tarde")
+	check(WorldClock.phase(WorldClock.DAY_LENGTH * 0.9) == "night", "noite")
+	check(WorldClock.is_night(WorldClock.DAY_LENGTH * 0.9), "is_night na noite")
+	check(Conditions.check({"day_phase": "morning"}), "condição day_phase manhã")
+	GameState.play_time = WorldClock.DAY_LENGTH * 0.9
+	WorldClock.sync_flag()
+	check(String(GameState.get_flag("day_phase", "")) == "night", "flag day_phase sincroniza")
+	check(Conditions.check({"day_phase": "night"}) and not Conditions.check({"day_phase": "day"}), "condição day_phase noite")
+	check(not ConditionSchema.validate({"day_phase": "madrugada"}, "t").is_empty(), "fase inválida é recusada")
+	GameState.set_flag("prologue_seen", true)
+	var game: Node = await _start_game()
+	for n in game.find_children("*", "NPC", true, false):
+		n.process_mode = Node.PROCESS_MODE_DISABLED
+	await r._close_cards(game.get_node("HUD"))
+	check(game.map.lighting_tint() == WorldClock.tint(), "aldeia usa tinta do ciclo")
+	GameState.play_time = WorldClock.DAY_LENGTH * 0.9
+	WorldClock.sync_flag()
+	await wait(4)
+	check(game.map.lighting.color.is_equal_approx(WorldClock.TINTS.night), "noite escurece a aldeia")
+	var lit := 0
+	for n in game.map.find_children("*", "PointLight2D", true, false):
+		if n.name == "NightLight" and n.enabled:
+			lit += 1
+	check(lit >= 1, "fogueira acende luz à noite (%d)" % lit)
+	check(WorldManager.travel("canaan_ezer_house", "from_village") == "", "entrar no interior")
+	await _wait_travel(game)
+	check(game.map.lighting_tint() == Color("#E8DCC8"), "interior ignora o ciclo (luz fixa)")
+	game.queue_free()
+	await wait(3)
+	GameState.new_game()
+
+
+func test_interiors() -> void:
+	GameState.new_game()
+	GameState.set_flag("prologue_seen", true)
+	check(GameData.regions.has("canaan_ezer_house") and GameData.regions.has("canaan_tent"), "regiões de interior carregadas")
+	check(ResourceLoader.exists("res://scenes/maps/canaan_ezer_house.tscn") and ResourceLoader.exists("res://scenes/maps/canaan_tent.tscn"), "mapas de interior existem")
+	check(DialogueDatabase.valid_action({"travel": {"region": "canaan_ezer_house", "entry": "from_village"}}), "ação travel é válida")
+	check(not DialogueDatabase.valid_action({"travel": {"region": "", "entry": "x"}}), "travel sem região é recusado")
+	var travels := DialogueDatabase.referenced_travels(DialogueManager.db.dialogues.get("ezer_house_door", {}))
+	check(travels.size() == 1 and String(travels[0].get("region", "")) == "canaan_ezer_house", "porta de Ezer pede viagem ao interior")
+	var game: Node = await _start_game()
+	for n in game.find_children("*", "NPC", true, false):
+		n.process_mode = Node.PROCESS_MODE_DISABLED
+	await r._close_cards(game.get_node("HUD"))
+	var wired := false
+	for it in game.map.find_children("*", "Interactable", true, false):
+		if String(it.dialogue_id) == "ezer_house_door":
+			wired = true
+			break
+	check(wired, "porta da casa de Ezer ligada no mapa da aldeia")
+	check(WorldManager.travel("canaan_ezer_house", "from_village") == "", "entrar na casa de Ezer")
+	await _wait_travel(game)
+	check(game.map.region_id == "canaan_ezer_house", "mapa da casa de Ezer carregado")
+	check(Discoveries.is_unlocked("pottery_jars"), "entrar na casa desbloqueia pottery_jars")
+	check(WorldManager.travel("canaan_village", "from_ezer_house") == "", "sair da casa para a aldeia")
+	await _wait_travel(game)
+	check(game.map.region_id == "canaan_village" and _player().global_position.distance_to(Vector2(768, 232)) < 2.0, "volta perto da casa de Ezer")
+	check(WorldManager.travel("canaan_tent", "from_village") == "", "entrar na tenda")
+	await _wait_travel(game)
+	check(game.map.region_id == "canaan_tent", "mapa da tenda carregado")
+	_player().global_position = Vector2(128, 155)
+	await wait(2)
+	Input.action_press("move_down")
+	await _wait_travel(game)
+	Input.action_release("move_down")
+	check(game.map.region_id == "canaan_village" and _player().global_position.distance_to(Vector2(200, 420)) < 24.0, "sair da tenda volta à aldeia")
+	game.queue_free()
+	await wait(3)
+	GameState.new_game()
+
+
 # --- Inventário ------------------------------------------------------------------
 
 func test_inventory() -> void:
@@ -253,6 +329,10 @@ func test_market() -> void:
 	check(not Market.goods_for("yaron").has("linen_tunic") and Market.goods_for("nefer").has("linen_tunic"), "túnica de linho só com Nefer")
 	check(not Market.buy("linen_tunic", "yaron") and Market.buy("linen_tunic", "nefer"), "comprar exige um mercador que venda a peça")
 	check(Market.goods_for("yaron").has("linen_tunic"), "peça já comprada aparece com qualquer mercador para usar")
+	for mid in Market.merchants:
+		check(Market.order.any(func(g): return mid in Market.goods[g].get("sold_by", [])) and String(Market.merchant(mid).get("specialty", "")) != "", "mercador %s tem estoque e especialidade próprios" % mid)
+	check(Market.sells("liora", "shepherd_mantle") and not Market.sells("nefer", "shepherd_mantle") and Market.sells("ozi", "blue_tunic") and not Market.sells("yaron", "blue_tunic"), "estoques regionais: manto de pastor em Belém, túnica azul com as caravanas")
+	check(Market.renew_seconds > 0.0, "mercadorias têm tempo para reaparecer")
 	check(Market.speed_multiplier() == 1.0 and Market.companion().is_empty(), "sem transporte: velocidade normal")
 	check(Market.buy("pack_donkey", "yaron") and is_equal_approx(Market.speed_multiplier(), 1.15), "jumento de carga: +15% de velocidade")
 	check(String(Market.companion().get("sheet", "")).ends_with("donkey.png"), "jumento segue o viajante")
@@ -265,6 +345,28 @@ func test_market() -> void:
 	GameState.set_flag("market:silver", 5)
 	check(not Market.buy("blue_tunic") and Market.silver() == 5, "compra recusada não gasta prata")
 	check(DialogueDatabase.valid_action({"market": "ozi"}) and not DialogueDatabase.valid_action({"market": 3}), "ação de diálogo {market: id}")
+	# Prata para ajudar e trocas item por item (sem abrir a feira).
+	GameState.set_flag("market:silver", 0)
+	check(not Market.spend(1) and Market.silver() == 0, "gastar prata exige saldo")
+	GameState.set_flag("market:silver", 5)
+	check(Market.spend(3) and Market.silver() == 2, "gastar prata baixa o saldo")
+	check(Conditions.check({"has_silver": 2}) and not Conditions.check({"has_silver": 3}), "condição has_silver")
+	check(ConditionSchema.validate({"has_silver": 3}, "t").is_empty(), "has_silver é condição válida")
+	check(DialogueDatabase.validate_effects({"spend_silver": 0}, "t").size() == 1, "spend_silver inválido é rejeitado")
+	GameState.new_game()
+	Inventory.add("wool_tuft", 2, "pickup")
+	Inventory.add("flint_stone", 1, "pickup")
+	_talk("adina_talk", ["Trocar 2 tufos"])
+	check(Inventory.count("wool_tuft") == 0 and Inventory.count("sheep_cheese") == 1, "Adina troca lã por queijo sem prata")
+	_talk("ezer_talk", ["Trocar 1 sílex"])
+	check(Inventory.count("flint_stone") == 0 and Inventory.count("barley_bread") == 1, "Ezer troca sílex por pão sem prata")
+	GameState.set_flag("market:silver", 5)
+	GameState.set_flag("heard_talia", true)
+	GameState.set_flag("talia_needs_food", true)
+	var talia := _talk("talia_talk", ["Deixar 3 de prata"])
+	check(Market.silver() == 2 and GameState.get_flag("talia_helped") == true, "Talia aceita prata como ajuda")
+	check(talia.any(func(t): return String(t).contains("Prata pesada")), "fala de agradecimento pela prata")
+	check(Discoveries.is_unlocked("sharing_in_need"), "ajudar com prata desbloqueia compartilhar na necessidade")
 	GameState.new_game()
 
 
@@ -585,14 +687,25 @@ func test_market_in_game() -> void:
 		return
 	check(pk.collect() == 1 and pk.collect() == 0, "coletar o renovável rende um item só por visita")
 	await wait(3)
-	check(Inventory.count("flint_stone") == 1 and not GameState.world.has(WorldManager.world_key("caravan_road", "tr_cr_flint_1")), "renovável não vai para o save")
-	check(game.map.find_object("pickup", "tr_cr_flint_1") == null, "renovável some até a próxima visita")
+	var renew_key := WorldManager.renew_key("caravan_road", "tr_cr_flint_1")
+	check(Inventory.count("flint_stone") == 1 and not GameState.world.has(WorldManager.world_key("caravan_road", "tr_cr_flint_1")), "renovável não fica marcado como coletado para sempre")
+	check(float(GameState.world.get(renew_key, -1.0)) > GameState.play_time, "momento de volta do renovável fica no save")
+	check(game.map.find_object("pickup", "tr_cr_flint_1") == null, "renovável some depois de coletado")
+	WorldManager.travel("dothan", "from_caravan_road")
+	await _wait_travel(game)
+	WorldManager.travel("caravan_road", "from_dothan")
+	await _wait_travel(game)
+	check(game.map.find_object("pickup", "tr_cr_flint_1") == null, "voltar logo à região não traz o renovável de volta")
+	GameState.play_time = float(GameState.world[renew_key]) + 1.0
+	game.map._refresh_conditional()
+	await wait(2)
+	check(game.map.find_object("pickup", "tr_cr_flint_1") == null, "passado o tempo, não aparece no meio da mesma visita")
 	WorldManager.travel("dothan", "from_caravan_road")
 	await _wait_travel(game)
 	WorldManager.travel("caravan_road", "from_dothan")
 	await _wait_travel(game)
 	pk = game.map.find_object("pickup", "tr_cr_flint_1")
-	check(pk != null, "voltar à região faz o renovável reaparecer")
+	check(pk != null, "passado o tempo, voltar à região faz o renovável reaparecer")
 	if pk:
 		pk.collect()
 	check(Inventory.count("flint_stone") == 2, "segunda visita rende mais um sílex")
@@ -621,6 +734,13 @@ func test_market_in_game() -> void:
 	await _walk("move_left", 20)
 	check(p.gear.layers.all(func(l): return l.frame == p.sprite.frame), "camadas acompanham o quadro da animação")
 	check(game.map.region_id == "caravan_road", "ainda no Caminho das Caravanas")
+	var donkey: Node2D = r.get_tree().get_first_node_in_group("gear_companion")
+	GameState.block_ui(SceneDirector.BLOCKER)
+	await wait(2)
+	check(donkey != null and not donkey.visible, "jumento some durante a cena dirigida")
+	GameState.unblock_ui(SceneDirector.BLOCKER)
+	await wait(2)
+	check(donkey != null and donkey.visible and donkey.global_position.distance_to(p.global_position) < 40.0, "jumento volta atrás do viajante depois da cena")
 	Market.unequip("transport")
 	await wait(3)
 	check(r.get_tree().get_nodes_in_group("gear_companion").is_empty() and p.speed_multiplier() == 1.0, "tirar o jumento: some e a velocidade volta")
@@ -636,7 +756,7 @@ func test_market_in_game() -> void:
 	await wait(3)
 	check(Market.owned("travel_cloak") and Market.equipped("transport") == "pack_donkey" and Market.silver() == 52, "prata e equipamento preservados (%d)" % Market.silver())
 	check(_player().gear.layers.size() == 2 and r.get_tree().get_nodes_in_group("gear_companion").size() == 1, "aparência restaurada ao carregar")
-	check(game2.map.find_object("pickup", "tr_cr_flint_1") != null, "renovável disponível depois de carregar")
+	check(game2.map.find_object("pickup", "tr_cr_flint_1") == null, "renovável coletado continua esperando depois de carregar")
 	game2.queue_free()
 	await wait(3)
 	GameState.new_game()

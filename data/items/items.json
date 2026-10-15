@@ -172,6 +172,16 @@
 			"classification": "plausible_fiction"
 		},
 		{
+			"id": "small_clay_bowl",
+			"name": "Tigela de barro",
+			"category": "trade",
+			"description": "Tigela pequena moldada na roda. Ainda fresca; serve para trocar na feira ou guardar um punhado de grãos.",
+			"history_note": "Cerâmica feita à mão era comum nas aldeias do Levante; jarros e tigelas guardavam água, azeite e comida.",
+			"icon": "res://assets/items/clay_jar.png",
+			"max_stack": 5,
+			"classification": "plausible_fiction"
+		},
+		{
 			"id": "sheep_cheese",
 			"name": "Queijo de ovelha",
 			"category": "supply",
