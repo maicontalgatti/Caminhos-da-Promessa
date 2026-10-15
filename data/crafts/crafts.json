@@ -1,0 +1,17 @@
+{
+	"_comment": "Ofícios jogáveis (minijogos). Abertos pela ação de diálogo {\"craft\": id}. once_per_day limita a um sucesso por dia de jogo (WorldClock).",
+	"crafts": [
+		{
+			"id": "pottery_wheel",
+			"title": "Roda de oleiro",
+			"subtitle": "Casa de Ezer",
+			"hint": "Pressione E quando a marca estiver na faixa clara. Três acertos moldam o barro.",
+			"hits_needed": 3,
+			"once_per_day": true,
+			"give": [{"item": "small_clay_bowl", "qty": 1}],
+			"unlock": ["pottery_jars"],
+			"done_text": "Você moldou uma tigela pequena. Deixe secar à sombra — Ezer (ficção do jogo) faria o mesmo.",
+			"busy_text": "O barro desta roda já foi usado hoje. Volte amanhã (no ciclo do dia do jogo)."
+		}
+	]
+}

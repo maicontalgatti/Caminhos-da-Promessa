@@ -19,7 +19,9 @@
 			},
 			"entries": {
 				"default": {"x": 480, "y": 388, "facing": "down"},
-				"from_caravan_road": {"x": 912, "y": 336, "facing": "left"}
+				"from_caravan_road": {"x": 912, "y": 336, "facing": "left"},
+				"from_ezer_house": {"x": 768, "y": 232, "facing": "down"},
+				"from_tent": {"x": 200, "y": 420, "facing": "down"}
 			},
 			"exits": [
 				{

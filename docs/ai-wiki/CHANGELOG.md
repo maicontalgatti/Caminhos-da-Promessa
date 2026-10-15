@@ -3,6 +3,21 @@
 Resumo por versão/entrega. Detalhes, problemas corrigidos e o que não foi verificado estão em
 [docs/implementation_log.md](../implementation_log.md).
 
+## 2026-10-15 — Ofício da roda + pacote fase 4 (branch `feature/phase4-gameplay`)
+- Minijogo na roda de Ezer (`{"craft": "pottery_wheel"}`): tigela `small_clay_bowl` (1×/dia), vendável na feira. Pacote local: interiores, dia/noite, viajante, 3 saves, gamepad, diário busca+álbum, trocas/generosidade.
+
+## 2026-10-15 — Interiores, dia/noite e viajante (sem commit)
+- Casa de Ezer e tenda da aldeia (porta/`travel`); ciclo dia/noite (`WorldClock`, fogueiras, rotinas `schedule.night`); personalização nome+pele no novo jogo e na pausa. Antes: 3 saves, gamepad/teclas, diário busca+álbum. Suíte 1800/1800, fluxo 18/18.
+
+## 2026-10-15 — Trocas e generosidade na feira (sem commit)
+- Trocas item por item nos diálogos (Adina, Ezer, Yaron, Malik, Ozi, Nefer, Liora). Prata ajuda Talia e Tova (`spend_silver` / `has_silver`). Suíte 1721/1721, fluxo 17/17.
+
+## 2026-10-15 — Ajustes da feira (sem commit)
+- Mercadorias coletadas voltam só numa visita seguinte, depois de 5 min de jogo; a espera fica no save. Cada mercador vende peças da sua região e mostra a especialidade. O jumento some durante as cenas dirigidas. Suíte 1711/1711, fluxo 17/17, validação sem erros.
+
+## 2026-10-15 — Saída limpa do jogo (correção da build)
+- A build falhava com "1 resources still in use at exit": a música do menu ficava presa ao sair. `SceneRouter.quit_game()` solta o áudio e espera a mixagem antes de sair (janela, menus). Novo argumento `--boot-frames=N` usado pelo teste do exe no lugar de `--quit-after`. Build completa OK (1700/1700, fluxo 17/17).
+
 ## 2026-10-15 — Feira do viajante (sem versão nova; trabalho local, sem commit)
 - Mercadorias renováveis (`trade`: lã, amêndoas, sílex, ervas, papiro, tâmaras, conchas) em Canaã, estrada, Dotã, Egito, Belém e no acampamento do mar; reaparecem a cada visita.
 - Mercadores no mapa: Yaron ganhou "Quero negociar"; novos Ozi (estrada), Nefer (Egito) e Liora (Belém). Ação de diálogo `{"market": id}` abre a feira (abas Vender e Comprar).

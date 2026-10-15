@@ -62,6 +62,7 @@ func _ready() -> void:
 	cam.limit_bottom = map_size_tiles.y * tile_size
 	cam.reset_smoothing()
 	_build_runtime()
+	_wire_special_doors()
 	GameState.flag_changed.connect(_on_state_changed)
 	Inventory.changed.connect(_on_state_changed)
 	if restored:
@@ -147,20 +148,30 @@ func _build_runtime() -> void:
 		_runtime.add_child(area)
 	_refresh_conditional()
 	refresh_lighting(0.0)
+	_sync_night_lights()
 
 
 # --- Luz por estado --------------------------------------------------------------
 
-## Cor da primeira regra de "lighting" cuja condição vale; branco sem regras.
+## Cor da primeira regra de "lighting" cuja condição vale; senão o ciclo
+## dia/noite (salvo day_cycle: false); branco só se o ciclo estiver desligado.
 func lighting_tint() -> Color:
-	for rule in get_region().get("lighting", []):
+	var r := get_region()
+	for rule in r.get("lighting", []):
 		if rule is Dictionary and Color.html_is_valid(String(rule.get("tint", ""))) and Conditions.check(rule.get("if")):
 			return Color(String(rule.tint))
-	return Color.WHITE
+	if r.get("day_cycle", true) == false:
+		return Color.WHITE
+	return WorldClock.tint()
 
 
 func ensure_lighting() -> CanvasModulate:
-	if lighting == null or not is_instance_valid(lighting):
+	if lighting != null and is_instance_valid(lighting):
+		return lighting
+	lighting = get_node_or_null("DaylightTint") as CanvasModulate
+	if lighting == null:
+		lighting = get_node_or_null("Lighting") as CanvasModulate
+	if lighting == null:
 		lighting = CanvasModulate.new()
 		lighting.name = "Lighting"
 		add_child(lighting)
@@ -184,8 +195,8 @@ func refresh_lighting(time: float = LIGHT_FADE) -> void:
 	if lighting_locked:
 		return
 	var c := lighting_tint()
-	var has_node := lighting != null and is_instance_valid(lighting)
-	if (not has_node and c == Color.WHITE) or (has_node and _light_target == c):
+	ensure_lighting()
+	if _light_target == c and lighting.color.is_equal_approx(c):
 		return
 	set_tint(c, time)
 
@@ -200,15 +211,15 @@ func _spawn_defs() -> Array:
 
 
 ## Cria ou remove NPCs, examináveis e itens conforme as condições (visible_if)
-## e o estado salvo (itens já coletados não voltam; os renováveis voltam na
-## próxima visita à região).
+## e o estado salvo (itens já coletados não voltam; os renováveis voltam numa
+## visita seguinte, passado o tempo de Market.renew_seconds).
 func _refresh_conditional() -> void:
 	for s in _spawn_defs():
 		var d: Dictionary = s.def
 		var key := "%s:%s" % [s.kind, d.get("id", "")]
 		var want := Conditions.check(d.get("visible_if"))
 		if s.kind == "pickups" and (WorldManager.is_picked(region_id, String(d.id))
-				or WorldManager.is_picked_this_visit(region_id, String(d.id))):
+				or (d.get("renewable", false) and WorldManager.is_renewing(region_id, String(d.id)))):
 			want = false
 		var cur: Variant = _conditional.get(key)
 		var alive: bool = cur != null and is_instance_valid(cur) and not (cur as Node).is_queued_for_deletion()
@@ -289,3 +300,62 @@ func find_object(type: String, id: String) -> Node2D:
 func _on_state_changed(_a: Variant = null, _b: Variant = null) -> void:
 	_refresh_conditional.call_deferred()
 	refresh_lighting.call_deferred(LIGHT_FADE)
+	_sync_night_lights.call_deferred()
+
+
+## Fogueiras e lamparinas: luz pontual só à noite (ou se a região for sempre noturna).
+func _sync_night_lights() -> void:
+	if _world == null:
+		return
+	var night := WorldClock.is_night()
+	var r := get_region()
+	if r.get("day_cycle", true) == false and r.get("always_night", false) == true:
+		night = true
+	for n in _world.find_children("*", "StaticBody2D", true, false):
+		var is_fire := String(n.name).to_lower().contains("firepit")
+		if not is_fire:
+			for it in n.find_children("*", "Interactable", true, false):
+				if String(it.dialogue_id) == "firepit_examine" or String(it.dialogue_id) == "cr_campfire":
+					is_fire = true
+					break
+		if not is_fire:
+			continue
+		var light: PointLight2D = n.get_node_or_null("NightLight")
+		if light == null:
+			light = PointLight2D.new()
+			light.name = "NightLight"
+			light.texture = _night_light_texture()
+			light.texture_scale = 1.6
+			light.energy = 0.85
+			light.color = Color("FFB060")
+			light.position = Vector2(0, -6)
+			n.add_child(light)
+		light.enabled = night
+
+
+func _night_light_texture() -> Texture2D:
+	var img := Image.create(64, 64, false, Image.FORMAT_RGBA8)
+	for y in 64:
+		for x in 64:
+			var d := Vector2(x - 31.5, y - 31.5).length() / 32.0
+			var a := clampf(1.0 - d, 0.0, 1.0)
+			a *= a
+			img.set_pixel(x, y, Color(1, 1, 1, a))
+	return ImageTexture.create_from_image(img)
+
+
+## Portas/tendas do mapa gerado que apontam para interiores reais.
+func _wire_special_doors() -> void:
+	if region_id != "canaan_village" or _world == null:
+		return
+	# Casa pequena junto a Ezer (build_world: house_small em 768,216).
+	var door_at := Vector2(768, 216)
+	for it in _world.find_children("*", "Interactable", true, false):
+		if String(it.dialogue_id) != "house_door":
+			continue
+		if it.global_position.distance_to(door_at) < 48.0:
+			it.dialogue_id = "ezer_house_door"
+			it.kind = Interactable.Kind.DOOR
+			it.prompt_text = "Porta da casa de Ezer"
+			break
+	# Tenda ao sul-oeste (build_world: tent em 200,400) já usa tent_examine com travel.

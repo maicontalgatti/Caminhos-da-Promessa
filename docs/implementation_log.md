@@ -1,5 +1,29 @@
 # Histórico de implementação
 
+## 2026-10-15 — Pacote fase 4 (branch `feature/phase4-gameplay`)
+
+### Pedido
+Continuar o backlog e commit: saves, gamepad, diário, interiores, dia/noite, personalização, ofícios.
+
+### Feito
+- Saves (3), InputBindings, diário busca+Álbum, interiores Ezer/tenda, `WorldClock`, `TravelerLook`, ofício `pottery_wheel` (`Craft`/`CraftScreen`), trocas/generosidade e saída limpa (sessões anteriores no mesmo pacote). ADR-031.
+
+### Verificação
+- Suíte 1808/1808, fluxo 18/18, validação e wiki OK. Build do exe e jogo humano: não.
+
+## 2026-10-15 — Saída limpa, ajustes da feira, trocas e generosidade
+
+### Pedido
+- O exe não era gerado: "1 resources still in use at exit". Depois: esconder o jumento nas cenas, limitar a coleta repetida, produtos por região; em seguida trocas item por item e prata para ajudar personagens.
+
+### Feito
+- Saída: `SceneRouter.quit_game()` + `--boot-frames=N` (música do menu não fica presa ao sair).
+- Coleta: `renew_seconds` (300 s) no save; estoques regionais e `specialty`; jumento some com o bloqueio `"scene"`.
+- Trocas e ajuda: `has_silver` / `spend_silver` / `Market.spend`; diálogos de troca em Adina, Ezer, Yaron, Malik, Ozi, Nefer, Liora; Talia e Tova aceitam comida ou prata (descoberta `sharing_in_need`). ADR-030 revista.
+
+### Verificação
+- Build após ajustes rápidos: 1711/1711, fluxo 17/17, exe OK. Depois de trocas/ajuda: suíte 1721/1721, fluxo 17/17, `validate_content` sem erros. Sem jogo humano.
+
 ## 2026-10-15 — Feira do viajante (ADR-030)
 
 ### Pedido e decisões do criador

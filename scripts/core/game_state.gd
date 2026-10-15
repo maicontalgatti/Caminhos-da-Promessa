@@ -45,6 +45,7 @@ var _ui_blockers: Dictionary = {}
 func _process(delta: float) -> void:
 	if in_game and not get_tree().paused:
 		play_time += delta
+		WorldClock.sync_flag()
 
 
 func new_game() -> void:
@@ -64,6 +65,7 @@ func new_game() -> void:
 	play_time = 0.0
 	_ui_blockers.clear()
 	state_replaced.emit()
+	WorldClock.sync_flag()
 
 
 func set_flag(flag: String, value: Variant = true) -> void:
@@ -93,6 +95,10 @@ func unblock_ui(owner: String) -> void:
 
 func is_ui_blocked() -> bool:
 	return not _ui_blockers.is_empty()
+
+
+func is_blocked_by(owner: String) -> bool:
+	return _ui_blockers.has(owner)
 
 
 func to_dict() -> Dictionary:
@@ -137,6 +143,8 @@ func from_dict(d: Dictionary) -> void:
 	play_time = float(d.get("play_time", 0.0))
 	_ui_blockers.clear()
 	state_replaced.emit()
+	WorldClock.sync_flag()
+	TravelerLook.ensure_defaults()
 
 
 func save_game() -> Error:

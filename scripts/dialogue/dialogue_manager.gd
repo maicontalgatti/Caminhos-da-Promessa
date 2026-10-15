@@ -139,6 +139,7 @@ func _apply_flags(entry: Dictionary) -> void:
 ## Efeitos de nó ou escolha: "unlock" (descobertas), "event" (evento de
 ## missão), "action", "take" (o jogador entrega itens; só se tiver todos),
 ## "give" (o jogador recebe itens; uma vez por nó, salvo "repeatable"),
+## "spend_silver" (gasta prata da feira; escolha deve exigir has_silver),
 ## "decision" ({id, option}: escolha persistente), "grant_collectible",
 ## "flags" ({flag: valor}).
 func _apply_effects(entry: Dictionary, key: String = "") -> void:
@@ -156,6 +157,9 @@ func _apply_effects(entry: Dictionary, key: String = "") -> void:
 			for it in give:
 				var n := Inventory.add(String(it.item), int(it.get("qty", 1)), "dialogue", true)
 				get_tree().call_group("hud", "show_toast", "Recebido: %d %s" % [n, Inventory.display_name(String(it.item))])
+	var spend := int(entry.get("spend_silver", 0))
+	if spend > 0 and Market.spend(spend):
+		get_tree().call_group("hud", "show_toast", "Você deixou %d de prata." % spend)
 	var dec: Variant = entry.get("decision")
 	if dec is Dictionary:
 		var cid := String(dec.get("id", ""))
@@ -191,6 +195,6 @@ func _check(cond: Dictionary) -> bool:
 		return Conditions.check(cond.get("if"))
 	var c := cond.duplicate()
 	for k in ["node", "text", "next", "set_flags", "unlock", "event", "action", "take", "give",
-			"repeatable", "decision", "grant_collectible", "flags"]:
+			"spend_silver", "repeatable", "decision", "grant_collectible", "flags"]:
 		c.erase(k)
 	return Conditions.check(c)

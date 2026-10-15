@@ -15,6 +15,7 @@ const DEBUG_PANEL := "res://scripts/ui/debug_panel.gd"
 var map: GameMap
 var inventory_screen: InventoryScreen
 var market_screen: MarketScreen
+var craft_screen: CraftScreen
 var scripture_map: ScriptureMap
 var scene_director: SceneDirector
 var _replaying_prologue := false
@@ -36,6 +37,9 @@ func _ready() -> void:
 	market_screen = MarketScreen.new()
 	market_screen.name = "Market"
 	add_child(market_screen)
+	craft_screen = CraftScreen.new()
+	craft_screen.name = "Craft"
+	add_child(craft_screen)
 	scripture_map = ScriptureMap.new()
 	scripture_map.name = "ScriptureMap"
 	add_child(scripture_map)
@@ -189,6 +193,13 @@ func _on_dialogue_action(action: Dictionary) -> void:
 		play_scene(String(action.scene))
 	elif action.has("market"):
 		market_screen.open(String(action.market))
+	elif action.has("craft"):
+		craft_screen.open(String(action.craft))
+	elif action.get("travel") is Dictionary:
+		var t: Dictionary = action.travel
+		var err := WorldManager.travel(String(t.get("region", "")), String(t.get("entry", "default")))
+		if err != "":
+			push_warning("Game: viagem pelo diálogo falhou (%s)" % err)
 
 
 func _on_cinematic_finished(kind: String, id: String, skipped: bool) -> void:

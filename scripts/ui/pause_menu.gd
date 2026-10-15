@@ -19,6 +19,13 @@ const MAIN_MENU := "res://scenes/ui/main_menu.tscn"
 
 var audio_btn: Button
 var audio_panel: PanelContainer
+var controls_btn: Button
+var controls_panel: PanelContainer
+var look_btn: Button
+var look_panel: PanelContainer
+var _look_name: LineEdit
+var _look_skin := 1
+var _look_skin_label: Label
 
 
 func _ready() -> void:
@@ -43,9 +50,23 @@ func _ready() -> void:
 	$Panel/VBox.add_child(audio_btn)
 	$Panel/VBox.move_child(audio_btn, save_btn.get_index())
 	audio_btn.pressed.connect(_open_audio)
-	panel.offset_top -= 8
-	panel.offset_bottom += 8
+	controls_btn = Button.new()
+	controls_btn.name = "Controls"
+	controls_btn.text = "Controles"
+	$Panel/VBox.add_child(controls_btn)
+	$Panel/VBox.move_child(controls_btn, save_btn.get_index())
+	controls_btn.pressed.connect(_open_controls)
+	look_btn = Button.new()
+	look_btn.name = "Look"
+	look_btn.text = "Viajante"
+	$Panel/VBox.add_child(look_btn)
+	$Panel/VBox.move_child(look_btn, save_btn.get_index())
+	look_btn.pressed.connect(_open_look)
+	panel.offset_top -= 12
+	panel.offset_bottom += 12
 	_build_audio_panel()
+	_build_controls_panel()
+	_build_look_panel()
 	_refresh_edu()
 
 
@@ -58,6 +79,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if visible and audio_panel.visible:
 		_close_audio()
+	elif visible and controls_panel.visible:
+		_close_controls()
+	elif visible and look_panel.visible:
+		_close_look()
 	elif visible:
 		close()
 	elif not DialogueManager.is_active() and not GameState.is_ui_blocked():
@@ -71,6 +96,8 @@ func open() -> void:
 	status.text = ""
 	_refresh_edu()
 	audio_panel.hide()
+	controls_panel.hide()
+	look_panel.hide()
 	panel.show()
 	show()
 	get_tree().paused = true
@@ -128,6 +155,123 @@ func _close_audio() -> void:
 	audio_btn.grab_focus()
 
 
+func _build_controls_panel() -> void:
+	controls_panel = PanelContainer.new()
+	controls_panel.name = "ControlsPanel"
+	controls_panel.set_anchors_preset(Control.PRESET_CENTER)
+	controls_panel.offset_left = -150
+	controls_panel.offset_right = 150
+	controls_panel.offset_top = -100
+	controls_panel.offset_bottom = 100
+	controls_panel.hide()
+	add_child(controls_panel)
+	var vb := VBoxContainer.new()
+	vb.name = "VBox"
+	vb.add_theme_constant_override("separation", 3)
+	controls_panel.add_child(vb)
+	var title := UiStyle.label("Controles", 11)
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	vb.add_child(title)
+	var scroll := ScrollContainer.new()
+	scroll.custom_minimum_size = Vector2(280, 160)
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	vb.add_child(scroll)
+	var settings := ControlsSettingsPanel.new()
+	settings.name = "Controls"
+	scroll.add_child(settings)
+	var back := Button.new()
+	back.name = "Back"
+	back.text = "Voltar"
+	back.pressed.connect(_close_controls)
+	vb.add_child(back)
+
+
+func _open_controls() -> void:
+	AudioManager.play("menu_open")
+	panel.hide()
+	controls_panel.show()
+	(controls_panel.get_node("VBox/Back") as Button).grab_focus()
+
+
+func _close_controls() -> void:
+	AudioManager.play("menu_close")
+	controls_panel.hide()
+	panel.show()
+	controls_btn.grab_focus()
+
+
+func _build_look_panel() -> void:
+	look_panel = PanelContainer.new()
+	look_panel.name = "LookPanel"
+	look_panel.set_anchors_preset(Control.PRESET_CENTER)
+	look_panel.offset_left = -130
+	look_panel.offset_right = 130
+	look_panel.offset_top = -90
+	look_panel.offset_bottom = 90
+	look_panel.hide()
+	add_child(look_panel)
+	var vb := VBoxContainer.new()
+	vb.name = "VBox"
+	vb.add_theme_constant_override("separation", 4)
+	look_panel.add_child(vb)
+	vb.add_child(UiStyle.label("Viajante", 11))
+	_look_name = LineEdit.new()
+	_look_name.max_length = 24
+	vb.add_child(_look_name)
+	var row := HBoxContainer.new()
+	vb.add_child(row)
+	var prev := UiStyle.small_button("<", 8)
+	prev.pressed.connect(func():
+		_look_skin = wrapi(_look_skin - 1, 0, TravelerLook.SKINS.size())
+		_look_skin_label.text = String(TravelerLook.SKINS[_look_skin].label))
+	row.add_child(prev)
+	_look_skin_label = UiStyle.label("", 8, UiStyle.BROWN)
+	_look_skin_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_look_skin_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	row.add_child(_look_skin_label)
+	var next := UiStyle.small_button(">", 8)
+	next.pressed.connect(func():
+		_look_skin = wrapi(_look_skin + 1, 0, TravelerLook.SKINS.size())
+		_look_skin_label.text = String(TravelerLook.SKINS[_look_skin].label))
+	row.add_child(next)
+	var apply := Button.new()
+	apply.name = "Apply"
+	apply.text = "Aplicar"
+	apply.pressed.connect(_apply_look)
+	vb.add_child(apply)
+	var back := Button.new()
+	back.name = "Back"
+	back.text = "Voltar"
+	back.pressed.connect(_close_look)
+	vb.add_child(back)
+
+
+func _open_look() -> void:
+	TravelerLook.ensure_defaults()
+	_look_skin = TravelerLook.skin_index()
+	_look_name.text = TravelerLook.display_name()
+	_look_skin_label.text = String(TravelerLook.SKINS[_look_skin].label)
+	AudioManager.play("menu_open")
+	panel.hide()
+	look_panel.show()
+	_look_name.grab_focus()
+
+
+func _apply_look() -> void:
+	TravelerLook.set_display_name(_look_name.text)
+	TravelerLook.set_skin_index(_look_skin)
+	AudioManager.play("ui_confirm")
+	status.text = "Aparência atualizada."
+	_close_look()
+
+
+func _close_look() -> void:
+	AudioManager.play("menu_close")
+	look_panel.hide()
+	panel.show()
+	look_btn.grab_focus()
+
+
 func _on_save() -> void:
 	var err := GameState.save_game()
 	status.text = "Jogo salvo." if err == OK else "Não foi possível salvar (%s)." % error_string(err)
@@ -144,4 +288,4 @@ func _on_save_and_menu() -> void:
 
 func _on_quit() -> void:
 	GameState.save_game()
-	get_tree().quit()
+	SceneRouter.quit_game()

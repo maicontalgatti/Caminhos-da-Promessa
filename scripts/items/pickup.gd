@@ -3,8 +3,9 @@ extends Node2D
 ## Item no chão definido em "pickups" da região: {id, item, qty?, x, y,
 ## visible_if?, renewable?}. "E — Coletar" adiciona à bolsa, marca o objeto
 ## como coletado (por id estável, salvo com a partida) e avisa a missão. Com a
-## bolsa cheia, o item fica no chão. renewable: só some até a próxima visita à
-## região (mercadorias para a feira; sem quantidade parcial salva).
+## bolsa cheia, o item fica no chão. renewable: volta ao chão numa visita
+## seguinte à região, depois de Market.renew_seconds de jogo (mercadorias para
+## a feira; sem quantidade parcial salva).
 
 var region_id := ""
 var pickup_id := ""
@@ -73,7 +74,7 @@ static func sparkle() -> CPUParticles2D:
 
 ## Coleta; retorna quantas unidades entraram na bolsa.
 func collect() -> int:
-	if _taken or WorldManager.is_picked(region_id, pickup_id) or WorldManager.is_picked_this_visit(region_id, pickup_id):
+	if _taken or WorldManager.is_picked(region_id, pickup_id) or (renewable and WorldManager.is_renewing(region_id, pickup_id)):
 		return 0
 	var n := Inventory.add(item_id, qty, "pickup")
 	if n <= 0:
@@ -88,7 +89,7 @@ func collect() -> int:
 	_taken = true
 	interactable.enabled = false
 	if renewable:
-		WorldManager.mark_picked_this_visit(region_id, pickup_id)
+		WorldManager.mark_renewing(region_id, pickup_id, Market.renew_seconds)
 	else:
 		WorldManager.mark_picked(region_id, pickup_id)
 	get_tree().call_group("hud", "show_toast", "+%d %s" % [n, Inventory.display_name(item_id)])

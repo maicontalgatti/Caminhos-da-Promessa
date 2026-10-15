@@ -108,10 +108,13 @@
 			"stall_produce_examine": "interact_wood",
 			"stall_textiles_examine": "interact_cloth",
 			"tent_examine": "interact_cloth",
+			"tent_interior_mat": "interact_cloth",
 			"cr_bundle": "interact_cloth",
 			"cr_tracks": "interact_dirt",
 			"journal_intro": "interact_parchment",
 			"house_door": "interact_door",
+			"ezer_house_door": "interact_door",
+			"ezer_house_wheel": "interact_ceramic",
 			"dothan_ridge_view": "interact_stone",
 			"eh_records": "interact_parchment",
 			"eh_granary": "interact_dirt",
@@ -178,6 +181,7 @@
 		"barley_sack": "item_food",
 		"brushwood": "item_wood",
 		"clay_jar": "item_pickup",
+		"small_clay_bowl": "item_pickup",
 		"clay_jar_full": "item_water",
 		"sheep_cheese": "item_food",
 		"wool_tuft": "item_cloth",
@@ -253,6 +257,24 @@
 			"layers": [
 				{"sounds": ["amb_sheep", "amb_goat"], "interval": [9.0, 22.0], "spread": 260},
 				{"sounds": ["amb_insects"], "interval": [8.0, 20.0], "spread": 200}
+			],
+			"emitters": []
+		},
+		"canaan_ezer_house": {
+			"_comment": "Interior da casa de Ezer: vento atenuado e sons de ofício da aldeia.",
+			"bed": "amb_wind_canaan",
+			"layers": [
+				{"sounds": ["amb_village_grind", "amb_village_knock"], "interval": [12.0, 28.0], "spread": 120},
+				{"sounds": ["amb_bird"], "interval": [16.0, 36.0], "spread": 160}
+			],
+			"emitters": []
+		},
+		"canaan_tent": {
+			"_comment": "Interior da tenda: tecido e rebanho próximos.",
+			"bed": "amb_wind_canaan",
+			"layers": [
+				{"sounds": ["amb_sheep", "amb_goat"], "interval": [10.0, 24.0], "spread": 140},
+				{"sounds": ["amb_bird"], "interval": [14.0, 32.0], "spread": 160}
 			],
 			"emitters": []
 		}

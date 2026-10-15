@@ -3,6 +3,7 @@ extends Node2D
 ## Animal de transporte comprado na feira: segue o viajante pelo rastro, um
 ## pouco atrás, sem colisão (nunca bloqueia o caminho). Puramente visual; o
 ## efeito de jogo é o multiplicador de velocidade em Market.speed_multiplier().
+## Some durante as cenas dirigidas (relatos bíblicos) e volta atrás do jogador.
 
 const GAP := 20.0
 const TELEPORT := 160.0
@@ -36,6 +37,12 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 		return
 	var p := player.global_position
+	var in_scene := GameState.is_blocked_by(SceneDirector.BLOCKER)
+	if in_scene or not visible:
+		visible = not in_scene
+		global_position = p + Vector2(-GAP, 2)
+		_trail.clear()
+		return
 	if _trail.is_empty() or _trail[-1].distance_to(p) > 2.0:
 		_trail.append(p)
 		if _trail.size() > MAX_TRAIL:

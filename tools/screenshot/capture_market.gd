@@ -50,7 +50,7 @@ func _ready() -> void:
 	game.market_screen.set_tab("buy")
 	await _settle(20)
 	_shot("market_buy.png")
-	for id in ["shepherd_mantle", "long_headcloth", "shepherd_crook", "pack_donkey"]:
+	for id in ["blue_tunic", "long_headcloth", "walking_staff", "pack_donkey"]:
 		Market.buy(id, "ozi")
 	await _settle(20)
 	_shot("market_buy_owned.png")

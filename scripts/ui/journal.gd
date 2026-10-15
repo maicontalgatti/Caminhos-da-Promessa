@@ -16,6 +16,8 @@ var _detail: RichTextLabel
 var _detail_scroll: ScrollContainer
 var _tag_slot: HBoxContainer
 var _action_btn: Button
+var _search: LineEdit
+var _query := ""
 
 
 func _ready() -> void:
@@ -51,12 +53,16 @@ func close() -> void:
 
 
 func show_tab(new_tab: String, focus: String = "") -> void:
-	if visible and new_tab != tab and not AudioManager.played_recently("journal_open", 0.1):
+	if visible and new_tab != tab and _query == "" and not AudioManager.played_recently("journal_open", 0.1):
 		AudioManager.play("page_turn")
 	tab = new_tab
 	for t in _tab_buttons:
-		_tab_buttons[t].button_pressed = t == tab
-	_entries = JournalContent.build(tab)
+		_tab_buttons[t].button_pressed = t == tab and _query == ""
+	_entries = JournalContent.search(_query) if _query.strip_edges().length() >= 2 else JournalContent.build(tab)
+	_rebuild_list(focus)
+
+
+func _rebuild_list(focus: String = "") -> void:
 	for c in _list.get_children():
 		_list.remove_child(c)
 		c.queue_free()
@@ -81,9 +87,14 @@ func show_tab(new_tab: String, focus: String = "") -> void:
 		if String(_entries[i].id) == focus or (idx < 0 and not _entries[i].get("header", false)):
 			idx = i
 	if idx < 0:
+		_selected = -1
+		_detail.text = ""
+		_action_btn.visible = false
 		return
 	select(idx)
-	(_list.get_child(idx) as Button).grab_focus.call_deferred()
+	var child := _list.get_child(idx)
+	if child is Button:
+		(child as Button).grab_focus.call_deferred()
 
 
 func select(i: int) -> void:
@@ -117,12 +128,15 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause") or event.is_action_pressed("journal"):
 		close()
 	elif event.is_action_pressed("toggle_hud"):
+		_clear_search()
 		var i := JournalContent.TABS.find(tab)
 		var step := -1 if (event is InputEventKey and event.shift_pressed) else 1
 		show_tab(JournalContent.TABS[wrapi(i + step, 0, JournalContent.TABS.size())])
 	elif event.is_action_pressed("bible_context"):
+		_clear_search()
 		show_tab("scriptures")
 	elif event.is_action_pressed("places_map"):
+		_clear_search()
 		show_tab("places")
 	elif event.is_action_pressed("interact") and not selected_entry().get("action", {}).is_empty():
 		_on_action()
@@ -180,6 +194,12 @@ func _build() -> void:
 	close_btn.pressed.connect(close)
 	header.add_child(close_btn)
 	root.add_child(HSeparator.new())
+	_search = LineEdit.new()
+	_search.placeholder_text = "Buscar no diário..."
+	_search.clear_button_enabled = true
+	_search.add_theme_font_size_override("font_size", 7)
+	_search.text_changed.connect(_on_search)
+	root.add_child(_search)
 
 	var body := HBoxContainer.new()
 	body.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -215,4 +235,17 @@ func _build() -> void:
 	_action_btn.pressed.connect(_on_action)
 	right.add_child(_action_btn)
 
-	root.add_child(UiStyle.label("Tab: seção   Setas: lista   J/Esc: fechar", 6, UiStyle.MUTED))
+	root.add_child(UiStyle.label("Busca · Tab: seção · Setas: lista · J/Esc: fechar", 6, UiStyle.MUTED))
+
+
+func _on_search(text: String) -> void:
+	_query = text
+	show_tab(tab)
+
+
+func _clear_search() -> void:
+	if _query == "" and (_search == null or _search.text == ""):
+		return
+	_query = ""
+	if _search:
+		_search.text = ""

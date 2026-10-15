@@ -33,6 +33,9 @@ func _ready() -> void:
 	prompt.hide()
 	gear = PlayerGear.new(self)
 	add_child(gear)
+	GameState.state_replaced.connect(_apply_look)
+	GameState.flag_changed.connect(_on_look_flag)
+	_apply_look()
 
 
 func _physics_process(delta: float) -> void:
@@ -100,6 +103,15 @@ func _on_step() -> void:
 
 func _on_dialogue_ended(_id: String) -> void:
 	_interact_cooldown = 0.2
+
+
+func _on_look_flag(flag: String, _value: Variant) -> void:
+	if flag == TravelerLook.SKIN_FLAG or flag == TravelerLook.NAME_FLAG:
+		_apply_look()
+
+
+func _apply_look() -> void:
+	TravelerLook.apply_to(sprite)
 
 
 func _on_before_save() -> void:

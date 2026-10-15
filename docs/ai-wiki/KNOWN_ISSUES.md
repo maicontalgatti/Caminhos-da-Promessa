@@ -31,7 +31,7 @@ Severidade: **alta** (risco de perda ou de conteúdo errado), **média** (afeta 
 - **Ação:** decidir se ficam como histórico ou se são substituídas.
 
 ### KI-08 — Recursos planejados ausentes (baixa, esperado)
-Sem áudio gravado: efeitos e ambiente existem desde a v0.5, mas são procedurais (KI-16); sem música e sem voz (KI-12). Sem dia/noite, interiores, gamepad nem múltiplos saves. Inventário, gatilho de área e várias regiões existem desde a v0.4. Arte provisória (inclusive a dos mapas e ícones novos). O exe não é assinado e só foi testado nesta máquina.
+Sem áudio gravado: efeitos e ambiente existem desde a v0.5, mas são procedurais (KI-16); música provisória gerada por código (KI-22); sem voz (KI-12). Dia/noite, interiores (Ezer/tenda), gamepad/teclas e 3 saves existem no trabalho local sem commit. Inventário, gatilho de área e várias regiões existem desde a v0.4. Arte provisória (inclusive a dos mapas e ícones novos). O exe não é assinado e só foi testado nesta máquina.
 
 ### KI-09 — Lista das regras bíblicas a conferir (baixa)
 - **Situação:** [BIBLICAL_RULES.md](BIBLICAL_RULES.md) foi escrito a partir das regras já registradas no projeto (PROMPT MESTRE, bible_catalog, content_policy). A lista original de 12 regras do pedido de criação da wiki não estava disponível literalmente no histórico consultado.
@@ -85,7 +85,7 @@ Sem áudio gravado: efeitos e ambiente existem desde a v0.5, mas são procedurai
 - **Ação:** o criador assiste às cenas no jogo; implementar ambiente por estado se for desejado.
 
 ### KI-23 — Feira do viajante sem revisão humana nem teste de equilíbrio (média)
-- **Situação:** a feira (ADR-030) foi verificada por testes automáticos e capturas, mas ninguém jogou. Preços, valores de venda, quantidade de mercadorias por região e o ciclo de sair e voltar para recolher de novo podem estar fáceis ou lentos demais. Conteúdo novo sem revisão humana: mercadores fictícios Ozi, Nefer e Liora (falas e nomes), fala nova de Yaron com nota sobre Gn 23:16 (prata pesada), nota de Gn 43:11 nas amêndoas, descrições das peças (tingimento azul caro, linho egípcio, manto de pelo de cabra) e das mercadorias. A palavra "prata" pode soar próxima da venda de José (ponto já aberto no `review.json` do ep_008). Arte das camadas, dos mercadores e dos ícones é provisória.
+- **Situação:** a feira (ADR-030) foi verificada por testes automáticos e capturas, mas ninguém jogou. Preços, valores de venda, quantidade de mercadorias por região e o tempo de volta das mercadorias (`renew_seconds`, 300 s de jogo, desde 2026-10-15) podem estar fáceis ou lentos demais; a divisão dos estoques por mercador, as trocas item por item e os valores de ajuda com prata (Talia 3, Tova 2) também não foram jogados. Conteúdo novo sem revisão humana: linhas de especialidade dos mercadores, falas de troca e de generosidade, mercadores fictícios Ozi, Nefer e Liora (falas e nomes), fala nova de Yaron com nota sobre Gn 23:16 (prata pesada), nota de Gn 43:11 nas amêndoas, descrições das peças (tingimento azul caro, linho egípcio, manto de pelo de cabra) e das mercadorias. A palavra "prata" pode soar próxima da venda de José (ponto já aberto no `review.json` do ep_008). Arte das camadas, dos mercadores e dos ícones é provisória.
 - **Ação:** jogar um trecho em cada região com mercador, ajustar `data/market/market.json`; o criador revisa as falas e notas e decide o nome da medida de troca.
 
 ### KI-21 — Decisões provisórias das quatro experiências aguardam o criador (média)

@@ -48,6 +48,14 @@ func _initialize() -> void:
 		werrs.append_array(WorldSchema.validate_region(regions[rid]))
 	for x in JsonUtil.read_collection("res://data/world", "experiences", werrs):
 		werrs.append_array(WorldSchema.validate_experience(x, regions))
+	for d in dialogues.dialogues.values():
+		for t in DialogueDatabase.referenced_travels(d):
+			var rid := String(t.get("region", ""))
+			var eid := String(t.get("entry", "default"))
+			if not regions.has(rid):
+				werrs.append("diálogo %s: travel para região inexistente \"%s\"" % [d.id, rid])
+			elif not (regions[rid].get("entries", {}) as Dictionary).has(eid):
+				werrs.append("diálogo %s: travel entrada inexistente \"%s/%s\"" % [d.id, rid, eid])
 	_section("Mundo: luz, passagens e experiências", werrs)
 	var music: Variant = JsonUtil.read_file("res://data/audio/music.json", PackedStringArray())
 	var prologues: Array = []
@@ -58,6 +66,7 @@ func _initialize() -> void:
 	_section("Música temática", MusicRules.validate_manifest(music, known, Time.get_date_dict_from_system().year)
 		if music is Dictionary else PackedStringArray(["data/audio/music.json ausente ou inválido"]))
 	_section("Feira: mercadores, vendas e coleta renovável", _market_errors(dialogues, characters, regions))
+	_section("Ofícios (minijogos)", _craft_errors(dialogues))
 
 	print("\n-- Situação de revisão --")
 	var groups := {
@@ -127,10 +136,38 @@ func _market_errors(dialogues: DialogueDatabase, characters: Dictionary, regions
 			out.append("mercador %s: a fala dele não abre a própria feira" % mid)
 		if not regions.has(String(merchants[mid].get("region", ""))):
 			out.append("mercador %s em região inexistente" % mid)
+		if not m.get("goods", []).any(func(g): return mid in g.get("sold_by", [])):
+			out.append("mercador %s sem peças próprias (sold_by)" % mid)
 	for rid in regions:
 		for p in regions[rid].get("pickups", []):
 			if p.get("renewable", false) and not sales.has(String(p.get("item", ""))):
 				out.append("região %s: item renovável %s não é vendável na feira" % [rid, p.get("id")])
+	return out
+
+
+func _craft_errors(dialogues: DialogueDatabase) -> PackedStringArray:
+	var out := PackedStringArray()
+	var data: Variant = JsonUtil.read_file("res://data/crafts/crafts.json", out)
+	if not (data is Dictionary):
+		out.append("crafts.json inválido")
+		return out
+	var items := {}
+	for it in JsonUtil.read_collection("res://data/items", "items", out):
+		items[it.id] = it
+	var crafts := {}
+	for c in data.get("crafts", []):
+		if not (c is Dictionary) or String(c.get("id", "")) == "":
+			out.append("ofício sem id")
+			continue
+		var cid := String(c.id)
+		crafts[cid] = c
+		for it in c.get("cost", []) + c.get("give", []):
+			if not items.has(String(it.get("item", ""))):
+				out.append("ofício %s: item inexistente \"%s\"" % [cid, it.get("item")])
+	for d in dialogues.dialogues.values():
+		for cid in DialogueDatabase.referenced_crafts(d):
+			if not crafts.has(cid):
+				out.append("diálogo %s: craft inexistente \"%s\"" % [d.id, cid])
 	return out
 
 

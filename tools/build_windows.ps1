@@ -262,7 +262,9 @@ if ($SkipExeTest) {
     Log "Autoteste do executável: OK" "Green"
 
     $bootLog = Join-Path $logDir "exe-boot-headless-$stamp.log"
-    $bt = Invoke-Tool $sandboxExe @("--headless", "--quit-after", "600") "Inicialização normal do jogo (headless, 600 quadros)" 120 $sandbox
+    # --boot-frames sai pelo caminho normal (solta o áudio antes); --quit-after
+    # do motor sai sem esperar a mixagem e acusaria recursos presos.
+    $bt = Invoke-Tool $sandboxExe @("--headless", "--", "--boot-frames=600") "Inicialização normal do jogo (headless, 600 quadros)" 120 $sandbox
     $btText = $bt.Text
     Set-Content -Path $bootLog -Value $btText -Encoding UTF8
     $btErrors = Get-ErrorLines $btText
@@ -276,7 +278,7 @@ if ($SkipExeTest) {
         Log "AVISO: teste com renderização pulado (-NoRenderTest)" "Yellow"
     } else {
         $renderLog = Join-Path $logDir "exe-boot-render-$stamp.log"
-        $rt = Invoke-Tool $sandboxExe @("--quit-after", "240") "Inicialização com janela e GPU (240 quadros)" 120 $sandbox
+        $rt = Invoke-Tool $sandboxExe @("--", "--boot-frames=240") "Inicialização com janela e GPU (240 quadros)" 120 $sandbox
         $rtText = $rt.Text
         Set-Content -Path $renderLog -Value $rtText -Encoding UTF8
         $renderer = ($rtText -split "`r?`n" | Where-Object { $_ -match '^(OpenGL|Vulkan|D3D12)' } | Select-Object -First 1)

@@ -25,6 +25,10 @@ var ui_hover_sound := true
 var text_sound := false
 var edu_notifications := "full"
 var hud_context_collapsed := false
+## Espaço de save ativo (0..SaveManager.SLOT_COUNT-1).
+var save_slot := 0
+## Teclas remapeadas: ação -> lista de physical_keycode (vazio = padrão).
+var keybinds: Dictionary = {}
 var master_volume: float:
 	get:
 		return float(volumes.get("Master", 1.0))
@@ -47,6 +51,8 @@ func reset_defaults() -> void:
 	text_sound = false
 	edu_notifications = "full"
 	hud_context_collapsed = false
+	save_slot = 0
+	keybinds = {}
 
 
 func load_settings() -> void:
@@ -55,6 +61,14 @@ func load_settings() -> void:
 	if cfg.load(path) != OK:
 		return
 	fullscreen = bool(cfg.get_value("video", "fullscreen", false))
+	save_slot = clampi(int(cfg.get_value("game", "save_slot", 0)), 0, 2)
+	keybinds = {}
+	if cfg.has_section("input"):
+		for action in InputBindings.REMAPPABLE:
+			if cfg.has_section_key("input", action):
+				var raw: Variant = cfg.get_value("input", action, [])
+				if raw is Array and not raw.is_empty():
+					keybinds[action] = raw.map(func(k): return int(k))
 	# Arquivos de versões anteriores só têm master_volume.
 	volumes["Master"] = clampf(float(cfg.get_value("audio", "master_volume", 1.0)), 0.0, 1.0)
 	for bus in AUDIO_BUSES:
@@ -81,6 +95,10 @@ func save_settings() -> void:
 	cfg.set_value("audio", "text_sound", text_sound)
 	cfg.set_value("learning", "notifications", edu_notifications)
 	cfg.set_value("hud", "context_collapsed", hud_context_collapsed)
+	cfg.set_value("game", "save_slot", clampi(save_slot, 0, 2))
+	for action in InputBindings.REMAPPABLE:
+		if keybinds.has(action):
+			cfg.set_value("input", action, keybinds[action])
 	cfg.save(path)
 	changed.emit()
 
@@ -131,6 +149,7 @@ func apply() -> void:
 		if DisplayServer.window_get_mode() != mode:
 			DisplayServer.window_set_mode(mode)
 	apply_audio()
+	InputBindings.apply(keybinds)
 
 
 func apply_audio() -> void:

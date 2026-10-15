@@ -19,6 +19,7 @@
 					{"text": "Você precisa de alguma coisa?", "next": "request", "if": {"not": {"quest_started": "road_supplies"}}},
 					{"text": "Ainda estou juntando a fibra e a lenha.", "next": "remind", "if": {"any": [{"objective": "road_supplies/talk_malik"}, {"objective": "road_supplies/find_resources"}, {"objective": "road_supplies/collect"}, {"objective": "road_supplies/deliver"}]}},
 					{"text": "Trocar 2 lenhas secas por um odre de água.", "next": "barter", "if": {"all": [{"quest_completed": "road_supplies"}, {"has_item": "dry_wood", "count": 2}, {"lacks_item": "water_skin"}]}, "take": [{"item": "dry_wood", "qty": 2}], "give": [{"item": "water_skin", "qty": 1}], "repeatable": true},
+					{"text": "Trocar 3 amêndoas por 2 figos secos.", "next": "barter", "if": {"has_item": "almonds", "count": 3}, "take": [{"item": "almonds", "qty": 3}], "give": [{"item": "dried_figs", "qty": 2}], "repeatable": true},
 					{"text": "Que caravanas são essas?", "next": "news"},
 					{"text": "Até mais, Malik.", "next": "bye"}
 				]},
@@ -36,7 +37,7 @@
 				"declined": {"speaker": "malik", "text": "Você é dos que não pegam mais do que precisam. Então leve ao menos um conselho.", "next": "travel_info"},
 				"travel_info": {"speaker": "malik", "text": "Quem viaja a pé leva água, pão e fruta seca, que não estraga. E planeja as paradas onde há poço ou fonte.", "next": "travel_info2", "unlock": ["ancient_travel"]},
 				"travel_info2": {"speaker": "malik", "text": "Se um dia precisar de outro odre, volte com duas braçadas de lenha seca e a gente troca.", "next": "end", "event": "supplies_travel_info"},
-				"barter": {"speaker": "malik", "text": "Negócio feito. Que a água não lhe falte no caminho.", "next": "end"},
+				"barter": {"speaker": "malik", "text": "Negócio feito. Na estrada a gente troca uma coisa por outra; prata pesada fica para quando o negócio é maior.", "next": "end"},
 				"bye": {"speaker": "malik", "text": "Vá em paz, e cuidado com o sol do meio-dia.", "next": "end"}
 			}
 		},
@@ -134,12 +135,23 @@
 				{"if": {"all": [{"choice": "dothan_families", "option": "shared"}, {"has_item": "provisions_basket"}]}, "node": "shared_delivery"},
 				{"if": {"all": [{"flag": "heard_talia"}, {"has_item": "provisions_basket"}, {"choice": "dothan_families"}]}, "node": "offer"},
 				{"if": {"choice": "dothan_families", "option": "talia"}, "node": "thanks_again"},
+				{"if": {"flag": "talia_helped"}, "node": "helped_again"},
 				{"flag": "heard_talia", "node": "again"}
 			],
 			"nodes": {
 				"greet": {"speaker": "talia", "text": "Paz. Desculpe a bagunça, estamos levando o rebanho para outro pasto.", "next": "need", "set_flags": ["heard_talia"]},
 				"need": {"speaker": "talia", "text": "O que trouxemos de comida está no fim. As crianças comeram o último pão ontem, e ainda faltam dias até voltarmos.", "next": "need2", "flags": {"talia_needs_food": true}},
-				"need2": {"speaker": "talia", "text": "O rebanho está bem. Somos nós que precisamos de alguma coisa para comer.", "next": "end", "event": "families_talia_need"},
+				"need2": {"speaker": "talia", "text": "O rebanho está bem. Somos nós que precisamos de alguma coisa para comer.", "next": "help_hub", "event": "families_talia_need"},
+				"help_hub": {"speaker": "talia", "text": "Se tiver pão, figos, queijo ou um pouco de prata para comprar comida na aldeia... qualquer ajuda já muda o dia das crianças.", "choices": [
+					{"text": "Dar um pão de cevada.", "next": "fed", "if": {"all": [{"not_flag": "talia_helped"}, {"has_item": "barley_bread"}]}, "take": [{"item": "barley_bread", "qty": 1}], "flags": {"talia_helped": true}, "unlock": ["sharing_in_need"], "event": "talia_helped"},
+					{"text": "Dar figos secos.", "next": "fed", "if": {"all": [{"not_flag": "talia_helped"}, {"has_item": "dried_figs"}]}, "take": [{"item": "dried_figs", "qty": 1}], "flags": {"talia_helped": true}, "unlock": ["sharing_in_need"], "event": "talia_helped"},
+					{"text": "Dar um queijo de ovelha.", "next": "fed", "if": {"all": [{"not_flag": "talia_helped"}, {"has_item": "sheep_cheese"}]}, "take": [{"item": "sheep_cheese", "qty": 1}], "flags": {"talia_helped": true}, "unlock": ["sharing_in_need"], "event": "talia_helped"},
+					{"text": "Deixar 3 de prata para a família.", "next": "fed_silver", "if": {"all": [{"not_flag": "talia_helped"}, {"has_silver": 3}]}, "spend_silver": 3, "flags": {"talia_helped": true}, "unlock": ["sharing_in_need"], "event": "talia_helped"},
+					{"text": "Vou ver o que posso fazer.", "next": "end", "if": {"not_flag": "talia_helped"}},
+					{"text": "Que o caminho seja bom.", "next": "end", "if": {"flag": "talia_helped"}}
+				]},
+				"fed": {"speaker": "talia", "text": "Obrigada. As crianças vão comer hoje. Que o seu caminho tenha água e sombra.", "next": "end"},
+				"fed_silver": {"speaker": "talia", "text": "Prata pesada... com isto compro pão na próxima aldeia. Você deu do que era seu. Obrigada.", "next": "end"},
 				"offer": {"speaker": "talia", "text": "Esse cesto... é do velho Rafi, não é?", "choices": [
 					{"text": "Entregar o cesto à família de Talia.", "next": "thanks", "if": {"flag": "heard_oren"}, "take": [{"item": "provisions_basket", "qty": 1}], "decision": {"id": "dothan_families", "option": "talia"}, "flags": {"family_received_supplies": true}},
 					{"text": "Antes, quero ouvir a outra família.", "next": "end", "if": {"not": {"flag": "heard_oren"}}},
@@ -149,7 +161,8 @@
 				"shared_delivery": {"speaker": "talia", "text": "Rafi mandou o cesto para nós? E você ainda deu o seu odre a Oren?", "next": "shared_delivery2", "take": [{"item": "provisions_basket", "qty": 1}], "flags": {"family_received_supplies": true}},
 				"shared_delivery2": {"speaker": "talia", "text": "Então ninguém ficou de mãos vazias hoje. Obrigada, viajante.", "next": "end", "event": "families_delivered"},
 				"thanks_again": {"speaker": "talia", "text": "As crianças ainda falam do cesto. Que o seu caminho seja bom.", "next": "end"},
-				"again": {"speaker": "talia", "text": "Vamos esperar mais um pouco antes de seguir. O rebanho precisa descansar.", "next": "end"}
+				"helped_again": {"speaker": "talia", "text": "Ainda falamos da sua ajuda. Que o Senhor guarde o seu caminho.", "next": "end"},
+				"again": {"speaker": "talia", "text": "Vamos esperar mais um pouco antes de seguir. O rebanho precisa descansar.", "next": "help_hub"}
 			}
 		},
 		{
@@ -202,11 +215,18 @@
 			],
 			"nodes": {
 				"greet": {"speaker": "ozi", "text": "Ozi, das caravanas. Compro o que o caminho dá: sílex, amêndoas, lã. E vendo o que as caravanas trazem de longe.", "next": "hub", "set_flags": ["met_ozi"]},
-				"hub": {"speaker": "ozi", "text": "Os fardos estão abertos. Vai querer alguma coisa?", "choices": [{"text": "Quero negociar.", "next": "trade"}, {"text": "Que animais você vende?", "next": "lore"}, {"text": "Como funcionam as trocas aqui?", "next": "silver"}, {"text": "Até mais.", "next": "bye"}]},
+				"hub": {"speaker": "ozi", "text": "Os fardos estão abertos. Vai querer alguma coisa?", "choices": [
+					{"text": "Quero negociar.", "next": "trade"},
+					{"text": "Trocar 2 sílices por 1 tufo de lã.", "next": "barter_ok", "if": {"has_item": "flint_stone", "count": 2}, "take": [{"item": "flint_stone", "qty": 2}], "give": [{"item": "wool_tuft", "qty": 1}], "repeatable": true},
+					{"text": "Que animais você vende?", "next": "lore"},
+					{"text": "Como funcionam as trocas aqui?", "next": "silver"},
+					{"text": "Até mais.", "next": "bye"}
+				]},
 				"trade": {"speaker": "ozi", "text": "Vamos ver o que tem nessa bolsa.", "next": "end", "action": {"market": "ozi"}},
+				"barter_ok": {"speaker": "ozi", "text": "Sílex por lã: cada um leva o que falta. Sem pesar prata.", "next": "end"},
 				"lore": {"speaker": "ozi", "text": "Jumentos. São eles que carregam os fardos de aldeia em aldeia; aguentam sol, pedra e pouco capim.", "next": "lore2"},
-				"silver": {"speaker": "ozi", "text": "Você me traz o que achou pelo caminho, eu peso a prata na balança e pago. Depois, com a prata, leva o que quiser da minha esteira.", "next": "silver_note"},
-				"silver_note": {"speaker": "narrator", "text": "(Nesta época não havia moedas cunhadas: a prata era pesada em balanças. No jogo, a prata é uma medida simplificada, e os valores não são preços históricos.)", "next": "hub"},
+				"silver": {"speaker": "ozi", "text": "Você me traz o que achou pelo caminho, eu peso a prata na balança e pago. Na estrada também se troca mercadoria por mercadoria, sem prata.", "next": "silver_note"},
+				"silver_note": {"speaker": "narrator", "text": "(Nesta época não havia moedas cunhadas: a prata era pesada em balanças. Trocas diretas de mercadoria também eram comuns. No jogo, a prata é uma medida simplificada, e os valores não são preços históricos.)", "next": "hub"},
 				"bye": {"speaker": "ozi", "text": "Boa estrada. E encha o odre antes de seguir.", "next": "end"},
 				"lore2": {"speaker": "narrator", "text": "(Jumentos eram os animais de carga mais comuns em Canaã nessa época. Ozi e os seus animais são criações do jogo.)", "next": "hub"},
 				"again": {"speaker": "ozi", "text": "De volta à estrada? Os fardos continuam abertos.", "next": "hub"}

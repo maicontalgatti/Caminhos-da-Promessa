@@ -47,6 +47,13 @@ func _run() -> void:
 	check(current_scene.get_node("Buttons/Continue").disabled, "Continuar desabilitado sem save")
 
 	current_scene.get_node("Buttons/NewGame").pressed.emit()
+	await _wait(0.4)
+	var look: PanelContainer = current_scene.get_node_or_null("LookPanel")
+	check(look != null and look.visible, "Novo jogo abre a personalização do viajante")
+	for b in look.find_children("*", "Button", true, false):
+		if String(b.text).begins_with("Começar"):
+			b.pressed.emit()
+			break
 	await _wait(1.2)
 	check(current_scene.name == "Game", "Novo jogo abre a aldeia")
 	check(get_first_node_in_group("player") != null, "jogador presente")

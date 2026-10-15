@@ -21,6 +21,8 @@ var merchants: Dictionary = {}
 var sales: Dictionary = {}
 var goods: Dictionary = {}
 var order: Array[String] = []
+## Tempo de jogo (s) até uma mercadoria coletada voltar ao chão.
+var renew_seconds := 300.0
 var errors := PackedStringArray()
 
 
@@ -38,6 +40,10 @@ func reload() -> void:
 	if not (d is Dictionary):
 		errors.append("Feira: catálogo inválido")
 		return
+	renew_seconds = float(d.get("renew_seconds", 300))
+	if renew_seconds < 0.0:
+		errors.append("Feira: renew_seconds negativo")
+		renew_seconds = 300.0
 	for m in d.get("merchants", []):
 		if not (m is Dictionary) or String(m.get("id", "")) == "" or String(m.get("name", "")) == "":
 			errors.append("Feira: mercador inválido %s" % [m])
@@ -163,6 +169,16 @@ func companion() -> Dictionary:
 
 func _add_silver(n: int) -> void:
 	GameState.set_flag("market:silver", clampi(silver() + n, 0, MAX_SILVER))
+
+
+## Gasta prata (ajuda a personagens, etc.). Retorna false se faltar.
+func spend(n: int) -> bool:
+	if n <= 0 or silver() < n:
+		return false
+	_add_silver(-n)
+	GameState.add_log("spend_silver", str(n))
+	changed.emit()
+	return true
 
 
 func sell(id: String) -> bool:

@@ -91,7 +91,7 @@ func refresh() -> void:
 func _fill_sell() -> void:
 	var entries := Market.sellable_entries()
 	if entries.is_empty():
-		_list.add_child(UiStyle.label("Nada para vender. Recolha mercadorias pelo caminho (lã, amêndoas, sílex, tâmaras...): elas reaparecem quando você volta a uma região.", 6, UiStyle.MUTED, true))
+		_list.add_child(UiStyle.label("Nada para vender. Recolha mercadorias pelo caminho (lã, amêndoas, sílex, tâmaras...): elas reaparecem quando você volta a uma região depois de um tempo.", 6, UiStyle.MUTED, true))
 		return
 	for e in entries:
 		var id := String(e.id)
@@ -117,6 +117,9 @@ func _fill_sell() -> void:
 
 
 func _fill_buy() -> void:
+	var specialty := String(Market.merchant(merchant_id).get("specialty", ""))
+	if specialty != "":
+		_list.add_child(UiStyle.label(specialty, 6, UiStyle.MUTED, true))
 	var ids := Market.goods_for(merchant_id)
 	for slot in ["clothing", "head", "staff", "transport"]:
 		var in_slot := ids.filter(func(i): return String(Market.goods[i].slot) == slot)

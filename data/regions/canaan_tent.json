@@ -1,0 +1,51 @@
+{
+	"regions": [
+		{
+			"id": "canaan_tent",
+			"display_name": "Tenda da aldeia",
+			"area_label": "Aldeia em Canaã",
+			"subtitle": "Interior fictício — abrigo de pastor",
+			"biome": "canaa",
+			"map_scene": "res://scenes/maps/canaan_tent.tscn",
+			"day_cycle": false,
+			"lighting": [{"tint": "#E0D0B8"}],
+			"classification": "plausible_fiction",
+			"notes": "Interior fictício de uma tenda de pelo de cabra na aldeia. Tendas assim são plausíveis para pastores no Levante da Idade do Bronze; o layout e os objetos são composição do jogo. A referência bíblica a Jacó habitando em tendas (Gn 25:27) está no exame da tenda na aldeia.",
+			"related_stories": ["gen_026_isaac_wells"],
+			"context": {
+				"place_id": "canaan",
+				"era_id": "patriarchs",
+				"references": ["Gen 25:27"],
+				"theme": "Moradias de pastores: a tenda",
+				"discoveries_on_enter": ["tents_goat_hair"]
+			},
+			"surface_layers": [["Floors", "dirt"], ["Ground", "dirt"]],
+			"entries": {
+				"default": {"x": 128, "y": 140, "facing": "up"},
+				"from_village": {"x": 128, "y": 140, "facing": "up"}
+			},
+			"exits": [
+				{
+					"id": "flap_out",
+					"rect": [112, 160, 32, 20],
+					"to": "canaan_village",
+					"entry": "from_tent",
+					"label": "Sair para a aldeia"
+				}
+			],
+			"areas": [],
+			"npcs": [],
+			"examinables": [
+				{
+					"id": "tent_sacks",
+					"x": 80, "y": 80,
+					"prop": "sacks",
+					"kind": "examine",
+					"dialogue": "tent_interior_mat",
+					"prompt": "Examinar os sacos"
+				}
+			],
+			"pickups": []
+		}
+	]
+}

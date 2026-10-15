@@ -60,6 +60,10 @@ func _run_all() -> void:
 	_test_factory()
 	print("\n[save]")
 	_test_save_manager()
+	_test_save_slots()
+	_test_input_bindings()
+	_test_traveler_look()
+	_test_craft()
 	_test_save_v2()
 	print("\n[mundo: regiões, viagem e save v3]")
 	var wt_script: GDScript = load("res://tests/world_tests.gd")
@@ -77,6 +81,8 @@ func _run_all() -> void:
 	wt.test_quests_across_regions()
 	wt.test_main_quest_flow()
 	await wt.test_travel()
+	await wt.test_day_cycle()
+	await wt.test_interiors()
 	await wt.test_pickups_and_screens()
 	await wt.test_market_in_game()
 	print("\n[cenas dirigidas, luz por estado e experiências]")
@@ -624,6 +630,16 @@ func _test_journal_content() -> void:
 	var patri: Array = timeline.filter(func(e): return e.id == "era:patriarchs")
 	check(patri.size() == 1 and String(patri[0].text).contains("Isaque reabre"), "linha do tempo mostra o acontecimento descoberto")
 	check(String(patri[0].text).find(" a.C.") < 0 or String(patri[0].text).contains("milênio"), "época patriarcal sem ano exato")
+	var album := JournalContent.build("album")
+	check(album.any(func(e): return e.id == "album:gear_empty"), "álbum vazio sem peças compradas")
+	GameState.set_flag("market:owned:walking_staff", true)
+	GameState.set_flag("market:equipped:staff", "walking_staff")
+	Inventory.add("wool_tuft", 1, "pickup")
+	album = JournalContent.build("album")
+	check(album.any(func(e): return e.id == "gear:walking_staff") and album.any(func(e): return e.id == "trade:wool_tuft"), "álbum lista peça e mercadoria")
+	var hits := JournalContent.search("poços")
+	check(hits.any(func(e): return String(e.get("id", "")).contains("canaan_wells") or String(e.get("title", "")).to_lower().contains("poço")), "busca encontra a missão dos poços")
+	check(JournalContent.search("xyzabc123").any(func(e): return e.id == "search:none"), "busca sem resultado avisa")
 	GameState.new_game()
 
 
@@ -711,6 +727,82 @@ func _test_save_manager() -> void:
 	check(not SaveManager.sanitize_game_data({"current_map": "C:/x.tscn"}).ok, "mapa fora de res:// é recusado")
 	check(not SaveManager.sanitize_game_data({"current_map": "res://a.tscn", "player_position": {"x": "a"}}).ok, "posição inválida é recusada")
 	SaveManager.delete_save()
+
+
+func _test_save_slots() -> void:
+	var prev := SaveManager.save_path
+	var paths: Array[String] = []
+	for i in SaveManager.SLOT_COUNT:
+		paths.append(SaveManager.slot_path(i))
+		SaveManager.delete_save(paths[i])
+	SaveManager.save_path = paths[0]
+	check(SaveManager.uses_slots() and SaveManager.SLOT_COUNT == 3, "três espaços de save")
+	check(not SaveManager.has_any_save() and SaveManager.slot_summary(0).empty, "espaços começam vazios")
+	var data := {"current_map": GameState.DEFAULT_MAP, "player_position": {"x": 1.0, "y": 2.0},
+		"flags": {"prologue_seen": true}, "play_time": 125.0, "current_region": "canaan_village",
+		"inventory": {}, "world": {}, "collectibles": {}, "quests": {}, "discoveries": {}, "log": []}
+	check(SaveManager.save_data(data, paths[0]) == OK, "grava no espaço 0")
+	check(SaveManager.save_data(data, paths[2]) == OK, "grava no espaço 2")
+	check(SaveManager.has_any_save() and SaveManager.has_save(paths[0]) and not SaveManager.has_save(paths[1]), "há saves nos espaços 0 e 2")
+	var s0 := SaveManager.slot_summary(0)
+	check(not s0.empty and String(s0.place).contains("Canaã") and s0.play_time == 125.0, "resumo do espaço mostra região e tempo")
+	SaveManager.set_active_slot(2)
+	check(SaveManager.active_slot == 2 and SaveManager.save_path == paths[2], "espaço ativo muda o caminho")
+	SaveManager.set_active_slot(0)
+	# Migração do save legado.
+	SaveManager.delete_save(paths[0])
+	SaveManager.delete_save(paths[2])
+	var legacy := SaveManager.LEGACY_PATH
+	SaveManager.delete_save(legacy)
+	check(SaveManager.save_data(data, legacy) == OK, "grava save legado")
+	SaveManager.migrate_legacy_if_needed()
+	check(SaveManager.has_save(paths[0]) and not FileAccess.file_exists(legacy), "legado migra para o espaço 0")
+	for p in paths:
+		SaveManager.delete_save(p)
+	SaveManager.save_path = prev
+	SaveManager.set_active_slot(0)
+
+
+func _test_input_bindings() -> void:
+	InputBindings.apply({})
+	check(InputMap.has_action("interact") and InputMap.action_get_events("interact").size() >= 3, "interagir tem teclado e gamepad")
+	var has_joy := false
+	for e in InputMap.action_get_events("move_left"):
+		if e is InputEventJoypadMotion or e is InputEventJoypadButton:
+			has_joy = true
+	check(has_joy, "movimento tem entrada de controle")
+	var custom := InputBindings.set_primary_key("journal", KEY_K, {})
+	check(custom.has("journal") and int(custom.journal[0]) == KEY_K, "remapeia o diário para K")
+	var has_k := false
+	for e in InputMap.action_get_events("journal"):
+		if e is InputEventKey and (e as InputEventKey).physical_keycode == KEY_K:
+			has_k = true
+	check(has_k, "InputMap recebe a tecla remapeada")
+	InputBindings.apply({})
+	Settings.keybinds = {}
+
+
+func _test_traveler_look() -> void:
+	GameState.new_game()
+	TravelerLook.ensure_defaults()
+	check(TravelerLook.display_name() == TravelerLook.DEFAULT_NAME, "nome padrão do viajante")
+	TravelerLook.set_display_name("  Noa  ")
+	check(TravelerLook.display_name() == "Noa", "nome do viajante é guardado")
+	TravelerLook.set_skin_index(3)
+	check(TravelerLook.skin_index() == 3 and TravelerLook.skin_modulate() == TravelerLook.SKINS[3].modulate, "tom de pele escolhido")
+	GameState.new_game()
+
+
+func _test_craft() -> void:
+	check(Craft.errors.is_empty() and Craft.has_craft("pottery_wheel"), "ofício pottery_wheel carregado %s" % [Craft.errors])
+	check(DialogueDatabase.valid_action({"craft": "pottery_wheel"}), "ação craft é válida")
+	GameState.new_game()
+	check(Craft.can_start("pottery_wheel") == "", "roda disponível no primeiro dia")
+	check(Craft.complete("pottery_wheel") == "" and Inventory.count("small_clay_bowl") == 1, "minijogo concede tigela")
+	check(Craft.can_start("pottery_wheel") != "", "roda só uma vez por dia")
+	check(QuestManager.has_event("craft_finished", "pottery_wheel"), "evento craft_finished registrado")
+	check(Market.sales.has("small_clay_bowl"), "tigela é vendável na feira")
+	GameState.new_game()
 
 
 func _wait_physics(frames: int) -> void:

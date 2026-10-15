@@ -71,8 +71,9 @@ Nenhuma foi validada por sessão de jogo humana ainda.
 - Escolha da tradução definitiva: o criador pediu NVI; falta permissão da Biblica (KI-06, ADR-016).
 
 ## Planejado (não implementado)
-Ciclo dia/noite livre (hoje só luz por estado da região), clima, música gravada (hoje faixas provisórias geradas por código, KI-22), vozes e sons gravados (os atuais são procedurais); efeitos e sons de ambiente por estado; interiores; rotinas de NPC; objetivo de acompanhar NPC (`escort_npc`);
-continuação de José (Gn 39:7-41), deserto após o mar (Êx 15:22 em diante), Rute 3–4; personalização do viajante; gamepad; múltiplos saves (KI-13).
+Clima; música e vozes gravadas (hoje procedurais / faixas provisórias, KI-22/KI-12); efeitos de ambiente por estado da missão; rotinas de NPC mais ricas; objetivo `escort_npc`;
+continuação de José (Gn 39:7-41), deserto após o mar (Êx 15:22 em diante), Rute 3–4; ofícios/minijogos; cabelo/gênero do viajante além de nome+pele (trabalho local).
+Já no trabalho local sem commit: interiores Ezer/tenda, ciclo dia/noite, 3 saves, gamepad/teclas, diário busca+álbum, personalização nome+pele.
 Fonte: [docs/roadmap.md](../roadmap.md) e [docs/game_design.md](../game_design.md).
 
 ## Problemas conhecidos (resumo)
