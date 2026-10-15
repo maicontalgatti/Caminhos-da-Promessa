@@ -30,46 +30,63 @@
 						"Talvez seja interessante conversar com Adina, a pastora que cuida das ovelhas ao sul do poço.",
 						"Converse com Adina, perto do curral ao sul da praça do poço."
 					],
-					"log": "Adina contou que sem água não há rebanho, nem pão, nem aldeia, e sugeriu começar pelo poço da praça."
+					"log": "Adina contou que o bebedouro do curral está seco e pediu ajuda para enchê-lo antes de o sol esquentar."
 				},
 				{
-					"id": "examine_well",
-					"text": "Examine o poço no centro da praça.",
-					"detail": "Adina disse que todos dependem dele.",
-					"complete_on": {"event": "dialogue_finished", "id": "well_examine"},
-					"targets": [{"type": "dialogue", "id": "well_examine"}],
+					"id": "take_jar",
+					"type": "collect_item",
+					"text": "Pegue um cântaro vazio perto dos jarros de Ezer.",
+					"detail": "Adina pediu ajuda: o bebedouro do curral está seco.",
+					"complete_on": {"event": "item_collected", "id": "clay_jar"},
+					"targets": [{"type": "pickup", "id": "canaan_ezer_jar"}],
 					"hints": [
-						"A praça da aldeia gira em torno de uma coisa.",
-						"O poço de pedra fica no centro da praça, perto de onde você chegou.",
-						"Vá até o poço no centro da praça e examine-o (E)."
+						"Água não se carrega nas mãos.",
+						"Ezer deixa cântaros secando ao sol, na rua das casas, ao norte da praça.",
+						"Siga a viela ao norte do poço e pegue o cântaro (E) ao lado dos jarros de Ezer."
 					],
-					"log": "Você examinou o poço: a corda gasta mostra quantas pessoas e animais dependem dele."
+					"log": "Você pegou emprestado um cântaro de barro de Ezer para levar água ao rebanho."
 				},
 				{
-					"id": "listen_ari",
-					"text": "Pergunte a Ari sobre o poço.",
-					"detail": "O menino que brinca na praça conhece as histórias do avô.",
-					"complete_on": {"event": "custom", "id": "wells_ari_well"},
-					"targets": [{"type": "npc", "id": "ari"}],
+					"id": "water_trough",
+					"type": "interact_with_object",
+					"text": "Tire água do poço e encha o bebedouro do curral.",
+					"detail": "Um cântaro por viagem: o bebedouro precisa de três.",
+					"complete_on": {"event": "custom", "id": "wells_trough_full"},
+					"targets": [{"type": "dialogue", "id": "well_examine"}, {"type": "dialogue", "id": "canaan_trough"}],
 					"hints": [
-						"Um poço também tem história. Quem cresceu em volta dele talvez saiba contar.",
-						"Ari, um menino da aldeia, costuma correr pela praça, perto do poço.",
-						"Converse com Ari, a poucos passos a oeste do poço."
+						"Ovelhas bebem muito, e o poço fica longe do curral.",
+						"Encha o cântaro no poço da praça e despeje no bebedouro de pedra, dentro do curral de Adina.",
+						"Use o poço (E) com o cântaro vazio, entre no curral pela porteira ao norte e use o bebedouro (E). Repita até encher."
 					],
-					"log": "Ari contou que, quando o poço secou, a aldeia inteira cavou mais fundo para a água voltar."
+					"log": "Você fez três viagens entre o poço e o curral até o bebedouro ficar cheio. (Gênesis 24:20 descreve Rebeca fazendo um trabalho assim.)"
 				},
 				{
-					"id": "talk_ezer",
-					"text": "Converse com Ezer, o oleiro.",
+					"id": "thank_adina",
+					"type": "talk_to_npc",
+					"text": "Conte a Adina que o bebedouro está cheio.",
+					"detail": "Ela está junto ao curral, com as ovelhas.",
+					"complete_on": {"event": "custom", "id": "wells_adina_thanks"},
+					"targets": [{"type": "npc", "id": "adina"}],
+					"hints": [
+						"Quem pediu ajuda vai querer saber.",
+						"Adina fica perto da porteira do curral, ao sul da praça.",
+						"Converse com Adina, ao lado da porteira do curral."
+					],
+					"log": "Adina agradeceu a ajuda com o rebanho e pediu que você devolvesse o cântaro a Ezer."
+				},
+				{
+					"id": "return_jar",
+					"type": "give_item",
+					"text": "Devolva o cântaro a Ezer, o oleiro.",
 					"detail": "Quem guarda a água da aldeia sabe o quanto ela vale.",
-					"complete_on": {"event": "custom", "id": "wells_ezer_disputes"},
+					"complete_on": {"event": "custom", "id": "wells_jar_returned"},
 					"targets": [{"type": "npc", "id": "ezer"}],
 					"hints": [
-						"Água precisa ser guardada em algum lugar.",
+						"O cântaro foi emprestado.",
 						"O oleiro Ezer trabalha perto das casas, ao norte da praça.",
 						"Siga a viela ao norte do poço e converse com Ezer, ao lado dos jarros."
 					],
-					"log": "Ezer contou que, em anos de seca, pastores de famílias diferentes disputavam poços. (Gênesis 26:20-21 registra disputas assim.)"
+					"log": "Ao receber o cântaro, Ezer contou que, em anos de seca, pastores de famílias diferentes disputavam poços. (Gênesis 26:20-21 registra disputas assim.)"
 				},
 				{
 					"id": "read_story",
@@ -90,7 +107,7 @@
 				"title": "História explorada",
 				"references": ["Gen 26:18-22"],
 				"summary": [
-					"Poços, fontes e cisternas eram vitais para pessoas e rebanhos numa terra de chuvas sazonais; na aldeia, manter o poço era trabalho de todos.",
+					"Poços, fontes e cisternas eram vitais para pessoas e rebanhos numa terra de chuvas sazonais; na aldeia, manter o poço e carregar a água era trabalho de todos.",
 					"Gênesis 26 narra que Isaque reabriu os poços cavados nos dias de Abraão e cavou outros, e que os pastores de Gerar disputaram dois deles.",
 					"Os nomes Eseque, Sitna e Reobote acompanham o relato: depois de duas disputas, Isaque saiu dali e cavou um poço sem contenda (Gn 26:22)."
 				],

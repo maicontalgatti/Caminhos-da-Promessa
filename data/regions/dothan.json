@@ -43,7 +43,11 @@
 			],
 			"pickups": [
 				{"id": "wood_d1", "item": "dry_wood", "x": 600, "y": 200},
-				{"id": "fiber_d1", "item": "plant_fiber", "x": 300, "y": 420}
+				{"id": "fiber_d1", "item": "plant_fiber", "x": 300, "y": 420},
+				{"id": "tr_dt_wool_1", "item": "wool_tuft", "x": 470, "y": 440, "renewable": true},
+				{"id": "tr_dt_wool_2", "item": "wool_tuft", "x": 680, "y": 420, "renewable": true},
+				{"id": "tr_dt_flint_1", "item": "flint_stone", "x": 720, "y": 300, "renewable": true},
+				{"id": "tr_dt_flint_2", "item": "flint_stone", "x": 250, "y": 450, "renewable": true}
 			]
 		}
 	]

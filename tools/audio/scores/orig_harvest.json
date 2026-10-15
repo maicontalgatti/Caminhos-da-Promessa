@@ -1,0 +1,18 @@
+{
+	"_comment": "Colheita em Belém: tema próprio (Fá maior), gerado por regras.",
+	"bpm": 72,
+	"lead": "flute",
+	"drum": "x...",
+	"generate": {
+		"root": 65,
+		"mode": "major",
+		"progression": [
+			0,
+			5,
+			3,
+			4
+		]
+	},
+	"arp_step": 1.0,
+	"intro_beats": 8
+}

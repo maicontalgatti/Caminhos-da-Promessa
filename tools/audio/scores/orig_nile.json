@@ -1,0 +1,18 @@
+{
+	"_comment": "Margens do Nilo: tema próprio (Lá dório), gerado por regras.",
+	"bpm": 64,
+	"lead": "flute",
+	"drum": "x..x",
+	"generate": {
+		"root": 57,
+		"mode": "dorian",
+		"progression": [
+			0,
+			6,
+			3,
+			0
+		]
+	},
+	"arp_step": 1.0,
+	"intro_beats": 8
+}

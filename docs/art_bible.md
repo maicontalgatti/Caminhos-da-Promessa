@@ -121,6 +121,9 @@ devem ser substituídos por sprites desenhados à mão mantendo dimensões e ori
 | `assets/characters/sheep.png` | 144 × 40 | provisório |
 | `assets/tilesets/canaan_tiles.png` (grama, flores, pedrinhas, autotiles de terra/grama seca/pedra) | 128 × 128 | provisório |
 | `assets/environments/*.png` (casas, tenda, poço, forno, bancas, árvores, cercas, jarros, etc.) | variadas | provisório |
+| `assets/characters/ozi.png`, `nefer.png`, `liora.png` (mercadores, `tools/art_gen/art_market.gd`) | 144 × 128 | provisório |
+| `assets/gear/*.png` (10 camadas de roupa, pano de cabeça e cajado sobre `player.png`, mesma grade 6×4) | 144 × 128 | provisório |
+| `assets/items/wool_tuft.png`, `almonds.png`, `flint_stone.png`, `wild_herbs.png`, `papyrus_stalks.png`, `dates.png`, `sea_shell.png` (mercadorias) | 12 × 12 | provisório |
 | `assets/ui/panel_parchment.png`, `prompt_bubble.png`, `next_arrow.png`, `icon.png`, `menu_bg.png` | variadas | provisório |
 | `assets/fonts/PixelifySans-Variable.ttf` | — | definitivo (OFL) |
 | `assets/fonts/Lora-Variable.ttf`, `Lora-Italic-Variable.ttf` | — | definitivo (OFL; google/fonts) |

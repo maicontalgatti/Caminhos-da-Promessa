@@ -20,9 +20,41 @@
 		{
 			"id": "well_examine",
 			"start": "n1",
+			"start_if": [
+				{"if": {"all": [{"quest_active": "canaan_wells"}, {"has_item": "clay_jar"}, {"not_flag": "wells_trough_full"}]}, "node": "fill"},
+				{"if": {"all": [{"has_item": "clay_jar_full"}, {"not_flag": "wells_trough_full"}]}, "node": "already_full"}
+			],
 			"nodes": {
 				"n1": {"speaker": "narrator", "text": "Um poço de pedra. Lá embaixo, a água reflete um pedaço do céu.", "next": "n2"},
-				"n2": {"speaker": "narrator", "text": "A corda está gasta de tanto uso. Pessoas, ovelhas e cabras da aldeia dependem desta água.", "next": "end", "set_flags": ["examined_well"], "unlock": ["wells_antiquity"]}
+				"n2": {"speaker": "narrator", "text": "A corda está gasta de tanto uso. Pessoas, ovelhas e cabras da aldeia dependem desta água.", "next": "end", "set_flags": ["examined_well"], "unlock": ["wells_antiquity"]},
+				"fill": {"speaker": "narrator", "text": "Você amarra o cântaro na corda, gasta de tanto uso, e o desce devagar. Lá embaixo, a água entra borbulhando.", "next": "fill2"},
+				"fill2": {"speaker": "narrator", "text": "Puxar a corda cheia exige força. O cântaro sobe pesado e pingando. Agora, até o bebedouro do curral.", "next": "end", "take": [{"item": "clay_jar", "qty": 1}], "give": [{"item": "clay_jar_full", "qty": 1}], "repeatable": true, "set_flags": ["examined_well"], "unlock": ["wells_antiquity"]},
+				"already_full": {"speaker": "narrator", "text": "O cântaro já está cheio. O bebedouro fica dentro do curral de Adina, ao sul da praça.", "next": "end"}
+			}
+		},
+		{
+			"id": "canaan_trough",
+			"start": "n1",
+			"start_if": [
+				{"if": {"any": [{"flag": "wells_trough_full"}, {"quest_completed": "canaan_wells"}]}, "node": "full"},
+				{"if": {"all": [{"has_item": "clay_jar_full"}, {"flag": "wells_trough_2"}]}, "node": "pour3"},
+				{"if": {"all": [{"has_item": "clay_jar_full"}, {"flag": "wells_trough_1"}]}, "node": "pour2"},
+				{"if": {"has_item": "clay_jar_full"}, "node": "pour1"},
+				{"if": {"has_item": "clay_jar"}, "node": "empty_jar"}
+			],
+			"nodes": {
+				"n1": {"speaker": "narrator", "text": "Um bebedouro escavado num bloco de pedra. Está quase seco, e as ovelhas cheiram o fundo à procura de água.", "next": "n2"},
+				"n2": {"speaker": "narrator", "text": "Encher um bebedouro como este exige um cântaro e várias viagens até o poço.", "next": "end"},
+				"empty_jar": {"speaker": "narrator", "text": "O bebedouro continua seco, e o seu cântaro também. Encha-o primeiro no poço da praça.", "next": "end"},
+				"pour1": {"speaker": "narrator", "text": "Você despeja o cântaro no bebedouro. As ovelhas se aproximam, mas a água mal cobre o fundo.", "next": "pour1b", "take": [{"item": "clay_jar_full", "qty": 1}], "give": [{"item": "clay_jar", "qty": 1}], "set_flags": ["wells_trough_1"]},
+				"pour1b": {"speaker": "narrator", "text": "(Mais duas viagens até o poço devem bastar.)", "next": "end"},
+				"pour2": {"speaker": "narrator", "text": "A água sobe na pedra. Uma ovelha já bebe, empurrando as outras com o focinho.", "next": "pour2b", "take": [{"item": "clay_jar_full", "qty": 1}], "give": [{"item": "clay_jar", "qty": 1}], "set_flags": ["wells_trough_2"]},
+				"pour2b": {"speaker": "narrator", "text": "(Só mais uma viagem.)", "next": "end"},
+				"pour3": {"speaker": "narrator", "text": "Você esvazia o cântaro e o bebedouro fica cheio. As ovelhas bebem lado a lado, sem pressa.", "next": "pour3b", "take": [{"item": "clay_jar_full", "qty": 1}], "give": [{"item": "clay_jar", "qty": 1}], "set_flags": ["wells_trough_full"], "event": "wells_trough_full"},
+				"pour3b": {"speaker": "narrator", "text": "(Gênesis 24 conta que Rebeca fez esse mesmo trabalho para os camelos do servo de Abraão:)", "next": "pour3c"},
+				"pour3c": {"speaker": "narrator", "scripture": "Gen 24:20", "text": "(Gênesis 24:20: Rebeca esvaziou o cântaro no bebedouro e correu de novo ao poço para tirar água para todos os camelos.)", "next": "pour3d"},
+				"pour3d": {"speaker": "narrator", "text": "(Adina vai querer saber que o rebanho já bebeu.)", "next": "end"},
+				"full": {"speaker": "narrator", "text": "O bebedouro está cheio. Uma ovelha levanta o focinho molhado e volta a beber.", "next": "end"}
 			}
 		},
 		{
@@ -100,14 +132,21 @@
 			"start": "greet",
 			"start_if": [
 				{"objective": "joseph_dothan_road/adina_context", "node": "pastures"},
+				{"objective": "canaan_wells/return_jar", "node": "return_hint"},
+				{"objective": "canaan_wells/thank_adina", "node": "thanks"},
+				{"objective": "canaan_wells/water_trough", "node": "trough"},
+				{"objective": "canaan_wells/take_jar", "node": "trough"},
 				{"objective": "canaan_wells/meet_adina", "node": "water"},
 				{"flag": "met_adina", "node": "again"}
 			],
 			"nodes": {
 				"greet": {"speaker": "adina", "text": "Paz, viajante! Cuidado para não assustar as ovelhas, elas acabaram de se acalmar.", "next": "ask", "set_flags": ["met_adina"]},
 				"water": {"speaker": "adina", "text": "Paz, viajante! Chegou num dia corrido: as ovelhas precisam beber antes de o sol esquentar.", "next": "water2", "set_flags": ["met_adina"]},
-				"water2": {"speaker": "adina", "text": "Sem água não há rebanho, nem pão, nem aldeia. Por isso a gente cuida tanto do poço.", "next": "water3"},
-				"water3": {"speaker": "adina", "text": "Se quiser entender a nossa vida, comece pelo poço da praça. Todo mundo passa por ele.", "next": "ask", "event": "wells_adina_water", "unlock": ["shepherding_water"]},
+				"water2": {"speaker": "adina", "text": "Sem água não há rebanho, nem pão, nem aldeia. E hoje o bebedouro do curral amanheceu seco.", "next": "water3"},
+				"water3": {"speaker": "adina", "text": "Você me ajudaria a encher? Ezer, o oleiro, sempre tem cântaros secando ao sol. É tirar água do poço da praça e trazer até aqui.", "next": "water4", "event": "wells_adina_water", "unlock": ["shepherding_water"]},
+				"water4": {"speaker": "adina", "text": "Um cântaro cheio por viagem. Três viagens devem bastar.", "choices": [{"text": "Pode contar comigo.", "next": "help_yes"}, {"text": "Você cuida deste rebanho sozinha?", "next": "flock"}, {"text": "Agora não, estou só de passagem.", "next": "help_later"}]},
+				"help_yes": {"speaker": "adina", "text": "Que bênção! Eu fico aqui, segurando as mais afoitas.", "next": "end"},
+				"help_later": {"speaker": "adina", "text": "Tudo bem. Se mudar de ideia, o bebedouro continua aqui, e as ovelhas também.", "next": "end"},
 				"ask": {"speaker": "adina", "text": "Você parece vir de longe. Precisa de alguma coisa?", "choices": [
 					{"text": "Você cuida deste rebanho sozinha?", "next": "flock"},
 					{"text": "O que há para além das colinas?", "next": "hills"},
@@ -118,6 +157,13 @@
 				"hills": {"speaker": "adina", "text": "Mais aldeias, poços e estradas por onde passam caravanas. Um dia você verá com seus próprios olhos.", "next": "ask"},
 				"bye": {"speaker": "adina", "text": "Vá em paz. E feche a porteira se passar pelo curral!", "next": "end"},
 				"again": {"speaker": "adina", "text": "As ovelhas reconhecem a minha voz. Se eu chamar, elas vêm.", "next": "end"},
+				"trough": {"speaker": "adina", "text": "O bebedouro fica dentro do curral, junto à cerca oeste. Ezer sempre tem cântaros secando ao sol; um cântaro cheio por viagem, três viagens devem bastar.", "next": "end", "set_flags": ["met_adina"]},
+				"thanks": {"speaker": "adina", "text": "Ouvi as ovelhas daqui! O bebedouro está cheio, e antes de o sol esquentar. Você tirou água como gente da aldeia.", "next": "thanks2", "set_flags": ["met_adina"]},
+				"thanks2": {"speaker": "adina", "text": "Tome, é queijo do leite das minhas ovelhas. Na estrada, mata a fome melhor que muita coisa.", "event": "wells_adina_thanks", "choices": [{"text": "Aceitar o queijo. Obrigado!", "next": "accept", "give": [{"item": "sheep_cheese", "qty": 1}], "decision": {"id": "wells_reward", "option": "accepted"}}, {"text": "Não precisa. Ajudar já foi bom.", "next": "decline", "decision": {"id": "wells_reward", "option": "declined"}}]},
+				"accept": {"speaker": "adina", "text": "Embrulhei num pano limpo. Dura alguns dias, se você não comer tudo hoje.", "next": "thanks3"},
+				"decline": {"speaker": "adina", "text": "Então leve só o meu obrigado. Aqui ninguém esquece quem ajudou com o rebanho.", "next": "thanks3"},
+				"thanks3": {"speaker": "adina", "text": "Agora você sabe quanto pesa a água que a gente usa todo dia. Devolva o cântaro a Ezer, sim? Ele vai querer saber para que serviu.", "next": "end"},
+				"return_hint": {"speaker": "adina", "text": "O cântaro é de Ezer. Ele fica perto das casas, ao norte da praça, com as mãos sempre sujas de barro.", "next": "end"},
 				"pastures": {"speaker": "adina", "text": "Quando o pasto perto das tendas acaba, os rapazes levam as ovelhas para longe. Às vezes passam muitos dias fora, e quem fica em casa só espera notícias.", "next": "pastures2", "set_flags": ["met_adina"]},
 				"pastures2": {"speaker": "adina", "text": "Vai procurar os pastos distantes? Saia pela estrada a leste da aldeia; ela vira para o norte entre as colinas. Por ali passam viajantes e mercadores.", "next": "end", "event": "dothan_adina_pastures"}
 			}
@@ -126,7 +172,7 @@
 			"id": "ezer_talk",
 			"start": "greet",
 			"start_if": [
-				{"objective": "canaan_wells/talk_ezer", "node": "disputes"},
+				{"objective": "canaan_wells/return_jar", "node": "disputes"}, {"objective": "canaan_wells/take_jar", "node": "lend"},
 				{"flag": "met_ezer", "node": "again"}
 			],
 			"nodes": {
@@ -136,12 +182,13 @@
 					{"text": "Não vou atrapalhar. Bom trabalho!", "next": "end"}
 				]},
 				"use": {"speaker": "ezer", "text": "Água, azeite, grãos, vinho... Sem jarros, uma casa não guarda nada para o inverno.", "next": "end", "unlock": ["pottery_jars"]},
-				"disputes": {"speaker": "ezer", "text": "Veio por causa do poço? Água é assunto sério por aqui, viajante.", "next": "disputes2", "set_flags": ["met_ezer"]},
+				"disputes": {"speaker": "ezer", "text": "Meu cântaro voltou, e pelo jeito trabalhou bastante! Água é assunto sério por aqui, viajante.", "take": [{"item": "clay_jar", "qty": 1}], "next": "disputes2", "set_flags": ["met_ezer"]},
 				"disputes2": {"speaker": "ezer", "text": "Meu pai contava que, em anos de seca, pastores de famílias diferentes chegavam a brigar por um poço. Cada um dizia que a água era sua.", "next": "disputes3"},
 				"disputes3": {"speaker": "narrator", "text": "(Gênesis 26 registra disputas assim entre os pastores de Isaque e os de Gerar:)", "next": "disputes3b"},
 				"disputes3b": {"speaker": "narrator", "scripture": "Gen 26:20-21", "text": "(Gênesis 26:20-21 registra disputas assim entre os pastores de Isaque e os de Gerar.)", "next": "disputes3c"},
 				"disputes3c": {"speaker": "narrator", "text": "(O relato completo está no diário de viagem, sobre a pedra ao lado do poço.)", "next": "disputes4"},
-				"disputes4": {"speaker": "ezer", "text": "Por isso guardo água nestes jarros. Um bom jarro não deixa perder uma gota.", "next": "end", "event": "wells_ezer_disputes", "unlock": ["pottery_jars"]},
+				"disputes4": {"speaker": "ezer", "text": "Por isso guardo água nestes jarros. Um bom jarro não deixa perder uma gota.", "next": "end", "event": "wells_jar_returned", "unlock": ["pottery_jars"]},
+				"lend": {"speaker": "ezer", "text": "O bebedouro de Adina está seco? Leve o cântaro que está secando ali, ao lado dos jarros. Depois você me devolve.", "next": "end", "set_flags": ["met_ezer"]},
 				"again": {"speaker": "ezer", "text": "Paciência, viajante. O barro ensina que pressa não faz um bom jarro.", "next": "end"}
 			}
 		},
@@ -152,22 +199,27 @@
 			"nodes": {
 				"greet": {"speaker": "yaron", "text": "Bem-vindo à minha banca! Figos secos, romãs, azeite novo...", "next": "ask", "set_flags": ["met_yaron"]},
 				"ask": {"speaker": "yaron", "text": "Quer saber de alguma coisa?", "choices": [
+					{"text": "Quero negociar.", "next": "trade"},
 					{"text": "De onde vêm as notícias que você ouve?", "next": "caravans"},
 					{"text": "O que é mais procurado aqui?", "next": "goods"},
+					{"text": "Como funcionam as trocas aqui?", "next": "silver"},
 					{"text": "Obrigado, até mais.", "next": "end"}
 				]},
+				"trade": {"speaker": "yaron", "text": "Mostre o que traz na bolsa. Lã, amêndoas, um pano bom... tudo tem o seu peso em prata.", "next": "end", "action": {"market": "yaron"}},
+				"silver": {"speaker": "yaron", "text": "Você me traz o que achou pelo caminho, eu peso a prata na balança e pago. Com a prata, leva roupa, cajado e até um jumento, se juntar bastante.", "next": "silver_note"},
+				"silver_note": {"speaker": "narrator", "text": "(Nesta época não havia moedas cunhadas: a prata era pesada em balanças, como em Gênesis 23:16, quando Abraão pesa a prata para comprar um campo. No jogo, a prata é uma medida simplificada, e os valores não são preços históricos.)", "next": "ask"},
 				"caravans": {"speaker": "yaron", "text": "Das caravanas! Elas passam pelas estradas levando especiarias, bálsamo e mirra até o Egito.", "next": "caravans2"},
 				"caravans2": {"speaker": "narrator", "text": "(Gênesis 37 menciona uma caravana assim, a caminho do Egito:)", "next": "caravans3", "unlock": ["caravans_trade"]},
 				"caravans3": {"speaker": "narrator", "scripture": "Gen 37:25", "text": "(Gênesis 37:25 menciona uma caravana com especiarias, bálsamo e mirra a caminho do Egito.)", "next": "ask"},
 				"goods": {"speaker": "yaron", "text": "Azeite. Todo mundo precisa de azeite: para cozinhar, para as lamparinas, para cuidar da pele.", "next": "ask"},
-				"again": {"speaker": "yaron", "text": "Volte quando quiser. Notícias novas chegam com cada caravana.", "next": "end"}
+				"again": {"speaker": "yaron", "text": "Voltou! Notícias novas chegam com cada caravana, e a banca está aberta.", "next": "ask"}
 			}
 		},
 		{
 			"id": "ari_talk",
 			"start": "greet",
 			"start_if": [
-				{"objective": "canaan_wells/listen_ari", "node": "well"},
+				{"if": {"all": [{"quest_active": "canaan_wells"}, {"not_flag": "met_ari"}]}, "node": "well"},
 				{"flag": "met_ari", "node": "again"}
 			],
 			"nodes": {

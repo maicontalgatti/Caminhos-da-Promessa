@@ -40,6 +40,8 @@ Fontes: [docs/implementation_log.md](../implementation_log.md), [docs/art_bible.
 | ADR-026 | Áudio central por manifesto, com efeitos procedurais provisórios | Adotada (criador pediu sons; formato do agente) |
 | ADR-027 | Repositório público com licença dupla (MIT + CC BY 4.0), PRs revisados e CI sem segredos | Adotada (criador) |
 | ADR-028 | Cenas dirigidas por dados, luz por estado e experiências com destino | Adotada (criador pediu; formato do agente) |
+| ADR-029 | Música temática por momento, só com melodias em domínio público ou próprias | Adotada (criador pediu; formato do agente) |
+| ADR-030 | Feira do viajante: mercadorias renováveis, prata pesada abstrata, mercadores no mapa e aparência equipável | Adotada (criador pediu a mecânica e escolheu mercador no mapa e coleta renovável; formato do agente) |
 
 ---
 
@@ -220,3 +222,28 @@ Fontes: [docs/implementation_log.md](../implementation_log.md), [docs/art_bible.
   - Região: `lighting [{if, tint}]` (primeira verdadeira) e `exits[].passage`. Experiência: `travel {region, entry, entry_if}`, `regions`, `stages [{id, if, travel, passage}]` (última verdadeira) e botão Iniciar/Continuar/Revisitar no Mapa das Escrituras.
   - Save sem campos novos (`SAVE_VERSION` continua 3): tudo é flag (`ev:scene_finished:<id>`, `experience_stage:<exp>:<etapa>`, flags do `on_end`).
 - **Consequências:** cenas e luzes são revisáveis como dados (classificação, referências e `verification` obrigatórios; texto bíblico só via `scripture`). A tinta de cena é temporária; no fim vale a regra `lighting` da região. Nenhuma cena real existe ainda; a aparência dos efeitos não foi avaliada por uma pessoa (KI-20).
+
+### ADR-029 — Música temática por momento, só com melodias em domínio público ou próprias
+- **Data:** 2026-10-15 · **Status:** Adotada (o criador pediu louvores tocando baixo em cada momento, por tema; formato e implementação são do agente)
+- **Problema:** tocar uma série de louvores ligada ao tema de cada momento (região, missão, apresentação bíblica, cena), mais baixa que o normal, sem infringir direitos autorais num repositório público e sem quebrar a imersão da época.
+- **Alternativas:** louvores comerciais (exigem licença de sincronização da editora e da gravadora; a CCLI não cobre jogos), trilha livre de terceiros (CC0/CC BY), hinos antigos em domínio público, composições próprias.
+- **Decisão:**
+  - Só melodias de hinos em domínio público (compositor morto há mais de 70 anos, ou anônimo publicado há mais de 120) e temas próprios; letras e arranjos modernos não entram sem licença. Regra conferida por `tools/validate_content.gd` (`scripts/core/music_rules.gd`).
+  - Instrumental por padrão (`vocal: false`); faixa cantada exige `lyrics_license`.
+  - `data/audio/music.json` com catálogo (`tracks`, com `themes`) e momentos (`cues`); itens `theme:<tema>` formam séries por tema.
+  - `MusicDirector` como filho do `AudioManager` (ADR-026: um só ponto de entrada; sem autoload novo). Prioridade: cena > apresentação/prólogo > tela > missão principal > região > menu.
+  - Volume baixo por faixa (−14/−15 dB), silêncio de 20–40 s entre faixas e redução em diálogos e marcos.
+  - Faixas provisórias geradas por código (`tools/audio/generate_music.gd` + `tools/audio/scores/`); gravações reais entram como `.ogg` com o mesmo `path`, sem mexer no código.
+- **Consequências:** ficaram de fora hinos cuja melodia não deu para transcrever com segurança (Castelo Forte, Rocha Eterna, Cwm Rhondda, Bringing in the Sheaves, Adeste Fideles, Antioch/"Cantai que o Salvador chegou"). As transcrições são de memória e precisam de escuta humana (KI-22). Cerca de 18 MB de WAV no repositório.
+
+### ADR-030 — Feira do viajante: mercadorias, prata pesada, mercadores e aparência equipável
+- **Data:** 2026-10-15 · **Status:** Adotada (o criador pediu trocar coletáveis por dinheiro e comprar roupas, cajados e meios de locomoção; escolheu **mercador no mapa** e **itens que reaparecem ao voltar**; formato e implementação são do agente)
+- **Problema:** ADR-023 proíbe moedas cunhadas na época dos patriarcas, e quase todos os itens do mapa eram de missão (vender poderia travar missões).
+- **Decisão:**
+  - Medida de troca **"prata"**, abstrata e pesada na balança (como em Gn 23:16), sem moedas; os valores são lúdicos, não preços históricos. Saldo, posse e equipamento em flags (`market:silver`, `market:owned:<id>`, `market:equipped:<slot>`): **save continua v3**, sem migração.
+  - Categoria de item `trade` ("Mercadorias": lã, amêndoas, sílex, ervas, papiro, tâmaras, conchas) e pickups com `"renewable": true`, que somem só até a próxima visita à região (registro em memória no `WorldManager`, esvaziado a cada viagem e ao carregar; nunca vai para o save).
+  - A feira só compra itens descartáveis listados em `data/market/market.json` (`sales`); itens de missão, materiais protegidos (`no_discard`) e colecionáveis são recusados no carregamento.
+  - Mercadores fictícios por região (Yaron em Canaã; Ozi, Nefer e Liora, novos), abertos pela ação de diálogo `{"market": id}`; peças com `sold_by` são vendidas só por alguns.
+  - Quatro espaços: roupa, cabeça, cajado, locomoção. Roupa, cabeça e cajado são **camadas** sobre `player.png` geradas por `tools/art_gen/art_market.gd` (diferença pixel a pixel entre o jogador com e sem a peça, na mesma grade 6×4); transporte é um jumento que segue o jogador (`GearCompanion`, sem colisão) e multiplica a velocidade a pé (1,15 ou 1,3). Sem camelos (presença debatida na época dos patriarcas) e sem montaria animada.
+  - A venda acontece só com o mercador; a bolsa apenas mostra o saldo e quanto a feira paga.
+- **Consequências:** o equilíbrio (preços, quantidade de mercadorias, ida e volta para "farmar") não foi jogado por uma pessoa; nomes, falas e notas históricas dos mercadores aguardam revisão humana (KI-23). Novas regiões podem ganhar mercador só com dados (personagem, diálogo com a ação, entrada em `merchants`).

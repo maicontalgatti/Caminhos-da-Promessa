@@ -4,6 +4,11 @@ Mudanças visíveis por versão do jogo. O registro detalhado de cada entrega (i
 documentação e resultados de testes) fica em [docs/ai-wiki/CHANGELOG.md](docs/ai-wiki/CHANGELOG.md) e
 em [docs/implementation_log.md](docs/implementation_log.md).
 
+## [Não lançado]
+- Feira do viajante: recolha mercadorias pelo caminho (lã, amêndoas, sílex, ervas, papiro, tâmaras,
+  conchas), venda aos mercadores Yaron, Ozi, Nefer e Liora por prata pesada e compre roupas, panos de
+  cabeça, cajados e jumentos, que aparecem no viajante; o jumento deixa a caminhada mais rápida.
+
 ## [0.6.0] — 2026-10-14
 - Quatro experiências novas no Mapa das Escrituras, liberadas em ordem cronológica:
   **José no Egito** (a caravana vista de longe em Dotã e uma casa egípcia como a de Potifar,

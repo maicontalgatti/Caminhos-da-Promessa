@@ -8,7 +8,7 @@ Decisão de arquitetura: ADR-026 em [DECISIONS.md](ai-wiki/DECISIONS.md).
   **por id** (`AudioManager.play("ui_click")`); arquivos, volumes e regras ficam no manifesto
   `data/audio/sfx.json`.
 - **Buses** (`default_bus_layout.tres`): Master → Music, SFX, UI, Ambience, Voice. O Master tem um limitador
-  (teto -0,5 dB) contra picos. Música e Voz existem, mas ainda não têm conteúdo.
+  (teto -0,5 dB) contra picos. A Música tem o diretor de música temática (seção abaixo); a Voz ainda não tem conteúdo.
 - **Todos os 131 arquivos atuais são procedurais**, gerados por `tools/audio/generate_sfx.gd` (síntese em
   GDScript, sem amostras de terceiros e sem serviços pagos). São provisórios: **precisam de escuta humana**
   (ver abaixo) e podem ser trocados por gravações com o mesmo nome de arquivo, sem mexer no código.
@@ -104,6 +104,51 @@ silencioso, saturado ou com DC). "Ligado" = disparado pelo jogo e coberto por te
 | Ambiente Dotã | `amb_wind_dothan` (laço), `amb_water_cistern` (emissor na cisterna), `amb_insects` (2) + rebanho e pássaros | ligado |
 | Ambiente comum | `amb_bird` (6), `amb_sheep` (4), `amb_goat` (2) | ligado |
 
+## Música temática
+Louvores instrumentais que mudam conforme o momento da história, **baixos** e com silêncio entre as faixas.
+Decisão: ADR-029 em [DECISIONS.md](ai-wiki/DECISIONS.md). Licenças: [ASSET_LICENSES.md](legal/ASSET_LICENSES.md#música).
+
+- **Código:** `scripts/core/music_director.gd`, criado como filho do `AudioManager` (`AudioManager.music`); o
+  `AudioManager` continua sendo o único ponto de entrada. Regras do manifesto sem autoloads em
+  `scripts/core/music_rules.gd` (validador e testes).
+- **Dados:** `data/audio/music.json`: `tracks` (catálogo, com compositor, ano, licença e `themes`) e `cues`
+  (que lista toca em cada momento).
+- **Ordem de escolha do momento:** cena dirigida (`cues.scenes`) > apresentação bíblica ou prólogo
+  (`presentations`, `prologues`) > tela aberta (`contexts`, hoje só `scripture_map`) > missão principal em foco
+  (`quests`, por `QuestManager.primary_quest()`) > região (`regions`) > `menu` fora do jogo. Momento sem entrada
+  segue o nível seguinte; lista vazia `[]` é silêncio de propósito.
+- **Séries por tema:** um item `"theme:graça"` na lista puxa todas as faixas cujo `themes` contém "graça".
+- **Reprodução:** sorteio sem repetir a anterior; silêncio de `playlist_gap` (20–40 s) entre faixas; troca de
+  momento com fade (`fade_out` 2,5 s, `fade_in` 4 s); se a faixa atual também está na lista nova, ela continua.
+  Volume da faixa `volume_db` (−14 a −15 dB) no bus Music (controle "Música" nas configurações).
+- **Abaixar (ducking):** diálogo aberto `duck_db` (−6 dB); marcos (`duck_events`: missão, descoberta, recompensa,
+  região nova) `event_duck_db` (−8 dB) por `event_duck_hold` s.
+- **Ganchos:** `enter_context(dono, chave)` / `exit_context(dono)` em `cinematic.gd` (apresentação e prólogo),
+  `scripture_map.gd` (mapa e cartão de passagem) e `scene_director.gd` (cenas). O dono é guardado por referência
+  fraca: se for liberado sem fechar, o momento cai sozinho.
+
+### Faixas atuais (provisórias)
+Geradas por `tools/audio/generate_music.gd` a partir das partituras em `tools/audio/scores/` (WAV mono 22,05 kHz,
+lira + flauta + bordão + tamboril). Hinos: Old Hundredth, Noite Feliz, Amazing Grace, Hino da Alegria. Temas
+próprios: `orig_dothan_lament`, `orig_sea_night`, `orig_sea_crossing`, `orig_harvest`, `orig_nile`.
+**As melodias dos hinos foram transcritas de memória por IA e nada foi ouvido por uma pessoa (KI-22).**
+
+```powershell
+& $g --headless --path . --script res://tools/audio/generate_music.gd               # todas (~1 min)
+& $g --headless --path . --script res://tools/audio/generate_music.gd -- silent_night # só uma
+& $g --headless --path . --import
+```
+
+### Trocar por gravação ou acrescentar louvor
+1. Salve o arquivo como `assets/audio/<path>.ogg` (o `.ogg` tem preferência sobre o `.wav` de mesmo nome), atualize
+   `source`, `license` e o crédito em `music.json` e registre a linha em `ASSET_LICENSES.md`.
+2. `source`: `public_domain_hymn` (compositor morto há mais de 70 anos, ou anônimo publicado há mais de 120),
+   `original` (composição cedida ao projeto) ou `licensed` (exige `license_record`). Faixa cantada (`vocal: true`)
+   exige `lyrics_license`: letras e traduções modernas são protegidas.
+3. **Louvores comerciais** (gravações e canções atuais) só com licença de sincronização da editora e da gravadora;
+   a licença de igreja (CCLI) não cobre jogos. Nunca baixar de YouTube/streaming.
+4. Rode `tools/validate_content.gd` e os testes (`tests/music_tests.gd`).
+
 ## Escuta humana necessária
 Nenhum som foi ouvido por uma pessoa: os testes conferem existência, nível, saturação, quando cada som toca e
 quando **não** toca, mas não o timbre. Prioridade de escuta, do mais exposto ao menos:
@@ -115,7 +160,8 @@ quando **não** toca, mas não o timbre. Prioridade de escuta, do mais exposto a
 6. Abrir diário/bolsa/mapa, interações por material, sons da caravana.
 
 ## Pendências
-- Música (bus Music sem conteúdo) e vozes (bus Voice; KI-12).
+- Música: faixas provisórias geradas por código; conferir de ouvido as melodias dos hinos e trocar por
+  gravações quando houver (KI-22). Vozes (bus Voice; KI-12).
 - Ambiente do Egito e das regiões planejadas: entra quando os mapas existirem (bloco `ambience` da região).
 - Superfícies de areia, madeira e água: os sons existem; faltam camadas nos mapas.
 - Possível troca dos procedurais por gravações ou bibliotecas livres (ex.: pacotes CC0) — **depende de autorização do criador**; nenhuma biblioteca foi baixada.

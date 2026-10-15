@@ -1,6 +1,6 @@
 extends Node
 ## Cena de jogo: carrega o mapa atual do GameState e hospeda a UI de jogo
-## (HUD, diálogos, diário, cenas guiadas, cenas dirigidas no mapa e, só em
+## (HUD, diálogos, diário, feira, cenas guiadas, cenas dirigidas no mapa e, só em
 ## builds de debug, o painel F3).
 
 const PROLOGUE_ID := "new_game"
@@ -14,6 +14,7 @@ const DEBUG_PANEL := "res://scripts/ui/debug_panel.gd"
 
 var map: GameMap
 var inventory_screen: InventoryScreen
+var market_screen: MarketScreen
 var scripture_map: ScriptureMap
 var scene_director: SceneDirector
 var _replaying_prologue := false
@@ -32,6 +33,9 @@ func _ready() -> void:
 	inventory_screen = InventoryScreen.new()
 	inventory_screen.name = "Inventory"
 	add_child(inventory_screen)
+	market_screen = MarketScreen.new()
+	market_screen.name = "Market"
+	add_child(market_screen)
 	scripture_map = ScriptureMap.new()
 	scripture_map.name = "ScriptureMap"
 	add_child(scripture_map)
@@ -183,6 +187,8 @@ func _on_dialogue_action(action: Dictionary) -> void:
 		play_presentation(String(action.presentation))
 	elif action.has("scene"):
 		play_scene(String(action.scene))
+	elif action.has("market"):
+		market_screen.open(String(action.market))
 
 
 func _on_cinematic_finished(kind: String, id: String, skipped: bool) -> void:

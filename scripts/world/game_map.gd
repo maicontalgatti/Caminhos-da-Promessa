@@ -200,13 +200,15 @@ func _spawn_defs() -> Array:
 
 
 ## Cria ou remove NPCs, examináveis e itens conforme as condições (visible_if)
-## e o estado salvo (itens já coletados não voltam).
+## e o estado salvo (itens já coletados não voltam; os renováveis voltam na
+## próxima visita à região).
 func _refresh_conditional() -> void:
 	for s in _spawn_defs():
 		var d: Dictionary = s.def
 		var key := "%s:%s" % [s.kind, d.get("id", "")]
 		var want := Conditions.check(d.get("visible_if"))
-		if s.kind == "pickups" and WorldManager.is_picked(region_id, String(d.id)):
+		if s.kind == "pickups" and (WorldManager.is_picked(region_id, String(d.id))
+				or WorldManager.is_picked_this_visit(region_id, String(d.id))):
 			want = false
 		var cur: Variant = _conditional.get(key)
 		var alive: bool = cur != null and is_instance_valid(cur) and not (cur as Node).is_queued_for_deletion()

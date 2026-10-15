@@ -20,6 +20,7 @@ const NAV_WINDOW := 0.2
 const QUIET_AFTER_LOAD := 0.6
 const BED_FADE := 1.4
 const HISTORY_SIZE := 80
+const MusicDirector := preload("res://scripts/core/music_director.gd")
 
 var sounds: Dictionary = {}
 var surfaces: Dictionary = {}
@@ -30,6 +31,8 @@ var errors: PackedStringArray = []
 ## Últimos sons tocados [{id, t}] (diagnóstico e testes).
 var history: Array = []
 var region_id := ""
+## Música temática (scripts/core/music_director.gd, data/audio/music.json).
+var music: Node
 
 var _streams: Dictionary = {}
 var _last_variant: Dictionary = {}
@@ -72,6 +75,9 @@ func _ready() -> void:
 		b.bus = "Ambience"
 		add_child(b)
 		_beds.append(b)
+	music = MusicDirector.new()
+	music.name = "Music"
+	add_child(music)
 	Settings.apply()
 	get_tree().node_added.connect(_on_node_added)
 	_hook_existing(get_tree().root)
@@ -274,6 +280,8 @@ func _exit_tree() -> void:
 ## próximo ciclo de mixagem; quem encerra o jogo deve esperar um instante.
 func shutdown() -> void:
 	stop_all()
+	if music != null:
+		music.reset()
 	_layers.clear()
 	_bed_id = ""
 	for group: Array in [_pool, _pool_2d, _beds]:

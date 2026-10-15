@@ -15,7 +15,8 @@ func _ready() -> void:
 	GameState.new_game()
 	GameState.set_flag("prologue_seen", true)
 	for e in [["prologue_finished", "new_game"], ["custom", "wells_adina_water"], ["dialogue_finished", "well_examine"],
-			["custom", "wells_ari_well"], ["custom", "wells_ezer_disputes"], ["presentation_finished", "gen_026_wells"]]:
+			["custom", "wells_ari_well"], ["custom", "wells_jar_returned"], ["item_collected", "clay_jar"],
+			["custom", "wells_trough_full"], ["custom", "wells_adina_thanks"], ["presentation_finished", "gen_026_wells"]]:
 		QuestManager.record_event(e[0], e[1])
 	game = load("res://scenes/core/game.tscn").instantiate()
 	add_child(game)

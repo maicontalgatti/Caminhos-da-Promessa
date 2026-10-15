@@ -45,6 +45,17 @@
 			"prompt": "Observar",
 			"sprite": {"sheet": "res://assets/characters/bf_reaper.png", "hframes": 6, "vframes": 4, "directions": 4},
 			"behavior": {"type": "idle", "facing_x": 1, "facing_y": 0}
+		},
+		{
+			"id": "liora",
+			"display_name": "Liora",
+			"role": "Vendedora na estrada de Belém",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Vendedora fictícia que estende sua esteira à beira da estrada na época da colheita. Não tem relação com Rute, Noemi ou Boaz.",
+			"dialogue_id": "liora_talk",
+			"sprite": {"sheet": "res://assets/characters/liora.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1}
 		}
 	]
 }

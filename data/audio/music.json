@@ -1,0 +1,307 @@
+{
+	"_comment": "Música temática (docs/audio.md, 'Música temática'; ADR-029). O MusicDirector (scripts/core/music_director.gd, filho do AudioManager) escolhe a lista de faixas pelo momento, nesta ordem: cena dirigida (scenes) > apresentação bíblica ou prólogo (presentations, prologues) > tela aberta (contexts) > missão principal em foco (quests) > região (regions) > menu. Lista vazia = silêncio de propósito; momento sem entrada segue o nível seguinte. Itens 'theme:<tema>' puxam todas as faixas com aquele tema em 'themes'. As faixas tocam embaralhadas, baixas, com silêncio entre elas (playlist_gap) e abaixam em diálogos e marcos. Arquivos: assets/audio/<path>.ogg ou .wav (o .ogg tem preferência; gravações reais entram assim, sem mexer no código). Regras de licença: docs/legal/ASSET_LICENSES.md, 'Música'; conferidas por tools/validate_content.gd.",
+	"version": 1,
+	"playlist_gap": [
+		20,
+		40
+	],
+	"first_gap": [
+		0.5,
+		2.0
+	],
+	"duck_db": -6.0,
+	"event_duck_db": -8.0,
+	"event_duck_hold": 2.2,
+	"duck_events": [
+		"quest_start",
+		"quest_complete",
+		"discovery",
+		"collection_complete",
+		"reward",
+		"region_new"
+	],
+	"fade_in": 4.0,
+	"fade_out": 2.5,
+	"tracks": {
+		"old_hundredth": {
+			"title": "Old Hundredth",
+			"composer": "Louis Bourgeois",
+			"year": 1551,
+			"composer_death": 1561,
+			"source": "public_domain_hymn",
+			"license": "domínio público (melodia); arranjo procedural CC BY 4.0",
+			"themes": [
+				"louvor",
+				"criação",
+				"promessa"
+			],
+			"vocal": false,
+			"path": "music/old_hundredth",
+			"volume_db": -14.0,
+			"score": "tools/audio/scores/old_hundredth.json",
+			"status": "provisória: arranjo procedural, sem escuta humana (melodia transcrita de memória, KI-22)"
+		},
+		"ode_to_joy": {
+			"title": "Hino da Alegria",
+			"composer": "Ludwig van Beethoven",
+			"year": 1824,
+			"composer_death": 1827,
+			"source": "public_domain_hymn",
+			"license": "domínio público (melodia); arranjo procedural CC BY 4.0",
+			"themes": [
+				"alegria",
+				"comunidade"
+			],
+			"vocal": false,
+			"path": "music/ode_to_joy",
+			"volume_db": -14.0,
+			"score": "tools/audio/scores/ode_to_joy.json",
+			"status": "provisória: arranjo procedural, sem escuta humana (melodia transcrita de memória, KI-22)"
+		},
+		"amazing_grace": {
+			"title": "Amazing Grace (New Britain)",
+			"composer": "melodia tradicional americana",
+			"year": 1829,
+			"composer_death": null,
+			"source": "public_domain_hymn",
+			"license": "domínio público (melodia); arranjo procedural CC BY 4.0",
+			"themes": [
+				"graça",
+				"caminho",
+				"providência"
+			],
+			"vocal": false,
+			"path": "music/amazing_grace",
+			"volume_db": -14.0,
+			"score": "tools/audio/scores/amazing_grace.json",
+			"status": "provisória: arranjo procedural, sem escuta humana (melodia transcrita de memória, KI-22)"
+		},
+		"silent_night": {
+			"title": "Noite Feliz",
+			"composer": "Franz Xaver Gruber",
+			"year": 1818,
+			"composer_death": 1863,
+			"source": "public_domain_hymn",
+			"license": "domínio público (melodia); arranjo procedural CC BY 4.0",
+			"themes": [
+				"nascimento",
+				"noite",
+				"paz"
+			],
+			"vocal": false,
+			"path": "music/silent_night",
+			"volume_db": -14.0,
+			"score": "tools/audio/scores/silent_night.json",
+			"status": "provisória: arranjo procedural, sem escuta humana (melodia transcrita de memória, KI-22)"
+		},
+		"orig_dothan_lament": {
+			"title": "Lamento em Dotã",
+			"composer": "Caminhos da Promessa",
+			"year": 2026,
+			"composer_death": null,
+			"source": "original",
+			"license": "CC BY 4.0",
+			"themes": [
+				"lamento",
+				"separação"
+			],
+			"vocal": false,
+			"path": "music/orig_dothan_lament",
+			"volume_db": -15.0,
+			"score": "tools/audio/scores/orig_dothan_lament.json",
+			"status": "provisória: arranjo procedural, sem escuta humana"
+		},
+		"orig_sea_night": {
+			"title": "Noite à Beira do Mar",
+			"composer": "Caminhos da Promessa",
+			"year": 2026,
+			"composer_death": null,
+			"source": "original",
+			"license": "CC BY 4.0",
+			"themes": [
+				"espera",
+				"medo",
+				"confiança"
+			],
+			"vocal": false,
+			"path": "music/orig_sea_night",
+			"volume_db": -15.0,
+			"score": "tools/audio/scores/orig_sea_night.json",
+			"status": "provisória: arranjo procedural, sem escuta humana"
+		},
+		"orig_sea_crossing": {
+			"title": "Caminho no Meio do Mar",
+			"composer": "Caminhos da Promessa",
+			"year": 2026,
+			"composer_death": null,
+			"source": "original",
+			"license": "CC BY 4.0",
+			"themes": [
+				"livramento",
+				"travessia"
+			],
+			"vocal": false,
+			"path": "music/orig_sea_crossing",
+			"volume_db": -14.0,
+			"score": "tools/audio/scores/orig_sea_crossing.json",
+			"status": "provisória: arranjo procedural, sem escuta humana"
+		},
+		"orig_harvest": {
+			"title": "Colheita em Belém",
+			"composer": "Caminhos da Promessa",
+			"year": 2026,
+			"composer_death": null,
+			"source": "original",
+			"license": "CC BY 4.0",
+			"themes": [
+				"colheita",
+				"bondade",
+				"provisão"
+			],
+			"vocal": false,
+			"path": "music/orig_harvest",
+			"volume_db": -15.0,
+			"score": "tools/audio/scores/orig_harvest.json",
+			"status": "provisória: arranjo procedural, sem escuta humana"
+		},
+		"orig_nile": {
+			"title": "Margens do Nilo",
+			"composer": "Caminhos da Promessa",
+			"year": 2026,
+			"composer_death": null,
+			"source": "original",
+			"license": "CC BY 4.0",
+			"themes": [
+				"terra estrangeira",
+				"fidelidade"
+			],
+			"vocal": false,
+			"path": "music/orig_nile",
+			"volume_db": -15.0,
+			"score": "tools/audio/scores/orig_nile.json",
+			"status": "provisória: arranjo procedural, sem escuta humana"
+		}
+	},
+	"cues": {
+		"menu": [
+			"old_hundredth"
+		],
+		"regions": {
+			"canaan_village": [
+				"old_hundredth",
+				"ode_to_joy"
+			],
+			"caravan_road": [
+				"amazing_grace",
+				"ode_to_joy"
+			],
+			"dothan": [
+				"amazing_grace",
+				"old_hundredth"
+			],
+			"egypt_house": [
+				"orig_nile",
+				"amazing_grace"
+			],
+			"sea_camp": [
+				"orig_sea_night"
+			],
+			"bethlehem_fields": [
+				"orig_harvest",
+				"ode_to_joy"
+			],
+			"bethlehem_night": [
+				"silent_night",
+				"old_hundredth"
+			]
+		},
+		"quests": {
+			"_comment": "Só missões principais; secundárias e de exploração seguem a região.",
+			"canaan_wells": [
+				"old_hundredth",
+				"theme:provisão"
+			],
+			"joseph_dothan_road": [
+				"amazing_grace"
+			],
+			"joseph_caravan_watch": [
+				"orig_dothan_lament",
+				"amazing_grace"
+			],
+			"joseph_potiphar_house": [
+				"amazing_grace",
+				"orig_nile"
+			],
+			"exodus_sea_crossing": [
+				"orig_sea_night",
+				"theme:livramento"
+			],
+			"ruth_gleaning": [
+				"orig_harvest",
+				"theme:bondade"
+			],
+			"shepherds_night": [
+				"silent_night",
+				"old_hundredth"
+			]
+		},
+		"contexts": {
+			"_comment": "Telas: scripture_map = Mapa das Escrituras (inclui o cartão de passagem entre épocas).",
+			"scripture_map": [
+				"theme:promessa",
+				"silent_night"
+			]
+		},
+		"scenes": {
+			"joseph_caravan_departs": [
+				"orig_dothan_lament"
+			],
+			"exodus_sea_crossing": [
+				"orig_sea_crossing"
+			],
+			"ruth_gleaning_meal": [
+				"orig_harvest"
+			],
+			"shepherds_announcement": [
+				"old_hundredth"
+			],
+			"shepherds_at_the_house": [
+				"silent_night"
+			]
+		},
+		"presentations": {
+			"gen_026_wells": [
+				"old_hundredth"
+			],
+			"gen_037_search": [
+				"amazing_grace"
+			],
+			"gen_037_caravan": [
+				"orig_dothan_lament"
+			],
+			"gen_039_potiphar": [
+				"orig_nile"
+			],
+			"exod_014_sea": [
+				"orig_sea_crossing"
+			],
+			"ruth_002_gleaning": [
+				"orig_harvest"
+			],
+			"luke_002_shepherds": [
+				"silent_night"
+			]
+		},
+		"prologues": {
+			"new_game": [
+				"old_hundredth"
+			]
+		}
+	},
+	"classification": "devotional_educational",
+	"verification": {
+		"status": "pending_review",
+		"reviewer": "",
+		"notes": "Escolha de hinos por momento e transcrição das melodias feitas por agentes de IA; precisam de escuta e revisão humanas (KI-22)."
+	}
+}

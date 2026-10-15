@@ -1,0 +1,18 @@
+{
+	"_comment": "Noite à beira do mar: tema próprio (Ré eólio), gerado por regras.",
+	"bpm": 58,
+	"lead": "lyre",
+	"drum": "",
+	"generate": {
+		"root": 62,
+		"mode": "aeolian",
+		"progression": [
+			0,
+			5,
+			3,
+			4
+		]
+	},
+	"arp_step": 1.0,
+	"intro_beats": 8
+}

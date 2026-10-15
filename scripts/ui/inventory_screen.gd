@@ -31,6 +31,7 @@ func _ready() -> void:
 	visible = false
 	_build()
 	Inventory.changed.connect(func(_i, _d): if visible: refresh())
+	Market.changed.connect(func(): if visible: refresh())
 
 
 func is_open() -> bool:
@@ -84,7 +85,7 @@ func refresh() -> void:
 		_essentials.add_child(_slot(e))
 		if first == "":
 			first = String(e.id)
-	_slots_label.text = "Espaços: %d/%d" % [Inventory.slots_used(), Inventory.BAG_SLOTS]
+	_slots_label.text = "Espaços: %d/%d · Prata: %d" % [Inventory.slots_used(), Inventory.BAG_SLOTS, Market.silver()]
 	if _selected == "" or Inventory.count(_selected) <= 0:
 		_selected = first
 	_show_detail(_selected)
@@ -147,6 +148,8 @@ func _show_detail(id: String) -> void:
 	_use_btn.visible = String(it.get("use_text", "")) != ""
 	_discard_btn.visible = Inventory.can_discard(id)
 	_discard_btn.text = "Descartar 1"
+	if Market.sales.has(id):
+		_meta.text += " · na feira: %d de prata" % int(Market.sales[id])
 
 
 func _on_use() -> void:

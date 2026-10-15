@@ -6,7 +6,7 @@ Conferido contra o código em 2026-10-14 (assinaturas abaixo copiadas dos script
 
 ## Visão geral
 - Autoloads (ordem em `project.godot`, importa: cada um pode usar os anteriores):
-  `Settings` → `GameData` → `Bible` → `SaveManager` → `GameState` → `DialogueManager` → `QuestManager` → `Discoveries` → `Inventory` → `Collectibles` → `WorldManager` → `SceneRouter` → `AudioManager`.
+  `Settings` → `GameData` → `Bible` → `SaveManager` → `GameState` → `DialogueManager` → `QuestManager` → `Discoveries` → `Inventory` → `Market` → `Collectibles` → `WorldManager` → `SceneRouter` → `AudioManager`.
 - Fluxo: `scenes/ui/main_menu.tscn` → `SceneRouter.change_scene()` → `scenes/core/game.tscn` (instancia o mapa da região, HUD, diálogo, pausa, diário, bolsa, Mapa das Escrituras, cinemática e, só em debug, o painel F3). Viagens entre regiões trocam só o mapa dentro de `game.tscn` (ADR-021).
 - Autoloads **não** existem no modo `--script` (fábrica, ferramentas): `ConditionSchema`, `QuestDatabase`, `DialogueDatabase` e `FactoryCatalog` não podem usá-los.
 - Comunicação por **sinais** e por **flags** em `GameState`. Missões avançam por **eventos** (`QuestManager.record_event(type, id)` grava a flag `ev:<type>:<id>`).
@@ -70,12 +70,18 @@ Conferido contra o código em 2026-10-14 (assinaturas abaixo copiadas dos script
 - **Interfaces:** `Inventory.add(id, qtd, origem)`, `remove()`, `count()`, `room_for(id, qtd)`, `discard()`, sinal `changed`; `Collectibles.find(id)`, `is_found()`, `found_in_set()`, `set_total()`, sinal `collectible_found`.
 - **Cuidados:** itens de missão ficam no compartimento de essenciais e não são descartáveis; nada de moedas cunhadas, ferro comum, vidro ou papel na época dos patriarcas (ADR-023).
 
+### Feira do viajante (ADR-030)
+- **Arquivos:** `scripts/items/market.gd` (autoload `Market`), `scripts/ui/market_screen.gd` (`MarketScreen`, camada 38, filho de `Game`), `scripts/player/player_gear.gd` (`PlayerGear`, filho do `Player`: camadas sobre o sprite e animal), `scripts/player/gear_companion.gd` (`GearCompanion`, irmão do jogador no mundo); dados em `data/market/market.json` (`merchants`, `sales`, `goods`); arte de `tools/art_gen/art_market.gd` (`generate_art.gd -- --market-only`): `assets/gear/*.png`, ícones das mercadorias e os mercadores; capturas `tools/screenshot/capture_market.tscn`.
+- **Interfaces:** `Market.silver()`, `sell(id)`, `sell_all(id)`, `buy(id, mercador)`, `equip(id)`, `unequip(slot)`, `owned()`, `equipped(slot)`, `sells(mercador, id)`, `goods_for(mercador)`, `sellable_entries()`, `speed_multiplier()`, `layer_paths()`, `companion()`, sinal `changed`; ação de diálogo `{"market": id}` → `Game.market_screen.open(id)`; `DialogueDatabase.referenced_merchants(d)`. Coleta renovável: pickup `"renewable": true` + `WorldManager.is_picked_this_visit()/mark_picked_this_visit()`.
+- **Cuidados:** estado só em flags (save v3); `Inventory.remove(..., "market")` não gera evento de missão; uma peça sem `layer` não aparece no jogador; `tools/validate_content.gd` confere mercadores, ações e renováveis vendáveis.
+
 ### Interface
 - **Arquivos (`scripts/ui/`):**
   - `hud.gd` + `scenes/ui/hud.tscn`: contexto ("Você está em"), rastreador com categoria e "Siga para:", avisos, cartões, título da região (`show_region_banner`); sinais `journal_requested`, `inventory_requested`, `scripture_map_requested`; `has_pending_popups()`, `refresh_tracker()`.
   - `cinematic.gd`: prólogo e apresentações; `play_prologue()`, `play_presentation()`, `is_playing()`, sinal `finished(kind, id, skipped)`.
   - `journal.gd` + `journal_content.gd` (`JournalContent`): diário em 6 abas (Jornada por categoria, Escrituras, Personagens, Lugares, Linha do tempo, Descobertas); `open(tab, focus)`, `close()`, sinais `closed`, `presentation_requested`.
-  - `inventory_screen.gd`: bolsa (tecla I), camada própria; `open()`, `close()`, sinal `closed`.
+  - `inventory_screen.gd`: bolsa (tecla I), camada própria; `open()`, `close()`, sinal `closed`; mostra a prata e quanto a feira paga pelo item.
+  - `market_screen.gd`: feira do mercador (abas Vender e Comprar); `open(mercador, aba)`, `close()`, `set_tab()`, sinal `closed`.
   - `scripture_map.gd` (`ScriptureMap`, camada 37): Mapa das Escrituras (tecla M) com épocas e experiências; botão Iniciar/Continuar/Revisitar para experiências com destino; `open_passage(passage, subtítulo, ao_confirmar)` (cartão de saída); sinais `closed`, `atlas_requested`.
   - `pause_menu.gd`: sinais `journal_requested`, `prologue_requested`.
   - `main_menu.gd`, `dialogue_box.gd`, `ui_style.gd`.

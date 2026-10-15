@@ -23,6 +23,11 @@ func _init() -> void:
 		print("generate_art: concluido (v0.4)")
 		quit()
 		return
+	if "--market-only" in OS.get_cmdline_user_args():
+		_market_art()
+		print("generate_art: concluido (feira)")
+		quit()
+		return
 	if "--v05-only" in OS.get_cmdline_user_args():
 		_palettes()
 		_v05_art()
@@ -39,6 +44,7 @@ func _init() -> void:
 	_menu_background()
 	_v04_art()
 	_v05_art()
+	_market_art()
 	print("generate_art: concluido")
 	quit()
 
@@ -48,6 +54,12 @@ func _init() -> void:
 func _v05_art() -> void:
 	var lands = load("res://tools/art_gen/art_lands.gd").new(self)
 	lands.generate()
+
+
+## Feira: mercadorias, mercadores e camadas de equipamento do jogador.
+## Sempre depois da v0.5, com semente própria.
+func _market_art() -> void:
+	load("res://tools/art_gen/art_market.gd").new(self).generate()
 
 
 # ---------------------------------------------------------------- v0.4: regiões novas

@@ -215,6 +215,57 @@ func test_inventory() -> void:
 	check(Inventory.discard("water_skin") and Inventory.count("water_skin") == 9, "item comum pode ser descartado")
 	check(Inventory.add("item_inexistente", 1) == 0, "item inexistente é recusado")
 	GameState.new_game()
+	test_market()
+
+
+func test_market() -> void:
+	check(Market.errors.is_empty(), "feira sem erros %s" % [Market.errors])
+	check(not Market.sales.has("provisions_basket") and not Market.sales.has("plant_fiber"), "feira não compra item de missão nem material protegido")
+	GameState.new_game()
+	Inventory.add("wool_cloth", 3, "reward")
+	check(Market.sell("wool_cloth") and Market.silver() == 7 and Inventory.count("wool_cloth") == 2, "venda troca item por prata")
+	check(not Market.buy("walking_staff"), "compra exige prata suficiente")
+	check(Market.sell("wool_cloth") and Market.buy("walking_staff"), "compra o cajado")
+	check(Market.owned("walking_staff") and Market.equipped("staff") == "walking_staff" and Market.silver() == 4, "cajado comprado é equipado")
+	check(not Market.buy("walking_staff") and Market.unequip("staff") and Market.equip("walking_staff"), "não recompra e permite reequipar")
+	var saved := GameState.to_dict()
+	var clean := SaveManager.sanitize_game_data(saved)
+	GameState.new_game()
+	GameState.from_dict(clean.data)
+	check(Market.silver() == 4 and Market.equipped("staff") == "walking_staff", "prata e equipamento sobrevivem ao save")
+	GameState.new_game()
+
+	# Catálogo: mercadores, mercadorias renováveis e peças por espaço.
+	check(Market.merchants.size() == 4 and ["yaron", "ozi", "nefer", "liora"].all(func(m): return Market.merchants.has(m)), "feira: quatro mercadores")
+	for id in ["wool_tuft", "almonds", "flint_stone", "wild_herbs", "papyrus_stalks", "dates", "sea_shell"]:
+		check(Inventory.item(id).get("category") == "trade" and Market.sales.has(id), "mercadoria %s existe e é vendável" % id)
+	check(not Market.sales.has("clay_jar") and not Market.sales.has("barley_sheaf"), "feira não compra cântaro nem feixes de missão")
+	for slot in Market.SLOTS:
+		check(Market.order.any(func(g): return String(Market.goods[g].slot) == slot), "há peça para o espaço %s" % slot)
+
+	# Vender tudo, restrição por mercador, equipar, velocidade e camadas.
+	Inventory.add("wool_tuft", 5, "pickup")
+	Inventory.add("dates", 2, "pickup")
+	check(Market.sell_all("wool_tuft") == 5 and Inventory.count("wool_tuft") == 0 and Market.silver() == 5, "vender tudo: 5 tufos = 5 de prata")
+	check(Market.sellable_entries().size() == 1 and Market.sellable_entries()[0].id == "dates", "lista de venda mostra só o que a feira compra")
+	check(Market.sell_all("dates") == 4 and Market.sell_all("dates") == 0, "sem itens, vender tudo não rende nada")
+	GameState.set_flag("market:silver", 200)
+	check(not Market.goods_for("yaron").has("linen_tunic") and Market.goods_for("nefer").has("linen_tunic"), "túnica de linho só com Nefer")
+	check(not Market.buy("linen_tunic", "yaron") and Market.buy("linen_tunic", "nefer"), "comprar exige um mercador que venda a peça")
+	check(Market.goods_for("yaron").has("linen_tunic"), "peça já comprada aparece com qualquer mercador para usar")
+	check(Market.speed_multiplier() == 1.0 and Market.companion().is_empty(), "sem transporte: velocidade normal")
+	check(Market.buy("pack_donkey", "yaron") and is_equal_approx(Market.speed_multiplier(), 1.15), "jumento de carga: +15% de velocidade")
+	check(String(Market.companion().get("sheet", "")).ends_with("donkey.png"), "jumento segue o viajante")
+	check(Market.buy("riding_donkey", "ozi") and Market.equipped("transport") == "riding_donkey" and Market.owned("pack_donkey"), "comprar outro animal troca o equipado e mantém o antigo")
+	check(Market.buy("head_band") and Market.buy("oak_staff", "liora"), "comprar faixa e bordão")
+	check(Market.layer_paths() == ["res://assets/gear/linen_tunic.png", "res://assets/gear/oak_staff.png", "res://assets/gear/head_band.png"], "camadas na ordem roupa, cajado, cabeça %s" % [Market.layer_paths()])
+	check(Market.layer_paths().all(func(p): return ResourceLoader.exists(p)), "camadas existem")
+	GameState.set_flag("market:equipped:staff", "peca_inexistente")
+	check(Market.equipped("staff") == "", "equipamento que o jogador não tem é ignorado")
+	GameState.set_flag("market:silver", 5)
+	check(not Market.buy("blue_tunic") and Market.silver() == 5, "compra recusada não gasta prata")
+	check(DialogueDatabase.valid_action({"market": "ozi"}) and not DialogueDatabase.valid_action({"market": 3}), "ação de diálogo {market: id}")
+	GameState.new_game()
 
 
 func _talk(id: String, picks: Array = []) -> Array:
@@ -369,7 +420,8 @@ func test_families_outcomes() -> void:
 
 func _complete_wells() -> void:
 	for e in [["prologue_finished", "new_game"], ["custom", "wells_adina_water"], ["dialogue_finished", "well_examine"],
-			["custom", "wells_ari_well"], ["custom", "wells_ezer_disputes"], ["presentation_finished", "gen_026_wells"]]:
+			["custom", "wells_ari_well"], ["custom", "wells_jar_returned"], ["item_collected", "clay_jar"],
+			["custom", "wells_trough_full"], ["custom", "wells_adina_thanks"], ["presentation_finished", "gen_026_wells"]]:
 		QuestManager.record_event(e[0], e[1])
 
 
@@ -511,6 +563,80 @@ func test_pickups_and_screens() -> void:
 	var game2: Node = await _start_game()
 	check(Inventory.count("plant_fiber") == 1, "inventário preservado depois de carregar")
 	check(game2.map.find_object("pickup", "fiber_1") == null and game2.map.find_object("pickup", "fiber_2") != null, "item coletado continua fora do chão depois de carregar")
+	game2.queue_free()
+	await wait(3)
+	GameState.new_game()
+
+
+## Mercador no mapa, coleta renovável, feira pela fala e aparência do viajante.
+func test_market_in_game() -> void:
+	GameState.new_game()
+	GameState.set_flag("prologue_seen", true)
+	GameState.set_flag("experience:joseph_dothan", true)
+	WorldManager.travel("caravan_road", "from_canaan")
+	var game: Node = await _start_game()
+	await r._close_cards(game.get_node("HUD"))
+	check(game.map.find_object("npc", "ozi") != null, "Ozi está no Caminho das Caravanas")
+	var pk: Pickup = game.map.find_object("pickup", "tr_cr_flint_1")
+	check(pk != null and pk.renewable, "sílex renovável no chão")
+	if pk == null:
+		game.queue_free()
+		await wait(3)
+		return
+	check(pk.collect() == 1 and pk.collect() == 0, "coletar o renovável rende um item só por visita")
+	await wait(3)
+	check(Inventory.count("flint_stone") == 1 and not GameState.world.has(WorldManager.world_key("caravan_road", "tr_cr_flint_1")), "renovável não vai para o save")
+	check(game.map.find_object("pickup", "tr_cr_flint_1") == null, "renovável some até a próxima visita")
+	WorldManager.travel("dothan", "from_caravan_road")
+	await _wait_travel(game)
+	WorldManager.travel("caravan_road", "from_dothan")
+	await _wait_travel(game)
+	pk = game.map.find_object("pickup", "tr_cr_flint_1")
+	check(pk != null, "voltar à região faz o renovável reaparecer")
+	if pk:
+		pk.collect()
+	check(Inventory.count("flint_stone") == 2, "segunda visita rende mais um sílex")
+
+	# Falar com Ozi e escolher "negociar" abre a feira dele.
+	_talk("ozi_talk", ["negociar"])
+	await wait(3)
+	check(game.market_screen.is_open() and game.market_screen.merchant_id == "ozi" and r.get_tree().paused, "\"Quero negociar\" abre a feira de Ozi e pausa")
+	check(game.market_screen.tab == "sell", "feira abre na aba Vender quando há o que vender")
+	game.market_screen._sell("flint_stone", true)
+	check(Market.silver() == 4 and Inventory.count("flint_stone") == 0, "vender tudo pela tela: 4 de prata")
+	GameState.set_flag("market:silver", 100)
+	game.market_screen.set_tab("buy")
+	game.market_screen._buy("pack_donkey")
+	game.market_screen._buy("walking_staff")
+	game.market_screen._buy("travel_cloak")
+	check(Market.equipped("transport") == "pack_donkey" and Market.equipped("staff") == "walking_staff", "comprar pela tela equipa")
+	r._press("pause")
+	await wait(3)
+	check(not game.market_screen.is_open() and not r.get_tree().paused and not game.get_node("PauseMenu").visible, "Esc fecha a feira sem abrir a pausa")
+	await wait(3)
+	var p := _player()
+	check(p.gear.layers.size() == 2 and p.gear.layers.all(func(l): return l.hframes == p.sprite.hframes and l.offset == p.sprite.offset), "duas camadas sobre o viajante, alinhadas à folha")
+	check(r.get_tree().get_nodes_in_group("gear_companion").size() == 1, "jumento acompanha o viajante")
+	check(is_equal_approx(p.speed_multiplier(), 1.15), "viajante anda mais rápido com o jumento")
+	await _walk("move_left", 20)
+	check(p.gear.layers.all(func(l): return l.frame == p.sprite.frame), "camadas acompanham o quadro da animação")
+	check(game.map.region_id == "caravan_road", "ainda no Caminho das Caravanas")
+	Market.unequip("transport")
+	await wait(3)
+	check(r.get_tree().get_nodes_in_group("gear_companion").is_empty() and p.speed_multiplier() == 1.0, "tirar o jumento: some e a velocidade volta")
+	Market.equip("pack_donkey")
+
+	# Save e load: prata, posse e equipamento; renováveis voltam.
+	check(GameState.save_game() == OK, "salvar com equipamento")
+	game.queue_free()
+	await wait(3)
+	GameState.new_game()
+	check(GameState.load_game() == "", "carregar o save")
+	var game2: Node = await _start_game()
+	await wait(3)
+	check(Market.owned("travel_cloak") and Market.equipped("transport") == "pack_donkey" and Market.silver() == 52, "prata e equipamento preservados (%d)" % Market.silver())
+	check(_player().gear.layers.size() == 2 and r.get_tree().get_nodes_in_group("gear_companion").size() == 1, "aparência restaurada ao carregar")
+	check(game2.map.find_object("pickup", "tr_cr_flint_1") != null, "renovável disponível depois de carregar")
 	game2.queue_free()
 	await wait(3)
 	GameState.new_game()

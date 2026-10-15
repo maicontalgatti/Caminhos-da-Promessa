@@ -2,11 +2,11 @@
 	"_comment": "Gerado por tools/factory.gd audio-manifest. Não edite text/line_id/hash à mão: mude o texto no jogo e gere de novo. emotion, pronunciation e target_seconds são do audio-producer.",
 	"episode": "ep_006_a_importancia_dos_pocos",
 	"language": "pt-BR",
-	"generated": "2026-10-14",
+	"generated": "2026-10-15",
 	"provider": "none",
 	"budget_approved": false,
 	"subtitles": "sempre: a caixa de diálogo mostra o texto de toda fala",
-	"total_characters": 5827,
+	"total_characters": 7226,
 	"lines": [
 		{
 			"line_id": "journal_intro/n1",
@@ -153,6 +153,60 @@
 			}
 		},
 		{
+			"line_id": "well_examine/fill",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Você amarra o cântaro na corda, gasta de tanto uso, e o desce devagar. Lá embaixo, a água entra borbulhando.",
+			"hash": "e8c9e669014052b27a18973c569a78ca55f5f702deeab1bd010ccfaa766f3045",
+			"file": "res://assets/audio/voice/well_examine__fill.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "well_examine/fill2",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "Puxar a corda cheia exige força. O cântaro sobe pesado e pingando. Agora, até o bebedouro do curral.",
+			"hash": "50faf6f794a739f7b9122aa6fb8353e2cc74e680f7349f30095fb7dd0e2f5380",
+			"file": "res://assets/audio/voice/well_examine__fill2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "well_examine/already_full",
+			"speaker": "narrator",
+			"voice_profile": "narrator_v1",
+			"kind": "narration",
+			"text": "O cântaro já está cheio. O bebedouro fica dentro do curral de Adina, ao sul da praça.",
+			"hash": "cbc65008915c5cfefc972e9d92e4bb7a3c9066cbe99e944babf900ca6bbcdc80",
+			"file": "res://assets/audio/voice/well_examine__already_full.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
 			"line_id": "adina_talk/greet",
 			"speaker": "adina",
 			"voice_profile": "adina_v1",
@@ -193,8 +247,8 @@
 			"speaker": "adina",
 			"voice_profile": "adina_v1",
 			"kind": "fictional_dialogue",
-			"text": "Sem água não há rebanho, nem pão, nem aldeia. Por isso a gente cuida tanto do poço.",
-			"hash": "22c0161c2a8aec478b6b32088c746fb6a94f79f7ada9d7ea51b15c1dfaab3a02",
+			"text": "Sem água não há rebanho, nem pão, nem aldeia. E hoje o bebedouro do curral amanheceu seco.",
+			"hash": "c4c260828acf39f2b3565f465022351617bac541e56fdc8d5d9a8ab102788f18",
 			"file": "res://assets/audio/voice/adina_talk__water2.ogg",
 			"status": "pending",
 			"emotion": "",
@@ -211,13 +265,67 @@
 			"speaker": "adina",
 			"voice_profile": "adina_v1",
 			"kind": "fictional_dialogue",
-			"text": "Se quiser entender a nossa vida, comece pelo poço da praça. Todo mundo passa por ele.",
-			"hash": "a18b70c0f768e0b778fbef5371688a92b5d5816b4121ae9562966f2776118e2b",
+			"text": "Você me ajudaria a encher? Ezer, o oleiro, sempre tem cântaros secando ao sol. É tirar água do poço da praça e trazer até aqui.",
+			"hash": "a9221fa072648a9b88bcd65f11516faf29fe4544a8cce060703de177a1e757e2",
 			"file": "res://assets/audio/voice/adina_talk__water3.ogg",
 			"status": "pending",
 			"emotion": "",
 			"pronunciation": {},
 			"target_seconds": 6.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/water4",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Um cântaro cheio por viagem. Três viagens devem bastar.",
+			"hash": "6d4bfda7ed4b014365482ed02e5e35d4c709e25dc7875ffd38087be32b48fc5e",
+			"file": "res://assets/audio/voice/adina_talk__water4.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/help_yes",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Que bênção! Eu fico aqui, segurando as mais afoitas.",
+			"hash": "e724e685fa60b9e95d82777e3e42088624410866a6475787312cb7d343b81a11",
+			"file": "res://assets/audio/voice/adina_talk__help_yes.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 3.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/help_later",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Tudo bem. Se mudar de ideia, o bebedouro continua aqui, e as ovelhas também.",
+			"hash": "8632e54e31fafe5b7917f625ade4dbf07781ba8e3b1a9544e2360484e8a4ab20",
+			"file": "res://assets/audio/voice/adina_talk__help_later.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
 			"rights": {
 				"provider": "",
 				"commercial_license": "pending",
@@ -326,6 +434,132 @@
 			"emotion": "",
 			"pronunciation": {},
 			"target_seconds": 4.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/trough",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "O bebedouro fica dentro do curral, junto à cerca oeste. Ezer sempre tem cântaros secando ao sol; um cântaro cheio por viagem, três viagens devem bastar.",
+			"hash": "dbe51d548c1308acbbdd611de056981344e97688dce618ea864eaad225f5cb09",
+			"file": "res://assets/audio/voice/adina_talk__trough.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 11.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/thanks",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Ouvi as ovelhas daqui! O bebedouro está cheio, e antes de o sol esquentar. Você tirou água como gente da aldeia.",
+			"hash": "74e23f4dda86e2e4700903f846f9a5dca815d482854d09e65a0803eb930c6691",
+			"file": "res://assets/audio/voice/adina_talk__thanks.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/thanks2",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Tome, é queijo do leite das minhas ovelhas. Na estrada, mata a fome melhor que muita coisa.",
+			"hash": "81d11e072ab8d82cf28d6b2a85551fe06fcc8a12943f305509879af24de3bdc2",
+			"file": "res://assets/audio/voice/adina_talk__thanks2.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 9.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/accept",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Embrulhei num pano limpo. Dura alguns dias, se você não comer tudo hoje.",
+			"hash": "d7b461c6dd5d91255b29f60f2a5c53ab1a70388eb2f9bcb719add03740f64424",
+			"file": "res://assets/audio/voice/adina_talk__accept.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/decline",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Então leve só o meu obrigado. Aqui ninguém esquece quem ajudou com o rebanho.",
+			"hash": "ea61bdcae428f238b238c7dc385229667b61cef6995000692c379c16515915bd",
+			"file": "res://assets/audio/voice/adina_talk__decline.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/thanks3",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "Agora você sabe quanto pesa a água que a gente usa todo dia. Devolva o cântaro a Ezer, sim? Ele vai querer saber para que serviu.",
+			"hash": "655f7d17c049755210db192e09367dcdad68ba9a58a2887f7b204e58848b655c",
+			"file": "res://assets/audio/voice/adina_talk__thanks3.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 10.0,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "adina_talk/return_hint",
+			"speaker": "adina",
+			"voice_profile": "adina_v1",
+			"kind": "fictional_dialogue",
+			"text": "O cântaro é de Ezer. Ele fica perto das casas, ao norte da praça, com as mãos sempre sujas de barro.",
+			"hash": "db814634e1967834ee0329855f1f93ba00d0ac5526e8fe64497cc104f6934b9a",
+			"file": "res://assets/audio/voice/adina_talk__return_hint.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 7.0,
 			"rights": {
 				"provider": "",
 				"commercial_license": "pending",
@@ -553,8 +787,8 @@
 			"speaker": "ezer",
 			"voice_profile": "ezer_v1",
 			"kind": "fictional_dialogue",
-			"text": "Veio por causa do poço? Água é assunto sério por aqui, viajante.",
-			"hash": "4c6ed422b99b3ab23c80b858669e657a8c03f412fb2d98722751910dfe94df0a",
+			"text": "Meu cântaro voltou, e pelo jeito trabalhou bastante! Água é assunto sério por aqui, viajante.",
+			"hash": "7c574ed8caa8b8e6195247a28e1c8fdcf4c9d307c6918d2e562e389d2a5e5369",
 			"file": "res://assets/audio/voice/ezer_talk__disputes.ogg",
 			"status": "pending",
 			"emotion": "",
@@ -652,6 +886,24 @@
 			"emotion": "",
 			"pronunciation": {},
 			"target_seconds": 5.5,
+			"rights": {
+				"provider": "",
+				"commercial_license": "pending",
+				"real_person_voice": false
+			}
+		},
+		{
+			"line_id": "ezer_talk/lend",
+			"speaker": "ezer",
+			"voice_profile": "ezer_v1",
+			"kind": "fictional_dialogue",
+			"text": "O bebedouro de Adina está seco? Leve o cântaro que está secando ali, ao lado dos jarros. Depois você me devolve.",
+			"hash": "61b29e24d0cf5d6f779b90002062c4cd473d400636ee4484334842b6fc5a2c99",
+			"file": "res://assets/audio/voice/ezer_talk__lend.ogg",
+			"status": "pending",
+			"emotion": "",
+			"pronunciation": {},
+			"target_seconds": 8.0,
 			"rights": {
 				"provider": "",
 				"commercial_license": "pending",

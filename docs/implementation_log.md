@@ -1,5 +1,25 @@
 # Histórico de implementação
 
+## 2026-10-15 — Feira do viajante (ADR-030)
+
+### Pedido e decisões do criador
+- Trocar itens coletáveis por dinheiro e comprar roupas, cajados e meios de locomoção. O criador escolheu **mercador no mapa** (não um botão na bolsa) e **mercadorias que reaparecem ao voltar** à região.
+
+### Estado encontrado
+- Havia um protótipo local sem commit e sem registro no HANDOFF: autoload `Market`, botão "Feira" e "Vender" na bolsa, 4 peças desenhadas como retângulos sobre o jogador, venda de pão, figos, corda e lã. Quase todos os itens do mapa eram de missão, então não havia fonte de prata. A tela não despausava o jogo ao fechar. O protótipo foi estendido (mesmas flags `market:*` e ids das 4 peças), não reescrito do zero.
+- Também havia, sem commit, a tarefa da água em "A importância dos poços" (cântaro, bebedouro) e trabalho de música; não foram alterados.
+
+### O que mudou
+- Dados: categoria `trade` e 7 mercadorias em `data/items/items.json`; 24 pickups `renewable` em 6 regiões; mercadores em `data/characters` e regiões; diálogos `ozi_talk`, `nefer_talk`, `liora_talk` e opção de negociar em `yaron_talk`; `data/market/market.json` com mercadores, 12 vendas e 12 peças; sons de coleta das mercadorias em `data/audio/sfx.json`.
+- Código: `Market` (vender tudo, restrição por mercador, velocidade, camadas, companheiro), `MarketScreen` (abas, rolagem, foco por teclado, despausa ao fechar), `PlayerGear` e `GearCompanion`, coleta renovável em `Pickup`/`WorldManager`/`GameMap`, ação `{"market": id}` em `DialogueDatabase` e `Game`, validação da feira em `tools/validate_content.gd`, autoteste do exe confere a feira.
+- Arte: `tools/art_gen/art_market.gd` (camadas por diferença de pixels, 3 mercadores, 7 ícones); captura `tools/screenshot/capture_market.tscn`.
+- A bolsa perdeu os botões "Feira" e "Vender" do protótipo; mostra a prata e o valor de venda do item.
+
+### Verificação
+- Suíte 1637/1637, fluxo 17/17, `validate_content` sem erros de dados, fábrica 0 erros, auditoria de áudio 0 problemas: executados com o Godot 4.7.2 oficial para Linux (mesmo da CI), numa cópia do projeto. Capturas com xvfb conferidas a olho: mercadores e mercadorias em chão livre nas 6 regiões, tela da feira, viajante com manto, pano de cabeça, cajado e jumento.
+- Mesclado com o trabalho paralelo de outras sessões (música ADR-029, queijo de Adina): suíte 1700/1700, fluxo 17/17, validação e fábrica sem erros, áudio 140/0.
+- **Não executados:** build do exe e autoteste (sem templates de exportação nesta sessão), `tools/check_wiki.ps1` (PowerShell), jogo por uma pessoa.
+
 ## 2026-10-14 — v0.1.0: fundação jogável (Fases 1–3)
 
 ### Auditoria inicial
@@ -465,3 +485,34 @@ no ciclo fica explicitamente pendente.
 
 ### Não verificado
 - Sessão de jogo humana (KI-02); revisão humana do conteúdo bíblico (KI-03, KI-21).
+
+## 2026-10-15 — Missão dos poços: tarefa da água, recompensa própria e save (Claude, Cowork)
+
+### Entregue
+- `canaan_wells`: objetivos `meet_adina` → `take_jar` → `water_trough` → `thank_adina` → `return_jar` (novo, evento `wells_jar_returned`) → `read_story`; removidos `examine_well`, `listen_ari`, `talk_ezer`.
+- `canaan_village.json`: Adina pede ajuda e responde com 3 escolhas; agradecimento com aceitar/recusar o queijo (`decision wells_reward`); `return_hint`; Ezer empresta (`lend`) e recebe o cântaro (`disputes`); Ari conta a lembrança do poço com a missão ativa sem ser objetivo; o poço descreve a corda gasta na primeira coleta.
+- Item `sheep_cheese` (ícone em `art_lands.gd`, gerado só ele), som `item_food`, venda na feira por 4.
+- `QuestManager`: `objective_id` no estado e `realign_objectives()` ao trocar o estado; `SaveManager._sanitize_quests` preserva `objective_id`.
+- Testes: `_test_quest_flow` atualizado, `_test_old_save_wells`, `_test_wells_water_save_load`; listas de eventos em `scene_tests`, `world_tests` e ferramentas de captura.
+
+### Verificado
+- Godot 4.7.2 Linux headless: suíte 1535/1535; fluxo 17/17; validação sem erros; fábrica 0 erros em 78 episódios (manifesto do ep_006 regenerado); áudio 131 arquivos, 0 problemas.
+
+### Não verificado
+- Sessão de jogo humana; revisão humana das falas novas; feira e música (alterações de outra sessão) não revisadas.
+
+## 2026-10-15 — Música temática (Claude, Cowork)
+
+### Entregue
+- `scripts/core/music_director.gd` (criado pelo `AudioManager`, acessível como `AudioManager.music`), `scripts/core/music_rules.gd` (validação sem autoloads).
+- `data/audio/music.json`: completado a partir do rascunho de uma sessão anterior (catálogo de hinos e temas próprios); `experiences` virou `quests`; novos `contexts`, `prologues`, regras de volume e intervalo; `joy_to_the_world` removido.
+- `tools/audio/generate_music.gd` + `tools/audio/scores/*.json` → `assets/audio/music/*.wav` (9 faixas, mono 22,05 kHz, ~18 MB).
+- Ganchos `enter_context`/`exit_context` em `cinematic.gd`, `scripture_map.gd`, `scene_director.gd`; dica do controle "Música" nas configurações.
+- `tools/validate_content.gd` (seção "Música temática"), `export_self_test.gd`, `tests/music_tests.gd` + chamada em `test_runner.gd`; docs: `docs/audio.md`, ADR-029, KI-22, `ASSET_LICENSES.md`.
+
+### Verificado
+- Godot 4.7.2 Linux headless (cópia do projeto): ver resultados no HANDOFF.
+
+### Não verificado
+- Escuta humana das faixas e das melodias dos hinos (KI-22); exe Windows não gerado; `tools/check_wiki.ps1` não executado (PowerShell indisponível no ambiente).
+

@@ -200,7 +200,8 @@ func test_experiences() -> void:
 	GameState.new_game()
 	GameState.current_region = "dothan"
 	for e in [["prologue_finished", "new_game"], ["custom", "wells_adina_water"], ["dialogue_finished", "well_examine"],
-			["custom", "wells_ari_well"], ["custom", "wells_ezer_disputes"], ["presentation_finished", "gen_026_wells"]]:
+			["custom", "wells_ari_well"], ["custom", "wells_jar_returned"], ["item_collected", "clay_jar"],
+			["custom", "wells_trough_full"], ["custom", "wells_adina_thanks"], ["presentation_finished", "gen_026_wells"]]:
 		QuestManager.record_event(e[0], e[1])
 	check(WorldManager.experience_state("joseph_dothan") == "available", "José em Dotã disponível depois dos poços")
 	check(WorldManager.start_experience("joseph_dothan") == "" and GameState.current_region == "dothan", "dentro das regiões da experiência, iniciar não tira o jogador de Dotã")
@@ -330,7 +331,8 @@ func test_scripture_map_and_passage() -> void:
 	GameState.new_game()
 	GameState.set_flag("prologue_seen", true)
 	for e in [["prologue_finished", "new_game"], ["custom", "wells_adina_water"], ["dialogue_finished", "well_examine"],
-			["custom", "wells_ari_well"], ["custom", "wells_ezer_disputes"], ["presentation_finished", "gen_026_wells"]]:
+			["custom", "wells_ari_well"], ["custom", "wells_jar_returned"], ["item_collected", "clay_jar"],
+			["custom", "wells_trough_full"], ["custom", "wells_adina_thanks"], ["presentation_finished", "gen_026_wells"]]:
 		QuestManager.record_event(e[0], e[1])
 	var game: Node = await _start_game_in("dothan", "default")
 	var sm: ScriptureMap = game.scripture_map

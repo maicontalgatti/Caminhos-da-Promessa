@@ -52,7 +52,8 @@
 					{"id": "goose_1", "character": "egypt_goose", "x": 200, "y": 236},
 					{"id": "goose_2", "character": "egypt_goose", "x": 240, "y": 228},
 					{"id": "goose_3", "character": "egypt_goose", "x": 420, "y": 360},
-					{"id": "cat_1", "character": "egypt_cat", "x": 760, "y": 240}
+					{"id": "cat_1", "character": "egypt_cat", "x": 760, "y": 240},
+					{"id": "nefer", "character": "nefer", "x": 280, "y": 528}
 				],
 				"examinables": [
 					{"id": "eh_records", "x": 640, "y": 232, "prop": "scribe_table", "dialogue": "eh_records", "prompt": "Examinar a mesa do escriba", "prompt_y": -22},
@@ -68,7 +69,11 @@
 				"pickups": [
 					{"id": "eh_sack_1", "item": "barley_sack", "x": 764, "y": 372, "visible_if": {"objective": "egypt_granary_sacks/gather_sacks"}},
 					{"id": "eh_sack_2", "item": "barley_sack", "x": 804, "y": 404, "visible_if": {"objective": "egypt_granary_sacks/gather_sacks"}},
-					{"id": "eh_sack_3", "item": "barley_sack", "x": 840, "y": 366, "visible_if": {"objective": "egypt_granary_sacks/gather_sacks"}}
+					{"id": "eh_sack_3", "item": "barley_sack", "x": 840, "y": 366, "visible_if": {"objective": "egypt_granary_sacks/gather_sacks"}},
+					{"id": "tr_eh_papyrus_1", "item": "papyrus_stalks", "x": 170, "y": 572, "renewable": true},
+					{"id": "tr_eh_papyrus_2", "item": "papyrus_stalks", "x": 560, "y": 572, "renewable": true},
+					{"id": "tr_eh_dates_1", "item": "dates", "x": 660, "y": 552, "renewable": true},
+					{"id": "tr_eh_dates_2", "item": "dates", "x": 260, "y": 240, "renewable": true}
 				]
 		}
 	]

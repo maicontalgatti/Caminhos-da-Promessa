@@ -38,9 +38,13 @@ func _run() -> void:
 	check(OS.has_feature("template_release"), "build em modo release")
 	for dir in ["res://data/dialogues", "res://data/characters", "res://data/regions", "res://data/bible",
 			"res://data/bible/stories", "res://data/bible/texts", "res://data/quests/canaan", "res://data/story",
-			"res://data/quests/dothan", "res://data/items", "res://data/collectibles", "res://data/world"]:
+			"res://data/quests/dothan", "res://data/items", "res://data/collectibles", "res://data/world", "res://data/market"]:
 		check(not JsonUtil.list_json(dir).is_empty(), "JSON empacotados em %s" % dir)
 	check(Inventory.errors.is_empty() and Inventory.exists("water_skin"), "itens carregados %s" % [Inventory.errors])
+	check(Market.errors.is_empty() and Market.merchants.size() >= 4 and Market.order.size() >= 10, "feira carregada %s" % [Market.errors])
+	for gid in Market.order:
+		var layer := String(Market.goods[gid].get("layer", ""))
+		check(layer == "" or ResourceLoader.exists(layer), "camada da peça '%s' empacotada" % gid)
 	check(Collectibles.errors.is_empty() and Collectibles.set_total("caravan_records") == 5, "colecionáveis carregados %s" % [Collectibles.errors])
 	for rid in ["canaan_village", "caravan_road", "dothan"]:
 		var scene_path := String(WorldManager.region(rid).get("map_scene", ""))
@@ -136,3 +140,11 @@ func _check_audio() -> void:
 	var bed := AudioManager.stream("amb_wind_canaan") as AudioStreamWAV
 	check(bed != null and bed.loop_mode != AudioStreamWAV.LOOP_DISABLED, "ambiente contínuo em laço no executável")
 	check(AudioManager.play("ui_click") != null, "efeito toca pelo AudioManager")
+	var mus: Node = AudioManager.music
+	var bad_music: Array = []
+	for id in mus.tracks:
+		var path: String = mus.file_of(String(id))
+		var ms: AudioStream = load(path) if path != "" else null
+		if ms == null or ms.get_length() <= 0.0:
+			bad_music.append(id)
+	check(mus.errors.is_empty() and mus.tracks.size() >= 9 and bad_music.is_empty(), "música temática empacotada (%d faixas) %s %s" % [mus.tracks.size(), mus.errors, bad_music])

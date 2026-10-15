@@ -81,7 +81,11 @@
 				"pickups": [
 					{"id": "brushwood_1", "item": "brushwood", "x": 160, "y": 900, "visible_if": {"not_flag": "sea_night"}},
 					{"id": "brushwood_2", "item": "brushwood", "x": 560, "y": 1000, "visible_if": {"not_flag": "sea_night"}},
-					{"id": "brushwood_3", "item": "brushwood", "x": 880, "y": 1010, "visible_if": {"not_flag": "sea_night"}}
+					{"id": "brushwood_3", "item": "brushwood", "x": 880, "y": 1010, "visible_if": {"not_flag": "sea_night"}},
+					{"id": "tr_sc_shell_1", "item": "sea_shell", "x": 220, "y": 688, "renewable": true, "visible_if": {"not_flag": "sea_night"}},
+					{"id": "tr_sc_shell_2", "item": "sea_shell", "x": 560, "y": 690, "renewable": true, "visible_if": {"not_flag": "sea_night"}},
+					{"id": "tr_sc_shell_3", "item": "sea_shell", "x": 840, "y": 700, "renewable": true, "visible_if": {"not_flag": "sea_night"}},
+					{"id": "tr_sc_dates_1", "item": "dates", "x": 990, "y": 880, "renewable": true, "visible_if": {"not_flag": "sea_night"}}
 				],
 				"_ambient_effects_proposed": [
 					{"id": "pillar_ahead_day", "effect": "pillar", "at": [560, 560], "params": {"form": "cloud", "height_px": 96}, "if": {"all": [{"not_flag": "sea_night"}, {"not": {"event": "scene_finished", "id": "exodus_sea_crossing"}}]}},

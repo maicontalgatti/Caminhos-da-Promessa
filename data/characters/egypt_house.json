@@ -81,6 +81,17 @@
 			"prompt": "Observar",
 			"sprite": {"sheet": "res://assets/characters/egypt_cat.png", "hframes": 6, "vframes": 2, "directions": 2, "portrait": false},
 			"behavior": {"type": "wander", "speed": 12, "wander_radius": 20}
+		},
+		{
+			"id": "nefer",
+			"display_name": "Nefer",
+			"role": "Vendedora de cestos e linho",
+			"kind": "person",
+			"classification": "plausible_fiction",
+			"description": "Vendedora fictícia que passa pela estrada da propriedade com cestos e linho. Não trabalha na casa e não conhece a história de José.",
+			"dialogue_id": "nefer_talk",
+			"sprite": {"sheet": "res://assets/characters/nefer.png", "hframes": 6, "vframes": 4, "directions": 4},
+			"behavior": {"type": "idle", "facing_x": 0, "facing_y": 1}
 		}
 	]
 }

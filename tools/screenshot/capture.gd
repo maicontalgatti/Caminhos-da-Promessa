@@ -109,7 +109,34 @@ func _ready() -> void:
 
 	QuestManager.record_event("dialogue_finished", "well_examine")
 	QuestManager.record_event("custom", "wells_ari_well")
-	QuestManager.record_event("custom", "wells_ezer_disputes")
+	QuestManager.record_event("custom", "wells_jar_returned")
+	await _settle(10)
+	while hud.has_pending_popups():
+		if hud._card_open:
+			hud._close_card()
+		await _settle(10)
+	_goto(Vector2(630, 190))
+	await _settle(60)
+	_shot("water_jar_pickup.png")
+	Inventory.add("clay_jar", 1, "pickup")
+	DialogueManager.start("well_examine")
+	while DialogueManager.is_active():
+		DialogueManager.advance()
+	_goto(Vector2(470, 500))
+	await _settle(60)
+	_shot("water_trough.png")
+	for i in 3:
+		DialogueManager.start("canaan_trough")
+		while DialogueManager.is_active():
+			DialogueManager.advance()
+		DialogueManager.start("well_examine")
+		while DialogueManager.is_active():
+			DialogueManager.advance()
+	await _settle(40)
+	_shot("water_trough_full.png")
+	DialogueManager.start("adina_talk")
+	while DialogueManager.is_active():
+		DialogueManager.advance()
 	await _settle(10)
 	while hud.has_pending_popups():
 		if hud._card_open:
