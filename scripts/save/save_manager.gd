@@ -5,6 +5,8 @@ extends Node
 ##
 ## Três espaços (`user://save_slot_0..2.json`). O save antigo
 ## `user://savegame.json` é migrado para o espaço 0 na primeira abertura.
+## `slots_dir` muda a pasta dos espaços e do save antigo: os testes usam uma
+## pasta própria para nunca tocar nos saves reais do jogador.
 
 const SAVE_VERSION := 3
 const ID_PATTERN := "^[a-z0-9_:/\\-]{1,96}$"
@@ -17,6 +19,8 @@ const ALLOWED_FLAG_TYPES := [TYPE_BOOL, TYPE_INT, TYPE_FLOAT, TYPE_STRING]
 
 ## Caminho usado quando nenhum é informado (os testes trocam por um arquivo próprio).
 var save_path := DEFAULT_PATH
+## Pasta dos espaços e do save antigo (o jogo usa user://; os testes, outra).
+var slots_dir := "user://"
 var active_slot := 0
 
 
@@ -28,7 +32,12 @@ func _ready() -> void:
 
 
 func slot_path(slot: int) -> String:
-	return "user://save_slot_%d.json" % clampi(slot, 0, SLOT_COUNT - 1)
+	return slots_dir.path_join("save_slot_%d.json" % clampi(slot, 0, SLOT_COUNT - 1))
+
+
+## Save único das versões antigas, na pasta dos espaços.
+func legacy_path() -> String:
+	return slots_dir.path_join(LEGACY_PATH.get_file())
 
 
 ## Troca o espaço ativo (gravações e "Continuar" usam este caminho).
@@ -44,7 +53,7 @@ func set_active_slot(slot: int) -> void:
 ## True quando o caminho atual é um dos espaços (e não um arquivo de teste).
 func uses_slots(path: String = "") -> bool:
 	path = path if path != "" else save_path
-	if path == DEFAULT_PATH or path == LEGACY_PATH:
+	if path == slot_path(0) or path == legacy_path():
 		return true
 	for i in SLOT_COUNT:
 		if path == slot_path(i):
@@ -53,24 +62,27 @@ func uses_slots(path: String = "") -> bool:
 
 
 ## Move o save único antigo para o espaço 0, se ainda não houver espaços.
+## O original só é apagado depois que a cópia deu certo.
 func migrate_legacy_if_needed() -> void:
-	if not FileAccess.file_exists(LEGACY_PATH) and not FileAccess.file_exists(LEGACY_PATH + ".bak"):
+	var legacy := legacy_path()
+	if not FileAccess.file_exists(legacy) and not FileAccess.file_exists(legacy + ".bak"):
 		return
 	for i in SLOT_COUNT:
 		if has_save(slot_path(i)):
 			return
 	var dest := slot_path(0)
-	var abs_src := ProjectSettings.globalize_path(LEGACY_PATH)
+	var abs_src := ProjectSettings.globalize_path(legacy)
 	var abs_dst := ProjectSettings.globalize_path(dest)
-	if FileAccess.file_exists(LEGACY_PATH):
-		DirAccess.copy_absolute(abs_src, abs_dst)
-		DirAccess.remove_absolute(abs_src)
-	if FileAccess.file_exists(LEGACY_PATH + ".bak"):
-		DirAccess.copy_absolute(abs_src + ".bak", abs_dst + ".bak")
-		DirAccess.remove_absolute(abs_src + ".bak")
-	for ext in [".tmp"]:
-		if FileAccess.file_exists(LEGACY_PATH + ext):
-			DirAccess.remove_absolute(ProjectSettings.globalize_path(LEGACY_PATH + ext))
+	for ext in ["", ".bak"]:
+		if not FileAccess.file_exists(legacy + ext):
+			continue
+		var err := DirAccess.copy_absolute(abs_src + ext, abs_dst + ext)
+		if err != OK:
+			push_error("SaveManager: não foi possível copiar o save antigo %s (%s); ele foi mantido" % [legacy + ext, error_string(err)])
+			return
+		DirAccess.remove_absolute(abs_src + ext)
+	if FileAccess.file_exists(legacy + ".tmp"):
+		DirAccess.remove_absolute(ProjectSettings.globalize_path(legacy + ".tmp"))
 
 
 func has_save(path: String = "") -> bool:
@@ -154,8 +166,10 @@ func save_data(game_data: Dictionary, path: String = "") -> Error:
 	f.close()
 	var abs_path := ProjectSettings.globalize_path(path)
 	if FileAccess.file_exists(path):
-		DirAccess.copy_absolute(abs_path, abs_path + ".bak")
-		DirAccess.remove_absolute(abs_path)
+		# Sem cópia de segurança, o save atual não é apagado (o rename por cima
+		# ainda pode falhar sem perder nada).
+		if DirAccess.copy_absolute(abs_path, abs_path + ".bak") == OK:
+			DirAccess.remove_absolute(abs_path)
 	return DirAccess.rename_absolute(ProjectSettings.globalize_path(tmp), abs_path)
 
 

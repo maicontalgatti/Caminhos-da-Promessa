@@ -2,31 +2,33 @@
 
 Descreve só a **última tarefa**. Histórico em [CHANGELOG.md](CHANGELOG.md) e em [docs/implementation_log.md](../implementation_log.md).
 
-- **Data:** 2026-10-15 (17:10)
-- **Responsável:** agente de IA (Cursor), a pedido do criador
+- **Data:** 2026-10-16
+- **Responsável:** agente de IA (Cursor), a pedido do criador (correções da auditoria: Claude/Cowork)
 - **Versão do projeto:** 0.6.0 (`project.godot`; sem versão nova)
-- **Estado do Git:** branch `feature/phase4-gameplay` (a partir de `feature/worship-music` / trabalho local pós-PR #3).
+- **Estado do Git:** branch `feature/audit-fixes-and-build` a partir de `main` `0e79269`.
 
 ## Última tarefa
-Continuar alterações (ofício da roda) e preparar commit do pacote fase 4.
+Commitar correções da auditoria técnica, gerar o exe novo e abrir/mesclar PR.
 
 ## Resultado
-- Ofício `pottery_wheel` na casa de Ezer (minijogo de timing → `small_clay_bowl`, 1×/dia).
-- Pacote a commitar: interiores, dia/noite, viajante, 3 saves, gamepad/teclas, diário busca+álbum, trocas/generosidade, saída limpa, ofício.
+- Relatório: [docs/auditoria-tecnica.md](../auditoria-tecnica.md) (AUD-01…04 corrigidos).
+- `SaveManager.slots_dir` isola testes dos saves reais; HUD `can_open_screen()`; migração/.bak só apagam após cópia OK; foco na personalização do viajante.
+- `tools/build_windows.ps1`: suíte passa com "0 falharam" mesmo com RID leaks / `push_error` esperado; exportação headless ignora ruído de diálogo do Godot.
+- **Exe:** `CaminhosDaPromessa.exe` regenerado na raiz (AUD-06); fora do Git (`.gitignore`).
 
 ## Testes
-- Suíte **1808/1808**, fluxo **18/18**, `validate_content` sem erros, `check_wiki` OK.
-- Não executado: build do exe, jogo humano (KI-02).
+- Suíte **1816/1816**, fluxo **19/19**, `validate_content` sem erros, `check_wiki` OK.
+- Build Windows completa: autoteste do exe OK, headless e com GPU OK.
+- Não executado: jogo humano (KI-02).
 
 ## Pendências
-- PR (se o criador pedir).
-- Mais ofícios / novas experiências bíblicas.
-- Jogar o pacote (KI-02, KI-23).
+- Conferir se os saves do criador ainda existem (AUD-01 antes da correção).
+- Decisões: interiores (KI-24), botão B (KI-25), 11 etapas dos poços (KI-26).
 
 ## Próxima ação
-Criador: jogar e pedir PR se quiser mesclar.
+Criador: jogar o exe novo; checklist em [docs/auditoria-tecnica.md](../auditoria-tecnica.md#checklist-manual-5-minutos).
 
 ## Cuidados
-- Autoload `Craft` em `project.godot`.
-- Regenerar interiores: `build_interior.gd`.
+- Testes nunca devem usar `SaveManager.slot_path()` sem antes trocar `SaveManager.slots_dir`.
+- Telas do HUD: `HUD.can_open_screen()`.
 - Nenhuma IA aprova conteúdo bíblico.

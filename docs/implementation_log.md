@@ -1,5 +1,27 @@
 # Histórico de implementação
 
+## 2026-10-16 — Auditoria técnica completa
+
+Relatório completo em [auditoria-tecnica.md](auditoria-tecnica.md). Resumo:
+- Ambiente: Godot 4.7.2 oficial para Linux numa cópia do commit `0e79269`; capturas com xvfb.
+- Diagnóstico: 94 scripts compilam, 100 cenas instanciam, caminhos `res://`, ids de som e ações de entrada conferidos por script; boot headless sem erros; suíte original 1808/1808.
+- Corrigido: a suíte apagava os saves reais (AUD-01, provado com saves plantados); botões do HUD por cima de diálogos e viagens (AUD-02); cópia do save antigo e do `.bak` sem conferência (AUD-03, provado no código original); foco na personalização (AUD-04).
+- Testes extras da auditoria (não versionados): casos extremos (E repetido, Esc em diálogo, pausa 20 vezes, telas sobrepostas, viagens seguidas, borda do mapa, áudio ao trocar de região) e a missão dos poços jogada com save/load em cada objetivo (64/64).
+- Pendentes na auditoria: interiores (KI-24), botão B (KI-25), referência de 11 etapas dos poços (KI-26) e jogo humano. Exe e `check_wiki.ps1` resolvidos na entrada seguinte.
+
+## 2026-10-16 — Auditoria técnica + build Windows
+
+### Pedido
+Ler alterações, gerar exe, commit, PR e merge.
+
+### Feito
+- Correções AUD-01…04 (`slots_dir`, HUD, migração save, foco do viajante) + relatório `docs/auditoria-tecnica.md`.
+- `build_windows.ps1` tolera RID leaks / `push_error` esperado e ruído de diálogo na exportação headless.
+- Exe na raiz regenerado (fora do Git); autoteste e GPU OK.
+
+### Verificação
+1816/1816, fluxo 19/19, validate_content, check_wiki, build Windows completa.
+
 ## 2026-10-15 — Pacote fase 4 (branch `feature/phase4-gameplay`)
 
 ### Pedido

@@ -83,8 +83,14 @@ func _process(delta: float) -> void:
 			create_tween().tween_property(_tracker, "modulate:a", 0.0, 1.0)
 
 
+## Atalhos e botões do HUD só abrem telas com o jogo livre: nunca por cima de
+## um diálogo, de um cartão, de outra tela ou durante a troca de região.
+func can_open_screen() -> bool:
+	return visible and not _card_open and not GameState.is_ui_blocked() and not DialogueManager.is_active() and not get_tree().paused
+
+
 func _unhandled_input(event: InputEvent) -> void:
-	if not visible or _card_open or GameState.is_ui_blocked() or DialogueManager.is_active() or get_tree().paused:
+	if not can_open_screen():
 		return
 	if event.is_action_pressed("hint"):
 		if QuestManager.primary_quest() != "":
@@ -155,16 +161,16 @@ func _build_context_panel() -> void:
 	_ctx_full.add_child(row)
 	var b_ctx := UiStyle.small_button("C contexto")
 	b_ctx.tooltip_text = "Abrir o contexto bíblico no diário"
-	b_ctx.pressed.connect(func(): _open_journal("scriptures", _context_focus()))
+	b_ctx.pressed.connect(func(): if can_open_screen(): _open_journal("scriptures", _context_focus()))
 	var b_map := UiStyle.small_button("M mapa")
 	b_map.tooltip_text = "Mapa das Escrituras (o atlas de lugares fica dentro dele e no diário)"
-	b_map.pressed.connect(func(): scripture_map_requested.emit())
+	b_map.pressed.connect(func(): if can_open_screen(): scripture_map_requested.emit())
 	_journal_btn = UiStyle.small_button("J diário")
 	_journal_btn.tooltip_text = "Abrir o diário"
-	_journal_btn.pressed.connect(func(): _open_journal("journey", ""))
+	_journal_btn.pressed.connect(func(): if can_open_screen(): _open_journal("journey", ""))
 	var b_inv := UiStyle.small_button("I bolsa")
 	b_inv.tooltip_text = "Abrir a bolsa (inventário)"
-	b_inv.pressed.connect(func(): inventory_requested.emit())
+	b_inv.pressed.connect(func(): if can_open_screen(): inventory_requested.emit())
 	for b in [b_ctx, b_map, _journal_btn, b_inv]:
 		row.add_child(b)
 

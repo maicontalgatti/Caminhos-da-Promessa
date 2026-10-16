@@ -5,8 +5,8 @@ Resumo do **presente**. Histórico em [CHANGELOG.md](CHANGELOG.md) e [docs/imple
 ## Identificação
 - **Projeto:** Caminhos da Promessa
 - **Versão:** 0.6.0 (`project.godot` → `config/version`)
-- **Última atualização:** 2026-10-15
-- **Commit de referência:** o merge do PR #2 (quatro experiências) na branch protegida `main` (detalhes no [HANDOFF.md](HANDOFF.md)); anteriores: publicação `4ed82ca`, checkpoint `218cb73`
+- **Última atualização:** 2026-10-16 (auditoria técnica: [docs/auditoria-tecnica.md](../auditoria-tecnica.md))
+- **Commit de referência:** `0e79269` na `main` (PR #4, pacote fase 4), mais as correções da auditoria de 2026-10-16 sem commit (detalhes no [HANDOFF.md](HANDOFF.md)); anteriores: PR #3 `92ee0b7`, PR #2 `24b8e00`, publicação `4ed82ca`, checkpoint `218cb73`
 - **Repositório:** público, https://github.com/maicontalgatti/Caminhos-da-Promessa
 - **Licenças:** código MIT; arte, sons e textos próprios CC BY 4.0; fontes OFL; texto bíblico BPM em domínio público ([docs/legal/ASSET_LICENSES.md](../legal/ASSET_LICENSES.md))
 - **CI:** `.github/workflows/tests.yml` roda suíte, fluxo, validação, fábrica e auditoria de áudio com o Godot oficial no Linux, em todo pull request e push na `main`
@@ -16,9 +16,9 @@ Resumo do **presente**. Histórico em [CHANGELOG.md](CHANGELOG.md) e [docs/imple
 
 ## Funcionalidades concluídas e verificadas
 "Verificado" = coberto por teste automatizado executado e aprovado. Última execução em 2026-10-14, no build da v0.6.0 (18:25; detalhes em [HANDOFF.md](HANDOFF.md); houve falhas intermitentes em builds anteriores, KI-17):
-- `tests/test_runner.tscn`: 1535/1535 (2026-10-15, missão dos poços revista; Godot Linux headless);
-- `tools/audio/audit_audio.gd`: 131 arquivos, 0 problemas;
-- `tests/flow_smoke.gd`: 17/17;
+- `tests/test_runner.tscn`: 1816/1816 (2026-10-16, auditoria técnica; Godot Linux headless);
+- `tools/audio/audit_audio.gd`: 140 arquivos (131 efeitos + 9 músicas), 0 problemas (2026-10-16);
+- `tests/flow_smoke.gd`: 19/19 (2026-10-16);
 - `tools/validate_content.gd`: sem erros de dados;
 - `tools/factory.gd -- check`: 0 erros em 78 episódios.
 Nenhuma foi validada por sessão de jogo humana ainda.
