@@ -1,5 +1,17 @@
 # Histórico de implementação
 
+## 2026-10-16 — Novo jogo: painéis cortados na borda
+
+### Pedido
+Criador reportou Novo jogo bugado (prints: espaço e “SEU VIAJANTE” à direita; seta `>` do tom de pele invisível).
+
+### Feito
+- `_center_menu_panel` em `main_menu.gd` (grow BOTH + offsets simétricos).
+- Setas de pele focáveis; hint com wrap; asserts no `flow_smoke.gd`.
+
+### Verificação
+Fluxo 23/23. Build Windows em seguida para regenerar o exe.
+
 ## 2026-10-16 — Auditoria técnica completa
 
 Relatório completo em [auditoria-tecnica.md](auditoria-tecnica.md). Resumo:

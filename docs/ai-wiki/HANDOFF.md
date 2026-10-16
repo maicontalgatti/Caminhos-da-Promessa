@@ -3,32 +3,29 @@
 Descreve só a **última tarefa**. Histórico em [CHANGELOG.md](CHANGELOG.md) e em [docs/implementation_log.md](../implementation_log.md).
 
 - **Data:** 2026-10-16
-- **Responsável:** agente de IA (Cursor), a pedido do criador (correções da auditoria: Claude/Cowork)
+- **Responsável:** agente de IA (Cursor), a pedido do criador
 - **Versão do projeto:** 0.6.0 (`project.godot`; sem versão nova)
-- **Estado do Git:** branch `feature/audit-fixes-and-build` a partir de `main` `0e79269`.
+- **Estado do Git:** branch `main` com alterações locais (painel Novo jogo); ainda sem commit.
 
 ## Última tarefa
-Commitar correções da auditoria técnica, gerar o exe novo e abrir/mesclar PR.
+Corrigir Novo jogo bugado (painéis cortados na borda direita).
 
 ## Resultado
-- Relatório: [docs/auditoria-tecnica.md](../auditoria-tecnica.md) (AUD-01…04 corrigidos).
-- `SaveManager.slots_dir` isola testes dos saves reais; HUD `can_open_screen()`; migração/.bak só apagam após cópia OK; foco na personalização do viajante.
-- `tools/build_windows.ps1`: suíte passa com "0 falharam" mesmo com RID leaks / `push_error` esperado; exportação headless ignora ruído de diálogo do Godot.
-- **Exe:** `CaminhosDaPromessa.exe` regenerado na raiz (AUD-06); fora do Git (`.gitignore`).
+- Causa: `SlotsPanel` e `LookPanel` com `PRESET_CENTER` e grow `END` → cresciam para a direita/baixo e cortavam a seta `>` do tom de pele.
+- Correção em `scripts/ui/main_menu.gd`: `_center_menu_panel` (`GROW_DIRECTION_BOTH` + offsets ±largura/2); setas `<`/`>` focáveis.
+- Fluxo de menus com asserts de retângulo centrado e seta visível.
 
 ## Testes
-- Suíte **1816/1816**, fluxo **19/19**, `validate_content` sem erros, `check_wiki` OK.
-- Build Windows completa: autoteste do exe OK, headless e com GPU OK.
-- Não executado: jogo humano (KI-02).
+- Suíte **1816/1816**, fluxo **23/23**, wiki OK, build Windows + autoteste do exe OK.
+- Não executado: jogo humano além do reporte do criador.
 
 ## Pendências
-- Conferir se os saves do criador ainda existem (AUD-01 antes da correção).
-- Decisões: interiores (KI-24), botão B (KI-25), 11 etapas dos poços (KI-26).
+- Commit/PR das alterações locais quando o criador pedir.
+- Checklist manual e decisões KI-24…26.
 
 ## Próxima ação
-Criador: jogar o exe novo; checklist em [docs/auditoria-tecnica.md](../auditoria-tecnica.md#checklist-manual-5-minutos).
+Criador: fechar o exe antigo, abrir o novo na raiz e confirmar Novo jogo (espaços + viajante centrados, seta `>` visível).
 
 ## Cuidados
-- Testes nunca devem usar `SaveManager.slot_path()` sem antes trocar `SaveManager.slots_dir`.
-- Telas do HUD: `HUD.can_open_screen()`.
+- Painéis criados em código no menu: sempre `GROW_DIRECTION_BOTH` (ou offsets simétricos como em `pause_menu.gd`).
 - Nenhuma IA aprova conteúdo bíblico.

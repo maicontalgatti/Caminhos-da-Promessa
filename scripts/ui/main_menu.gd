@@ -80,12 +80,24 @@ func _ready() -> void:
 	_close_panels(false)
 
 
+func _center_menu_panel(panel: PanelContainer, width: float) -> void:
+	## PRESET_CENTER com grow padrão (END) empurra o painel para a direita/baixo
+	## e corta botões na borda da janela (480×270). Crescer para os dois lados.
+	panel.set_anchors_preset(Control.PRESET_CENTER)
+	panel.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	panel.grow_vertical = Control.GROW_DIRECTION_BOTH
+	panel.custom_minimum_size = Vector2(width, 0)
+	panel.offset_left = -width * 0.5
+	panel.offset_right = width * 0.5
+	panel.offset_top = 0.0
+	panel.offset_bottom = 0.0
+
+
 func _build_slots_panel() -> void:
 	slots_panel = PanelContainer.new()
 	slots_panel.name = "SlotsPanel"
 	slots_panel.visible = false
-	slots_panel.set_anchors_preset(Control.PRESET_CENTER)
-	slots_panel.custom_minimum_size = Vector2(280, 0)
+	_center_menu_panel(slots_panel, 280.0)
 	slots_panel.add_theme_stylebox_override("panel", UiStyle.wood_frame())
 	add_child(slots_panel)
 	var root := VBoxContainer.new()
@@ -225,14 +237,15 @@ func _build_look_panel() -> void:
 	look_panel = PanelContainer.new()
 	look_panel.name = "LookPanel"
 	look_panel.visible = false
-	look_panel.set_anchors_preset(Control.PRESET_CENTER)
-	look_panel.custom_minimum_size = Vector2(280, 0)
+	_center_menu_panel(look_panel, 260.0)
 	look_panel.add_theme_stylebox_override("panel", UiStyle.wood_frame())
 	add_child(look_panel)
 	var root := VBoxContainer.new()
 	root.add_theme_constant_override("separation", 6)
 	look_panel.add_child(root)
-	root.add_child(UiStyle.label("SEU VIAJANTE", 8, UiStyle.BROWN))
+	var title := UiStyle.label("SEU VIAJANTE", 8, UiStyle.BROWN)
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	root.add_child(title)
 	root.add_child(UiStyle.label("Nome (ficção do jogo)", 7, UiStyle.MUTED))
 	_look_name = LineEdit.new()
 	_look_name.max_length = 24
@@ -242,7 +255,7 @@ func _build_look_panel() -> void:
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 4)
 	root.add_child(row)
-	var prev := UiStyle.small_button("<", 8)
+	var prev := UiStyle.small_button("<", 8, true)
 	prev.pressed.connect(func():
 		_look_skin = wrapi(_look_skin - 1, 0, TravelerLook.SKINS.size())
 		_refresh_look_skin())
@@ -251,12 +264,14 @@ func _build_look_panel() -> void:
 	_look_skin_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_look_skin_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	row.add_child(_look_skin_label)
-	var next := UiStyle.small_button(">", 8)
+	var next := UiStyle.small_button(">", 8, true)
 	next.pressed.connect(func():
 		_look_skin = wrapi(_look_skin + 1, 0, TravelerLook.SKINS.size())
 		_refresh_look_skin())
 	row.add_child(next)
-	root.add_child(UiStyle.label("Roupas e panos se compram na feira da aldeia.", 6, UiStyle.MUTED))
+	var hint := UiStyle.label("Roupas e panos se compram na feira da aldeia.", 6, UiStyle.MUTED, true)
+	hint.custom_minimum_size = Vector2(220, 0)
+	root.add_child(hint)
 	var go := Button.new()
 	go.text = "Começar a jornada"
 	go.set_meta("sfx", "ui_confirm")

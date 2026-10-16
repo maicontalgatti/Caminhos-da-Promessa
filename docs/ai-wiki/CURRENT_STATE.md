@@ -18,7 +18,7 @@ Resumo do **presente**. Histórico em [CHANGELOG.md](CHANGELOG.md) e [docs/imple
 "Verificado" = coberto por teste automatizado executado e aprovado. Última execução em 2026-10-14, no build da v0.6.0 (18:25; detalhes em [HANDOFF.md](HANDOFF.md); houve falhas intermitentes em builds anteriores, KI-17):
 - `tests/test_runner.tscn`: 1816/1816 (2026-10-16, auditoria técnica; Godot Linux headless);
 - `tools/audio/audit_audio.gd`: 140 arquivos (131 efeitos + 9 músicas), 0 problemas (2026-10-16);
-- `tests/flow_smoke.gd`: 19/19 (2026-10-16);
+- `tests/flow_smoke.gd`: 23/23 (2026-10-16; painéis de Novo jogo centrados);
 - `tools/validate_content.gd`: sem erros de dados;
 - `tools/factory.gd -- check`: 0 erros em 78 episódios.
 Nenhuma foi validada por sessão de jogo humana ainda.

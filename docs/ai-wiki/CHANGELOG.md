@@ -3,6 +3,10 @@
 Resumo por versão/entrega. Detalhes, problemas corrigidos e o que não foi verificado estão em
 [docs/implementation_log.md](../implementation_log.md).
 
+## 2026-10-16 — Painéis de Novo jogo centrados (sem versão nova)
+- Painéis "escolha o espaço" e "SEU VIAJANTE" usavam `PRESET_CENTER` com grow padrão (direita/baixo) e saíam da janela 480×270: a seta `>` do tom de pele sumia.
+- Correção: `_center_menu_panel` com `GROW_DIRECTION_BOTH` e offsets simétricos; setas de pele focáveis. Suíte 1816/1816, fluxo 23/23, exe regenerado.
+
 ## 2026-10-16 — Auditoria técnica + exe atualizado (sem versão nova)
 - Relatório em [docs/auditoria-tecnica.md](../auditoria-tecnica.md): 12 itens, 4 corrigidos (AUD-01…04).
 - **Crítico:** a suíte não apaga mais os saves reais (`SaveManager.slots_dir` → pasta de teste).

@@ -52,6 +52,17 @@ func _run() -> void:
 	check(look != null and look.visible, "Novo jogo abre a personalização do viajante")
 	var focus_owner := root.get_viewport().gui_get_focus_owner()
 	check(focus_owner != null and look.is_ancestor_of(focus_owner), "personalização abre com foco (teclado e controle)")
+	var look_rect: Rect2 = look.get_global_rect()
+	var vp_size: Vector2 = look.get_viewport_rect().size
+	check(look_rect.position.x >= 0.0 and look_rect.end.x <= vp_size.x + 1.0, "painel do viajante cabe na largura")
+	check(look_rect.position.y >= 0.0 and look_rect.end.y <= vp_size.y + 1.0, "painel do viajante cabe na altura")
+	check(absf(look_rect.get_center().x - vp_size.x * 0.5) < 24.0, "painel do viajante centrado")
+	var next_skin: Button = null
+	for b in look.find_children("*", "Button", true, false):
+		if String(b.text) == ">":
+			next_skin = b
+			break
+	check(next_skin != null and next_skin.visible and next_skin.get_global_rect().end.x <= vp_size.x + 1.0, "seta de tom de pele visível")
 	for b in look.find_children("*", "Button", true, false):
 		if String(b.text).begins_with("Começar"):
 			b.pressed.emit()
