@@ -48,28 +48,7 @@ func _ready() -> void:
 	$CreditsPanel/VBox/Back.pressed.connect(_close_panels)
 	fullscreen_check.button_pressed = Settings.fullscreen
 	fullscreen_check.toggled.connect(_on_fullscreen_toggled)
-	var vbox := $SettingsPanel/VBox
-	audio_settings = AudioSettingsPanel.new()
-	audio_settings.name = "Audio"
-	vbox.add_child(audio_settings)
-	vbox.move_child(audio_settings, $SettingsPanel/VBox/Back.get_index())
-	var controls_scroll := ScrollContainer.new()
-	controls_scroll.name = "ControlsScroll"
-	controls_scroll.custom_minimum_size = Vector2(0, 120)
-	var controls := ControlsSettingsPanel.new()
-	controls.name = "Controls"
-	controls_scroll.add_child(controls)
-	vbox.add_child(controls_scroll)
-	vbox.move_child(controls_scroll, $SettingsPanel/VBox/Back.get_index())
-	var edu := Button.new()
-	edu.name = "Edu"
-	edu.text = "Avisos educativos: %s" % Settings.edu_label()
-	edu.tooltip_text = "Completos: cartões e avisos. Discretos: só avisos curtos. Mínimos: apenas registro no diário."
-	edu.pressed.connect(func():
-		Settings.cycle_edu_notifications()
-		edu.text = "Avisos educativos: %s" % Settings.edu_label())
-	vbox.add_child(edu)
-	vbox.move_child(edu, $SettingsPanel/VBox/Back.get_index())
+	_setup_settings_panel()
 	var credits: Label = $CreditsPanel/VBox/Text
 	credits.text = credits.text.replace("protótipo", "protótipo v%s" % ProjectSettings.get_setting("application/config/version", "?"))
 	if Bible.credit() != "":
@@ -80,17 +59,62 @@ func _ready() -> void:
 	_close_panels(false)
 
 
-func _center_menu_panel(panel: PanelContainer, width: float) -> void:
+func _center_menu_panel(panel: PanelContainer, width: float, height := 0.0) -> void:
 	## PRESET_CENTER com grow padrão (END) empurra o painel para a direita/baixo
 	## e corta botões na borda da janela (480×270). Crescer para os dois lados.
+	## height > 0 fixa a altura (conteúdo longo deve rolar por dentro).
 	panel.set_anchors_preset(Control.PRESET_CENTER)
 	panel.grow_horizontal = Control.GROW_DIRECTION_BOTH
 	panel.grow_vertical = Control.GROW_DIRECTION_BOTH
-	panel.custom_minimum_size = Vector2(width, 0)
+	panel.custom_minimum_size = Vector2(width, height)
 	panel.offset_left = -width * 0.5
 	panel.offset_right = width * 0.5
-	panel.offset_top = 0.0
-	panel.offset_bottom = 0.0
+	if height > 0.0:
+		panel.offset_top = -height * 0.5
+		panel.offset_bottom = height * 0.5
+	else:
+		panel.offset_top = 0.0
+		panel.offset_bottom = 0.0
+
+
+func _setup_settings_panel() -> void:
+	## Título + Voltar fixos; o resto rola. Sem isso o painel passa de 270 px e
+	## corta "Configurações" e a linha Volume geral no topo da janela.
+	_center_menu_panel(settings_panel, 268.0, 252.0)
+	var vbox: VBoxContainer = $SettingsPanel/VBox
+	vbox.add_theme_constant_override("separation", 3)
+	var title: Label = $SettingsPanel/VBox/Title
+	var fullscreen: CheckButton = $SettingsPanel/VBox/Fullscreen
+	var back: Button = $SettingsPanel/VBox/Back
+	var scroll := ScrollContainer.new()
+	scroll.name = "BodyScroll"
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	var body := VBoxContainer.new()
+	body.name = "Body"
+	body.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	body.add_theme_constant_override("separation", 3)
+	scroll.add_child(body)
+	vbox.remove_child(fullscreen)
+	body.add_child(fullscreen)
+	audio_settings = AudioSettingsPanel.new()
+	audio_settings.name = "Audio"
+	body.add_child(audio_settings)
+	var controls := ControlsSettingsPanel.new()
+	controls.name = "Controls"
+	body.add_child(controls)
+	var edu := Button.new()
+	edu.name = "Edu"
+	edu.text = "Avisos educativos: %s" % Settings.edu_label()
+	edu.tooltip_text = "Completos: cartões e avisos. Discretos: só avisos curtos. Mínimos: apenas registro no diário."
+	edu.pressed.connect(func():
+		Settings.cycle_edu_notifications()
+		edu.text = "Avisos educativos: %s" % Settings.edu_label())
+	body.add_child(edu)
+	vbox.add_child(scroll)
+	vbox.move_child(title, 0)
+	vbox.move_child(scroll, 1)
+	vbox.move_child(back, 2)
 
 
 func _build_slots_panel() -> void:

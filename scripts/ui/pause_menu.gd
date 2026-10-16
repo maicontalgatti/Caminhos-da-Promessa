@@ -116,12 +116,13 @@ func _build_audio_panel() -> void:
 	audio_panel = PanelContainer.new()
 	audio_panel.name = "AudioPanel"
 	audio_panel.set_anchors_preset(Control.PRESET_CENTER)
-	audio_panel.offset_left = -125
-	audio_panel.offset_right = 125
-	audio_panel.offset_top = -78
-	audio_panel.offset_bottom = 78
 	audio_panel.grow_horizontal = Control.GROW_DIRECTION_BOTH
 	audio_panel.grow_vertical = Control.GROW_DIRECTION_BOTH
+	audio_panel.custom_minimum_size = Vector2(268, 230)
+	audio_panel.offset_left = -134
+	audio_panel.offset_right = 134
+	audio_panel.offset_top = -115
+	audio_panel.offset_bottom = 115
 	audio_panel.hide()
 	add_child(audio_panel)
 	var vb := VBoxContainer.new()
@@ -131,9 +132,14 @@ func _build_audio_panel() -> void:
 	var title := UiStyle.label("Sons e volume", 11)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vb.add_child(title)
+	var scroll := ScrollContainer.new()
+	scroll.name = "BodyScroll"
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	vb.add_child(scroll)
 	var settings := AudioSettingsPanel.new()
 	settings.name = "Audio"
-	vb.add_child(settings)
+	scroll.add_child(settings)
 	var back := Button.new()
 	back.name = "Back"
 	back.text = "Voltar"

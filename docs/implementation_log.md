@@ -1,5 +1,18 @@
 # Histórico de implementação
 
+## 2026-10-16 — Configurações bugadas no menu
+
+### Pedido
+Print: título cortado, slider Vozes em 100% fora do trilho, painel apertado.
+
+### Feito
+- `_setup_settings_panel`: altura 252, `BodyScroll` com fullscreen/áudio/controles/edu.
+- `audio_settings.gd`: % com 30 px, slider mín. 90×14.
+- `pause_menu` Sons com scroll; asserts no `flow_smoke`.
+
+### Verificação
+Fluxo 31/31, suíte 1823/1823.
+
 ## 2026-10-16 — CR-01 nas viagens + PLAYTEST_ROTEIRO
 
 ### Pedido

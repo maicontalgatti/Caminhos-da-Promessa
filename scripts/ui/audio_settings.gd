@@ -42,7 +42,8 @@ func _add_row(bus: String) -> void:
 	row.name = "Row" + bus
 	row.add_theme_constant_override("separation", 3)
 	var l := UiStyle.label(String(Settings.AUDIO_LABELS.get(bus, bus)), 7)
-	l.custom_minimum_size.x = 52
+	l.custom_minimum_size.x = 56
+	l.clip_text = true
 	if EMPTY_NOTE.has(bus) or NOTE.has(bus):
 		l.tooltip_text = String(EMPTY_NOTE.get(bus, NOTE.get(bus, "")))
 		l.mouse_filter = Control.MOUSE_FILTER_PASS
@@ -52,14 +53,15 @@ func _add_row(bus: String) -> void:
 	s.min_value = 0.0
 	s.max_value = 1.0
 	s.step = 0.05
-	s.custom_minimum_size.x = 80
+	s.custom_minimum_size = Vector2(90, 14)
 	s.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	s.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	s.value = Settings.volume(bus)
 	s.value_changed.connect(_on_volume.bind(bus))
 	row.add_child(s)
 	var v := UiStyle.label("", 7, UiStyle.MUTED)
-	v.custom_minimum_size.x = 26
+	## "100%" precisa de mais que 26 px; senão o trilho encolhe e o botão do slider vaza.
+	v.custom_minimum_size.x = 30
 	v.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	row.add_child(v)
 	var m := CheckBox.new()

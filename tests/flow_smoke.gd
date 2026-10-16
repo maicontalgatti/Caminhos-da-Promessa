@@ -46,6 +46,33 @@ func _run() -> void:
 	check(current_scene.name == "MainMenu", "menu principal abre")
 	check(current_scene.get_node("Buttons/Continue").disabled, "Continuar desabilitado sem save")
 
+	current_scene.get_node("Buttons/Settings").pressed.emit()
+	await _wait(0.3)
+	var settings: PanelContainer = current_scene.get_node("SettingsPanel")
+	check(settings.visible, "Configurações abre o painel")
+	var settings_rect: Rect2 = settings.get_global_rect()
+	var menu_vp: Vector2 = settings.get_viewport_rect().size
+	check(settings_rect.position.x >= -1.0 and settings_rect.end.x <= menu_vp.x + 1.0, "painel de Configurações cabe na largura")
+	check(settings_rect.position.y >= -1.0 and settings_rect.end.y <= menu_vp.y + 1.0, "painel de Configurações cabe na altura")
+	var settings_title: Label = settings.get_node("VBox/Title")
+	var title_rect: Rect2 = settings_title.get_global_rect()
+	check(title_rect.position.y >= settings_rect.position.y - 1.0, "título Configurações visível dentro do painel")
+	check(settings.get_node_or_null("VBox/BodyScroll") != null, "Configurações usa rolagem interna")
+	var voice_slider: HSlider = null
+	for n in settings.find_children("*", "HSlider", true, false):
+		if String(n.get_parent().name).ends_with("Voice"):
+			voice_slider = n
+			break
+	check(voice_slider != null, "slider de Vozes existe")
+	if voice_slider:
+		voice_slider.value = 1.0
+		await _wait(0.05)
+		var track: Rect2 = voice_slider.get_global_rect()
+		check(track.size.x >= 80.0, "slider de Vozes tem trilho largo o bastante em 100%%")
+	settings.get_node("VBox/Back").pressed.emit()
+	await _wait(0.2)
+	check(not settings.visible, "Voltar fecha Configurações")
+
 	current_scene.get_node("Buttons/NewGame").pressed.emit()
 	await _wait(0.4)
 	var look: PanelContainer = current_scene.get_node_or_null("LookPanel")

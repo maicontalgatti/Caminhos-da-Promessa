@@ -3,6 +3,11 @@
 Resumo por versão/entrega. Detalhes, problemas corrigidos e o que não foi verificado estão em
 [docs/implementation_log.md](../implementation_log.md).
 
+## 2026-10-16 — Configurações do menu cabem na janela (sem versão nova)
+- Painel com scroll interno (título/voltar fixos); evita título cortado e overflow em 480×270.
+- Slider de Vozes em 100%: trilho/rótulo mais largos; pausa → Sons também com scroll.
+- Fluxo 31/31, suíte 1823/1823.
+
 ## 2026-10-16 — Gn 26 nas viagens + roteiro de playtest (sem versão nova)
 - Bebedouro: Gen 26:18 e 26:20 nas 1ª/2ª viagens; Gen 24:20 na 3ª (CR-01).
 - `docs/game-design/PLAYTEST_ROTEIRO.md`; KI-02 e TESTING atualizados.
