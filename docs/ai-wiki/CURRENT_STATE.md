@@ -54,7 +54,7 @@ Nenhuma foi validada por sessão de jogo humana ainda.
 | Volume por bus (Geral, Música, Efeitos, Interface, Ambiente, Vozes), silenciar cada um, som de hover e de texto; em tempo real e salvo; no menu e na pausa | `scripts/core/settings.gd`, `scripts/ui/audio_settings.gd` | testes |
 | Cenas dirigidas no mapa (atores, silhuetas, câmera, efeitos luz/coluna/vento/paredes de água/poeira, legendas bíblicas; Esc pula), luz por estado da região, cartões de passagem, destinos e etapas de experiência, botão Revisitar/Continuar (ADR-028) | `scripts/world/scene_*.gd`, `data/scenes/` | testes + capturas em janela (`docs/images/v06_*.png`) |
 | Experiências da v0.6 em cadeia: "José no Egito" (Dotã + casa egípcia, Gn 37 e 39), "A travessia do mar" (Êx 13–14), "Rute em Belém" (Rt 1–2), "Os pastores de Belém" (Lc 2); 4 regiões novas, 13 missões, 5 cenas | `data/quests/{egypt,sea,bethlehem}/`, `data/regions/`, `data/world/experiences.json` | testes (`tests/experience_content_tests.gd`) + capturas; QA estático sem bloqueadores |
-| Exe Windows único com autoteste (`-- --self-test`), que confere também regiões, mapas, itens, colecionáveis, missões, cenas dirigidas e todos os arquivos de som | `tools/build_windows.ps1` | build da v0.6.0 em 2026-10-14 (ver HANDOFF) |
+| Builds Windows + Linux com SO no nome e autoteste do binário nativo (`-- --self-test`) | `tools/build_export.ps1` | ver HANDOFF |
 
 ## Implementado, mas sem verificação completa
 - Música temática (`scripts/core/music_director.gd`, `data/audio/music.json`, ADR-029): coberta por `tests/music_tests.gd`, mas as 9 faixas são provisórias e ninguém as ouviu; melodias dos hinos transcritas de memória (KI-22).

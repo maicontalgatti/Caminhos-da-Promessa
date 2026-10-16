@@ -5,27 +5,30 @@ Descreve só a **última tarefa**. Histórico em [CHANGELOG.md](CHANGELOG.md) e 
 - **Data:** 2026-10-16
 - **Responsável:** agente de IA (Cursor), a pedido do criador
 - **Versão do projeto:** 0.6.0 (`project.godot`; sem versão nova)
-- **Estado do Git:** branch `main` com alterações locais (painel Novo jogo); ainda sem commit.
+- **Estado do Git:** alterações locais (build dual; painel Novo jogo pode estar na mesma árvore).
 
 ## Última tarefa
-Corrigir Novo jogo bugado (painéis cortados na borda direita).
+Exportação gera Windows e Linux, com o SO no nome do arquivo.
 
 ## Resultado
-- Causa: `SlotsPanel` e `LookPanel` com `PRESET_CENTER` e grow `END` → cresciam para a direita/baixo e cortavam a seta `>` do tom de pele.
-- Correção em `scripts/ui/main_menu.gd`: `_center_menu_panel` (`GROW_DIRECTION_BOTH` + offsets ±largura/2); setas `<`/`>` focáveis.
-- Fluxo de menus com asserts de retângulo centrado e seta visível.
+- Saídas na raiz: `CaminhosDaPromessa-Windows.exe` e `CaminhosDaPromessa-Linux.x86_64`.
+- `tools/build_export.ps1`; wrappers `build_windows.ps1` e `criar_exe_atualizado.bat`.
+- Templates Windows + Linux; preset `Linux` em `export_presets.cfg`.
+- Nome antigo `CaminhosDaPromessa.exe` removido da raiz após build ok.
 
 ## Testes
-- Suíte **1816/1816**, fluxo **23/23**, wiki OK, build Windows + autoteste do exe OK.
-- Não executado: jogo humano além do reporte do criador.
+- Suíte **1816/1816**, fluxo **23/23**, wiki OK.
+- Autoteste + headless + GPU do **Windows**: OK.
+- Linux: exportado (78,4 MB); autoteste pulado nesta máquina (cross-export).
+- Build completa OK (~1m38s além do download de templates na primeira vez).
 
 ## Pendências
-- Commit/PR das alterações locais quando o criador pedir.
-- Checklist manual e decisões KI-24…26.
+- Merge do PR quando aprovado.
+- Amigo no Linux: `chmod +x` (também no README).
 
 ## Próxima ação
-Criador: fechar o exe antigo, abrir o novo na raiz e confirmar Novo jogo (espaços + viajante centrados, seta `>` visível).
+Revisar o PR; distribuir os binários com o link do README (seção “Como jogar o executável”).
 
 ## Cuidados
-- Painéis criados em código no menu: sempre `GROW_DIRECTION_BOTH` (ou offsets simétricos como em `pause_menu.gd`).
+- Filtros de ERROR da suíte no PowerShell: preferir padrões sem acento (`copiar o save antigo`).
 - Nenhuma IA aprova conteúdo bíblico.

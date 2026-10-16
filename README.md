@@ -21,13 +21,29 @@ aprende, **sem alterar o que a Bíblia narra**. Feito com Godot 4.7 e GDScript, 
   Gênesis 26 e 37;
 - diálogos com escolhas e consequências, diário com seis abas, descobertas, bolsa, colecionáveis;
 - Mapa das Escrituras, save com migração, efeitos sonoros procedurais;
-- exe único para Windows com autoteste.
+- builds Windows e Linux com o SO no nome e autoteste do binário nativo.
 
 O conteúdo bíblico e histórico **ainda não passou por revisão humana**: está marcado como pendente
 dentro do jogo. Estado detalhado: [docs/ai-wiki/CURRENT_STATE.md](docs/ai-wiki/CURRENT_STATE.md).
 Planos: [docs/roadmap.md](docs/roadmap.md).
 
-## Como executar localmente
+## Como jogar o executável (amigos / distribuição)
+
+Não precisa instalar o Godot. Use **só o arquivo da sua plataforma**:
+
+| Sistema | Arquivo | Como rodar |
+|---|---|---|
+| **Windows** 10/11 (64 bits) | `CaminhosDaPromessa-Windows.exe` | Duplo clique. Se o SmartScreen avisar, use *Mais informações* → *Executar assim mesmo* (o exe ainda não é assinado). |
+| **Linux** x86_64 | `CaminhosDaPromessa-Linux.x86_64` | No terminal, na pasta do arquivo: `chmod +x CaminhosDaPromessa-Linux.x86_64` e depois `./CaminhosDaPromessa-Linux.x86_64`. |
+
+- É um arquivo só (dados embutidos). Pode ficar em qualquer pasta; não precisa de instalador.
+- O progresso fica na pasta de dados do usuário (`user://` do Godot), **não** ao lado do executável. Trocar por uma versão nova **não apaga** o save.
+- Atualizar: baixe de novo o arquivo da sua plataforma e **substitua** o antigo.
+- Controles: veja a tabela [Controles](#controles) abaixo.
+
+Quem gera o build no PC do projeto: `criar_exe_atualizado.bat` ou `tools/build_export.ps1` (detalhes em [docs/build_windows.md](docs/build_windows.md)).
+
+## Como executar localmente (código-fonte)
 Requisitos: Windows 10/11 (o jogo e as ferramentas foram feitos nele; Linux roda os testes na CI) e o
 **Godot 4.7.2 Standard** (64 bits).
 
@@ -48,8 +64,9 @@ Requisitos: Windows 10/11 (o jogo e as ferramentas foram feitos nele; Linux roda
 4. Jogue: `.\tools\godot\Godot_v4.7.2-stable_win64.exe --path .` (ou abra no editor e pressione **F5**).
 5. Rode os testes: `& $g --headless --path . res://tests/test_runner.tscn` (deve terminar em "0 falharam").
 
-Para gerar o executável: `.\criar_exe_atualizado.bat` (exige os templates de exportação 4.7.2; ver
-[docs/build_windows.md](docs/build_windows.md)).
+Para gerar os executáveis (Windows e Linux): `.\criar_exe_atualizado.bat` (templates 4.7.2; ver
+[docs/build_windows.md](docs/build_windows.md)). Saída: `CaminhosDaPromessa-Windows.exe` e
+`CaminhosDaPromessa-Linux.x86_64`.
 
 ### Controles
 | Ação | Tecla |

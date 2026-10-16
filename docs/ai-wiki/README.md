@@ -35,7 +35,7 @@ comum, versionado junto com o código. Ponto de entrada: [`AGENTS.md`](../../AGE
 | [docs/art_bible.md](../art_bible.md) | Direção de arte, resoluções, paletas, sprites |
 | [docs/roadmap.md](../roadmap.md) | Fases do projeto |
 | [docs/implementation_log.md](../implementation_log.md) | Registro detalhado de cada entrega (histórico) |
-| [docs/build_windows.md](../build_windows.md) | Exportação Windows e exe |
+| [docs/build_windows.md](../build_windows.md) | Exportação Windows e Linux |
 | [docs/audio.md](../audio.md) | Efeitos sonoros: AudioManager, manifesto, como adicionar sons, inventário, escuta pendente |
 | [README.md](../../README.md) | Instalação, como rodar, controles |
 | [START_WITH_AI.md](../../START_WITH_AI.md) | Prompt de inicialização para qualquer agente de IA |
@@ -53,7 +53,7 @@ comum, versionado junto com o código. Ponto de entrada: [`AGENTS.md`](../../AGE
 | UI / HUD / diário / cinemática | GAME_SYSTEMS, ARCHITECTURE_MAP | `scripts/ui/` |
 | Mapa, arte, sprites | art_bible.md, DECISIONS (ADR-005/006) | `tools/art_gen/`, `scenes/` |
 | Save | ARCHITECTURE_MAP (save), DECISIONS (ADR-008) | `scripts/save/`, `scripts/core/game_state.gd` |
-| Build / exe | build_windows.md, TESTING | `tools/build_windows.ps1` |
+| Build / exe | build_windows.md, TESTING | `tools/build_export.ps1` |
 | Sons, ambiente, volumes | [audio.md](../audio.md), DECISIONS (ADR-026) | `scripts/core/audio_manager.gd`, `data/audio/sfx.json`, `tools/audio/` |
 | Testes | TESTING | `tests/` |
 

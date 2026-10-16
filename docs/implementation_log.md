@@ -1,5 +1,18 @@
 # Histórico de implementação
 
+## 2026-10-16 — Build Windows + Linux
+
+### Pedido
+Gerar versão Windows e Linux na exportação, com o SO no nome.
+
+### Feito
+- `export_presets.cfg`: Windows → `CaminhosDaPromessa-Windows.exe`; novo preset Linux → `CaminhosDaPromessa-Linux.x86_64`.
+- `tools/build_export.ps1`; wrappers `build_windows.ps1` e `criar_exe_atualizado.bat`.
+- Templates: extrai `windows_release_x86_64.exe` e `linux_release.x86_64`.
+
+### Verificação
+`build_export.ps1` OK: suíte 1816/1816, fluxo 23/23, autoteste Windows OK, Linux 78,4 MB na raiz (sem autoteste no Windows).
+
 ## 2026-10-16 — Novo jogo: painéis cortados na borda
 
 ### Pedido

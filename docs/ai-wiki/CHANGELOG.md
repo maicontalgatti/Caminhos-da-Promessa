@@ -3,6 +3,12 @@
 Resumo por versão/entrega. Detalhes, problemas corrigidos e o que não foi verificado estão em
 [docs/implementation_log.md](../implementation_log.md).
 
+## 2026-10-16 — Build Windows + Linux com SO no nome (sem versão nova)
+- `tools/build_export.ps1` gera `CaminhosDaPromessa-Windows.exe` e `CaminhosDaPromessa-Linux.x86_64`.
+- Templates de exportação passam a extrair Windows e Linux; preset `Linux` em `export_presets.cfg`.
+- `criar_exe_atualizado.bat` e `build_windows.ps1` apontam para o novo script.
+- README e `docs/build_windows.md`: instruções de execução para amigos (Windows / Linux, saves, SmartScreen).
+
 ## 2026-10-16 — Painéis de Novo jogo centrados (sem versão nova)
 - Painéis "escolha o espaço" e "SEU VIAJANTE" usavam `PRESET_CENTER` com grow padrão (direita/baixo) e saíam da janela 480×270: a seta `>` do tom de pele sumia.
 - Correção: `_center_menu_panel` com `GROW_DIRECTION_BOTH` e offsets simétricos; setas de pele focáveis. Suíte 1816/1816, fluxo 23/23, exe regenerado.

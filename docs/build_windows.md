@@ -1,62 +1,83 @@
-# Build para Windows
+# Build para Windows e Linux
 
-Gera um executável único e portátil, `CaminhosDaPromessa.exe`, na raiz do
-projeto. Os dados e a licença da fonte ficam embutidos no .exe, sem `.pck`
-separado. Para mandar a alguém, basta esse arquivo.
+Gera dois executáveis portáteis na raiz do projeto, com o sistema no nome:
+
+- `CaminhosDaPromessa-Windows.exe` (Windows x86_64)
+- `CaminhosDaPromessa-Linux.x86_64` (Linux x86_64)
+
+Os dados e a licença da fonte ficam embutidos (sem `.pck` separado). Para mandar a
+alguém, envie **só o arquivo da plataforma dele**.
+
+## Instruções rápidas para quem só vai jogar
+
+Resumo também no [README](../README.md#como-jogar-o-executável-amigos--distribuição).
+
+**Windows:** duplo clique em `CaminhosDaPromessa-Windows.exe`. Se o Windows bloquear, *Mais informações* → *Executar assim mesmo*.
+
+**Linux:** 
+
+```bash
+chmod +x CaminhosDaPromessa-Linux.x86_64
+./CaminhosDaPromessa-Linux.x86_64
+```
+
+Saves ficam em `user://` (AppData no Windows; `~/.local/share/godot/app_userdata/Caminhos da Promessa/` no Linux). Substituir o binário não apaga o progresso.
 
 ## Gerar uma nova versão
 
 Dê dois cliques em **`criar_exe_atualizado.bat`**, na raiz do projeto, ou rode:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\build_windows.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\build_export.ps1
 ```
 
-1. Atualize `config/version` em `project.godot` (ex.: `0.2.0`). O script copia o número para os metadados do .exe.
-2. Rode o script. Ele retorna o código 0 em caso de sucesso e 1 em caso de falha.
-3. O `CaminhosDaPromessa.exe` da raiz só é substituído se todos os testes passarem. Se a build falhar ou o jogo estiver aberto, o anterior é mantido.
-   A montagem acontece em `dist/windows/`, onde também fica o `LICENSES.txt`.
+Só uma plataforma:
 
-Etapas do script:
+```powershell
+.\tools\build_export.ps1 -Platform Windows
+.\tools\build_export.ps1 -Platform Linux
+```
+
+`tools/build_windows.ps1` continua existindo e chama o mesmo script (compatibilidade).
+
+1. Atualize `config/version` em `project.godot` (ex.: `0.2.0`). O script copia o número para os metadados do .exe Windows.
+2. Rode o script. Código 0 = sucesso; 1 = falha.
+3. Os arquivos da raiz só são substituídos se os testes passarem. Montagem em `dist/windows/` e `dist/linux/` (com `LICENSES.txt`).
+4. O nome antigo `CaminhosDaPromessa.exe` (sem SO) é removido da raiz quando a build completa.
+
+Etapas:
 
 1. Localiza o Godot e confere a versão.
-2. Instala os templates de exportação da mesma versão, se faltarem.
-3. Reimporta os recursos e roda as verificações:
-   - testes do projeto (`tests/test_runner.tscn`);
-   - teste de fluxo de menus (`tests/flow_smoke.gd`);
-   - validação de conteúdo (`tools/validate_content.gd`).
-4. Verifica a AI Wiki com `tools/check_wiki.ps1`. É uma etapa informativa: um problema na documentação gera aviso e a build continua.
-5. Exporta em modo release.
-6. Testa uma cópia do .exe numa pasta temporária, longe do projeto:
-   - autoteste de dados, mapa e save;
-   - inicialização headless;
-   - inicialização com janela.
-7. Copia o .exe para a raiz. Se o jogo estiver aberto, a cópia falha e o exe anterior é mantido; o novo continua em `dist/windows/`.
+2. Instala templates de exportação Windows **e** Linux da mesma versão, se faltarem.
+3. Reimporta recursos e roda verificações (suíte, fluxo, validação de conteúdo).
+4. Verifica a AI Wiki (informativo).
+5. Exporta cada plataforma em release.
+6. Testa o binário **nativo desta máquina** (no Windows: autoteste/GPU do `.exe`; o Linux é gerado por cross-export e o autoteste dele fica para um PC Linux).
+7. Copia os binários para a raiz.
 
-O log completo fica em `dist/logs/`.
+Log completo em `dist/logs/`.
 
 Opções:
 
 | Opção | Efeito |
 |---|---|
-| `-Godot <caminho>` | Usa outro executável do Godot (também aceita a variável `GODOT_BIN`) |
+| `-Platform All\|Windows\|Linux` | Quais builds gerar (padrão: All) |
+| `-Godot <caminho>` | Outro executável do Godot (`GODOT_BIN` também serve) |
 | `-SkipTests` | Pula os testes do projeto antes de exportar |
-| `-SkipExeTest` | Pula os testes do executável exportado |
-| `-NoRenderTest` | Pula o teste com janela (máquinas sem GPU ou sem sessão gráfica) |
-| `-NoDownload` | Falha em vez de baixar os templates ausentes |
+| `-SkipExeTest` | Não executa os binários gerados |
+| `-NoRenderTest` | Pula o teste com janela |
+| `-NoDownload` | Falha em vez de baixar templates ausentes |
 
 ## Requisitos
 
-- Godot 4.7.2 (o console `tools/godot/Godot_v4.7.2-stable_win64_console.exe` é usado por padrão; a pasta não é versionada).
-- Templates de exportação 4.7.2 em `%APPDATA%\Godot\export_templates\4.7.2.stable\`.
-  O script `tools/install_export_templates.ps1` baixa o pacote oficial, confere o SHA-512 e extrai só os arquivos de Windows.
-  Ao atualizar o Godot, os templates precisam ser da mesma versão.
+- Godot 4.7.2 (console em `tools/godot/` por padrão; pasta fora do Git).
+- Templates 4.7.2 em `%APPDATA%\Godot\export_templates\4.7.2.stable\` (`windows_release_x86_64.exe` e `linux_release.x86_64`).
+  `tools/install_export_templates.ps1` baixa o pacote oficial, confere o SHA-512 e extrai Windows + Linux.
 
 ## Detalhes
 
-- Os arquivos `data/*.json` não são recursos importados. Por isso entram pelo filtro `include_filter` do preset em `export_presets.cfg`, que é versionado.
-- O save fica em `user://` (`%APPDATA%\Godot\app_userdata\Caminhos da Promessa\`), e não na pasta do jogo. Assim o .exe funciona em qualquer pasta, inclusive somente leitura.
-- Autoteste manual de um executável: `CaminhosDaPromessa.exe --headless -- --self-test`. A saída termina em `AUTOTESTE: OK` (código 0) ou `AUTOTESTE: FALHOU` (código 1).
-  Os templates ignoram `--script`, por isso o teste é ativado por esse argumento e roda a partir de `scripts/build/export_self_test.gd`.
-- O executável não é assinado digitalmente. O Windows SmartScreen pode avisar na primeira execução.
-- Os testes automáticos verificam inicialização, dados e save. Eles não substituem jogar e avaliar a interface.
+- `data/*.json` entram pelo `include_filter` de `export_presets.cfg`.
+- Save em `user://` (não na pasta do jogo).
+- Autoteste: `CaminhosDaPromessa-Windows.exe --headless -- --self-test` (ou o binário Linux no Linux).
+- Binários não assinados; o Windows SmartScreen pode avisar na primeira execução.
+- No Linux, após baixar: `chmod +x CaminhosDaPromessa-Linux.x86_64`.

@@ -56,7 +56,7 @@ $g = ".\tools\godot\Godot_v4.7.2-stable_win64_console.exe"
 & $g --headless --path . --import # depois de clonar ou criar class_name
 & $g --headless --path . res://tests/test_runner.tscn # testes do projeto
 & $g --headless --path . --script res://tests/flow_smoke.gd # fluxo pelos menus
-.\criar_exe_atualizado.bat # testes + validação + exe na raiz
+.\criar_exe_atualizado.bat # testes + validação + builds Windows e Linux na raiz
 powershell -ExecutionPolicy Bypass -File tools\check_wiki.ps1 # links e estrutura da wiki
 & $g --headless --path . --script res://tools/factory.gd -- pending # fábrica de missões
 & $g --headless --path . --script res://tools/audio/audit_audio.gd # conferir os arquivos de som
