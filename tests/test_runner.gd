@@ -5,6 +5,7 @@ extends Node
 
 const TEST_SAVE := "user://test_savegame.json"
 const TEST_SETTINGS := "user://test_runner_settings.cfg"
+const TEST_SLOTS_DIR := "user://test_save_slots"
 const GAME_SCENE := "res://scenes/core/game.tscn"
 
 var _passed := 0
@@ -729,12 +730,19 @@ func _test_save_manager() -> void:
 	SaveManager.delete_save()
 
 
+## Usa uma pasta própria (SaveManager.slots_dir): os espaços reais do
+## jogador em user:// nunca são lidos, gravados nem apagados aqui.
 func _test_save_slots() -> void:
 	var prev := SaveManager.save_path
+	var prev_dir := SaveManager.slots_dir
+	SaveManager.slots_dir = TEST_SLOTS_DIR
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(TEST_SLOTS_DIR))
 	var paths: Array[String] = []
 	for i in SaveManager.SLOT_COUNT:
 		paths.append(SaveManager.slot_path(i))
 		SaveManager.delete_save(paths[i])
+	check(paths.all(func(p): return p.begins_with(TEST_SLOTS_DIR)) and SaveManager.legacy_path().begins_with(TEST_SLOTS_DIR),
+		"teste de espaços usa pasta própria, longe dos saves reais")
 	SaveManager.save_path = paths[0]
 	check(SaveManager.uses_slots() and SaveManager.SLOT_COUNT == 3, "três espaços de save")
 	check(not SaveManager.has_any_save() and SaveManager.slot_summary(0).empty, "espaços começam vazios")
@@ -752,15 +760,27 @@ func _test_save_slots() -> void:
 	# Migração do save legado.
 	SaveManager.delete_save(paths[0])
 	SaveManager.delete_save(paths[2])
-	var legacy := SaveManager.LEGACY_PATH
+	var legacy := SaveManager.legacy_path()
 	SaveManager.delete_save(legacy)
 	check(SaveManager.save_data(data, legacy) == OK, "grava save legado")
 	SaveManager.migrate_legacy_if_needed()
 	check(SaveManager.has_save(paths[0]) and not FileAccess.file_exists(legacy), "legado migra para o espaço 0")
+	# Cópia que falha (uma pasta no lugar do arquivo de destino): o save antigo fica.
+	SaveManager.delete_save(paths[0])
+	check(SaveManager.save_data(data, legacy) == OK, "grava de novo o save legado")
+	DirAccess.make_dir_absolute(ProjectSettings.globalize_path(paths[0]))
+	SaveManager.migrate_legacy_if_needed()
+	check(FileAccess.file_exists(legacy) and SaveManager.load_data(legacy).ok, "cópia que falha não apaga o save antigo")
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(paths[0]))
 	for p in paths:
 		SaveManager.delete_save(p)
+	SaveManager.delete_save(legacy)
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(TEST_SLOTS_DIR))
+	SaveManager.slots_dir = prev_dir
 	SaveManager.save_path = prev
 	SaveManager.set_active_slot(0)
+	check(SaveManager.slot_path(0) == SaveManager.DEFAULT_PATH and SaveManager.legacy_path() == SaveManager.LEGACY_PATH,
+		"pasta padrão dos espaços restaurada (user://)")
 
 
 func _test_input_bindings() -> void:

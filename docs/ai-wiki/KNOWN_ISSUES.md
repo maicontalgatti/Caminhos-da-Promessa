@@ -84,6 +84,18 @@ Sem áudio gravado: efeitos e ambiente existem desde a v0.5, mas são procedurai
 - **Situação:** as cinco cenas reais da v0.6 (`data/scenes/`) rodaram até o fim numa captura em janela com GPU (`tools/screenshot/capture_v06.tscn`, quadros em `docs/images/v06_*.png`), mas **nenhuma pessoa** as assistiu jogando. Silhuetas e efeitos são desenhados por código (arte provisória). Chaves desconhecidas dentro de passos ou `params` são **ignoradas** sem aviso. Não há efeitos nem sons de ambiente contínuos por estado da região: os campos `_ambient_effects_proposed` e `_ambient_sfx_proposed` de `sea_camp.json` e `bethlehem_night.json` são só registro da proposta. Legendas sem `"wait": true` seguidas de outra legenda agora são recusadas pelo validador.
 - **Ação:** o criador assiste às cenas no jogo; implementar ambiente por estado se for desejado.
 
+### KI-24 — Interiores com piso de grama e paredes invisíveis (baixa)
+- **Situação:** a tenda e a casa de Ezer (`build_interior.gd`) usam tiles de grama no piso; as paredes são só colisão, sem desenho. Visto em captura na auditoria de 2026-10-16 (AUD-05 em [docs/auditoria-tecnica.md](../auditoria-tecnica.md)).
+- **Ação:** o criador decide o visual; proposta: terra batida no piso e pedra na borda, regenerando as cenas com `build_interior.gd`.
+
+### KI-25 — No controle, B não fecha telas (baixa)
+- **Situação:** telas fecham pela ação `pause` (Start/Back, Esc); B só atende os menus do Godot (`ui_cancel`). AUD-09 da auditoria.
+- **Ação:** o criador decide se B também fecha bolsa, diário, mapa, feira e ofícios.
+
+### KI-26 — Referência de 11 etapas da missão dos poços não implementada (baixa)
+- **Situação:** uma referência de design cita Adina, poço, Ari, Davi, Noam, Eitan, Sara, anciã, ancião, chefe de poços e viajante. O jogo tem 6 objetivos (Adina, cântaro, três viagens, agradecimento, devolver o cântaro a Ezer, relato), e os outros personagens não existem. AUD-07 da auditoria.
+- **Ação:** o criador decide se a referência é um plano futuro.
+
 ### KI-23 — Feira do viajante sem revisão humana nem teste de equilíbrio (média)
 - **Situação:** a feira (ADR-030) foi verificada por testes automáticos e capturas, mas ninguém jogou. Preços, valores de venda, quantidade de mercadorias por região e o tempo de volta das mercadorias (`renew_seconds`, 300 s de jogo, desde 2026-10-15) podem estar fáceis ou lentos demais; a divisão dos estoques por mercador, as trocas item por item e os valores de ajuda com prata (Talia 3, Tova 2) também não foram jogados. Conteúdo novo sem revisão humana: linhas de especialidade dos mercadores, falas de troca e de generosidade, mercadores fictícios Ozi, Nefer e Liora (falas e nomes), fala nova de Yaron com nota sobre Gn 23:16 (prata pesada), nota de Gn 43:11 nas amêndoas, descrições das peças (tingimento azul caro, linho egípcio, manto de pelo de cabra) e das mercadorias. A palavra "prata" pode soar próxima da venda de José (ponto já aberto no `review.json` do ep_008). Arte das camadas, dos mercadores e dos ícones é provisória.
 - **Ação:** jogar um trecho em cada região com mercador, ajustar `data/market/market.json`; o criador revisa as falas e notas e decide o nome da medida de troca.

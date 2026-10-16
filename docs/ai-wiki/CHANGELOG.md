@@ -3,6 +3,13 @@
 Resumo por versão/entrega. Detalhes, problemas corrigidos e o que não foi verificado estão em
 [docs/implementation_log.md](../implementation_log.md).
 
+## 2026-10-16 — Auditoria técnica + exe atualizado (sem versão nova)
+- Relatório em [docs/auditoria-tecnica.md](../auditoria-tecnica.md): 12 itens, 4 corrigidos (AUD-01…04).
+- **Crítico:** a suíte não apaga mais os saves reais (`SaveManager.slots_dir` → pasta de teste).
+- HUD `can_open_screen()`; migração/.bak só apagam após cópia OK; foco na personalização do viajante.
+- Build Windows regenera `CaminhosDaPromessa.exe` (AUD-06); `build_windows.ps1` não falha por RID leaks nem ruído de diálogo do Godot headless.
+- Suíte 1816/1816, fluxo 19/19, validação, wiki e autoteste do exe OK.
+
 ## 2026-10-15 — Ofício da roda + pacote fase 4 (branch `feature/phase4-gameplay`)
 - Minijogo na roda de Ezer (`{"craft": "pottery_wheel"}`): tigela `small_clay_bowl` (1×/dia), vendável na feira. Pacote local: interiores, dia/noite, viajante, 3 saves, gamepad, diário busca+álbum, trocas/generosidade.
 

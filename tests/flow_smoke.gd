@@ -50,6 +50,8 @@ func _run() -> void:
 	await _wait(0.4)
 	var look: PanelContainer = current_scene.get_node_or_null("LookPanel")
 	check(look != null and look.visible, "Novo jogo abre a personalização do viajante")
+	var focus_owner := root.get_viewport().gui_get_focus_owner()
+	check(focus_owner != null and look.is_ancestor_of(focus_owner), "personalização abre com foco (teclado e controle)")
 	for b in look.find_children("*", "Button", true, false):
 		if String(b.text).begins_with("Começar"):
 			b.pressed.emit()

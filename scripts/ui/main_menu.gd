@@ -314,9 +314,13 @@ func _open_panel(panel: PanelContainer) -> void:
 	message.text = ""
 	for p in [confirm_panel, settings_panel, credits_panel, slots_panel, look_panel]:
 		p.visible = p == panel
-	var first := panel.find_children("*", "BaseButton", true, false)
-	if not first.is_empty():
-		(first[0] as Control).grab_focus()
+	# Primeiro controle que aceita foco (botões só de mouse ficam de fora),
+	# para teclado e controle começarem com algo selecionado.
+	for c in panel.find_children("*", "Control", true, false):
+		var ctl := c as Control
+		if ctl.focus_mode != Control.FOCUS_NONE and ctl.is_visible_in_tree() and (ctl is BaseButton or ctl is LineEdit):
+			ctl.grab_focus()
+			break
 
 
 func _close_panels(sound := true) -> void:

@@ -642,6 +642,39 @@ func test_pickups_and_screens() -> void:
 	QuestManager.set_tracked("")
 	GameState.quests.erase("caravan_records")
 
+	# Botões do HUD (mouse) seguem a mesma regra das teclas: nada abre por
+	# cima de um diálogo nem durante a troca de região.
+	var hud_buttons: Array = []
+	for b in game.get_node("HUD").find_children("*", "Button", true, false):
+		if String(b.text).begins_with("I bolsa") or String(b.text).begins_with("M mapa") or String(b.text).begins_with("J diário") or String(b.text).begins_with("C contexto"):
+			hud_buttons.append(b)
+	check(hud_buttons.size() == 4, "quatro botões de tela no HUD")
+	DialogueManager.start("malik_talk")
+	for b in hud_buttons:
+		b.pressed.emit()
+	await wait(2)
+	check(not game.inventory_screen.is_open() and not game.scripture_map.is_open() and not game.journal.visible and not r.get_tree().paused,
+		"botões do HUD não abrem telas durante um diálogo")
+	while DialogueManager.is_active():
+		if DialogueManager.current_choices().is_empty():
+			DialogueManager.advance()
+		else:
+			DialogueManager.choose(DialogueManager.current_choices().size() - 1)
+	await wait(3)
+	await r._close_cards(game.get_node("HUD"))
+	GameState.block_ui("travel")
+	for b in hud_buttons:
+		b.pressed.emit()
+	await wait(2)
+	check(not game.inventory_screen.is_open() and not game.scripture_map.is_open() and not game.journal.visible, "botões do HUD não abrem telas durante a viagem")
+	GameState.unblock_ui("travel")
+	var bag_btn: Button = hud_buttons.filter(func(b): return String(b.text).begins_with("I bolsa"))[0]
+	bag_btn.pressed.emit()
+	await wait(2)
+	check(game.inventory_screen.is_open(), "com o jogo livre, o botão da bolsa abre a bolsa")
+	game.inventory_screen.close()
+	await wait(2)
+
 	# Teclas I e M.
 	r._press("inventory")
 	await wait(2)
