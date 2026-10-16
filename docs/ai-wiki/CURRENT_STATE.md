@@ -5,8 +5,8 @@ Resumo do **presente**. Histórico em [CHANGELOG.md](CHANGELOG.md) e [docs/imple
 ## Identificação
 - **Projeto:** Caminhos da Promessa
 - **Versão:** 0.6.0 (`project.godot` → `config/version`)
-- **Última atualização:** 2026-10-16 (auditoria técnica: [docs/auditoria-tecnica.md](../auditoria-tecnica.md))
-- **Commit de referência:** `0e79269` na `main` (PR #4, pacote fase 4), mais as correções da auditoria de 2026-10-16 sem commit (detalhes no [HANDOFF.md](HANDOFF.md)); anteriores: PR #3 `92ee0b7`, PR #2 `24b8e00`, publicação `4ed82ca`, checkpoint `218cb73`
+- **Última atualização:** 2026-10-16 (conselho crítico + profundidade dos poços/Dotã; ver [HANDOFF.md](HANDOFF.md) e [CRITICAL_REVIEW.md](../game-design/CRITICAL_REVIEW.md))
+- **Commit de referência:** branch `feature/fix-new-game-panels` (PR #6); `main` ainda em merges anteriores — ver HANDOFF
 - **Repositório:** público, https://github.com/maicontalgatti/Caminhos-da-Promessa
 - **Licenças:** código MIT; arte, sons e textos próprios CC BY 4.0; fontes OFL; texto bíblico BPM em domínio público ([docs/legal/ASSET_LICENSES.md](../legal/ASSET_LICENSES.md))
 - **CI:** `.github/workflows/tests.yml` roda suíte, fluxo, validação, fábrica e auditoria de áudio com o Godot oficial no Linux, em todo pull request e push na `main`

@@ -7,7 +7,7 @@ Severidade: **alta** (risco de perda ou de conteúdo errado), **média** (afeta 
 
 ### KI-02 — Nenhum teste jogando por uma pessoa (alta)
 - **Situação:** v0.1 e v0.2 foram verificadas por testes automatizados, simulação de entrada e capturas, mas ninguém jogou com teclado. Critérios de saída da fase 3 em [docs/roadmap.md](../roadmap.md) continuam desmarcados.
-- **Ação:** seguir o roteiro manual de [docs/quests.md](../quests.md) e registrar os ajustes.
+- **Ação:** seguir [docs/game-design/PLAYTEST_ROTEIRO.md](../game-design/PLAYTEST_ROTEIRO.md) (poços + trecho Dotã) e, se sobrar tempo, o roteiro curto em [docs/quests.md](../quests.md); registrar as respostas.
 
 ### KI-03 — Conteúdo bíblico sem revisão humana (alta)
 - **Situação:** 63 itens sem aprovação: 62 em `pending_review` (61 do catálogo mais a missão) e 1 história em `draft`; nada `approved`. Detalhamento em [CURRENT_STATE.md](CURRENT_STATE.md). Referências foram conferidas pelo agente de IA, o que **não** conta como verificação.

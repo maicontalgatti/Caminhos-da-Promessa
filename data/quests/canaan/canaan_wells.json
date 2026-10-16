@@ -112,9 +112,9 @@
 					"Os nomes Eseque, Sitna e Reobote acompanham o relato: depois de duas disputas, Isaque saiu dali e cavou um poço sem contenda (Gn 26:22)."
 				],
 				"unlock": [],
-				"next": "Fim da primeira missão desta versão do jogo. Novas missões virão nas próximas versões; enquanto isso, a aldeia continua aberta: outros moradores e objetos também têm algo a ensinar."
+				"next": "A aldeia continua aberta: Adina, Ezer, Ari e a feira ainda têm o que contar. Quando quiser, o Mapa das Escrituras (M) aponta outras experiências."
 			},
-			"verification": {"status": "pending_review", "reviewer": "", "notes": "Estrutura e referências conferidas pelo agente de IA; aguarda revisão humana."}
+			"verification": {"status": "pending_review", "reviewer": "", "notes": "Estrutura e referências conferidas pelo agente de IA; aguarda revisão humana. 2026-10-16: hubs opcionais e marcação de ficção ampliados (conselho crítico CR-01/02)."}
 		}
 	]
 }

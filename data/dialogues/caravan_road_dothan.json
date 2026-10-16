@@ -21,8 +21,11 @@
 					{"text": "Trocar 2 lenhas secas por um odre de água.", "next": "barter", "if": {"all": [{"quest_completed": "road_supplies"}, {"has_item": "dry_wood", "count": 2}, {"lacks_item": "water_skin"}]}, "take": [{"item": "dry_wood", "qty": 2}], "give": [{"item": "water_skin", "qty": 1}], "repeatable": true},
 					{"text": "Trocar 3 amêndoas por 2 figos secos.", "next": "barter", "if": {"has_item": "almonds", "count": 3}, "take": [{"item": "almonds", "qty": 3}], "give": [{"item": "dried_figs", "qty": 2}], "repeatable": true},
 					{"text": "Que caravanas são essas?", "next": "news"},
+					{"text": "Como se acha um rebanho nestas colinas?", "next": "find_flock", "if": {"quest_active": "joseph_dothan_road"}},
 					{"text": "Até mais, Malik.", "next": "bye"}
 				]},
+				"find_flock": {"speaker": "malik", "text": "Pelos rastros e pelas notícias. Quem veio de Siquém ou de Dotã conta onde viu ovelhas. Eu não sigo rebanho — sigo carga — mas o caminho é o mesmo.", "next": "find_flock2", "set_flags": ["dothan_asked_malik_flock"]},
+				"find_flock2": {"speaker": "narrator", "scripture": "Gen 37:15-17", "text": "(Malik é ficção do jogo e não viu José. Em Gênesis 37:15-17, José pergunta por seus irmãos perto de Siquém e segue a informação de que eles foram a Dotã.)", "next": "hub"},
 				"request": {"speaker": "malik", "text": "Para dizer a verdade, preciso. Minhas cordas estão gastas e a lenha acabou.", "next": "request2"},
 				"request2": {"speaker": "malik", "text": "Se você me trouxer três feixes de fibra para trançar e duas braçadas de lenha seca, eu pago em mercadoria. Aqui na estrada a gente troca uma coisa por outra.", "next": "request3", "event": "supplies_malik_request"},
 				"request3": {"speaker": "malik", "text": "A fibra cresce em touceiras à beira do caminho. Lenha seca você acha embaixo das árvores. Pressione E para coletar.", "next": "end"},

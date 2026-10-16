@@ -36,7 +36,7 @@ build do exe nem a verificação da wiki (PowerShell/Windows). Resultado: ver
 [Actions](https://github.com/maicontalgatti/Caminhos-da-Promessa/actions) e o [HANDOFF.md](HANDOFF.md).
 
 ## Teste manual (jogando)
-Roteiro de cerca de 10 minutos em [docs/quests.md](../quests.md#manual-roteiro-sugerido-cerca-de-10-minutos). **Ainda não foi executado por uma pessoa** (KNOWN_ISSUES KI-02).
+Roteiro respondível (poços + Dotã): [docs/game-design/PLAYTEST_ROTEIRO.md](../game-design/PLAYTEST_ROTEIRO.md). Roteiro curto antigo: [docs/quests.md](../quests.md#manual-roteiro-sugerido-cerca-de-10-minutos). **Ainda não foi executado por uma pessoa** (KNOWN_ISSUES KI-02).
 Para rodar o jogo: `.\tools\godot\Godot_v4.7.2-stable_win64.exe --path .` (ou F5 no editor), ou o `CaminhosDaPromessa.exe` da raiz.
 
 ## Que teste rodar para cada mudança

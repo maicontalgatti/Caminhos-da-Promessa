@@ -414,7 +414,7 @@ func _test_wells_water_save_load() -> void:
 	var run := func(did: String, pick: int) -> void:
 		DialogueManager.start(did)
 		var g := 0
-		while DialogueManager.is_active() and g < 20:
+		while DialogueManager.is_active() and g < 32:
 			if DialogueManager.current_choices().is_empty():
 				DialogueManager.advance()
 			else:
@@ -519,10 +519,13 @@ func _test_quest_flow() -> void:
 		DialogueManager.advance()
 		guard += 1
 	check(adina_lines.size() == 3 and String(adina_lines[2]).contains("ajudaria"), "Adina pede ajuda para encher o bebedouro")
-	check(DialogueManager.current_choices().size() == 3, "o jogador responde ao pedido de Adina")
+	check(DialogueManager.current_choices().size() == 4, "o jogador responde ao pedido de Adina")
 	DialogueManager.choose(0)
 	while DialogueManager.is_active():
-		DialogueManager.advance()
+		if not DialogueManager.current_choices().is_empty():
+			DialogueManager.choose(0)
+		else:
+			DialogueManager.advance()
 	check(Discoveries.is_unlocked("shepherding_water"), "descoberta liberada pelo diálogo")
 	check(QuestManager.current_objective(qid).id == "take_jar", "pedido de Adina leva direto ao cântaro")
 	check(QuestManager.hint_level(qid) == 0, "pistas zeram no novo objetivo")
@@ -530,19 +533,28 @@ func _test_quest_flow() -> void:
 	var ari_nodes: Array = []
 	while DialogueManager.is_active():
 		ari_nodes.append(DialogueManager._node.get("text", ""))
-		DialogueManager.advance()
-	check(ari_nodes.size() == 4 and String(ari_nodes[0]).contains("história"), "com a missão ativa, Ari conta a lembrança do poço (%d falas)" % ari_nodes.size())
+		if not DialogueManager.current_choices().is_empty():
+			DialogueManager.choose(0)
+		else:
+			DialogueManager.advance()
+	check(ari_nodes.size() >= 4 and String(ari_nodes[0]).contains("história"), "com a missão ativa, Ari conta a lembrança do poço (%d falas)" % ari_nodes.size())
 	check(QuestManager.current_objective(qid).id == "take_jar", "Ari é opcional: não muda o objetivo")
 	check(DialogueManager.start("ezer_talk") and String(DialogueManager._node.get("text", "")).contains("cântaro"), "Ezer indica o cântaro para o bebedouro")
 	while DialogueManager.is_active():
-		DialogueManager.advance()
+		if not DialogueManager.current_choices().is_empty():
+			DialogueManager.choose(0)
+		else:
+			DialogueManager.advance()
 
 	# Tarefa da água: cântaro, três viagens entre o poço e o bebedouro, Adina.
 	var run := func(did: String) -> void:
 		DialogueManager.start(did)
 		var g := 0
-		while DialogueManager.is_active() and g < 20:
-			DialogueManager.advance()
+		while DialogueManager.is_active() and g < 32:
+			if DialogueManager.current_choices().is_empty():
+				DialogueManager.advance()
+			else:
+				DialogueManager.choose(0)
 			g += 1
 	Inventory.add("clay_jar", 1, "pickup")
 	check(QuestManager.current_objective(qid).id == "water_trough", "pegar o cântaro avança para o bebedouro")
@@ -562,11 +574,13 @@ func _test_quest_flow() -> void:
 	var wool_before := Inventory.count("wool_cloth")
 	DialogueManager.start("adina_talk")
 	var ga := 0
-	while DialogueManager.is_active() and ga < 20:
+	while DialogueManager.is_active() and ga < 24:
 		if DialogueManager.current_choices().is_empty():
 			DialogueManager.advance()
 		else:
-			check(DialogueManager.current_choices().size() == 2, "Adina oferece o queijo, que pode ser recusado")
+			# Pedido de ajuda tem 4 opções; oferta de queijo tem 2.
+			var nch: int = DialogueManager.current_choices().size()
+			check(nch == 2 or nch == 4, "Adina oferece escolhas no pedido ou no queijo (%d)" % nch)
 			DialogueManager.choose(0)
 		ga += 1
 	check(Inventory.count("sheep_cheese") == 1 and Inventory.count("clay_jar") == 1 and Inventory.count("wool_cloth") == wool_before, "Adina dá o queijo; o cântaro fica para devolver a Ezer")
@@ -588,6 +602,24 @@ func _test_quest_flow() -> void:
 	check(QuestManager.status(qid) == "completed", "apresentação conclui a missão")
 	check(QuestManager.status("joseph_dothan_road") == "active", "concluir os poços inicia \"O caminho para Dotã\"")
 	check(QuestManager.get_context().references == ["Gen 37:12-17"], "contexto passa à missão principal seguinte")
+	check(DialogueManager.start("adina_talk") and String(DialogueManager._node.get("text", "")).contains("queijo"), "após a missão, Adina lembra do queijo aceito")
+	while DialogueManager.is_active():
+		if DialogueManager.current_choices().is_empty():
+			DialogueManager.advance()
+		else:
+			DialogueManager.choose(DialogueManager.current_choices().size() - 1)
+	check(DialogueManager.start("ezer_talk") and String(DialogueManager._node.get("text", "")).contains("queijo"), "Ezer comenta o queijo que Adina deu")
+	while DialogueManager.is_active():
+		if DialogueManager.current_choices().is_empty():
+			DialogueManager.advance()
+		else:
+			DialogueManager.choose(DialogueManager.current_choices().size() - 1)
+	check(DialogueManager.start("ari_talk") and String(DialogueManager._node.get("text", "")).contains("queijo"), "Ari também nota o queijo")
+	while DialogueManager.is_active():
+		if DialogueManager.current_choices().is_empty():
+			DialogueManager.advance()
+		else:
+			DialogueManager.choose(DialogueManager.current_choices().size() - 1)
 	check(not Discoveries.unlock("shepherding_water"), "descoberta não é registrada duas vezes")
 	var kinds := GameState.history.map(func(e): return e.kind)
 	check(kinds.has("quest_started") and kinds.has("quest_completed") and kinds.has("discovery"), "histórico registra a jornada")
@@ -986,14 +1018,15 @@ func _test_gameplay() -> void:
 	check(not DialogueManager.is_active(), "diálogo termina ao avançar")
 	check(GameState.get_flag("read_journal") == true, "flag 'read_journal' registrada")
 
-	# Diálogo com escolhas.
+	# Diálogo com escolhas (hub opcional: última opção encerra).
 	check(DialogueManager.start("adina_talk"), "diálogo com escolhas inicia")
 	var g2 := 0
 	while DialogueManager.current_choices().is_empty() and g2 < 10:
 		DialogueManager.advance()
 		g2 += 1
-	check(DialogueManager.current_choices().size() == 3, "escolhas exibidas")
-	DialogueManager.choose(2)
+	var ask_n: int = DialogueManager.current_choices().size()
+	check(ask_n >= 4, "escolhas exibidas (%d)" % ask_n)
+	DialogueManager.choose(ask_n - 1)
 	DialogueManager.advance()
 	check(not DialogueManager.is_active() and GameState.get_flag("met_adina"), "escolha encerra e marca flag")
 

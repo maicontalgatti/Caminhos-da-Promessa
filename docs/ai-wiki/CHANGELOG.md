@@ -3,6 +3,26 @@
 Resumo por versão/entrega. Detalhes, problemas corrigidos e o que não foi verificado estão em
 [docs/implementation_log.md](../implementation_log.md).
 
+## 2026-10-16 — Gn 26 nas viagens + roteiro de playtest (sem versão nova)
+- Bebedouro: Gen 26:18 e 26:20 nas 1ª/2ª viagens; Gen 24:20 na 3ª (CR-01).
+- `docs/game-design/PLAYTEST_ROTEIRO.md`; KI-02 e TESTING atualizados.
+- Suíte 1823/1823, validação OK.
+
+## 2026-10-16 — Checklist Dotã + hubs opcionais (sem versão nova)
+- Checklist preenchido: `docs/game-design/checklists/joseph_dothan_road.md`.
+- Adina/Malik: perguntas opcionais com Gn 37:15-17 no narrador; trilha crítica inalterada.
+- Suíte 1821/1821, validação OK.
+
+## 2026-10-16 — Eco wells_reward + acordo das famílias (sem versão nova)
+- Após concluir os poços, Adina/Ezer/Ari ecoam a escolha do queijo (`wells_reward`).
+- Microconflito fictício do “acordo da vez” entre Adina e Ari; ficção marcada; sem NPC novo.
+- Suíte 1819/1819, fluxo 23/23, wiki OK.
+
+## 2026-10-16 — Conselho crítico + profundidade nos poços (sem versão nova)
+- Seis agentes de avaliação crítica; `docs/game-design/` (benchmark, CRITICAL_REVIEW, checklist); ADR-032; gates na fábrica.
+- Missão dos poços: perguntas opcionais e consequências leves (flags/decisions), sem padding de NPCs.
+- Auditoria: a missão já tinha atividade corporal (3 viagens); o problema era payload bíblico no fim e pouco eco social.
+
 ## 2026-10-16 — Build Windows + Linux com SO no nome (sem versão nova)
 - `tools/build_export.ps1` gera `CaminhosDaPromessa-Windows.exe` e `CaminhosDaPromessa-Linux.x86_64`.
 - Templates de exportação passam a extrair Windows e Linux; preset `Linux` em `export_presets.cfg`.

@@ -42,6 +42,8 @@ Fontes: [docs/implementation_log.md](../implementation_log.md), [docs/art_bible.
 | ADR-028 | Cenas dirigidas por dados, luz por estado e experiências com destino | Adotada (criador pediu; formato do agente) |
 | ADR-029 | Música temática por momento, só com melodias em domínio público ou próprias | Adotada (criador pediu; formato do agente) |
 | ADR-030 | Feira do viajante: mercadorias renováveis, prata pesada abstrata, mercadores no mapa e aparência equipável | Adotada (criador pediu a mecânica e escolheu mercador no mapa e coleta renovável; formato do agente) |
+| ADR-031 | Ciclo dia/noite, interiores por viagem e aparência básica do viajante | Adotada |
+| ADR-032 | Conselho de avaliação crítica e qualidade editorial de missões | Adotada (criador) |
 
 ---
 
@@ -248,6 +250,12 @@ Fontes: [docs/implementation_log.md](../implementation_log.md), [docs/art_bible.
   - A venda acontece só com o mercador; a bolsa apenas mostra o saldo e quanto a feira paga.
   - **Revisto em 2026-10-15 (criador: trocas sem prata e prata para ajudar):** trocas item por item ficam nos diálogos (`take` + `give` + `repeatable`, como já fazia Malik); mercadores e moradores (Adina, Ezer, Yaron, Ozi, Nefer, Liora) oferecem ao menos uma. Ajudar com prata usa o efeito `spend_silver` e a condição `has_silver` (API `Market.spend`); Talia (Dotã) e Tova (Belém) aceitam comida ou prata uma vez e desbloqueiam a descoberta `sharing_in_need`. Save continua v3.
 - **Consequências:** o equilíbrio (preços, quantidade de mercadorias, ida e volta para "farmar", valores das trocas e da ajuda) não foi jogado por uma pessoa; nomes, falas e notas históricas dos mercadores aguardam revisão humana (KI-23). Novas regiões podem ganhar mercador só com dados (personagem, diálogo com a ação, entrada em `merchants`).
+
+### ADR-032 — Conselho de avaliação crítica e qualidade editorial de missões
+- **Data:** 2026-10-16 · **Status:** Adotada (criador pediu missões mais profundas sem padding)
+- **Problema:** missões tecnicamente completas podem ser rasas (corredor de falas) ou alongadas sem valor; faltava crítica independente da fábrica de produção.
+- **Decisão:** seis agentes readonly em `.cursor/agents/` (benchmark, pacing, narrativa, mundo/NPC, aprendizado bíblico, PX); docs em `docs/game-design/`; checklist editorial separado de `tested`/`approved`; missões como experiências em atos (referência); piloto de melhoria = aprofundar diálogos/consequências na missão dos poços **antes** de proliferar NPCs.
+- **Consequências:** fábrica ganha gates 2b/3b/3c/6b (processo); IA continua sem aprovar conteúdo bíblico; playtest humano (KI-02) segue necessário para duração real.
 
 ### ADR-031 — Ciclo dia/noite, interiores por viagem e aparência básica do viajante
 - **Data:** 2026-10-15 · **Status:** Adotada (pedido do criador: continuar fase 4 — interiores, horário, personalização)

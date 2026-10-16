@@ -74,11 +74,20 @@ Agentes nunca escrevem "verificado": o veredito máximo de um agente é `ok_for_
 | 0 seleção | coordenador (`factory select`) + pessoa | episódio escolhido, `factory new` | — |
 | 1 pesquisa | `biblical-researcher`, `historical-reviewer` (em paralelo) | `research_biblical.md`, `research_historical.md` | pesquisador sim; revisor devolve texto, o coordenador salva |
 | 2 desenho | `quest-designer` → `dialogue-writer` | `design.md`, `quest.proposal.json`, `dialogues.proposal.json`, `discoveries.proposal.json` | só no pacote |
+| 2b ritmo e profundidade | `quest-pacing-auditor`, `narrative-depth-reviewer`, `player-experience-critic` (somente leitura; em paralelo se couber) | achados → anexo em `design.md` ou `review.json` (`quality`) | não |
+| 2c mundo (se mapa novo/NPC novos) | `world-npc-critic` | achados de densidade/função de NPC | não |
 | 3 revisão | `biblical-verifier` e `historical-reviewer` (em paralelo, somente leitura) | achados com severidade → `review.json` | não |
+| 3b aprendizado | `biblical-learning-reviewer` (somente leitura) | risco pedagógico / ficção × Escritura | não |
+| 3c benchmark (episódios principais) | `game-benchmark-analyst` (somente leitura) | oportunidades vs referências; ver `docs/game-design/BENCHMARK_ANALYSIS.md` | não |
 | 4 assets e implementação | `visual-asset-producer`, `godot-implementer` (**um só integrador**) | `visual_manifest.json`; `data/`, cenas | integrador sim |
 | 5 áudio | `audio-producer` | `audio_manifest.json` (emoção, pronúncia, duração) | só manifesto |
 | 6 QA | `quest-qa` (somente leitura) + suíte | `test_report.json` | não |
+| 6b qualidade editorial | coordenador + checklist | `docs/game-design/QUEST_QUALITY_CHECKLIST.md` preenchido no pacote (`quality_checklist.md`) | coordenador |
 | 7 publicação | pessoa | `human.approved_by` | — |
+
+**Qualidade ≠ testes.** Passar na suíte não aprova a experiência. O checklist editorial é justificativa + evidência, não nota objetiva. Conselho crítico: `docs/game-design/CRITICAL_REVIEW.md` (ADR-032).
+
+Filosofia de atos (referência, não camisa de força): apresentação → investigação → participação → desenvolvimento → consequência → conclusão bíblica. Missões secundárias podem ter menos atos. Evitar padding (“fale com N pessoas” sem função).
 
 Regras de coordenação: no máximo 2–3 agentes em paralelo; pesquisa e revisão podem ser paralelas;
 **nunca** dois agentes editando `data/`, `scenes/` ou `scripts/` ao mesmo tempo; propostas ficam no

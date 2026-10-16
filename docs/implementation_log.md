@@ -1,5 +1,56 @@
 # Histórico de implementação
 
+## 2026-10-16 — CR-01 nas viagens + PLAYTEST_ROTEIRO
+
+### Pedido
+Continuar backlog crítico sem NPC novo nem lote de missões.
+
+### Feito
+- Notas Gen 26:18 / 26:20 em `canaan_trough` (viagens 1 e 2).
+- Roteiro respondível em `docs/game-design/PLAYTEST_ROTEIRO.md`; links em README, TESTING, KI-02, CRITICAL_REVIEW.
+
+### Verificação
+Suíte 1823/1823, `validate_content` OK; fluxo/wiki na mesma entrega.
+
+## 2026-10-16 — Checklist joseph_dothan_road + hubs opcionais
+
+### Pedido
+Continuar backlog: aplicar checklist a uma missão Dotã (sem lote).
+
+### Feito
+- `docs/game-design/checklists/joseph_dothan_road.md`.
+- Adina `pastures_hub` / Malik `find_flock` com notas Gen 37:15-17; ficção marcada.
+- CR-04 e QUEST_QUALITY_CHECKLIST atualizados.
+
+### Verificação
+Suíte 1821/1821, fluxo 23/23, `validate_content` OK, `check_wiki` OK.
+
+## 2026-10-16 — Eco de wells_reward e acordo das famílias
+
+### Pedido
+Continuar profundidade média dos poços: eco da recompensa + microconflito sem NPCs novos.
+
+### Feito
+- `canaan_village.json`: `again_cheese` / `again_declined` em Adina, Ezer e Ari; `post_hub` / `peace_*` na Adina; `turns_short` no Ari.
+- Precedência: objetivo Dotã `adina_context` acima do eco.
+- Testes de eco no `test_runner.gd`; CR-02 e HANDOFF atualizados.
+
+### Verificação
+Suíte 1819/1819, fluxo 23/23, `validate_content` sem erros, `check_wiki` OK.
+
+## 2026-10-16 — Conselho de avaliação crítica e hubs dos poços
+
+### Pedido
+Missões mais profundas; agentes críticos; auditar poços; piloto de melhoria; atualizar fábrica/wiki.
+
+### Feito
+- Agentes: game-benchmark-analyst, quest-pacing-auditor, narrative-depth-reviewer, world-npc-critic, biblical-learning-reviewer, player-experience-critic.
+- Docs em `docs/game-design/`; ADR-032; factory gates 2b/3b/3c/6b.
+- Poços: hubs Adina/Ezer/Ari + carrying; ficção marcada; sem novos NPCs.
+
+### Verificação
+Suíte/fluxo: ver HANDOFF após execução nesta sessão.
+
 ## 2026-10-16 — Build Windows + Linux
 
 ### Pedido

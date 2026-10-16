@@ -28,6 +28,10 @@ comum, versionado junto com o código. Ponto de entrada: [`AGENTS.md`](../../AGE
 | Documento | Conteúdo |
 |---|---|
 | [docs/game_design.md](../game_design.md) | Design completo: pilares, controles, diálogos, missões |
+| [docs/game-design/CRITICAL_REVIEW.md](../game-design/CRITICAL_REVIEW.md) | Conselho crítico: achados e prioridades |
+| [docs/game-design/BENCHMARK_ANALYSIS.md](../game-design/BENCHMARK_ANALYSIS.md) | Comparação com RPGs 2D de referência |
+| [docs/game-design/QUEST_QUALITY_CHECKLIST.md](../game-design/QUEST_QUALITY_CHECKLIST.md) | Checklist editorial (≠ testes) |
+| [docs/game-design/PLAYTEST_ROTEIRO.md](../game-design/PLAYTEST_ROTEIRO.md) | Perguntas respondíveis para playtest humano (KI-02) |
 | [docs/architecture.md](../architecture.md) | Arquitetura técnica detalhada e formatos de dados |
 | [docs/quests.md](../quests.md) | Sistema de missões, eventos, editor, roteiro de teste manual |
 | [docs/mission_factory.md](../mission_factory.md) | Fábrica de missões: catálogo de 78 episódios, gates, agentes, áudio |
@@ -47,7 +51,8 @@ comum, versionado junto com o código. Ponto de entrada: [`AGENTS.md`](../../AGE
 | Tarefa | Nível 2 (ler) | Código provável |
 |---|---|---|
 | Produzir episódio do catálogo / coordenar agentes | [mission_factory.md](../mission_factory.md), [AI_AGENTS.md](AI_AGENTS.md), BIBLICAL_RULES | `production/`, `tools/factory.gd`, `.cursor/agents/` |
-| Nova missão / alterar missão | passo a passo em [GAME_SYSTEMS](GAME_SYSTEMS.md#como-adicionar-uma-missão); formato em quests.md; BIBLICAL_RULES | `data/quests/`, `scripts/quests/` |
+| Nova missão / alterar missão | passo a passo em [GAME_SYSTEMS](GAME_SYSTEMS.md#como-adicionar-uma-missão); formato em quests.md; BIBLICAL_RULES; checklist em game-design/ | `data/quests/`, `scripts/quests/` |
+| Avaliar ritmo/qualidade de missão | CRITICAL_REVIEW, QUEST_QUALITY_CHECKLIST, AI_AGENTS (conselho) | `data/quests/`, `data/dialogues/` |
 | Diálogo ou NPC | BIBLICAL_RULES, game_design.md (diálogos) | `data/dialogues/`, `data/characters/` |
 | Conteúdo bíblico (refs, cronologia, lugares) | BIBLICAL_RULES, bible_catalog.md | `data/bible/`, `scripts/bible/` |
 | UI / HUD / diário / cinemática | GAME_SYSTEMS, ARCHITECTURE_MAP | `scripts/ui/` |

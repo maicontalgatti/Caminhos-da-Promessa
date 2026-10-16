@@ -4,31 +4,29 @@ Descreve só a **última tarefa**. Histórico em [CHANGELOG.md](CHANGELOG.md) e 
 
 - **Data:** 2026-10-16
 - **Responsável:** agente de IA (Cursor), a pedido do criador
-- **Versão do projeto:** 0.6.0 (`project.godot`; sem versão nova)
-- **Estado do Git:** alterações locais (build dual; painel Novo jogo pode estar na mesma árvore).
+- **Versão do projeto:** 0.6.0 (sem versão nova)
+- **Estado do Git:** branch `feature/fix-new-game-panels` com alterações locais (pacote crítico+poços+Dotã; PR #6 pode estar aberto).
 
 ## Última tarefa
-Exportação gera Windows e Linux, com o SO no nome do arquivo.
+Commit e atualização do PR #6 com o pacote crítico + profundidade dos poços/Dotã (mais o que já estava na branch: Novo jogo + export dual).
 
 ## Resultado
-- Saídas na raiz: `CaminhosDaPromessa-Windows.exe` e `CaminhosDaPromessa-Linux.x86_64`.
-- `tools/build_export.ps1`; wrappers `build_windows.ps1` e `criar_exe_atualizado.bat`.
-- Templates Windows + Linux; preset `Linux` em `export_presets.cfg`.
-- Nome antigo `CaminhosDaPromessa.exe` removido da raiz após build ok.
+- Conselho crítico (6 agentes), docs em `docs/game-design/`, gates da fábrica, ADR-032.
+- Poços: hubs, eco `wells_reward`, acordo das famílias, Gn 26 nas viagens.
+- Dotã: checklist + hubs opcionais Adina/Malik.
+- Roteiro de playtest respondível.
 
 ## Testes
-- Suíte **1816/1816**, fluxo **23/23**, wiki OK.
-- Autoteste + headless + GPU do **Windows**: OK.
-- Linux: exportado (78,4 MB); autoteste pulado nesta máquina (cross-export).
-- Build completa OK (~1m38s além do download de templates na primeira vez).
+- Pré-commit: suíte **1823/1823**, fluxo **23/23**, `validate_content` sem erros, `check_wiki` OK.
+- Não executado: playtest humano (KI-02).
 
 ## Pendências
-- Merge do PR quando aprovado.
-- Amigo no Linux: `chmod +x` (também no README).
+- Playtest com [PLAYTEST_ROTEIRO.md](../game-design/PLAYTEST_ROTEIRO.md).
+- Revisar/merge do PR #6.
 
 ## Próxima ação
-Revisar o PR; distribuir os binários com o link do README (seção “Como jogar o executável”).
+Criador: revisar PR #6 e jogar o roteiro de playtest.
 
 ## Cuidados
-- Filtros de ERROR da suíte no PowerShell: preferir padrões sem acento (`copiar o save antigo`).
+- Notas no bebedouro são do narrador com `scripture`; não inventar falas de Isaque.
 - Nenhuma IA aprova conteúdo bíblico.
