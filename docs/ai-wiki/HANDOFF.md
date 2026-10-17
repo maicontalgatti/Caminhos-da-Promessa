@@ -3,32 +3,29 @@
 Descreve só a **última tarefa**. Histórico em [CHANGELOG.md](CHANGELOG.md) e em [docs/implementation_log.md](../implementation_log.md).
 
 - **Data:** 2026-10-16
-- **Responsável:** agente de IA (Cursor), a pedido do criador (correções da auditoria: Claude/Cowork)
-- **Versão do projeto:** 0.6.0 (`project.godot`; sem versão nova)
-- **Estado do Git:** branch `feature/audit-fixes-and-build` a partir de `main` `0e79269`.
+- **Responsável:** agente de IA (Cursor), a pedido do criador
+- **Versão do projeto:** 0.6.0 (sem versão nova)
+- **Estado do Git:** branch `feature/fix-new-game-panels` (PR #6).
 
 ## Última tarefa
-Commitar correções da auditoria técnica, gerar o exe novo e abrir/mesclar PR.
+Corrigir painel Configurações do menu (título cortado, conteúdo estourando a janela 480×270).
 
 ## Resultado
-- Relatório: [docs/auditoria-tecnica.md](../auditoria-tecnica.md) (AUD-01…04 corrigidos).
-- `SaveManager.slots_dir` isola testes dos saves reais; HUD `can_open_screen()`; migração/.bak só apagam após cópia OK; foco na personalização do viajante.
-- `tools/build_windows.ps1`: suíte passa com "0 falharam" mesmo com RID leaks / `push_error` esperado; exportação headless ignora ruído de diálogo do Godot.
-- **Exe:** `CaminhosDaPromessa.exe` regenerado na raiz (AUD-06); fora do Git (`.gitignore`).
+- Causa: painel de altura fixa (~236 px) com áudio + teclado (min 120) + avisos — conteúdo > viewport; título e Volume geral saíam para cima.
+- Título e Voltar fixos; corpo em `BodyScroll`; painel 268×252 centrado.
+- Sliders: rótulo de % com 30 px e trilho mínimo 90 (evita botão de Vozes em 100% fora do trilho).
+- Pausa → Sons: mesma ideia (scroll + altura limitada).
+- Fluxo cobre abertura, bounds e slider de Vozes.
 
 ## Testes
-- Suíte **1816/1816**, fluxo **19/19**, `validate_content` sem erros, `check_wiki` OK.
-- Build Windows completa: autoteste do exe OK, headless e com GPU OK.
-- Não executado: jogo humano (KI-02).
+- Fluxo **31/31**, suíte **1823/1823**.
+- Print do criador mostrava `v0.1.0-protótipo`: precisa do exe/build desta branch para ver a correção.
 
 ## Pendências
-- Conferir se os saves do criador ainda existem (AUD-01 antes da correção).
-- Decisões: interiores (KI-24), botão B (KI-25), 11 etapas dos poços (KI-26).
+- Playtest humano (KI-02).
 
 ## Próxima ação
-Criador: jogar o exe novo; checklist em [docs/auditoria-tecnica.md](../auditoria-tecnica.md#checklist-manual-5-minutos).
+Criador: reabrir Configurações no build desta branch; revisar PR #6.
 
 ## Cuidados
-- Testes nunca devem usar `SaveManager.slot_path()` sem antes trocar `SaveManager.slots_dir`.
-- Telas do HUD: `HUD.can_open_screen()`.
-- Nenhuma IA aprova conteúdo bíblico.
+- Não voltar a empilhar ControlsScroll com `custom_minimum_size.y = 120` fora de um scroll pai.

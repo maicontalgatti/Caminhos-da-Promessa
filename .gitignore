@@ -3,10 +3,12 @@
 *.translation
 /build/
 
-# Builds exportados e logs de build (gerados por tools/build_windows.ps1).
+# Builds exportados e logs de build (gerados por tools/build_export.ps1).
 # export_presets.cfg continua versionado de propósito (não guarda credenciais).
 /dist/
 /CaminhosDaPromessa.exe
+/CaminhosDaPromessa-Windows.exe
+/CaminhosDaPromessa-Linux.x86_64
 *.pck
 
 # Binário local do Godot, templates baixados e cache (tools/godot)

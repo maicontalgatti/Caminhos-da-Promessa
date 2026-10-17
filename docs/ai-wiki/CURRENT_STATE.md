@@ -5,8 +5,8 @@ Resumo do **presente**. Histórico em [CHANGELOG.md](CHANGELOG.md) e [docs/imple
 ## Identificação
 - **Projeto:** Caminhos da Promessa
 - **Versão:** 0.6.0 (`project.godot` → `config/version`)
-- **Última atualização:** 2026-10-16 (auditoria técnica: [docs/auditoria-tecnica.md](../auditoria-tecnica.md))
-- **Commit de referência:** `0e79269` na `main` (PR #4, pacote fase 4), mais as correções da auditoria de 2026-10-16 sem commit (detalhes no [HANDOFF.md](HANDOFF.md)); anteriores: PR #3 `92ee0b7`, PR #2 `24b8e00`, publicação `4ed82ca`, checkpoint `218cb73`
+- **Última atualização:** 2026-10-16 (conselho crítico + profundidade dos poços/Dotã; ver [HANDOFF.md](HANDOFF.md) e [CRITICAL_REVIEW.md](../game-design/CRITICAL_REVIEW.md))
+- **Commit de referência:** branch `feature/fix-new-game-panels` (PR #6); `main` ainda em merges anteriores — ver HANDOFF
 - **Repositório:** público, https://github.com/maicontalgatti/Caminhos-da-Promessa
 - **Licenças:** código MIT; arte, sons e textos próprios CC BY 4.0; fontes OFL; texto bíblico BPM em domínio público ([docs/legal/ASSET_LICENSES.md](../legal/ASSET_LICENSES.md))
 - **CI:** `.github/workflows/tests.yml` roda suíte, fluxo, validação, fábrica e auditoria de áudio com o Godot oficial no Linux, em todo pull request e push na `main`
@@ -18,7 +18,7 @@ Resumo do **presente**. Histórico em [CHANGELOG.md](CHANGELOG.md) e [docs/imple
 "Verificado" = coberto por teste automatizado executado e aprovado. Última execução em 2026-10-14, no build da v0.6.0 (18:25; detalhes em [HANDOFF.md](HANDOFF.md); houve falhas intermitentes em builds anteriores, KI-17):
 - `tests/test_runner.tscn`: 1816/1816 (2026-10-16, auditoria técnica; Godot Linux headless);
 - `tools/audio/audit_audio.gd`: 140 arquivos (131 efeitos + 9 músicas), 0 problemas (2026-10-16);
-- `tests/flow_smoke.gd`: 19/19 (2026-10-16);
+- `tests/flow_smoke.gd`: 23/23 (2026-10-16; painéis de Novo jogo centrados);
 - `tools/validate_content.gd`: sem erros de dados;
 - `tools/factory.gd -- check`: 0 erros em 78 episódios.
 Nenhuma foi validada por sessão de jogo humana ainda.
@@ -54,7 +54,7 @@ Nenhuma foi validada por sessão de jogo humana ainda.
 | Volume por bus (Geral, Música, Efeitos, Interface, Ambiente, Vozes), silenciar cada um, som de hover e de texto; em tempo real e salvo; no menu e na pausa | `scripts/core/settings.gd`, `scripts/ui/audio_settings.gd` | testes |
 | Cenas dirigidas no mapa (atores, silhuetas, câmera, efeitos luz/coluna/vento/paredes de água/poeira, legendas bíblicas; Esc pula), luz por estado da região, cartões de passagem, destinos e etapas de experiência, botão Revisitar/Continuar (ADR-028) | `scripts/world/scene_*.gd`, `data/scenes/` | testes + capturas em janela (`docs/images/v06_*.png`) |
 | Experiências da v0.6 em cadeia: "José no Egito" (Dotã + casa egípcia, Gn 37 e 39), "A travessia do mar" (Êx 13–14), "Rute em Belém" (Rt 1–2), "Os pastores de Belém" (Lc 2); 4 regiões novas, 13 missões, 5 cenas | `data/quests/{egypt,sea,bethlehem}/`, `data/regions/`, `data/world/experiences.json` | testes (`tests/experience_content_tests.gd`) + capturas; QA estático sem bloqueadores |
-| Exe Windows único com autoteste (`-- --self-test`), que confere também regiões, mapas, itens, colecionáveis, missões, cenas dirigidas e todos os arquivos de som | `tools/build_windows.ps1` | build da v0.6.0 em 2026-10-14 (ver HANDOFF) |
+| Builds Windows + Linux com SO no nome e autoteste do binário nativo (`-- --self-test`) | `tools/build_export.ps1` | ver HANDOFF |
 
 ## Implementado, mas sem verificação completa
 - Música temática (`scripts/core/music_director.gd`, `data/audio/music.json`, ADR-029): coberta por `tests/music_tests.gd`, mas as 9 faixas são provisórias e ninguém as ouviu; melodias dos hinos transcritas de memória (KI-22).

@@ -46,6 +46,21 @@ os arquivos do pacote do episódio. Nenhum agente usa serviço pago ou API exter
 | `.cursor/rules/codigo-godot.mdc` | arquivos `.gd`, `.tscn`, `project.godot`, `export_presets.cfg` | não reescrever sistemas; tipos explícitos ao ler `Dictionary`; `block_ui`; save versionado; mapa da aldeia gerado |
 | `.cursor/rules/conteudo-biblico.mdc` | `data/**/*.json` | BIBLICAL_RULES; versículos só pelo importador; IA deixa `pending_review` |
 
+## Conselho de avaliação crítica (2026-10-16)
+Somente leitura. Não substituem produção (`quest-designer`, `dialogue-writer`) nem `biblical-verifier`.
+O coordenador chama os relevantes, confronta evidências e consolida em `docs/game-design/CRITICAL_REVIEW.md`.
+Benchmark vivo: `docs/game-design/BENCHMARK_ANALYSIS.md`. Checklist: `docs/game-design/QUEST_QUALITY_CHECKLIST.md`.
+
+| Agente | Responsabilidade | Status |
+|---|---|---|
+| `game-benchmark-analyst` | Comparar princípios com RPGs 2D de referência; sem copiar expressão | configurado |
+| `quest-pacing-auditor` | Ritmo, duração estrutural, monotonia, payload bíblico no fim | configurado |
+| `narrative-depth-reviewer` | Motivação, personagens, diálogos, escolhas | configurado |
+| `world-npc-critic` | Mapa habitado vs cenário de missão; NPCs com função | configurado |
+| `biblical-learning-reviewer` | Aprendizado e risco ficção×Escritura (complementa verifier) | configurado |
+| `player-experience-critic` | Jornada do novato; rejeita trabalho inútil | configurado |
+
+Limitação: mesma da fábrica (KI-10) — se a sessão não listar o tipo, o coordenador usa `generalPurpose` com o arquivo do papel.
+
 ## Planejado (não existe)
-Nenhum outro agente está definido ou planejado. Um papel novo entra como arquivo em `.cursor/agents/`, no
-mesmo formato, e é registrado nesta tabela.
+Nenhum outro agente além dos acima. Papel novo = arquivo em `.cursor/agents/` + linha nesta tabela.

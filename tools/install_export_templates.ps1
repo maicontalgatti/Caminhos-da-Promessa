@@ -1,6 +1,6 @@
-﻿# Instala os templates oficiais de exportação Windows do Godot.
+﻿# Instala os templates oficiais de exportação Windows e Linux do Godot.
 # Baixa o pacote .tpz oficial (cerca de 1,2 GB) para tools/godot/cache, confere o
-# SHA-512 publicado pelo projeto Godot e extrai apenas os arquivos do Windows
+# SHA-512 publicado pelo projeto Godot e extrai os arquivos Windows + Linux
 # para %APPDATA%\Godot\export_templates\<versão>\.
 #
 # Uso: .\tools\install_export_templates.ps1 -Version 4.7.2.stable
@@ -46,9 +46,14 @@ Write-Host "SHA-512 confere."
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $zip = [System.IO.Compression.ZipFile]::OpenRead($tpz)
 try {
-    $wanted = $zip.Entries | Where-Object { $_.FullName -match '^templates/(windows_[^/]+|version\.txt)$' }
-    if (-not ($wanted | Where-Object { $_.Name -eq "windows_release_x86_64.exe" })) {
-        throw "windows_release_x86_64.exe não está no pacote"
+    $wanted = $zip.Entries | Where-Object {
+        $_.FullName -match '^templates/((windows_|linux_)[^/]+|version\.txt)$'
+    }
+    $need = @("windows_release_x86_64.exe", "linux_release.x86_64")
+    foreach ($n in $need) {
+        if (-not ($wanted | Where-Object { $_.Name -eq $n })) {
+            throw "$n não está no pacote"
+        }
     }
     foreach ($e in $wanted) {
         $out = Join-Path $dest $e.Name
@@ -59,5 +64,8 @@ try {
 
 $verTxt = (Get-Content (Join-Path $dest "version.txt") -Raw).Trim()
 if ($verTxt -ne $Version) { throw "version.txt ($verTxt) não corresponde a $Version" }
+foreach ($n in @("windows_release_x86_64.exe", "linux_release.x86_64")) {
+    if (-not (Test-Path (Join-Path $dest $n))) { throw "Faltou extrair $n" }
+}
 if (-not $KeepCache) { Remove-Item $tpz -Force; Write-Host "Cache do .tpz removido." }
-Write-Host "Templates Windows $Version instalados em $dest"
+Write-Host "Templates Windows + Linux $Version instalados em $dest"
