@@ -42,14 +42,14 @@ const PROP_COLS := {
 }
 
 ## Objetos existentes que ganham uma cópia sem interação ("<id>_plain").
-const PLAIN_PROPS := ["boundary_stone"]
+const PLAIN_PROPS := ["boundary_stone", "tent"]
 
 const LAYOUTS := {
 	"caravan_road": {
 		"scene": "res://scenes/maps/caravan_road.tscn", "node": "CaravanRoad", "size": [64, 34], "seed": 3101,
 		"paths": [[0, 16, 21, 17], [20, 12, 21, 17], [20, 12, 44, 13], [43, 12, 44, 19], [43, 18, 63, 19]],
 		"dry_threshold": 0.15, "edge_trees": 0.5, "scatter": 70, "flowers": 0.06,
-		"props": [["tent", 400, 262], ["firepit", 452, 268], ["sacks", 362, 262], ["basket", 374, 274],
+		"props": [["tent_plain", 400, 262], ["firepit", 452, 268], ["sacks", 362, 262], ["basket", 374, 274],
 			["jar", 432, 274], ["firewood", 470, 252],
 			["rock_big", 480, 150], ["rock_big", 506, 158], ["rock_small", 528, 146], ["rock_big", 610, 120],
 			["rock_small", 300, 330], ["rock_big", 820, 210], ["rock_small", 840, 222]],
@@ -61,7 +61,7 @@ const LAYOUTS := {
 		"scene": "res://scenes/maps/dothan.tscn", "node": "Dothan", "size": [64, 40], "seed": 3202,
 		"paths": [[0, 18, 24, 19], [23, 8, 24, 19], [12, 7, 36, 8], [24, 14, 47, 15]],
 		"dry_threshold": 0.05, "edge_trees": 0.35, "scatter": 55, "flowers": 0.09,
-		"props": [["tent", 250, 104], ["tent", 480, 104], ["firepit", 470, 176], ["sacks", 214, 110],
+		"props": [["tent_plain", 250, 104], ["tent_plain", 480, 104], ["firepit", 470, 176], ["sacks", 214, 110],
 			["basket", 290, 112], ["jar", 520, 110], ["jar", 526, 113], ["firewood", 440, 112], ["sacks", 508, 176]],
 		"free_trees": [[120, 420], [200, 560], [700, 120], [860, 160], [900, 520], [760, 560], [330, 520], [600, 600]],
 		# curral: x0, y0, x1, y1 (tiles), porteira entre gx0 e gx1 no lado norte
@@ -140,8 +140,8 @@ const LAYOUTS := {
 		"props": [["house_pillar", 120, 60], ["house_pillar", 220, 52], ["house_pillar", 360, 64], ["house_pillar", 440, 56],
 			["house_pillar", 600, 60], ["house_pillar", 680, 72], ["house_pillar", 820, 58], ["house_pillar", 930, 66],
 			["stone_bench", 488, 104], ["stone_bench", 536, 104], ["oven", 400, 104], ["pithos", 636, 108],
-			["jar", 112, 332], ["basket", 128, 336], ["sheaf", 300, 344], ["sheaf", 316, 348],
-			["jar", 828, 372], ["jar", 836, 376], ["sheaf", 560, 380], ["sheaf", 640, 470], ["sheaf", 720, 380],
+			["jar", 112, 332], ["basket", 128, 336], ["sheaf", 316, 348],
+			["jar", 828, 372], ["sheaf", 560, 380], ["sheaf", 640, 470], ["sheaf", 720, 380],
 			["threshing_sledge", 912, 212], ["winnowing_fork", 852, 204],
 			["rock_big", 960, 300], ["rock_small", 976, 420], ["rock_big", 940, 520], ["bush", 980, 560], ["bush", 40, 600],
 			["boundary_stone_plain", 448, 360], ["boundary_stone_plain", 448, 520], ["boundary_stone_plain", 448, 584]],

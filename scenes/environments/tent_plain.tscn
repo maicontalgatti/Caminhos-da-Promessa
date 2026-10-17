@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/tent.png" id="1_iop2e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qfaq"]
+size = Vector2(44, 11)
+
+[node name="Tent" type="StaticBody2D" unique_id=1862396049]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=543298406]
+texture = ExtResource("1_iop2e")
+centered = false
+offset = Vector2(-24, -38)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=456600279]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_6qfaq")

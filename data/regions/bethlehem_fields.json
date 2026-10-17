@@ -42,7 +42,7 @@
 					{"id": "bf_forgotten_sheaf", "x": 344, "y": 472, "prop": "sheaf", "dialogue": "bf_forgotten_sheaf", "prompt": "Examinar o feixe", "prompt_y": -18, "visible_if": {"all": [{"quest_active": "tova_gleaning"}, {"not": {"choice": "ruth_forgotten_sheaf"}}]}},
 					{"id": "bf_beating_stone", "x": 152, "y": 568, "prop": "rock_small", "dialogue": "bf_beating_stone", "prompt": "Bater as espigas", "prompt_y": -18},
 					{"id": "bf_corner_returned", "x": 392, "y": 520, "prop": "sheaf", "dialogue": "bf_corner_returned", "prompt": "Examinar o canto do campo", "prompt_y": -18, "visible_if": {"flag": "corner_returned"}},
-					{"id": "bf_sickle", "x": 232, "y": 330, "marker": "sparkle", "dialogue": "bf_sickle", "prompt": "Examinar a foice", "radius": 12},
+					{"id": "bf_sickle", "x": 232, "y": 330, "prop": "sickle", "marker": "sparkle", "dialogue": "bf_sickle", "prompt": "Examinar a foice", "prompt_y": -16, "radius": 12},
 					{"id": "bf_pithos", "x": 624, "y": 104, "prop": "pithos", "dialogue": "bf_pithos", "prompt": "Examinar o jarro", "prompt_y": -24},
 					{"id": "bf_parcel_marker", "x": 448, "y": 440, "prop": "boundary_stone", "dialogue": "bf_parcel_marker", "prompt": "Examinar o marco", "center_y": -6, "prompt_y": -24},
 					{"id": "bf_threshing_floor", "x": 880, "y": 196, "prop": "grain_heap", "dialogue": "bf_threshing_floor", "prompt": "Examinar a eira", "prompt_y": -20},

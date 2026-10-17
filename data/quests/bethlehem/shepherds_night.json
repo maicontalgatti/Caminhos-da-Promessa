@@ -37,16 +37,16 @@
 				{
 					"id": "gather_flock",
 					"type": "wait_for_event",
-					"text": "Conduza ao aprisco as 4 ovelhas que se afastaram.",
+					"text": "Conduza ao aprisco os 4 animais que se afastaram (3 ovelhas e 1 cabra).",
 					"detail": "O aprisco de pedra fica abaixo do posto de vigia.",
 					"complete_on": {"event": "condition", "id": "bn_flock_gathered", "condition": {"all": [{"flag": "bn_stray_1"}, {"flag": "bn_stray_2"}, {"flag": "bn_stray_3"}, {"flag": "bn_stray_4"}]}},
 					"targets": [{"type": "examinable", "id": "bn_stray_1"}, {"type": "examinable", "id": "bn_stray_2"}, {"type": "examinable", "id": "bn_stray_3"}, {"type": "examinable", "id": "bn_stray_4"}],
 					"hints": [
 						"Ovelhas desgarradas procuram pasto entre pedras e arbustos.",
-						"Tamir disse: uma nos terraços perto da entrada, uma nos espinhos encosta abaixo, uma nas rochas e uma perto da boca da gruta.",
-						"Procure os brilhos nos terraços perto da entrada, nos arbustos encosta abaixo, nas rochas e na boca da gruta, e examine cada animal."
+						"Tamir disse: uma nos terraços perto da entrada, uma nos espinhos encosta abaixo, a cabra nas rochas e uma perto da gruta.",
+						"Procure os brilhos nos terraços perto da entrada, nos arbustos encosta abaixo, nas rochas e perto da gruta, e examine cada animal."
 					],
-					"log": "Você conduziu as ovelhas desgarradas até o aprisco de pedra."
+					"log": "Você conduziu os animais desgarrados (ovelhas e uma cabra) até o aprisco de pedra."
 				},
 				{
 					"id": "kindle_fire",

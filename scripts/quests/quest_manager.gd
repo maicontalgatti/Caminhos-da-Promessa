@@ -139,18 +139,40 @@ func completed_quests() -> Array[String]:
 	return out
 
 
-## Missão mostrada no HUD: a acompanhada pelo jogador; senão a principal
-## ativa mais recente; senão qualquer ativa mais recente.
+## Missão mostrada no HUD: a acompanhada pelo jogador (se o objetivo dela é
+## da região atual); uma principal ativa da região atual; a acompanhada de outra
+## região; qualquer principal ativa mais recente; senão qualquer ativa mais recente.
+## Assim uma missão secundária esquecida em outra região não rouba o HUD.
 func primary_quest() -> String:
 	var act := active_quests()
 	if act.is_empty():
 		return ""
-	if GameState.tracked_quest in act:
+	var here := _here()
+	var tracked := GameState.tracked_quest in act
+	if tracked and (here == "" or _quest_region(GameState.tracked_quest) == here):
+		return GameState.tracked_quest
+	if here != "":
+		for qid in act:
+			if category(qid) == "main" and _quest_region(qid) == here:
+				return qid
+	if tracked:
 		return GameState.tracked_quest
 	for qid in act:
 		if category(qid) == "main":
 			return qid
 	return act[0]
+
+
+## Região do objetivo atual; vazia, vale a região da missão.
+func _quest_region(quest_id: String) -> String:
+	var rid := objective_region(quest_id)
+	return rid if rid != "" else String(db.get_quest(quest_id).get("region", ""))
+
+
+func _here() -> String:
+	if current_region_id != "":
+		return current_region_id
+	return WorldManager.current_region_id()
 
 
 func category(quest_id: String) -> String:

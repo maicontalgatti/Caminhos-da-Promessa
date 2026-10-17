@@ -76,12 +76,15 @@ func _build(spec: Dictionary) -> bool:
 	floors.tile_set = load(TILESET)
 	root.add_child(floors)
 
+	# Chão de terra batida (autotile de caminho, máscara cheia) — não grama.
+	var dirt := Vector2i(7, 3) # Spec.path_coords(15)
+	var packed_earth := Vector2i(7, 2) # Spec.path_coords(7)
 	for y in H:
 		for x in W:
-			ground.set_cell(Vector2i(x, y), 0, Vector2i(0, 0))
+			ground.set_cell(Vector2i(x, y), 0, dirt)
 	for y in range(2, H - 2):
 		for x in range(2, W - 2):
-			floors.set_cell(Vector2i(x, y), 0, Vector2i(1, 0))
+			floors.set_cell(Vector2i(x, y), 0, packed_earth)
 
 	var world := Node2D.new()
 	world.name = "World"

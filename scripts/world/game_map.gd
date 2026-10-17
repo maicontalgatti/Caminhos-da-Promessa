@@ -201,6 +201,14 @@ func refresh_lighting(time: float = LIGHT_FADE) -> void:
 	set_tint(c, time)
 
 
+## Reavalia NPCs, examináveis e itens condicionais e a luz agora (depois de uma
+## cena dirigida, por exemplo, que muda flags e eventos sem passar pelos sinais).
+func refresh_world() -> void:
+	_refresh_conditional()
+	refresh_lighting(0.0)
+	_sync_night_lights()
+
+
 func _spawn_defs() -> Array:
 	var out: Array = []
 	var r := get_region()

@@ -62,6 +62,7 @@ const PROPS := {
 	"grain_heap": {"origin": Vector2(17, 15), "col": Rect2(-15, -6, 30, 6)},
 	"threshing_sledge": {"origin": Vector2(14, 10), "col": Rect2(-12, -4, 24, 4)},
 	"winnowing_fork": {"origin": Vector2(13, 8)},
+	"sickle": {"origin": Vector2(9, 8)},
 	"village_gate": {"origin": Vector2(32, 55), "col": Rect2(-30, -14, 60, 12)},
 	"stone_wall_h": {"origin": Vector2(8, 23), "col": Rect2(-8, -8, 16, 8)},
 	"stone_wall_v": {"origin": Vector2(8, 23), "col": Rect2(-4, -16, 8, 16)},
@@ -444,6 +445,7 @@ func _props() -> void:
 	_grain_heap().save(ENV + "grain_heap.png")
 	_threshing_sledge().save(ENV + "threshing_sledge.png")
 	_winnowing_fork().save(ENV + "winnowing_fork.png")
+	_sickle().save(ENV + "sickle.png")
 	_village_gate().save(ENV + "village_gate.png")
 	_terrace_wall().save(ENV + "terrace_wall.png")
 	_house_courtyard().save(ENV + "house_courtyard.png")
@@ -1181,6 +1183,28 @@ func _winnowing_fork():
 	for k in [1, 3, 5]:
 		cv.line(18, 3 + (k - 3) / 2, 24, k, Color("#a07a50"))
 	cv.outline(INK)
+	return cv
+
+
+## Foice de sílex (Rt 2): arco de madeira com pequenas pedras afiadas encaixadas.
+func _sickle():
+	var cv = PC.new(18, 12)
+	# arco de madeira (cabo à esquerda, ponta curvando para cima à direita)
+	var wood := Color("#a07a50")
+	var wood_dark := Color("#795437")
+	cv.line(2, 9, 6, 8, wood)
+	cv.line(6, 8, 11, 6, wood)
+	cv.line(11, 6, 14, 3, wood)
+	cv.line(2, 10, 6, 9, wood_dark)
+	cv.line(6, 9, 11, 7, wood_dark)
+	cv.line(11, 7, 14, 4, wood_dark)
+	# fileira de lâminas de sílex na borda interna (clara, para ler bem no restolho)
+	for p in [Vector2i(6, 7), Vector2i(8, 6), Vector2i(10, 5), Vector2i(12, 3)]:
+		cv.rect(p.x, p.y - 2, 2, 2, Color("#efe9d8"))
+		cv.px(p.x, p.y, Color("#cfc7b4"))
+	cv.rect(1, 8, 3, 3, Color("#6e4a2c"))
+	cv.outline(INK)
+	cv.shadow(8, 10, 7, 1.2)
 	return cv
 
 
