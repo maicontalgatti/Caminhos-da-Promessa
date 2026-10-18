@@ -28,9 +28,20 @@ Oito correções dos bugs achados pelos testadores (playtest), com testes, captu
 - Capturas: `docs/images/playtest_fixes_*.png`.
 - QA estático (quest-qa): sem bloqueadores.
 
+## Builds (2026-10-18)
+- `executaveis/Windows/CaminhosDaPromessa-Windows.exe` (113M) e cópia na raiz.
+- `executaveis/Linux/CaminhosDaPromessa-Linux.x86_64` (79M, PCK embutido) e cópia na raiz.
+- Autoteste do binário Linux: **AUTOTESTE: OK**.
+
+## Git
+- Branch `fix/playtest-bugs-testers` enviada (`4171837`).
+- Abrir PR: https://github.com/maicontalgatti/Caminhos-da-Promessa/compare/main...fix/playtest-bugs-testers?expand=1  
+  (`gh` sem login nesta máquina; push por SSH ok).
+
 ## Pendências
+- Abrir/mergear o PR no GitHub (auth do `gh` ausente aqui).
 - Playtest humano (KI-02).
 - Manifesto de áudio ep_048 desatualizado em 1 fala (sem voz gravada).
 
 ## Próxima ação
-Merge do PR após revisão; distribuir novos executáveis Windows/Linux.
+Abrir o PR pelo link acima, revisar e mergear; distribuir os executáveis novos.
