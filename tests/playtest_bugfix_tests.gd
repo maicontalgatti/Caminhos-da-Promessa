@@ -251,3 +251,78 @@ func test_nava_name() -> void:
 	var d: Dictionary = DialogueManager.db.get_dialogue("sea_nava_talk")
 	check(String(d.nodes.greet.text).begins_with("Sou Nava."), "Nava se apresenta pelo nome")
 	check(GameData.get_character_name("sea_nava") == "Nava", "personagem sea_nava se chama Nava")
+
+
+# --- 9) Banner de identidade ao continuar o jogo (não vira coluna estreita) ------------
+
+func test_fold_round_gap_reachable() -> void:
+	GameState.new_game()
+	var gap: Dictionary = {}
+	for e in GameData.get_region("bethlehem_night").get("examinables", []):
+		if String(e.get("id", "")) == "bn_round_gap":
+			gap = e
+			break
+	check(not gap.is_empty(), "bn_round_gap existe na região")
+	check(String(gap.get("prop", "")) != "", "brecha tem prop visível (não só brilho)")
+	check(float(gap.get("radius", 0)) >= 18.0, "brecha tem raio generoso para o E")
+	check(String(gap.get("prompt", "")).contains("brecha") or String(gap.get("prompt", "")).contains("muro"),
+		"prompt da brecha fala em brecha/muro")
+	# Fora do curral: oeste do muro (x < 432) e ao norte da linha interna (y <= 560).
+	check(float(gap.x) < 432.0 and float(gap.y) <= 560.0, "brecha fica do lado de fora do aprisco (oeste/norte)")
+	GameState.set_flag("bn_night", true)
+	QuestManager.start_quest("bn_fold_round", true)
+	QuestManager.set_tracked("bn_fold_round")
+	var game: Node = await _start_game_in("bethlehem_night", "default")
+	var hud: Node = game.get_node("HUD")
+	await r._close_cards(hud)
+	var map: GameMap = game.map
+	var node := map.find_object("examinable", "bn_round_gap")
+	check(node != null, "brecha aparece com a ronda ativa")
+	var it: Interactable = null
+	if node != null:
+		it = node.find_child("Interactable", true, false) as Interactable
+	check(it != null and it.dialogue_id == "bn_round_gap", "Interactable da brecha existe")
+	var player: Player = game.get_tree().get_first_node_in_group("player") as Player
+	if player != null and node != null and it != null:
+		# Longe das ovelhas do curral: ao sul da pedra, do lado de fora.
+		player.global_position = Vector2(float(node.global_position.x), float(node.global_position.y) + 18.0)
+		player.detector.facing = Vector2.UP
+		await wait(4)
+		var focused: Interactable = player.detector.focused
+		check(focused != null and focused.dialogue_id == "bn_round_gap",
+			"perto da brecha, o E foca a brecha (não a ovelha)")
+		await r._close_cards(hud)
+		GameState.unblock_ui("hud_card")
+		GameState.unblock_ui("travel")
+		check(focused != null and player.detector._is_quest_target(focused),
+			"detector trata a brecha como alvo de missão (prioridade sobre ovelhas)")
+	game.queue_free()
+	await wait(3)
+	# Diálogo da brecha grava a flag (mesmo fluxo do E no mapa).
+	GameState.new_game()
+	check(DialogueManager.start("bn_round_gap"), "diálogo da brecha inicia")
+	DialogueManager.advance()
+	DialogueManager.advance()
+	check(GameState.get_flag("bn_round_gap", false) == true, "examinar a brecha marca bn_round_gap")
+	GameState.new_game()
+
+
+func test_identity_banner_readable_width() -> void:
+	GameState.new_game()
+	GameState.set_flag("prologue_seen", true)
+	QuestManager.record_event("prologue_finished", "new_game")
+	QuestManager.evaluate()
+	var game: Node = await _start_game_in("canaan_village", "default")
+	var hud: Node = game.get_node("HUD")
+	hud.show_identity(QuestManager.get_context())
+	await wait(2)
+	var loc: Control = hud.location
+	check(loc.custom_minimum_size.x >= 280.0, "banner de identidade tem largura mínima de 280 px")
+	check(loc.size.x >= 280.0, "banner de identidade não colapsa ao continuar (largura >= 280)")
+	check(String(hud.subtitle.text).contains("patriarcas") or String(hud.subtitle.text).length() > 20,
+		"banner mostra a época com texto longo (autowrap, não coluna de uma letra)")
+	check(hud.title.custom_minimum_size.x >= 200.0 and hud.subtitle.custom_minimum_size.x >= 200.0,
+		"rótulos do banner têm largura interna para o autowrap")
+	game.queue_free()
+	await wait(3)
+	GameState.new_game()

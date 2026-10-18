@@ -111,6 +111,8 @@ func _run_all() -> void:
 		await pt.test_scene_finish_refreshes_world()
 		pt.test_primary_quest_prefers_local_main()
 		pt.test_nava_name()
+		await pt.test_fold_round_gap_reachable()
+		await pt.test_identity_banner_readable_width()
 	print("\n[experiências: José no Egito, Mar, Rute, Pastores]")
 	var xt_script: GDScript = load("res://tests/experience_content_tests.gd")
 	check(xt_script != null and xt_script.can_instantiate(), "tests/experience_content_tests.gd compila")
