@@ -13,6 +13,8 @@ const BLOCKER := "scene"
 const CAPTION_LAYER := 39
 const GLOW_LAYER := 1
 const LIGHT_RETURN := 1.2
+## Teto de uma espera (s): nenhuma cena fica presa para sempre.
+const MAX_WAIT := 120.0
 const KIND_LABELS := {"narration": "Narração", "context": "Contexto", "fiction": "Ficção do jogo", "scripture": "Texto bíblico"}
 const KIND_COLORS := {"narration": UiStyle.BROWN, "context": UiStyle.MUTED, "fiction": UiStyle.WOOD, "scripture": UiStyle.GOLD}
 
@@ -43,6 +45,8 @@ var _hint: Label
 
 
 func _ready() -> void:
+	# A cena segue rodando mesmo se algo pausar a árvore (diário, janela sem foco).
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	database.load_dir()
 	for e in database.errors:
 		push_error("SceneDirector: " + e)
@@ -153,11 +157,10 @@ func _run(token: int) -> void:
 func _sleep(seconds: float, token: int, caption: bool) -> void:
 	_advance = false
 	_caption_wait = caption
-	var left := seconds
+	var left := clampf(seconds, 0.0, MAX_WAIT)
 	while left > 0.0 and token == _token:
 		await get_tree().process_frame
-		if not get_tree().paused:
-			left -= get_process_delta_time()
+		left -= get_process_delta_time()
 		if caption and _advance:
 			break
 	_caption_wait = false
@@ -262,6 +265,7 @@ func _actor(st: Dictionary) -> void:
 		return
 	_remove(id)
 	a = SceneActor.new()
+	a.process_mode = Node.PROCESS_MODE_ALWAYS
 	a.setup(id, String(st.get("sprite", "")), at, String(st.get("facing", "down")), String(st.get("pose", "stand")))
 	var world := _map.get_node_or_null("World")
 	(world if world else _map).add_child(a)
@@ -289,6 +293,7 @@ func _effect(st: Dictionary) -> float:
 	if alive:
 		return (cur as SceneFx).update(st.get("at"), p)
 	var fx := SceneFx.new()
+	fx.process_mode = Node.PROCESS_MODE_ALWAYS
 	(_glow_layer if SceneFx.is_glow(eff) else _fx_root).add_child(fx)
 	_effects[key] = fx
 	return fx.start(key, eff, st.get("at"), p)
@@ -360,6 +365,7 @@ func _finish(skipped: bool) -> void:
 		_map.lighting_locked = false
 	QuestManager.record_event("scene_finished", id)
 	if is_instance_valid(_map):
+		_map.refresh_world()
 		_map.refresh_lighting(0.0 if skipped else LIGHT_RETURN)
 	scene_id = ""
 	_scene = {}

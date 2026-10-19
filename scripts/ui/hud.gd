@@ -12,6 +12,10 @@ const TOAST_TIME := 3.6
 ## Depois deste tempo no mesmo objetivo sem pedir pistas, "H: pista" pulsa.
 const NUDGE_AFTER := 150.0
 const FREE_EXPLORE_TIME := 14.0
+## Largura mínima do banner de lugar/época. Sem isso, reset_size() + autowrap
+## colapsa o painel numa coluna ilegível ao continuar o jogo.
+const IDENTITY_WIDTH := 280.0
+
 
 @onready var location: PanelContainer = $Location
 @onready var title: Label = $Location/VBox/Title
@@ -50,6 +54,7 @@ var _time := 0.0
 func _ready() -> void:
 	add_to_group("hud")
 	location.modulate.a = 0.0
+	_setup_identity_banner()
 	var t := create_tween()
 	t.tween_interval(12.0)
 	t.tween_property(controls, "modulate:a", 0.0, 2.0)
@@ -472,6 +477,27 @@ func _show_completion_card(qid: String) -> void:
 
 # --- Identidade de lugar e época ---------------------------------------------
 
+func _setup_identity_banner() -> void:
+	location.custom_minimum_size = Vector2(IDENTITY_WIDTH, 0)
+	location.offset_left = -IDENTITY_WIDTH * 0.5
+	location.offset_right = IDENTITY_WIDTH * 0.5
+	var inner := IDENTITY_WIDTH - 16.0
+	for l in [title, subtitle, refs_label]:
+		l.custom_minimum_size.x = inner
+		l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+
+
+## Mantém a largura legível: reset_size() com autowrap, sem mínimo, vira uma coluna.
+func _fit_identity_banner() -> void:
+	location.custom_minimum_size.x = IDENTITY_WIDTH
+	location.reset_size()
+	if location.size.x < IDENTITY_WIDTH:
+		location.size.x = IDENTITY_WIDTH
+	location.offset_left = -location.size.x * 0.5
+	location.offset_right = location.size.x * 0.5
+
+
 ## Banner ao entrar no jogo ou numa nova experiência: lugar, época e referências.
 func show_identity(ctx: Dictionary) -> void:
 	if ctx.is_empty():
@@ -481,7 +507,7 @@ func show_identity(ctx: Dictionary) -> void:
 	subtitle.text = Bible.era_display(String(ctx.era_id))
 	var suffix := "" if ctx.source == "quest" else " (referência principal da região)"
 	refs_label.text = "Referências: %s%s" % [Bible.refs(ctx.references), suffix]
-	location.reset_size()
+	_fit_identity_banner()
 	var t := create_tween()
 	t.tween_interval(0.6)
 	t.tween_property(location, "modulate:a", 1.0, 0.8)
@@ -498,7 +524,7 @@ func show_region_banner(region: Dictionary) -> void:
 	subtitle.text = "%s · %s" % [area, WorldClock.phase_label()] if area != "" else WorldClock.phase_label()
 	var era := Bible.era_label(String(region.get("context", {}).get("era_id", "")))
 	refs_label.text = era
-	location.reset_size()
+	_fit_identity_banner()
 	var t := create_tween()
 	location.modulate.a = 0.0
 	t.tween_interval(0.2)

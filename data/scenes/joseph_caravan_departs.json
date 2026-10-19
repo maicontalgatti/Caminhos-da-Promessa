@@ -31,6 +31,7 @@
 				{"type": "move", "actor": "camel_4", "path": [[856, 540], [516, 538], [96, 536]], "speed": 34},
 				{"type": "move", "actor": "camel_5", "path": [[896, 538], [556, 536], [136, 534]], "speed": 34},
 				{"type": "move", "actor": "merchant_3", "path": [[922, 546], [582, 544], [162, 542]], "speed": 34},
+				{"type": "wait", "time": 12},
 				{"type": "caption", "scripture": "Gen 37:25", "wait": true},
 				{"type": "caption", "scripture": "Gen 37:28", "wait": true},
 				{"type": "actor", "id": "youth", "sprite": "silhouette_youth", "at": [520, 546], "facing": "left"},

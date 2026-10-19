@@ -30,7 +30,7 @@ func test_region_data() -> void:
 		var entries: Dictionary = reg.get("entries", {})
 		check(entries.has("default"), "%s: tem entrada padrão" % rid)
 		for ex in reg.get("exits", []):
-			var to := String(ex.get("to", ""))
+			var to := WorldManager.exit_target(ex)
 			check(GameData.regions.has(to), "%s/%s: saída leva a região existente (%s)" % [rid, ex.id, to])
 			check(not WorldManager.entry_point(to, String(ex.get("entry", ""))).is_empty(), "%s/%s: entrada de destino existe" % [rid, ex.id])
 			check(ConditionSchema.validate(ex.get("requires"), "%s/%s" % [rid, ex.id]).is_empty(), "%s/%s: condição válida" % [rid, ex.id])

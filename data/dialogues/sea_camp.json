@@ -151,7 +151,7 @@
 				{"flag": "sea_met_nava", "node": "again"}
 			],
 			"nodes": {
-				"greet": {"speaker": "sea_nava", "text": "Ai, meus joelhos... Paz, viajante. Os odres da minha família estão vazios, e eu já não aguento ir e voltar da fonte.", "next": "greet2", "set_flags": ["sea_met_nava"]},
+				"greet": {"speaker": "sea_nava", "text": "Sou Nava. Ai, meus joelhos... Paz, viajante. Os odres da minha família estão vazios, e eu já não aguento ir e voltar da fonte.", "next": "greet2", "set_flags": ["sea_met_nava"]},
 				"greet2": {"speaker": "sea_nava", "text": "Do mar não adianta tirar: a água é salgada. Mas junto às tamareiras, perto dos juncos, brota uma água que dá para beber.", "choices": [{"text": "Eu encho os odres para você.", "next": "accept", "if": {"not": {"quest_started": "sea_camp_water"}}}, {"text": "Agora não posso.", "next": "decline"}]},
 				"again": {"speaker": "sea_nava", "text": "Ainda por aqui? Os odres vazios ficaram perto da fonte, junto às tamareiras.", "choices": [{"text": "Eu encho os odres para você.", "next": "accept", "if": {"not": {"quest_started": "sea_camp_water"}}}, {"text": "Agora não posso.", "next": "decline"}]},
 				"accept": {"speaker": "sea_nava", "text": "Deus lhe pague. Deixei os odres vazios lá, ao lado da fonte, hoje cedo. Encha e traga para mim.", "next": "end", "event": "sea_nava_water"},

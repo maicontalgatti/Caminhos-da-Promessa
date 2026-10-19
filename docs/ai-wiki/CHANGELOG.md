@@ -3,6 +3,12 @@
 Resumo por versão/entrega. Detalhes, problemas corrigidos e o que não foi verificado estão em
 [docs/implementation_log.md](../implementation_log.md).
 
+## 2026-10-17 — Correções de playtest (sem versão nova)
+- Roda de Ezer só com Ezer conhecido; tendas decorativas (`tent_plain`) e pilha de retorno `@return` nos interiores.
+- Caravana no Egito não trava (SceneDirector `ALWAYS`, teto de espera); fim de cena atualiza NPCs/guia (`GameMap.refresh_world`).
+- Foice visível, quarto animal longe da gruta, feixe/jarro duplicados removidos, HUD prefere a principal da região, "Sou Nava.".
+- Suíte 1870/1870, fluxo 31/31, validação OK.
+
 ## 2026-10-16 — Configurações do menu cabem na janela (sem versão nova)
 - Painel com scroll interno (título/voltar fixos); evita título cortado e overflow em 480×270.
 - Slider de Vozes em 100%: trilho/rótulo mais largos; pausa → Sons também com scroll.

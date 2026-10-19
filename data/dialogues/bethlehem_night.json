@@ -20,8 +20,8 @@
 				"hello2": {"speaker": "bn_tamir", "text": "Só não posso parar agora. Quatro animais do meu rebanho se afastaram pastando, e todos precisam entrar no aprisco antes da noite.", "next": "hello3"},
 				"hello3": {"speaker": "bn_tamir", "text": "O aprisco é aquele muro de pedra lá embaixo, com galhos de espinho por cima. De noite, só se entra pela abertura do portão.", "next": "hello4"},
 				"hello4": {"speaker": "bn_tamir", "text": "Junto ao portão, os vizinhos vigiam o rebanho deles. Cada um cuida do seu rebanho.", "next": "hello5"},
-				"hello5": {"speaker": "bn_tamir", "text": "Daqui de cima eu vejo as desgarradas: uma nos terraços, perto do caminho por onde você chegou; uma nos espinhos, encosta abaixo; a cabra nas rochas; e outra perto da boca da gruta.", "next": "end", "event": "bn_tamir_hello", "unlock": ["night_shepherding"]},
-				"flock_waiting": {"speaker": "bn_tamir", "text": "Ainda falta trazer algumas. Siga o balido: nos terraços perto da entrada, nos espinhos encosta abaixo, nas rochas e na boca da gruta.", "next": "end"},
+				"hello5": {"speaker": "bn_tamir", "text": "Daqui de cima eu vejo as desgarradas: uma nos terraços, perto do caminho por onde você chegou; uma nos espinhos, encosta abaixo; a cabra nas rochas; e outra perto da gruta, no pasto aberto.", "next": "end", "event": "bn_tamir_hello", "unlock": ["night_shepherding"]},
+				"flock_waiting": {"speaker": "bn_tamir", "text": "Ainda falta trazer algumas. Siga o balido: nos terraços perto da entrada, nos espinhos encosta abaixo, nas rochas e perto da gruta.", "next": "end"},
 				"wood_ask": {"speaker": "bn_tamir", "text": "Todas no aprisco. Obrigado, viajante. Agora, o fogo.", "next": "wood_ask2", "set_flags": ["bn_wood_asked"]},
 				"wood_ask2": {"speaker": "bn_tamir", "text": "Lenha aqui é pouca: só galhos secos dos arbustos de espinho. Traga três, e o fogo aguenta até o meu turno.", "next": "end"},
 				"wood_waiting": {"speaker": "bn_tamir", "text": "Três galhos secos bastam. Procure junto aos arbustos espalhados pela encosta.", "next": "end"},
@@ -60,7 +60,7 @@
 			],
 			"nodes": {
 				"greet": {"speaker": "bn_shai", "text": "Paz, viajante. Eu sou Shai; trabalho com Tamir no rebanho.", "next": "greet2", "set_flags": ["bn_met_shai"]},
-				"greet2": {"speaker": "bn_shai", "text": "Quando o sol baixa, as ovelhas se escondem onde ainda tem capim: entre as pedras, nos espinhos, até na boca da gruta.", "next": "end"},
+				"greet2": {"speaker": "bn_shai", "text": "Quando o sol baixa, as ovelhas se escondem onde ainda tem capim: entre as pedras, nos espinhos, até perto da gruta.", "next": "end"},
 				"again": {"speaker": "bn_shai", "text": "Tamir conta as ovelhas duas vezes, toda noite. E ainda assim confere de manhã.", "next": "end"},
 				"round": {"speaker": "bn_shai", "text": "Antes de dormir, eu dou a volta no muro do aprisco. Hoje tem trabalho.", "next": "round2"},
 				"round2": {"speaker": "bn_shai", "text": "Uma pedra soltou do muro, do lado do posto de vigia; uns galhos de espinho caíram do outro lado; e ouvi barulho nas rochas, encosta abaixo.", "choices": [{"text": "Eu dou a volta com você.", "next": "round_accept"}, {"text": "Agora não.", "next": "round_decline"}]},
@@ -162,7 +162,7 @@
 			"id": "bn_stray_4",
 			"start": "n1",
 			"nodes": {
-				"n1": {"speaker": "narrator", "text": "Na boca da gruta, uma ovelha se deitou no fresco da pedra.", "next": "n2"},
+				"n1": {"speaker": "narrator", "text": "Perto da gruta, uma ovelha se deitou no fresco da pedra.", "next": "n2"},
 				"n2": {"speaker": "narrator", "text": "Você a faz levantar e a conduz até o aprisco, antes que escureça.", "next": "end", "set_flags": ["bn_stray_4"]}
 			}
 		},

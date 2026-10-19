@@ -14,6 +14,8 @@ signal experience_started(experience_id: String)
 signal passage_requested(passage: Dictionary, region_id: String, entry_id: String)
 
 const EXPERIENCES_DIR := "res://data/world"
+## Destino de saída que volta à região de onde o jogador entrou no interior.
+const RETURN_TO := "@return"
 const FACINGS := {"down": Vector2.DOWN, "up": Vector2.UP, "left": Vector2.LEFT, "right": Vector2.RIGHT}
 
 var experiences: Dictionary = {}
@@ -24,11 +26,16 @@ var errors := PackedStringArray()
 ## carregada). Um renovável só volta se o seu momento de volta (renew_key, no
 ## save) já tinha passado nesse instante: nunca surge no meio de uma visita.
 var _visit_started := 0.0
+## Pilha de retorno dos interiores: [{region, entry}] da região exterior de onde
+## o jogador entrou (só em memória; sem ela vale o "fallback_to" da saída).
+var return_stack: Array = []
 
 
 func _ready() -> void:
 	reload()
-	GameState.state_replaced.connect(func(): _visit_started = GameState.play_time)
+	GameState.state_replaced.connect(func():
+		_visit_started = GameState.play_time
+		return_stack.clear())
 
 
 func reload() -> void:
@@ -91,6 +98,41 @@ func is_region_unlocked(region_id: String) -> bool:
 	return GameState.get_flag("region_unlocked:" + region_id) == true
 
 
+## Interior (tenda, casa): região sem ciclo do dia que não é sempre noturna, ou com "interior": true.
+func is_interior(region_id: String) -> bool:
+	var r := region(region_id)
+	if r.is_empty():
+		return false
+	if r.get("interior", false) == true:
+		return true
+	return r.get("day_cycle", true) == false and r.get("always_night", false) != true
+
+
+## Região de destino de uma saída ("@return" vale o "fallback_to" para rotas e validação).
+func exit_target(ex: Dictionary) -> String:
+	var to := String(ex.get("to", ""))
+	return String(ex.get("fallback_to", "")) if to == RETURN_TO else to
+
+
+## {region, entry} de uma saída. "@return" volta à região de onde o jogador entrou
+## (pilha de retorno), com a entrada da saída se ela existir lá, senão a padrão;
+## pilha vazia (jogo carregado dentro do interior) usa "fallback_to".
+func resolve_exit(ex: Dictionary) -> Dictionary:
+	var entry := String(ex.get("entry", "default"))
+	if String(ex.get("to", "")) != RETURN_TO:
+		return {"region": String(ex.get("to", "")), "entry": entry}
+	if not return_stack.is_empty():
+		var top: Dictionary = return_stack.back()
+		var rid := String(top.get("region", ""))
+		if not region(rid).is_empty():
+			if entry_point(rid, entry).is_empty():
+				entry = String(top.get("entry", "default"))
+			if entry_point(rid, entry).is_empty():
+				entry = "default"
+			return {"region": rid, "entry": entry}
+	return {"region": String(ex.get("fallback_to", "")), "entry": entry}
+
+
 ## Primeira saída do caminho mais curto entre duas regiões (busca em largura).
 func route_exit(from_id: String, to_id: String) -> Dictionary:
 	if from_id == to_id or from_id == "" or to_id == "":
@@ -101,7 +143,7 @@ func route_exit(from_id: String, to_id: String) -> Dictionary:
 	while not queue.is_empty():
 		var cur: String = queue.pop_front()
 		for ex in exits(cur):
-			var nxt := String(ex.get("to", ""))
+			var nxt := exit_target(ex)
 			if nxt == "" or seen.has(nxt):
 				continue
 			seen[nxt] = true
@@ -114,6 +156,10 @@ func route_exit(from_id: String, to_id: String) -> Dictionary:
 
 ## Viaja para uma região por um ponto de entrada nomeado. Retorna "" ou o erro.
 func travel(region_id: String, entry_id: String) -> String:
+	if region_id == RETURN_TO:
+		var back := resolve_exit({"to": RETURN_TO, "entry": entry_id})
+		region_id = String(back.region)
+		entry_id = String(back.entry)
 	var r := region(region_id)
 	if r.is_empty():
 		return "região inexistente: %s" % region_id
@@ -125,6 +171,7 @@ func travel(region_id: String, entry_id: String) -> String:
 	if not is_region_unlocked(region_id):
 		GameState.set_flag("region_unlocked:" + region_id, true)
 		QuestManager.record_event("region_unlocked", region_id)
+	_update_return_stack(current_region_id(), region_id)
 	_visit_started = GameState.play_time
 	GameState.current_region = region_id
 	GameState.current_map = scene
@@ -133,6 +180,16 @@ func travel(region_id: String, entry_id: String) -> String:
 	GameState.add_log("travel", region_id)
 	travel_requested.emit(region_id, entry_id)
 	return ""
+
+
+## Entrar num interior vindo de fora empilha a região anterior; chegar a qualquer
+## região exterior esvazia a pilha (voltou ou foi para outro lugar).
+func _update_return_stack(from_id: String, to_id: String) -> void:
+	if is_interior(to_id):
+		if from_id != "" and not is_interior(from_id):
+			return_stack.append({"region": from_id, "entry": "default"})
+	else:
+		return_stack.clear()
 
 
 ## Viagem precedida de um cartão de passagem ({title, lines}); sem tela de jogo, viaja direto.
@@ -279,6 +336,8 @@ func start_experience(id: String) -> String:
 		return "Esta experiência ainda está em planejamento."
 	if state == "locked":
 		return String(experience(id).get("locked_text", "Ainda não disponível."))
+	# Uma missão secundária acompanhada antes não deve mandar no HUD da nova experiência.
+	QuestManager.set_tracked("")
 	if GameState.get_flag("experience:" + id) != true:
 		GameState.set_flag("experience:" + id, true)
 		GameState.add_log("experience", id)

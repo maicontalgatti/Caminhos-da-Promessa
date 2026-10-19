@@ -41,6 +41,8 @@ static func validate_region(r: Dictionary) -> PackedStringArray:
 	var rid := "região " + String(r.get("id", "?"))
 	var out := validate_lighting(rid, r.get("lighting"))
 	for ex in r.get("exits", []):
+		if ex is Dictionary and String(ex.get("to", "")) == "@return" and String(ex.get("fallback_to", "")) == "":
+			out.append("%s/%s: saída \"@return\" precisa de \"fallback_to\"" % [rid, ex.get("id", "?")])
 		if ex is Dictionary and ex.has("passage"):
 			out.append_array(validate_passage("%s/%s" % [rid, ex.get("id", "?")], ex.passage))
 	return out

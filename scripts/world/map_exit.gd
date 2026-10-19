@@ -2,6 +2,8 @@ class_name MapExit
 extends Area2D
 ## Saída de mapa criada a partir de "exits" da região:
 ## {id, rect: [x, y, w, h], to, entry, label, requires?, locked_text?, passage?}.
+## "to": "@return" volta à região de onde o jogador entrou no interior (pilha de
+## WorldManager.return_stack), com "fallback_to" quando a pilha está vazia.
 ## Ao entrar com a saída aberta, viaja; fechada, avisa e empurra o jogador de volta.
 ## Com "passage" ({title, lines}), mostra antes o cartão "OUTRO MOMENTO DA HISTÓRIA".
 
@@ -45,7 +47,7 @@ func marker_position() -> Vector2:
 
 
 func label() -> String:
-	return String(data.get("label", data.get("to", "")))
+	return String(data.get("label", WorldManager.exit_target(data)))
 
 
 func is_open() -> bool:
@@ -85,6 +87,8 @@ func _on_player_inside(body: Player) -> void:
 	if data.get("passage") is Dictionary:
 		body.global_position += _inward() * 10.0
 		body.velocity = Vector2.ZERO
-		WorldManager.travel_with_passage(String(data.to), String(data.get("entry", "default")), data.passage)
+		var dest_p := WorldManager.resolve_exit(data)
+		WorldManager.travel_with_passage(String(dest_p.region), String(dest_p.entry), data.passage)
 		return
-	WorldManager.travel(String(data.to), String(data.get("entry", "default")))
+	var dest := WorldManager.resolve_exit(data)
+	WorldManager.travel(String(dest.region), String(dest.entry))

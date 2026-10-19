@@ -92,8 +92,8 @@
 			"nodes": {
 				"n1": {"speaker": "narrator", "text": "Uma roda de oleiro, ainda úmida. Ao lado, jarros à sombra esperam ir ao forno.", "next": "n2"},
 				"n2": {"speaker": "narrator", "text": "Ezer molda o barro aqui de manhã, quando a luz entra pela porta. (Ezer e esta casa são ficção do jogo.)", "choices": [
-					{"text": "Experimentar a roda.", "next": "craft", "action": {"craft": "pottery_wheel"}},
-					{"text": "Só observar.", "next": "end", "unlock": ["pottery_jars"]}
+					{"text": "Só observar.", "next": "end", "unlock": ["pottery_jars"]},
+					{"text": "Experimentar a roda.", "next": "craft", "action": {"craft": "pottery_wheel"}, "if": {"any": [{"flag": "met_ezer"}, {"quest_completed": "canaan_wells"}, {"objective": "canaan_wells/return_jar"}]}}
 				]},
 				"craft": {"speaker": "narrator", "text": "Você molha as mãos e põe o barro a girar.", "next": "end", "unlock": ["pottery_jars"]}
 			}

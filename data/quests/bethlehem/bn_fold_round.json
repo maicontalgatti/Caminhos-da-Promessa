@@ -28,9 +28,9 @@
 					"complete_on": {"event": "condition", "id": "bn_round_checked", "condition": {"all": [{"flag": "bn_round_gap"}, {"flag": "bn_round_thorns"}, {"flag": "bn_round_noise"}]}},
 					"targets": [{"type": "examinable", "id": "bn_round_gap"}, {"type": "examinable", "id": "bn_round_thorns"}, {"type": "examinable", "id": "bn_round_noise"}],
 					"hints": [
-						"Um muro baixo só protege se não tiver brechas.",
-						"Shai falou do muro do lado do posto de vigia, do outro lado do muro e das rochas encosta abaixo.",
-						"Examine a pedra solta (muro do lado do posto), os galhos caídos (outro lado do muro) e as rochas encosta abaixo."
+						"Um muro baixo só protege se não tiver brechas. Dê a volta por fora do aprisco — lá dentro as ovelhas atrapalham.",
+						"Shai falou do muro do lado do posto de vigia (pedra solta com brilho), do outro lado do muro (galhos) e das rochas encosta abaixo.",
+						"Do lado de fora: pedra solta a oeste do muro (perto do posto), galhos a leste do muro, e as rochas mais abaixo na encosta."
 					],
 					"log": "Você recolocou uma pedra solta, repôs galhos espinhosos no muro e viu um chacal se afastar do fogo."
 				},

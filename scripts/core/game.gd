@@ -176,7 +176,18 @@ func play_scene(id: String) -> bool:
 
 func _on_scene_finished(_id: String, _skipped: bool) -> void:
 	hud.visible = true
+	if map != null and is_instance_valid(map):
+		map.refresh_world()
+		var guide := map.get_node_or_null("ObjectiveGuide") as ObjectiveGuide
+		if guide:
+			guide.refresh()
+	QuestManager.evaluate()
 	hud.refresh_tracker()
+	var qid := QuestManager.primary_quest()
+	if qid != "":
+		var obj := QuestManager.current_objective(qid)
+		if not obj.is_empty():
+			hud.show_toast("Objetivo: %s" % String(obj.get("text", "")))
 
 
 ## Saída com "passage": cartão "OUTRO MOMENTO DA HISTÓRIA" antes de viajar.
